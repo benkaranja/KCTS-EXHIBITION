@@ -1,0 +1,14 @@
+name = "kenya-china-tea-summit"
+compatibility_date = "2026-08-01"
+pages_build_output_dir = "public"
+
+# Binding is DB, not the auto-generated snake_case name, so functions read
+# `env.DB` exactly as the web-factory templates expect.
+[[d1_databases]]
+binding = "DB"
+database_name = "kenya-china-tea-summit-db"
+database_id = "bfeb8ee1-55b6-4045-a449-458be5e6a783"
+
+# Secrets (BREVO_API_KEY, TURNSTILE_SECRET_KEY, CONTACT_EMAIL, FROM_EMAIL,
+# FROM_NAME) are set via `wrangler pages secret put`, never in this file.
+# No [triggers] block: Pages Functions do not support cron. See ADR-005.

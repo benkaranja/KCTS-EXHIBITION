@@ -4,7 +4,7 @@
   "status": "active",
   "iteration": 1,
   "maxIterations": 40,
-  "previewUrl": "",
+  "previewUrl": "https://kenya-china-tea-summit.pages.dev",
   "productionUrl": "",
   "startedAt": "2026-08-01",
   "lastIterationAt": "2026-08-01",
@@ -43,10 +43,10 @@
       "deps": [
         "I1"
       ],
-      "status": "pending",
-      "attempts": 0,
-      "evidence": "",
-      "lastRun": null
+      "status": "passed",
+      "attempts": 1,
+      "evidence": "gh repo create benkaranja/kenya-china-tea-summit (private); push to main succeeded after raising http.postBuffer (first attempt died on sideband disconnect carrying the 2.3MB logo). git status -sb: ## main...origin/main, 30 files tracked. public/ and node_modules/ absent.",
+      "lastRun": "2026-08-01"
     },
     {
       "id": "F2",
@@ -56,10 +56,10 @@
       "deps": [
         "F1"
       ],
-      "status": "pending",
-      "attempts": 0,
-      "evidence": "",
-      "lastRun": null
+      "status": "passed",
+      "attempts": 1,
+      "evidence": "src/ functions-pending, docs/ brand_assets/ website_content/ scripts/ .web-factory/ in place; Eleventy output dir = public/ per wrangler.toml pages_build_output_dir.",
+      "lastRun": "2026-08-01"
     },
     {
       "id": "F3",
@@ -70,10 +70,10 @@
         "F2",
         "E1"
       ],
-      "status": "pending",
-      "attempts": 0,
-      "evidence": "",
-      "lastRun": null
+      "status": "passed",
+      "attempts": 1,
+      "evidence": "Pages project kenya-china-tea-summit created, deployed 9 files. https://kenya-china-tea-summit.pages.dev returns HTTP 200 (10827 bytes). Live JSON-LD parses: ConferenceEvent | 2027-04-21 -> 2027-04-23 | Nairobi, Kenya. canonical=https://kenyachinateasummit.com/. All 5 assets return 200. 0 unrendered template tags. First poll returned 522 while the hostname propagated.",
+      "lastRun": "2026-08-01"
     },
     {
       "id": "F4",
@@ -83,10 +83,10 @@
       "deps": [
         "F1"
       ],
-      "status": "pending",
-      "attempts": 0,
-      "evidence": "",
-      "lastRun": null
+      "status": "passed",
+      "attempts": 1,
+      "evidence": "wrangler d1 create -> bfeb8ee1-55b6-4045-a449-458be5e6a783. schema.sql applied --remote: num_tables 2, rows_written 12. Verified: SELECT name FROM sqlite_master -> rate_limit, submissions. Binding DB set in wrangler.toml.",
+      "lastRun": "2026-08-01"
     },
     {
       "id": "F5",
@@ -96,10 +96,10 @@
       "deps": [
         "F1"
       ],
-      "status": "pending",
-      "attempts": 0,
-      "evidence": "",
-      "lastRun": null
+      "status": "passed",
+      "attempts": 1,
+      "evidence": "PRD, DECISIONS, HANDOFF, AUDIT, BLOCKERS all written and placeholder-free.",
+      "lastRun": "2026-08-01"
     },
     {
       "id": "E1",

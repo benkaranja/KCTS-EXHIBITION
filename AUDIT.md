@@ -93,3 +93,49 @@ Both would have failed the C5/V4 gates later. Recorded rather than quietly patch
 targets a deployed preview URL, and no Pages project exists yet. `perf`, `a11y`,
 `html`, `links`, `headers`, `form` and `console` all remain unmeasured. No
 Lighthouse, axe or html-validate number has been produced or claimed.
+
+### F1, F3, F4 — infrastructure · PASS
+
+```
+gh repo create benkaranja/kenya-china-tea-summit --private   → created
+git push -u origin main                                      → [new branch] main -> main
+  (first attempt failed: "send-pack: unexpected disconnect while reading sideband
+   packet" on the 2.3 MB logo; fixed with http.postBuffer=500MB + HTTP/1.1)
+
+wrangler d1 create kenya-china-tea-summit-db
+  → bfeb8ee1-55b6-4045-a449-458be5e6a783
+wrangler d1 execute --remote --file=schema.sql
+  → num_tables: 2, rows_written: 12
+wrangler d1 execute --remote "SELECT name FROM sqlite_master ..."
+  → TABLES: _cf_KV, rate_limit, submissions
+
+wrangler pages project create kenya-china-tea-summit         → created
+wrangler pages deploy public                                 → 9 files, 1.55s
+```
+
+Live assertions against `https://kenya-china-tea-summit.pages.dev`:
+
+```
+HTTP 200 | 10,827 bytes
+JSON-LD live: ConferenceEvent | Kenya-China Tea Summit 2027 | 2027-04-21 -> 2027-04-23 | Nairobi, Kenya
+title:     Kenya-China Tea Summit 2027 — Connecting Tea, Cultures & Opportunities
+h1:        The premier tea trade, investment and innovation forum connecting Africa and China
+canonical: https://kenyachinateasummit.com/
+unrendered template syntax: 0
+/css/tokens.css 200 · /css/style.css 200 · /js/nav.js 200 · /img/emblem-96.png 200 (15,923B) · /robots.txt 200
+```
+
+First poll of the hostname returned **522** while it propagated; 200 on retry.
+
+Security headers currently live — S1 has not started, no `_headers` file exists yet:
+
+```
+content-security-policy      ABSENT
+x-frame-options              ABSENT
+strict-transport-security    ABSENT
+permissions-policy           ABSENT
+x-content-type-options       nosniff                        (Pages default)
+referrer-policy              strict-origin-when-cross-origin (Pages default)
+```
+
+Four of six missing. Not a pass, and not claimed as one.
