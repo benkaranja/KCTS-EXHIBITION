@@ -192,3 +192,35 @@ is a credibility risk, and no translated copy has been supplied.
 handling are built hreflang-ready now, so adding `/zh/` later is a content drop
 rather than a re-architecture. Flagged to the client in HANDOFF.md as a decision
 they need to make.
+
+---
+
+## ADR-010 — pages.dev is the canonical origin until the domain lands
+
+**Date:** 2026-08-01 · **Status:** accepted
+
+**Decision.** `kenyachinateasummit.com` is mid-purchase. Until it resolves,
+`https://kenya-china-tea-summit.pages.dev` is the site's real, canonical origin —
+not a placeholder standing in for the real one.
+
+**Why.** The site initially shipped `<link rel="canonical">` pointing at
+`kenyachinateasummit.com`, a hostname that does not resolve. A canonical to a dead
+domain is strictly worse than no canonical: it tells every crawler the real
+version of the page lives somewhere that 404s, so nothing gets indexed and the
+staging URL gets discarded rather than ranked. Self-referential canonical to the
+origin actually serving the bytes is the correct state.
+
+**How.** `src/_data/summit.js` holds `PRODUCTION_ORIGIN`, `STAGING_ORIGIN` and a
+single `domainAcquired` boolean. `url` derives from it, and canonical, OG,
+sitemap and robots all derive from `url`. Cutover is flipping one boolean.
+
+`robots.txt` and `sitemap.xml` became generated templates (`src/robots.njk`,
+`src/sitemap.njk`) for the same reason — a hand-written sitemap URL is a hostname
+that silently goes stale.
+
+**Consequences.**
+
+- The staging origin is indexable (`X-Robots-Tag: all`). Noindex was considered and rejected: it fails the Lighthouse SEO audit outright, so it would cost a hard gate to defend against a risk that is currently theoretical — nothing links here, and no sitemap has been submitted.
+- At cutover, pages.dev must 301 to the apex so the staging URL does not compete. That redirect is part of the cutover checklist in HANDOFF.md, not an afterthought.
+- HSTS ships **without** `preload` while on pages.dev. Preload is effectively irreversible and belongs on the real apex domain.
+- Brevo sender-domain verification (B-002) is now gated on the domain purchase, not on Ben finding an API key. Recorded as B-003.

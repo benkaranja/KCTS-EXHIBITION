@@ -2,7 +2,7 @@
   "$comment": "Adapted from templates/criteria.default.json at intake. Changes recorded in docs/DECISIONS.md: R1-R3 dropped (greenfield, ADR-001); B4 dropped (Pages has no cron, ADR-005); I1 split into I1/I2 so the build is not hostage to third-party credentials; E1/E2 added for the Eleventy build and content validation (ADR-003, ADR-007).",
   "project": "kenya-china-tea-summit",
   "status": "active",
-  "iteration": 1,
+  "iteration": 2,
   "maxIterations": 40,
   "previewUrl": "https://kenya-china-tea-summit.pages.dev",
   "productionUrl": "",
@@ -24,7 +24,7 @@
     {
       "id": "I2",
       "phase": "intake",
-      "goal": "Brevo, Turnstile and OpenRouter credentials collected and live-probed green; .env.local written; Pages env vars pushed",
+      "goal": "Brevo, Turnstile and OpenRouter credentials collected and live-probed green; .env.local written; Pages env vars pushed (Brevo sender verification gated on B-003)",
       "verify": "verify.sh secrets",
       "deps": [
         "I1"
@@ -359,10 +359,10 @@
       "deps": [
         "F3"
       ],
-      "status": "pending",
-      "attempts": 0,
-      "evidence": "",
-      "lastRun": null
+      "status": "passed",
+      "attempts": 1,
+      "evidence": "Live against https://kenya-china-tea-summit.pages.dev: 7/7 headers present. CSP default-src 'self' with challenges.cloudflare.com + cloudflareinsights only; no unsafe-inline, no unsafe-eval. HSTS max-age=31536000 includeSubDomains (no preload while on pages.dev). Browser console: 0 errors, so strict CSP does not block the inline JSON-LD.",
+      "lastRun": "2026-08-01"
     },
     {
       "id": "S2",
@@ -575,7 +575,7 @@
     }
   ],
   "blockers": [
-    "B-001",
-    "B-002"
+    "B-002",
+    "B-003"
   ]
 }

@@ -1,4 +1,4 @@
-# Blockers — 1 open
+# Blockers — 2 open
 
 Each entry names the single specific thing a human must do. Resolve one by doing
 the action, then set the named criterion back to `pending` with `attempts: 0` in
@@ -45,6 +45,29 @@ verified in Brevo (Senders → Domains, with DKIM and DMARC records live) before
 that is correct in source and silently broken in production. I cannot add those
 DNS records — DNS is a hard autonomy stop — so when you get there, verify in
 Brevo first and I will assert it before promoting.
+
+---
+
+## B-003 — Domain not yet acquired
+
+**Blocks:** custom-domain cutover, Brevo sender-domain verification, and through
+that the final `B7` live email E2E on the real domain.
+**Criterion:** partial `I2`, and the `P2`/`P5` ship steps.
+
+`kenyachinateasummit.com` is mid-purchase as of 2026-08-01. **Nothing is waiting
+on this.** Per ADR-010 the site now treats `kenya-china-tea-summit.pages.dev` as
+its real canonical origin, so canonical tags, Open Graph URLs, `sitemap.xml` and
+`robots.txt` are all correct as they stand — not placeholders.
+
+**What happens when the domain lands** (cutover checklist, in order):
+
+1. Tell me it is registered. I flip `domainAcquired` to `true` in `src/_data/summit.js` — that is the entire code change.
+2. **You** add the domain to Cloudflare and attach it to the Pages project. DNS is a hard autonomy stop; I cannot touch records.
+3. **Before** clicking through the Cloudflare nameserver import, check the MX records come across intact if the client already has email on that domain. Do not enable Cloudflare Email Routing unless you intend to replace their mail — it overwrites MX.
+4. Verify the sender domain in Brevo (Senders → Domains) and publish the DKIM + DMARC records it gives you. Until this is green, the contact and registration forms will look correct in source and silently fail to deliver.
+5. I add a 301 from `kenya-china-tea-summit.pages.dev` to the apex so the staging URL stops competing, add `preload` to HSTS, and re-run the full gate suite against the production URL.
+
+Steps 1 and 5 are mine. Steps 2–4 are yours.
 
 ---
 

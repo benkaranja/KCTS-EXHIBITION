@@ -141,3 +141,50 @@ No Lighthouse, axe or html-validate number appears anywhere in this project.
 
 The site is one page. The remaining 12 launch pages, the security headers, the
 form backend and the imagery pipeline do not exist yet.
+
+---
+
+## Iteration 2 — 2026-08-01
+
+### ADR-010 — origin decoupled from the unpurchased domain
+
+The site was shipping `<link rel="canonical" href="https://kenyachinateasummit.com/">`
+against a hostname that does not resolve. Corrected: `src/_data/summit.js` now
+derives `url` from a single `domainAcquired` boolean, and `robots.txt` /
+`sitemap.xml` became generated templates so neither can go stale.
+
+```
+canonical: https://kenya-china-tea-summit.pages.dev/
+robots.txt Sitemap: https://kenya-china-tea-summit.pages.dev/sitemap.xml
+sitemap.xml <loc>: https://kenya-china-tea-summit.pages.dev/
+```
+
+### S1 — security headers · PASS
+
+Measured against the live deployment, not the source file:
+
+```
+  PASS content-security-policy      default-src 'self'; script-src 'self' https://challenges.cloudflare.co…
+  PASS x-content-type-options       nosniff
+  PASS x-frame-options              DENY
+  PASS referrer-policy              strict-origin-when-cross-origin
+  PASS permissions-policy           accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetomete…
+  PASS strict-transport-security    max-age=31536000; includeSubDomains
+  PASS cross-origin-opener-policy   same-origin
+
+RESULT: PASS — 7/7 headers present
+CSP allows challenges.cloudflare.com: true
+CSP allows cloudflareinsights: true
+CSP has unsafe-inline: false | unsafe-eval: false
+
+/css/style.css      cache-control: public, max-age=3600, must-revalidate
+/img/emblem-96.png  cache-control: public, max-age=604800
+```
+
+Strict CSP with an inline `application/ld+json` block was a real risk introduced
+by this change. Verified in a real browser: **0 console messages**, so the policy
+does not block the structured data.
+
+### Still not run
+
+Lighthouse, axe and html-validate remain unmeasured. No score claimed.

@@ -2,6 +2,17 @@
 // Anything added here must appear in website_content/FACTS.md §1.
 // If it is not a confirmed client fact, it does not belong in this file.
 
+// kenyachinateasummit.com is mid-purchase (2026-08-01). Until it resolves, the
+// pages.dev origin IS the canonical home — a canonical pointing at a domain that
+// does not resolve is worse than no canonical at all.
+//
+// CUTOVER: flip domainAcquired to true. That is the whole change. Canonical, OG,
+// sitemap and robots all derive from `url`. Then follow the checklist in
+// HANDOFF.md — DNS is a human step. See ADR-010.
+const PRODUCTION_ORIGIN = "https://kenyachinateasummit.com";
+const STAGING_ORIGIN = "https://kenya-china-tea-summit.pages.dev";
+const domainAcquired = false;
+
 const summit = {
   name: "Kenya-China Tea Summit 2027",
   shortName: "Kenya-China Tea Summit",
@@ -9,7 +20,10 @@ const summit = {
   theme:
     "Brewing Strategic Partnerships for Sustainable Tea Trade, Investment and Innovation",
 
-  url: "https://kenyachinateasummit.com",
+  url: domainAcquired ? PRODUCTION_ORIGIN : STAGING_ORIGIN,
+  productionOrigin: PRODUCTION_ORIGIN,
+  stagingOrigin: STAGING_ORIGIN,
+  domainAcquired,
   locale: "en",
   lang: "en",
 

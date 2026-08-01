@@ -1,21 +1,31 @@
 {
-  "$comment": "Single source of truth. Every phase READS this; no phase re-decides what it contains. Secret VALUES live in .env.local and Cloudflare Pages env vars — only names appear here.",
-
+  "$comment": "Single source of truth. Every phase READS this; no phase re-decides what it contains. Secret VALUES live in .env.local and Cloudflare Pages env vars \u2014 only names appear here.",
   "project": {
     "name": "kenya-china-tea-summit",
     "productionDomain": "kenyachinateasummit.com",
     "oneLiner": "The Kenya-China Tea Summit 2027 is a three-day trade, investment and innovation forum in Nairobi connecting Kenya's tea value chain with Chinese buyers, investors and technology providers.",
-    "audience": "Tea exporters, importers and buyers; agri-investors and financiers; processing and packaging manufacturers; agri-tech and logistics providers; government and trade-policy officials; researchers; hospitality and tea-culture professionals — across Kenya, East Africa and China.",
+    "audience": "Tea exporters, importers and buyers; agri-investors and financiers; processing and packaging manufacturers; agri-tech and logistics providers; government and trade-policy officials; researchers; hospitality and tea-culture professionals \u2014 across Kenya, East Africa and China.",
     "primaryGoal": "registration",
-    "secondaryGoals": ["sponsorship enquiry", "exhibitor enquiry", "newsletter signup"],
-    "languages": ["en"],
+    "secondaryGoals": [
+      "sponsorship enquiry",
+      "exhibitor enquiry",
+      "newsletter signup"
+    ],
+    "languages": [
+      "en"
+    ],
     "$languagesNote": "zh-CN is a likely phase-2 requirement given the audience. Build with hreflang-ready URL structure but ship en only until the client supplies translated copy.",
     "existing": "new",
-    "eventDates": { "start": "2027-04-21", "end": "2027-04-23", "timezone": "Africa/Nairobi" },
+    "eventDates": {
+      "start": "2027-04-21",
+      "end": "2027-04-23",
+      "timezone": "Africa/Nairobi"
+    },
     "organiser": "Orbitline Events & Ushers Ltd",
-    "organiserUrl": "https://orbitlineushers.com"
+    "organiserUrl": "https://orbitlineushers.com",
+    "domainStatus": "purchase-in-progress",
+    "$domainNote": "Not yet acquired as of 2026-08-01. The canonical origin is the pages.dev URL until it lands; flip `domainAcquired` in src/_data/summit.js at cutover. See ADR-010."
   },
-
   "stack": {
     "generator": "eleventy",
     "generatorVersion": "^3",
@@ -25,18 +35,16 @@
     "clientJsFramework": "none",
     "cssStrategy": "custom-properties + design tokens, no utility framework",
     "cms": "none",
-    "$cmsNote": "Decap CMS deliberately deferred — it needs an OAuth proxy Worker and the client edits via the secretariat, not a browser. Revisit if the client asks for self-service editing. See ADR-006."
+    "$cmsNote": "Decap CMS deliberately deferred \u2014 it needs an OAuth proxy Worker and the client edits via the secretariat, not a browser. Revisit if the client asks for self-service editing. See ADR-006."
   },
-
   "repo": {
     "owner": "benkaranja",
     "name": "kenya-china-tea-summit",
-    "url": "",
+    "url": "https://github.com/benkaranja/kenya-china-tea-summit",
     "defaultBranch": "main",
     "buildBranch": "build",
     "visibility": "private"
   },
-
   "cloudflare": {
     "accountId": "ffb093fac540b9bef3cf3e57c0c60b76",
     "accountIdEnv": "CLOUDFLARE_ACCOUNT_ID",
@@ -47,57 +55,66 @@
     "buildCommand": "npm run build",
     "buildOutputDir": "public",
     "functionsDir": "functions",
-    "previewUrl": "",
-    "productionUrl": "",
+    "previewUrl": "https://kenya-china-tea-summit.pages.dev",
+    "productionUrl": "https://kenya-china-tea-summit.pages.dev",
     "d1": {
       "name": "kenya-china-tea-summit-db",
-      "databaseId": "",
+      "databaseId": "bfeb8ee1-55b6-4045-a449-458be5e6a783",
       "binding": "DB"
     },
     "cron": [],
     "$cronNote": "Cloudflare Pages Functions do NOT support cron triggers. The B4 queue-drain criterion is therefore re-scoped: leads are durable in D1 the moment they arrive, so nothing is lost when a send fails. A standalone drain Worker is only worth deploying if failed sends actually accumulate. See ADR-005."
   },
-
   "email": {
     "provider": "brevo",
-    "$providerOptions": ["brevo", "resend", "smtp"],
+    "$providerOptions": [
+      "brevo",
+      "resend",
+      "smtp"
+    ],
     "apiKeyEnv": "BREVO_API_KEY",
     "endpoint": "https://api.brevo.com/v3/smtp/email",
     "fromEmailEnv": "FROM_EMAIL",
     "fromNameEnv": "FROM_NAME",
     "contactEmailEnv": "CONTACT_EMAIL",
     "senderDomainVerified": false,
-    "$note": "senderDomainVerified must be true before B7 can pass. Brevo → Senders → Domains, DKIM + DMARC live on kenyachinateasummit.com."
+    "$note": "senderDomainVerified must be true before B7 can pass. Brevo \u2192 Senders \u2192 Domains, DKIM + DMARC live on kenyachinateasummit.com. BLOCKED on the domain purchase \u2014 see B-003."
   },
-
   "turnstile": {
     "siteKey": "",
     "secretKeyEnv": "TURNSTILE_SECRET_KEY",
     "$note": "siteKey is public and belongs in markup. Never ship 1x00000000000000000000AA."
   },
-
   "imagery": {
     "provider": "openrouter",
     "apiKeyEnv": "OPENROUTER_API_KEY",
     "model": "google/gemini-2.5-flash-image",
     "maxBytes": 204800,
     "heroMaxBytes": 153600,
-    "formats": ["avif", "webp"],
-    "$note": "Never generate images depicting the client's real people, premises, products, or events. No fabricated speaker portraits — speaker cards use a typographic placeholder until the client supplies real photographs."
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "$note": "Never generate images depicting the client's real people, premises, products, or events. No fabricated speaker portraits \u2014 speaker cards use a typographic placeholder until the client supplies real photographs."
   },
-
   "analytics": {
     "provider": "cloudflare-web-analytics",
-    "$providerOptions": ["cloudflare-web-analytics", "ga4", "none"],
+    "$providerOptions": [
+      "cloudflare-web-analytics",
+      "ga4",
+      "none"
+    ],
     "token": "",
     "consentRequired": false
   },
-
   "brand": {
     "source": "supplied",
-    "$sourceOptions": ["supplied", "derived"],
-    "logo": "brand_assets/logo-kenya-china-tea-summit.png",
-    "$logoNote": "Client supplied the logo in chat on 2026-08-01. Palette below was read off it. The BINARY IS NOT YET ON DISK — see BLOCKERS.md B-001. Required at brand_assets/ before D2 can ship a header, and before favicon/OG generation.",
+    "$sourceOptions": [
+      "supplied",
+      "derived"
+    ],
+    "logo": "brand_assets/logo-kenya-china-tea-summit-master.jpg",
+    "$logoNote": "Client supplied 2026-08-01, 5225x5225 JPEG on solid white. Emblem cropped to src/assets/img/emblem-{96,256}.png for header and favicon; full lockup at logo-600.jpg. A vector or transparent-background version is still wanted so the mark can sit on the dark footer \u2014 not blocking.",
     "tagline": "Connecting Tea, Cultures & Opportunities",
     "colors": {
       "brandGreenDeep": "#14401E",
@@ -111,27 +128,61 @@
       "surface": "#FFFFFF"
     },
     "$colorNotes": {
-      "text-safe": ["brandGreenDeep", "brandRed", "ink"],
-      "decorative-only": ["brandGreenLeaf", "wallTan", "mountainBlue"],
-      "why": "brandGreenLeaf is ~2.3:1 on white and must never carry text. brandRedBright is ~5.3:1 — large text and graphics only. Body copy uses ink; links and accents use brandRed; headings use brandGreenDeep."
+      "text-safe": [
+        "brandGreenDeep",
+        "brandRed",
+        "ink"
+      ],
+      "decorative-only": [
+        "brandGreenLeaf",
+        "wallTan",
+        "mountainBlue"
+      ],
+      "why": "brandGreenLeaf is ~2.3:1 on white and must never carry text. brandRedBright is ~5.3:1 \u2014 large text and graphics only. Body copy uses ink; links and accents use brandRed; headings use brandGreenDeep."
     },
     "fonts": {},
     "$fontNote": "Logo wordmark is a high-contrast Didone-style serif (KENYA/CHINA) over a wide-tracked serif (TEA SUMMIT). Pair a self-hosted serif display face for headings with a neutral sans for UI/body. Locked in D1.",
     "referenceSites": [],
     "antiReferences": [],
-    "toneWords": ["authoritative", "warm", "trade-serious", "pan-continental", "uncluttered"]
+    "toneWords": [
+      "authoritative",
+      "warm",
+      "trade-serious",
+      "pan-continental",
+      "uncluttered"
+    ]
   },
-
   "registration": {
     "mode": "expression-of-interest",
-    "$modeOptions": ["expression-of-interest", "eventbrite", "stripe-payment-links", "external-crm"],
-    "categories": ["Delegate", "Exhibitor", "Sponsor", "Government", "Media", "Student"],
+    "$modeOptions": [
+      "expression-of-interest",
+      "eventbrite",
+      "stripe-payment-links",
+      "external-crm"
+    ],
+    "categories": [
+      "Delegate",
+      "Exhibitor",
+      "Sponsor",
+      "Government",
+      "Media",
+      "Student"
+    ],
     "$note": "The client has not supplied ticket prices. No price, deadline or inclusion may be published until they do. The form captures intent into D1 and sends a Brevo confirmation. Swap in a ticketing embed at src/_includes/components/registration-embed.njk when pricing lands. See ADR-004."
   },
-
   "targets": {
-    "lighthouseMobile": { "performance": 95, "accessibility": 100, "bestPractices": 100, "seo": 100 },
-    "lighthouseDesktop": { "performance": 100, "accessibility": 100, "bestPractices": 100, "seo": 100 },
+    "lighthouseMobile": {
+      "performance": 95,
+      "accessibility": 100,
+      "bestPractices": 100,
+      "seo": 100
+    },
+    "lighthouseDesktop": {
+      "performance": 100,
+      "accessibility": 100,
+      "bestPractices": 100,
+      "seo": 100
+    },
     "axeViolations": 0,
     "htmlErrors": 0,
     "brokenLinks": 0,
@@ -139,16 +190,21 @@
     "maxJsBytes": 15360,
     "maxCssBytes": 30720
   },
-
   "loop": {
     "maxIterations": 40,
     "cadenceCron": "*/30 * * * *",
     "criteriaPerIteration": 3,
     "maxAttemptsBeforeBlock": 3
   },
-
   "protectedPaths": [
-    "assets-raw/", "briefs/", "notes/", "research/",
-    "client-docs/", "scratch/", ".env*", "*.local.*", "*.private.*"
+    "assets-raw/",
+    "briefs/",
+    "notes/",
+    "research/",
+    "client-docs/",
+    "scratch/",
+    ".env*",
+    "*.local.*",
+    "*.private.*"
   ]
 }
