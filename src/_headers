@@ -8,13 +8,16 @@
   Cross-Origin-Opener-Policy: same-origin
   X-Robots-Tag: all
 
-# Fingerprint-free filenames, so assets are revalidated rather than cached forever.
-# Revisit once a content hash is in the filename — then this becomes immutable.
+# CSS and JS filenames carry no content hash, so a max-age served returning
+# visitors a stale stylesheet against fresh HTML — caught in the first design
+# review, where the browser rendered the previous build's hero. no-cache still
+# caches; it just forces a revalidation, so the usual response is a cheap 304.
+# Move to immutable only once the filenames are fingerprinted.
 /css/*
-  Cache-Control: public, max-age=3600, must-revalidate
+  Cache-Control: no-cache
 
 /js/*
-  Cache-Control: public, max-age=3600, must-revalidate
+  Cache-Control: no-cache
 
 /img/*
   Cache-Control: public, max-age=604800

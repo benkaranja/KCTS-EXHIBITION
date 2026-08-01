@@ -224,3 +224,44 @@ that silently goes stale.
 - At cutover, pages.dev must 301 to the apex so the staging URL does not compete. That redirect is part of the cutover checklist in HANDOFF.md, not an afterthought.
 - HSTS ships **without** `preload` while on pages.dev. Preload is effectively irreversible and belongs on the real apex domain.
 - Brevo sender-domain verification (B-002) is now gated on the domain purchase, not on Ben finding an API key. Recorded as B-003.
+
+---
+
+## ADR-011 — Visual world: security print, via the impeccable direction roll
+
+**Date:** 2026-08-01 · **Status:** accepted (supersedes the hand-written first pass)
+
+**Decision.** Replace the initial visual system with a **security-print / bill-of-lading**
+world. Direction seed `14313fed`, persuade, grounded candidate 4 of 7. Full system
+recorded in `DESIGN.md`.
+
+**Why the first pass failed.** It was hand-written without running `impeccable` at
+all — tokens and stylesheet straight to disk, D1 marked in-progress, no direction
+derivation, no concept roll, no detector. The result was exactly what that process
+produces: a green-accented card grid with an eyebrow above the h1 and a
+system-font body. Ben's read — "boring and AI-generated" — was correct, and the
+cause was skipping the process, not taste.
+
+**Why this world.** The summit's mechanism *is* trade documentation. More
+importantly it solves the credibility problem named in `PRODUCT.md`: a
+first-edition summit with no prices, speakers or venue looks like vapourware, and
+`FACTS.md` forbids covering that with stock photography or invented statistics.
+Security-print grammar turns each gap into an unstamped endorsement field — the
+honest state reads as procedure rather than absence.
+
+**Challengers weighed and rejected** (fused before judging, on audience
+identification and product clarity): hand-bent neon circuit — reads nightlife,
+not trade. Coiled earth tower — materially strong, but says ceramics and craft.
+Night-flight instrument six-pack — good thematic hit on trust, but mapping six
+registration categories to six gauges is a forced conceit and dark aviation-tech
+reads startup. The category canon was offered as a standing exit and not taken.
+
+**Consequences.** `public/` imagery is now generated, not sourced: guilloche from
+hypotrochoid maths, vignettes from OpenRouter under a no-people/no-premises
+constraint. Three self-hosted faces replace the system stack. The card grid is
+gone entirely — the field pair is the structural unit. Contrast is measured by
+`scripts/check-contrast.js` in the build rather than asserted.
+
+**Process note for the next run:** run `impeccable` *before* writing any UI, not
+after a review. The direction roll exists to stop every run converging on the
+same safe default, and it cannot do that retroactively.

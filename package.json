@@ -3,15 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "Kenya-China Tea Summit 2027 — Nairobi, 21-23 April 2027. Eleventy static site on Cloudflare Pages.",
+  "description": "Kenya-China Tea Summit 2027 \u2014 Nairobi, 21-23 April 2027. Eleventy static site on Cloudflare Pages.",
   "scripts": {
-    "validate": "node scripts/validate-content.js",
+    "validate": "node scripts/validate-content.js && node scripts/check-contrast.js",
     "build": "npm run validate && eleventy",
     "dev": "eleventy --serve --port=8080",
-    "clean": "rm -rf public .cache"
+    "clean": "rm -rf public .cache",
+    "assets": "node scripts/make-guilloche.js"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^3.0.0"
+    "@11ty/eleventy": "^3.0.0",
+    "sharp": "^0.35.3"
   },
   "engines": {
     "node": ">=20"

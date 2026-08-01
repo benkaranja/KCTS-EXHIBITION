@@ -6,68 +6,190 @@ permalink: /index.html
 ---
 
 <section class="hero">
-  <div class="hero__inner wrap">
-    <p class="hero__eyebrow">{{ summit.dates.display }} · {{ summit.location.city }}, {{ summit.location.country }}</p>
-    <h1 class="hero__title">The premier tea trade, investment and innovation forum connecting Africa and China</h1>
-    <p class="hero__lede">{{ summit.theme }}</p>
-    <p class="hero__actions">
-      <a class="btn btn--primary btn--lg" href="/registration/">Register your interest</a>
-      <a class="btn btn--ghost btn--lg" href="/programme/">See the three-day programme</a>
-    </p>
-    <p class="hero__note">Registration opens in six categories, from delegate to exhibitor. Prices and deadlines are announced closer to the summit.</p>
+  <div class="wrap">
+    <div class="hero__masthead">
+      <p class="hero__docname">Summit Particulars &middot; First Edition</p>
+      <p class="hero__serial">No. KCTS/2027/0001</p>
+    </div>
+
+    <div class="hero__grid">
+      <div>
+        <h1>The premier tea trade, investment and innovation forum connecting Africa and China</h1>
+        <p class="hero__theme">{{ summit.theme }}</p>
+
+        <dl class="particulars">
+          <div class="field">
+            <dt class="label">Convened at</dt>
+            <dd class="value">{{ summit.location.city }}, {{ summit.location.country }}</dd>
+          </div>
+          <div class="field">
+            <dt class="label">Dated</dt>
+            <dd class="value"><time datetime="{{ summit.dates.start }}/{{ summit.dates.end }}">{{ summit.dates.display }}</time></dd>
+          </div>
+          <div class="field">
+            <dt class="label">Venue</dt>
+            <dd class="value"><span class="value--pending">to be entered</span></dd>
+          </div>
+          <div class="field">
+            <dt class="label">Issued by</dt>
+            <dd class="value">{{ summit.organiser.legalEntity }}</dd>
+          </div>
+        </dl>
+
+        <p class="hero__body">Three days that put Kenyan growers, processors and exporters in the same rooms as Chinese buyers, investors and technology providers. Trade on day one, capital and innovation on day two, the expo floor on day three.</p>
+      </div>
+
+      <div class="issue">
+        <div class="issue__head">
+          <h2>Register your interest</h2>
+          <span class="serial">Form&nbsp;A</span>
+        </div>
+        <p class="issue__note">Six categories, from delegate to exhibitor. Registration is open as an expression of interest — fees, deadlines and inclusions are set by the secretariat and published here once confirmed.</p>
+        <a class="btn btn--primary btn--block" href="/registration/">Register interest</a>
+        <hr class="rule">
+        <p class="issue__note">Exhibiting or partnering instead?</p>
+        <a class="btn btn--ghost btn--block" href="/sponsorship/">Partnership enquiry</a>
+      </div>
+    </div>
   </div>
 </section>
 
-<section class="band wrap">
-  <h2 class="section-title">What this summit is</h2>
-  <p class="lede">A landmark international platform designed to deepen trade, investment, innovation and cultural cooperation between Kenya and China within the tea value chain.</p>
-  <p><a class="link-arrow" href="/about/">More about the summit</a></p>
+<section class="section">
+  <div class="wrap">
+    <div class="figure-pair">
+      <div>
+        <div class="section-head">
+          <h2>What is being convened</h2>
+        </div>
+        <p>A landmark international platform designed to deepen trade, investment, innovation and cultural cooperation between Kenya and China within the tea value chain.</p>
+        <p>Kenya grows the tea. China drinks more of it than anywhere on earth. Between those two facts sits a chain of buyers, processors, financiers, freight operators and regulators who rarely occupy the same building. For three days in April 2027, they will.</p>
+        <p><a href="/about/">More about the summit</a></p>
+      </div>
+      <img class="vignette" src="/img/vignettes/tea-branch.webp" width="841" height="970"
+           alt="Steel-engraving of a camellia sinensis branch with two leaves and a bud."
+           loading="lazy" decoding="async">
+    </div>
+  </div>
 </section>
 
-<section class="band band--sunk">
+<section class="section section--tint">
   <div class="wrap">
-    <h2 class="section-title">Six objectives</h2>
-    <ul class="cards" role="list">
+    <div class="section-head">
+      <h2>Six objectives</h2>
+      <p>The terms this summit is convened under.</p>
+    </div>
+    <ol class="clauses">
       {% for o in summit.objectives %}
-      <li class="card">
-        <h3 class="card__title">{{ o.title }}</h3>
-        <p class="card__body">{{ o.body }}</p>
+      <li class="clause">
+        <div>
+          <h3>{{ o.title }}</h3>
+          <p>{{ o.body }}</p>
+        </div>
+      </li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <table class="manifest">
+      <caption class="section-head">
+        <h2>Three days</h2>
+        <p>Session times, rooms and speakers are added to this manifest as they are confirmed.</p>
+      </caption>
+      <thead>
+        <tr>
+          <th scope="col">Day</th>
+          <th scope="col">Proceedings</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for d in summit.programme %}
+        <tr>
+          <td>{{ d.day }} &middot; <time datetime="{{ d.date }}">{{ d.date | readableDate }}</time></td>
+          <td>
+            <h3>{{ d.title }}</h3>
+            <p>{{ d.summary }}</p>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <p><a href="/programme/">Full programme</a></p>
+  </div>
+</section>
+
+<section class="section section--ink">
+  <div class="wrap">
+    <div class="figure-pair figure-pair--flip">
+      <div>
+        <div class="section-head">
+          <h2>The expo floor</h2>
+        </div>
+        <p>The International Tea &amp; Technology Expo runs alongside the summit: tea products, processing equipment, agricultural technologies and logistics services, shown to the people who buy them.</p>
+        <p>Stand allocation opens with registration. Structured B2B matchmaking runs through day two, so an exhibitor's meetings are booked before they land.</p>
+        <p><a href="/exhibition/">Exhibition and stands</a></p>
+      </div>
+      <img class="vignette" src="/img/vignettes/tea-chest.webp" width="900" height="688"
+           alt="Steel-engraving of a plain plywood shipping chest with metal corner protectors and banding."
+           loading="lazy" decoding="async">
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Six ways to attend</h2>
+      <p>Each category is registered separately. Fees and inclusions are published once the secretariat confirms them.</p>
+    </div>
+    <ul class="classes">
+      {% for c in summit.registrationCategories %}
+      <li class="class-row">
+        <span class="class-row__code">Class {{ loop.index }}</span>
+        <span class="class-row__name">{{ c.name }}</span>
+        <p>{{ c.blurb }}</p>
       </li>
       {% endfor %}
     </ul>
   </div>
 </section>
 
-<section class="band wrap">
-  <h2 class="section-title">Three days</h2>
-  <ol class="days" role="list">
-    {% for d in summit.programme %}
-    <li class="day">
-      <p class="day__label">Day {{ d.day }} · <time datetime="{{ d.date }}">{{ d.date | readableDate }}</time></p>
-      <h3 class="day__title">{{ d.title }}</h3>
-      <p class="day__summary">{{ d.summary }}</p>
-    </li>
-    {% endfor %}
-  </ol>
-  <p><a class="link-arrow" href="/programme/">Full programme</a></p>
-</section>
-
-<section class="band band--invert">
+<section class="section section--tint">
   <div class="wrap">
-    <h2 class="section-title">Who comes</h2>
-    <ul class="tags" role="list">
-      {% for a in summit.audiences %}
-      <li class="tag">{{ a }}</li>
+    <div class="section-head">
+      <h2>Partnership</h2>
+      <p>Five tiers, each an endorsement on the summit's record. Benefits and rates are issued by the secretariat on enquiry.</p>
+    </div>
+    <ul class="endorsements">
+      {% for t in summit.sponsorshipTiers %}
+      <li class="endorsement">
+        <span class="endorsement__tier">{{ t.name }}</span>
+        <span class="endorsement__line">Unallocated</span>
+      </li>
       {% endfor %}
     </ul>
+    <p class="section-action"><a class="btn btn--primary" href="/sponsorship/">Partnership enquiry</a></p>
   </div>
 </section>
 
-<section class="band wrap cta-band">
-  <h2 class="section-title">Take part</h2>
-  <p class="lede">Registration, exhibition stands and partnership packages are all open for expressions of interest. Tell us which one fits and the secretariat will come back to you.</p>
-  <p class="hero__actions">
-    <a class="btn btn--primary btn--lg" href="/registration/">Register your interest</a>
-    <a class="btn btn--ghost btn--lg" href="/sponsorship/">Partner with the summit</a>
-  </p>
+<section class="section section--ink">
+  <div class="wrap">
+    <div class="figure-pair">
+      <div>
+        <div class="section-head">
+          <h2>Coming to Nairobi</h2>
+        </div>
+        <p>The secretariat coordinates flights, hotel reservations, tea plantation tours and safari extensions for delegations. Details are published as arrangements are confirmed.</p>
+        <p><a href="/travel/">Travel and stay</a></p>
+        <div class="seal" role="img" aria-label="Registration open, first edition, twenty twenty-seven">
+          <span>Registration<br>Open<br>MMXXVII</span>
+        </div>
+      </div>
+      <img class="vignette" src="/img/vignettes/mount-kenya.webp" width="899" height="628"
+           alt="Steel-engraving of a glaciated equatorial mountain rising above cloud."
+           loading="lazy" decoding="async">
+    </div>
+  </div>
 </section>

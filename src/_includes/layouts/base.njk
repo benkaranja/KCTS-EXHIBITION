@@ -14,20 +14,22 @@
 <meta property="og:description" content="{{ description }}">
 <meta property="og:url" content="{{ page.url | absoluteUrl }}">
 <meta property="og:locale" content="en_KE">
-<meta property="og:image" content="{{ '/img/og-default.png' | absoluteUrl }}">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
+<meta property="og:image" content="{{ '/img/logo-600.jpg' | absoluteUrl }}">
 <meta name="twitter:card" content="summary_large_image">
 
 <link rel="icon" href="/img/emblem-96.png" type="image/png">
 <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+
+{# The two faces that render the first viewport. Preloaded so the masthead and
+   the engraved h1 never swap; Courier and the heavier Archivo weights can. #}
+<link rel="preload" href="/fonts/libre-caslon-display-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/archivo-narrow-700.woff2" as="font" type="font/woff2" crossorigin>
+
 <link rel="stylesheet" href="/css/tokens.css">
 <link rel="stylesheet" href="/css/style.css">
 
 {% block head %}{% endblock %}
 
-{# Event schema. Only confirmed facts appear here — an incomplete Event is
-   valid; an invented location is a lie that Google will surface. #}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -58,14 +60,41 @@
 </head>
 
 <body>
+<!--
+DIRECTION CONTRACT · seed 14313fed · persuade · grounded candidate 4 of 7
+
+THESIS: This summit's mechanism is trade documentation — the paperwork that moves
+tea from Kericho to Fujian. The site IS that document. It refuses the conference
+template (photo hero, countdown, speaker grid, sponsor wall) and its cream-editorial
+opposite.
+
+OWN-WORLD: Security print. Intaglio green ground owning whole regions, green-grey
+safety-tint stock (never cream), oxblood reserved for seals and endorsements only,
+canary and salmon carbon plies. Generated guilloche rosette and engine-turned rules.
+Libre Caslon Display engraved, Archivo Narrow field labels, Courier Prime typed data.
+Steel-engraving vignettes, multiplied onto the stock.
+
+STORY: A buyer weighing an unfamiliar first-edition summit sees a document already
+in progress, reads its particulars, and registers — which issues them a numbered
+entry rather than selling them a ticket.
+
+FIRST VIEWPORT: Full-bleed intaglio ground, rosette bleeding off the right edge.
+Masthead rule with document name and serial. Engraved h1 left; particulars beneath
+as filled fields, unknowns as dashed unstamped boxes. Issuing panel right, on light
+stock, carrying the primary action.
+
+FORM: Bill of lading / trade certificate. Ranked 4 of 7; assigned by the roll.
+
+FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md
+-->
 <a class="skip-link" href="#main">Skip to main content</a>
 
 <header class="site-header">
   <a class="site-header__brand" href="/" aria-label="{{ summit.name }} — home">
     <img class="brand-emblem" src="/img/emblem-96.png" srcset="/img/emblem-96.png 96w, /img/emblem-256.png 256w"
-         sizes="52px" width="96" height="96" alt="" decoding="async">
+         sizes="44px" width="96" height="96" alt="" decoding="async">
     <span class="brand-lockup">
-      <span class="brand-lockup__title"><b>Kenya</b><i>/</i><b>China</b></span>
+      <span class="brand-lockup__title">Kenya&#8202;/&#8202;China</span>
       <span class="brand-lockup__sub">Tea Summit</span>
     </span>
   </a>
@@ -104,9 +133,9 @@
   </div>
 
   <div class="site-footer__base">
-    <p>{{ summit.name }} · {{ summit.dates.display }} · {{ summit.location.city }}, {{ summit.location.country }}</p>
-    <p>Organised by {{ summit.organiser.name }}, {{ summit.organiser.legalEntity }}.</p>
-    <p><small>&copy; {{ buildYear }} {{ summit.organiser.legalEntity }}. All rights reserved.</small></p>
+    <p>{{ summit.name }} &middot; {{ summit.dates.display }} &middot; {{ summit.location.city }}, {{ summit.location.country }}</p>
+    <p>Issued by {{ summit.organiser.name }}, {{ summit.organiser.legalEntity }}.</p>
+    <p>&copy; {{ buildYear }} {{ summit.organiser.legalEntity }}. All rights reserved.</p>
   </div>
 </footer>
 

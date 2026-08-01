@@ -1,108 +1,140 @@
 /* Design tokens — Kenya-China Tea Summit 2027
+ * World: security print / bill of lading. See the direction contract in base.njk.
  *
- * Every colour is read off the client logo (ADR-002). This is the ONLY file in
- * the project permitted to contain a hex literal; everything else references a
- * custom property. `verify.sh tokens` enforces that.
+ * This is the ONLY file permitted a hex literal.
  *
- * Contrast, measured against --surface (#FFFFFF):
- *   --c-ink          #111111   18.9:1  body text
- *   --c-green-deep   #14401E   10.4:1  headings, primary button background
- *   --c-red          #B4131C    7.0:1  links, accents, small text  [AA/AAA]
- *   --c-red-bright   #D42027    5.3:1  large text + graphics ONLY  [AA large]
- *   --c-green-mid    #2E7D32    4.6:1  small text, just clears AA
- *   --c-green-leaf   #7CB342    2.3:1  DECORATIVE ONLY — never text
- *   --c-wall-tan     #C9B18C    1.9:1  DECORATIVE ONLY — never text
- *   --c-mountain     #8FA9BE    2.6:1  DECORATIVE ONLY — never text
+ * Colour strategy: COMMITTED. Intaglio green owns whole regions as ground, not
+ * as an accent scattered over white. The light surfaces are a green-grey SAFETY
+ * TINT — the stock share certificates and bills of lading are actually printed
+ * on. Deliberately not cream, ivory or parchment: those are the warm-paper
+ * default, and this document world's real colour range is cooler and harder.
+ *
+ * Carbon-copy plies (canary, salmon) are the duplicate/triplicate sheets and
+ * carry accent duty. Oxblood is reserved for seals, stamps and endorsements —
+ * the marks of authority — so it never becomes generic "accent red".
+ *
+ * Every ratio below is measured by scripts/check-contrast.js, not estimated.
  */
 
 :root {
-  /* --- brand palette ------------------------------------------------- */
-  --c-green-deep: #14401e;
-  --c-green-mid: #2e7d32;
-  --c-green-leaf: #7cb342;
-  --c-red: #b4131c;
-  --c-red-bright: #d42027;
-  --c-ink: #111111;
-  --c-wall-tan: #c9b18c;
-  --c-mountain: #8fa9be;
-  --c-surface: #ffffff;
+  /* --- inks: what the engraver puts on the stock ---------------------- */
+  --c-ink: #0f2e16;          /* deepest intaglio, body text                */
+  --c-ink-2: #14401e;        /* brand deep green, ground for drenched bands */
+  --c-engrave: #2e7d32;      /* mid green, guilloche line work             */
+  --c-seal: #a5111a;         /* oxblood — stamps, seals, endorsements only  */
+  --c-seal-bright: #d42027;  /* cancellation ink, large marks only          */
 
-  /* --- derived neutrals ---------------------------------------------- */
-  --c-ink-muted: #4a4f4b;      /*  8.4:1 — secondary text            */
-  --c-rule: #dfe3e0;           /*  borders and separators            */
-  --c-surface-sunk: #f5f7f5;   /*  section banding                   */
-  --c-surface-deep: #0e2a15;   /*  inverted sections; white on it is 14.6:1 */
+  /* --- stock: what it is printed on ----------------------------------- */
+  --c-paper: #f3f6ef;        /* lightest safety tint, reading surfaces      */
+  --c-tint: #dfe7d9;         /* safety tint, document panels               */
+  --c-tint-deep: #c3d1bc;    /* heavier tint, rules and inset fields        */
 
-  /* --- semantic roles ------------------------------------------------ */
+  /* --- carbon plies: the duplicate and triplicate copies ---------------- */
+  --c-ply-canary: #e0b13a;
+  --c-ply-salmon: #cf8b83;
+
+  /* --- semantic roles --------------------------------------------------- */
   --c-text: var(--c-ink);
-  --c-text-muted: var(--c-ink-muted);
-  --c-heading: var(--c-green-deep);
-  --c-link: var(--c-red);
-  --c-link-hover: var(--c-green-deep);
-  --c-accent: var(--c-red);
-  --c-focus: var(--c-red-bright);
+  --c-text-muted: #3c5742;   /* tinted from the ground hue, never grey       */
+  --c-text-on-ink: var(--c-paper);
+  --c-text-on-ink-muted: #b9cbb4;
+  --c-heading: var(--c-ink);
+  --c-link: var(--c-seal);
+  --c-rule: #a8bba1;
+  --c-focus: var(--c-seal-bright);
 
-  /* --- type ----------------------------------------------------------- */
-  /* Self-hosted only. Zero requests to fonts.googleapis.com. */
-  --font-display: "Kenya Serif", ui-serif, Georgia, "Times New Roman", serif;
-  --font-body: "Kenya Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  /* --- type -------------------------------------------------------------
+   * Caslon is the face cut for official and engraved documents; Archivo Narrow
+   * is the condensed grotesque of a printed form's field labels; Courier is
+   * literally what was typed into these forms. Monospace here is data and
+   * measurement, not a technical costume.
+   */
+  --font-engrave: "Libre Caslon Display", ui-serif, Georgia, serif;
+  --font-label: "Archivo Narrow", ui-sans-serif, system-ui, sans-serif;
+  --font-data: "Courier Prime", ui-monospace, "Courier New", monospace;
 
-  /* Fluid scale, 360px → 1280px viewport. */
-  --step--1: clamp(0.83rem, 0.80rem + 0.16vw, 0.94rem);
-  --step-0: clamp(1rem, 0.96rem + 0.22vw, 1.13rem);
-  --step-1: clamp(1.2rem, 1.13rem + 0.35vw, 1.41rem);
-  --step-2: clamp(1.44rem, 1.33rem + 0.55vw, 1.76rem);
-  --step-3: clamp(1.73rem, 1.55rem + 0.83vw, 2.2rem);
-  --step-4: clamp(2.07rem, 1.80rem + 1.22vw, 2.75rem);
-  --step-5: clamp(2.49rem, 2.08rem + 1.79vw, 3.43rem);
-  --step-6: clamp(2.99rem, 2.38rem + 2.57vw, 4.29rem);
+  /* Display ceiling is 6rem per the craft floor; the hero sits just under. */
+  --step--2: clamp(0.69rem, 0.67rem + 0.09vw, 0.75rem);
+  --step--1: clamp(0.83rem, 0.80rem + 0.14vw, 0.94rem);
+  --step-0: clamp(1rem, 0.97rem + 0.17vw, 1.11rem);
+  --step-1: clamp(1.2rem, 1.14rem + 0.29vw, 1.4rem);
+  --step-2: clamp(1.44rem, 1.34rem + 0.47vw, 1.76rem);
+  --step-3: clamp(1.73rem, 1.57rem + 0.75vw, 2.22rem);
+  --step-4: clamp(2.07rem, 1.83rem + 1.16vw, 2.8rem);
+  --step-5: clamp(2.49rem, 2.12rem + 1.77vw, 3.53rem);
+  --step-6: clamp(2.99rem, 2.44rem + 2.63vw, 4.44rem);
 
-  --lh-tight: 1.1;
-  --lh-heading: 1.2;
-  --lh-body: 1.6;
-  --measure: 68ch;
+  --lh-tight: 1.04;
+  --lh-heading: 1.14;
+  --lh-body: 1.62;
+  --measure: 68ch;           /* craft floor: 65-75ch */
 
-  /* --- space (1.5 ratio from 0.25rem) --------------------------------- */
+  /* Form labels are tracked open, the way stamped and stencilled labels are. */
+  --track-label: 0.16em;
+  --track-stamp: 0.28em;
+
+  /* --- space: a document's own rhythm ---------------------------------- */
   --sp-3xs: 0.25rem;
   --sp-2xs: 0.5rem;
   --sp-xs: 0.75rem;
   --sp-s: 1rem;
   --sp-m: 1.5rem;
   --sp-l: 2.25rem;
-  --sp-xl: 3.375rem;
-  --sp-2xl: 5rem;
-  --sp-3xl: 7.5rem;
+  --sp-xl: 3.5rem;
+  --sp-2xl: 5.5rem;
+  --sp-3xl: 8rem;
 
-  /* --- shape ---------------------------------------------------------- */
-  --radius-s: 3px;
-  --radius-m: 6px;
-  --radius-l: 12px;
-  --radius-pill: 999px;
+  /* --- shape: documents have corners, not pills ------------------------ */
+  --radius-s: 2px;
+  --radius-m: 3px;
 
-  /* Shadows use the brand green rather than neutral black so elevation reads
-     as part of the palette instead of grey haze over it. */
-  --shadow-s: 0 1px 2px rgb(20 64 30 / 0.08);
-  --shadow-m: 0 4px 12px rgb(20 64 30 / 0.10);
-  --shadow-l: 0 12px 32px rgb(20 64 30 / 0.14);
+  /* Depth reads as a sheet lifted off a desk: real offset, real blur. */
+  --shadow-sheet: 0 2px 4px rgb(15 46 22 / 0.10), 0 12px 28px -8px rgb(15 46 22 / 0.18);
+  --shadow-lift: 0 4px 8px rgb(15 46 22 / 0.12), 0 24px 48px -12px rgb(15 46 22 / 0.24);
 
-  /* --- layout --------------------------------------------------------- */
-  --wrap: 72rem;
-  --wrap-narrow: 44rem;
-  --gutter: clamp(1rem, 4vw, 2.5rem);
+  /* --- layout ----------------------------------------------------------- */
+  --wrap: 74rem;
+  --wrap-narrow: 46rem;
+  --gutter: clamp(1.1rem, 4vw, 3rem);
 
-  /* --- motion --------------------------------------------------------- */
-  --ease: cubic-bezier(0.2, 0, 0.1, 1);
-  --dur-fast: 120ms;
-  --dur: 220ms;
-  --dur-slow: 400ms;
+  /* --- motion ----------------------------------------------------------- */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-fast: 140ms;
+  --dur: 280ms;
+  --dur-slow: 620ms;
 }
 
-/* Honour the OS setting rather than animating regardless. Paired with the
-   per-component rule in style.css; this is the global backstop. */
 @media (prefers-reduced-motion: reduce) {
   :root {
     --dur-fast: 1ms;
     --dur: 1ms;
     --dur-slow: 1ms;
   }
+}
+
+/* --- self-hosted faces. Zero requests to any font CDN. ------------------ */
+@font-face {
+  font-family: "Libre Caslon Display";
+  src: url("/fonts/libre-caslon-display-400.woff2") format("woff2");
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Archivo Narrow";
+  src: url("/fonts/archivo-narrow-400.woff2") format("woff2");
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Archivo Narrow";
+  src: url("/fonts/archivo-narrow-600.woff2") format("woff2");
+  font-weight: 600; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Archivo Narrow";
+  src: url("/fonts/archivo-narrow-700.woff2") format("woff2");
+  font-weight: 700; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Courier Prime";
+  src: url("/fonts/courier-prime-400.woff2") format("woff2");
+  font-weight: 400; font-style: normal; font-display: swap;
 }
