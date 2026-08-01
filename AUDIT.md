@@ -87,14 +87,7 @@ copyright line: © 2026 Orbitline Events & Ushers Ltd. All rights reserved.
 
 Both would have failed the C5/V4 gates later. Recorded rather than quietly patched.
 
-### Not yet run
-
-`verify.sh` has not been run at all this iteration — every one of its checks
-targets a deployed preview URL, and no Pages project exists yet. `perf`, `a11y`,
-`html`, `links`, `headers`, `form` and `console` all remain unmeasured. No
-Lighthouse, axe or html-validate number has been produced or claimed.
-
-### F1, F3, F4 — infrastructure · PASS
+### F1–F5 — infrastructure · PASS
 
 ```
 gh repo create benkaranja/kenya-china-tea-summit --private   → created
@@ -139,3 +132,12 @@ referrer-policy              strict-origin-when-cross-origin (Pages default)
 ```
 
 Four of six missing. Not a pass, and not claimed as one.
+
+### Not yet run — nothing below has been measured or claimed
+
+`verify.sh` has not been invoked this iteration. `perf` (Lighthouse), `a11y`
+(axe), `html` (html-validate), `links`, `form` and `console` are all unmeasured.
+No Lighthouse, axe or html-validate number appears anywhere in this project.
+
+The site is one page. The remaining 12 launch pages, the security headers, the
+form backend and the imagery pipeline do not exist yet.

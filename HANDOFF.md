@@ -11,7 +11,7 @@ Cold-start brief. Assume you know nothing about this project.
 A marketing and registration site for a three-day international tea trade summit
 in Nairobi, **21–23 April 2027**. Client is the Kenya-China Tea Summit
 Secretariat (Orbitline Events & Ushers Ltd). Target domain
-`kenyachinateasummit.com`.
+`kenyachinateasummit.com`; **live now at https://kenya-china-tea-summit.pages.dev**.
 
 The summit is ~9 months out and the client has supplied an outline, not content.
 Prices, speakers, venue and contact details do **not exist yet**. The site's job
@@ -63,8 +63,9 @@ npm run validate # content integrity only
 - Client logo placed, emblem cropped for header/favicon.
 - CSS 13.8 KB of a 30 KB budget; JS 836 B of 15 KB.
 
-**Next up:** GitHub repo + Pages project + D1 (F1–F4), then SEO research and the
-remaining 12 pages (C2–C4), then design build-out (D1–D5).
+**Next up:** SEO research (C2), page map (C3), then the remaining 12 launch pages
+with humanized copy (C4), design build-out (D2–D5), security headers (S1), and the
+form backend once credentials land (B1–B7).
 
 **Known deferred, not forgotten:**
 - No AVIF/WebP yet — `sips` on this macOS can't emit them. D4 needs `@11ty/eleventy-img`. `emblem-256.png` is 98 KB and needs converting before the perf gate.
