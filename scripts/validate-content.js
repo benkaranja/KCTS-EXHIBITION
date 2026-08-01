@@ -149,6 +149,33 @@ for (const sp of sponsors) {
   if (!sp.data.tier) warnings.push(`${sp.file}: no "tier" set, will sort last`);
 }
 
+// --- rule 7: every page's front matter must actually parse -----------------
+// A single unquoted "key: value: more" aborts Eleventy mid-run: the pages
+// already written stay on disk, the rest are silently skipped, and the build
+// still looks like it did something. Caught exactly that on terms.njk.
+function checkFrontMatter(dir) {
+  if (!existsSync(dir)) return;
+  for (const f of readdirSync(dir)) {
+    const file = join(dir, f);
+    if (!/\.(njk|md|html)$/.test(f)) continue;
+    const raw = readFileSync(file, "utf8");
+    if (!raw.startsWith("---")) continue;
+    const body = raw.slice(3, raw.indexOf("\n---", 3));
+    for (const [i, line] of body.split(/\r?\n/).entries()) {
+      const m = line.match(/^([A-Za-z0-9_-]+):\s+(.*)$/);
+      if (!m) continue;
+      const val = m[2];
+      // Unquoted scalar containing ": " is the failure shape.
+      const quoted = /^["'[{>|]/.test(val) || val === "";
+      if (!quoted && /:\s/.test(val)) {
+        errors.push(`${file}:${i + 2}: front matter "${m[1]}" has an unquoted ": " — YAML will reject it. Wrap the value in quotes.`);
+      }
+    }
+  }
+}
+checkFrontMatter(join(SRC, "pages"));
+checkFrontMatter(SRC);
+
 // --- report ----------------------------------------------------------------
 const counts = `${speakers.length} speakers, ${sessions.length} sessions, ${sponsors.length} sponsors`;
 

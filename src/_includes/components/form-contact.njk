@@ -1,0 +1,46 @@
+{# General enquiry form. Same handler, same D1 ledger, different form_type. #}
+<form class="form sheet" id="contact-form" method="post" action="/api/contact" novalidate>
+  <div class="form__head">
+    <h2>General enquiry</h2>
+    <span class="serial">Form&nbsp;C</span>
+  </div>
+
+  <div class="form__grid">
+    <p class="form__row">
+      <label class="label" for="c-name">Full name <span class="req" aria-hidden="true">*</span></label>
+      <input class="input" id="c-name" name="name" type="text" required autocomplete="name" maxlength="120">
+    </p>
+    <p class="form__row">
+      <label class="label" for="c-email">Email <span class="req" aria-hidden="true">*</span></label>
+      <input class="input" id="c-email" name="email" type="email" required autocomplete="email" maxlength="180">
+    </p>
+    <p class="form__row">
+      <label class="label" for="c-org">Organisation</label>
+      <input class="input" id="c-org" name="organisation" type="text" autocomplete="organization" maxlength="160">
+    </p>
+    <p class="form__row">
+      <label class="label" for="c-country">Country</label>
+      <input class="input" id="c-country" name="country" type="text" autocomplete="country-name" maxlength="80">
+    </p>
+  </div>
+
+  <p class="form__row form__row--full">
+    <label class="label" for="c-message">Your message <span class="req" aria-hidden="true">*</span></label>
+    <textarea class="input" id="c-message" name="message" rows="6" required maxlength="4000"></textarea>
+  </p>
+
+  <div class="hp" aria-hidden="true">
+    <label for="c-company-url">Company website</label>
+    <input id="c-company-url" name="companyUrl" type="text" tabindex="-1" autocomplete="off">
+  </div>
+  <input type="hidden" name="formType" value="contact">
+  <input type="hidden" name="renderedAt" value="">
+
+  {% if turnstileSiteKey %}
+  <div class="cf-turnstile" data-sitekey="{{ turnstileSiteKey }}" data-theme="light"></div>
+  {% endif %}
+
+  <button class="btn btn--primary btn--block" type="submit">Send message</button>
+  <p class="form__status" id="contact-form-status" role="status" aria-live="polite"></p>
+  <p class="form__legal">Your message goes to the summit secretariat and nowhere else. See our <a href="/privacy/">privacy notice</a>.</p>
+</form>

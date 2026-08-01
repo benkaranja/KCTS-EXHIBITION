@@ -6,7 +6,7 @@ html { -webkit-text-size-adjust: 100%; }
 
 body {
   margin: 0;
-  font-family: var(--font-label);
+  font-family: var(--font-ui);
   font-size: var(--step-0);
   line-height: var(--lh-body);
   color: var(--c-text);
@@ -20,18 +20,23 @@ body {
   );
 }
 
+/* Bricolage Grotesque is a variable grotesque, not a Didone: display weight has
+   to come from the weight axis, and it wants slight width compression at large
+   sizes. 400 read limp when this replaced Caslon. Tracking floor is -0.04em
+   (craft floor); the h1 sits at -0.03em. */
 h1, h2, h3 {
-  font-family: var(--font-engrave);
-  font-weight: 400;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-stretch: 92%;
   line-height: var(--lh-heading);
   color: var(--c-heading);
   margin: 0 0 var(--sp-s);
   text-wrap: balance;
-  letter-spacing: -0.012em;
+  letter-spacing: -0.022em;
 }
-h1 { font-size: var(--step-6); line-height: var(--lh-tight); }
-h2 { font-size: var(--step-4); }
-h3 { font-size: var(--step-2); }
+h1 { font-size: var(--step-6); line-height: var(--lh-tight); letter-spacing: -0.03em; }
+h2 { font-size: var(--step-4); letter-spacing: -0.026em; }
+h3 { font-size: var(--step-2); font-weight: 600; letter-spacing: -0.018em; }
 
 p { margin: 0 0 var(--sp-s); max-width: var(--measure); }
 img, svg { max-width: 100%; height: auto; }
@@ -50,7 +55,7 @@ a:hover { text-decoration-thickness: 2px; }
   position: absolute; left: var(--sp-s); top: -4rem; z-index: 100;
   padding: var(--sp-2xs) var(--sp-s);
   background: var(--c-ink-2); color: var(--c-text-on-ink);
-  font-family: var(--font-label); text-decoration: none;
+  font-family: var(--font-ui); text-decoration: none;
   transition: top var(--dur) var(--ease-out);
 }
 .skip-link:focus { top: 0; }
@@ -63,7 +68,7 @@ a:hover { text-decoration-thickness: 2px; }
 /* Form-field label: tracked condensed caps, the way a printed form labels its
    boxes. Never used for emphasis — only to name a field. */
 .label {
-  font-family: var(--font-label);
+  font-family: var(--font-ui);
   font-size: var(--step--2);
   font-weight: 700;
   letter-spacing: var(--track-label);
@@ -136,7 +141,7 @@ a:hover { text-decoration-thickness: 2px; }
   border: 2px solid var(--c-seal);
   border-radius: 50%;
   color: var(--c-seal);
-  font-family: var(--font-label);
+  font-family: var(--font-ui);
   font-size: var(--step--2);
   font-weight: 700;
   letter-spacing: var(--track-label);
@@ -173,13 +178,13 @@ a:hover { text-decoration-thickness: 2px; }
 }
 .brand-lockup { display: grid; line-height: 1; }
 .brand-lockup__title {
-  font-family: var(--font-engrave);
+  font-family: var(--font-display);
   font-size: var(--step-1);
   color: var(--c-text-on-ink);
   letter-spacing: 0.01em;
 }
 .brand-lockup__sub {
-  font-family: var(--font-label);
+  font-family: var(--font-ui);
   font-size: var(--step--2); font-weight: 600;
   letter-spacing: var(--track-stamp);
   text-transform: uppercase;
@@ -189,7 +194,7 @@ a:hover { text-decoration-thickness: 2px; }
 
 .site-nav__list { display: flex; gap: var(--sp-m); list-style: none; margin: 0; padding: 0; }
 .site-nav__list a {
-  font-family: var(--font-label);
+  font-family: var(--font-ui);
   font-size: var(--step--1);
   font-weight: 600;
   letter-spacing: 0.06em;
@@ -252,7 +257,7 @@ a:hover { text-decoration-thickness: 2px; }
   margin-bottom: var(--sp-l);
 }
 .hero__docname {
-  font-family: var(--font-label);
+  font-family: var(--font-ui);
   font-size: var(--step--1); font-weight: 700;
   letter-spacing: var(--track-stamp); text-transform: uppercase;
   color: var(--c-ply-canary); margin: 0;
@@ -261,7 +266,7 @@ a:hover { text-decoration-thickness: 2px; }
 
 .hero h1 { color: var(--c-text-on-ink); max-width: 15ch; margin-bottom: var(--sp-m); }
 .hero__theme {
-  font-family: var(--font-engrave);
+  font-family: var(--font-display);
   font-size: var(--step-2);
   line-height: var(--lh-heading);
   color: var(--c-ply-canary);
@@ -300,7 +305,7 @@ a:hover { text-decoration-thickness: 2px; }
   display: inline-flex; align-items: center; justify-content: center;
   gap: var(--sp-2xs);
   min-height: 48px; padding: var(--sp-2xs) var(--sp-m);
-  font-family: var(--font-label);
+  font-family: var(--font-ui);
   font-size: var(--step--1); font-weight: 700;
   letter-spacing: var(--track-label); text-transform: uppercase;
   text-decoration: none; cursor: pointer;
@@ -381,7 +386,7 @@ a:hover { text-decoration-thickness: 2px; }
 .manifest caption { text-align: left; margin-bottom: var(--sp-s); }
 .manifest th, .manifest td { padding: var(--sp-s) var(--sp-s) var(--sp-s) 0; vertical-align: top; }
 .manifest thead th {
-  font-family: var(--font-label); font-size: var(--step--2); font-weight: 700;
+  font-family: var(--font-ui); font-size: var(--step--2); font-weight: 700;
   letter-spacing: var(--track-label); text-transform: uppercase;
   color: var(--c-text-muted);
   border-bottom: 2px solid var(--c-ink-2);
@@ -421,7 +426,7 @@ a:hover { text-decoration-thickness: 2px; }
   border-top: 1px solid var(--c-rule);
 }
 .class-row__name {
-  font-family: var(--font-engrave); font-size: var(--step-1); color: var(--c-heading);
+  font-family: var(--font-display); font-size: var(--step-1); color: var(--c-heading);
 }
 .class-row__code {
   font-family: var(--font-data); font-size: var(--step--2);
@@ -441,12 +446,12 @@ a:hover { text-decoration-thickness: 2px; }
   background: var(--c-paper);
 }
 .endorsement__tier {
-  font-family: var(--font-engrave); font-size: var(--step-1); color: var(--c-heading);
+  font-family: var(--font-display); font-size: var(--step-1); color: var(--c-heading);
 }
 .endorsement__line {
   border-top: 1px solid var(--c-ink-2);
   padding-top: var(--sp-3xs);
-  font-family: var(--font-label); font-size: var(--step--2);
+  font-family: var(--font-ui); font-size: var(--step--2);
   letter-spacing: var(--track-label); text-transform: uppercase;
   color: var(--c-text-muted);
 }
@@ -464,7 +469,7 @@ a:hover { text-decoration-thickness: 2px; }
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 11rem), 1fr));
 }
 .site-footer__heading {
-  font-family: var(--font-label); font-size: var(--step--2); font-weight: 700;
+  font-family: var(--font-ui); font-size: var(--step--2); font-weight: 700;
   letter-spacing: var(--track-label); text-transform: uppercase;
   color: var(--c-ply-canary); margin: 0 0 var(--sp-2xs);
 }
@@ -520,3 +525,126 @@ a:hover { text-decoration-thickness: 2px; }
   .hero::before { opacity: 0.28; right: -34%; }
   .seal { --seal-size: 7rem; }
 }
+
+/* ==== interior page head ================================================= */
+
+.doc-head {
+  background: var(--c-ink-2);
+  color: var(--c-text-on-ink);
+  padding-block: var(--sp-xl) var(--sp-2xl);
+  position: relative;
+  overflow: hidden;
+}
+.doc-head::before {
+  content: ""; position: absolute;
+  top: 50%; right: -20%; translate: 0 -50%;
+  width: min(34rem, 62vw); aspect-ratio: 1;
+  background: var(--c-engrave);
+  -webkit-mask: url("/img/guilloche-rosette.svg") center / contain no-repeat;
+  mask: url("/img/guilloche-rosette.svg") center / contain no-repeat;
+  opacity: 0.4; pointer-events: none;
+}
+.doc-head > * { position: relative; }
+.doc-head h1 { color: var(--c-text-on-ink); font-size: var(--step-5); max-width: 18ch; }
+.doc-head__standfirst {
+  font-family: var(--font-display);
+  font-size: var(--step-2);
+  line-height: var(--lh-heading);
+  color: var(--c-ply-canary);
+  max-width: 40ch;
+  margin-top: var(--sp-s);
+}
+
+/* Prose inside a document page. */
+.section h2 { margin-top: var(--sp-xl); }
+.section > .wrap > h2:first-child { margin-top: 0; }
+.section h3 { margin-top: var(--sp-l); }
+.section ul, .section ol { padding-left: 1.15em; }
+.section li { margin-bottom: var(--sp-2xs); max-width: var(--measure); }
+
+.cta-close { text-align: left; }
+.cta-close h2 { margin-top: 0; }
+
+/* A note block: the printed marginalia of a form. */
+.note {
+  border-top: 2px solid var(--c-ink-2);
+  border-bottom: 1px solid var(--c-rule);
+  padding: var(--sp-s) 0;
+  margin: var(--sp-l) 0;
+  max-width: var(--measure);
+}
+.note p:last-child { margin-bottom: 0; }
+.note__label {
+  font-family: var(--font-ui); font-size: var(--step--2); font-weight: 700;
+  letter-spacing: var(--track-label); text-transform: uppercase;
+  color: var(--c-seal); margin-bottom: var(--sp-3xs);
+}
+
+/* Definition-style rows reused across interior pages. */
+.spec { margin: var(--sp-m) 0; max-width: var(--measure); }
+.spec .field:first-child { border-top: 1px solid var(--c-rule); }
+.spec .field:last-child { border-bottom: 1px solid var(--c-rule); }
+
+/* Source-cited figure, for News and About. */
+.cite {
+  font-family: var(--font-data);
+  font-size: var(--step--2);
+  color: var(--c-text-muted);
+  display: block;
+  margin-top: var(--sp-3xs);
+}
+
+/* ==== forms: the fillable half of the document ========================== */
+
+.form { margin: var(--sp-l) 0; max-width: 46rem; }
+.form__head {
+  display: flex; justify-content: space-between; align-items: baseline;
+  gap: var(--sp-s);
+  border-bottom: 2px solid var(--c-ink-2);
+  padding-bottom: var(--sp-2xs); margin-bottom: var(--sp-s);
+}
+.form__head h2 { margin: 0; font-size: var(--step-2); }
+.form__intro { font-size: var(--step--1); color: var(--c-text-muted); }
+
+.form__grid { display: grid; gap: var(--sp-s); }
+@media (min-width: 40rem) { .form__grid { grid-template-columns: 1fr 1fr; } }
+
+.form__row { display: grid; gap: var(--sp-3xs); margin: 0 0 var(--sp-s); max-width: none; }
+.form__row--full { grid-column: 1 / -1; }
+.req { color: var(--c-seal); }
+
+/* Inputs are ruled boxes, the way a form's fields are. */
+.input {
+  font-family: var(--font-data);
+  font-size: var(--step-0);
+  color: var(--c-ink);
+  background: var(--c-surface, #fff);
+  background-color: color-mix(in srgb, var(--c-paper) 70%, white);
+  border: 1px solid var(--c-rule);
+  border-bottom-width: 2px;
+  border-radius: 0;
+  padding: var(--sp-2xs) var(--sp-xs);
+  min-height: 46px;
+  width: 100%;
+}
+.input:focus-visible { border-bottom-color: var(--c-seal); }
+textarea.input { min-height: 7rem; resize: vertical; }
+select.input { cursor: pointer; }
+
+/* Honeypot. Off-screen rather than display:none — some bots skip hidden fields. */
+.hp {
+  position: absolute; left: -9999px; width: 1px; height: 1px;
+  overflow: hidden;
+}
+
+.form__status { min-height: 1.5em; margin: var(--sp-s) 0 0; font-size: var(--step--1); }
+.form__status[data-kind="error"] { color: var(--c-seal); font-weight: 600; }
+.form__status[data-kind="pending"] { color: var(--c-text-muted); }
+
+.form__legal { font-size: var(--step--2); color: var(--c-text-muted); margin-top: var(--sp-s); }
+
+.form__done { margin: var(--sp-l) 0; max-width: 46rem; }
+.form__done h2 { margin-top: 0; }
+
+/* Tag chips on light stock (the ink-ground variant lives in .band--invert). */
+.tag--ink { border-color: var(--c-rule); color: var(--c-text); }

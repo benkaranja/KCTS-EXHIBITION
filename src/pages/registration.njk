@@ -1,0 +1,70 @@
+---
+layout: layouts/page.njk
+permalink: /registration/
+title: Register your interest
+heading: Register your interest
+docName: Form A · Registration of Interest
+serial: No. KCTS/2027/R
+standfirst: Six categories. No payment, no commitment. Tell the secretariat which one fits and you go on the list.
+description: Register your interest in the Kenya-China Tea Summit 2027, Nairobi, 21–23 April 2027. Six categories from delegate to exhibitor. Fees announced once confirmed.
+sitemapPriority: 1.0
+hideCta: true
+---
+
+<div class="note">
+  <p class="note__label">Read this first</p>
+  <p>Fees, payment deadlines and what each category includes have not been set. This form does not sell you anything and does not hold a place. It registers your interest so the secretariat can contact you directly the moment the details are confirmed — and so it knows how many of each category to plan for.</p>
+</div>
+
+<h2>The six categories</h2>
+
+<ul class="classes">
+{% for c in summit.registrationCategories %}
+  <li class="class-row">
+    <span class="class-row__code">Class {{ loop.index }}</span>
+    <span class="class-row__name">{{ c.name }}</span>
+    <p>{{ c.blurb }}</p>
+  </li>
+{% endfor %}
+</ul>
+
+<h2>What is set, and what is not</h2>
+
+<dl class="spec">
+  <div class="field">
+    <dt class="label">Dates</dt>
+    <dd class="value">{{ summit.dates.display }}</dd>
+  </div>
+  <div class="field">
+    <dt class="label">City</dt>
+    <dd class="value">{{ summit.location.city }}, {{ summit.location.country }}</dd>
+  </div>
+  <div class="field">
+    <dt class="label">Venue</dt>
+    <dd class="value"><span class="value--pending">to be entered</span></dd>
+  </div>
+  <div class="field">
+    <dt class="label">Fees</dt>
+    <dd class="value"><span class="value--pending">to be entered</span></dd>
+  </div>
+  <div class="field">
+    <dt class="label">Registration deadline</dt>
+    <dd class="value"><span class="value--pending">to be entered</span></dd>
+  </div>
+  <div class="field">
+    <dt class="label">What each category includes</dt>
+    <dd class="value"><span class="value--pending">to be entered</span></dd>
+  </div>
+</dl>
+
+{% include "components/form-registration.njk" %}
+
+<h2>What happens next</h2>
+
+<ol>
+  <li>You get an email confirming the secretariat has your details. It arrives immediately.</li>
+  <li>Your entry is recorded against the category you chose.</li>
+  <li>When fees, the venue and the programme are confirmed, the secretariat contacts you before the public announcement.</li>
+</ol>
+
+<p>If you would rather exhibit or partner than attend, those go through <a href="/exhibition/">Exhibition</a> and <a href="/sponsorship/">Partnership</a> instead — different forms, different information needed.</p>

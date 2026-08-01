@@ -1,0 +1,31 @@
+---
+layout: layouts/base.njk
+---
+<section class="doc-head">
+  <div class="wrap">
+    <div class="hero__masthead">
+      <p class="hero__docname">{{ docName or "Summit Particulars" }}</p>
+      <p class="hero__serial">{{ serial or "No. KCTS/2027" }}</p>
+    </div>
+    <h1>{{ heading or title }}</h1>
+    {% if standfirst %}<p class="doc-head__standfirst">{{ standfirst }}</p>{% endif %}
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    {{ content | safe }}
+  </div>
+</section>
+
+{% if not hideCta %}
+<section class="section section--tint cta-close">
+  <div class="wrap">
+    <h2>{{ ctaHeading or "Register your interest" }}</h2>
+    <p class="lede">{{ ctaBody or "Six categories, from delegate to exhibitor. Fees and deadlines are published once the secretariat confirms them." }}</p>
+    <p class="section-action">
+      <a class="btn btn--primary" href="{{ ctaUrl or '/registration/' }}">{{ ctaLabel or "Register interest" }}</a>
+    </p>
+  </div>
+</section>
+{% endif %}

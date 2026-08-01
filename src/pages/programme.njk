@@ -1,0 +1,57 @@
+---
+layout: layouts/page.njk
+permalink: /programme/
+title: Programme
+heading: Three days, in order
+docName: Schedule A · Proceedings
+serial: No. KCTS/2027/S
+standfirst: Day one is trade. Day two is capital and technology. Day three is the floor and the close.
+description: The Kenya-China Tea Summit 2027 programme across three days in Nairobi, 21–23 April 2027 — trade forum, investment forum, innovation conference, B2B meetings and the tea expo.
+sitemapPriority: 0.9
+---
+
+<table class="manifest">
+  <caption class="visually-hidden">Summit proceedings by day</caption>
+  <thead>
+    <tr><th scope="col">Day</th><th scope="col">Proceedings</th></tr>
+  </thead>
+  <tbody>
+  {% for d in summit.programme %}
+    <tr>
+      <td>{{ d.day }} &middot; <time datetime="{{ d.date }}">{{ d.date | readableDate }}</time></td>
+      <td>
+        <h2>{{ d.title }}</h2>
+        <p>{{ d.summary }}</p>
+      </td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+
+<h2>What is not on this page yet</h2>
+
+<dl class="spec">
+  <div class="field">
+    <dt class="label">Session times</dt>
+    <dd class="value"><span class="value--pending">to be entered</span></dd>
+  </div>
+  <div class="field">
+    <dt class="label">Rooms and stages</dt>
+    <dd class="value"><span class="value--pending">to be entered</span></dd>
+  </div>
+  <div class="field">
+    <dt class="label">Speakers per session</dt>
+    <dd class="value"><span class="value--pending">to be entered</span></dd>
+  </div>
+  <div class="field">
+    <dt class="label">Tracks</dt>
+    <dd class="value"><span class="value--pending">to be entered</span></dd>
+  </div>
+</dl>
+
+<div class="note">
+  <p class="note__label">Why the detail is missing</p>
+  <p>The three day-level themes above are confirmed. Everything below that level — who speaks when, in which room — is still being assembled, and publishing a plausible-looking agenda before it is real would mean retracting it later. Sessions are added to this manifest as the secretariat confirms them.</p>
+</div>
+
+<p>If you want to speak, the <a href="/speakers/">call for speakers</a> is open.</p>

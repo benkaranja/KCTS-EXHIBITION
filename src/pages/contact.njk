@@ -1,0 +1,41 @@
+---
+layout: layouts/page.njk
+permalink: /contact/
+title: Contact
+heading: Contact the secretariat
+docName: Form C · Correspondence
+serial: No. KCTS/2027/C
+standfirst: Everything routes through the form below until the secretariat publishes direct channels.
+description: Contact the Kenya-China Tea Summit 2027 secretariat about attending, exhibiting, partnership, speaking or media.
+hideCta: true
+---
+
+<dl class="spec">
+  <div class="field">
+    <dt class="label">Secretariat</dt>
+    <dd class="value">{{ summit.organiser.name }}</dd>
+  </div>
+  <div class="field">
+    <dt class="label">Organised by</dt>
+    <dd class="value">{{ summit.organiser.legalEntity }}, {{ summit.organiser.city }}</dd>
+  </div>
+  <div class="field">
+    <dt class="label">Email</dt>
+    <dd class="value"><span class="value--pending">to be entered</span></dd>
+  </div>
+  <div class="field">
+    <dt class="label">Telephone</dt>
+    <dd class="value"><span class="value--pending">to be entered</span></dd>
+  </div>
+  <div class="field">
+    <dt class="label">Postal address</dt>
+    <dd class="value"><span class="value--pending">to be entered</span></dd>
+  </div>
+</dl>
+
+<div class="note">
+  <p class="note__label">Faster routes</p>
+  <p>If your message is about attending, exhibiting or partnering, <a href="/registration/">registering your interest</a> gets it to the right person with the details already attached. This form is for everything else.</p>
+</div>
+
+{% include "components/form-contact.njk" %}

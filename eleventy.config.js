@@ -1,4 +1,7 @@
 import summit from "./src/_data/summit.js";
+import { readFileSync } from "node:fs";
+
+const config = JSON.parse(readFileSync("./project.config.json", "utf8"));
 
 export default function (eleventyConfig) {
   // Assets are copied verbatim; nothing is bundled. The shipped site is
@@ -14,6 +17,11 @@ export default function (eleventyConfig) {
   eleventyConfig.addWatchTarget("src/assets/");
 
   eleventyConfig.addGlobalData("buildYear", new Date().getFullYear());
+
+  // Turnstile's site key is public and belongs in markup — but only a REAL one.
+  // Empty means the widget is omitted entirely rather than shipping the test key
+  // 1x00000000000000000000AA, which criterion B6 forbids.
+  eleventyConfig.addGlobalData("turnstileSiteKey", config.turnstile?.siteKey || "");
 
   // --- collections -------------------------------------------------------
   // Ordered explicitly rather than by filename so content authors don't have

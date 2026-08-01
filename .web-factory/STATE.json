@@ -2,7 +2,7 @@
   "$comment": "Adapted from templates/criteria.default.json at intake. Changes recorded in docs/DECISIONS.md: R1-R3 dropped (greenfield, ADR-001); B4 dropped (Pages has no cron, ADR-005); I1 split into I1/I2 so the build is not hostage to third-party credentials; E1/E2 added for the Eleventy build and content validation (ADR-003, ADR-007).",
   "project": "kenya-china-tea-summit",
   "status": "active",
-  "iteration": 4,
+  "iteration": 5,
   "maxIterations": 40,
   "previewUrl": "https://kenya-china-tea-summit.pages.dev",
   "productionUrl": "",
@@ -117,14 +117,14 @@
     {
       "id": "E2",
       "phase": "foundation",
-      "goal": "scripts/validate-content.js fails the build on orphan speaker refs, duplicate slugs, missing session times, room/time collisions, missing logo alt",
+      "goal": "scripts/validate-content.js fails the build on orphan speaker refs, duplicate slugs, missing session times, room/time collisions, missing logo alt; plus front-matter YAML parse",
       "verify": "node scripts/validate-content.js",
       "deps": [
         "E1"
       ],
       "status": "passed",
       "attempts": 1,
-      "evidence": "All 6 rules exercised against broken fixtures -> exit 1 with 5 errors + room-collision error after fixture repair; fixtures removed, clean run exit 0.",
+      "evidence": "All 7 rules exercised against broken fixtures -> exit 1; rule 7 (front-matter unquoted \": \") verified by reintroducing the terms.njk bug that had silently skipped 3 pages mid-build, then restoring.",
       "lastRun": "2026-08-01"
     },
     {
@@ -174,10 +174,10 @@
       "deps": [
         "C3"
       ],
-      "status": "pending",
-      "attempts": 0,
-      "evidence": "",
-      "lastRun": null
+      "status": "passed",
+      "attempts": 1,
+      "evidence": "All 17 launch+utility pages built with real copy. grep for lorem/TODO/TBD/placeholder across public/: none. Mechanical AI-tell scan over the 5,973 words of site copy: 0 hits across 9 detectors (delve/underscore, in-today's-landscape, not-only-but-also, negative parallelism, vague attribution, promo superlatives, hollow adjectives, moreover/furthermore, superficial -ing). Sentence stdev 14.8 (high variation). Written human-first; the humanizer skill was not run as a separate pass \u2014 the scan is the evidence, disclosed.",
+      "lastRun": "2026-08-01"
     },
     {
       "id": "C5",

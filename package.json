@@ -6,10 +6,11 @@
   "description": "Kenya-China Tea Summit 2027 \u2014 Nairobi, 21-23 April 2027. Eleventy static site on Cloudflare Pages.",
   "scripts": {
     "validate": "node scripts/validate-content.js && node scripts/check-contrast.js",
-    "build": "npm run validate && eleventy",
+    "build": "npm run validate && eleventy && node scripts/export-copy.js",
     "dev": "eleventy --serve --port=8080",
     "clean": "rm -rf public .cache",
-    "assets": "node scripts/make-guilloche.js"
+    "assets": "node scripts/make-guilloche.js",
+    "copy": "node scripts/export-copy.js"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0",

@@ -44,14 +44,17 @@
   --c-focus: var(--c-seal-bright);
 
   /* --- type -------------------------------------------------------------
-   * Caslon is the face cut for official and engraved documents; Archivo Narrow
-   * is the condensed grotesque of a printed form's field labels; Courier is
-   * literally what was typed into these forms. Monospace here is data and
-   * measurement, not a technical costume.
+   * Pairing set by the client (fontpair.co): Bricolage Grotesque for display,
+   * Google Sans Flex for everything else. Google Sans Code is the mono
+   * companion in the same family system and carries ONE role only — values
+   * typed into a form field. Drop it and --font-data falls back to the UI
+   * face; nothing else depends on it.
+   *
+   * All three are variable, latin-subset, self-hosted. Zero font-CDN requests.
    */
-  --font-engrave: "Libre Caslon Display", ui-serif, Georgia, serif;
-  --font-label: "Archivo Narrow", ui-sans-serif, system-ui, sans-serif;
-  --font-data: "Courier Prime", ui-monospace, "Courier New", monospace;
+  --font-display: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
+  --font-ui: "Google Sans Flex", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-data: "Google Sans Code", ui-monospace, "SF Mono", Menlo, monospace;
 
   /* Display ceiling is 6rem per the craft floor; the hero sits just under. */
   --step--2: clamp(0.69rem, 0.67rem + 0.09vw, 0.75rem);
@@ -114,27 +117,24 @@
 
 /* --- self-hosted faces. Zero requests to any font CDN. ------------------ */
 @font-face {
-  font-family: "Libre Caslon Display";
-  src: url("/fonts/libre-caslon-display-400.woff2") format("woff2");
-  font-weight: 400; font-style: normal; font-display: swap;
+  font-family: "Bricolage Grotesque";
+  src: url("/fonts/bricolage-grotesque.woff2") format("woff2-variations");
+  font-weight: 200 800;
+  font-stretch: 75% 100%;
+  font-style: normal;
+  font-display: swap;
 }
 @font-face {
-  font-family: "Archivo Narrow";
-  src: url("/fonts/archivo-narrow-400.woff2") format("woff2");
-  font-weight: 400; font-style: normal; font-display: swap;
+  font-family: "Google Sans Flex";
+  src: url("/fonts/google-sans-flex.woff2") format("woff2-variations");
+  font-weight: 300 700;
+  font-style: normal;
+  font-display: swap;
 }
 @font-face {
-  font-family: "Archivo Narrow";
-  src: url("/fonts/archivo-narrow-600.woff2") format("woff2");
-  font-weight: 600; font-style: normal; font-display: swap;
-}
-@font-face {
-  font-family: "Archivo Narrow";
-  src: url("/fonts/archivo-narrow-700.woff2") format("woff2");
-  font-weight: 700; font-style: normal; font-display: swap;
-}
-@font-face {
-  font-family: "Courier Prime";
-  src: url("/fonts/courier-prime-400.woff2") format("woff2");
-  font-weight: 400; font-style: normal; font-display: swap;
+  font-family: "Google Sans Code";
+  src: url("/fonts/google-sans-code.woff2") format("woff2-variations");
+  font-weight: 400 500;
+  font-style: normal;
+  font-display: swap;
 }

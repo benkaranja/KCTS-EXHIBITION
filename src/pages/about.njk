@@ -1,0 +1,77 @@
+---
+layout: layouts/page.njk
+permalink: /about/
+title: About the summit
+heading: Why this summit exists
+docName: Statement of Purpose
+serial: No. KCTS/2027/A
+standfirst: Kenya grows more tea than almost anyone. It earns less from it than it should. This is a three-day attempt to change that in one specific direction.
+description: The Kenya-China Tea Summit 2027 is a trade, investment and innovation forum in Nairobi, 21–23 April 2027, connecting Kenya's tea value chain with Chinese buyers and investors.
+sitemapPriority: 0.9
+---
+
+<p>The Kenya-China Tea Summit is a landmark international platform designed to deepen trade, investment, innovation and cultural cooperation between Kenya and China within the tea value chain. It runs in Nairobi from {{ summit.dates.display }}.</p>
+
+<h2>The problem it is convened around</h2>
+
+<p>Kenya is one of the world's largest tea exporters by volume. It is not one of the largest earners. The tea leaves the country in bulk, is blended and branded somewhere else, and the margin is captured somewhere else too. Analysts have put it plainly: Kenya exports more tea than China and Sri Lanka, and earns less for it, held back by bulk sales, a narrow product range and limited market diversity.</p>
+<p class="cite">Ecofin Agency, 2026 — <a href="https://www.ecofinagency.com/news-agriculture/0107-47500-kenya-leads-in-tea-exports-but-trails-in-revenues-compared-to-china-and-sri-lanka" rel="noopener noreferrer" target="_blank">Kenya leads in tea exports but trails in revenues</a></p>
+
+<p>China is where that gap is sharpest, and where it is moving fastest in the wrong direction. Kenyan tea exports to China fell 51% in the first quarter of 2026, to 1.22 million kilogrammes.</p>
+<p class="cite">The Kenyan Wall Street, Q1 2026 — <a href="https://kenyanwallstreet.com/tea-exports-q1-2026" rel="noopener noreferrer" target="_blank">Kenya tea exports: Sudan ban and Pakistan's Q1 rise</a></p>
+
+<p>That decline sits against a national policy pointing the other way. Kenya is targeting close to 200 million kilogrammes of green and orthodox tea by 2030 — a deliberate move away from bulk black — and China has a zero-tariff door open. The Tea Board of Kenya has been working with Chinese partners on processing machinery, energy-efficient technology and, reportedly, an online auction platform.</p>
+<p class="cite">China Daily, 21 July 2026 — <a href="https://www.chinadaily.com.cn/a/202607/21/WS6a5ec8f3a310986e2b466594.html" rel="noopener noreferrer" target="_blank">Kenya targets bigger tea exports to Chinese market</a></p>
+
+<div class="note">
+  <p class="note__label">A note on the figures above</p>
+  <p>Every number on this page comes from published trade reporting, is dated, and links to its source. None of it is a claim by the summit or a forecast of what the summit will achieve. It is the context the summit was called in response to.</p>
+</div>
+
+<h2>What it is trying to do</h2>
+
+<p>Six objectives, as set by the secretariat.</p>
+
+<ol class="clauses">
+{% for o in summit.objectives %}
+  <li class="clause">
+    <div>
+      <h3>{{ o.title }}</h3>
+      <p>{{ o.body }}</p>
+    </div>
+  </li>
+{% endfor %}
+</ol>
+
+<h2>Who it is for</h2>
+
+<p>The summit is built around a specific problem: the people who grow and process Kenyan tea and the people who buy it in China rarely occupy the same building. Everyone below is invited because they sit somewhere on that chain.</p>
+
+<ul class="tags" role="list">
+{% for a in summit.audiences %}
+  <li class="tag tag--ink">{{ a }}</li>
+{% endfor %}
+</ul>
+
+<h2>Who is convening it</h2>
+
+<dl class="spec">
+  <div class="field">
+    <dt class="label">Secretariat</dt>
+    <dd class="value">{{ summit.organiser.name }}</dd>
+  </div>
+  <div class="field">
+    <dt class="label">Organised by</dt>
+    <dd class="value">{{ summit.organiser.legalEntity }}</dd>
+  </div>
+  <div class="field">
+    <dt class="label">Based in</dt>
+    <dd class="value">{{ summit.organiser.city }}, {{ summit.organiser.country }}</dd>
+  </div>
+  <div class="field">
+    <dt class="label">Edition</dt>
+    <dd class="value">First</dd>
+  </div>
+</dl>
+
+<p>This is the first edition. There is no previous year to point at, no archive of past delegates, and no attendance figure to quote. Everything published on this site is either confirmed by the secretariat or sourced and dated. Where something is not yet settled — the venue, the fees, the speakers — the page says so rather than filling the space.</p>

@@ -1,0 +1,73 @@
+{# Registration expression-of-interest form.
+   Swap point for a ticketing embed once pricing exists (ADR-004).
+   Turnstile renders only when a real site key is configured — the test key
+   1x00000000000000000000AA must never ship (criterion B6). #}
+<form class="form sheet" id="registration-form" method="post" action="/api/register" novalidate>
+  <div class="form__head">
+    <h2 id="form-heading">Registration of interest</h2>
+    <span class="serial">Form&nbsp;A</span>
+  </div>
+
+  <p class="form__intro">Required fields are marked. Nothing here is published, sold, or shared outside the secretariat.</p>
+
+  <div class="form__grid">
+    <p class="form__row">
+      <label class="label" for="reg-name">Full name <span class="req" aria-hidden="true">*</span></label>
+      <input class="input" id="reg-name" name="name" type="text" required autocomplete="name" maxlength="120">
+    </p>
+
+    <p class="form__row">
+      <label class="label" for="reg-email">Email <span class="req" aria-hidden="true">*</span></label>
+      <input class="input" id="reg-email" name="email" type="email" required autocomplete="email" maxlength="180">
+    </p>
+
+    <p class="form__row">
+      <label class="label" for="reg-org">Organisation</label>
+      <input class="input" id="reg-org" name="organisation" type="text" autocomplete="organization" maxlength="160">
+    </p>
+
+    <p class="form__row">
+      <label class="label" for="reg-title">Job title</label>
+      <input class="input" id="reg-title" name="jobTitle" type="text" autocomplete="organization-title" maxlength="120">
+    </p>
+
+    <p class="form__row">
+      <label class="label" for="reg-country">Country</label>
+      <input class="input" id="reg-country" name="country" type="text" autocomplete="country-name" maxlength="80">
+    </p>
+
+    <p class="form__row">
+      <label class="label" for="reg-category">Category <span class="req" aria-hidden="true">*</span></label>
+      <select class="input" id="reg-category" name="category" required>
+        <option value="">Select one</option>
+        {% for c in summit.registrationCategories %}
+        <option value="{{ c.slug }}">{{ c.name }}</option>
+        {% endfor %}
+      </select>
+    </p>
+  </div>
+
+  <p class="form__row form__row--full">
+    <label class="label" for="reg-message">Anything the secretariat should know</label>
+    <textarea class="input" id="reg-message" name="message" rows="4" maxlength="2000"></textarea>
+  </p>
+
+  {# Honeypot: visually hidden, never announced, never focusable. A bot fills it. #}
+  <div class="hp" aria-hidden="true">
+    <label for="reg-company-url">Company website</label>
+    <input id="reg-company-url" name="companyUrl" type="text" tabindex="-1" autocomplete="off">
+  </div>
+  <input type="hidden" name="formType" value="registration">
+  <input type="hidden" name="renderedAt" value="">
+
+  {% if turnstileSiteKey %}
+  <div class="cf-turnstile" data-sitekey="{{ turnstileSiteKey }}" data-theme="light"></div>
+  {% endif %}
+
+  <button class="btn btn--primary btn--block" type="submit">Submit registration of interest</button>
+
+  {# Live region: announced to screen readers on both success and failure. #}
+  <p class="form__status" id="registration-form-status" role="status" aria-live="polite"></p>
+
+  <p class="form__legal">By submitting you agree the secretariat may contact you about this summit. See our <a href="/privacy/">privacy notice</a>. You can ask to be removed at any time.</p>
+</form>
