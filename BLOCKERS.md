@@ -1,4 +1,4 @@
-# Blockers — 2 open
+# Blockers — 3 open
 
 Each entry names the single specific thing a human must do. Resolve one by doing
 the action, then set the named criterion back to `pending` with `attempts: 0` in
@@ -69,6 +69,32 @@ its real canonical origin, so canonical tags, Open Graph URLs, `sitemap.xml` and
 5. I add a 301 from `kenya-china-tea-summit.pages.dev` to the apex so the staging URL stops competing, add `preload` to HSTS, and re-run the full gate suite against the production URL.
 
 Steps 1 and 5 are mine. Steps 2–4 are yours.
+
+---
+
+## B-004 — 85 MB video blob in git history
+
+**Blocks:** nothing functionally. Repo clone size only.
+**Criterion:** none — this is hygiene, not a gate.
+
+The hero video master was committed by mistake and pushed before the mistake was
+caught. It is now untracked and `*.mp4` is gitignored, so it will not grow — but
+the blob is permanently in history, and `.git` is 101 MB as a result.
+
+**Only fix is a history rewrite**, which is a hard autonomy stop:
+
+```bash
+git filter-repo --path "aerial-view-of-lush-tea-plantation-in-countryside-2026-01-22-02-28-50-utc.mp4" --invert-paths
+git push --force
+```
+
+**Do not run this without deciding you want it.** It rewrites every commit hash.
+If anyone else has cloned the repo, their clone breaks. Given the repo is private
+and has one contributor, 101 MB is survivable and the safe answer is probably to
+leave it.
+
+Either way, the master is safe at `assets-raw/hero-tea-plantation-master.mp4`,
+which is a protected never-committed path.
 
 ---
 
