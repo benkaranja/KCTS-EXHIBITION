@@ -234,3 +234,62 @@ Five build tasks surfaced: `Organization` JSON-LD (missing — E-E-A-T gap),
 ### Still not run
 
 Lighthouse, axe, html-validate. No score claimed. 12 of 17 launch pages unbuilt.
+
+---
+
+## Iteration 5 — 2026-08-01
+
+### C4 — all copy drafted · PASS
+
+17 pages built (13 launch + 4 utility). `grep -riE 'lorem|TODO|TBD|placeholder|\[insert' public/` → none.
+
+Mechanical AI-tell scan over the 5,973 words of site copy (reviewer preamble excluded):
+
+```
+clean  delve/underscore/testament
+clean  in today's ... landscape
+clean  "not only ... but also"
+clean  negative parallelism ("it's not X, it's Y")
+clean  vague attribution ("experts say","many believe")
+clean  promo superlatives (cutting-edge/world-class/seamless)
+clean  hollow "rich tapestry/vibrant/pivotal"
+clean  "moreover/furthermore/additionally"
+clean  superficial -ing analysis ("highlighting/showcasing/...")
+
+em-dashes: 38 (6.4 per 1000 words)
+sentence length: avg 18.3 words, stdev 14.8
+total tell hits: 0
+```
+
+Copy was written human-first; the `humanizer` skill was **not** run as a separate
+pass. The scan above is the evidence, and that substitution is disclosed rather
+than implied.
+
+### Type system replaced on client instruction
+
+Bricolage Grotesque (display) + Google Sans Flex (UI) per the client's fontpair.co
+pairing, with Google Sans Code — the same family's mono — on the typed-value role
+only. All three variable, latin-subset, self-hosted, zero font-CDN requests.
+Heading weight moved 400 → 700 with 92% width: 400 suited a Didone and read limp
+on a grotesque.
+
+### Two build defects found and fixed
+
+1. **Silent partial build.** An unquoted `": "` in `terms.njk` front matter aborted Eleventy mid-run. Three pages were never written, and the build still printed a success line. Now caught by validator rule 7, verified by reintroducing the bug.
+2. **Stale passthrough assets.** Eleventy does not prune removed assets, so all five replaced font files (104 KB) were still sitting in `public/` and being deployed. `npm run clean` is now the first step of `build`.
+
+```
+before: fonts 308KB across 8 files
+after:  fonts 212KB across 3 files
+```
+
+### Budgets
+
+```
+CSS 29,829B / 30,720 — 891B headroom  (tight; next component needs a trim first)
+JS   3,807B / 15,360
+```
+
+### Still not run
+
+Lighthouse, axe, html-validate, link check. No score claimed.
