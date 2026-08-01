@@ -4,8 +4,9 @@ Each entry names the single specific thing a human must do. Resolve one by doing
 the action, then set the named criterion back to `pending` with `attempts: 0` in
 `.web-factory/STATE.json`. The loop picks it up on the next tick.
 
-This does not stop the build. Foundation, Eleventy, content, SEO, design tokens
-and page construction all proceed without it.
+Neither stops the build. Content, SEO, design and every page proceed without
+both. B-003 in particular is **not** holding anything up — the site treats the
+pages.dev origin as its real home until the domain lands (ADR-010).
 
 ---
 

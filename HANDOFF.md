@@ -1,6 +1,6 @@
 # HANDOFF — Kenya-China Tea Summit 2027
 
-**1 open blocker (B-002, credentials).** Everything else is unblocked and building.
+**2 open blockers (B-002 credentials, B-003 domain). Neither blocks the build.**
 
 Cold-start brief. Assume you know nothing about this project.
 
@@ -10,8 +10,9 @@ Cold-start brief. Assume you know nothing about this project.
 
 A marketing and registration site for a three-day international tea trade summit
 in Nairobi, **21–23 April 2027**. Client is the Kenya-China Tea Summit
-Secretariat (Orbitline Events & Ushers Ltd). Target domain
-`kenyachinateasummit.com`; **live now at https://kenya-china-tea-summit.pages.dev**.
+Secretariat (Orbitline Events & Ushers Ltd). **Live at https://kenya-china-tea-summit.pages.dev** — and that is the real
+canonical origin, not a placeholder. `kenyachinateasummit.com` is mid-purchase;
+cutover is one boolean in `src/_data/summit.js` (ADR-010).
 
 The summit is ~9 months out and the client has supplied an outline, not content.
 Prices, speakers, venue and contact details do **not exist yet**. The site's job
@@ -62,6 +63,8 @@ npm run validate # content integrity only
 - JSON-LD `ConferenceEvent` parses (this was broken by Nunjucks auto-escaping and is fixed — if you add a `| dump`, it needs `| safe` after it).
 - Client logo placed, emblem cropped for header/favicon.
 - CSS 13.8 KB of a 30 KB budget; JS 836 B of 15 KB.
+- **S1 security headers live and verified**: 7/7 present, CSP with no `unsafe-inline`, 0 console errors under it.
+- `robots.txt` and `sitemap.xml` generated from the current origin, so neither can go stale.
 
 **Next up:** SEO research (C2), page map (C3), then the remaining 12 launch pages
 with humanized copy (C4), design build-out (D2–D5), security headers (S1), and the
@@ -74,12 +77,12 @@ form backend once credentials land (B1–B7).
 
 ## Before touching DNS
 
-Not yet applicable — no custom domain is attached. When it is: adding
-`kenyachinateasummit.com` to Cloudflare will offer to import existing records. If
-the client already has email on that domain, **check MX records survive**, and be
-aware that Cloudflare **Email Routing** will overwrite MX records if enabled.
-Breaking a client's inbound mail during a website launch is the classic version of
-this mistake. DNS changes are a hard autonomy stop — they need a human.
+The full cutover checklist lives in `BLOCKERS.md` → B-003. The one that bites:
+adding `kenyachinateasummit.com` to Cloudflare offers to import existing records —
+if the client already has email on that domain, **check the MX records survive**,
+and do not enable Cloudflare **Email Routing** unless you intend to replace their
+mail, because it overwrites MX. Breaking a client's inbound mail during a website
+launch is the classic version of this mistake. DNS is a hard autonomy stop.
 
 ## Autonomy stops
 
