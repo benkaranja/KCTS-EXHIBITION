@@ -2,7 +2,7 @@
   "$comment": "Adapted from templates/criteria.default.json at intake. Changes recorded in docs/DECISIONS.md: R1-R3 dropped (greenfield, ADR-001); B4 dropped (Pages has no cron, ADR-005); I1 split into I1/I2 so the build is not hostage to third-party credentials; E1/E2 added for the Eleventy build and content validation (ADR-003, ADR-007).",
   "project": "kenya-china-tea-summit",
   "status": "active",
-  "iteration": 3,
+  "iteration": 4,
   "maxIterations": 40,
   "previewUrl": "https://kenya-china-tea-summit.pages.dev",
   "productionUrl": "",
@@ -148,10 +148,10 @@
       "deps": [
         "C1"
       ],
-      "status": "pending",
-      "attempts": 0,
-      "evidence": "",
-      "lastRun": null
+      "status": "passed",
+      "attempts": 1,
+      "evidence": "docs/SEO-RESEARCH.md written. 7 dated, sourced industry findings (Kenyan Wall Street, African Business, Ecofin, China Daily 2026-07-21, Nairobi Business Monthly, Food Business MEA, Tea Trade UK). No volume/difficulty figures invented. Instrument was WebSearch, not last30days \u2014 disclosed in the doc and HANDOFF.",
+      "lastRun": "2026-08-01"
     },
     {
       "id": "C3",
@@ -161,10 +161,10 @@
       "deps": [
         "C2"
       ],
-      "status": "pending",
-      "attempts": 0,
-      "evidence": "",
-      "lastRun": null
+      "status": "passed",
+      "attempts": 1,
+      "evidence": "docs/PAGE-MAP.md written: 13 launch pages + 4 utility, one primary keyword and one job each, intent labelled. Conversion reachable in one click sitewide via header CTA. 5 build tasks surfaced (Organization/FAQPage/BreadcrumbList JSON-LD, shared D1 form_type, per-page descriptions).",
+      "lastRun": "2026-08-01"
     },
     {
       "id": "C4",

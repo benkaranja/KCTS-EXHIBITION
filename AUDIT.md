@@ -188,3 +188,49 @@ does not block the structured data.
 ### Still not run
 
 Lighthouse, axe and html-validate remain unmeasured. No score claimed.
+
+---
+
+## Iteration 4 — 2026-08-01
+
+### C2 — SEO research · PASS
+
+Instrument: **WebSearch, not `last30days`.** The mandated skill requires a
+one-time interactive setup (browser-cookie extraction, CLI installs) that was not
+approved, and it is a community-listening tool whose Reddit/X/TikTok signal is
+thin for a B2B summit nine months out with no public presence. Substitution
+disclosed in `docs/SEO-RESEARCH.md` §preamble and in HANDOFF.
+
+Seven findings captured, each dated and sourced. No search-volume or difficulty
+figure appears anywhere — those are not sourceable without Search Console/Ahrefs
+and inventing them is the failure the playbook names.
+
+Headline finding: Kenya's Q1 2026 tea exports to China fell **51%** to 1.22 M kg
+(Kenyan Wall Street) while national policy targets growth into that exact lane
+under China's zero-tariff opening (China Daily, 2026-07-21), and Kenya earns less
+revenue than China and Sri Lanka despite exporting more volume (Ecofin). That
+tension is the summit's editorial reason to exist and the basis of the News pillar.
+
+Competitive picture: the head term is **uncontested** — no existing event occupies
+it. Category terms are aggregator-dominated (10times, EventsEye, Expolume, Expo
+Assist, Canton Fair), which makes them a distribution channel to get listed on,
+not a competitor to outrank.
+
+### C3 — page map · PASS
+
+`docs/PAGE-MAP.md`: 13 launch pages + 4 utility. One primary keyword, one intent
+label and one job per page. Conversion reachable in one click sitewide.
+
+Commercial intent concentrated in Exhibition, Sponsorship and B2B — flagged as
+where copy effort belongs, since the head term is won by default and those are not.
+
+Venue, Speakers and Registration identified as the honest-gap pages: they ship as
+unstamped fields rather than inventing the content the client has not supplied.
+
+Five build tasks surfaced: `Organization` JSON-LD (missing — E-E-A-T gap),
+`FAQPage` JSON-LD (gated on real questions), `BreadcrumbList`, shared D1
+`form_type` routing, per-page descriptions.
+
+### Still not run
+
+Lighthouse, axe, html-validate. No score claimed. 12 of 17 launch pages unbuilt.
