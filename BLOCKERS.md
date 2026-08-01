@@ -4,9 +4,14 @@ Each entry names the single specific thing a human must do. Resolve one by doing
 the action, then set the named criterion back to `pending` with `attempts: 0` in
 `.web-factory/STATE.json`. The loop picks it up on the next tick.
 
-Neither stops the build. Content, SEO, design and every page proceed without
-both. B-003 in particular is **not** holding anything up — the site treats the
-pages.dev origin as its real home until the domain lands (ADR-010).
+None of the three stops the build. B-003 in particular is **not** holding anything
+up — the site treats the pages.dev origin as its real home until the domain lands
+(ADR-010). B-004 is repo hygiene, not a gate.
+
+What they *do* block: B-002 gates every form actually delivering mail, and B-003
+gates the custom domain and Brevo sender verification. The whole attendee portal
+is blocked separately, on client data rather than on credentials — that list is in
+`docs/superpowers/specs/2026-08-02-portal-i18n-downloads-design.md` §10.
 
 ---
 
