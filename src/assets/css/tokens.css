@@ -1,0 +1,108 @@
+/* Design tokens — Kenya-China Tea Summit 2027
+ *
+ * Every colour is read off the client logo (ADR-002). This is the ONLY file in
+ * the project permitted to contain a hex literal; everything else references a
+ * custom property. `verify.sh tokens` enforces that.
+ *
+ * Contrast, measured against --surface (#FFFFFF):
+ *   --c-ink          #111111   18.9:1  body text
+ *   --c-green-deep   #14401E   10.4:1  headings, primary button background
+ *   --c-red          #B4131C    7.0:1  links, accents, small text  [AA/AAA]
+ *   --c-red-bright   #D42027    5.3:1  large text + graphics ONLY  [AA large]
+ *   --c-green-mid    #2E7D32    4.6:1  small text, just clears AA
+ *   --c-green-leaf   #7CB342    2.3:1  DECORATIVE ONLY — never text
+ *   --c-wall-tan     #C9B18C    1.9:1  DECORATIVE ONLY — never text
+ *   --c-mountain     #8FA9BE    2.6:1  DECORATIVE ONLY — never text
+ */
+
+:root {
+  /* --- brand palette ------------------------------------------------- */
+  --c-green-deep: #14401e;
+  --c-green-mid: #2e7d32;
+  --c-green-leaf: #7cb342;
+  --c-red: #b4131c;
+  --c-red-bright: #d42027;
+  --c-ink: #111111;
+  --c-wall-tan: #c9b18c;
+  --c-mountain: #8fa9be;
+  --c-surface: #ffffff;
+
+  /* --- derived neutrals ---------------------------------------------- */
+  --c-ink-muted: #4a4f4b;      /*  8.4:1 — secondary text            */
+  --c-rule: #dfe3e0;           /*  borders and separators            */
+  --c-surface-sunk: #f5f7f5;   /*  section banding                   */
+  --c-surface-deep: #0e2a15;   /*  inverted sections; white on it is 14.6:1 */
+
+  /* --- semantic roles ------------------------------------------------ */
+  --c-text: var(--c-ink);
+  --c-text-muted: var(--c-ink-muted);
+  --c-heading: var(--c-green-deep);
+  --c-link: var(--c-red);
+  --c-link-hover: var(--c-green-deep);
+  --c-accent: var(--c-red);
+  --c-focus: var(--c-red-bright);
+
+  /* --- type ----------------------------------------------------------- */
+  /* Self-hosted only. Zero requests to fonts.googleapis.com. */
+  --font-display: "Kenya Serif", ui-serif, Georgia, "Times New Roman", serif;
+  --font-body: "Kenya Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  /* Fluid scale, 360px → 1280px viewport. */
+  --step--1: clamp(0.83rem, 0.80rem + 0.16vw, 0.94rem);
+  --step-0: clamp(1rem, 0.96rem + 0.22vw, 1.13rem);
+  --step-1: clamp(1.2rem, 1.13rem + 0.35vw, 1.41rem);
+  --step-2: clamp(1.44rem, 1.33rem + 0.55vw, 1.76rem);
+  --step-3: clamp(1.73rem, 1.55rem + 0.83vw, 2.2rem);
+  --step-4: clamp(2.07rem, 1.80rem + 1.22vw, 2.75rem);
+  --step-5: clamp(2.49rem, 2.08rem + 1.79vw, 3.43rem);
+  --step-6: clamp(2.99rem, 2.38rem + 2.57vw, 4.29rem);
+
+  --lh-tight: 1.1;
+  --lh-heading: 1.2;
+  --lh-body: 1.6;
+  --measure: 68ch;
+
+  /* --- space (1.5 ratio from 0.25rem) --------------------------------- */
+  --sp-3xs: 0.25rem;
+  --sp-2xs: 0.5rem;
+  --sp-xs: 0.75rem;
+  --sp-s: 1rem;
+  --sp-m: 1.5rem;
+  --sp-l: 2.25rem;
+  --sp-xl: 3.375rem;
+  --sp-2xl: 5rem;
+  --sp-3xl: 7.5rem;
+
+  /* --- shape ---------------------------------------------------------- */
+  --radius-s: 3px;
+  --radius-m: 6px;
+  --radius-l: 12px;
+  --radius-pill: 999px;
+
+  /* Shadows use the brand green rather than neutral black so elevation reads
+     as part of the palette instead of grey haze over it. */
+  --shadow-s: 0 1px 2px rgb(20 64 30 / 0.08);
+  --shadow-m: 0 4px 12px rgb(20 64 30 / 0.10);
+  --shadow-l: 0 12px 32px rgb(20 64 30 / 0.14);
+
+  /* --- layout --------------------------------------------------------- */
+  --wrap: 72rem;
+  --wrap-narrow: 44rem;
+  --gutter: clamp(1rem, 4vw, 2.5rem);
+
+  /* --- motion --------------------------------------------------------- */
+  --ease: cubic-bezier(0.2, 0, 0.1, 1);
+  --dur-fast: 120ms;
+  --dur: 220ms;
+  --dur-slow: 400ms;
+}
+
+/* Honour the OS setting rather than animating regardless. Paired with the
+   per-component rule in style.css; this is the global backstop. */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-fast: 1ms;
+    --dur: 1ms;
+    --dur-slow: 1ms;
+  }
+}

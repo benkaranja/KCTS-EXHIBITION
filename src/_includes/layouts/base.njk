@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="{{ summit.lang }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>{% if title %}{{ title }} | {{ summit.shortName }}{% else %}{{ summit.name }} — {{ summit.tagline }}{% endif %}</title>
+<meta name="description" content="{{ description }}">
+<link rel="canonical" href="{{ page.url | absoluteUrl }}">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{ summit.name }}">
+<meta property="og:title" content="{% if title %}{{ title }}{% else %}{{ summit.name }}{% endif %}">
+<meta property="og:description" content="{{ description }}">
+<meta property="og:url" content="{{ page.url | absoluteUrl }}">
+<meta property="og:locale" content="en_KE">
+<meta property="og:image" content="{{ '/img/og-default.png' | absoluteUrl }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="/img/emblem-96.png" type="image/png">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<link rel="stylesheet" href="/css/tokens.css">
+<link rel="stylesheet" href="/css/style.css">
+
+{% block head %}{% endblock %}
+
+{# Event schema. Only confirmed facts appear here — an incomplete Event is
+   valid; an invented location is a lie that Google will surface. #}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ConferenceEvent",
+  "name": {{ summit.name | dump | safe }},
+  "description": {{ summit.theme | dump | safe }},
+  "startDate": "{{ summit.dates.start }}",
+  "endDate": "{{ summit.dates.end }}",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "url": {{ summit.url | dump | safe }},
+  "location": {
+    "@type": "Place",
+    "name": {{ (summit.location.city + ", " + summit.location.country) | dump | safe }},
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": {{ summit.location.city | dump | safe }},
+      "addressCountry": {{ summit.location.countryCode | dump | safe }}
+    }
+  },
+  "organizer": {
+    "@type": "Organization",
+    "name": {{ summit.organiser.name | dump | safe }},
+    "url": {{ summit.organiser.url | dump | safe }}
+  }
+}
+</script>
+</head>
+
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="site-header">
+  <a class="site-header__brand" href="/" aria-label="{{ summit.name }} — home">
+    <img class="brand-emblem" src="/img/emblem-96.png" srcset="/img/emblem-96.png 96w, /img/emblem-256.png 256w"
+         sizes="52px" width="96" height="96" alt="" decoding="async">
+    <span class="brand-lockup">
+      <span class="brand-lockup__title"><b>Kenya</b><i>/</i><b>China</b></span>
+      <span class="brand-lockup__sub">Tea Summit</span>
+    </span>
+  </a>
+
+  <nav class="site-nav" aria-label="Primary">
+    <button class="site-nav__toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+      <span class="visually-hidden">Menu</span>
+      <span class="site-nav__bars" aria-hidden="true"></span>
+    </button>
+    <ul class="site-nav__list" id="primary-nav">
+      {% for item in navigation.primary %}
+      <li><a href="{{ item.url }}"{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.text }}</a></li>
+      {% endfor %}
+    </ul>
+  </nav>
+
+  <a class="btn btn--primary site-header__cta" href="{{ navigation.cta.url }}">{{ navigation.cta.text }}</a>
+</header>
+
+<main id="main">
+  {{ content | safe }}
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer__grid">
+    {% for group in navigation.footer %}
+    <nav class="site-footer__col" aria-labelledby="foot-{{ loop.index }}">
+      <h2 class="site-footer__heading" id="foot-{{ loop.index }}">{{ group.heading }}</h2>
+      <ul>
+        {% for link in group.links %}
+        <li><a href="{{ link.url }}">{{ link.text }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+    {% endfor %}
+  </div>
+
+  <div class="site-footer__base">
+    <p>{{ summit.name }} · {{ summit.dates.display }} · {{ summit.location.city }}, {{ summit.location.country }}</p>
+    <p>Organised by {{ summit.organiser.name }}, {{ summit.organiser.legalEntity }}.</p>
+    <p><small>&copy; {{ buildYear }} {{ summit.organiser.legalEntity }}. All rights reserved.</small></p>
+  </div>
+</footer>
+
+<script src="/js/nav.js" defer></script>
+{% block scripts %}{% endblock %}
+</body>
+</html>

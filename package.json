@@ -1,0 +1,19 @@
+{
+  "name": "kenya-china-tea-summit",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Kenya-China Tea Summit 2027 — Nairobi, 21-23 April 2027. Eleventy static site on Cloudflare Pages.",
+  "scripts": {
+    "validate": "node scripts/validate-content.js",
+    "build": "npm run validate && eleventy",
+    "dev": "eleventy --serve --port=8080",
+    "clean": "rm -rf public .cache"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

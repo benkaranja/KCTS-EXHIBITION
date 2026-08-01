@@ -1,0 +1,73 @@
+---
+layout: layouts/base.njk
+title: false
+description: The Kenya-China Tea Summit 2027 brings tea exporters, buyers, investors and technology providers together in Nairobi from 21–23 April 2027. Register your interest.
+permalink: /index.html
+---
+
+<section class="hero">
+  <div class="hero__inner wrap">
+    <p class="hero__eyebrow">{{ summit.dates.display }} · {{ summit.location.city }}, {{ summit.location.country }}</p>
+    <h1 class="hero__title">The premier tea trade, investment and innovation forum connecting Africa and China</h1>
+    <p class="hero__lede">{{ summit.theme }}</p>
+    <p class="hero__actions">
+      <a class="btn btn--primary btn--lg" href="/registration/">Register your interest</a>
+      <a class="btn btn--ghost btn--lg" href="/programme/">See the three-day programme</a>
+    </p>
+    <p class="hero__note">Registration opens in six categories, from delegate to exhibitor. Prices and deadlines are announced closer to the summit.</p>
+  </div>
+</section>
+
+<section class="band wrap">
+  <h2 class="section-title">What this summit is</h2>
+  <p class="lede">A landmark international platform designed to deepen trade, investment, innovation and cultural cooperation between Kenya and China within the tea value chain.</p>
+  <p><a class="link-arrow" href="/about/">More about the summit</a></p>
+</section>
+
+<section class="band band--sunk">
+  <div class="wrap">
+    <h2 class="section-title">Six objectives</h2>
+    <ul class="cards" role="list">
+      {% for o in summit.objectives %}
+      <li class="card">
+        <h3 class="card__title">{{ o.title }}</h3>
+        <p class="card__body">{{ o.body }}</p>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="band wrap">
+  <h2 class="section-title">Three days</h2>
+  <ol class="days" role="list">
+    {% for d in summit.programme %}
+    <li class="day">
+      <p class="day__label">Day {{ d.day }} · <time datetime="{{ d.date }}">{{ d.date | readableDate }}</time></p>
+      <h3 class="day__title">{{ d.title }}</h3>
+      <p class="day__summary">{{ d.summary }}</p>
+    </li>
+    {% endfor %}
+  </ol>
+  <p><a class="link-arrow" href="/programme/">Full programme</a></p>
+</section>
+
+<section class="band band--invert">
+  <div class="wrap">
+    <h2 class="section-title">Who comes</h2>
+    <ul class="tags" role="list">
+      {% for a in summit.audiences %}
+      <li class="tag">{{ a }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="band wrap cta-band">
+  <h2 class="section-title">Take part</h2>
+  <p class="lede">Registration, exhibition stands and partnership packages are all open for expressions of interest. Tell us which one fits and the secretariat will come back to you.</p>
+  <p class="hero__actions">
+    <a class="btn btn--primary btn--lg" href="/registration/">Register your interest</a>
+    <a class="btn btn--ghost btn--lg" href="/sponsorship/">Partner with the summit</a>
+  </p>
+</section>

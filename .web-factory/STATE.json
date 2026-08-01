@@ -1,0 +1,581 @@
+{
+  "$comment": "Adapted from templates/criteria.default.json at intake. Changes recorded in docs/DECISIONS.md: R1-R3 dropped (greenfield, ADR-001); B4 dropped (Pages has no cron, ADR-005); I1 split into I1/I2 so the build is not hostage to third-party credentials; E1/E2 added for the Eleventy build and content validation (ADR-003, ADR-007).",
+  "project": "kenya-china-tea-summit",
+  "status": "active",
+  "iteration": 1,
+  "maxIterations": 40,
+  "previewUrl": "",
+  "productionUrl": "",
+  "startedAt": "2026-08-01",
+  "lastIterationAt": "2026-08-01",
+  "completedAt": null,
+  "criteria": [
+    {
+      "id": "I1",
+      "phase": "intake",
+      "goal": "project.config.json, .gitignore, PRD, DECISIONS, FACTS written and placeholder-free",
+      "verify": "test -s project.config.json && test -s docs/PRD.md && test -s docs/DECISIONS.md && test -s website_content/FACTS.md",
+      "deps": [],
+      "status": "passed",
+      "attempts": 1,
+      "evidence": "All five files written 2026-08-01. Brand palette read from client logo; decisions ADR-001..009 logged; FACTS.md separates 18 publishable facts from 10 do-not-invent gaps.",
+      "lastRun": "2026-08-01"
+    },
+    {
+      "id": "I2",
+      "phase": "intake",
+      "goal": "Brevo, Turnstile and OpenRouter credentials collected and live-probed green; .env.local written; Pages env vars pushed",
+      "verify": "verify.sh secrets",
+      "deps": [
+        "I1"
+      ],
+      "status": "blocked",
+      "attempts": 0,
+      "evidence": "",
+      "lastRun": null,
+      "blocker": "B-002"
+    },
+    {
+      "id": "F1",
+      "phase": "foundation",
+      "goal": "Repo exists, local == origin/main, .gitignore protects every path in protectedPaths",
+      "verify": "verify.sh repo",
+      "deps": [
+        "I1"
+      ],
+      "status": "pending",
+      "attempts": 0,
+      "evidence": "",
+      "lastRun": null
+    },
+    {
+      "id": "F2",
+      "phase": "foundation",
+      "goal": "Canonical layout: src/ functions/ docs/ brand_assets/ website_content/, Eleventy output to public/",
+      "verify": "verify.sh layout",
+      "deps": [
+        "F1"
+      ],
+      "status": "pending",
+      "attempts": 0,
+      "evidence": "",
+      "lastRun": null
+    },
+    {
+      "id": "F3",
+      "phase": "foundation",
+      "goal": "Pages project connected to repo, build command npm run build, output public/, preview deployment returns 200",
+      "verify": "curl -sf -o /dev/null $PREVIEW_URL",
+      "deps": [
+        "F2",
+        "E1"
+      ],
+      "status": "pending",
+      "attempts": 0,
+      "evidence": "",
+      "lastRun": null
+    },
+    {
+      "id": "F4",
+      "phase": "foundation",
+      "goal": "D1 created, schema applied, binding present in wrangler.toml AND Pages project settings",
+      "verify": "npx wrangler d1 execute kenya-china-tea-summit-db --remote --command \"SELECT name FROM sqlite_master WHERE type='table' AND name='submissions';\"",
+      "deps": [
+        "F1"
+      ],
+      "status": "pending",
+      "attempts": 0,
+      "evidence": "",
+      "lastRun": null
+    },
+    {
+      "id": "F5",
+      "phase": "foundation",
+      "goal": "PRD, DECISIONS, HANDOFF, AUDIT, BLOCKERS exist with no placeholders",
+      "verify": "! grep -rlE 'TODO|TBD|\\[placeholder\\]' docs/ HANDOFF.md AUDIT.md",
+      "deps": [
+        "F1"
+      ],
+      "status": "pending",
+      "attempts": 0,
+      "evidence": "",
+      "lastRun": null
+    },
+    {
+      "id": "E1",
+      "phase": "foundation",
+      "goal": "npm run build produces public/ from src/ with zero warnings; public/ gitignored; no runtime framework in output",
+      "verify": "npm run build && test -s public/index.html",
+      "deps": [
+        "F2"
+      ],
+      "status": "passed",
+      "attempts": 1,
+      "evidence": "npm run build: validation passed, Eleventy 3.1.6 wrote public/index.html + copied 8 assets in 0.16s. public/ and node_modules/ confirmed gitignored. CSS 13707B/30720, JS 836B/15360.",
+      "lastRun": "2026-08-01"
+    },
+    {
+      "id": "E2",
+      "phase": "foundation",
+      "goal": "scripts/validate-content.js fails the build on orphan speaker refs, duplicate slugs, missing session times, room/time collisions, missing logo alt",
+      "verify": "node scripts/validate-content.js",
+      "deps": [
+        "E1"
+      ],
+      "status": "passed",
+      "attempts": 1,
+      "evidence": "All 6 rules exercised against broken fixtures -> exit 1 with 5 errors + room-collision error after fixture repair; fixtures removed, clean run exit 0.",
+      "lastRun": "2026-08-01"
+    },
+    {
+      "id": "C1",
+      "phase": "content",
+      "goal": "Every client document ingested via markitdown; website_content/FACTS.md written and traceable",
+      "verify": "test -s website_content/FACTS.md",
+      "deps": [
+        "I1"
+      ],
+      "status": "passed",
+      "attempts": 1,
+      "evidence": "client-brief.md converted from the supplied .docx (52 lines). FACTS.md written with three tiers: 18 confirmed publishable facts, 10 explicit do-not-invent gaps, industry-context topics requiring citation.",
+      "lastRun": "2026-08-01"
+    },
+    {
+      "id": "C2",
+      "phase": "content",
+      "goal": "docs/SEO-RESEARCH.md complete via last30days + seo-playbook; every finding dated and sourced",
+      "verify": "test -s docs/SEO-RESEARCH.md",
+      "deps": [
+        "C1"
+      ],
+      "status": "pending",
+      "attempts": 0,
+      "evidence": "",
+      "lastRun": null
+    },
+    {
+      "id": "C3",
+      "phase": "content",
+      "goal": "docs/PAGE-MAP.md: one primary keyword per page, every page has a job, conversion reachable in one click",
+      "verify": "test -s docs/PAGE-MAP.md",
+      "deps": [
+        "C2"
+      ],
+      "status": "pending",
+      "attempts": 0,
+      "evidence": "",
+      "lastRun": null
+    },
+    {
+      "id": "C4",
+      "phase": "content",
+      "goal": "All copy drafted, humanizer-passed, zero placeholders, zero claims outside FACTS.md \u00a71",
+      "verify": "! grep -riE 'lorem|TODO|TBD|\\[placeholder\\]|\\[insert' public/",
+      "deps": [
+        "C3"
+      ],
+      "status": "pending",
+      "attempts": 0,
+      "evidence": "",
+      "lastRun": null
+    },
+    {
+      "id": "C5",
+      "phase": "content",
+      "goal": "Per-page title, description, canonical, OG, Twitter card, valid Event/ConferenceEvent JSON-LD, html lang",
+      "verify": "verify.sh html $PREVIEW_URL",
+      "deps": [
+        "C4"
+      ],
+      "status": "pending",
+      "attempts": 0,
+      "evidence": "",
+      "lastRun": null
+    },
+    {
+      "id": "C6",
+      "phase": "content",
+      "goal": "robots.txt + sitemap.xml generated from Eleventy collections; every sitemap URL returns 200",
+      "verify": "verify.sh links $PREVIEW_URL",
+      "deps": [
+        "C5"
+      ],
+      "status": "pending",
+      "attempts": 0,
+      "evidence": "",
+      "lastRun": null
+    },
+    {
+      "id": "D1",
+      "phase": "design",
+      "goal": "tokens.css generated from brand.colors + DESIGN.md written; no hex literal outside tokens.css; all text pairs >= 4.5:1",
+      "verify": "verify.sh tokens",
+      "deps": [
+        "I1"
+      ],
+      "status": "in-progress",
+      "attempts": 0,
+      "evidence": "tokens.css written from client logo palette with measured contrast ratios per token. DESIGN.md and the verify.sh tokens run still outstanding.",
+      "lastRun": null
+    },
+    {
+      "id": "D2",
+      "phase": "design",
+      "goal": "Every page in PAGE-MAP built from Eleventy templates; semantic HTML; responsive 360/768/1280 with no horizontal scroll",
+      "verify": "verify.sh console $PREVIEW_URL",
+      "deps": [
+        "D1",
+        "C4"
+      ],
+      "status": "pending",
+      "attempts": 0,
+      "evidence": "",
+      "lastRun": null
+    },
+    {
+      "id": "D3",
+      "phase": "design",
+      "goal": "impeccable audit: 0 high-severity detector hits",
+      "verify": "npx impeccable audit public/",
+      "deps": [
+        "D2"
+      ],
+      "status": "pending",
+      "attempts": 0,
+      "evidence": "",
+      "lastRun": null
+    },
+    {
+      "id": "D4",
+      "phase": "design",
+      "goal": "All imagery AVIF+WebP, <200KB, explicit width/height/alt, LCP preloaded and not lazy; no fabricated people or premises",
+      "verify": "verify.sh images",
+      "deps": [
+        "D2",
+        "I2"
+      ],
+      "status": "pending",
+      "attempts": 0,
+      "evidence": "",
+      "lastRun": null
+    },
+    {
+      "id": "D5",
+      "phase": "design",
+      "goal": "No backdrop-filter on fullscreen overlays; transitions GPU-promoted; prefers-reduced-motion honoured",
+      "verify": "! grep -rn 'backdrop-filter' src/assets/css/ && grep -rqn 'prefers-reduced-motion' src/assets/css/",
+      "deps": [
+        "D2"
+      ],
+      "status": "pending",
+      "attempts": 0,
+      "evidence": "",
+      "lastRun": null
+    },
+    {
+      "id": "B1",
+      "phase": "backend",
+      "goal": "emailService.js Brevo driver: api-key header, Brevo schema, 201 = success, all values escaped",
+      "verify": "manual: direct invocation returns ok:true with messageId",
+      "deps": [
+        "F4",
+        "I2"
+      ],
+      "status": "pending",
+      "attempts": 0,
+      "evidence": "",
+      "lastRun": null
+    },
+    {
+      "id": "B2",
+      "phase": "backend",
+      "goal": "contact.js + register.js: validate -> Turnstile -> spam score -> D1 write -> send; CORS pinned; rate limited",
+      "verify": "verify.sh form $PREVIEW_URL",
+      "deps": [
+        "B1"
+      ],
+      "status": "pending",
+      "attempts": 0,
+      "evidence": "",
+      "lastRun": null
+    },
+    {
+      "id": "B3",
+      "phase": "backend",
+      "goal": "D1 write happens BEFORE send; failed send still leaves a row with email_status=queued",
+      "verify": "manual: forced-failure submission leaves a queued row",
+      "deps": [
+        "B2"
+      ],
+      "status": "pending",
+      "attempts": 0,
+      "evidence": "",
+      "lastRun": null
+    },
+    {
+      "id": "B5",
+      "phase": "backend",
+      "goal": "form-handler.js: timeElapsed, honeypot, Turnstile token, JSON POST, accessible live-region status",
+      "verify": "verify.sh a11y $PREVIEW_URL",
+      "deps": [
+        "B2"
+      ],
+      "status": "pending",
+      "attempts": 0,
+      "evidence": "",
+      "lastRun": null
+    },
+    {
+      "id": "B6",
+      "phase": "backend",
+      "goal": "Production Turnstile sitekey in every form page; test key absent",
+      "verify": "! grep -rn '1x00000000000000000000AA' public/",
+      "deps": [
+        "B5"
+      ],
+      "status": "pending",
+      "attempts": 0,
+      "evidence": "",
+      "lastRun": null
+    },
+    {
+      "id": "B7",
+      "phase": "backend",
+      "goal": "Live E2E: clean submit -> D1 row + sent; honeypot -> spam row, no send; 6th submit in a minute -> 429",
+      "verify": "verify.sh form $PREVIEW_URL --full",
+      "deps": [
+        "B6"
+      ],
+      "status": "pending",
+      "attempts": 0,
+      "evidence": "",
+      "lastRun": null
+    },
+    {
+      "id": "S1",
+      "phase": "security",
+      "goal": "Security headers present in the LIVE response, CSP allows Turnstile + Insights only",
+      "verify": "verify.sh headers $PREVIEW_URL",
+      "deps": [
+        "F3"
+      ],
+      "status": "pending",
+      "attempts": 0,
+      "evidence": "",
+      "lastRun": null
+    },
+    {
+      "id": "S2",
+      "phase": "security",
+      "goal": "No secret in committed code or git history; .env.local ignored",
+      "verify": "verify.sh secrets",
+      "deps": [
+        "F1"
+      ],
+      "status": "pending",
+      "attempts": 0,
+      "evidence": "",
+      "lastRun": null
+    },
+    {
+      "id": "S3",
+      "phase": "security",
+      "goal": "SRI or self-hosting on any third-party subresource; every target=_blank has rel=noopener noreferrer; no http:// subresources; no inline handlers",
+      "verify": "verify.sh links $PREVIEW_URL",
+      "deps": [
+        "D2"
+      ],
+      "status": "pending",
+      "attempts": 0,
+      "evidence": "",
+      "lastRun": null
+    },
+    {
+      "id": "S4",
+      "phase": "security",
+      "goal": "Privacy page covers collection/destination/retention/contact; no PII in query strings; rate_limit retention rule active",
+      "verify": "manual: privacy page reviewed",
+      "deps": [
+        "C4"
+      ],
+      "status": "pending",
+      "attempts": 0,
+      "evidence": "",
+      "lastRun": null
+    },
+    {
+      "id": "V1",
+      "phase": "verify",
+      "goal": "Lighthouse mobile meets targets on every sitemap URL",
+      "verify": "verify.sh perf $PREVIEW_URL",
+      "deps": [
+        "D4",
+        "D5",
+        "C6",
+        "S1"
+      ],
+      "status": "pending",
+      "attempts": 0,
+      "evidence": "",
+      "lastRun": null
+    },
+    {
+      "id": "V2",
+      "phase": "verify",
+      "goal": "Lighthouse desktop 100/100/100/100 on every sitemap URL",
+      "verify": "verify.sh perf $PREVIEW_URL",
+      "deps": [
+        "V1"
+      ],
+      "status": "pending",
+      "attempts": 0,
+      "evidence": "",
+      "lastRun": null
+    },
+    {
+      "id": "V3",
+      "phase": "verify",
+      "goal": "axe: 0 violations, plus the six manual a11y confirmations recorded",
+      "verify": "verify.sh a11y $PREVIEW_URL",
+      "deps": [
+        "D2"
+      ],
+      "status": "pending",
+      "attempts": 0,
+      "evidence": "",
+      "lastRun": null
+    },
+    {
+      "id": "V4",
+      "phase": "verify",
+      "goal": "html-validate: 0 errors; every JSON-LD block parses",
+      "verify": "verify.sh html $PREVIEW_URL",
+      "deps": [
+        "C5"
+      ],
+      "status": "pending",
+      "attempts": 0,
+      "evidence": "",
+      "lastRun": null
+    },
+    {
+      "id": "V5",
+      "phase": "verify",
+      "goal": "0 broken links or images across the site",
+      "verify": "verify.sh links $PREVIEW_URL",
+      "deps": [
+        "C6"
+      ],
+      "status": "pending",
+      "attempts": 0,
+      "evidence": "",
+      "lastRun": null
+    },
+    {
+      "id": "V6",
+      "phase": "verify",
+      "goal": "0 console errors at 360/768/1280 on every page",
+      "verify": "verify.sh console $PREVIEW_URL",
+      "deps": [
+        "D2"
+      ],
+      "status": "pending",
+      "attempts": 0,
+      "evidence": "",
+      "lastRun": null
+    },
+    {
+      "id": "P1",
+      "phase": "ship",
+      "goal": "Full suite green in a single run against the current preview commit",
+      "verify": "verify.sh all $PREVIEW_URL",
+      "deps": [
+        "V1",
+        "V2",
+        "V3",
+        "V4",
+        "V5",
+        "V6",
+        "B7",
+        "S1",
+        "S2",
+        "S3",
+        "S4",
+        "E2"
+      ],
+      "status": "pending",
+      "attempts": 0,
+      "evidence": "",
+      "lastRun": null
+    },
+    {
+      "id": "P2",
+      "phase": "ship",
+      "goal": "Promoted to production; headers and live form re-asserted against the production URL",
+      "verify": "verify.sh headers $PROD_URL && verify.sh form $PROD_URL",
+      "deps": [
+        "P1"
+      ],
+      "status": "pending",
+      "attempts": 0,
+      "evidence": "",
+      "lastRun": null
+    },
+    {
+      "id": "P3",
+      "phase": "ship",
+      "goal": "Analytics beacon live in production HTML and reporting",
+      "verify": "curl -s $PROD_URL | grep -q cloudflareinsights",
+      "deps": [
+        "P2"
+      ],
+      "status": "pending",
+      "attempts": 0,
+      "evidence": "",
+      "lastRun": null
+    },
+    {
+      "id": "P4",
+      "phase": "ship",
+      "goal": "HANDOFF, AUDIT, CHANGELOG, DECISIONS, BLOCKERS all current and placeholder-free",
+      "verify": "! grep -rlE 'TODO|TBD|\\[placeholder\\]' HANDOFF.md AUDIT.md CHANGELOG.md docs/",
+      "deps": [
+        "P2"
+      ],
+      "status": "pending",
+      "attempts": 0,
+      "evidence": "",
+      "lastRun": null
+    },
+    {
+      "id": "P5",
+      "phase": "ship",
+      "goal": "DNS cutover instructions written into HANDOFF.md, including the MX/Email-Routing warning",
+      "verify": "grep -q 'Email Routing' HANDOFF.md",
+      "deps": [
+        "P4"
+      ],
+      "status": "pending",
+      "attempts": 0,
+      "evidence": "",
+      "lastRun": null
+    },
+    {
+      "id": "P6",
+      "phase": "ship",
+      "goal": "User notified, STATE marked complete, cron removed, skill-evolution edit applied",
+      "verify": "manual",
+      "deps": [
+        "P5"
+      ],
+      "status": "pending",
+      "attempts": 0,
+      "evidence": "",
+      "lastRun": null
+    }
+  ],
+  "blockers": [
+    "B-001",
+    "B-002"
+  ]
+}

@@ -1,0 +1,35 @@
+# --- secrets ---
+.env
+.env.*
+!.env.example
+*.local.*
+*.private.*
+
+# --- build output (Eleventy generates public/ from src/) ---
+public/
+.cache/
+.eleventy-cache/
+
+# --- dependencies ---
+node_modules/
+
+# --- human working materials: never committed, never deleted ---
+assets-raw/
+briefs/
+notes/
+research/
+client-docs/
+scratch/
+
+# --- tooling noise ---
+.DS_Store
+.wrangler/
+.web-factory/checks/*.log
+.web-factory/checks/*.json
+npm-debug.log*
+*.tsbuildinfo
+
+# --- source client documents stay local (converted copies live in website_content/) ---
+*.docx
+*.pptx
+*.xlsx
