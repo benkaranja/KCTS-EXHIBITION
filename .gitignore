@@ -33,3 +33,10 @@ npm-debug.log*
 *.docx
 *.pptx
 *.xlsx
+
+# --- raw media masters: never committed. Encoded derivatives live in src/assets/
+# and are small. An 85MB mp4 in git history is permanent dead weight.
+*.mp4
+*.mov
+*.avi
+!src/assets/video/*.mp4
