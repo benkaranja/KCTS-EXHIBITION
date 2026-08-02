@@ -11,6 +11,10 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/assets/img": "img" });
   eleventyConfig.addPassthroughCopy({ "src/assets/fonts": "fonts" });
   eleventyConfig.addPassthroughCopy({ "src/assets/video": "video" });
+  // Published documents. Source of truth is src/, not public/ — public/ is
+  // wiped by `npm run clean` on every build. Validator rule 8 resolves
+  // /files/* against this directory.
+  eleventyConfig.addPassthroughCopy({ "src/static-files": "files" });
   // robots.txt and sitemap.xml are generated (src/robots.njk, src/sitemap.njk)
   // so they always carry the current origin — see ADR-010.
   eleventyConfig.addPassthroughCopy({ "src/_headers": "_headers" });
@@ -43,6 +47,12 @@ export default function (eleventyConfig) {
   );
   eleventyConfig.addCollection("sponsors", (c) =>
     c.getFilteredByGlob("src/sponsors/*.md").sort(byOrder),
+  );
+  eleventyConfig.addCollection("downloads", (c) =>
+    c.getFilteredByGlob("src/downloads/*.md").sort((a, b) => {
+      const k = String(a.data.category).localeCompare(String(b.data.category));
+      return k !== 0 ? k : String(a.data.title).localeCompare(String(b.data.title));
+    }),
   );
   eleventyConfig.addCollection("news", (c) =>
     c.getFilteredByGlob("src/news/*.md").sort((a, b) => b.date - a.date),

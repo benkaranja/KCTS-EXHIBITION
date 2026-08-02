@@ -74,6 +74,17 @@ if (existsSync("public/img")) {
   }
 }
 
+// Published documents. Downloads are deliberate, so the cap is generous — it
+// exists to catch an unoptimised 90MB export being committed, not to police
+// brochure size. Optional, like img.
+const FILE_MAX = 8 * 1024 * 1024;
+if (existsSync("public/files")) {
+  for (const { path, size } of walkFiles("public/files")) {
+    console.log(`file   ${path} ${size} / ${FILE_MAX} bytes`);
+    if (size > FILE_MAX) failures.push(`${path} over download budget: ${size} > ${FILE_MAX}`);
+  }
+}
+
 if (failures.length) {
   console.error("\nRESULT: FAIL");
   for (const f of failures) console.error(`  ${f}`);
