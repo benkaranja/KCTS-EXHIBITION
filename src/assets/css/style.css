@@ -640,3 +640,36 @@ select.input { cursor: pointer; }
 
 /* Tag chips on light stock (the ink-ground variant lives in .band--invert). */
 .tag--ink { border-color: var(--c-rule); color: var(--c-text); }
+
+/* ==== hero media ======================================================== */
+
+.hero { isolation: isolate; }
+
+.hero__media {
+  position: absolute; inset: 0; z-index: -1;
+  overflow: hidden;
+  background: var(--c-ink-2);
+}
+.hero__poster, .hero__video {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.hero__video {
+  position: absolute; inset: 0;
+  opacity: 0;
+  transition: opacity var(--dur-slow) var(--ease-out);
+}
+.hero__media.is-playing .hero__video { opacity: 1; }
+
+/* The scrim. Footage is bright green midday plantation; reversed text needs a
+   guaranteed floor, not a hope. Measured in check-contrast.js. */
+.hero__media::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(
+    100deg,
+    rgb(15 46 22 / 0.94) 0%,
+    rgb(15 46 22 / 0.88) 42%,
+    rgb(15 46 22 / 0.66) 100%
+  );
+}

@@ -6,6 +6,7 @@ permalink: /index.html
 ---
 
 <section class="hero">
+  {% include "components/hero-media.njk" %}
   <div class="wrap">
     <div class="hero__masthead">
       <p class="hero__docname">Summit Particulars &middot; First Edition</p>
@@ -25,6 +26,10 @@ permalink: /index.html
           <div class="field">
             <dt class="label">Dated</dt>
             <dd class="value"><time datetime="{{ summit.dates.start }}/{{ summit.dates.end }}">{{ summit.dates.display }}</time></dd>
+          </div>
+          <div class="field">
+            <dt class="label">Days to opening</dt>
+            <dd class="value"><span data-countdown="{{ summit.dates.start }}">{{ summit.dates.start | daysUntil }}</span></dd>
           </div>
           <div class="field">
             <dt class="label">Venue</dt>

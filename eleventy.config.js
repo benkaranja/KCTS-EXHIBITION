@@ -78,6 +78,13 @@ export default function (eleventyConfig) {
     speakers.filter((s) => (s.data.sessions ?? []).includes(sessionSlug)),
   );
 
+  // Whole days from build time to an ISO date. Rendered server-side so the
+  // number is present with JS disabled; hero.js corrects it on load.
+  eleventyConfig.addFilter("daysUntil", (iso) => {
+    const ms = new Date(`${iso}T00:00:00Z`) - new Date();
+    return Math.max(0, Math.ceil(ms / 86400000));
+  });
+
   return {
     dir: {
       input: "src",
