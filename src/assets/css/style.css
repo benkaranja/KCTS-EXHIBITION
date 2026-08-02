@@ -662,16 +662,38 @@ select.input { cursor: pointer; }
 }
 .hero__media.is-playing .hero__video { opacity: 1; }
 
-/* The scrim. Footage is bright green midday plantation; reversed text needs a
-   guaranteed floor, not a hope. Measured in check-contrast.js. */
+/* The scrim. Two layers, not a uniform veil: text lives in the left ~55% of
+   the frame (h1, particulars, body) and across the top strip (masthead), so
+   only those zones carry a guaranteed floor. The right side and lower-right
+   are text-free (the .issue card is opaque) and are left weak so the footage
+   actually reads as footage. Both floors are measured in check-contrast.js,
+   composited over the real poster, sampling the weakest alpha per zone. */
 .hero__media::after {
   content: ""; position: absolute; inset: 0;
-  background: linear-gradient(
-    100deg,
-    rgb(15 46 22 / 0.94) 0%,
-    rgb(15 46 22 / 0.88) 42%,
-    rgb(15 46 22 / 0.66) 100%
-  );
+  background:
+    linear-gradient(
+      to bottom,
+      rgb(15 46 22 / 0.90) 0%,
+      rgb(15 46 22 / 0.90) 20%,
+      rgb(15 46 22 / 0) 32%,
+      rgb(15 46 22 / 0) 100%
+    ),
+    linear-gradient(
+      100deg,
+      rgb(15 46 22 / 0.82) 0%,
+      rgb(15 46 22 / 0.82) 55%,
+      rgb(15 46 22 / 0.15) 78%,
+      rgb(15 46 22 / 0.15) 100%
+    );
+}
+
+/* Below the two-column breakpoint .hero__grid is a single column, so text runs
+   the full width and the weak right-hand zone would sit under it. One flat
+   layer instead, at the alpha every hero foreground clears — canary is the
+   binding one and needs 0.84, so 0.86. Costs nothing below 48rem, where
+   hero.js never attaches the video at all. */
+@media (max-width: 59.999rem) {
+  .hero__media::after { background: rgb(15 46 22 / 0.86); }
 }
 
 /* ==== plate figures ===================================================== */
