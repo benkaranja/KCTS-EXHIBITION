@@ -1,6 +1,6 @@
 # Website copy for review — Kenya-China Tea Summit 2027
 
-**Generated:** 2026-08-01 · **Build:** `239e922` · **Live:** https://kenya-china-tea-summit.pages.dev
+**Generated:** 2026-08-02 · **Build:** `e4cae63` · **Live:** https://kenya-china-tea-summit.pages.dev
 
 This document contains **every word of visible text on the website**, extracted
 from the built pages, in the order a visitor reads them. It is generated
@@ -56,6 +56,7 @@ Brewing Strategic Partnerships for Sustainable Tea Trade, Investment and Innovat
 
 - **Convened at:** Nairobi, Kenya
 - **Dated:** 21–23 April 2027
+- **Days to opening:** 262
 - **Venue:** to be entered
 - **Issued by:** Orbitline Events & Ushers Ltd
 Three days that put Kenyan growers, processors and exporters in the same rooms as Chinese buyers, investors and technology providers. Trade on day one, capital and innovation on day two, the expo floor on day three.
@@ -73,6 +74,8 @@ A landmark international platform designed to deepen trade, investment, innovati
 Kenya grows the tea. China drinks more of it than anywhere on earth. Between those two facts sits a chain of buyers, processors, financiers, freight operators and regulators who rarely occupy the same building. For three days in April 2027, they will.
 
 More about the summit
+
+Plate IKenya's growing highlands
 
 ### Six objectives
 
@@ -94,6 +97,8 @@ Stand allocation opens with registration. Structured B2B matchmaking runs throug
 
 Exhibition and stands
 
+Plate IIProcessing and the expo floor
+
 ### Six ways to attend
 
 Each category is registered separately. Fees and inclusions are published once the secretariat confirms them.
@@ -114,6 +119,8 @@ Partnership enquiry
 The secretariat coordinates flights, hotel reservations, tea plantation tours and safari extensions for delegations. Details are published as arrangements are confirmed.
 
 Travel and stay
+
+Plate IIIComing to Nairobi
 
 ---
 
