@@ -2,7 +2,16 @@
 layout: layouts/base.njk
 title: false
 description: The Kenya-China Tea Summit 2027 brings tea exporters, buyers, investors and technology providers together in Nairobi from 21–23 April 2027. Register your interest.
-permalink: /index.html
+basePath: /
+pagination:
+  data: locales
+  size: 1
+  alias: locale
+  addAllPagesToCollections: true
+eleventyComputed:
+  permalink: "{% if locale == 'en' %}/index.html{% else %}/zh/index.html{% endif %}"
+  lang: "{% if locale == 'zh' %}zh-Hans{% else %}en{% endif %}"
+  translationStatus: "{% if locale == 'en' %}source{% else %}machine{% endif %}"
 ---
 {% from "components/image-grid.njk" import grid %}
 

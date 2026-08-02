@@ -1,6 +1,6 @@
 # Website copy for review — Kenya-China Tea Summit 2027
 
-**Generated:** 2026-08-02 · **Build:** `424fbfb` · **Live:** https://kenya-china-tea-summit.pages.dev
+**Generated:** 2026-08-02 · **Build:** `7bd72b6` · **Live:** https://kenya-china-tea-summit.pages.dev
 
 This document contains **every word of visible text on the website**, extracted
 from the built pages, in the order a visitor reads them. It is generated
