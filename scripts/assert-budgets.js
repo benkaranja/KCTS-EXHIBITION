@@ -15,13 +15,32 @@ const IMG_FILE_CAPS = {
   "hero-poster.avif": 102400, // LCP element — stricter cap
 };
 
-const listFiles = (dir) => readdirSync(dir).filter((f) => !f.startsWith("."));
+// Recursively collect all files under a directory, excluding dotfiles at any depth.
+// Returns array of paths relative to baseDir.
+const walkFiles = (dir, baseDir = "") => {
+  if (!existsSync(dir)) return [];
+  const files = [];
+  for (const entry of readdirSync(dir)) {
+    if (entry.startsWith(".")) continue;
+    const fullPath = join(dir, entry);
+    const relPath = baseDir ? join(baseDir, entry) : entry;
+    const stat = statSync(fullPath);
+    if (stat.isDirectory()) {
+      files.push(...walkFiles(fullPath, relPath));
+    } else {
+      files.push({ path: relPath, size: stat.size });
+    }
+  }
+  return files;
+};
 
+// For aggregate budgets (CSS, JS), sum all files at any depth.
 // null means "directory does not exist" — distinct from a real 0-byte total.
-const dirTotal = (dir) =>
-  existsSync(dir)
-    ? listFiles(dir).reduce((a, f) => a + statSync(join(dir, f)).size, 0)
-    : null;
+const dirTotal = (dir) => {
+  if (!existsSync(dir)) return null;
+  const files = walkFiles(dir);
+  return files.reduce((a, f) => a + f.size, 0);
+};
 
 const failures = [];
 
@@ -38,22 +57,20 @@ for (const { dir, max, label } of Object.values(BUDGETS)) {
 }
 
 if (existsSync("public/video")) {
-  for (const f of listFiles("public/video")) {
-    const size = statSync(join("public/video", f)).size;
-    console.log(`video  ${f} ${size} / ${VIDEO_MAX} bytes`);
-    if (size > VIDEO_MAX) failures.push(`${f} over video budget: ${size} > ${VIDEO_MAX}`);
+  for (const { path, size } of walkFiles("public/video")) {
+    console.log(`video  ${path} ${size} / ${VIDEO_MAX} bytes`);
+    if (size > VIDEO_MAX) failures.push(`${path} over video budget: ${size} > ${VIDEO_MAX}`);
   }
 }
 
 // public/img is optional — a missing directory is not a failure, unlike css/js.
 if (existsSync("public/img")) {
-  for (const f of listFiles("public/img")) {
-    const path = join("public/img", f);
-    if (statSync(path).isDirectory()) continue;
-    const size = statSync(path).size;
-    const cap = IMG_FILE_CAPS[f] ?? IMG_MAX;
-    console.log(`img    ${f} ${size} / ${cap} bytes`);
-    if (size > cap) failures.push(`${f} over img budget: ${size} > ${cap}`);
+  for (const { path, size } of walkFiles("public/img")) {
+    // Match IMG_FILE_CAPS by basename (e.g., "hero-poster.avif" in any subdirectory)
+    const basename = path.split("/").pop();
+    const cap = IMG_FILE_CAPS[basename] ?? IMG_MAX;
+    console.log(`img    ${path} ${size} / ${cap} bytes`);
+    if (size > cap) failures.push(`${path} over img budget: ${size} > ${cap}`);
   }
 }
 
