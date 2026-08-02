@@ -673,3 +673,45 @@ select.input { cursor: pointer; }
     rgb(15 46 22 / 0.66) 100%
   );
 }
+
+/* ==== plate figures ===================================================== */
+
+.plate { margin: 0; }
+
+.plate__grid {
+  display: grid;
+  gap: var(--sp-2xs);          /* transparent — the ground shows through */
+  grid-template-columns: repeat(2, 1fr);
+}
+.plate--2 .plate__grid { grid-template-columns: repeat(2, 1fr); }
+.plate--3 .plate__grid { grid-template-columns: repeat(2, 1fr); }
+.plate--3 .plate__cell:first-child { grid-column: span 2; }
+.plate--4 .plate__grid { grid-template-columns: repeat(2, 1fr); }
+
+.plate__cell { display: block; overflow: hidden; }
+.plate__cell img {
+  display: block; width: 100%; height: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius-s);
+}
+.plate--3 .plate__cell:first-child img { aspect-ratio: 16 / 7; }
+
+.plate__caption {
+  margin-top: var(--sp-2xs);
+  font-family: var(--font-ui);
+  font-size: var(--step--2);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--c-text-muted);
+}
+.plate__no { color: var(--c-seal); margin-right: var(--sp-2xs); }
+.section--ink .plate__caption { color: var(--c-text-on-ink-muted); }
+.section--ink .plate__no { color: var(--c-ply-canary); }
+
+@media (min-width: 52rem) {
+  .plate--3 .plate__grid { grid-template-columns: repeat(3, 1fr); }
+  .plate--3 .plate__cell:first-child { grid-column: auto; }
+  .plate--3 .plate__cell:first-child img { aspect-ratio: 4 / 3; }
+  .plate--4 .plate__grid { grid-template-columns: repeat(4, 1fr); }
+}
