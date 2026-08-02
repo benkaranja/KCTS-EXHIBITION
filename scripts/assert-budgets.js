@@ -11,22 +11,30 @@ const BUDGETS = {
 };
 const VIDEO_MAX = 4194304; // 4 MB per file
 
+const listFiles = (dir) => readdirSync(dir).filter((f) => !f.startsWith("."));
+
+// null means "directory does not exist" — distinct from a real 0-byte total.
 const dirTotal = (dir) =>
   existsSync(dir)
-    ? readdirSync(dir).reduce((a, f) => a + statSync(join(dir, f)).size, 0)
-    : 0;
+    ? listFiles(dir).reduce((a, f) => a + statSync(join(dir, f)).size, 0)
+    : null;
 
 const failures = [];
 
 for (const { dir, max, label } of Object.values(BUDGETS)) {
   const total = dirTotal(dir);
+  if (total === null) {
+    console.error(`${label.padEnd(6)} MISSING DIRECTORY: ${dir}`);
+    failures.push(`${label} directory missing: ${dir}`);
+    continue;
+  }
   const pct = ((total / max) * 100).toFixed(0);
   console.log(`${label.padEnd(6)} ${total} / ${max} bytes (${pct}%)`);
   if (total > max) failures.push(`${label} over budget: ${total} > ${max}`);
 }
 
 if (existsSync("public/video")) {
-  for (const f of readdirSync("public/video")) {
+  for (const f of listFiles("public/video")) {
     const size = statSync(join("public/video", f)).size;
     console.log(`video  ${f} ${size} / ${VIDEO_MAX} bytes`);
     if (size > VIDEO_MAX) failures.push(`${f} over video budget: ${size} > ${VIDEO_MAX}`);
