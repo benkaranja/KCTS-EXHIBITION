@@ -39,4 +39,9 @@ npm-debug.log*
 *.mp4
 *.mov
 *.avi
+*.webm
 !src/assets/video/*.mp4
+!src/assets/video/*.webm
+
+# --- SDD scratch (ledger recovered from git log if lost) ---
+.superpowers/

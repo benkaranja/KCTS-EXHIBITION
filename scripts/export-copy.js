@@ -9,9 +9,19 @@
 import { readFileSync, writeFileSync, existsSync } from "node:fs";
 import { execSync } from "node:child_process";
 
-const OUT = "website_content/COPY-FOR-REVIEW.md";
-if (!existsSync("public/index.html")) {
-  console.error("public/ not built. Run `npm run build` first.");
+// `--locale zh` exports the Chinese edition instead, for the same client
+// review pass. Machine translation has to be read by a human before it can
+// lose its noindex, and this is what they read.
+const LOCALE = process.argv.includes("--locale")
+  ? process.argv[process.argv.indexOf("--locale") + 1]
+  : "en";
+const PREFIX = LOCALE === "en" ? "" : `/${LOCALE}`;
+const OUT =
+  LOCALE === "en"
+    ? "website_content/COPY-FOR-REVIEW.md"
+    : `website_content/COPY-FOR-REVIEW-${LOCALE}.md`;
+if (!existsSync(`public${PREFIX}/index.html`)) {
+  console.error(`public${PREFIX}/ not built. Run \`npm run build\` first.`);
   process.exit(1);
 }
 
@@ -31,6 +41,7 @@ const ORDER = [
   ["/news/", "News & Insight"],
   ["/contact/", "Contact"],
   ["/media/", "Media & Press"],
+  ["/downloads/", "Downloads"],
   ["/privacy/", "Privacy Notice"],
   ["/terms/", "Terms of Use"],
   ["/code-of-conduct/", "Code of Conduct"],
@@ -139,7 +150,7 @@ site not reference them at all, that is a one-line change.
 
 const sections = [];
 for (const [url, name] of ORDER) {
-  const file = url === "/" ? "public/index.html" : `public${url}index.html`;
+  const file = url === "/" ? `public${PREFIX}/index.html` : `public${PREFIX}${url}index.html`;
   if (!existsSync(file)) { sections.push(`\n# ${name}\n\n_Page not built._\n`); continue; }
   const html = readFileSync(file, "utf8");
   const title = strip((html.match(/<title>([\s\S]*?)<\/title>/) || [])[1] || "");

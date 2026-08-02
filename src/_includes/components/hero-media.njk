@@ -1,0 +1,11 @@
+{# Poster is always in the markup and is the LCP element. The video element is
+   created by hero.js only when eligible, so mobile and reduced-motion users
+   download zero video bytes. #}
+<div class="hero__media" data-hero-video
+     data-mp4="/video/hero.mp4" data-webm="/video/hero.webm" aria-hidden="true">
+  <picture>
+    <source srcset="/img/hero-poster.avif" type="image/avif">
+    <img class="hero__poster" src="/img/hero-poster.webp" alt=""
+         width="1600" height="900" fetchpriority="high" decoding="async">
+  </picture>
+</div>

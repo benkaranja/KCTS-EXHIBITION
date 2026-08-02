@@ -6,7 +6,7 @@
 // gray-matter + Zod. Six rules over YAML that is already this simple does not
 // justify two dependencies. Swap in a schema library if the rule set passes ~12.
 
-import { readdirSync, readFileSync, existsSync } from "node:fs";
+import { readdirSync, readFileSync, existsSync, statSync } from "node:fs";
 import { join, basename, extname } from "node:path";
 
 const SRC = "src";
@@ -176,8 +176,63 @@ function checkFrontMatter(dir) {
 checkFrontMatter(join(SRC, "pages"));
 checkFrontMatter(SRC);
 
+// --- rule 8: downloads must point at files that exist, at the stated size ----
+// A downloads page listing a 404 is worse than no downloads page. The stated
+// byte count is what the page prints as the file size, so it has to be the
+// real one.
+//
+// Resolves against src/static-files/, NOT public/: this script runs after
+// `clean` has deleted public/ and before Eleventy recreates it, so public/
+// is guaranteed absent here. src/static-files is passthrough-copied to
+// /files (see eleventy.config.js), so the URL prefix maps one-to-one.
+const STATIC_FILES = join(SRC, "static-files");
+const downloads = loadCollection("downloads");
+for (const d of downloads) {
+  const { file, bytes, title, category } = d.data;
+  if (!title) errors.push(`${d.file}: missing "title"`);
+  if (!category) errors.push(`${d.file}: missing "category"`);
+  if (!file) {
+    errors.push(`${d.file}: missing "file"`);
+    continue;
+  }
+  if (!String(file).startsWith("/files/")) {
+    errors.push(`${d.file}: "file" must start with /files/ — got "${file}"`);
+    continue;
+  }
+
+  const onDisk = join(STATIC_FILES, String(file).slice("/files/".length));
+  if (!existsSync(onDisk)) {
+    errors.push(`${d.file}: file "${file}" not found at ${onDisk}`);
+    continue;
+  }
+  const actual = statSync(onDisk).size;
+  if (bytes == null) {
+    errors.push(`${d.file}: missing "bytes" (actual is ${actual})`);
+  } else if (Number(bytes) !== actual) {
+    errors.push(`${d.file}: bytes ${bytes} does not match actual ${actual} for "${file}"`);
+  }
+}
+
+// --- rule 9: every page must render in both locales --------------------------
+// A page that opts out of localisation silently produces a Chinese edition with
+// a hole in it. Opting out has to be explicit and is not currently allowed.
+const PAGES = join(SRC, "pages");
+for (const f of existsSync(PAGES) ? readdirSync(PAGES) : []) {
+  if (!f.endsWith(".njk")) continue;
+  const file = join(PAGES, f);
+  const raw = readFileSync(file, "utf8");
+  if (!raw.startsWith("---")) continue;
+  const fm = raw.slice(3, raw.indexOf("\n---", 3));
+  if (/^\s*noLocale:\s*true\s*$/m.test(fm)) {
+    errors.push(`${file}: sets noLocale, which would leave a hole in the Chinese edition`);
+  }
+  if (!/^\s*basePath:\s*\S/m.test(fm)) {
+    errors.push(`${file}: missing "basePath" — required for locale routing`);
+  }
+}
+
 // --- report ----------------------------------------------------------------
-const counts = `${speakers.length} speakers, ${sessions.length} sessions, ${sponsors.length} sponsors`;
+const counts = `${speakers.length} speakers, ${sessions.length} sessions, ${sponsors.length} sponsors, ${downloads.length} downloads`;
 
 for (const w of warnings) console.warn(`  warn  ${w}`);
 

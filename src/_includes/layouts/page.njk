@@ -14,6 +14,11 @@ layout: layouts/base.njk
 
 <section class="section">
   <div class="wrap">
+    {% if translationStatus == "machine" %}
+    <div class="mt-notice" role="note" lang="zh-Hans">
+      <p><strong>本页面为机器翻译，尚未经过人工审核。</strong>如有疑问，请以<a href="{{ basePath }}" lang="en" hreflang="en" data-nolocale>英文原版</a>为准。</p>
+    </div>
+    {% endif %}
     {{ content | safe }}
   </div>
 </section>

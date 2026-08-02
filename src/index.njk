@@ -2,10 +2,21 @@
 layout: layouts/base.njk
 title: false
 description: The Kenya-China Tea Summit 2027 brings tea exporters, buyers, investors and technology providers together in Nairobi from 21–23 April 2027. Register your interest.
-permalink: /index.html
+basePath: /
+pagination:
+  data: locales
+  size: 1
+  alias: locale
+  addAllPagesToCollections: true
+eleventyComputed:
+  permalink: "{% if locale == 'en' %}/index.html{% else %}/zh/index.html{% endif %}"
+  lang: "{% if locale == 'zh' %}zh-Hans{% else %}en{% endif %}"
+  translationStatus: "{% if locale == 'en' %}source{% else %}machine{% endif %}"
 ---
+{% from "components/image-grid.njk" import grid %}
 
 <section class="hero">
+  {% include "components/hero-media.njk" %}
   <div class="wrap">
     <div class="hero__masthead">
       <p class="hero__docname">Summit Particulars &middot; First Edition</p>
@@ -25,6 +36,10 @@ permalink: /index.html
           <div class="field">
             <dt class="label">Dated</dt>
             <dd class="value"><time datetime="{{ summit.dates.start }}/{{ summit.dates.end }}">{{ summit.dates.display }}</time></dd>
+          </div>
+          <div class="field">
+            <dt class="label">Days to opening</dt>
+            <dd class="value"><span data-countdown="{{ summit.dates.start }}">{{ summit.dates.start | daysUntil }}</span></dd>
           </div>
           <div class="field">
             <dt class="label">Venue</dt>
@@ -65,9 +80,11 @@ permalink: /index.html
         <p>Kenya grows the tea. China drinks more of it than anywhere on earth. Between those two facts sits a chain of buyers, processors, financiers, freight operators and regulators who rarely occupy the same building. For three days in April 2027, they will.</p>
         <p><a href="/about/">More about the summit</a></p>
       </div>
-      <img class="vignette" src="/img/vignettes/tea-branch.webp" width="841" height="970"
-           alt="Steel-engraving of a camellia sinensis branch with two leaves and a bud."
-           loading="lazy" decoding="async">
+      {{ grid([
+        {src:"/img/plates/rows-morning", alt:"Contour rows of a highland tea plantation in early morning mist.", w:1200, h:900},
+        {src:"/img/plates/leaf-close",   alt:"Close view of fresh two-leaves-and-a-bud tea shoots.", w:1200, h:900},
+        {src:"/img/plates/highland",     alt:"Kenyan highland landscape with a red earth track through tea fields.", w:1200, h:900}
+      ], "Kenya's growing highlands", "I") }}
     </div>
   </div>
 </section>
@@ -131,9 +148,12 @@ permalink: /index.html
         <p>Stand allocation opens with registration. Structured B2B matchmaking runs through day two, so an exhibitor's meetings are booked before they land.</p>
         <p><a href="/exhibition/">Exhibition and stands</a></p>
       </div>
-      <img class="vignette" src="/img/vignettes/tea-chest.webp" width="900" height="688"
-           alt="Steel-engraving of a plain plywood shipping chest with metal corner protectors and banding."
-           loading="lazy" decoding="async">
+      {{ grid([
+        {src:"/img/plates/withering", alt:"Withering troughs of green leaf in a tea factory.", w:1200, h:900},
+        {src:"/img/plates/sorting",   alt:"Graded black tea separated into piles on a sorting surface.", w:1200, h:900},
+        {src:"/img/plates/sacks",     alt:"Stacked unmarked hessian sacks of bulk tea in a warehouse.", w:1200, h:900},
+        {src:"/img/plates/chest-stack", alt:"Stack of plain plywood shipping chests with metal corner protectors.", w:1200, h:900}
+      ], "Processing and the expo floor", "II") }}
     </div>
   </div>
 </section>
@@ -187,9 +207,10 @@ permalink: /index.html
           <span>Registration<br>Open<br>MMXXVII</span>
         </div>
       </div>
-      <img class="vignette" src="/img/vignettes/mount-kenya.webp" width="899" height="628"
-           alt="Steel-engraving of a glaciated equatorial mountain rising above cloud."
-           loading="lazy" decoding="async">
+      {{ grid([
+        {src:"/img/plates/liquor",      alt:"Porcelain cupping bowls holding brewed tea liquor of varying strengths.", w:1200, h:900},
+        {src:"/img/plates/acacia-dusk", alt:"Flat-topped acacia against a dusk sky over open savannah.", w:1200, h:900}
+      ], "Coming to Nairobi", "III") }}
     </div>
   </div>
 </section>

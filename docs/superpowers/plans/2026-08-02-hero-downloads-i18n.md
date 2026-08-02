@@ -729,6 +729,7 @@ const PLATES = [
   { slug: "sacks",          prompt: "Stacked plain hessian sacks of bulk tea in a clean warehouse, no printing or markings on the sacks." },
   { slug: "liquor",         prompt: "Row of white porcelain cupping bowls holding brewed tea liquor of varying strengths on a plain bench." },
   { slug: "chest-stack",    prompt: "Stack of plain plywood shipping chests with metal corner protectors in a warehouse, entirely unmarked." },
+  { slug: "acacia-dusk",    prompt: "Flat-topped acacia silhouetted against a dusk sky over open Kenyan savannah, no people or vehicles." },
 ];
 
 async function generate({ slug, prompt }) {
@@ -767,7 +768,7 @@ export OPENROUTER_API_KEY=$(grep '^OPENROUTER_API_KEY=' .env.local | cut -d= -f2
 node scripts/make-grid-images.js
 ```
 
-Expected: eight `slug  webp NNNKB  avif NNNKB` lines, every file under 200 KB.
+Expected: nine `slug  webp NNNKB  avif NNNKB` lines, every file under 200 KB.
 
 - [ ] **Step 3: Replace the three vignette figures on the homepage**
 
@@ -802,8 +803,8 @@ Replace the `mount-kenya.webp` element with:
 
 ```njk
       {{ grid([
-        {src:"/img/plates/liquor",    alt:"Porcelain cupping bowls holding brewed tea liquor of varying strengths.", w:1200, h:900},
-        {src:"/img/plates/highland",  alt:"Kenyan highland landscape with tea fields under a tall sky.", w:1200, h:900}
+        {src:"/img/plates/liquor",      alt:"Porcelain cupping bowls holding brewed tea liquor of varying strengths.", w:1200, h:900},
+        {src:"/img/plates/acacia-dusk", alt:"Flat-topped acacia against a dusk sky over open savannah.", w:1200, h:900}
       ], "Coming to Nairobi", "III") }}
 ```
 
@@ -1068,8 +1069,7 @@ In `eleventy.config.js`, after the `news` collection, add:
 The only document that genuinely exists today is the copy export. Publish it as the first entry:
 
 ```bash
-mkdir -p public/files src/downloads
-cp website_content/COPY-FOR-REVIEW.md /tmp/ignore-this || true
+mkdir -p src/static-files src/downloads
 ```
 
 Create `src/downloads/summit-fact-sheet.md`:
@@ -1092,9 +1092,9 @@ description: Dates, location, theme, objectives and registration categories on o
 **This will fail rule 8 until the PDF exists — that is the point.** Generate it:
 
 ```bash
-node -e '
-const fs=require("fs");
-const s=require("./src/_data/summit.js").default;
+node --input-type=module -e '
+import fs from "node:fs";
+const s = (await import("./src/_data/summit.js")).default;
 const lines=[
  s.name, s.tagline, "", `Dates: ${s.dates.display}`, `Location: ${s.location.city}, ${s.location.country}`,
  `Theme: ${s.theme}`, "", "Objectives:", ...s.objectives.map(o=>` - ${o.title}: ${o.body}`),
@@ -1118,6 +1118,22 @@ fs.writeFileSync("public/files/kcts-2027-fact-sheet.pdf",pdf,"latin1");
 console.log("wrote", fs.statSync("public/files/kcts-2027-fact-sheet.pdf").size, "bytes");
 '
 ```
+
+Verify the PDF is structurally valid before trusting it:
+
+```bash
+node --input-type=module -e '
+import { readFileSync } from "node:fs";
+const b = readFileSync("public/files/kcts-2027-fact-sheet.pdf", "latin1");
+console.log("header:", b.slice(0,8));
+console.log("has xref:", b.includes("xref"));
+console.log("has EOF:", b.trimEnd().endsWith("%%EOF"));
+console.log("bytes:", Buffer.byteLength(b,"latin1"));
+'
+```
+
+Expected: `header: %PDF-1.4`, both `true`, and a byte count. Open it once in a
+viewer to confirm it renders — a structurally valid PDF can still be blank.
 
 Take the printed byte count and put it in the `bytes:` field of `src/downloads/summit-fact-sheet.md`.
 

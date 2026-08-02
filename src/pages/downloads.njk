@@ -1,0 +1,54 @@
+---
+layout: layouts/page.njk
+basePath: /downloads/
+title: Downloads
+heading: Documents and downloads
+docName: Schedule G · Documents
+serial: No. KCTS/2027/D
+standfirst: "Everything published about the summit, in one place, in its current version."
+description: Download the Kenya-China Tea Summit 2027 fact sheet, brochure, agenda, sponsorship and exhibition documents.
+sitemapPriority: 0.8
+---
+
+{# Category order is the order of this map, not alphabetical — an enquirer
+   wants the overview before the policies. Categories with nothing published
+   render nothing at all rather than an empty heading. #}
+{% set groups = {
+  brochure: "Summit overview",
+  agenda: "Programme",
+  exhibition: "Exhibition",
+  sponsorship: "Partnership",
+  report: "Reports",
+  press: "Press",
+  policy: "Policies"
+} %}
+
+{% set any = false %}
+{% for key, label in groups %}
+  {% set items = collections.downloads | byCategory(key) %}
+  {% if items | length %}
+    {% set any = true %}
+<h2>{{ label }}</h2>
+<ul class="dl-list">
+  {% for d in items %}
+  <li class="dl-item">
+    <a class="dl-item__name" href="{{ d.data.file }}" download>{{ d.data.title }}</a>
+    <span class="dl-item__meta">{{ d.data.format }} &middot; {{ (d.data.bytes / 1024) | round }} KB{% if d.data.pages %} &middot; {{ d.data.pages }} pp{% endif %} &middot; updated <time datetime="{{ d.data.updated | isoDate }}">{{ d.data.updated | readableDate }}</time></span>
+    {% if d.data.description %}<span class="dl-item__desc">{{ d.data.description }}</span>{% endif %}
+  </li>
+  {% endfor %}
+</ul>
+  {% endif %}
+{% endfor %}
+
+{% if not any %}
+<div class="note">
+  <p class="note__label">Nothing published yet</p>
+  <p>Documents appear here as the secretariat releases them.</p>
+</div>
+{% endif %}
+
+<div class="note">
+  <p class="note__label">Versions</p>
+  <p>This page always carries the current version of each document. Superseded versions are removed rather than archived, so a link you saved will always give you the latest. Every entry shows the date it was last updated.</p>
+</div>

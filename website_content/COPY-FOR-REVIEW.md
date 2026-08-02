@@ -1,6 +1,6 @@
 # Website copy for review — Kenya-China Tea Summit 2027
 
-**Generated:** 2026-08-01 · **Build:** `239e922` · **Live:** https://kenya-china-tea-summit.pages.dev
+**Generated:** 2026-08-02 · **Build:** `28c2aef` · **Live:** https://kenya-china-tea-summit.pages.dev
 
 This document contains **every word of visible text on the website**, extracted
 from the built pages, in the order a visitor reads them. It is generated
@@ -56,6 +56,7 @@ Brewing Strategic Partnerships for Sustainable Tea Trade, Investment and Innovat
 
 - **Convened at:** Nairobi, Kenya
 - **Dated:** 21–23 April 2027
+- **Days to opening:** 262
 - **Venue:** to be entered
 - **Issued by:** Orbitline Events & Ushers Ltd
 Three days that put Kenyan growers, processors and exporters in the same rooms as Chinese buyers, investors and technology providers. Trade on day one, capital and innovation on day two, the expo floor on day three.
@@ -73,6 +74,8 @@ A landmark international platform designed to deepen trade, investment, innovati
 Kenya grows the tea. China drinks more of it than anywhere on earth. Between those two facts sits a chain of buyers, processors, financiers, freight operators and regulators who rarely occupy the same building. For three days in April 2027, they will.
 
 More about the summit
+
+Plate IKenya's growing highlands
 
 ### Six objectives
 
@@ -94,6 +97,8 @@ Stand allocation opens with registration. Structured B2B matchmaking runs throug
 
 Exhibition and stands
 
+Plate IIProcessing and the expo floor
+
 ### Six ways to attend
 
 Each category is registered separately. Fees and inclusions are published once the secretariat confirms them.
@@ -114,6 +119,8 @@ Partnership enquiry
 The secretariat coordinates flights, hotel reservations, tea plantation tours and safari extensions for delegations. Details are published as arrangements are confirmed.
 
 Travel and stay
+
+Plate IIIComing to Nairobi
 
 ---
 
@@ -773,12 +780,15 @@ Media accreditation is one of the six registration categories. Register under Me
 - **Theme:** Brewing Strategic Partnerships for Sustainable Tea Trade, Investment and Innovation
 - **Edition:** First
 - **Organiser:** Kenya-China Tea Summit Secretariat, Orbitline Events & Ushers Ltd
-- **Press pack:** to be entered
 - **Media contact:** to be entered
+
+### Assets and documents
+
+The press pack, logo files and every published document are on the downloads page, which always carries the current version of each.
 
 ### Using the summit's name and mark
 
-The logo may be used in editorial coverage of the summit without prior permission. It may not be used in a way that implies partnership, endorsement or sponsorship. Downloadable assets are added here with the press pack.
+The logo may be used in editorial coverage of the summit without prior permission. It may not be used in a way that implies partnership, endorsement or sponsorship.
 
 Please do not report as fact
 
@@ -789,6 +799,35 @@ Delegate numbers, country counts, speaker names, the venue, ticket prices, or an
 Register under the Media category and the secretariat will come back to you with the accreditation process once it is set.
 
 Register as media
+
+---
+
+# Downloads
+
+**URL:** `/downloads/`  
+**Browser tab / search-result title:** Downloads | Kenya-China Tea Summit  
+**Search-result description:** Download the Kenya-China Tea Summit 2027 fact sheet, brochure, agenda, sponsorship and exhibition documents.
+
+Schedule G · Documents
+
+No. KCTS/2027/D
+
+## Documents and downloads
+
+Everything published about the summit, in one place, in its current version.
+
+### Summit overview
+
+- Summit fact sheet PDF · 2 KB · 1 pp · updated 2 August 2026 Dates, location, theme, the six objectives and the six registration categories on one page. Generated from the site's own data, so it cannot fall out of step with these pages.
+Versions
+
+This page always carries the current version of each document. Superseded versions are removed rather than archived, so a link you saved will always give you the latest. Every entry shows the date it was last updated.
+
+### Register your interest
+
+Six categories, from delegate to exhibitor. Fees and deadlines are published once the secretariat confirms them.
+
+Register interest
 
 ---
 
@@ -959,6 +998,7 @@ These appear on every page.
 
 - Speakers → `/speakers/`
 - News → `/news/`
+- Downloads → `/downloads/`
 - Register interest → `/registration/`
 - B2B matchmaking → `/b2b-matchmaking/`
 - Venue → `/venue/`
@@ -978,4 +1018,4 @@ These appear on every page.
 
 ---
 
-_End of copy. 17 pages._
+_End of copy. 18 pages._

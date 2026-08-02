@@ -2,12 +2,12 @@
   "$comment": "Adapted from templates/criteria.default.json at intake. Changes recorded in docs/DECISIONS.md: R1-R3 dropped (greenfield, ADR-001); B4 dropped (Pages has no cron, ADR-005); I1 split into I1/I2 so the build is not hostage to third-party credentials; E1/E2 added for the Eleventy build and content validation (ADR-003, ADR-007).",
   "project": "kenya-china-tea-summit",
   "status": "active",
-  "iteration": 5,
+  "iteration": 6,
   "maxIterations": 40,
   "previewUrl": "https://kenya-china-tea-summit.pages.dev",
   "productionUrl": "",
   "startedAt": "2026-08-01",
-  "lastIterationAt": "2026-08-01",
+  "lastIterationAt": "2026-08-02",
   "completedAt": null,
   "criteria": [
     {
@@ -150,7 +150,7 @@
       ],
       "status": "passed",
       "attempts": 1,
-      "evidence": "docs/SEO-RESEARCH.md written. 7 dated, sourced industry findings (Kenyan Wall Street, African Business, Ecofin, China Daily 2026-07-21, Nairobi Business Monthly, Food Business MEA, Tea Trade UK). No volume/difficulty figures invented. Instrument was WebSearch, not last30days \u2014 disclosed in the doc and HANDOFF.",
+      "evidence": "docs/SEO-RESEARCH.md written. 7 dated, sourced industry findings (Kenyan Wall Street, African Business, Ecofin, China Daily 2026-07-21, Nairobi Business Monthly, Food Business MEA, Tea Trade UK). No volume/difficulty figures invented. Instrument was WebSearch, not last30days — disclosed in the doc and HANDOFF.",
       "lastRun": "2026-08-01"
     },
     {
@@ -169,14 +169,14 @@
     {
       "id": "C4",
       "phase": "content",
-      "goal": "All copy drafted, humanizer-passed, zero placeholders, zero claims outside FACTS.md \u00a71",
+      "goal": "All copy drafted, humanizer-passed, zero placeholders, zero claims outside FACTS.md §1",
       "verify": "! grep -riE 'lorem|TODO|TBD|\\[placeholder\\]|\\[insert' public/",
       "deps": [
         "C3"
       ],
       "status": "passed",
       "attempts": 1,
-      "evidence": "All 17 launch+utility pages built with real copy. grep for lorem/TODO/TBD/placeholder across public/: none. Mechanical AI-tell scan over the 5,973 words of site copy: 0 hits across 9 detectors (delve/underscore, in-today's-landscape, not-only-but-also, negative parallelism, vague attribution, promo superlatives, hollow adjectives, moreover/furthermore, superficial -ing). Sentence stdev 14.8 (high variation). Written human-first; the humanizer skill was not run as a separate pass \u2014 the scan is the evidence, disclosed.",
+      "evidence": "All 17 launch+utility pages built with real copy. grep for lorem/TODO/TBD/placeholder across public/: none. Mechanical AI-tell scan over the 5,973 words of site copy: 0 hits across 9 detectors (delve/underscore, in-today's-landscape, not-only-but-also, negative parallelism, vague attribution, promo superlatives, hollow adjectives, moreover/furthermore, superficial -ing). Sentence stdev 14.8 (high variation). Written human-first; the humanizer skill was not run as a separate pass — the scan is the evidence, disclosed.",
       "lastRun": "2026-08-01"
     },
     {
@@ -187,10 +187,10 @@
       "deps": [
         "C4"
       ],
-      "status": "pending",
-      "attempts": 0,
-      "evidence": "",
-      "lastRun": null
+      "status": "passed",
+      "attempts": 1,
+      "evidence": "All 18 sitemap URLs carry title, description, canonical, og:title/description/image, twitter:card, html lang and hreflang x-default. ConferenceEvent JSON-LD parses.",
+      "lastRun": "2026-08-02"
     },
     {
       "id": "C6",
@@ -200,10 +200,10 @@
       "deps": [
         "C5"
       ],
-      "status": "pending",
-      "attempts": 0,
-      "evidence": "",
-      "lastRun": null
+      "status": "passed",
+      "attempts": 1,
+      "evidence": "sitemap.xml lists 18 URLs, all 200. 44 distinct internal links across the site, all 200. Machine-translated /zh/ pages deliberately excluded (ADR-014).",
+      "lastRun": "2026-08-02"
     },
     {
       "id": "D1",
@@ -227,10 +227,10 @@
         "D1",
         "C4"
       ],
-      "status": "pending",
-      "attempts": 0,
-      "evidence": "",
-      "lastRun": null
+      "status": "passed",
+      "attempts": 1,
+      "evidence": "Live at 360/768/1280 across 10 pages incl. /zh/: no horizontal overflow. Found and fixed .manifest nowrap causing 377/360 on /programme/. AUDIT.md iteration 6.",
+      "lastRun": "2026-08-02"
     },
     {
       "id": "D3",
@@ -242,7 +242,7 @@
       ],
       "status": "passed",
       "attempts": 1,
-      "evidence": "node scripts/detect.mjs --json over style.css, tokens.css, index.njk, base.njk \u2192 [] (zero findings).",
+      "evidence": "node scripts/detect.mjs --json over style.css, tokens.css, index.njk, base.njk → [] (zero findings).",
       "lastRun": "2026-08-01"
     },
     {
@@ -254,10 +254,10 @@
         "D2",
         "I2"
       ],
-      "status": "in-progress",
-      "attempts": 0,
-      "evidence": "Three steel-engraving vignettes generated via OpenRouter under a no-people/no-premises constraint; AVIF+WebP, all under 200KB, explicit width/height and alt. Outstanding: LCP preload, and the emblem/logo raster still needs AVIF+WebP conversion.",
-      "lastRun": null
+      "status": "passed",
+      "attempts": 1,
+      "evidence": "21 distinct image assets, every webp has an avif companion, largest 141KB of a 200KB cap, width/height/alt on every img, LCP poster preloaded on / only and never lazy. Verified against the deploy.",
+      "lastRun": "2026-08-02"
     },
     {
       "id": "D5",

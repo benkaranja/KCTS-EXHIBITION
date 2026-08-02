@@ -192,6 +192,10 @@ a:hover { text-decoration-thickness: 2px; }
   margin-top: 0.45em;
 }
 
+/* The switcher is a sibling of the list, not an item in it — it is not a
+   destination in the same sense. Without this the nav is a block box and the
+   switcher drops to a second line under the links. */
+.site-nav { display: flex; align-items: center; }
 .site-nav__list { display: flex; gap: var(--sp-m); list-style: none; margin: 0; padding: 0; }
 .site-nav__list a {
   font-family: var(--font-ui);
@@ -317,29 +321,34 @@ a:hover { text-decoration-thickness: 2px; }
 }
 .btn--primary { background: var(--c-ink-2); color: var(--c-paper); }
 .btn--primary:hover { background: var(--c-seal); border-color: var(--c-seal); color: var(--c-paper); }
-.btn--ghost { background: transparent; color: var(--c-ink-2); }
-.btn--ghost:hover { background: var(--c-ink-2); color: var(--c-paper); }
 .btn--block { width: 100%; }
 
-/* A ghost button inverts on the intaglio ground — but NOT inside the issuing
-   panel, which is light stock sitting on that ground. The first attempt scoped
-   this by descendant depth and still matched, because .issue is itself a div
-   child of .hero__grid; the button rendered paper-on-paper and vanished.
-   Ground-based, not position-based: .on-ink sets the inversion, light panels
-   opt back out. */
-.on-ink .btn--ghost, .section--ink .btn--ghost {
-  color: var(--c-text-on-ink);
-  border-color: var(--c-text-on-ink-muted);
+/* Ghost buttons take ink from their ground: light panels set --ghost-fg
+   locally, ink grounds set it on the section. Hover uses its own pair
+   (--ghost-hover-bg/-fg) rather than reusing --ghost-fg as a background —
+   on an ink ground --ghost-fg is a light, muted green (text-on-ink-muted)
+   that is legible as text on dark ink but is itself too light to hold
+   paper-white text on hover (≈1.6:1). Hover instead inverts fully: paper
+   background, ink text, same as the light-panel treatment reads today. */
+.btn--ghost {
+  background: transparent;
+  color: var(--ghost-fg, var(--c-ink-2));
+  border-color: var(--ghost-fg, var(--c-ink-2));
 }
-.on-ink .btn--ghost:hover, .section--ink .btn--ghost:hover {
-  background: var(--c-paper); color: var(--c-ink-2); border-color: var(--c-paper);
+.btn--ghost:hover {
+  background: var(--ghost-hover-bg, var(--c-ink-2));
+  color: var(--ghost-hover-fg, var(--c-paper));
+  border-color: var(--ghost-hover-bg, var(--c-ink-2));
 }
-/* Light stock anywhere wins back the default ink treatment. */
-.issue .btn--ghost, .sheet .btn--ghost {
-  color: var(--c-ink-2); border-color: var(--c-ink-2); background: transparent;
+.on-ink, .section--ink, .hero {
+  --ghost-fg: var(--c-text-on-ink-muted);
+  --ghost-hover-bg: var(--c-paper);
+  --ghost-hover-fg: var(--c-ink-2);
 }
-.issue .btn--ghost:hover, .sheet .btn--ghost:hover {
-  background: var(--c-ink-2); color: var(--c-paper); border-color: var(--c-ink-2);
+.issue, .sheet, .form {
+  --ghost-fg: var(--c-ink-2);
+  --ghost-hover-bg: var(--c-ink-2);
+  --ghost-hover-fg: var(--c-paper);
 }
 
 /* ==== sections ========================================================== */
@@ -393,22 +402,16 @@ a:hover { text-decoration-thickness: 2px; }
   padding-bottom: var(--sp-2xs);
 }
 .manifest tbody tr { border-bottom: 1px solid var(--c-rule); }
+/* nowrap keeps "Day One · 21 April 2027" on one line, which is right on a wide
+   screen and 17px of horizontal page scroll at 360. The date is the part that
+   may wrap; the day label is not. */
 .manifest td:first-child { font-family: var(--font-data); color: var(--c-seal); white-space: nowrap; }
+@media (max-width: 30rem) {
+  .manifest td:first-child { white-space: normal; }
+  .manifest th, .manifest td { padding-right: var(--sp-2xs); }
+}
 .manifest h3 { font-size: var(--step-1); margin-bottom: var(--sp-3xs); }
 .manifest p { margin: 0; color: var(--c-text-muted); font-size: var(--step--1); max-width: 46ch; }
-
-/* ==== vignettes: engraved illustration, multiplied onto the stock ======= */
-
-.vignette {
-  /* Line art printed on white: multiply drops the paper and leaves the ink,
-     so the engraving sits ON the tinted stock instead of in a white box. */
-  mix-blend-mode: multiply;
-  display: block;
-}
-/* On the intaglio ground multiply would bury black lines in dark green. Invert
-   to white line work, then screen, so the engraving reads as printed in light
-   ink on dark stock. */
-.section--ink .vignette { filter: invert(1); mix-blend-mode: screen; }
 
 .section-action { margin-top: var(--sp-l); }
 .figure-pair { display: grid; gap: var(--sp-xl); align-items: center; }
@@ -648,3 +651,140 @@ select.input { cursor: pointer; }
 
 /* Tag chips on light stock (the ink-ground variant lives in .band--invert). */
 .tag--ink { border-color: var(--c-rule); color: var(--c-text); }
+
+/* ==== hero media ======================================================== */
+
+.hero { isolation: isolate; }
+
+.hero__media {
+  position: absolute; inset: 0; z-index: -1;
+  overflow: hidden;
+  background: var(--c-ink-2);
+}
+.hero__poster, .hero__video {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.hero__video {
+  position: absolute; inset: 0;
+  opacity: 0;
+  transition: opacity var(--dur-slow) var(--ease-out);
+}
+.hero__media.is-playing .hero__video { opacity: 1; }
+
+/* The scrim. Two layers, not a uniform veil: text lives in the left ~55% of
+   the frame (h1, particulars, body) and across the top strip (masthead), so
+   only those zones carry a guaranteed floor. The right side and lower-right
+   are text-free (the .issue card is opaque) and are left weak so the footage
+   actually reads as footage. Both floors are measured in check-contrast.js,
+   composited over the real poster, sampling the weakest alpha per zone. */
+.hero__media::after {
+  content: ""; position: absolute; inset: 0;
+  background:
+    linear-gradient(
+      to bottom,
+      rgb(15 46 22 / 0.90) 0%,
+      rgb(15 46 22 / 0.90) 20%,
+      rgb(15 46 22 / 0) 32%,
+      rgb(15 46 22 / 0) 100%
+    ),
+    linear-gradient(
+      100deg,
+      rgb(15 46 22 / 0.82) 0%,
+      rgb(15 46 22 / 0.82) 55%,
+      rgb(15 46 22 / 0.15) 78%,
+      rgb(15 46 22 / 0.15) 100%
+    );
+}
+
+/* Below the two-column breakpoint .hero__grid is a single column, so text runs
+   the full width and the weak right-hand zone would sit under it. One flat
+   layer instead, at the alpha every hero foreground clears — canary is the
+   binding one and needs 0.84, so 0.86. Costs nothing below 48rem, where
+   hero.js never attaches the video at all. */
+@media (max-width: 59.999rem) {
+  .hero__media::after { background: rgb(15 46 22 / 0.86); }
+}
+
+/* ==== plate figures ===================================================== */
+
+.plate { margin: 0; }
+
+.plate__grid {
+  display: grid;
+  gap: var(--sp-2xs);          /* transparent — the ground shows through */
+  grid-template-columns: repeat(2, 1fr);
+}
+.plate--2 .plate__grid { grid-template-columns: repeat(2, 1fr); }
+.plate--3 .plate__grid { grid-template-columns: repeat(2, 1fr); }
+.plate--3 .plate__cell:first-child { grid-column: span 2; }
+.plate--4 .plate__grid { grid-template-columns: repeat(2, 1fr); }
+
+.plate__cell { display: block; overflow: hidden; }
+.plate__cell img {
+  display: block; width: 100%; height: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius-s);
+}
+.plate--3 .plate__cell:first-child img { aspect-ratio: 16 / 7; }
+
+.plate__caption {
+  margin-top: var(--sp-2xs);
+  font-family: var(--font-ui);
+  font-size: var(--step--2);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--c-text-muted);
+}
+.plate__no { color: var(--c-seal); margin-right: var(--sp-2xs); }
+.section--ink .plate__caption { color: var(--c-text-on-ink-muted); }
+.section--ink .plate__no { color: var(--c-ply-canary); }
+
+@media (min-width: 52rem) {
+  .plate--3 .plate__grid { grid-template-columns: repeat(3, 1fr); }
+  .plate--3 .plate__cell:first-child { grid-column: auto; }
+  .plate--3 .plate__cell:first-child img { aspect-ratio: 4 / 3; }
+  .plate--4 .plate__grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* ==== downloads ========================================================= */
+
+.dl-list { list-style: none; margin: 0 0 var(--sp-l); padding: 0; }
+.dl-item {
+  display: grid; gap: var(--sp-3xs);
+  padding-block: var(--sp-s);
+  border-top: 1px solid var(--c-rule);
+  max-width: var(--measure);
+}
+.dl-list .dl-item:last-child { border-bottom: 1px solid var(--c-rule); }
+.dl-item__name { font-family: var(--font-display); font-size: var(--step-1); font-weight: 600; }
+.dl-item__meta {
+  font-family: var(--font-data); font-size: var(--step--2);
+  color: var(--c-text-muted); letter-spacing: 0.02em;
+}
+.dl-item__desc { font-size: var(--step--1); color: var(--c-text-muted); }
+
+/* ==== locale ============================================================ */
+
+.lang-switch {
+  font-family: var(--font-ui); font-size: var(--step--1); font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--c-ply-canary); text-decoration: none;
+  border: 1px solid currentColor;
+  padding: var(--sp-3xs) var(--sp-2xs);
+  margin-inline-start: var(--sp-s);
+  white-space: nowrap;
+}
+.lang-switch:hover { background: var(--c-ply-canary); color: var(--c-ink-2); }
+
+/* Machine translation, declared. A trade summit cannot pass unreviewed
+   translation off as its own voice. */
+.mt-notice {
+  border: 1px dashed var(--c-seal);
+  padding: var(--sp-s);
+  margin-bottom: var(--sp-l);
+  max-width: var(--measure);
+}
+.mt-notice p { margin: 0; font-size: var(--step--1); }

@@ -1,0 +1,24 @@
+{# Plate figure: 2-4 photographs in a grid, gaps transparent so the section
+   ground shows through. The gap is the design, not padding.
+   Usage:
+     {% from "components/image-grid.njk" import grid %}
+     {{ grid(images, "Caption text", "I") }}
+#}
+{% macro grid(images, caption, plate) %}
+<figure class="plate plate--{{ images | length }}">
+  <div class="plate__grid">
+    {% for im in images %}
+    <picture class="plate__cell">
+      <source srcset="{{ im.src }}.avif" type="image/avif">
+      <img src="{{ im.src }}.webp" alt="{{ im.alt }}"
+           width="{{ im.w }}" height="{{ im.h }}" loading="lazy" decoding="async">
+    </picture>
+    {% endfor %}
+  </div>
+  {% if caption %}
+  <figcaption class="plate__caption">
+    {% if plate %}<span class="plate__no">Plate {{ plate }}</span>{% endif %}{{ caption }}
+  </figcaption>
+  {% endif %}
+</figure>
+{% endmacro %}

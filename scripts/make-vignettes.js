@@ -1,4 +1,10 @@
 #!/usr/bin/env node
+// RETIRED 2026-08-02 (spec §6). The engraved vignettes were replaced by
+// photographic plate grids at the client's request. Kept, not deleted, so the
+// decision is reversible; assets moved to src/_retired-vignettes/ (outside
+// src/assets/ so passthrough copy never ships them — Eleventy's `ignores`
+// only excludes templates, not passthrough-copied files).
+//
 // Generates the engraved vignettes the certificate world calls for (ADR-011).
 //
 // CONSTRAINT (project.config.json → imagery.$note, website_content/FACTS.md §2):
