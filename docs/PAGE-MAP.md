@@ -29,14 +29,15 @@ Derived from `docs/SEO-RESEARCH.md` (2026-08-01) and bounded by
 | 12 | Contact | `/contact/` | contact kenya china tea summit | transactional | Form-only until the client supplies channels (FACTS §2) | pending |
 | 13 | News | `/news/` | kenya china tea trade news | informational | The editorial pillar. Where the SEO-RESEARCH thesis lives | pending |
 
-## Utility — 4 pages
+## Utility — 5 pages
 
 | # | Page | URL | Job | Status |
 |---|---|---|---|---|
 | 14 | Privacy | `/privacy/` | S4 gate: collection, destination, retention, contact | pending |
 | 15 | Terms | `/terms/` | Standard terms | pending |
 | 16 | Code of conduct | `/code-of-conduct/` | Expected at an international summit; a real trust signal | pending |
-| 17 | Media & press | `/media/` | Press kit, logo downloads, accreditation route | pending |
+| 17 | Media & press | `/media/` | Accreditation and reporting guidance only; assets live on `/downloads/` | **built** |
+| 18 | Downloads | `/downloads/` | Single home for every published document, current version only | **built** |
 
 ## Deferred until content exists
 

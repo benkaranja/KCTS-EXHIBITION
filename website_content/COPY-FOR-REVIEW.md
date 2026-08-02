@@ -1,6 +1,6 @@
 # Website copy for review — Kenya-China Tea Summit 2027
 
-**Generated:** 2026-08-02 · **Build:** `75ac443` · **Live:** https://kenya-china-tea-summit.pages.dev
+**Generated:** 2026-08-02 · **Build:** `424fbfb` · **Live:** https://kenya-china-tea-summit.pages.dev
 
 This document contains **every word of visible text on the website**, extracted
 from the built pages, in the order a visitor reads them. It is generated
@@ -780,12 +780,15 @@ Media accreditation is one of the six registration categories. Register under Me
 - **Theme:** Brewing Strategic Partnerships for Sustainable Tea Trade, Investment and Innovation
 - **Edition:** First
 - **Organiser:** Kenya-China Tea Summit Secretariat, Orbitline Events & Ushers Ltd
-- **Press pack:** to be entered
 - **Media contact:** to be entered
+
+### Assets and documents
+
+The press pack, logo files and every published document are on the downloads page, which always carries the current version of each.
 
 ### Using the summit's name and mark
 
-The logo may be used in editorial coverage of the summit without prior permission. It may not be used in a way that implies partnership, endorsement or sponsorship. Downloadable assets are added here with the press pack.
+The logo may be used in editorial coverage of the summit without prior permission. It may not be used in a way that implies partnership, endorsement or sponsorship.
 
 Please do not report as fact
 
@@ -966,6 +969,7 @@ These appear on every page.
 
 - Speakers → `/speakers/`
 - News → `/news/`
+- Downloads → `/downloads/`
 - Register interest → `/registration/`
 - B2B matchmaking → `/b2b-matchmaking/`
 - Venue → `/venue/`

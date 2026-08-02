@@ -23,6 +23,7 @@ export default {
         { text: "Programme", url: "/programme/" },
         { text: "Speakers", url: "/speakers/" },
         { text: "News", url: "/news/" },
+        { text: "Downloads", url: "/downloads/" },
       ],
     },
     {

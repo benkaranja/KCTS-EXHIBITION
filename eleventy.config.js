@@ -84,6 +84,13 @@ export default function (eleventyConfig) {
     return `${hour}:${String(m).padStart(2, "0")} ${suffix}`;
   });
 
+  // Nunjucks' own `selectattr` looks the attribute up with obj[attr], so it
+  // cannot walk "data.category" — it silently matched nothing and the
+  // downloads page rendered empty. This does the walk.
+  eleventyConfig.addFilter("byCategory", (items, category) =>
+    (items ?? []).filter((i) => i.data.category === category),
+  );
+
   eleventyConfig.addFilter("speakersFor", (speakers, sessionSlug) =>
     speakers.filter((s) => (s.data.sessions ?? []).includes(sessionSlug)),
   );
