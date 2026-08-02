@@ -7,6 +7,10 @@
 <title>{% if title %}{{ title }} | {{ summit.shortName }}{% else %}{{ summit.name }} — {{ summit.tagline }}{% endif %}</title>
 <meta name="description" content="{{ description }}">
 <link rel="canonical" href="{{ page.url | absoluteUrl }}">
+<link rel="alternate" hreflang="en" href="{{ basePath | absoluteUrl }}">
+<link rel="alternate" hreflang="zh-Hans" href="{{ ("/zh" + basePath) | absoluteUrl }}">
+<link rel="alternate" hreflang="x-default" href="{{ basePath | absoluteUrl }}">
+{% if translationStatus == "machine" %}<meta name="robots" content="noindex, follow">{% endif %}
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="{{ summit.name }}">
@@ -24,7 +28,7 @@
    the engraved h1 never swap; Courier and the heavier Archivo weights can. #}
 <link rel="preload" href="/fonts/bricolage-grotesque.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/google-sans-flex.woff2" as="font" type="font/woff2" crossorigin>
-{% if page.url == "/" %}<link rel="preload" as="image" href="/img/hero-poster.avif" type="image/avif" fetchpriority="high">{% endif %}
+{% if basePath == "/" %}<link rel="preload" as="image" href="/img/hero-poster.avif" type="image/avif" fetchpriority="high">{% endif %}
 
 <link rel="stylesheet" href="/css/tokens.css">
 <link rel="stylesheet" href="/css/style.css">
@@ -107,9 +111,18 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
     </button>
     <ul class="site-nav__list" id="primary-nav">
       {% for item in navigation.primary %}
-      <li><a href="{{ item.url }}"{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.text }}</a></li>
+      {# Compare basePath, not page.url — under /zh/ the two never match. #}
+      <li><a href="{{ item.url }}"{% if basePath == item.url %} aria-current="page"{% endif %}>{{ item.text }}</a></li>
       {% endfor %}
     </ul>
+    {# data-nolocale: the one link that must NOT be rewritten to the current
+       locale, since crossing locales is its whole job. See the localeLinks
+       transform in eleventy.config.js. #}
+    <a class="lang-switch" data-nolocale
+       href="{% if locale == 'zh' %}{{ basePath }}{% else %}/zh{{ basePath }}{% endif %}"
+       lang="{% if locale == 'zh' %}en{% else %}zh-Hans{% endif %}"
+       rel="alternate"
+       hreflang="{% if locale == 'zh' %}en{% else %}zh-Hans{% endif %}">{% if locale == 'zh' %}English{% else %}中文{% endif %}</a>
   </nav>
 
   <a class="btn btn--primary site-header__cta" href="{{ navigation.cta.url }}">{{ navigation.cta.text }}</a>

@@ -102,6 +102,31 @@ export default function (eleventyConfig) {
     return Math.max(0, Math.ceil(ms / 86400000));
   });
 
+  // --- transforms --------------------------------------------------------
+  // Every internal href in the templates is authored root-relative and
+  // English ("/about/"). On a /zh/ page that sends the reader straight back
+  // to the English site on the first click, which makes the Chinese edition
+  // useless. Rewriting them at the source would mean threading a locale
+  // through ~60 hardcoded links in 18 templates; one transform over the
+  // finished HTML catches all of them, including links inside page content.
+  //
+  // Skipped: asset directories (they are not localised) and any anchor
+  // carrying data-nolocale, which is the language switcher itself.
+  const ASSET_DIRS = /^\/(zh\/|files\/|img\/|css\/|js\/|video\/|fonts\/)/;
+  eleventyConfig.addTransform("localeLinks", function (content) {
+    // outputPath is `false`, not a string, for permalink:false documents
+    // (the downloads collection) — hence the typeof rather than optional chaining.
+    if (typeof this.page.outputPath !== "string") return content;
+    if (!this.page.outputPath.endsWith(".html")) return content;
+    if (!this.page.url?.startsWith("/zh/")) return content;
+    return content.replace(/<a\b[^>]*>/g, (tag) => {
+      if (tag.includes("data-nolocale")) return tag;
+      return tag.replace(/href="(\/[^"]*)"/, (m, path) =>
+        ASSET_DIRS.test(path) ? m : `href="/zh${path}"`,
+      );
+    });
+  });
+
   return {
     dir: {
       input: "src",

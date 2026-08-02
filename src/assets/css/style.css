@@ -754,3 +754,26 @@ select.input { cursor: pointer; }
   color: var(--c-text-muted); letter-spacing: 0.02em;
 }
 .dl-item__desc { font-size: var(--step--1); color: var(--c-text-muted); }
+
+/* ==== locale ============================================================ */
+
+.lang-switch {
+  font-family: var(--font-ui); font-size: var(--step--1); font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--c-ply-canary); text-decoration: none;
+  border: 1px solid currentColor;
+  padding: var(--sp-3xs) var(--sp-2xs);
+  margin-inline-start: var(--sp-s);
+  white-space: nowrap;
+}
+.lang-switch:hover { background: var(--c-ply-canary); color: var(--c-ink-2); }
+
+/* Machine translation, declared. A trade summit cannot pass unreviewed
+   translation off as its own voice. */
+.mt-notice {
+  border: 1px dashed var(--c-seal);
+  padding: var(--sp-s);
+  margin-bottom: var(--sp-l);
+  max-width: var(--measure);
+}
+.mt-notice p { margin: 0; font-size: var(--step--1); }
