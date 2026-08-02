@@ -1,5 +1,5 @@
 import summit from "./src/_data/summit.js";
-import { readFileSync } from "node:fs";
+import { readFileSync, readdirSync, existsSync } from "node:fs";
 
 const config = JSON.parse(readFileSync("./project.config.json", "utf8"));
 
@@ -103,6 +103,38 @@ export default function (eleventyConfig) {
   });
 
   // --- transforms --------------------------------------------------------
+  // Order matters: i18n runs first so localeLinks can rewrite any hrefs that
+  // survive inside translated fragments.
+  //
+  // Applies the machine translations produced by scripts/translate.js. Keyed
+  // by the source fragment, so a page can be re-ordered or re-worded without
+  // silently pairing Chinese text with the wrong English block — a changed
+  // fragment simply misses and stays English until re-translated.
+  const ZH_DIR = "src/_data/i18n/zh";
+  const zhStrings = new Map();
+  if (existsSync(ZH_DIR)) {
+    for (const f of readdirSync(ZH_DIR).filter((n) => n.endsWith(".json"))) {
+      const { strings } = JSON.parse(readFileSync(`${ZH_DIR}/${f}`, "utf8"));
+      for (const [en, zh] of Object.entries(strings ?? {})) zhStrings.set(en, zh);
+    }
+  }
+  const BLOCKS = /<(h1|h2|h3|p|li|dt|dd|figcaption|caption)\b[^>]*>([\s\S]*?)<\/\1>/gi;
+
+  eleventyConfig.addTransform("i18n", function (content) {
+    if (typeof this.page.outputPath !== "string") return content;
+    if (!this.page.url?.startsWith("/zh/") || !zhStrings.size) return content;
+    const start = content.indexOf("<main");
+    const end = content.indexOf("</main>");
+    if (start < 0 || end < 0) return content;
+    const main = content
+      .slice(start, end)
+      .replace(BLOCKS, (whole, tag, inner) => {
+        const hit = zhStrings.get(inner.trim());
+        return hit ? whole.replace(inner, hit) : whole;
+      });
+    return content.slice(0, start) + main + content.slice(end);
+  });
+
   // Every internal href in the templates is authored root-relative and
   // English ("/about/"). On a /zh/ page that sends the reader straight back
   // to the English site on the first click, which makes the Chinese edition

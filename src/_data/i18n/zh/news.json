@@ -1,0 +1,28 @@
+{
+  "translationStatus": "machine",
+  "strings": {
+    "Bulletin": "公告",
+    "No. KCTS/2027/N": "编号:KCTS/2027/N",
+    "The trade behind the summit": "峰会背后的贸易",
+    "Announcements as they are made, and the trade context that explains why this convening exists.": "公告将在发布时即时更新,并提供解释本次会议召开原因的贸易背景。",
+    "No bulletins yet": "暂无公告",
+    "Summit announcements are published here as the secretariat makes them — venue, fees, speaker releases and programme detail. Registering your interest means you receive them directly rather than checking this page.": "峰会公告将在秘书处发布时在此刊登——包括会场、费用、演讲嘉宾发布和议程详情。登记您的意向即可直接接收这些信息,无需反复查看本页面。",
+    "The context, in the meantime": "与此同时,了解背景",
+    "The summit was not convened in a vacuum. Three published facts explain the timing better than any announcement will.": "本次峰会的召开并非凭空而来。三项已发布的事实比任何公告都更能说明召开时机的原因。",
+    "The China lane is shrinking, not growing": "中国通道正在萎缩而非增长",
+    "Kenyan tea exports to China fell 51% in the first quarter of 2026, to 1.22 million kilogrammes. China sat tenth among Kenya's export destinations on the most recent full-year figures, at 12.42 million kilogrammes — against Pakistan's 206.27 million.": "2026年第一季度,肯尼亚对中国的茶叶出口下降了51%,至122万公斤。根据最新全年数据,中国在肯尼亚出口目的地中排名第十,为1,242万公斤——而巴基斯坦为20,627万公斤。",
+    "The Kenyan Wall Street, Q1 2026 · African Business, 2024 figures": "The Kenyan Wall Street,2026年第一季度 · African Business,2024年数据",
+    "Volume is not the problem. Value capture is": "问题不在于数量,而在于价值获取",
+    "Kenya exports more tea than China and Sri Lanka and earns less revenue for it. The diagnosis given is consistent: heavy reliance on bulk sales, a narrow product range, limited market diversity.": "肯尼亚的茶叶出口量超过中国和斯里兰卡,但收入却更低。诊断结果一致:严重依赖散装销售、产品范围狭窄、市场多样性有限。",
+    "Ecofin Agency, 2026": "Ecofin Agency,2026年",
+    "The policy and the tariff door both point the same way": "政策和关税门户均指向同一方向",
+    "Kenya is targeting close to 200 million kilogrammes of green and orthodox tea by 2030, a deliberate shift away from bulk black, and China's zero-tariff arrangement is the stated lever. The Tea Board of Kenya has been working with Chinese partners on processing machinery and energy-efficient technology.": "肯尼亚的目标是到2030年实现接近2亿公斤的绿茶和传统红茶产量,这是有意识地从散装红茶转型,而中国的零关税安排正是既定杠杆。肯尼亚茶叶局一直在与中国合作伙伴合作开发加工机械和节能技术。",
+    "China Daily, 21 July 2026": "China Daily,2026年7月21日",
+    "A 51% fall in the exact corridor national policy is trying to grow, with the tariff barrier already removed, is a coordination problem rather than a market one. Coordination problems are what summits are for.": "在国家政策试图发展的确切通道中出现51%的下降,且关税壁垒已经取消,这是协调问题而非市场问题。协调问题正是峰会存在的意义。",
+    "Sourcing": "信息来源",
+    "Every figure above is published trade reporting, dated, and attributed. None of it is a claim by the summit, a forecast, or a promise about what the summit will achieve.": "上述每项数据均来自已发布的贸易报告,标注了日期和出处。这些都不是峰会方面的声明、预测或关于峰会将取得何种成果的承诺。",
+    "Register your interest": "登记您的意向",
+    "Six categories, from delegate to exhibitor. Fees and deadlines are published once the secretariat confirms them.": "六个类别,从代表到参展商。费用和截止日期将在秘书处确认后公布。",
+    "<a class=\"btn btn--primary\" href=\"/registration/\">Register interest</a>": "<a class=\"btn btn--primary\" href=\"/registration/\">登记意向</a>"
+  }
+}

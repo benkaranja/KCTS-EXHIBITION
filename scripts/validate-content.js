@@ -213,6 +213,24 @@ for (const d of downloads) {
   }
 }
 
+// --- rule 9: every page must render in both locales --------------------------
+// A page that opts out of localisation silently produces a Chinese edition with
+// a hole in it. Opting out has to be explicit and is not currently allowed.
+const PAGES = join(SRC, "pages");
+for (const f of existsSync(PAGES) ? readdirSync(PAGES) : []) {
+  if (!f.endsWith(".njk")) continue;
+  const file = join(PAGES, f);
+  const raw = readFileSync(file, "utf8");
+  if (!raw.startsWith("---")) continue;
+  const fm = raw.slice(3, raw.indexOf("\n---", 3));
+  if (/^\s*noLocale:\s*true\s*$/m.test(fm)) {
+    errors.push(`${file}: sets noLocale, which would leave a hole in the Chinese edition`);
+  }
+  if (!/^\s*basePath:\s*\S/m.test(fm)) {
+    errors.push(`${file}: missing "basePath" — required for locale routing`);
+  }
+}
+
 // --- report ----------------------------------------------------------------
 const counts = `${speakers.length} speakers, ${sessions.length} sessions, ${sponsors.length} sponsors, ${downloads.length} downloads`;
 

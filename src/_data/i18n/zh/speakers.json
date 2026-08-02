@@ -1,0 +1,27 @@
+{
+  "translationStatus": "machine",
+  "strings": {
+    "Form B · Speaker Proposal": "表格B · 演讲者提案",
+    "No. KCTS/2027/SP": "编号 KCTS/2027/SP",
+    "Call for speakers": "演讲者征集",
+    "No speakers are confirmed yet. That is not an oversight — it is the stage the summit is at, and the list is still open.": "目前尚未确认任何演讲者。这并非疏忽——而是峰会目前所处的阶段,名单仍在开放中。",
+    "Status": "状态",
+    "The speaker programme is being assembled. This page will list confirmed speakers with their sessions once the secretariat has them. Until then, no names appear here — including names that have been approached.": "演讲者计划正在筹备中。一旦秘书处确定演讲者及其议程,本页面将列出已确认的演讲者。在此之前,此处不会显示任何姓名——包括已接洽的姓名。",
+    "What the programme is looking for": "计划寻求的内容",
+    "The summit runs three thematic days, and proposals are read against them.": "峰会为期三天,分为三个主题,提案将根据这些主题进行评审。",
+    "<div>\n    <h3>Trade</h3>\n    <p>Market access, standards and certification, auction and direct-sale mechanics, tariff and documentation practice.</p>\n  </div>": "<div>\n    <h3>贸易</h3>\n    <p>市场准入、标准与认证、拍卖及直销机制、关税及文件实务。</p>\n  </div>",
+    "<div>\n    <h3>Investment</h3>\n    <p>Financing value addition, processing and packaging capital, joint ventures, agricultural risk.</p>\n  </div>": "<div>\n    <h3>投资</h3>\n    <p>增值融资、加工与包装资本、合资企业、农业风险。</p>\n  </div>",
+    "<div>\n    <h3>Innovation</h3>\n    <p>Processing technology, traceability, mechanisation, agronomy, climate adaptation in tea-growing regions.</p>\n  </div>": "<div>\n    <h3>创新</h3>\n    <p>加工技术、可追溯性、机械化、农学、茶叶种植区的气候适应。</p>\n  </div>",
+    "<div>\n    <h3>Culture and consumption</h3>\n    <p>Chinese and Kenyan tea traditions, branding, retail and speciality markets.</p>\n  </div>": "<div>\n    <h3>文化与消费</h3>\n    <p>中国和肯尼亚茶文化传统、品牌建设、零售及特色市场。</p>\n  </div>",
+    "What makes a proposal easy to accept": "什么样的提案容易被接受",
+    "A specific claim or finding, not a company overview.": "具体的主张或发现,而非公司概况。",
+    "Something you can evidence — data, a case, a transaction you were part of.": "你能提供证据的内容——数据、案例或你参与过的交易。",
+    "A clear answer to \"who in the room needs this and what do they do differently afterwards\".": "对\"会场中谁需要这个内容以及他们之后会采取什么不同行动\"的明确回答。",
+    "Sales presentations dressed as sessions are the one thing that reliably does not get accepted. If the goal is visibility, <a href=\"/sponsorship/\">partnership</a> and <a href=\"/exhibition/\">exhibiting</a> are the honest routes to it.": "伪装成会议环节的销售演示是唯一可靠不会被接受的内容。如果目标是提升曝光度,<a href=\"/sponsorship/\">合作伙伴</a>和<a href=\"/exhibition/\">参展</a>才是诚实的途径。",
+    "Propose a session": "提交会议环节提案",
+    "Use the registration form and select <strong>Delegate</strong>, then describe your proposed session in the message field. A dedicated speaker form replaces this once the programme committee is in place.": "使用注册表单并选择<strong>代表</strong>,然后在留言栏中描述您提议的会议环节。一旦项目委员会成立,将启用专门的演讲者表单替代此方式。",
+    "Register your interest": "登记您的意向",
+    "Six categories, from delegate to exhibitor. Fees and deadlines are published once the secretariat confirms them.": "六个类别,从代表到参展商。费用和截止日期将在秘书处确认后公布。",
+    "<a class=\"btn btn--primary\" href=\"/registration/\">Register interest</a>": "<a class=\"btn btn--primary\" href=\"/registration/\">登记意向</a>"
+  }
+}

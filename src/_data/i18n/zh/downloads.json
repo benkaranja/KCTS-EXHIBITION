@@ -1,0 +1,16 @@
+{
+  "translationStatus": "machine",
+  "strings": {
+    "Schedule G · Documents": "附件G · 文件",
+    "No. KCTS/2027/D": "编号：KCTS/2027/D",
+    "Documents and downloads": "文件与下载",
+    "Everything published about the summit, in one place, in its current version.": "关于峰会发布的所有内容，集中在一处，均为最新版本。",
+    "Summit overview": "峰会概览",
+    "<a class=\"dl-item__name\" href=\"/files/kcts-2027-fact-sheet.pdf\" download>Summit fact sheet</a>\n    <span class=\"dl-item__meta\">PDF &middot; 2 KB &middot; 1 pp &middot; updated <time datetime=\"2026-08-02\">2 August 2026</time></span>\n    <span class=\"dl-item__desc\">Dates, location, theme, the six objectives and the six registration categories on one page. Generated from the site&#39;s own data, so it cannot fall out of step with these pages.</span>": "<a class=\"dl-item__name\" href=\"/files/kcts-2027-fact-sheet.pdf\" download>峰会概况说明</a>\n    <span class=\"dl-item__meta\">PDF &middot; 2 KB &middot; 1 页 &middot; 更新于<time datetime=\"2026-08-02\">2026年8月2日</time></span>\n    <span class=\"dl-item__desc\">日期、地点、主题、六大目标及六种注册类别，一页呈现。本文件由网站自身数据生成,因此不会与这些页面出现不一致。</span>",
+    "Versions": "版本",
+    "This page always carries the current version of each document. Superseded versions are removed rather than archived, so a link you saved will always give you the latest. Every entry shows the date it was last updated.": "本页面始终提供每份文件的最新版本。过时版本将被删除而非存档,因此您保存的链接将始终指向最新版本。每个条目均显示最后更新日期。",
+    "Register your interest": "登记您的意向",
+    "Six categories, from delegate to exhibitor. Fees and deadlines are published once the secretariat confirms them.": "六种类别,从代表到参展商。费用和截止日期将在秘书处确认后公布。",
+    "<a class=\"btn btn--primary\" href=\"/registration/\">Register interest</a>": "<a class=\"btn btn--primary\" href=\"/registration/\">登记意向</a>"
+  }
+}

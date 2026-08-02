@@ -1,6 +1,6 @@
 # Website copy for review — Kenya-China Tea Summit 2027
 
-**Generated:** 2026-08-02 · **Build:** `c828973` · **Live:** https://kenya-china-tea-summit.pages.dev
+**Generated:** 2026-08-02 · **Build:** `fc90c77` · **Live:** https://kenya-china-tea-summit.pages.dev
 
 This document contains **every word of visible text on the website**, extracted
 from the built pages, in the order a visitor reads them. It is generated
@@ -802,6 +802,35 @@ Register as media
 
 ---
 
+# Downloads
+
+**URL:** `/downloads/`  
+**Browser tab / search-result title:** Downloads | Kenya-China Tea Summit  
+**Search-result description:** Download the Kenya-China Tea Summit 2027 fact sheet, brochure, agenda, sponsorship and exhibition documents.
+
+Schedule G · Documents
+
+No. KCTS/2027/D
+
+## Documents and downloads
+
+Everything published about the summit, in one place, in its current version.
+
+### Summit overview
+
+- Summit fact sheet PDF · 2 KB · 1 pp · updated 2 August 2026 Dates, location, theme, the six objectives and the six registration categories on one page. Generated from the site's own data, so it cannot fall out of step with these pages.
+Versions
+
+This page always carries the current version of each document. Superseded versions are removed rather than archived, so a link you saved will always give you the latest. Every entry shows the date it was last updated.
+
+### Register your interest
+
+Six categories, from delegate to exhibitor. Fees and deadlines are published once the secretariat confirms them.
+
+Register interest
+
+---
+
 # Privacy Notice
 
 **URL:** `/privacy/`  
@@ -989,4 +1018,4 @@ These appear on every page.
 
 ---
 
-_End of copy. 17 pages._
+_End of copy. 18 pages._

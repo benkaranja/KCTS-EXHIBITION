@@ -1,0 +1,28 @@
+{
+  "translationStatus": "machine",
+  "strings": {
+    "Schedule A · Proceedings": "附表A · 议程安排",
+    "No. KCTS/2027/S": "编号 KCTS/2027/S",
+    "Three days, in order": "三天,按顺序进行",
+    "Day one is trade. Day two is capital and technology. Day three is the floor and the close.": "第一天是贸易。第二天是资本与技术。第三天是展览与闭幕。",
+    "Summit proceedings by day": "峰会每日议程",
+    "Opening Ceremony &amp; Trade Forum": "开幕式与贸易论坛",
+    "The summit opens, and the trade conversation starts the same day: who is buying, who is selling, and what stands between them.": "峰会开幕,贸易对话同日启动:谁在采购,谁在销售,以及双方之间存在哪些障碍。",
+    "Investment Forum, Innovation Conference &amp; B2B Meetings": "投资论坛、创新大会与B2B洽谈会",
+    "Capital and technology in the morning, structured buyer-supplier meetings through the afternoon.": "上午讨论资本与技术,下午进行结构化的买方-供应商会议。",
+    "Tea Expo, Cultural Exchange &amp; Closing Ceremony": "茶叶博览会、文化交流与闭幕式",
+    "The exhibition floor opens fully, alongside a cultural programme, before the summit closes.": "展览全面开放,同时举办文化活动,随后峰会闭幕。",
+    "What is not on this page yet": "本页面尚未包含的内容",
+    "Session times": "会议时间",
+    "<span class=\"value--pending\">to be entered</span>": "<span class=\"value--pending\">待录入</span>",
+    "Rooms and stages": "会议室与舞台",
+    "Speakers per session": "每场会议演讲人",
+    "Tracks": "分会场",
+    "Why the detail is missing": "详细信息缺失的原因",
+    "The three day-level themes above are confirmed. Everything below that level — who speaks when, in which room — is still being assembled, and publishing a plausible-looking agenda before it is real would mean retracting it later. Sessions are added to this manifest as the secretariat confirms them.": "以上三天的主题层级已确认。该层级以下的所有内容——谁在何时、何地发言——仍在筹备中,在确定之前发布看似合理的议程将意味着日后需要撤回。会议将在秘书处确认后添加至本清单。",
+    "If you want to speak, the <a href=\"/speakers/\">call for speakers</a> is open.": "如果您希望发言,<a href=\"/speakers/\">演讲人征集</a>正在开放中。",
+    "Register your interest": "登记您的意向",
+    "Six categories, from delegate to exhibitor. Fees and deadlines are published once the secretariat confirms them.": "六个类别,从代表到参展商。费用与截止日期将在秘书处确认后发布。",
+    "<a class=\"btn btn--primary\" href=\"/registration/\">Register interest</a>": "<a class=\"btn btn--primary\" href=\"/registration/\">登记意向</a>"
+  }
+}

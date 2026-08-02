@@ -1,0 +1,31 @@
+{
+  "translationStatus": "machine",
+  "strings": {
+    "Schedule C · Endorsements": "附表C · 背书合作",
+    "No. KCTS/2027/P": "编号 KCTS/2027/P",
+    "Partner with the summit": "与峰会合作",
+    "Five tiers, all unallocated. The first edition of anything is the cheapest time to be associated with it.": "五个级别,全部未分配。任何活动的首届都是与之建立联系的最低成本时机。",
+    "A first-edition summit has one thing an established one does not: every position is still open. No tier on this page has been allocated, and the organisations that take them will be the ones associated with this corridor from the beginning.": "首届峰会拥有成熟峰会所没有的一点:每个位置仍然空缺。本页面上没有任何级别已被分配,获得这些级别的机构将成为从一开始就与这条走廊相关联的机构。",
+    "The five tiers": "五个级别",
+    "<span class=\"endorsement__tier\">Title Partner</span>\n    <span class=\"endorsement__line\">Unallocated</span>": "<span class=\"endorsement__tier\">冠名合作伙伴</span>\n    <span class=\"endorsement__line\">未分配</span>",
+    "<span class=\"endorsement__tier\">Platinum Partner</span>\n    <span class=\"endorsement__line\">Unallocated</span>": "<span class=\"endorsement__tier\">白金合作伙伴</span>\n    <span class=\"endorsement__line\">未分配</span>",
+    "<span class=\"endorsement__tier\">Gold Partner</span>\n    <span class=\"endorsement__line\">Unallocated</span>": "<span class=\"endorsement__tier\">黄金合作伙伴</span>\n    <span class=\"endorsement__line\">未分配</span>",
+    "<span class=\"endorsement__tier\">Silver Partner</span>\n    <span class=\"endorsement__line\">Unallocated</span>": "<span class=\"endorsement__tier\">白银合作伙伴</span>\n    <span class=\"endorsement__line\">未分配</span>",
+    "<span class=\"endorsement__tier\">Supporting Partner</span>\n    <span class=\"endorsement__line\">Unallocated</span>": "<span class=\"endorsement__tier\">支持合作伙伴</span>\n    <span class=\"endorsement__line\">未分配</span>",
+    "What is and is not published here": "本页面公布和未公布的内容",
+    "The tier <em>names</em> are confirmed by the secretariat. What each tier costs and exactly what it includes are not set yet, so they are not on this page. Anyone quoting you a rate for this summit that did not come from the secretariat is not speaking for it.": "级别<em>名称</em>由秘书处确认。每个级别的费用及其具体包含的内容尚未确定,因此未在本页面列出。任何向您报价但非来自秘书处的信息均不代表秘书处立场。",
+    "Who partnership makes sense for": "合作伙伴关系适合哪些机构",
+    "<strong>Processing and equipment manufacturers</strong> selling into a market being pushed from bulk black toward green and orthodox production.": "<strong>加工和设备制造商</strong>,面向正从散装红茶向绿茶和传统工艺生产转型的市场进行销售。",
+    "<strong>Banks, DFIs and investment funds</strong> with an agriculture or Africa-China mandate, who want visibility in front of the day-two investment forum.": "<strong>银行、开发性金融机构和投资基金</strong>,具有农业或非中合作授权,希望在第二天投资论坛前获得曝光度。",
+    "<strong>Logistics and freight operators</strong> whose business is the corridor itself.": "<strong>物流和货运运营商</strong>,其业务就是这条走廊本身。",
+    "<strong>Certification, traceability and standards bodies</strong> whose relevance rises the moment a producer moves up the value chain.": "<strong>认证、可追溯性和标准机构</strong>,其相关性在生产者向价值链上游移动时上升。",
+    "<strong>Government agencies and trade promotion bodies</strong> on either side of the corridor.": "<strong>政府机构和贸易促进机构</strong>,位于走廊两侧。",
+    "What the secretariat needs to know": "秘书处需要了解的信息",
+    "A useful first message includes which tier you are looking at, what outcome you want from it — brand visibility, speaking access, delegate introductions, exhibition presence — and whether you are also considering a stand. That is enough to come back to you with something specific rather than a generic pack.": "有用的首次联系应包括您关注的级别、您希望从中获得的成果——品牌曝光度、发言机会、代表介绍、展览展位——以及您是否也在考虑展台。这足以让我们向您提供具体方案而非通用资料包。",
+    "Media and press": "媒体与新闻",
+    "Press accreditation and the media kit are handled separately. See <a href=\"/media/\">Media &amp; press</a>.": "新闻认证和媒体资料包单独处理。参见<a href=\"/media/\">媒体与新闻</a>。",
+    "Start a partnership conversation": "启动合作伙伴对话",
+    "Tell the secretariat which tier interests you and what you would want from it. Rates and benefit schedules are issued on enquiry.": "告知秘书处您感兴趣的级别以及您希望从中获得什么。费率和权益清单将根据询问发出。",
+    "<a class=\"btn btn--primary\" href=\"/registration/\">Partnership enquiry</a>": "<a class=\"btn btn--primary\" href=\"/registration/\">合作伙伴咨询</a>"
+  }
+}

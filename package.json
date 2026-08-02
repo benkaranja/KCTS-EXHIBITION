@@ -13,7 +13,8 @@
     "assets": "node scripts/make-guilloche.js",
     "copy": "node scripts/export-copy.js",
     "video": "node scripts/make-hero-video.js",
-    "factsheet": "node scripts/make-fact-sheet.js"
+    "factsheet": "node scripts/make-fact-sheet.js",
+    "translate": "node scripts/translate.js"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0",

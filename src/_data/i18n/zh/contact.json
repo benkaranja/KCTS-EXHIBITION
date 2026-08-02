@@ -1,0 +1,26 @@
+{
+  "translationStatus": "machine",
+  "strings": {
+    "Form C · Correspondence": "表格 C · 通信",
+    "No. KCTS/2027/C": "编号 KCTS/2027/C",
+    "Contact the secretariat": "联系秘书处",
+    "Everything routes through the form below until the secretariat publishes direct channels.": "在秘书处公布直接联系渠道之前,所有事项均通过下方表格处理。",
+    "Secretariat": "秘书处",
+    "Kenya-China Tea Summit Secretariat": "Kenya-China Tea Summit 秘书处",
+    "Organised by": "主办方",
+    "Orbitline Events &amp; Ushers Ltd, Nairobi": "Orbitline Events & Ushers Ltd, Nairobi",
+    "Email": "电子邮箱",
+    "<span class=\"value--pending\">to be entered</span>": "<span class=\"value--pending\">待填写</span>",
+    "Telephone": "电话",
+    "Postal address": "邮政地址",
+    "Faster routes": "快速通道",
+    "If your message is about attending, exhibiting or partnering, <a href=\"/registration/\">registering your interest</a> gets it to the right person with the details already attached. This form is for everything else.": "如您的留言涉及参会、参展或合作事宜,<a href=\"/registration/\">登记您的意向</a>可使信息直达相关负责人并自动附带详细信息。本表格用于处理其他所有事项。",
+    "General enquiry": "一般咨询",
+    "<label class=\"label\" for=\"c-name\">Full name <span class=\"req\" aria-hidden=\"true\">*</span></label>\n      <input class=\"input\" id=\"c-name\" name=\"name\" type=\"text\" required autocomplete=\"name\" maxlength=\"120\">": "<label class=\"label\" for=\"c-name\">全名 <span class=\"req\" aria-hidden=\"true\">*</span></label>\n      <input class=\"input\" id=\"c-name\" name=\"name\" type=\"text\" required autocomplete=\"name\" maxlength=\"120\">",
+    "<label class=\"label\" for=\"c-email\">Email <span class=\"req\" aria-hidden=\"true\">*</span></label>\n      <input class=\"input\" id=\"c-email\" name=\"email\" type=\"email\" required autocomplete=\"email\" maxlength=\"180\">": "<label class=\"label\" for=\"c-email\">电子邮箱 <span class=\"req\" aria-hidden=\"true\">*</span></label>\n      <input class=\"input\" id=\"c-email\" name=\"email\" type=\"email\" required autocomplete=\"email\" maxlength=\"180\">",
+    "<label class=\"label\" for=\"c-org\">Organisation</label>\n      <input class=\"input\" id=\"c-org\" name=\"organisation\" type=\"text\" autocomplete=\"organization\" maxlength=\"160\">": "<label class=\"label\" for=\"c-org\">机构</label>\n      <input class=\"input\" id=\"c-org\" name=\"organisation\" type=\"text\" autocomplete=\"organization\" maxlength=\"160\">",
+    "<label class=\"label\" for=\"c-country\">Country</label>\n      <input class=\"input\" id=\"c-country\" name=\"country\" type=\"text\" autocomplete=\"country-name\" maxlength=\"80\">": "<label class=\"label\" for=\"c-country\">国家</label>\n      <input class=\"input\" id=\"c-country\" name=\"country\" type=\"text\" autocomplete=\"country-name\" maxlength=\"80\">",
+    "<label class=\"label\" for=\"c-message\">Your message <span class=\"req\" aria-hidden=\"true\">*</span></label>\n    <textarea class=\"input\" id=\"c-message\" name=\"message\" rows=\"6\" required maxlength=\"4000\"></textarea>": "<label class=\"label\" for=\"c-message\">您的留言 <span class=\"req\" aria-hidden=\"true\">*</span></label>\n    <textarea class=\"input\" id=\"c-message\" name=\"message\" rows=\"6\" required maxlength=\"4000\"></textarea>",
+    "Your message goes to the summit secretariat and nowhere else. See our <a href=\"/privacy/\">privacy notice</a>.": "您的留言将仅发送至峰会秘书处,不会转发至其他方。请参阅我们的<a href=\"/privacy/\">隐私声明</a>。"
+  }
+}

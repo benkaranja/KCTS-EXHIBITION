@@ -1,0 +1,25 @@
+{
+  "translationStatus": "machine",
+  "strings": {
+    "Particulars · Place": "详细信息 · 地点",
+    "No. KCTS/2027/V": "编号 KCTS/2027/V",
+    "Nairobi, venue to be confirmed": "内罗毕,场地待确认",
+    "The city is fixed. The building is not, and this page will not guess at it.": "城市已确定。建筑物尚未确定,本页面不会对此进行猜测。",
+    "City": "城市",
+    "Nairobi, Kenya": "肯尼亚内罗毕",
+    "Dates": "日期",
+    "21–23 April 2027": "2027年4月21–23日",
+    "Venue": "场地",
+    "<span class=\"value--pending\">to be entered</span>": "<span class=\"value--pending\">待填写</span>",
+    "Address": "地址",
+    "Accessibility provisions": "无障碍设施",
+    "Parking and transport": "停车及交通",
+    "Why this page is mostly empty": "为何本页面大部分为空白",
+    "Naming a venue before it is contracted is how events end up publishing a correction. Everyone who registers interest is told the venue directly as soon as it is signed, ahead of the public announcement. If you are booking flights, the <strong>dates and the city are safe to book against</strong>; the venue only affects which part of Nairobi you want to stay in.": "在签订合同前公布场地是导致活动方发布更正的原因。所有登记感兴趣的人士在场地签约后、公开发布前会直接收到场地信息。如果您正在预订航班,<strong>日期和城市可以放心预订</strong>;场地只影响您想在内罗毕的哪个区域住宿。",
+    "Planning around it": "围绕活动做规划",
+    "Nairobi is well served for international arrivals through Jomo Kenyatta International Airport, and the city's conference-grade hotels are concentrated in a few districts. Until the venue is fixed, the practical advice is to hold off on hotel bookings that carry a cancellation penalty. General arrival guidance is on <a href=\"/travel/\">Travel &amp; stay</a>.": "内罗毕通过乔莫·肯雅塔国际机场为国际抵达提供良好服务,该市的会议级酒店集中在几个区域。在场地确定前,实际建议是推迟预订需支付取消费用的酒店。一般抵达指南请见<a href=\"/travel/\">旅行与住宿</a>。",
+    "Register your interest": "登记您的兴趣",
+    "Six categories, from delegate to exhibitor. Fees and deadlines are published once the secretariat confirms them.": "六个类别,从代表到参展商。费用和截止日期将在秘书处确认后公布。",
+    "<a class=\"btn btn--primary\" href=\"/registration/\">Register interest</a>": "<a class=\"btn btn--primary\" href=\"/registration/\">登记兴趣</a>"
+  }
+}

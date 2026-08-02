@@ -54,3 +54,25 @@ test("rule 8: a download whose bytes match passes", () => {
   rmSync("src/static-files/__fixture.pdf");
   assert.equal(code, 0, out);
 });
+
+test("rule 9: a page that opts out of localisation fails the build", () => {
+  writeFileSync(
+    "src/pages/__orphan.njk",
+    `---\nlayout: layouts/page.njk\nbasePath: /orphan/\ntitle: Orphan\ndescription: x\nnoLocale: true\n---\nbody\n`,
+  );
+  const { code, out } = run();
+  rmSync("src/pages/__orphan.njk");
+  assert.equal(code, 1);
+  assert.match(out, /orphan/i);
+});
+
+test("rule 9: a page missing basePath fails the build", () => {
+  writeFileSync(
+    "src/pages/__nobase.njk",
+    `---\nlayout: layouts/page.njk\ntitle: No base\ndescription: x\n---\nbody\n`,
+  );
+  const { code, out } = run();
+  rmSync("src/pages/__nobase.njk");
+  assert.equal(code, 1);
+  assert.match(out, /basePath/);
+});

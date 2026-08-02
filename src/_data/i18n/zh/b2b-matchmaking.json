@@ -1,0 +1,29 @@
+{
+  "translationStatus": "machine",
+  "strings": {
+    "Schedule D · Business Matching": "附表D · 商务配对",
+    "No. KCTS/2027/B": "编号 KCTS/2027/B",
+    "Meetings booked before you land": "落地前已安排好会面",
+    "The point of flying to Nairobi is the meetings. Those get scheduled in advance, not queued for on the day.": "飞往内罗毕的目的在于会面。这些会面需要提前安排,而非当天排队等候。",
+    "Structured business matching runs through the summit, concentrated on day two. Delegates and exhibitors build a profile, the system proposes counterparts, and meetings are scheduled into the programme rather than left to chance on the expo floor.": "结构化商务配对贯穿整个峰会,集中在第二天进行。代表和参展商建立档案,系统推荐对接方,会面被安排进议程,而非在展会现场听凭偶遇。",
+    "What the service covers": "服务涵盖内容",
+    "AI-powered business matching": "人工智能驱动的商务配对",
+    "Meeting scheduling": "会面日程安排",
+    "Profile management": "档案管理",
+    "Networking opportunities": "社交机会",
+    "How to think about it": "如何理解这项服务",
+    "A Kenyan producer's problem is rarely a shortage of tea. It is reaching the specific importer whose blend needs what that estate actually produces. A Chinese buyer's problem is the mirror image: finding a supplier who can meet a grade, a volume and a documentation standard at the same time. Matchmaking exists to shorten that search from months of correspondence to a scheduled half-hour.": "肯尼亚生产商的问题很少是茶叶短缺,而是如何找到正需要其庄园实际产品的特定进口商。中国买家的问题恰恰相反:寻找能够同时满足等级、数量和文件标准的供应商。配对服务的作用是将这一搜寻过程从数月通信缩短为安排好的半小时会面。",
+    "Included with": "包含在",
+    "Delegate and exhibitor registration": "代表和参展商注册中",
+    "Concentrated on": "集中在",
+    "Day two, 22 April 2027": "第二天,2027年4月22日",
+    "Platform and access details": "平台与访问详情",
+    "<span class=\"value--pending\">to be entered</span>": "<span class=\"value--pending\">待录入</span>",
+    "Profile opens": "档案开放时间",
+    "Scope": "范围",
+    "This page describes a service the secretariat is providing. The matchmaking platform itself is operated separately from this website — no profile, meeting or attendee data is held here.": "本页面描述秘书处提供的一项服务。配对平台本身独立于本网站运营——此处不保存任何档案、会面或参会者数据。",
+    "Register your interest": "登记您的意向",
+    "Six categories, from delegate to exhibitor. Fees and deadlines are published once the secretariat confirms them.": "六种类别,从代表到参展商。秘书处确认后将公布费用和截止日期。",
+    "<a class=\"btn btn--primary\" href=\"/registration/\">Register interest</a>": "<a class=\"btn btn--primary\" href=\"/registration/\">登记意向</a>"
+  }
+}
