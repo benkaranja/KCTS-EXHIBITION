@@ -8,7 +8,7 @@
 
 import ffmpeg from "ffmpeg-static";
 import { execFileSync } from "node:child_process";
-import { mkdirSync, existsSync, statSync } from "node:fs";
+import { mkdirSync, existsSync, statSync, unlinkSync } from "node:fs";
 import sharp from "sharp";
 
 const SRC = "assets-raw/hero-tea-plantation-master.mp4";
@@ -39,8 +39,11 @@ console.log("extracting poster ...");
 execFileSync(ffmpeg, ["-ss", START, "-i", SRC, "-frames:v", "1",
   "-vf", `scale=${WIDTH}:-2`, "-y", "/tmp/hero-poster.png"], { stdio: "inherit" });
 
-await sharp("/tmp/hero-poster.png").avif({ quality: 55 }).toFile(`${IMG}/hero-poster.avif`);
-await sharp("/tmp/hero-poster.png").webp({ quality: 76 }).toFile(`${IMG}/hero-poster.webp`);
+// Poster is the LCP element (budget: AVIF <=100KB, WebP <=150KB) — quality
+// dropped from the initial 55/76 pass, which came in at ~150/220KB.
+await sharp("/tmp/hero-poster.png").avif({ quality: 40 }).toFile(`${IMG}/hero-poster.avif`);
+await sharp("/tmp/hero-poster.png").webp({ quality: 45 }).toFile(`${IMG}/hero-poster.webp`);
+unlinkSync("/tmp/hero-poster.png");
 
 const kb = (p) => (statSync(p).size / 1024).toFixed(0) + " KB";
 console.log(`\nhero.mp4          ${kb(`${VID}/hero.mp4`)}`);

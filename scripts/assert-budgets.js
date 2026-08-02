@@ -10,6 +10,10 @@ const BUDGETS = {
   js: { dir: "public/js", max: 15360, label: "JS" },
 };
 const VIDEO_MAX = 4194304; // 4 MB per file
+const IMG_MAX = 204800; // 200 KB per file
+const IMG_FILE_CAPS = {
+  "hero-poster.avif": 102400, // LCP element — stricter cap
+};
 
 const listFiles = (dir) => readdirSync(dir).filter((f) => !f.startsWith("."));
 
@@ -38,6 +42,18 @@ if (existsSync("public/video")) {
     const size = statSync(join("public/video", f)).size;
     console.log(`video  ${f} ${size} / ${VIDEO_MAX} bytes`);
     if (size > VIDEO_MAX) failures.push(`${f} over video budget: ${size} > ${VIDEO_MAX}`);
+  }
+}
+
+// public/img is optional — a missing directory is not a failure, unlike css/js.
+if (existsSync("public/img")) {
+  for (const f of listFiles("public/img")) {
+    const path = join("public/img", f);
+    if (statSync(path).isDirectory()) continue;
+    const size = statSync(path).size;
+    const cap = IMG_FILE_CAPS[f] ?? IMG_MAX;
+    console.log(`img    ${f} ${size} / ${cap} bytes`);
+    if (size > cap) failures.push(`${f} over img budget: ${size} > ${cap}`);
   }
 }
 
