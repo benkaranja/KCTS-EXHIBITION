@@ -10,6 +10,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/assets/js": "js" });
   eleventyConfig.addPassthroughCopy({ "src/assets/img": "img" });
   eleventyConfig.addPassthroughCopy({ "src/assets/fonts": "fonts" });
+  eleventyConfig.addPassthroughCopy({ "src/assets/video": "video" });
   // robots.txt and sitemap.xml are generated (src/robots.njk, src/sitemap.njk)
   // so they always carry the current origin — see ADR-010.
   eleventyConfig.addPassthroughCopy({ "src/_headers": "_headers" });
