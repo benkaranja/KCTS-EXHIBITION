@@ -265,3 +265,94 @@ gone entirely — the field pair is the structural unit. Contrast is measured by
 **Process note for the next run:** run `impeccable` *before* writing any UI, not
 after a review. The direction roll exists to stop every run converging on the
 same safe default, and it cannot do that retroactively.
+
+---
+
+## ADR-012 — Photographic plate grids replace engraved vignettes
+
+**Status:** accepted, 2 August 2026. Supersedes the vignette treatment recorded
+in ADR-011.
+
+**Context.** The client's reading of the first build was that the imagery "makes
+the website look old". The multiplied steel-engraving vignettes were internally
+consistent with the security-print world, but a first-edition summit selling
+future trade cannot look like an artefact of the last century. The brief asked
+specifically for 2–4 image grids with transparent gaps showing the ground colour.
+
+**Decision.** Nine photographic plates, generated under the same FACTS §2
+constraint as before — no people, no premises, no signage, no vehicles, nothing
+that would assert an unconfirmed fact. They sit in a `plate` figure component of
+2, 3 or 4 cells. The gap between cells is the section ground showing through, not
+padding: the images read as plates laid on the document rather than as a photo
+strip pasted over it. Plate numbering (`Plate I`, `Plate II`) keeps them inside
+the document grammar.
+
+**Consequences.** `src/_retired-vignettes/` holds the retired artwork outside
+`src/assets/` — `eleventyConfig.ignores` does NOT exclude passthrough-copied
+files, only templates, so anything left under `src/assets/img` ships whether it
+is referenced or not. The budget gate is recursive for the same reason: plates
+live in a subdirectory and were initially ungated.
+
+---
+
+## ADR-013 — Video hero and countdown: category convention, document-native
+
+**Status:** accepted, 2 August 2026.
+
+**Context.** ADR-011's direction contract explicitly refused the conference
+template, naming "photo hero, countdown, speaker grid, sponsor wall" as the
+things this site does not do. The client then asked for a video hero and a
+countdown. Both are in that list.
+
+**Decision.** Build both, but as document fields rather than as the convention.
+The countdown is a row in the particulars list — `Days to opening` beside
+`Convened at` and `Dated` — server-rendered so it is correct without JS and
+corrected on load. The video is a background beneath the intaglio ground, not a
+hero image the type sits on top of.
+
+The scrim is the load-bearing part. A uniform veil strong enough for reversed
+text (0.94) made the footage almost invisible, which defeats the point of
+shipping video at all. It is zoned instead: 0.82 across the left 55% where the
+h1, particulars and body sit, a 0.90 band across the top for the masthead, and
+0.15 on the right where the only element is the opaque issuing panel. Below
+60rem the grid collapses to one column and text can land anywhere, so a single
+flat 0.86 layer covers the frame. Every zone is measured against the real poster
+pixels in `scripts/check-contrast.js` — 5.52, 5.55 and 4.90 against a 4.5 floor.
+
+**Consequences.** Deviating from the direction contract is recorded here rather
+than done silently. The 85MB master is not in `src/`; `scripts/make-hero-video.js`
+encodes it to a 1.9MB webm and mp4 plus a 75KB AVIF poster, all budget-gated.
+`hero.js` attaches the video only above 768px and never under
+`prefers-reduced-motion` or `saveData`, so the poster is the whole experience for
+everyone else.
+
+---
+
+## ADR-014 — Machine translation ships noindex until a human reviews it
+
+**Status:** accepted, 2 August 2026. Extends ADR-009.
+
+**Context.** ADR-009 structured the site for a Chinese edition without shipping
+one. The client asked for the edition. There is no budget or timeline for
+professional translation before launch, and no Chinese speaker on the project.
+
+**Decision.** Machine-translate via OpenRouter, and gate it. Every `zh` page
+computes `translationStatus: "machine"`, which puts `noindex, follow` in its head,
+keeps it out of `sitemap.xml`, and renders a notice in Chinese saying the page is
+machine translated and that the English original governs. Setting
+`translationStatus: reviewed` in a page's front matter releases it. The generated
+`website_content/COPY-FOR-REVIEW-zh.md` is what a reviewer reads.
+
+Publishing unreviewed machine translation into the index is against Google's
+scaled-content guidance, and on a diplomatic trade summit it is a credibility
+risk in front of the exact audience the edition targets. The edition is useful to
+a reader who arrives via a link; it is not a search asset until someone signs it
+off.
+
+**Consequences.** English stays at the root, so no URL changed and no redirect
+was needed. `permalink` became `basePath` on every page and a directory data file
+computes the real permalink per locale. Two transforms carry the edition: `i18n`
+applies the translations keyed by source fragment — a reworded English block
+misses and stays English rather than silently pairing with the wrong Chinese —
+and `localeLinks` rewrites root-relative hrefs on `/zh/` pages, without which
+every click threw the reader back to the English site.

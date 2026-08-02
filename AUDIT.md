@@ -293,3 +293,121 @@ JS   3,807B / 15,360
 ### Still not run
 
 Lighthouse, axe, html-validate, link check. No score claimed.
+
+---
+
+## Iteration 6 — 2026-08-02
+
+Hero video and countdown, photographic plate grids, downloads page, Chinese
+edition. Twelve planned tasks, executed against
+`docs/superpowers/plans/2026-08-02-hero-downloads-i18n.md`.
+
+### Build gates
+
+```
+content validation passed — 0 speakers, 0 sessions, 0 sponsors, 1 downloads
+
+pair                                             ratio   min   verdict
+body text on light stock                         13.52  4.5  pass
+body text on tinted panel                        11.65  4.5  pass
+secondary text on light stock                     7.30  4.5  pass
+secondary text on tinted panel                    6.29  4.5  pass
+link / seal text on light stock                   7.14  4.5  pass
+link / seal text on tinted panel                  6.15  4.5  pass
+reversed text on intaglio ground                 10.80  4.5  pass
+reversed secondary on intaglio                    6.88  4.5  pass
+canary ply on intaglio (large only)               5.90  3.0  pass
+salmon ply on intaglio (large only)               4.31  3.0  pass
+text on heavy tint                                9.25  4.5  pass
+guilloche line work (non-text)                    4.70  3.0  pass
+hero text over scrimmed poster (worst px)         5.52  4.5  pass
+masthead text over scrimmed poster (worst px)     5.55  4.5  pass
+hero text, single-column scrim (worst px)         4.90  4.5  pass
+
+RESULT: PASS — 15 pairs measured, all at or above floor
+RESULT: PASS — all asset budgets within limit
+
+# node --test
+# pass 17
+# fail 0
+```
+
+The three hero rows are composited over the real poster pixels, not asserted.
+Proven to fail: dropping the single-column alpha from 0.86 to 0.60 reported
+2.23 and exited 1.
+
+### Live verification — https://kenya-china-tea-summit.pages.dev
+
+**C6 — sitemap and links**
+```
+sitemap urls: 18
+C6 non-200 sitemap urls: none
+internal links checked: 44 | broken: none
+```
+
+**C5 — head, per page, all 18**
+```
+C5 head failures: none      (title, description, canonical, og:title,
+                             og:description, og:image, twitter:card,
+                             html lang, hreflang x-default)
+JSON-LD parses: ConferenceEvent
+```
+
+**D4 — imagery**
+```
+distinct image assets: 21
+largest: /img/hero-poster.webp 141084 | /img/plates/highland.webp 124258
+         | /img/plates/sorting.webp 119140
+webp without avif companion: none
+D4 problems: none           (width/height/alt on every img, all under 200KB,
+                             LCP poster not lazy)
+home preloads poster: true
+about does not: true
+```
+
+**D2 — responsive, no horizontal scroll**
+```
+360px: clean across 10 pages
+768px: clean across 10 pages
+1280px: clean across 10 pages
+```
+Found and fixed during this check: `/programme/` overflowed 377/360 at 360px.
+`.manifest td:first-child` was `white-space: nowrap`, which is right on a wide
+screen and 17px of page scroll on a phone. Now `normal` below 30rem.
+
+**i18n gate**
+```
+zh noindex: true            en NOT noindex: true
+zh MT notice present: true  hreflang x3 on en: true
+zh urls in sitemap: 0       en urls in sitemap: 18
+zh nav/title/footer translated: true
+en carries no Chinese outside the switcher label: true
+zh internal links localised: true   assets not localised: true
+```
+
+**Hero video**, checked on the deploy at 1280px: `readyState 4`, `1600x900`,
+playing, no media error. The footage is visibly plantation, not a flat green
+field — which was the open item carried from iteration 5.
+
+### Defects found and fixed this iteration
+
+Nine, all of which built successfully before being caught:
+
+1. Budget gate passed on a missing directory (`0 > 30720` is false).
+2. Minifier stripped 30 source comments; then corrupted strings because
+   whitespace collapsing was not quote-aware. Now 8 tests.
+3. Ghost button hover measured 1.57:1.
+4. `eleventyConfig.ignores` does not exclude passthrough files — retired
+   artwork shipped.
+5. Budget gate was not recursive; `public/img/plates/*` was ungated.
+6. `tok["--c-text-on-ink"]` was undefined (it aliases `var(--c-paper)`).
+7. Nunjucks `selectattr` cannot walk `"data.category"` — the downloads page
+   built fine and rendered nothing.
+8. Each `src/downloads/*.md` also rendered as its own page and emitted a
+   literal `/false` URL into the sitemap.
+9. Every internal link on `/zh/` pages pointed at English — the Chinese
+   edition would have been decorative.
+
+### Still not run
+
+Lighthouse, axe, html-validate. No score claimed.

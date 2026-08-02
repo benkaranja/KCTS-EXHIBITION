@@ -22,7 +22,7 @@ is to look credible and capture intent, not to sell tickets.
 
 1. `website_content/FACTS.md` — **binding.** §1 is the only thing publishable about the summit. §2 is the do-not-invent list. Violating this is the worst failure available on this project.
 2. `project.config.json` — every setting. No phase re-decides what is in here.
-3. `docs/DECISIONS.md` — ADR-001..009. Read ADR-003 (Eleventy) and ADR-008 (Pages vs Workers) before questioning the stack.
+3. `docs/DECISIONS.md` — ADR-001..014. Read ADR-003 (Eleventy) and ADR-008 (Pages vs Workers) before questioning the stack; ADR-014 before touching the Chinese edition.
 4. `.web-factory/STATE.json` — criteria and status. This drives the loop.
 5. `BLOCKERS.md` — what needs a human.
 
@@ -35,9 +35,13 @@ Eleventy is **build-time only**. The shipped site is HTML + CSS + vanilla JS wit
 zero runtime framework. Do not add a client framework; do not add a bundler.
 
 ```bash
-npm run dev      # local server on :8080
-npm run build    # validate content, then build src/ -> public/
-npm run validate # content integrity only
+npm run dev        # local server on :8080
+npm run build      # clean, validate, build src/ -> public/, minify, budget-gate, export copy
+npm run validate   # content integrity + measured contrast only
+npm test           # node --test, 17 assertions over the validator and translator
+npm run factsheet  # regenerate the fact sheet PDF from summit.js
+npm run translate  # machine-translate built pages into src/_data/i18n/zh/
+npm run video      # re-encode the hero video from the master
 ```
 
 `public/` is **generated and gitignored**. Never edit it — edit `src/`.
@@ -50,7 +54,12 @@ npm run validate # content integrity only
 | `src/_data/navigation.js` | Header, footer and CTA structure. Adding a page = one entry here. |
 | `src/_includes/layouts/base.njk` | Shell: head, SEO meta, JSON-LD, header, footer. |
 | `src/assets/css/tokens.css` | **Only** file allowed a hex literal. Palette read off the client logo. |
-| `scripts/validate-content.js` | Build-time referential integrity. Runs before Eleventy. |
+| `scripts/validate-content.js` | Build-time referential integrity, nine rules. Runs before Eleventy. |
+| `scripts/check-contrast.js` | Measures every text/ground pair, including three hero zones over real poster pixels. |
+| `scripts/assert-budgets.js` | Recursive asset budget gate. |
+| `scripts/translate.js` | OpenRouter machine translation into `src/_data/i18n/zh/`. |
+| `src/static-files/` | Published documents. Served at `/files/`. **Not** `public/` — that is wiped by `clean`. |
+| `src/downloads/*.md` | The downloads collection. `permalink: false`; they are entries, not pages. |
 | `brand_assets/` | Client logo master (5225×5225 JPEG). |
 | `website_content/` | markitdown output from client documents. |
 
@@ -58,22 +67,37 @@ npm run validate # content integrity only
 
 **Done and verified:**
 - Intake, config, PRD, ADRs, FACTS.
-- Eleventy building cleanly; homepage rendering real copy from confirmed facts.
-- Content validator: all six rules proven to fail correctly against broken fixtures, then fixtures removed.
+- **18 pages, rendered in two locales — 36 HTML files.** English at the root, Chinese under `/zh/`.
+- Content validator: nine rules, each proven to fail against a broken fixture before being trusted. Rules 8 and 9 have real tests (`npm test`, 17 assertions).
 - JSON-LD `ConferenceEvent` parses (this was broken by Nunjucks auto-escaping and is fixed — if you add a `| dump`, it needs `| safe` after it).
-- Client logo placed, emblem cropped for header/favicon.
-- CSS 13.8 KB of a 30 KB budget; JS 836 B of 15 KB.
+- **Design:** security-print world via `impeccable` (ADR-011), photographic plate grids (ADR-012), video hero with countdown (ADR-013).
+- **Contrast is measured, not asserted:** 15 pairs including three hero zones composited over the real poster pixels. The build fails below 4.5:1.
+- **Asset budgets are gated recursively:** 35 lines, CSS/JS/img/video/files. A missing `public/css` or `public/js` is a hard failure; missing `img`/`video`/`files` is tolerated.
 - **S1 security headers live and verified**: 7/7 present, CSP with no `unsafe-inline`, 0 console errors under it.
-- `robots.txt` and `sitemap.xml` generated from the current origin, so neither can go stale.
+- `robots.txt` and `sitemap.xml` generated from the current origin, so neither can go stale. The sitemap carries the 18 English URLs only.
+- Downloads page live, backed by a validated collection — rule 8 fails the build if a download points at a missing file or states the wrong byte count.
+- Copy exports for client review in both locales: `website_content/COPY-FOR-REVIEW.md` (~6,500 words) and `COPY-FOR-REVIEW-zh.md`.
 
-**Next up:** SEO research (C2), page map (C3), then the remaining 12 launch pages
-with humanized copy (C4), design build-out (D2–D5), security headers (S1), and the
-form backend once credentials land (B1–B7).
+**Next up:** the membership portal (spec written, `docs/superpowers/specs/`),
+which is blocked on client data — see below. Then the form backend once
+credentials land (B1–B7).
 
 **Known deferred, not forgotten:**
-- No AVIF/WebP yet — `sips` on this macOS can't emit them. D4 needs `@11ty/eleventy-img`. `emblem-256.png` is 98 KB and needs converting before the perf gate.
+- **The Chinese edition is machine translation and ships `noindex`, out of the sitemap, behind a notice saying so** (ADR-014). It needs a human reviewer on `COPY-FOR-REVIEW-zh.md`; setting `translationStatus: reviewed` on a page releases it. Do not remove the gate to improve the numbers.
+- **The hero video is a placeholder.** `src/assets/video/hero.{mp4,webm}` is an aerial plantation clip standing in until the client supplies real footage. Re-encode with `npm run video`; the 85MB master is gitignored and is not in `src/`.
+- **The fact sheet PDF is plain Helvetica**, generated from `summit.js` by `npm run factsheet` so it cannot drift from the site. It is a stopgap for a designed brochure, not the brochure.
+- The portal is entirely deferred (sub-project C) — it needs registration categories, fee structure and exhibitor terms the client has not supplied.
 - No cron retry for failed emails. Pages Functions have no cron triggers; D1 durability covers the loss case instead (ADR-005).
-- English only. `/zh/` is structurally ready but needs client-supplied translation (ADR-009).
+- An 85MB video blob is permanently in git history (B-004). Purging it needs a force-push, which is a hard autonomy stop.
+
+## Things that will bite you
+
+- **`eleventyConfig.ignores` does not exclude passthrough-copied files**, only templates. Anything under `src/assets/` ships whether referenced or not. Retired artwork goes outside `src/assets/`.
+- **Eleventy does not prune removed passthrough files**, so `npm run build` runs `clean` first. That is also why `validate` cannot read anything from `public/` — it runs after the wipe. Downloads resolve against `src/static-files/`.
+- **`permalink: false` documents have `outputPath === false` and `url === false`**, not a string. Transforms and the sitemap both have to guard for it.
+- **Nunjucks `selectattr` cannot walk a dotted path** — it looks the attribute up as `obj[attr]`. `selectattr("data.category", ...)` builds fine and matches nothing. Use the `byCategory` filter.
+- **A build that exits 0 proves nothing about a listing page.** Two silent failures shipped this way before assertions on the built HTML caught them.
+- **An unquoted `": "` in front matter aborts Eleventy mid-run** and the build still prints success. Validator rule 7 exists for exactly this.
 
 ## Before touching DNS
 

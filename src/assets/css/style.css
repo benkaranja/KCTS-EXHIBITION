@@ -402,7 +402,14 @@ a:hover { text-decoration-thickness: 2px; }
   padding-bottom: var(--sp-2xs);
 }
 .manifest tbody tr { border-bottom: 1px solid var(--c-rule); }
+/* nowrap keeps "Day One · 21 April 2027" on one line, which is right on a wide
+   screen and 17px of horizontal page scroll at 360. The date is the part that
+   may wrap; the day label is not. */
 .manifest td:first-child { font-family: var(--font-data); color: var(--c-seal); white-space: nowrap; }
+@media (max-width: 30rem) {
+  .manifest td:first-child { white-space: normal; }
+  .manifest th, .manifest td { padding-right: var(--sp-2xs); }
+}
 .manifest h3 { font-size: var(--step-1); margin-bottom: var(--sp-3xs); }
 .manifest p { margin: 0; color: var(--c-text-muted); font-size: var(--step--1); max-width: 46ch; }
 
