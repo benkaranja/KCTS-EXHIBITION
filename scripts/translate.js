@@ -49,7 +49,13 @@ const listPages = () =>
 // Blocks whose inner HTML is a translatable unit. Inline markup inside them
 // (links, <strong>, <time>) is kept, because dropping it would cost the
 // Chinese edition its links.
-const BLOCKS = /<(h1|h2|h3|p|li|dt|dd|figcaption|caption)\b[^>]*>([\s\S]*?)<\/\1>/gi;
+//
+// Scanned across the WHOLE document, not just <main>: scoping to main left the
+// header nav, footer, buttons and <title> in English, so a Chinese page read
+// as a half-translated one. `li` covers the nav and footer links, `a.btn`
+// covers the calls to action.
+const BLOCKS =
+  /<(h1|h2|h3|p|li|dt|dd|figcaption|caption|title|button)\b[^>]*>([\s\S]*?)<\/\1>|<a\b[^>]*class="[^"]*\bbtn\b[^"]*"[^>]*>([\s\S]*?)<\/a>/gi;
 
 /** Tag sequence of a fragment, used to check the model preserved the markup. */
 export const tagShape = (html) => (html.match(/<\/?[a-z][^>]*>/gi) ?? []).map((t) =>
@@ -108,14 +114,13 @@ for (const file of IS_MAIN ? listPages() : []) {
   }
 
   const html = readFileSync(file, "utf8");
-  const main = html.slice(html.indexOf("<main"), html.indexOf("</main>"));
 
   // Keyed by the source fragment itself, so the transform can look a fragment
   // up directly without depending on element order staying stable between the
   // build that produced the extraction and the build that applies it.
   const strings = {};
-  for (const m of main.matchAll(BLOCKS)) {
-    const inner = m[2].trim();
+  for (const m of html.matchAll(BLOCKS)) {
+    const inner = (m[2] ?? m[3] ?? "").trim();
     if (!inner || inner.length < 2) continue;
     if (!/[A-Za-z]{2}/.test(inner.replace(/<[^>]+>/g, ""))) continue; // markup only
     strings[inner] = inner;

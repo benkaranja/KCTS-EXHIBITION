@@ -192,6 +192,10 @@ a:hover { text-decoration-thickness: 2px; }
   margin-top: 0.45em;
 }
 
+/* The switcher is a sibling of the list, not an item in it — it is not a
+   destination in the same sense. Without this the nav is a block box and the
+   switcher drops to a second line under the links. */
+.site-nav { display: flex; align-items: center; }
 .site-nav__list { display: flex; gap: var(--sp-m); list-style: none; margin: 0; padding: 0; }
 .site-nav__list a {
   font-family: var(--font-ui);

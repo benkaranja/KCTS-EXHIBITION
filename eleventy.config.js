@@ -118,21 +118,19 @@ export default function (eleventyConfig) {
       for (const [en, zh] of Object.entries(strings ?? {})) zhStrings.set(en, zh);
     }
   }
-  const BLOCKS = /<(h1|h2|h3|p|li|dt|dd|figcaption|caption)\b[^>]*>([\s\S]*?)<\/\1>/gi;
+  // Must stay in step with BLOCKS in scripts/translate.js — extraction and
+  // application have to see the same fragments or nothing matches.
+  const BLOCKS =
+    /<(h1|h2|h3|p|li|dt|dd|figcaption|caption|title|button)\b[^>]*>([\s\S]*?)<\/\1>|<a\b[^>]*class="[^"]*\bbtn\b[^"]*"[^>]*>([\s\S]*?)<\/a>/gi;
 
   eleventyConfig.addTransform("i18n", function (content) {
     if (typeof this.page.outputPath !== "string") return content;
     if (!this.page.url?.startsWith("/zh/") || !zhStrings.size) return content;
-    const start = content.indexOf("<main");
-    const end = content.indexOf("</main>");
-    if (start < 0 || end < 0) return content;
-    const main = content
-      .slice(start, end)
-      .replace(BLOCKS, (whole, tag, inner) => {
-        const hit = zhStrings.get(inner.trim());
-        return hit ? whole.replace(inner, hit) : whole;
-      });
-    return content.slice(0, start) + main + content.slice(end);
+    return content.replace(BLOCKS, (whole, _tag, inner, btnInner) => {
+      const text = inner ?? btnInner ?? "";
+      const hit = zhStrings.get(text.trim());
+      return hit ? whole.replace(text, hit) : whole;
+    });
   });
 
   // Every internal href in the templates is authored root-relative and
