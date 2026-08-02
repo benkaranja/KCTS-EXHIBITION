@@ -11,7 +11,8 @@ body {
   line-height: var(--lh-body);
   color: var(--c-text);
   background: var(--c-paper);
-  /* Engine-turned tint, like security paper stock. */
+  /* The stock itself: a faint engine-turned tint, the way security paper is
+     printed with an under-tint before anything else goes on it. */
   background-image: repeating-linear-gradient(
     -52deg,
     transparent 0 3px,
@@ -19,8 +20,10 @@ body {
   );
 }
 
-/* Bricolage Grotesque: weight comes from the weight axis, with slight
-   width compression at large sizes. */
+/* Bricolage Grotesque is a variable grotesque, not a Didone: display weight has
+   to come from the weight axis, and it wants slight width compression at large
+   sizes. 400 read limp when this replaced Caslon. Tracking floor is -0.04em
+   (craft floor); the h1 sits at -0.03em. */
 h1, h2, h3 {
   font-family: var(--font-display);
   font-weight: 700;
@@ -62,7 +65,8 @@ a:hover { text-decoration-thickness: 2px; }
 
 /* ==== the document's own vocabulary ===================================== */
 
-/* Form-field label: tracked caps. Never used for emphasis, only to name a field. */
+/* Form-field label: tracked condensed caps, the way a printed form labels its
+   boxes. Never used for emphasis — only to name a field. */
 .label {
   font-family: var(--font-ui);
   font-size: var(--step--2);
@@ -81,11 +85,13 @@ a:hover { text-decoration-thickness: 2px; }
   margin: 0;
 }
 
-/* Field pair: the page's primary structural unit, replaces the card grid. */
+/* A field pair. This is the page's primary structural unit — it replaces the
+   card grid entirely. */
 .field { display: grid; gap: var(--sp-3xs); padding-block: var(--sp-2xs); }
 .field + .field { border-top: 1px solid var(--c-rule); }
 
-/* Nothing supplied yet: an unstamped box for venue, price, speakers. */
+/* Nothing supplied yet: an unstamped box. This is the honest state for venue,
+   price, speakers — procedure, not absence. */
 .value--pending {
   color: var(--c-text-muted);
   border: 1px dashed var(--c-rule);
@@ -95,6 +101,7 @@ a:hover { text-decoration-thickness: 2px; }
 }
 .value--pending::before { content: "— "; }
 
+/* Engine-turned rule, from the generated band. */
 .rule {
   height: 14px; border: 0; margin: var(--sp-l) 0;
   color: var(--c-engrave);
@@ -104,6 +111,7 @@ a:hover { text-decoration-thickness: 2px; }
   opacity: 0.75;
 }
 
+/* The sheet: a document lifted off the desk. */
 .sheet {
   background: var(--c-paper);
   border: 1px solid var(--c-rule);
@@ -112,10 +120,12 @@ a:hover { text-decoration-thickness: 2px; }
   position: relative;
 }
 .sheet::after {
+  /* inner keyline, the double rule of an engraved document */
   content: ""; position: absolute; inset: 6px;
   border: 1px solid var(--c-rule); opacity: 0.5; pointer-events: none;
 }
 
+/* Serial number, top-right of any document. */
 .serial {
   font-family: var(--font-data);
   font-size: var(--step--1);
@@ -123,6 +133,7 @@ a:hover { text-decoration-thickness: 2px; }
   letter-spacing: 0.04em;
 }
 
+/* Circular seal. Drawn, not an emoji or icon-font glyph. */
 .seal {
   --seal-size: 8.5rem;
   width: var(--seal-size); height: var(--seal-size);
@@ -156,7 +167,9 @@ a:hover { text-decoration-thickness: 2px; }
   border-bottom: 3px double var(--c-ply-canary);
 }
 .site-header__brand { display: flex; align-items: center; gap: var(--sp-2xs); text-decoration: none; margin-inline-end: auto; }
-/* Artwork on white; sits in a paper disc, not a white box. */
+/* The mark is supplied as artwork on solid white. On the intaglio header that
+   would read as a white box, so it sits in a struck paper disc instead — which
+   is what a seal is anyway. */
 .brand-emblem {
   width: 44px; height: 44px; flex: none;
   border-radius: 50%;
@@ -217,7 +230,8 @@ a:hover { text-decoration-thickness: 2px; }
   overflow: hidden;
   padding-block: var(--sp-2xl);
 }
-/* Rosette bleeds off the right edge, masked to the ink colour. */
+/* Rosette bleeding off the right edge, the way a certificate's engine-turning
+   runs past the trim. Masked so it inherits the ink colour exactly. */
 .hero::before {
   content: ""; position: absolute;
   top: 50%; right: -14%; translate: 0 -50%;
@@ -261,12 +275,14 @@ a:hover { text-decoration-thickness: 2px; }
 }
 .hero__body { color: var(--c-text-on-ink-muted); max-width: 52ch; }
 
+/* The particulars block — the filled-in top half of a bill of lading. */
 .particulars { margin: 0 0 var(--sp-l); }
 .particulars .field + .field { border-top-color: rgb(185 203 180 / 0.35); }
 .particulars .label { color: var(--c-text-on-ink-muted); }
 .particulars .value { color: var(--c-text-on-ink); }
 .particulars .value--pending { color: var(--c-text-on-ink-muted); border-color: rgb(185 203 180 / 0.5); }
 
+/* The issuing panel: the action, framed as issuing a document. */
 .issue {
   background: var(--c-paper);
   color: var(--c-text);
@@ -304,11 +320,32 @@ a:hover { text-decoration-thickness: 2px; }
 .btn--block { width: 100%; }
 
 /* Ghost buttons take ink from their ground: light panels set --ghost-fg
-   locally, ink grounds set it on the section. */
-.btn--ghost { color: var(--ghost-fg, var(--c-ink-2)); border-color: var(--ghost-fg, var(--c-ink-2)); }
-.btn--ghost:hover { background: var(--ghost-fg, var(--c-ink-2)); color: var(--c-paper); }
-.on-ink, .section--ink, .hero { --ghost-fg: var(--c-text-on-ink-muted); }
-.issue, .sheet, .form { --ghost-fg: var(--c-ink-2); }
+   locally, ink grounds set it on the section. Hover uses its own pair
+   (--ghost-hover-bg/-fg) rather than reusing --ghost-fg as a background —
+   on an ink ground --ghost-fg is a light, muted green (text-on-ink-muted)
+   that is legible as text on dark ink but is itself too light to hold
+   paper-white text on hover (≈1.6:1). Hover instead inverts fully: paper
+   background, ink text, same as the light-panel treatment reads today. */
+.btn--ghost {
+  background: transparent;
+  color: var(--ghost-fg, var(--c-ink-2));
+  border-color: var(--ghost-fg, var(--c-ink-2));
+}
+.btn--ghost:hover {
+  background: var(--ghost-hover-bg, var(--c-ink-2));
+  color: var(--ghost-hover-fg, var(--c-paper));
+  border-color: var(--ghost-hover-bg, var(--c-ink-2));
+}
+.on-ink, .section--ink, .hero {
+  --ghost-fg: var(--c-text-on-ink-muted);
+  --ghost-hover-bg: var(--c-paper);
+  --ghost-hover-fg: var(--c-ink-2);
+}
+.issue, .sheet, .form {
+  --ghost-fg: var(--c-ink-2);
+  --ghost-hover-bg: var(--c-ink-2);
+  --ghost-hover-fg: var(--c-paper);
+}
 
 /* ==== sections ========================================================== */
 
@@ -318,13 +355,15 @@ a:hover { text-decoration-thickness: 2px; }
 .section--ink h2 { color: var(--c-text-on-ink); }
 .section--ink p { color: var(--c-text-on-ink-muted); }
 
+/* Heading gets more space above than below it. */
 .section > .wrap > h2, .section > .wrap > .section-head { margin-top: 0; }
 .section-head { margin-bottom: var(--sp-l); }
 .section-head p { color: var(--c-text-muted); font-size: var(--step-1); }
 .section--ink .section-head p { color: var(--c-text-on-ink-muted); }
 
 /* ==== clauses: replaces the card grid ==================================== */
-/* Clause number is real info (clause order), not decoration. */
+/* A numbered clause list, the way a document enumerates its terms. The number
+   carries real information here (clause order), so it is not decoration. */
 
 .clauses { counter-reset: clause; list-style: none; margin: 0; padding: 0;
   display: grid; gap: 0; }
@@ -440,8 +479,9 @@ a:hover { text-decoration-thickness: 2px; }
 }
 .site-footer__base p { margin-bottom: var(--sp-3xs); max-width: none; }
 
-/* ==== the one authored motion moment ==================================== */
-/* The seal strikes the document. One orchestrated moment, not scattered hovers. */
+/* ==== the one authored motion moment ====================================
+   The seal strikes the document: the mark a bill of lading gets when it is
+   finally endorsed. One orchestrated moment, not scattered hover effects. */
 
 @keyframes strike {
   from { opacity: 0; scale: 1.5; rotate: -22deg; filter: blur(3px); }
@@ -507,6 +547,7 @@ a:hover { text-decoration-thickness: 2px; }
   margin-top: var(--sp-s);
 }
 
+/* Prose inside a document page. */
 .section h2 { margin-top: var(--sp-xl); }
 .section > .wrap > h2:first-child { margin-top: 0; }
 .section h3 { margin-top: var(--sp-l); }
@@ -516,6 +557,7 @@ a:hover { text-decoration-thickness: 2px; }
 .cta-close { text-align: left; }
 .cta-close h2 { margin-top: 0; }
 
+/* A note block: the printed marginalia of a form. */
 .note {
   border-top: 2px solid var(--c-ink-2);
   border-bottom: 1px solid var(--c-rule);
@@ -530,10 +572,12 @@ a:hover { text-decoration-thickness: 2px; }
   color: var(--c-seal); margin-bottom: var(--sp-3xs);
 }
 
+/* Definition-style rows reused across interior pages. */
 .spec { margin: var(--sp-m) 0; max-width: var(--measure); }
 .spec .field:first-child { border-top: 1px solid var(--c-rule); }
 .spec .field:last-child { border-bottom: 1px solid var(--c-rule); }
 
+/* Source-cited figure, for News and About. */
 .cite {
   font-family: var(--font-data);
   font-size: var(--step--2);
@@ -561,6 +605,7 @@ a:hover { text-decoration-thickness: 2px; }
 .form__row--full { grid-column: 1 / -1; }
 .req { color: var(--c-seal); }
 
+/* Inputs are ruled boxes, the way a form's fields are. */
 .input {
   font-family: var(--font-data);
   font-size: var(--step-0);
@@ -578,7 +623,7 @@ a:hover { text-decoration-thickness: 2px; }
 textarea.input { min-height: 7rem; resize: vertical; }
 select.input { cursor: pointer; }
 
-/* Honeypot: off-screen, not display:none — bots skip hidden fields. */
+/* Honeypot. Off-screen rather than display:none — some bots skip hidden fields. */
 .hp {
   position: absolute; left: -9999px; width: 1px; height: 1px;
   overflow: hidden;
@@ -593,4 +638,5 @@ select.input { cursor: pointer; }
 .form__done { margin: var(--sp-l) 0; max-width: 46rem; }
 .form__done h2 { margin-top: 0; }
 
+/* Tag chips on light stock (the ink-ground variant lives in .band--invert). */
 .tag--ink { border-color: var(--c-rule); color: var(--c-text); }
