@@ -1,6 +1,6 @@
 # Website copy for review — Kenya-China Tea Summit 2027
 
-**Generated:** 2026-08-02 · **Build:** `7218178` · **Live:** https://kenya-china-tea-summit.pages.dev
+**Generated:** 2026-08-10 · **Build:** `654e295` · **Live:** https://kenya-china-tea-summit.pages.dev
 
 This document contains **every word of visible text on the website**, extracted
 from the built pages, in the order a visitor reads them. It is generated
@@ -46,19 +46,15 @@ site not reference them at all, that is a one-line change.
 **Browser tab / search-result title:** Kenya-China Tea Summit 2027 — Connecting Tea, Cultures & Opportunities  
 **Search-result description:** The Kenya-China Tea Summit 2027 brings tea exporters, buyers, investors and technology providers together in Nairobi from 21–23 April 2027. Register your interest.
 
-Summit Particulars · First Edition
-
-No. KCTS/2027/0001
-
 ## The premier tea trade, investment and innovation forum connecting Africa and China
 
 Brewing Strategic Partnerships for Sustainable Tea Trade, Investment and Innovation
 
-- **Convened at:** Nairobi, Kenya
-- **Dated:** 21–23 April 2027
-- **Days to opening:** 262
-- **Venue:** to be entered
-- **Issued by:** Orbitline Events & Ushers Ltd
+- **Location:** Nairobi, Kenya
+- **Dates:** 21–23 April 2027
+- **Days to opening:** 254
+- **Venue:** To be announced
+- **Organised by:** Orbitline Events & Ushers Ltd
 Three days that put Kenyan growers, processors and exporters in the same rooms as Chinese buyers, investors and technology providers. Trade on day one, capital and innovation on day two, the expo floor on day three.
 
 ### Register your interest
@@ -130,10 +126,6 @@ Plate IIIComing to Nairobi
 **Browser tab / search-result title:** About the summit | Kenya-China Tea Summit  
 **Search-result description:** The Kenya-China Tea Summit 2027 is a trade, investment and innovation forum in Nairobi, 21–23 April 2027, connecting Kenya's tea value chain with Chinese buyers and investors.
 
-Statement of Purpose
-
-No. KCTS/2027/A
-
 ## Why this summit exists
 
 Kenya grows more tea than almost anyone. It earns less from it than it should. This is a three-day attempt to change that in one specific direction.
@@ -198,10 +190,6 @@ Register interest
 **Browser tab / search-result title:** Programme | Kenya-China Tea Summit  
 **Search-result description:** The Kenya-China Tea Summit 2027 programme across three days in Nairobi, 21–23 April 2027 — trade forum, investment forum, innovation conference, B2B meetings and the tea expo.
 
-Schedule A · Proceedings
-
-No. KCTS/2027/S
-
 ## Three days, in order
 
 Day one is trade. Day two is capital and technology. Day three is the floor and the close.
@@ -214,10 +202,10 @@ Day one is trade. Day two is capital and technology. Day three is the floor and 
 
 ### What is not on this page yet
 
-- **Session times:** to be entered
-- **Rooms and stages:** to be entered
-- **Speakers per session:** to be entered
-- **Tracks:** to be entered
+- **Session times:** To be announced
+- **Rooms and stages:** To be announced
+- **Speakers per session:** To be announced
+- **Tracks:** To be announced
 Why the detail is missing
 
 The three day-level themes above are confirmed. Everything below that level — who speaks when, in which room — is still being assembled, and publishing a plausible-looking agenda before it is real would mean retracting it later. Sessions are added to this manifest as the secretariat confirms them.
@@ -237,10 +225,6 @@ Register interest
 **URL:** `/exhibition/`  
 **Browser tab / search-result title:** Exhibition | Kenya-China Tea Summit  
 **Search-result description:** Exhibit at the International Tea & Technology Expo, part of the Kenya-China Tea Summit 2027 in Nairobi, 21–23 April 2027. Tea products, processing equipment, agri-technology and logistics.
-
-Schedule B · Exhibition
-
-No. KCTS/2027/E
 
 ## The International Tea & Technology Expo
 
@@ -262,10 +246,10 @@ If you sell into that gap — machinery that moves a producer from bulk black in
 
 - **Expo dates:** 21–23 April 2027, full floor opening day three
 - **B2B matchmaking:** Included — see matchmaking
-- **Stand sizes and layout:** to be entered
-- **Rates:** to be entered
-- **Build and fit-out rules:** to be entered
-- **Allocation opens:** to be entered
+- **Stand sizes and layout:** To be announced
+- **Rates:** To be announced
+- **Build and fit-out rules:** To be announced
+- **Allocation opens:** To be announced
 On the blanks above
 
 Stand rates and floor plans are not published because they have not been set. Registering interest as an exhibitor puts you on the list that gets them first, before the public announcement.
@@ -283,10 +267,6 @@ Register interest as an exhibitor
 **URL:** `/b2b-matchmaking/`  
 **Browser tab / search-result title:** B2B matchmaking | Kenya-China Tea Summit  
 **Search-result description:** AI-powered business matchmaking at the Kenya-China Tea Summit 2027 — profile management, meeting scheduling and structured buyer-supplier meetings across the three days.
-
-Schedule D · Business Matching
-
-No. KCTS/2027/B
 
 ## Meetings booked before you land
 
@@ -307,8 +287,8 @@ A Kenyan producer's problem is rarely a shortage of tea. It is reaching the spec
 
 - **Included with:** Delegate and exhibitor registration
 - **Concentrated on:** Day two, 22 April 2027
-- **Platform and access details:** to be entered
-- **Profile opens:** to be entered
+- **Platform and access details:** To be announced
+- **Profile opens:** To be announced
 Scope
 
 This page describes a service the secretariat is providing. The matchmaking platform itself is operated separately from this website — no profile, meeting or attendee data is held here.
@@ -326,10 +306,6 @@ Register interest
 **URL:** `/sponsorship/`  
 **Browser tab / search-result title:** Partnership | Kenya-China Tea Summit  
 **Search-result description:** Partnership and sponsorship opportunities at the Kenya-China Tea Summit 2027, Nairobi. Five tiers from Supporting Partner to Title Partner.
-
-Schedule C · Endorsements
-
-No. KCTS/2027/P
 
 ## Partner with the summit
 
@@ -378,10 +354,6 @@ Partnership enquiry
 **Browser tab / search-result title:** Register your interest | Kenya-China Tea Summit  
 **Search-result description:** Register your interest in the Kenya-China Tea Summit 2027, Nairobi, 21–23 April 2027. Six categories from delegate to exhibitor. Fees announced once confirmed.
 
-Form A · Registration of Interest
-
-No. KCTS/2027/R
-
 ## Register your interest
 
 Six categories. No payment, no commitment. Tell the secretariat which one fits and you go on the list.
@@ -396,10 +368,10 @@ Fees, payment deadlines and what each category includes have not been set. This 
 
 - **Dates:** 21–23 April 2027
 - **City:** Nairobi, Kenya
-- **Venue:** to be entered
-- **Fees:** to be entered
-- **Registration deadline:** to be entered
-- **What each category includes:** to be entered
+- **Venue:** To be announced
+- **Fees:** To be announced
+- **Registration deadline:** To be announced
+- **What each category includes:** To be announced
 
 ### Registration of interest
 
@@ -440,10 +412,6 @@ If you would rather exhibit or partner than attend, those go through Exhibition 
 **Browser tab / search-result title:** Speakers | Kenya-China Tea Summit  
 **Search-result description:** Call for speakers for the Kenya-China Tea Summit 2027, Nairobi, 21–23 April 2027. Propose a session across trade, investment, innovation or tea culture.
 
-Form B · Speaker Proposal
-
-No. KCTS/2027/SP
-
 ## Call for speakers
 
 No speakers are confirmed yet. That is not an oversight — it is the stage the summit is at, and the list is still open.
@@ -481,20 +449,16 @@ Register interest
 **Browser tab / search-result title:** Venue | Kenya-China Tea Summit  
 **Search-result description:** The Kenya-China Tea Summit 2027 takes place in Nairobi, Kenya, 21–23 April 2027. The specific venue is confirmed by the secretariat closer to the date.
 
-Particulars · Place
-
-No. KCTS/2027/V
-
 ## Nairobi, venue to be confirmed
 
 The city is fixed. The building is not, and this page will not guess at it.
 
 - **City:** Nairobi, Kenya
 - **Dates:** 21–23 April 2027
-- **Venue:** to be entered
-- **Address:** to be entered
-- **Accessibility provisions:** to be entered
-- **Parking and transport:** to be entered
+- **Venue:** To be announced
+- **Address:** To be announced
+- **Accessibility provisions:** To be announced
+- **Parking and transport:** To be announced
 Why this page is mostly empty
 
 Naming a venue before it is contracted is how events end up publishing a correction. Everyone who registers interest is told the venue directly as soon as it is signed, ahead of the public announcement. If you are booking flights, the dates and the city are safe to book against; the venue only affects which part of Nairobi you want to stay in.
@@ -517,10 +481,6 @@ Register interest
 **Browser tab / search-result title:** Travel & stay | Kenya-China Tea Summit  
 **Search-result description:** Travel guidance for the Kenya-China Tea Summit 2027 in Nairobi — arrival, entry requirements, and the delegation services the secretariat is coordinating.
 
-Schedule E · Travel
-
-No. KCTS/2027/T
-
 ## Getting to Nairobi
 
 General guidance while the summit's own arrangements are confirmed. Check everything against the official source before you book.
@@ -541,8 +501,8 @@ Rates, partners and how to book are issued to registered delegates once contract
 - **Main airport:** Jomo Kenyatta International (NBO), Nairobi
 - **Entry authorisation:** Kenya operates an electronic travel authorisation for most visitors
 - **Official source:** etakenya.go.ke
-- **Summit hotel block:** to be entered
-- **Airport transfers:** to be entered
+- **Summit hotel block:** To be announced
+- **Airport transfers:** To be announced
 Verify before you book
 
 Entry requirements, health requirements and processing times change, and this page is not the authority on them. Check the official Kenyan government source above and your own country's travel advice close to the date. If your organisation needs an invitation letter for a visa application, register your interest and ask the secretariat.
@@ -564,10 +524,6 @@ Register interest
 **URL:** `/faq/`  
 **Browser tab / search-result title:** FAQ | Kenya-China Tea Summit  
 **Search-result description:** Frequently asked questions about the Kenya-China Tea Summit 2027 in Nairobi — dates, registration, fees, venue, speakers, exhibiting and travel.
-
-Notes & Queries
-
-No. KCTS/2027/Q
 
 ## Questions, answered honestly
 
@@ -641,7 +597,7 @@ Not decided.
 
 ### About this site
 
-#### Why do so many pages say "to be entered"?
+#### Why do so many pages say "To be announced"?
 
 Because those things are genuinely not decided, and inventing them would mean retracting them later. Anything stated on this site is either confirmed by the secretariat or sourced and dated.
 
@@ -662,10 +618,6 @@ Register interest
 **URL:** `/news/`  
 **Browser tab / search-result title:** News & insight | Kenya-China Tea Summit  
 **Search-result description:** News and analysis on Kenya-China tea trade, value addition and market access, from the Kenya-China Tea Summit 2027 secretariat.
-
-Bulletin
-
-No. KCTS/2027/N
 
 ## The trade behind the summit
 
@@ -717,19 +669,15 @@ Register interest
 **Browser tab / search-result title:** Contact | Kenya-China Tea Summit  
 **Search-result description:** Contact the Kenya-China Tea Summit 2027 secretariat about attending, exhibiting, partnership, speaking or media.
 
-Form C · Correspondence
-
-No. KCTS/2027/C
-
 ## Contact the secretariat
 
 Everything routes through the form below until the secretariat publishes direct channels.
 
 - **Secretariat:** Kenya-China Tea Summit Secretariat
 - **Organised by:** Orbitline Events & Ushers Ltd, Nairobi
-- **Email:** to be entered
-- **Telephone:** to be entered
-- **Postal address:** to be entered
+- **Email:** To be announced
+- **Telephone:** To be announced
+- **Postal address:** To be announced
 Faster routes
 
 If your message is about attending, exhibiting or partnering, registering your interest gets it to the right person with the details already attached. This form is for everything else.
@@ -760,10 +708,6 @@ Your message goes to the summit secretariat and nowhere else. See our privacy no
 **Browser tab / search-result title:** Media & press | Kenya-China Tea Summit  
 **Search-result description:** Media accreditation and press resources for the Kenya-China Tea Summit 2027, Nairobi, 21–23 April 2027.
 
-Schedule F · Accreditation
-
-No. KCTS/2027/M
-
 ## Media and press
 
 Accreditation, assets and who to ask.
@@ -780,7 +724,7 @@ Media accreditation is one of the six registration categories. Register under Me
 - **Theme:** Brewing Strategic Partnerships for Sustainable Tea Trade, Investment and Innovation
 - **Edition:** First
 - **Organiser:** Kenya-China Tea Summit Secretariat, Orbitline Events & Ushers Ltd
-- **Media contact:** to be entered
+- **Media contact:** To be announced
 
 ### Assets and documents
 
@@ -808,10 +752,6 @@ Register as media
 **Browser tab / search-result title:** Downloads | Kenya-China Tea Summit  
 **Search-result description:** Download the Kenya-China Tea Summit 2027 fact sheet, brochure, agenda, sponsorship and exhibition documents.
 
-Schedule G · Documents
-
-No. KCTS/2027/D
-
 ## Documents and downloads
 
 Everything published about the summit, in one place, in its current version.
@@ -836,10 +776,6 @@ Register interest
 **URL:** `/privacy/`  
 **Browser tab / search-result title:** Privacy notice | Kenya-China Tea Summit  
 **Search-result description:** Privacy notice for the Kenya-China Tea Summit 2027 website — what data the forms collect, where it is stored, and how to request removal.
-
-Legal · Privacy
-
-No. KCTS/2027/L1
 
 ## Privacy notice
 
@@ -892,10 +828,6 @@ A named data contact and postal address will be published here once the secretar
 **Browser tab / search-result title:** Terms of use | Kenya-China Tea Summit  
 **Search-result description:** Terms of use for the Kenya-China Tea Summit 2027 website.
 
-Legal · Terms
-
-No. KCTS/2027/L2
-
 ## Terms of use
 
 The short version — this site is information, not a contract.
@@ -912,7 +844,7 @@ Submitting the registration form records your interest. It does not create a con
 
 ### Accuracy and change
 
-Summit details are published as the secretariat confirms them and may change. Fields marked "to be entered" are genuinely undecided. Third-party trade figures quoted on this site are attributed and dated; they are the publisher's reporting, not the summit's claims, and are not warranted by the summit.
+Summit details are published as the secretariat confirms them and may change. Fields marked "To be announced" are genuinely undecided. Third-party trade figures quoted on this site are attributed and dated; they are the publisher's reporting, not the summit's claims, and are not warranted by the summit.
 
 ### Third-party links
 
@@ -941,10 +873,6 @@ These terms are governed by the laws of Kenya.
 **URL:** `/code-of-conduct/`  
 **Browser tab / search-result title:** Code of conduct | Kenya-China Tea Summit  
 **Search-result description:** Code of conduct for the Kenya-China Tea Summit 2027. Expected behaviour, what is not tolerated, and how to report a concern.
-
-Legal · Conduct
-
-No. KCTS/2027/L3
 
 ## Code of conduct
 

@@ -73,20 +73,21 @@ tea from Kericho to Fujian. The site IS that document. It refuses the conference
 template (photo hero, countdown, speaker grid, sponsor wall) and its cream-editorial
 opposite.
 
-OWN-WORLD: Security print. Intaglio green ground owning whole regions, green-grey
-safety-tint stock (never cream), oxblood reserved for seals and endorsements only,
-canary and salmon carbon plies. Generated guilloche rosette and engine-turned rules.
-Bricolage Grotesque display, Google Sans Flex UI, Google Sans Code typed data.
-Steel-engraving vignettes, multiplied onto the stock.
+OWN-WORLD: Security print, visual register only. Intaglio green ground owning whole
+regions, green-grey safety-tint stock (never cream), oxblood for emphasis, canary and
+salmon plies. Generated guilloche rosette and engine-turned rules. Bricolage Grotesque
+display, Google Sans Flex UI, Google Sans Code typed data. Photographic plate grids.
+The DOCUMENT VOCABULARY was removed in ADR-015 after the client's copy audit — no
+schedule names, no serials, no unstamped fields. The look is the world now, not the
+labels.
 
-STORY: A buyer weighing an unfamiliar first-edition summit sees a document already
-in progress, reads its particulars, and registers — which issues them a numbered
-entry rather than selling them a ticket.
+STORY: A buyer weighing an unfamiliar summit reads a page that is confident about what
+is settled and plain about what is not, and registers interest.
 
-FIRST VIEWPORT: Full-bleed intaglio ground, rosette bleeding off the right edge.
-Masthead rule with document name and serial. Engraved h1 left; particulars beneath
-as filled fields, unknowns as dashed unstamped boxes. Issuing panel right, on light
-stock, carrying the primary action.
+FIRST VIEWPORT: Full-bleed intaglio ground over the plantation video, rosette bleeding
+off the right edge. Plain h1 left; the particulars beneath as label/value fields, with
+unannounced values reading "To be announced". Registration panel right, on light stock,
+carrying the primary action.
 
 FORM: Bill of lading / trade certificate. Ranked 4 of 7; assigned by the roll.
 
@@ -148,7 +149,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 
   <div class="site-footer__base">
     <p>{{ summit.name }} &middot; {{ summit.dates.display }} &middot; {{ summit.location.city }}, {{ summit.location.country }}</p>
-    <p>Issued by {{ summit.organiser.name }}, {{ summit.organiser.legalEntity }}.</p>
+    <p>Organised by {{ summit.organiser.legalEntity }} on behalf of the {{ summit.organiser.name }}.</p>
     <p>&copy; {{ buildYear }} {{ summit.organiser.legalEntity }}. All rights reserved.</p>
   </div>
 </footer>

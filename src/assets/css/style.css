@@ -90,16 +90,12 @@ a:hover { text-decoration-thickness: 2px; }
 .field { display: grid; gap: var(--sp-3xs); padding-block: var(--sp-2xs); }
 .field + .field { border-top: 1px solid var(--c-rule); }
 
-/* Nothing supplied yet: an unstamped box. This is the honest state for venue,
-   price, speakers — procedure, not absence. */
+/* Not announced yet. Muted so it reads as distinct from a known value, but no
+   longer a dashed "unstamped form field" — the client's audit found that the
+   document conceit made the summit look unfinished rather than careful. */
 .value--pending {
   color: var(--c-text-muted);
-  border: 1px dashed var(--c-rule);
-  padding: var(--sp-3xs) var(--sp-2xs);
-  display: inline-block;
-  font-style: normal;
 }
-.value--pending::before { content: "— "; }
 
 /* Engine-turned rule, from the generated band. */
 .rule {
@@ -123,37 +119,6 @@ a:hover { text-decoration-thickness: 2px; }
   /* inner keyline, the double rule of an engraved document */
   content: ""; position: absolute; inset: 6px;
   border: 1px solid var(--c-rule); opacity: 0.5; pointer-events: none;
-}
-
-/* Serial number, top-right of any document. */
-.serial {
-  font-family: var(--font-data);
-  font-size: var(--step--1);
-  color: var(--c-seal);
-  letter-spacing: 0.04em;
-}
-
-/* Circular seal. Drawn, not an emoji or icon-font glyph. */
-.seal {
-  --seal-size: 8.5rem;
-  width: var(--seal-size); height: var(--seal-size);
-  display: grid; place-items: center; text-align: center;
-  border: 2px solid var(--c-seal);
-  border-radius: 50%;
-  color: var(--c-seal);
-  font-family: var(--font-ui);
-  font-size: var(--step--2);
-  font-weight: 700;
-  letter-spacing: var(--track-label);
-  text-transform: uppercase;
-  line-height: 1.25;
-  padding: var(--sp-2xs);
-  position: relative;
-  rotate: -8deg;
-}
-.seal::before {
-  content: ""; position: absolute; inset: 5px;
-  border: 1px solid currentColor; border-radius: 50%; opacity: 0.6;
 }
 
 /* ==== header ============================================================ */
@@ -252,21 +217,6 @@ a:hover { text-decoration-thickness: 2px; }
 @media (min-width: 60rem) {
   .hero__grid { grid-template-columns: minmax(0, 1.35fr) minmax(18rem, 0.65fr); }
 }
-
-.hero__masthead {
-  display: flex; justify-content: space-between; align-items: baseline;
-  gap: var(--sp-m); flex-wrap: wrap;
-  padding-bottom: var(--sp-2xs);
-  border-bottom: 3px double var(--c-text-on-ink-muted);
-  margin-bottom: var(--sp-l);
-}
-.hero__docname {
-  font-family: var(--font-ui);
-  font-size: var(--step--1); font-weight: 700;
-  letter-spacing: var(--track-stamp); text-transform: uppercase;
-  color: var(--c-ply-canary); margin: 0;
-}
-.hero__serial { font-family: var(--font-data); font-size: var(--step--1); color: var(--c-text-on-ink-muted); }
 
 .hero h1 { color: var(--c-text-on-ink); max-width: 15ch; margin-bottom: var(--sp-m); }
 .hero__theme {
@@ -490,26 +440,6 @@ a:hover { text-decoration-thickness: 2px; }
 }
 .site-footer__base p { margin-bottom: var(--sp-3xs); max-width: none; }
 
-/* ==== the one authored motion moment ====================================
-   The seal strikes the document: the mark a bill of lading gets when it is
-   finally endorsed. One orchestrated moment, not scattered hover effects. */
-
-@keyframes strike {
-  from { opacity: 0; scale: 1.5; rotate: -22deg; filter: blur(3px); }
-  to   { opacity: 1; scale: 1;   rotate: -8deg;  filter: blur(0); }
-}
-.seal {
-  animation: strike var(--dur-slow) var(--ease-out) both;
-  animation-timeline: view();
-  animation-range: entry 10% cover 34%;
-}
-@supports not (animation-timeline: view()) {
-  .seal { animation: strike var(--dur-slow) var(--ease-out) both; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .seal { animation: none; opacity: 1; scale: 1; rotate: -8deg; filter: none; }
-}
-
 /* ==== responsive ======================================================== */
 
 @media (max-width: 60rem) {
@@ -526,7 +456,6 @@ a:hover { text-decoration-thickness: 2px; }
   .site-nav__list.is-open { display: flex; }
   .site-nav__list a { padding: var(--sp-xs) 0; min-height: 44px; }
   .hero::before { opacity: 0.28; right: -34%; }
-  .seal { --seal-size: 7rem; }
 }
 
 /* ==== interior page head ================================================= */

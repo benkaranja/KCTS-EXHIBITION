@@ -18,11 +18,6 @@ eleventyComputed:
 <section class="hero">
   {% include "components/hero-media.njk" %}
   <div class="wrap">
-    <div class="hero__masthead">
-      <p class="hero__docname">Summit Particulars &middot; First Edition</p>
-      <p class="hero__serial">No. KCTS/2027/0001</p>
-    </div>
-
     <div class="hero__grid">
       <div>
         <h1>The premier tea trade, investment and innovation forum connecting Africa and China</h1>
@@ -30,11 +25,11 @@ eleventyComputed:
 
         <dl class="particulars">
           <div class="field">
-            <dt class="label">Convened at</dt>
+            <dt class="label">Location</dt>
             <dd class="value">{{ summit.location.city }}, {{ summit.location.country }}</dd>
           </div>
           <div class="field">
-            <dt class="label">Dated</dt>
+            <dt class="label">Dates</dt>
             <dd class="value"><time datetime="{{ summit.dates.start }}/{{ summit.dates.end }}">{{ summit.dates.display }}</time></dd>
           </div>
           <div class="field">
@@ -43,10 +38,10 @@ eleventyComputed:
           </div>
           <div class="field">
             <dt class="label">Venue</dt>
-            <dd class="value"><span class="value--pending">to be entered</span></dd>
+            <dd class="value"><span class="value--pending">To be announced</span></dd>
           </div>
           <div class="field">
-            <dt class="label">Issued by</dt>
+            <dt class="label">Organised by</dt>
             <dd class="value">{{ summit.organiser.legalEntity }}</dd>
           </div>
         </dl>
@@ -57,7 +52,6 @@ eleventyComputed:
       <div class="issue">
         <div class="issue__head">
           <h2>Register your interest</h2>
-          <span class="serial">Form&nbsp;A</span>
         </div>
         <p class="issue__note">Six categories, from delegate to exhibitor. Registration is open as an expression of interest — fees, deadlines and inclusions are set by the secretariat and published here once confirmed.</p>
         <a class="btn btn--primary btn--block" href="/registration/">Register interest</a>
@@ -203,9 +197,6 @@ eleventyComputed:
         </div>
         <p>The secretariat coordinates flights, hotel reservations, tea plantation tours and safari extensions for delegations. Details are published as arrangements are confirmed.</p>
         <p><a href="/travel/">Travel and stay</a></p>
-        <div class="seal" role="img" aria-label="Registration open, first edition, twenty twenty-seven">
-          <span>Registration<br>Open<br>MMXXVII</span>
-        </div>
       </div>
       {{ grid([
         {src:"/img/plates/liquor",      alt:"Porcelain cupping bowls holding brewed tea liquor of varying strengths.", w:1200, h:900},
