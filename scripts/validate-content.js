@@ -216,10 +216,14 @@ for (const d of downloads) {
 // --- rule 9: every page must render in both locales --------------------------
 // A page that opts out of localisation silently produces a Chinese edition with
 // a hole in it. Opting out has to be explicit and is not currently allowed.
-const PAGES = join(SRC, "pages");
-for (const f of existsSync(PAGES) ? readdirSync(PAGES) : []) {
-  if (!f.endsWith(".njk")) continue;
-  const file = join(PAGES, f);
+// News posts live outside src/pages/ but are still localised routes, so they
+// need the same basePath contract — without it they render with basePath
+// undefined and emit hreflang links pointing at /undefined.
+const LOCALISED_DIRS = [join(SRC, "pages"), join(SRC, "news")];
+for (const dir of LOCALISED_DIRS)
+for (const f of existsSync(dir) ? readdirSync(dir) : []) {
+  if (!/\.(njk|md)$/.test(f)) continue;
+  const file = join(dir, f);
   const raw = readFileSync(file, "utf8");
   if (!raw.startsWith("---")) continue;
   const fm = raw.slice(3, raw.indexOf("\n---", 3));
@@ -230,6 +234,43 @@ for (const f of existsSync(PAGES) ? readdirSync(PAGES) : []) {
     errors.push(`${file}: missing "basePath" — required for locale routing`);
   }
 }
+
+// --- rule 10: no unapproved placeholder may ship ----------------------------
+// The V2 copy is annotated with approval markers ([Confirm ...], [Insert ...])
+// for claims the client has not signed off. Exactly one of them reaching a
+// live page would be worse than the claim itself. "to be entered" is the old
+// site's own wording, retired in favour of "To be announced" — gating it stops
+// it creeping back through a copy-paste.
+const FORBIDDEN = [
+  [/\[Confirm\b/i, 'an unresolved "[Confirm ...]" approval marker'],
+  [/\[Insert\b/i, 'an unresolved "[Insert ...]" placeholder'],
+  [/\bTBD\b/, 'a "TBD" placeholder'],
+  [/to be entered/i, 'the retired wording "to be entered" — use "To be announced"'],
+  // The retired *vocabulary* patterns (Class 1/2, premier, landmark, first
+  // edition, unallocated, and the two self-deprecating headings) are NOT added
+  // here. Those strings are still on eight pages until Tasks 5-10 rewrite the
+  // copy that carries them; gating them now would fail the build and keep it
+  // failing for eight tasks, which is how a build gate stops being read. They
+  // are added in Task 10, Step 4, once the copy is gone.
+];
+
+function checkForbidden(dir) {
+  if (!existsSync(dir)) return;
+  for (const f of readdirSync(dir)) {
+    const file = join(dir, f);
+    if (!/\.(njk|md|html)$/.test(f)) continue;
+    const raw = readFileSync(file, "utf8");
+    for (const [i, line] of raw.split(/\r?\n/).entries()) {
+      for (const [re, what] of FORBIDDEN) {
+        if (re.test(line)) errors.push(`${file}:${i + 1}: contains ${what}`);
+      }
+    }
+  }
+}
+for (const d of ["pages", "news", "downloads", "_includes/layouts", "_includes/components"]) {
+  checkForbidden(join(SRC, d));
+}
+checkForbidden(SRC);
 
 // --- report ----------------------------------------------------------------
 const counts = `${speakers.length} speakers, ${sessions.length} sessions, ${sponsors.length} sponsors, ${downloads.length} downloads`;
