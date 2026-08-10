@@ -1,17 +1,18 @@
-# Blockers — 3 open
+# Blockers — 4 open
 
 Each entry names the single specific thing a human must do. Resolve one by doing
 the action, then set the named criterion back to `pending` with `attempts: 0` in
 `.web-factory/STATE.json`. The loop picks it up on the next tick.
 
-None of the three stops the build. B-003 in particular is **not** holding anything
+None of the four stops the build. B-003 in particular is **not** holding anything
 up — the site treats the pages.dev origin as its real home until the domain lands
 (ADR-010). B-004 is repo hygiene, not a gate.
 
 What they *do* block: B-002 gates every form actually delivering mail, and B-003
-gates the custom domain and Brevo sender verification. The whole attendee portal
-is blocked separately, on client data rather than on credentials — that list is in
-`docs/superpowers/specs/2026-08-02-portal-i18n-downloads-design.md` §10.
+gates the custom domain and Brevo sender verification. B-006 gates one paragraph
+of sponsorship copy, not publication of `/sponsorship/` itself. The whole attendee
+portal is blocked separately, on client data rather than on credentials — that
+list is in `docs/superpowers/specs/2026-08-02-portal-i18n-downloads-design.md` §10.
 
 ---
 
@@ -100,6 +101,23 @@ leave it.
 
 Either way, the master is safe at `assets-raw/hero-tea-plantation-master.mp4`,
 which is a protected never-committed path.
+
+---
+
+## B-006 — "First edition" is unconfirmed, and it is blocking sponsorship copy
+
+The client's brief never states that 2027 is the first Kenya-China Tea Summit.
+FACTS.md §2 therefore lists it as do-not-imply.
+
+The language audit's strongest sponsorship recommendation ("become a founding
+partner", "establish an early leadership position in the first edition") depends
+on it. The commercial substance has shipped without the framing; the framing is
+a one-paragraph change the moment the client confirms in writing.
+
+**Needs:** written confirmation from the Secretariat that no prior edition of
+this summit has been held.
+**Blocks:** the founding-partner positioning on `/sponsorship/` only. Nothing
+else.
 
 ---
 
