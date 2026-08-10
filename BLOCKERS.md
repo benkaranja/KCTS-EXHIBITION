@@ -1,18 +1,22 @@
-# Blockers — 4 open
+# Blockers — 5 open
 
 Each entry names the single specific thing a human must do. Resolve one by doing
 the action, then set the named criterion back to `pending` with `attempts: 0` in
 `.web-factory/STATE.json`. The loop picks it up on the next tick.
 
-None of the four stops the build. B-003 in particular is **not** holding anything
+None of the five stops the build. B-003 in particular is **not** holding anything
 up — the site treats the pages.dev origin as its real home until the domain lands
-(ADR-010). B-004 is repo hygiene, not a gate.
+(ADR-010). B-004 is repo hygiene, not a gate. B-005 does not hold back the legal
+pages themselves — they are live and readable — only their standing as
+authoritative.
 
 What they *do* block: B-002 gates every form actually delivering mail, and B-003
-gates the custom domain and Brevo sender verification. B-006 gates one paragraph
-of sponsorship copy, not publication of `/sponsorship/` itself. The whole attendee
-portal is blocked separately, on client data rather than on credentials — that
-list is in `docs/superpowers/specs/2026-08-02-portal-i18n-downloads-design.md` §10.
+gates the custom domain and Brevo sender verification. B-005 gates treating
+`/privacy/`, `/terms/` and `/code-of-conduct/` as authoritative, pending legal
+review. B-006 gates one paragraph of sponsorship copy, not publication of
+`/sponsorship/` itself. The whole attendee portal is blocked separately, on
+client data rather than on credentials — that list is in
+`docs/superpowers/specs/2026-08-02-portal-i18n-downloads-design.md` §10.
 
 ---
 
@@ -101,6 +105,27 @@ leave it.
 
 Either way, the master is safe at `assets-raw/hero-tea-plantation-master.mp4`,
 which is a protected never-committed path.
+
+---
+
+## B-005 — Legal pages need Kenyan counsel review
+
+**Blocks:** publishing `/privacy/`, `/terms/` and `/code-of-conduct/` as
+authoritative. They are live and readable now, and are materially more accurate
+than the previous versions, but they have not been reviewed by a lawyer.
+
+**Needs a human.** Specifically:
+- the data controller's legal identity (Orbitline Events & Ushers Ltd, or the
+  Secretariat as a separate entity)
+- lawful bases for processing under Kenya's Data Protection Act
+- retention periods the system can actually implement
+- whether data is processed outside Kenya and under what safeguards
+- the limitation-of-liability and governing-law clauses
+- whether the summit owns the intellectual property it claims in the terms
+
+No visible "editorial draft" banner ships on those pages. Telling every reader
+the terms are provisional undermines the pages it appears on, and the honest
+fix is the review, not the disclaimer.
 
 ---
 

@@ -356,3 +356,48 @@ applies the translations keyed by source fragment — a reworded English block
 misses and stays English rather than silently pairing with the wrong Chinese —
 and `localeLinks` rewrites root-relative hrefs on `/zh/` pages, without which
 every click threw the reader back to the English site.
+
+---
+
+## ADR-015 — The client's copy audit supersedes ADR-011's document vocabulary and two FACTS rows
+
+**Status:** accepted, 3 August 2026. Amends ADR-011 and `website_content/FACTS.md`.
+
+**Context.** The client commissioned an independent audit of the shipped copy.
+Its strongest finding was that the security-print vocabulary — "Schedule A",
+"Form B", "No. KCTS/2027/S", "Particulars", "Issued by" — made the summit read
+as administrative rather than welcoming, and could imply a government or
+regulatory standing the organiser does not have. Its second finding was that
+the site talked about what was missing so often that unreadiness became the
+main story: "to be entered" appeared 28 times.
+
+The audit also contradicted two rows of FACTS.md §1. FACTS recorded "the
+premier tea trade, investment and innovation forum connecting Africa and China"
+as a confirmed client fact because it appeared in the client's own document.
+The audit's position is that "premier" is an unsubstantiated superlative and
+that claiming a continental mandate is not supportable without demonstrable
+continental participation. Separately, the site asserted "First Edition"
+throughout on an inference the client never made.
+
+**Decision.** The audit wins on all three counts.
+
+The document *vocabulary* and its carriers are removed: masthead, serials,
+schedule and form names, "Issued by", the unstamped-field treatment, the seal.
+The visual *world* stays — intaglio grounds, guilloche, the palette, the three
+faces, plate grids. ADR-011's direction contract in `base.njk` is rewritten to
+describe what the site now is.
+
+FACTS.md §1 loses "premier" and "landmark". "First edition" moves to §2, the
+do-not-imply list. §3 gains an explicit enforcement line: an unsourceable
+statistic is cut, not softened.
+
+**Consequences.** This is the second time the direction roll's output has been
+overridden by the client (ADR-012 replaced the engraved vignettes). The
+pattern is worth naming: the roll is good at producing a distinctive world and
+less good at judging how far a *client's* audience will follow it. Future runs
+should treat the roll's vocabulary layer as a proposal to be tested with the
+client, and its visual layer as the durable part.
+
+Validator rule 10 now fails the build on `[Confirm`, `[Insert`, `TBD` and
+`to be entered`, so neither the retired wording nor an unapproved claim can
+return by copy-paste.

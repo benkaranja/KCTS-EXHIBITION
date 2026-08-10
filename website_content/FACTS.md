@@ -20,8 +20,8 @@ supplied by the client in chat on 2026-08-01.
 | Venue city | Nairobi, Kenya | docx |
 | Theme | Brewing Strategic Partnerships for Sustainable Tea Trade, Investment and Innovation | docx |
 | Tagline | Connecting Tea, Cultures & Opportunities | logo lockup |
-| Positioning | The premier tea trade, investment and innovation forum connecting Africa and China | docx hero |
-| Purpose | A landmark international platform to deepen trade, investment, innovation and cultural cooperation between Kenya and China within the tea value chain | docx |
+| Positioning | Hosted in Kenya, centred on the Kenya-China tea relationship, relevant to the wider African tea industry | client copy audit, 3 Aug 2026 |
+| Purpose | An international platform to deepen trade, investment, innovation and cultural cooperation between Kenya and China within the tea value chain | docx, superlative removed per audit |
 | Audience | Tea industry leaders, government officials, investors, exporters, importers, researchers, technology providers, hospitality professionals | docx |
 | Objectives | Strengthen trade relations · promote investment · support innovation · facilitate market access · foster collaboration · promote tea culture | docx |
 | Day 1 | Opening Ceremony & Trade Forum | docx |
@@ -50,6 +50,11 @@ plausible-looking placeholder.
 - **Hotel partners, room rates, airline partners, visa arrangements.** Travel page gives general Kenya-entry guidance sourced publicly and dated, plus an enquiry route.
 - **Contact phone, email address, physical secretariat address.** Only the organisation name is confirmed.
 - **Website domain ownership.** `kenyachinateasummit.com` is the chosen target; registration status unverified.
+- **Whether this is the first edition.** The site said "First Edition" throughout on the strength of an inference, not a client statement. Until the organiser confirms it in writing, the site does not say it, does not imply it, and does not use scarcity framing that depends on it.
+- **Photography.** The images on this site are client-supplied photographs of
+  Kenyan tea estates and leaf. They are not a record of this summit. No caption,
+  alt text or surrounding sentence may imply that any of them was taken at a
+  previous edition, or that a previous edition took place.
 
 ## 3. Background industry context — usable, must be attributed and dated
 
@@ -63,6 +68,11 @@ Topics to source: Kenya tea export volumes and destinations; China's tea import
 profile and appetite for black/orthodox tea; AfCFTA and Kenya–China trade
 agreements; tea auction dynamics at Mombasa; value-addition and
 branded-export policy in Kenya.
+
+**Enforcement:** a statistic ships only with a named source and a date at the
+point of use. If it cannot be sourced live at the time of writing, it is cut,
+not softened — a hedged version of an unverifiable number is still an
+unverifiable number.
 
 ---
 
