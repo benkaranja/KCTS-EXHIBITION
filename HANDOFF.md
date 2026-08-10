@@ -78,9 +78,43 @@ npm run video      # re-encode the hero video from the master
 - Downloads page live, backed by a validated collection — rule 8 fails the build if a download points at a missing file or states the wrong byte count.
 - Copy exports for client review in both locales: `website_content/COPY-FOR-REVIEW.md` (~6,500 words) and `COPY-FOR-REVIEW-zh.md`.
 
-**Next up:** the membership portal (spec written, `docs/superpowers/specs/`),
-which is blocked on client data — see below. Then the form backend once
-credentials land (B1–B7).
+**Next up — the V2 copy run. This is the live piece of work.**
+
+The client had the shipped copy independently audited
+(`website_content/KCTS_Copy_Audit.md`) and commissioned a rewrite
+(`website_content/KCTS_Website_Copy_V2.md`). Both are in the repo. A design spec
+and a 12-task implementation plan are written, reviewed and approved:
+
+- `docs/superpowers/specs/2026-08-03-copy-v2-design.md`
+- `docs/superpowers/plans/2026-08-03-copy-v2.md` — **not started, zero tasks executed**
+
+**What the audit changes, and why it matters before you touch anything:**
+
+1. **The security-print document vocabulary is being removed.** "Schedule A",
+   "Form B", "No. KCTS/2027/S", "Particulars", "Issued by", the unstamped
+   dashed fields and the MMXXVII seal all go. The audit found they made the
+   summit read as a notice of procurement and implied a regulatory standing the
+   organiser does not hold. **The visual world stays** — intaglio grounds,
+   guilloche, palette, the three faces, plate grids, video hero. ADR-015 (to be
+   written in Task 3) records this as an amendment to ADR-011.
+2. **FACTS.md §1 is being amended.** "Premier … forum connecting Africa and
+   China" and "landmark" come out; "first edition" moves to §2, do-not-imply.
+   This is the first time FACTS has been overridden — the audit supersedes the
+   earlier reading of the client's own document.
+3. **A build gate is being added** (validator rule 10) so no `[Confirm …]` /
+   `[Insert …]` marker from V2, and no revival of "to be entered", can ship.
+
+**Do not start executing the plan without reading the spec first.** The plan
+deliberately orders strip → gate → copy, because rule 10 gates a string that
+still exists on 8 pages until the strip lands.
+
+**After the V2 run:** the membership portal (spec written,
+`docs/superpowers/specs/`), which is blocked on client data — see below. Then
+the form backend once credentials land (B1–B7).
+
+**Note on this session's state:** the last completed work is iteration 6
+(`7218178` on `main`, deployed). Everything since is documentation only —
+three commits, `951ec01`..`f8a12e9`. The live site has not changed.
 
 **Known deferred, not forgotten:**
 - **The Chinese edition is machine translation and ships `noindex`, out of the sitemap, behind a notice saying so** (ADR-014). It needs a human reviewer on `COPY-FOR-REVIEW-zh.md`; setting `translationStatus: reviewed` on a page releases it. Do not remove the gate to improve the numbers.
@@ -89,6 +123,8 @@ credentials land (B1–B7).
 - The portal is entirely deferred (sub-project C) — it needs registration categories, fee structure and exhibitor terms the client has not supplied.
 - No cron retry for failed emails. Pages Functions have no cron triggers; D1 durability covers the loss case instead (ADR-005).
 - An 85MB video blob is permanently in git history (B-004). Purging it needs a force-push, which is a hard autonomy stop.
+- **The legal pages have not been reviewed by a lawyer** (B-005, logged in the V2 plan's Task 3). They are live and readable. No visible "editorial draft" banner ships — a disclaimer is not a substitute for the review.
+- `docs/kenya_china_tea_summit_website_language_audit.md` is untracked and predates the client's own audit. It is superseded by `website_content/KCTS_Copy_Audit.md`; delete or commit it, but do not treat it as current.
 
 ## Things that will bite you
 
@@ -98,6 +134,9 @@ credentials land (B1–B7).
 - **Nunjucks `selectattr` cannot walk a dotted path** — it looks the attribute up as `obj[attr]`. `selectattr("data.category", ...)` builds fine and matches nothing. Use the `byCategory` filter.
 - **A build that exits 0 proves nothing about a listing page.** Two silent failures shipped this way before assertions on the built HTML caught them.
 - **An unquoted `": "` in front matter aborts Eleventy mid-run** and the build still prints success. Validator rule 7 exists for exactly this.
+- **`src/news/` has no locale routing.** It sits outside `src/pages/`, so it never inherits `pages.11tydata.js`. The collection is empty today, which is the only reason this has not bitten — the first post would render with `basePath` undefined and emit `hreflang` links pointing at `/undefined`. Fixed in the V2 plan, Task 11 Step 1.
+- **The zh translations are keyed by English source fragment.** Reword an English block and its Chinese counterpart silently falls back to English on `/zh/`, page by page. Any copy change must be followed by `npm run translate -- --force`.
+- **`docs/PAGE-MAP.md` claims the FAQ carries `FAQPage` JSON-LD. It does not** — it was never built. The V2 plan adds it.
 
 ## Before touching DNS
 

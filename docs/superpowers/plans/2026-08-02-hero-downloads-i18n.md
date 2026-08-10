@@ -1,5 +1,14 @@
 # Hero Refresh, Downloads and Chinese Edition — Implementation Plan
 
+> **STATUS: COMPLETE — 2 August 2026.** All 12 tasks executed and merged to
+> `main` in `7218178`. Verification is in `AUDIT.md` iteration 6, captured from
+> the live deploy. The task ledger, including the nine defects found during
+> execution, is in `.superpowers/sdd/progress.md`.
+>
+> Superseded in part by `2026-08-03-copy-v2.md`, which strips the document
+> vocabulary this plan built on and replaces every page's copy. Do not re-run
+> this plan.
+
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
 **Goal:** Ship the video hero with countdown, replace engraved vignettes with photographic image grids, add a downloads page, and add a Chinese edition — on the existing Eleventy site, without touching the deferred portal.
