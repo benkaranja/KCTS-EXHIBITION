@@ -111,6 +111,14 @@ Insert immediately after it:
 
 - [ ] **Step 2: Widen rule 10 in Task 2**
 
+> **Superseded during execution, 10 August 2026.** This step as written put all
+> ten patterns into Task 2's `FORBIDDEN` array. That was wrong: seven of them
+> match copy that is still on eight pages until Tasks 5-10 rewrite it, so the
+> build would have gone red at Task 2 and stayed red for eight tasks. The V2
+> plan now carries only the four placeholder patterns in Task 2, and closes over
+> the retired vocabulary in **Task 10, Step 4**, once the copy is gone. The
+> correction is already applied; do not re-apply this step as written.
+
 In the same file, in **Task 2, Step 3**, find the `FORBIDDEN` array and replace
 it in full:
 
