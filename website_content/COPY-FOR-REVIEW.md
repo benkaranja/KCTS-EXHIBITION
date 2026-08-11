@@ -1,6 +1,6 @@
 # Website copy for review — Kenya-China Tea Summit 2027
 
-**Generated:** 2026-08-11 · **Build:** `b86382a` · **Live:** https://kenya-china-tea-summit.pages.dev
+**Generated:** 2026-08-11 · **Build:** `b8fa83d` · **Live:** https://kenya-china-tea-summit.pages.dev
 
 This document contains **every word of visible text on the website**, extracted
 from the built pages, in the order a visitor reads them. It is generated
@@ -44,9 +44,9 @@ site not reference them at all, that is a one-line change.
 
 **URL:** `/`  
 **Browser tab / search-result title:** Kenya-China Tea Summit 2027 — Connecting Tea, Cultures & Opportunities  
-**Search-result description:** The Kenya-China Tea Summit 2027 brings tea exporters, buyers, investors and technology providers together in Nairobi from 21–23 April 2027. Register your interest.
+**Search-result description:** Join tea producers, exporters, buyers, investors, policymakers and technology partners in Nairobi from 21 to 23 April 2027. Register your interest in the Kenya-China Tea Summit.
 
-## The premier tea trade, investment and innovation forum connecting Africa and China
+## Where Kenya's tea industry meets China's market, capital and technology
 
 Brewing Strategic Partnerships for Sustainable Tea Trade, Investment and Innovation
 
@@ -55,64 +55,78 @@ Brewing Strategic Partnerships for Sustainable Tea Trade, Investment and Innovat
 - **Days to opening:** 253
 - **Venue:** To be announced
 - **Organised by:** Orbitline Events & Ushers Ltd
-Three days that put Kenyan growers, processors and exporters in the same rooms as Chinese buyers, investors and technology providers. Trade on day one, capital and innovation on day two, the expo floor on day three.
+The Kenya-China Tea Summit brings producers, exporters, buyers, investors, policymakers, researchers and technology partners together in Nairobi for three days of focused trade conversations, business meetings and industry exchange.
 
 ### Register your interest
 
-Six categories, from delegate to exhibitor. Registration is open as an expression of interest — fees, deadlines and inclusions are set by the secretariat and published here once confirmed.
+Six categories, from delegate to exhibitor. Registration is open as an expression of interest — fees, deadlines and inclusions are set by the summit team and published here once confirmed.
 
 Exhibiting or partnering instead?
 
-### What is being convened
+### A focused platform for a growing trade relationship
 
-A landmark international platform designed to deepen trade, investment, innovation and cultural cooperation between Kenya and China within the tea value chain.
+Kenya and China bring different strengths to the tea industry. Kenya has deep experience in growing, processing and exporting tea. China is the world's largest tea-consuming nation and a major centre for tea production, technology, product development and tea culture.
 
-Kenya grows the tea. China drinks more of it than anywhere on earth. Between those two facts sits a chain of buyers, processors, financiers, freight operators and regulators who rarely occupy the same building. For three days in April 2027, they will.
+The summit creates a practical meeting point for the people shaping this relationship. The focus is direct: build stronger commercial links, support value addition, improve market access and identify investment and technology partnerships that can move from conversation to action.
 
-More about the summit
+About the summit
 
 Plate IKenya's growing highlands
 
-### Six objectives
+### What the summit is designed to achieve
 
-The terms this summit is convened under.
-
-_Three days Session times, rooms and speakers are added to this manifest as they are confirmed._
+_Three days in Nairobi_
 - Day
 - Proceedings
 - 1 · 21 April 2027
 - 2 · 22 April 2027
 - 3 · 23 April 2027
-Full programme
+View the programme
 
-### The expo floor
+### The International Tea & Technology Expo
 
-The International Tea & Technology Expo runs alongside the summit: tea products, processing equipment, agricultural technologies and logistics services, shown to the people who buy them.
+The expo brings tea products and industry solutions into one commercial space. Exhibitors can present finished and bulk teas, processing equipment, agricultural technologies, packaging, traceability tools and logistics services to a specialist audience.
 
-Stand allocation opens with registration. Structured B2B matchmaking runs through day two, so an exhibitor's meetings are booked before they land.
-
-Exhibition and stands
+Explore exhibition opportunities
 
 Plate IIProcessing and the expo floor
 
-### Six ways to attend
+### Who should attend
 
-Each category is registered separately. Fees and inclusions are published once the secretariat confirms them.
+- Tea exporters and producers
+- Importers and buyers
+- Investors and financiers
+- Processing and packaging manufacturers
+- Agricultural technology providers
+- Logistics and freight operators
+- Government and trade-policy officials
+- Researchers and academics
+- Hospitality and tea-culture professionals
 
-### Partnership
+### B2B matchmaking
 
-Five tiers, each an endorsement on the summit's record. Benefits and rates are issued by the secretariat on enquiry.
+Good events create introductions. Useful events make those introductions relevant.
 
-- Title Partner Unallocated
-- Platinum Partner Unallocated
-- Gold Partner Unallocated
-- Silver Partner Unallocated
-- Supporting Partner Unallocated
-Partnership enquiry
+The summit's planned matchmaking programme will help delegates and exhibitors identify potential buyers, suppliers, investors and technology partners before and during the event. Participants will provide a business profile, indicate what they are looking for and receive relevant meeting recommendations.
 
-### Coming to Nairobi
+How matchmaking will work
 
-The secretariat coordinates flights, hotel reservations, tea plantation tours and safari extensions for delegations. Details are published as arrangements are confirmed.
+### Partner with the summit
+
+Partnership is available at Title, Platinum, Gold, Silver and Supporting Partner levels. Packages will be built around approved benefits such as brand visibility, delegate engagement, exhibition presence and business introductions.
+
+- Title Partner
+- Platinum Partner
+- Gold Partner
+- Silver Partner
+- Supporting Partner
+Tell us what your organisation wants to achieve, and the summit team will recommend the most suitable route.
+
+Discuss partnership
+
+### Plan your visit to Nairobi
+
+The summit is being planned as more than a three-day conference. The summit team intends to coordinate travel and accommodation support, tea-region visits and optional tourism experiences for international delegations.
 
 Travel and stay
 

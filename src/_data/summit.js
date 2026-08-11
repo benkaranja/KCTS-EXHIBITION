@@ -50,55 +50,56 @@ const summit = {
     url: "https://orbitlineushers.com",
   },
 
-  // Every objective is verbatim from the client brief.
+  // Verbatim from website_content/KCTS_Website_Copy_V2.md lines 52-76.
   objectives: [
     {
-      title: "Strengthen trade relations",
-      body: "Build durable commercial links between Kenyan tea producers and Chinese buyers.",
+      title: "Grow direct trade",
+      body: "Connect Kenyan producers and exporters with Chinese importers, distributors, brands and buyers.",
     },
     {
-      title: "Promote investment",
-      body: "Open Kenya's tea value chain to Chinese capital across processing, packaging and logistics.",
+      title: "Support value addition",
+      body: "Explore opportunities in specialty tea, green tea, orthodox tea, packaging, branding and product development.",
     },
     {
-      title: "Support innovation",
-      body: "Bring agricultural technology, processing equipment and traceability tools to the people who will use them.",
+      title: "Bring investment closer to the industry",
+      body: "Create space for investors, banks and development finance institutions to engage with commercially viable opportunities across the tea value chain.",
     },
     {
-      title: "Facilitate market access",
-      body: "Shorten the route from a Kenyan estate to a Chinese shelf.",
+      title: "Put technology in front of the people who use it",
+      body: "Introduce processing equipment, agricultural technology, traceability systems and logistics solutions to producers and processors.",
     },
     {
-      title: "Foster collaboration",
-      body: "Put producers, policymakers, financiers and researchers in the same rooms for three days.",
+      title: "Make market access easier to understand",
+      body: "Bring buyers, exporters, regulators and standards specialists into the same conversation.",
     },
     {
-      title: "Promote tea culture",
-      body: "Set Kenya's tea heritage alongside China's, as trade and as culture.",
+      title: "Celebrate tea as business and culture",
+      body: "Create room for Kenyan and Chinese tea traditions, consumer preferences and product stories to be shared with a wider international audience.",
     },
   ],
 
+  // Verbatim from website_content/KCTS_Website_Copy_V2.md lines 78-98.
   programme: [
     {
       day: 1,
       date: "2027-04-21",
-      title: "Opening Ceremony & Trade Forum",
+      title: "Opening ceremony and Trade Forum",
       summary:
-        "The summit opens, and the trade conversation starts the same day: who is buying, who is selling, and what stands between them.",
+        "A practical look at the Kenya-China tea market: demand, product fit, standards, routes to market and the relationships needed to grow trade.",
     },
     {
       day: 2,
       date: "2027-04-22",
-      title: "Investment Forum, Innovation Conference & B2B Meetings",
+      title: "Investment Forum, Innovation Conference and B2B Matchmaking",
       summary:
-        "Capital and technology in the morning, structured buyer-supplier meetings through the afternoon.",
+        "Financing, equipment, technology and structured meetings between relevant buyers, suppliers and partners.",
     },
     {
       day: 3,
       date: "2027-04-23",
-      title: "Tea Expo, Cultural Exchange & Closing Ceremony",
+      title: "International Tea & Technology Expo, Cultural Exchange and Closing Ceremony",
       summary:
-        "The exhibition floor opens fully, alongside a cultural programme, before the summit closes.",
+        "Tea products, processing solutions, agricultural technologies and logistics services, alongside cultural programming and the summit close.",
     },
   ],
 

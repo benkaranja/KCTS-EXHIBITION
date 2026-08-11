@@ -1,7 +1,7 @@
 ---
 layout: layouts/base.njk
 title: false
-description: The Kenya-China Tea Summit 2027 brings tea exporters, buyers, investors and technology providers together in Nairobi from 21–23 April 2027. Register your interest.
+description: Join tea producers, exporters, buyers, investors, policymakers and technology partners in Nairobi from 21 to 23 April 2027. Register your interest in the Kenya-China Tea Summit.
 basePath: /
 pagination:
   data: locales
@@ -20,7 +20,7 @@ eleventyComputed:
   <div class="wrap">
     <div class="hero__grid">
       <div>
-        <h1>The premier tea trade, investment and innovation forum connecting Africa and China</h1>
+        <h1>Where Kenya's tea industry meets China's market, capital and technology</h1>
         <p class="hero__theme">{{ summit.theme }}</p>
 
         <dl class="particulars">
@@ -46,14 +46,14 @@ eleventyComputed:
           </div>
         </dl>
 
-        <p class="hero__body">Three days that put Kenyan growers, processors and exporters in the same rooms as Chinese buyers, investors and technology providers. Trade on day one, capital and innovation on day two, the expo floor on day three.</p>
+        <p class="hero__body">The Kenya-China Tea Summit brings producers, exporters, buyers, investors, policymakers, researchers and technology partners together in Nairobi for three days of focused trade conversations, business meetings and industry exchange.</p>
       </div>
 
       <div class="issue">
         <div class="issue__head">
           <h2>Register your interest</h2>
         </div>
-        <p class="issue__note">Six categories, from delegate to exhibitor. Registration is open as an expression of interest — fees, deadlines and inclusions are set by the secretariat and published here once confirmed.</p>
+        <p class="issue__note">Six categories, from delegate to exhibitor. Registration is open as an expression of interest — fees, deadlines and inclusions are set by the summit team and published here once confirmed.</p>
         <a class="btn btn--primary btn--block" href="/registration/">Register interest</a>
         <hr class="rule">
         <p class="issue__note">Exhibiting or partnering instead?</p>
@@ -68,11 +68,11 @@ eleventyComputed:
     <div class="figure-pair">
       <div>
         <div class="section-head">
-          <h2>What is being convened</h2>
+          <h2>A focused platform for a growing trade relationship</h2>
         </div>
-        <p>A landmark international platform designed to deepen trade, investment, innovation and cultural cooperation between Kenya and China within the tea value chain.</p>
-        <p>Kenya grows the tea. China drinks more of it than anywhere on earth. Between those two facts sits a chain of buyers, processors, financiers, freight operators and regulators who rarely occupy the same building. For three days in April 2027, they will.</p>
-        <p><a href="/about/">More about the summit</a></p>
+        <p>Kenya and China bring different strengths to the tea industry. Kenya has deep experience in growing, processing and exporting tea. China is the world's largest tea-consuming nation and a major centre for tea production, technology, product development and tea culture.</p>
+        <p>The summit creates a practical meeting point for the people shaping this relationship. The focus is direct: build stronger commercial links, support value addition, improve market access and identify investment and technology partnerships that can move from conversation to action.</p>
+        <p><a href="/about/">About the summit</a></p>
       </div>
       {{ grid([
         {src:"/img/plates/rows-morning", alt:"Contour rows of a highland tea plantation in early morning mist.", w:1200, h:900},
@@ -86,8 +86,7 @@ eleventyComputed:
 <section class="section section--tint">
   <div class="wrap">
     <div class="section-head">
-      <h2>Six objectives</h2>
-      <p>The terms this summit is convened under.</p>
+      <h2>What the summit is designed to achieve</h2>
     </div>
     <ol class="clauses">
       {% for o in summit.objectives %}
@@ -106,8 +105,7 @@ eleventyComputed:
   <div class="wrap">
     <table class="manifest">
       <caption class="section-head">
-        <h2>Three days</h2>
-        <p>Session times, rooms and speakers are added to this manifest as they are confirmed.</p>
+        <h2>Three days in Nairobi</h2>
       </caption>
       <thead>
         <tr>
@@ -127,7 +125,7 @@ eleventyComputed:
         {% endfor %}
       </tbody>
     </table>
-    <p><a href="/programme/">Full programme</a></p>
+    <p><a href="/programme/">View the programme</a></p>
   </div>
 </section>
 
@@ -136,11 +134,10 @@ eleventyComputed:
     <div class="figure-pair figure-pair--flip">
       <div>
         <div class="section-head">
-          <h2>The expo floor</h2>
+          <h2>The International Tea &amp; Technology Expo</h2>
         </div>
-        <p>The International Tea &amp; Technology Expo runs alongside the summit: tea products, processing equipment, agricultural technologies and logistics services, shown to the people who buy them.</p>
-        <p>Stand allocation opens with registration. Structured B2B matchmaking runs through day two, so an exhibitor's meetings are booked before they land.</p>
-        <p><a href="/exhibition/">Exhibition and stands</a></p>
+        <p>The expo brings tea products and industry solutions into one commercial space. Exhibitors can present finished and bulk teas, processing equipment, agricultural technologies, packaging, traceability tools and logistics services to a specialist audience.</p>
+        <p><a href="/exhibition/">Explore exhibition opportunities</a></p>
       </div>
       {{ grid([
         {src:"/img/plates/withering", alt:"Withering troughs of green leaf in a tea factory.", w:1200, h:900},
@@ -155,36 +152,44 @@ eleventyComputed:
 <section class="section">
   <div class="wrap">
     <div class="section-head">
-      <h2>Six ways to attend</h2>
-      <p>Each category is registered separately. Fees and inclusions are published once the secretariat confirms them.</p>
+      <h2>Who should attend</h2>
     </div>
     <ul class="classes">
-      {% for c in summit.registrationCategories %}
+      {% for a in summit.audiences %}
       <li class="class-row">
-        <span class="class-row__code">Class {{ loop.index }}</span>
-        <span class="class-row__name">{{ c.name }}</span>
-        <p>{{ c.blurb }}</p>
+        <span class="class-row__name">{{ a }}</span>
       </li>
       {% endfor %}
     </ul>
   </div>
 </section>
 
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>B2B matchmaking</h2>
+    </div>
+    <p>Good events create introductions. Useful events make those introductions relevant.</p>
+    <p>The summit's planned matchmaking programme will help delegates and exhibitors identify potential buyers, suppliers, investors and technology partners before and during the event. Participants will provide a business profile, indicate what they are looking for and receive relevant meeting recommendations.</p>
+    <p><a href="/b2b-matchmaking/">How matchmaking will work</a></p>
+  </div>
+</section>
+
 <section class="section section--tint">
   <div class="wrap">
     <div class="section-head">
-      <h2>Partnership</h2>
-      <p>Five tiers, each an endorsement on the summit's record. Benefits and rates are issued by the secretariat on enquiry.</p>
+      <h2>Partner with the summit</h2>
+      <p>Partnership is available at Title, Platinum, Gold, Silver and Supporting Partner levels. Packages will be built around approved benefits such as brand visibility, delegate engagement, exhibition presence and business introductions.</p>
     </div>
     <ul class="endorsements">
       {% for t in summit.sponsorshipTiers %}
       <li class="endorsement">
         <span class="endorsement__tier">{{ t.name }}</span>
-        <span class="endorsement__line">Unallocated</span>
       </li>
       {% endfor %}
     </ul>
-    <p class="section-action"><a class="btn btn--primary" href="/sponsorship/">Partnership enquiry</a></p>
+    <p>Tell us what your organisation wants to achieve, and the summit team will recommend the most suitable route.</p>
+    <p class="section-action"><a class="btn btn--primary" href="/sponsorship/">Discuss partnership</a></p>
   </div>
 </section>
 
@@ -193,9 +198,9 @@ eleventyComputed:
     <div class="figure-pair">
       <div>
         <div class="section-head">
-          <h2>Coming to Nairobi</h2>
+          <h2>Plan your visit to Nairobi</h2>
         </div>
-        <p>The secretariat coordinates flights, hotel reservations, tea plantation tours and safari extensions for delegations. Details are published as arrangements are confirmed.</p>
+        <p>The summit is being planned as more than a three-day conference. The summit team intends to coordinate travel and accommodation support, tea-region visits and optional tourism experiences for international delegations.</p>
         <p><a href="/travel/">Travel and stay</a></p>
       </div>
       {{ grid([
