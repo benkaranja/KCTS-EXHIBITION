@@ -1,6 +1,6 @@
 # Website copy for review — Kenya-China Tea Summit 2027
 
-**Generated:** 2026-08-11 · **Build:** `b8fa83d` · **Live:** https://kenya-china-tea-summit.pages.dev
+**Generated:** 2026-08-11 · **Build:** `06ecc98` · **Live:** https://kenya-china-tea-summit.pages.dev
 
 This document contains **every word of visible text on the website**, extracted
 from the built pages, in the order a visitor reads them. It is generated
@@ -65,7 +65,7 @@ Exhibiting or partnering instead?
 
 ### A focused platform for a growing trade relationship
 
-Kenya and China bring different strengths to the tea industry. Kenya has deep experience in growing, processing and exporting tea. China is the world's largest tea-consuming nation and a major centre for tea production, technology, product development and tea culture.
+Kenya and China bring different strengths to the tea industry. Kenya has deep experience in growing, processing and exporting tea. China is a major tea market and a centre for tea production, technology, product development and tea culture.
 
 The summit creates a practical meeting point for the people shaping this relationship. The focus is direct: build stronger commercial links, support value addition, improve market access and identify investment and technology partnerships that can move from conversation to action.
 
