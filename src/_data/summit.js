@@ -103,16 +103,19 @@ const summit = {
     },
   ],
 
+  // V2's wording, which names the actual roles rather than the categories.
+  // Home and About both render this list; it lives here so the two cannot
+  // disagree about who the summit is for.
   audiences: [
-    "Tea exporters and producers",
-    "Importers and buyers",
-    "Investors and financiers",
-    "Processing and packaging manufacturers",
-    "Agricultural technology providers",
-    "Logistics and freight operators",
-    "Government and trade-policy officials",
-    "Researchers and academics",
-    "Hospitality and tea-culture professionals",
+    "Tea growers, factories, producer organisations and exporters",
+    "Importers, distributors, tea houses, retailers and consumer brands",
+    "Investors, banks, insurers and development finance institutions",
+    "Machinery, packaging and agricultural technology companies",
+    "Logistics, warehousing, customs and trade-service providers",
+    "Government ministries, regulators and trade-promotion agencies",
+    "Universities, researchers, trainers and standards specialists",
+    "Hotels, restaurants, tourism operators and tea-culture organisations",
+    "Business and industry media",
   ],
 
   exhibition: {

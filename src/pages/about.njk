@@ -19,7 +19,7 @@ ctaBody: Registration is currently an expression of interest. It is free to subm
 
 <p>The commercial opportunity is changing.</p>
 
-<p>China extended zero-tariff treatment to imports from all African countries with diplomatic relations with Beijing on 1 May 2026 (<a href="https://english.news.cn/20260501/4a61884b19384e9995c54ba065ca32c5/c.html" rel="noopener noreferrer" target="_blank">Xinhua, 1 May 2026</a>). Kenya is also working to expand production of green, orthodox and specialty teas, improve value addition and reach a broader mix of export markets.</p>
+<p>China extended zero-tariff treatment to imports from all African countries with diplomatic relations with Beijing on 1 May 2026 (<a href="https://english.news.cn/20260501/4a61884b19384e9995c54ba065ca32c5/c.html" rel="noopener noreferrer" target="_blank">Xinhua, 1 May 2026</a>).</p>
 
 <p>Tariffs are only one part of market access. Exporters still need to understand buyer preferences, product standards, food-safety requirements, packaging, documentation, logistics and distribution. Buyers need reliable suppliers who can deliver the right product, quality, volume and traceability.</p>
 
@@ -48,16 +48,12 @@ ctaBody: Registration is currently an expression of interest. It is free to subm
 
 <p>The programme is intended for:</p>
 
+{# Iterated, not hardcoded: the homepage renders the same list. Two copies of it
+   would disagree the first time either page is edited. #}
 <ul>
-  <li>Tea growers, factories, producer organisations and exporters</li>
-  <li>Importers, distributors, tea houses, retailers and consumer brands</li>
-  <li>Investors, banks, insurers and development finance institutions</li>
-  <li>Machinery, packaging and agricultural technology companies</li>
-  <li>Logistics, warehousing, customs and trade-service providers</li>
-  <li>Government ministries, regulators and trade-promotion agencies</li>
-  <li>Universities, researchers, trainers and standards specialists</li>
-  <li>Hotels, restaurants, tourism operators and tea-culture organisations</li>
-  <li>Business and industry media</li>
+  {% for a in summit.audiences %}
+  <li>{{ a }}</li>
+  {% endfor %}
 </ul>
 
 <h2>Organiser</h2>

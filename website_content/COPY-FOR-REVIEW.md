@@ -1,6 +1,6 @@
 # Website copy for review — Kenya-China Tea Summit 2027
 
-**Generated:** 2026-08-11 · **Build:** `a4409f1` · **Live:** https://kenya-china-tea-summit.pages.dev
+**Generated:** 2026-08-11 · **Build:** `33edc65` · **Live:** https://kenya-china-tea-summit.pages.dev
 
 This document contains **every word of visible text on the website**, extracted
 from the built pages, in the order a visitor reads them. It is generated
@@ -93,15 +93,15 @@ Plate IIProcessing and the expo floor
 
 ### Who should attend
 
-- Tea exporters and producers
-- Importers and buyers
-- Investors and financiers
-- Processing and packaging manufacturers
-- Agricultural technology providers
-- Logistics and freight operators
-- Government and trade-policy officials
-- Researchers and academics
-- Hospitality and tea-culture professionals
+- Tea growers, factories, producer organisations and exporters
+- Importers, distributors, tea houses, retailers and consumer brands
+- Investors, banks, insurers and development finance institutions
+- Machinery, packaging and agricultural technology companies
+- Logistics, warehousing, customs and trade-service providers
+- Government ministries, regulators and trade-promotion agencies
+- Universities, researchers, trainers and standards specialists
+- Hotels, restaurants, tourism operators and tea-culture organisations
+- Business and industry media
 
 ### B2B matchmaking
 
@@ -154,7 +154,7 @@ The summit takes place in Nairobi from 21–23 April 2027.
 
 The commercial opportunity is changing.
 
-China extended zero-tariff treatment to imports from all African countries with diplomatic relations with Beijing on 1 May 2026 (Xinhua, 1 May 2026). Kenya is also working to expand production of green, orthodox and specialty teas, improve value addition and reach a broader mix of export markets.
+China extended zero-tariff treatment to imports from all African countries with diplomatic relations with Beijing on 1 May 2026 (Xinhua, 1 May 2026).
 
 Tariffs are only one part of market access. Exporters still need to understand buyer preferences, product standards, food-safety requirements, packaging, documentation, logistics and distribution. Buyers need reliable suppliers who can deliver the right product, quality, volume and traceability.
 
