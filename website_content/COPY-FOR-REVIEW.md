@@ -1,6 +1,6 @@
 # Website copy for review — Kenya-China Tea Summit 2027
 
-**Generated:** 2026-08-11 · **Build:** `33edc65` · **Live:** https://kenya-china-tea-summit.pages.dev
+**Generated:** 2026-08-11 · **Build:** `cf38a50` · **Live:** https://kenya-china-tea-summit.pages.dev
 
 This document contains **every word of visible text on the website**, extracted
 from the built pages, in the order a visitor reads them. It is generated
@@ -259,41 +259,53 @@ Register interest
 
 **URL:** `/exhibition/`  
 **Browser tab / search-result title:** Exhibition | Kenya-China Tea Summit  
-**Search-result description:** Exhibit at the International Tea & Technology Expo, part of the Kenya-China Tea Summit 2027 in Nairobi, 21–23 April 2027. Tea products, processing equipment, agri-technology and logistics.
+**Search-result description:** Showcase tea products, processing equipment, agricultural technology, packaging and logistics solutions at the International Tea & Technology Expo in Nairobi.
 
-## The International Tea & Technology Expo
+## Put your products and solutions in front of a specialist audience
 
-Three days of floor time in front of buyers who came to Nairobi specifically to source.
+The International Tea & Technology Expo is the commercial exhibition within the Kenya-China Tea Summit.
 
-The expo runs alongside the summit and opens fully on day three. It is not a general trade fair — the audience is the delegate list, which means the people walking your stand are the buyers, investors and processors who registered for the forums.
+It is designed for companies that want to meet tea producers, processors, exporters, buyers, investors and policymakers with a clear interest in the Kenya-China market.
 
 ### What can be exhibited
 
-### Why exhibit at this one
+### Why exhibit
 
-Most tea trade shows put you in front of the tea trade in general. This one is built around a single corridor — Kenya to China — at a moment when that corridor is unsettled. Kenyan exports to China fell 51% in the first quarter of 2026, while national policy targets a large increase in green and orthodox production and China holds a zero-tariff door open.
+#### Meet a defined audience
 
-Sources: The Kenyan Wall Street, Q1 2026 · China Daily, 21 July 2026
+The summit brings together people working directly in tea trade, investment, production and technology.
 
-If you sell into that gap — machinery that moves a producer from bulk black into orthodox, traceability that satisfies a Chinese importer, freight that shortens the route — the people making those decisions are in the building for three days.
+#### Demonstrate what you offer
 
-### What comes with a stand
+Show products, equipment and systems in a setting where visitors can ask technical and commercial questions.
 
-- **Expo dates:** 21–23 April 2027, full floor opening day three
-- **B2B matchmaking:** Included — see matchmaking
-- **Stand sizes and layout:** To be announced
+#### Build relevant relationships
+
+Use the summit programme and planned B2B service to identify buyers, suppliers and partners with aligned interests.
+
+#### Enter the conversation early
+
+The event gives exhibitors a place in discussions on value addition, market access, technology and the future of Kenya-China tea trade.
+
+### Exhibitor information
+
+- **Expo operating days:** To be announced
+- **Stand sizes:** To be announced
 - **Rates:** To be announced
-- **Build and fit-out rules:** To be announced
-- **Allocation opens:** To be announced
-On the blanks above
+- **Package inclusions:** To be announced
+- **Build and fit-out guidelines:** To be announced
+- **Application deadline:** To be announced
+Registering interest
 
-Stand rates and floor plans are not published because they have not been set. Registering interest as an exhibitor puts you on the list that gets them first, before the public announcement.
+Registering interest does not reserve a stand. It ensures you receive the exhibitor prospectus and application details when they are released.
 
-### Enquire about a stand
+Prefer to talk first? Contact the exhibition team.
 
-Stand sizes, rates and what each includes are set by the secretariat and issued on enquiry.
+### Enquire about exhibiting
 
-Register interest as an exhibitor
+Tell us what your organisation offers, the space you may require and the audience you want to meet.
+
+Register exhibitor interest
 
 ---
 
@@ -301,38 +313,58 @@ Register interest as an exhibitor
 
 **URL:** `/b2b-matchmaking/`  
 **Browser tab / search-result title:** B2B matchmaking | Kenya-China Tea Summit  
-**Search-result description:** AI-powered business matchmaking at the Kenya-China Tea Summit 2027 — profile management, meeting scheduling and structured buyer-supplier meetings across the three days.
+**Search-result description:** Connect with relevant tea buyers, suppliers, investors and technology partners through the Kenya-China Tea Summit's planned business matchmaking programme.
 
-## Meetings booked before you land
+## Make the right meetings part of the programme
 
-The point of flying to Nairobi is the meetings. Those get scheduled in advance, not queued for on the day.
+Trade events are most valuable when the people you need to meet are identified before the room becomes crowded.
 
-Structured business matching runs through the summit, concentrated on day two. Delegates and exhibitors build a profile, the system proposes counterparts, and meetings are scheduled into the programme rather than left to chance on the expo floor.
+The summit's planned B2B matchmaking programme will help delegates and exhibitors find relevant commercial counterparts, request meetings and manage a focused schedule.
 
-### What the service covers
+### How it is expected to work
 
-- AI-powered business matching
-- Meeting scheduling
-- Profile management
-- Networking opportunities
+#### Create a business profile
 
-### How to think about it
+Participants provide information about their organisation, products, capabilities, markets and objectives.
 
-A Kenyan producer's problem is rarely a shortage of tea. It is reaching the specific importer whose blend needs what that estate actually produces. A Chinese buyer's problem is the mirror image: finding a supplier who can meet a grade, a volume and a documentation standard at the same time. Matchmaking exists to shorten that search from months of correspondence to a scheduled half-hour.
+#### State what you are looking for
 
-- **Included with:** Delegate and exhibitor registration
-- **Concentrated on:** Day two, 22 April 2027
-- **Platform and access details:** To be announced
-- **Profile opens:** To be announced
-Scope
+You may be seeking buyers, suppliers, investment, equipment, distribution, technology or research collaboration.
 
-This page describes a service the secretariat is providing. The matchmaking platform itself is operated separately from this website — no profile, meeting or attendee data is held here.
+#### Receive relevant recommendations
+
+The system uses the information provided to suggest potential counterparts. Participants decide which meetings to request or accept.
+
+#### Meet during the summit
+
+Confirmed meetings are placed into the summit schedule, subject to availability and mutual acceptance.
+
+### Who can use the service
+
+- **Eligibility:** To be announced
+- **Cost:** To be announced
+- **Main meeting day:** Thursday, 22 April 2027
+- **Profile opening date:** To be announced
+- **Platform access:** To be announced
+
+### What makes a useful profile
+
+A strong profile is specific. It should explain:
+
+- What your organisation produces, buys, finances or provides
+- The grades, volumes, markets or technologies relevant to you
+- What kind of organisation you want to meet
+- What a successful meeting would lead to
+
+### Data and privacy
+
+Matchmaking may require information beyond the website registration form. The final platform, data controller, access rules and privacy terms will be published before profiles open.
 
 ### Register your interest
 
-Six categories, from delegate to exhibitor. Fees and deadlines are published once the secretariat confirms them.
+Choose the category that best describes your role and indicate that you are interested in B2B matchmaking.
 
-Register interest
+Register your interest
 
 ---
 
@@ -340,46 +372,76 @@ Register interest
 
 **URL:** `/sponsorship/`  
 **Browser tab / search-result title:** Partnership | Kenya-China Tea Summit  
-**Search-result description:** Partnership and sponsorship opportunities at the Kenya-China Tea Summit 2027, Nairobi. Five tiers from Supporting Partner to Title Partner.
+**Search-result description:** Explore Title, Platinum, Gold, Silver and Supporting Partner opportunities at the Kenya-China Tea Summit 2027 in Nairobi.
 
-## Partner with the summit
+## Put your organisation at the centre of the conversation
 
-Five tiers, all unallocated. The first edition of anything is the cheapest time to be associated with it.
+Partnership opportunities for organisations that want to engage with decision-makers across tea, trade, investment, technology and policy.
 
-A first-edition summit has one thing an established one does not: every position is still open. No tier on this page has been allocated, and the organisations that take them will be the ones associated with this corridor from the beginning.
+The strongest partnerships begin with a clear objective. That may be brand visibility, access to a specialist audience, product demonstration, market entry, thought leadership or relationship building.
 
-### The five tiers
+### Partnership levels
 
-- Title Partner Unallocated
-- Platinum Partner Unallocated
-- Gold Partner Unallocated
-- Silver Partner Unallocated
-- Supporting Partner Unallocated
-What is and is not published here
+- Title Partner
+- Platinum Partner
+- Gold Partner
+- Silver Partner
+- Supporting Partner
 
-The tier names are confirmed by the secretariat. What each tier costs and exactly what it includes are not set yet, so they are not on this page. Anyone quoting you a rate for this summit that did not come from the secretariat is not speaking for it.
+### What partnership gives you
 
-### Who partnership makes sense for
+- Strategic relevance. Partnership connects your organisation to the Kenya-China tea trade at the level where trade, investment and policy decisions are made.
+- Audience access. Meet tea industry leaders, government officials, investors, exporters, importers, researchers and technology providers in one place.
+- Category leadership. Be identified with a specific part of the industry: production, processing, technology, finance or logistics.
+- Visibility. Appear across summit communications, on-site branding and event materials.
+- Influence. Contribute to the discussions that shape Kenya-China tea trade, investment and technology.
+- Relationship-building. Build direct relationships through the programme and the planned B2B matchmaking service.
 
-- Processing and equipment manufacturers selling into a market being pushed from bulk black toward green and orthodox production.
-- Banks, DFIs and investment funds with an agriculture or Africa-China mandate, who want visibility in front of the day-two investment forum.
-- Logistics and freight operators whose business is the corridor itself.
-- Certification, traceability and standards bodies whose relevance rises the moment a producer moves up the value chain.
-- Government agencies and trade promotion bodies on either side of the corridor.
+### Who partnership may suit
 
-### What the secretariat needs to know
+- Tea producers, exporters, importers, distributors and brands
+- Processing and packaging equipment manufacturers
+- Agricultural technology and traceability companies
+- Banks, insurers, investors and development finance institutions
+- Freight, warehousing and logistics providers
+- Certification, standards, testing and professional-service firms
+- Trade-promotion agencies and industry associations
+- Hospitality, travel and tourism partners
+- Media and knowledge partners
 
-A useful first message includes which tier you are looking at, what outcome you want from it — brand visibility, speaking access, delegate introductions, exhibition presence — and whether you are also considering a stand. That is enough to come back to you with something specific rather than a generic pack.
+### Potential partnership benefits
+
+Final benefits will vary by level and require organiser approval. They may include:
+
+- Brand visibility across summit communications
+- Exhibition presence
+- Delegate passes
+- Hosted networking opportunities
+- Approved speaking or content opportunities
+- Business introductions
+- Media and digital visibility
+- Hospitality and experience branding
+
+### Start with the outcome
+
+A useful partnership enquiry tells us:
+
+- Which partnership level you are considering
+- Who you want to reach
+- What result matters most to your organisation
+- Whether you are also interested in exhibiting
+- Any markets, products or programme themes relevant to you
+The summit team will use that information to prepare a more relevant proposal. You can also register sponsor interest directly.
 
 ### Media and press
 
 Press accreditation and the media kit are handled separately. See Media & press.
 
-### Start a partnership conversation
+### Request the partnership prospectus
 
-Tell the secretariat which tier interests you and what you would want from it. Rates and benefit schedules are issued on enquiry.
+Rates and confirmed benefits will be issued through the official summit channels once approved.
 
-Partnership enquiry
+Discuss partnership
 
 ---
 
@@ -614,7 +676,7 @@ Not set. Stand sizes, rates and fit-out rules are issued to registered exhibitor
 
 #### Are any sponsorship tiers taken?
 
-No. All five are unallocated.
+Tier pricing and benefits have not been published. See Partnership for what is confirmed, or get in touch to discuss.
 
 ### Practicalities
 

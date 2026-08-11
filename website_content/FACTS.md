@@ -28,7 +28,7 @@ supplied by the client in chat on 2026-08-01.
 | Day 2 | Investment Forum, Innovation Conference & B2B Meetings | docx |
 | Day 3 | Tea Expo, Cultural Exchange & Closing Ceremony | docx |
 | Exhibition | International Tea & Technology Expo — tea products, processing equipment, agricultural technologies, logistics services | docx |
-| B2B | AI-powered business matching, meeting scheduling, profile management, networking | docx |
+| B2B | Meeting scheduling, profile management, networking. (The client's brief also says "AI-powered business matching"; no platform has been selected, so the matching *method* is not publishable — see §2.) | docx |
 | Travel offer | Flight booking, hotel reservations, tea plantation tours, safaris, tourism experiences | docx |
 | Sponsorship tiers | Title, Platinum, Gold, Silver, Supporting Partner | docx |
 | Registration categories | Delegate, Exhibitor, Sponsor, Government, Media, Student | docx |
@@ -51,6 +51,9 @@ plausible-looking placeholder.
 - **Contact phone, email address, physical secretariat address.** Only the organisation name is confirmed.
 - **Website domain ownership.** `kenyachinateasummit.com` is the chosen target; registration status unverified.
 - **Whether this is the first edition.** The site said "First Edition" throughout on the strength of an inference, not a client statement. Until the organiser confirms it in writing, the site does not say it, does not imply it, and does not use scarcity framing that depends on it.
+- **The B2B matching method.** The client's brief says "AI-powered". No platform
+  has been chosen, so the site describes a planned meetings programme and never
+  names or implies a matching technology.
 - **Photography.** The images on this site are client-supplied photographs of
   Kenyan tea estates and leaf. They are not a record of this summit. No caption,
   alt text or surrounding sentence may imply that any of them was taken at a

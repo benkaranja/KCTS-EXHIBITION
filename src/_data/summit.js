@@ -129,8 +129,10 @@ const summit = {
   },
 
   b2b: {
+    // "AI-powered" dropped: no matchmaking platform has been selected, so the
+    // method is unknown — see FACTS.md §1 (B2B row) and §2.
     features: [
-      "AI-powered business matching",
+      "Business matching",
       "Meeting scheduling",
       "Profile management",
       "Networking opportunities",
