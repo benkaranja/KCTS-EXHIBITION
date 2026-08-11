@@ -1,6 +1,6 @@
 # Website copy for review — Kenya-China Tea Summit 2027
 
-**Generated:** 2026-08-11 · **Build:** `06ecc98` · **Live:** https://kenya-china-tea-summit.pages.dev
+**Generated:** 2026-08-11 · **Build:** `a4409f1` · **Live:** https://kenya-china-tea-summit.pages.dev
 
 This document contains **every word of visible text on the website**, extracted
 from the built pages, in the order a visitor reads them. It is generated
@@ -138,61 +138,60 @@ Plate IIIComing to Nairobi
 
 **URL:** `/about/`  
 **Browser tab / search-result title:** About the summit | Kenya-China Tea Summit  
-**Search-result description:** The Kenya-China Tea Summit 2027 is a trade, investment and innovation forum in Nairobi, 21–23 April 2027, connecting Kenya's tea value chain with Chinese buyers and investors.
+**Search-result description:** Learn why the Kenya-China Tea Summit is bringing tea producers, buyers, investors, policymakers and technology partners together in Nairobi, 21–23 April 2027.
 
-## Why this summit exists
+## A commercial meeting point for Kenya and China
 
-Kenya grows more tea than almost anyone. It earns less from it than it should. This is a three-day attempt to change that in one specific direction.
+Tea connects Kenya and China in different but complementary ways.
 
-The Kenya-China Tea Summit is a landmark international platform designed to deepen trade, investment, innovation and cultural cooperation between Kenya and China within the tea value chain. It runs in Nairobi from 21–23 April 2027.
+Kenya has generations of knowledge in tea cultivation, processing and international trade. China is a major tea market and a centre for tea production, technology, product development and tea culture.
 
-### The problem it is convened around
+The Kenya-China Tea Summit has been created to bring these strengths into the same room. It is a platform for people who want to trade, invest, share expertise and build long-term relationships across the tea value chain.
 
-Kenya is one of the world's largest tea exporters by volume. It is not one of the largest earners. The tea leaves the country in bulk, is blended and branded somewhere else, and the margin is captured somewhere else too. Analysts have put it plainly: Kenya exports more tea than China and Sri Lanka, and earns less for it, held back by bulk sales, a narrow product range and limited market diversity.
+The summit takes place in Nairobi from 21–23 April 2027.
 
-Ecofin Agency, 2026 — Kenya leads in tea exports but trails in revenues
+### Why now
 
-China is where that gap is sharpest, and where it is moving fastest in the wrong direction. Kenyan tea exports to China fell 51% in the first quarter of 2026, to 1.22 million kilogrammes.
+The commercial opportunity is changing.
 
-The Kenyan Wall Street, Q1 2026 — Kenya tea exports: Sudan ban and Pakistan's Q1 rise
+China extended zero-tariff treatment to imports from all African countries with diplomatic relations with Beijing on 1 May 2026 (Xinhua, 1 May 2026). Kenya is also working to expand production of green, orthodox and specialty teas, improve value addition and reach a broader mix of export markets.
 
-That decline sits against a national policy pointing the other way. Kenya is targeting close to 200 million kilogrammes of green and orthodox tea by 2030 — a deliberate move away from bulk black — and China has a zero-tariff door open. The Tea Board of Kenya has been working with Chinese partners on processing machinery, energy-efficient technology and, reportedly, an online auction platform.
+Tariffs are only one part of market access. Exporters still need to understand buyer preferences, product standards, food-safety requirements, packaging, documentation, logistics and distribution. Buyers need reliable suppliers who can deliver the right product, quality, volume and traceability.
 
-China Daily, 21 July 2026 — Kenya targets bigger tea exports to Chinese market
+The summit is designed to make those conversations easier and more direct.
 
-A note on the figures above
+### What the summit aims to do
 
-Every number on this page comes from published trade reporting, is dated, and links to its source. None of it is a claim by the summit or a forecast of what the summit will achieve. It is the context the summit was called in response to.
+### An African-led summit with a defined market focus
 
-### What it is trying to do
+The summit is hosted in Kenya and centred on the Kenya-China tea relationship. Its relevance extends beyond one bilateral market. Many of the questions it addresses, including value addition, technology transfer, export diversification and direct buyer relationships, matter across Africa's tea-producing regions.
 
-Six objectives, as set by the secretariat.
+The programme will welcome African institutions and businesses whose work can contribute to a stronger and more competitive tea industry, while keeping the summit's commercial focus clear.
 
-### Who it is for
+### Who the summit is for
 
-The summit is built around a specific problem: the people who grow and process Kenyan tea and the people who buy it in China rarely occupy the same building. Everyone below is invited because they sit somewhere on that chain.
+The programme is intended for:
 
-- Tea exporters and producers
-- Importers and buyers
-- Investors and financiers
-- Processing and packaging manufacturers
-- Agricultural technology providers
-- Logistics and freight operators
-- Government and trade-policy officials
-- Researchers and academics
-- Hospitality and tea-culture professionals
+- Tea growers, factories, producer organisations and exporters
+- Importers, distributors, tea houses, retailers and consumer brands
+- Investors, banks, insurers and development finance institutions
+- Machinery, packaging and agricultural technology companies
+- Logistics, warehousing, customs and trade-service providers
+- Government ministries, regulators and trade-promotion agencies
+- Universities, researchers, trainers and standards specialists
+- Hotels, restaurants, tourism operators and tea-culture organisations
+- Business and industry media
 
-### Who is convening it
+### Organiser
 
-- **Secretariat:** Kenya-China Tea Summit Secretariat
+- **Summit:** Kenya-China Tea Summit 2027
+- **Organising body:** Kenya-China Tea Summit Secretariat
 - **Organised by:** Orbitline Events & Ushers Ltd
-- **Based in:** Nairobi, Kenya
-- **Edition:** First
-This is the first edition. There is no previous year to point at, no archive of past delegates, and no attendance figure to quote. Everything published on this site is either confirmed by the secretariat or sourced and dated. Where something is not yet settled — the venue, the fees, the speakers — the page says so rather than filling the space.
+- **Location:** Nairobi, Kenya
 
 ### Register your interest
 
-Six categories, from delegate to exhibitor. Fees and deadlines are published once the secretariat confirms them.
+Registration is currently an expression of interest. It is free to submit and does not create a booking or payment obligation.
 
 Register interest
 
@@ -204,9 +203,11 @@ Register interest
 **Browser tab / search-result title:** Programme | Kenya-China Tea Summit  
 **Search-result description:** The Kenya-China Tea Summit 2027 programme across three days in Nairobi, 21–23 April 2027 — trade forum, investment forum, innovation conference, B2B meetings and the tea expo.
 
-## Three days, in order
+## Three days focused on business
 
-Day one is trade. Day two is capital and technology. Day three is the floor and the close.
+The summit programme moves from market opportunity to investment and technology, then into exhibition, culture and next steps.
+
+The detailed agenda, session times and speakers will be announced in phases.
 
 - Day
 - Proceedings
@@ -214,21 +215,41 @@ Day one is trade. Day two is capital and technology. Day three is the floor and 
 - 2 · 22 April 2027
 - 3 · 23 April 2027
 
-### What is not on this page yet
+### Day one: Opening ceremony and Trade Forum
 
-- **Session times:** To be announced
-- **Rooms and stages:** To be announced
-- **Speakers per session:** To be announced
-- **Tracks:** To be announced
-Why the detail is missing
+Day one sets the commercial context for the summit and examines what it takes to grow tea trade between Kenya and China.
 
-The three day-level themes above are confirmed. Everything below that level — who speaks when, in which room — is still being assembled, and publishing a plausible-looking agenda before it is real would mean retracting it later. Sessions are added to this manifest as the secretariat confirms them.
+Proposed areas of discussion include:
 
-If you want to speak, the call for speakers is open.
+- The current Kenya-China tea market
+- Chinese consumer and buyer preferences
+- Product positioning for black, green, orthodox, specialty and purple tea
+- Quality, food-safety, traceability and certification requirements
+- Export documentation, logistics and routes to market
+- Direct sales, distribution and commercial partnerships
+- The role of government and trade-promotion institutions
+
+### Programme status
+
+The following details will be announced as they are confirmed:
+
+- Session titles and formats
+- Speakers and moderators
+- Start and finish times
+- Rooms and stages
+- Interpretation arrangements
+- Expo operating days and opening hours
+- B2B eligibility, scheduling and whether it is included in registration
+
+### Interested in speaking?
+
+We welcome proposals from industry leaders, buyers, investors, policymakers, researchers and technology specialists with practical experience to share.
+
+Propose a session
 
 ### Register your interest
 
-Six categories, from delegate to exhibitor. Fees and deadlines are published once the secretariat confirms them.
+Register your interest to receive programme announcements and formal registration information.
 
 Register interest
 

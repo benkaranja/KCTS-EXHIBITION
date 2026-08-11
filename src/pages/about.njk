@@ -2,33 +2,30 @@
 layout: layouts/page.njk
 basePath: /about/
 title: About the summit
-heading: Why this summit exists
-standfirst: Kenya grows more tea than almost anyone. It earns less from it than it should. This is a three-day attempt to change that in one specific direction.
-description: The Kenya-China Tea Summit 2027 is a trade, investment and innovation forum in Nairobi, 21–23 April 2027, connecting Kenya's tea value chain with Chinese buyers and investors.
+heading: A commercial meeting point for Kenya and China
+standfirst: Tea connects Kenya and China in different but complementary ways.
+description: Learn why the Kenya-China Tea Summit is bringing tea producers, buyers, investors, policymakers and technology partners together in Nairobi, 21–23 April 2027.
 sitemapPriority: 0.9
+ctaBody: Registration is currently an expression of interest. It is free to submit and does not create a booking or payment obligation.
 ---
 
-<p>The Kenya-China Tea Summit is a landmark international platform designed to deepen trade, investment, innovation and cultural cooperation between Kenya and China within the tea value chain. It runs in Nairobi from {{ summit.dates.display }}.</p>
+<p>Kenya has generations of knowledge in tea cultivation, processing and international trade. China is a major tea market and a centre for tea production, technology, product development and tea culture.</p>
 
-<h2>The problem it is convened around</h2>
+<p>The Kenya-China Tea Summit has been created to bring these strengths into the same room. It is a platform for people who want to trade, invest, share expertise and build long-term relationships across the tea value chain.</p>
 
-<p>Kenya is one of the world's largest tea exporters by volume. It is not one of the largest earners. The tea leaves the country in bulk, is blended and branded somewhere else, and the margin is captured somewhere else too. Analysts have put it plainly: Kenya exports more tea than China and Sri Lanka, and earns less for it, held back by bulk sales, a narrow product range and limited market diversity.</p>
-<p class="cite">Ecofin Agency, 2026 — <a href="https://www.ecofinagency.com/news-agriculture/0107-47500-kenya-leads-in-tea-exports-but-trails-in-revenues-compared-to-china-and-sri-lanka" rel="noopener noreferrer" target="_blank">Kenya leads in tea exports but trails in revenues</a></p>
+<p>The summit takes place in Nairobi from {{ summit.dates.display }}.</p>
 
-<p>China is where that gap is sharpest, and where it is moving fastest in the wrong direction. Kenyan tea exports to China fell 51% in the first quarter of 2026, to 1.22 million kilogrammes.</p>
-<p class="cite">The Kenyan Wall Street, Q1 2026 — <a href="https://kenyanwallstreet.com/tea-exports-q1-2026" rel="noopener noreferrer" target="_blank">Kenya tea exports: Sudan ban and Pakistan's Q1 rise</a></p>
+<h2>Why now</h2>
 
-<p>That decline sits against a national policy pointing the other way. Kenya is targeting close to 200 million kilogrammes of green and orthodox tea by 2030 — a deliberate move away from bulk black — and China has a zero-tariff door open. The Tea Board of Kenya has been working with Chinese partners on processing machinery, energy-efficient technology and, reportedly, an online auction platform.</p>
-<p class="cite">China Daily, 21 July 2026 — <a href="https://www.chinadaily.com.cn/a/202607/21/WS6a5ec8f3a310986e2b466594.html" rel="noopener noreferrer" target="_blank">Kenya targets bigger tea exports to Chinese market</a></p>
+<p>The commercial opportunity is changing.</p>
 
-<div class="note">
-  <p class="note__label">A note on the figures above</p>
-  <p>Every number on this page comes from published trade reporting, is dated, and links to its source. None of it is a claim by the summit or a forecast of what the summit will achieve. It is the context the summit was called in response to.</p>
-</div>
+<p>China extended zero-tariff treatment to imports from all African countries with diplomatic relations with Beijing on 1 May 2026 (<a href="https://english.news.cn/20260501/4a61884b19384e9995c54ba065ca32c5/c.html" rel="noopener noreferrer" target="_blank">Xinhua, 1 May 2026</a>). Kenya is also working to expand production of green, orthodox and specialty teas, improve value addition and reach a broader mix of export markets.</p>
 
-<h2>What it is trying to do</h2>
+<p>Tariffs are only one part of market access. Exporters still need to understand buyer preferences, product standards, food-safety requirements, packaging, documentation, logistics and distribution. Buyers need reliable suppliers who can deliver the right product, quality, volume and traceability.</p>
 
-<p>Six objectives, as set by the secretariat.</p>
+<p>The summit is designed to make those conversations easier and more direct.</p>
+
+<h2>What the summit aims to do</h2>
 
 <ol class="clauses">
 {% for o in summit.objectives %}
@@ -41,21 +38,37 @@ sitemapPriority: 0.9
 {% endfor %}
 </ol>
 
-<h2>Who it is for</h2>
+<h2>An African-led summit with a defined market focus</h2>
 
-<p>The summit is built around a specific problem: the people who grow and process Kenyan tea and the people who buy it in China rarely occupy the same building. Everyone below is invited because they sit somewhere on that chain.</p>
+<p>The summit is hosted in Kenya and centred on the Kenya-China tea relationship. Its relevance extends beyond one bilateral market. Many of the questions it addresses, including value addition, technology transfer, export diversification and direct buyer relationships, matter across Africa's tea-producing regions.</p>
 
-<ul class="tags" role="list">
-{% for a in summit.audiences %}
-  <li class="tag tag--ink">{{ a }}</li>
-{% endfor %}
+<p>The programme will welcome African institutions and businesses whose work can contribute to a stronger and more competitive tea industry, while keeping the summit's commercial focus clear.</p>
+
+<h2>Who the summit is for</h2>
+
+<p>The programme is intended for:</p>
+
+<ul>
+  <li>Tea growers, factories, producer organisations and exporters</li>
+  <li>Importers, distributors, tea houses, retailers and consumer brands</li>
+  <li>Investors, banks, insurers and development finance institutions</li>
+  <li>Machinery, packaging and agricultural technology companies</li>
+  <li>Logistics, warehousing, customs and trade-service providers</li>
+  <li>Government ministries, regulators and trade-promotion agencies</li>
+  <li>Universities, researchers, trainers and standards specialists</li>
+  <li>Hotels, restaurants, tourism operators and tea-culture organisations</li>
+  <li>Business and industry media</li>
 </ul>
 
-<h2>Who is convening it</h2>
+<h2>Organiser</h2>
 
 <dl class="spec">
   <div class="field">
-    <dt class="label">Secretariat</dt>
+    <dt class="label">Summit</dt>
+    <dd class="value">{{ summit.name }}</dd>
+  </div>
+  <div class="field">
+    <dt class="label">Organising body</dt>
     <dd class="value">{{ summit.organiser.name }}</dd>
   </div>
   <div class="field">
@@ -63,13 +76,7 @@ sitemapPriority: 0.9
     <dd class="value">{{ summit.organiser.legalEntity }}</dd>
   </div>
   <div class="field">
-    <dt class="label">Based in</dt>
+    <dt class="label">Location</dt>
     <dd class="value">{{ summit.organiser.city }}, {{ summit.organiser.country }}</dd>
   </div>
-  <div class="field">
-    <dt class="label">Edition</dt>
-    <dd class="value">First</dd>
-  </div>
 </dl>
-
-<p>This is the first edition. There is no previous year to point at, no archive of past delegates, and no attendance figure to quote. Everything published on this site is either confirmed by the secretariat or sourced and dated. Where something is not yet settled — the venue, the fees, the speakers — the page says so rather than filling the space.</p>
