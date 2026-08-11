@@ -1,6 +1,6 @@
 # Website copy for review — Kenya-China Tea Summit 2027
 
-**Generated:** 2026-08-10 · **Build:** `e8391a5` · **Live:** https://kenya-china-tea-summit.pages.dev
+**Generated:** 2026-08-11 · **Build:** `b6c70b8` · **Live:** https://kenya-china-tea-summit.pages.dev
 
 This document contains **every word of visible text on the website**, extracted
 from the built pages, in the order a visitor reads them. It is generated
@@ -52,7 +52,7 @@ Brewing Strategic Partnerships for Sustainable Tea Trade, Investment and Innovat
 
 - **Location:** Nairobi, Kenya
 - **Dates:** 21–23 April 2027
-- **Days to opening:** 254
+- **Days to opening:** 253
 - **Venue:** To be announced
 - **Organised by:** Orbitline Events & Ushers Ltd
 Three days that put Kenyan growers, processors and exporters in the same rooms as Chinese buyers, investors and technology providers. Trade on day one, capital and innovation on day two, the expo floor on day three.
@@ -917,26 +917,28 @@ These appear on every page.
 
 - About → `/about/`
 - Programme → `/programme/`
-- Exhibition → `/exhibition/`
-- Sponsorship → `/sponsorship/`
-- Travel → `/travel/`
+- Expo → `/exhibition/`
+- B2B → `/b2b-matchmaking/`
+- Partners → `/sponsorship/`
 - **[Button]** Register interest → `/registration/`
 
 ## Footer links
 
+- Travel → `/travel/`
 - Speakers → `/speakers/`
-- News → `/news/`
+- News and insights → `/news/`
 - Downloads → `/downloads/`
+- Media accreditation → `/media/`
 - Register interest → `/registration/`
-- B2B matchmaking → `/b2b-matchmaking/`
+- Exhibit → `/exhibition/`
+- Partner → `/sponsorship/`
 - Venue → `/venue/`
-- Travel & stay → `/travel/`
+- Travel and stay → `/travel/`
 - FAQ → `/faq/`
 - Contact → `/contact/`
-- Privacy → `/privacy/`
-- Terms → `/terms/`
+- Privacy notice → `/privacy/`
+- Terms of use → `/terms/`
 - Code of conduct → `/code-of-conduct/`
-- Media & press → `/media/`
 
 ## Footer small print
 
