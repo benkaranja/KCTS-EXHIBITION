@@ -167,10 +167,40 @@ for (const [url, name] of ORDER) {
 }
 
 // Shared furniture, stated once rather than repeated 17 times.
-const homeHtml = readFileSync("public/index.html", "utf8");
-const navItems = [...homeHtml.matchAll(/<li><a href="([^"]+)"[^>]*>([^<]+)<\/a><\/li>/g)]
-  .map((m) => `- ${decode(m[2])} → \`${m[1]}\``);
-const uniqueNav = [...new Set(navItems)];
+//
+// Read the header and footer as separate regions. An earlier version matched
+// every <li><a> in the page, deduped, and split the result with a hardcoded
+// slice(0, 5) — so the moment the primary bar grew to six items it dropped the
+// last one from "Main menu" and re-emitted it at the head of "Footer links".
+// This file's whole promise is that it cannot drift from the built site, so the
+// split has to come from the markup, not from a magic number.
+// PREFIX, not a hardcoded path: under `--locale zh` the furniture must come
+// from the Chinese home page, or the zh review document describes the English
+// header and footer to the very reviewer checking the translation.
+const homeHtml = readFileSync(`public${PREFIX}/index.html`, "utf8");
+
+const region = (html, re) => (html.match(re) ?? [""])[0];
+const linksIn = (fragment) =>
+  [...fragment.matchAll(/<a href="([^"]+)"[^>]*>([^<]+)<\/a>/g)].map(
+    (m) => `- ${decode(m[2])} → \`${m[1]}\``,
+  );
+
+const primaryNav = linksIn(region(homeHtml, /<ul class="site-nav__list"[\s\S]*?<\/ul>/));
+const footerNav = [...new Set(linksIn(region(homeHtml, /<footer class="site-footer"[\s\S]*?<\/footer>/)))];
+
+// The CTA was a hardcoded "Register interest → /registration/" literal, which
+// stated the English label and the unprefixed URL even in the zh export.
+const ctaMatch = homeHtml.match(
+  /<a class="btn btn--primary site-header__cta" href="([^"]+)"[^>]*>([^<]+)<\/a>/,
+);
+const ctaLine = ctaMatch
+  ? `- **[Button]** ${decode(ctaMatch[2])} → \`${ctaMatch[1]}\``
+  : null;
+
+if (!primaryNav.length || !footerNav.length || !ctaLine) {
+  console.error("FAIL  header nav, footer nav or the header CTA matched nothing — the markup moved");
+  process.exit(1);
+}
 
 const tail = `
 ---
@@ -181,12 +211,12 @@ These appear on every page.
 
 ## Main menu
 
-${uniqueNav.slice(0, 5).join("\n")}
-- **[Button]** Register interest → \`/registration/\`
+${primaryNav.join("\n")}
+${ctaLine}
 
 ## Footer links
 
-${uniqueNav.slice(5).join("\n")}
+${footerNav.join("\n")}
 
 ## Footer small print
 

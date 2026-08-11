@@ -1,6 +1,6 @@
 # Website copy for review — Kenya-China Tea Summit 2027
 
-**Generated:** 2026-08-11 · **Build:** `b6c70b8` · **Live:** https://kenya-china-tea-summit.pages.dev
+**Generated:** 2026-08-11 · **Build:** `b86382a` · **Live:** https://kenya-china-tea-summit.pages.dev
 
 This document contains **every word of visible text on the website**, extracted
 from the built pages, in the order a visitor reads them. It is generated
@@ -920,11 +920,13 @@ These appear on every page.
 - Expo → `/exhibition/`
 - B2B → `/b2b-matchmaking/`
 - Partners → `/sponsorship/`
+- Travel → `/travel/`
 - **[Button]** Register interest → `/registration/`
 
 ## Footer links
 
-- Travel → `/travel/`
+- About → `/about/`
+- Programme → `/programme/`
 - Speakers → `/speakers/`
 - News and insights → `/news/`
 - Downloads → `/downloads/`
