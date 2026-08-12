@@ -1,6 +1,6 @@
 # Website copy for review — Kenya-China Tea Summit 2027
 
-**Generated:** 2026-08-12 · **Build:** `9c54292` · **Live:** https://kenya-china-tea-summit.pages.dev
+**Generated:** 2026-08-12 · **Build:** `a8f5c2c` · **Live:** https://kenya-china-tea-summit.pages.dev
 
 This document contains **every word of visible text on the website**, extracted
 from the built pages, in the order a visitor reads them. It is generated
@@ -472,7 +472,7 @@ The formal ticketing process is not open yet. This form records your interest an
 
 ### Registration of interest
 
-Required fields are marked. Nothing here is published, sold, or shared outside the secretariat.
+Required fields are marked. Your details are used to contact you about the summit, and are never sold. Our email and hosting providers handle them on our behalf — see the privacy notice.
 
 Full name *
 
@@ -815,7 +815,7 @@ Your message *
 
 > **[Button]** Send message
 
-Your message goes to the summit secretariat and nowhere else. See our privacy notice.
+Your message is used to answer your enquiry, and is never sold. Our email and hosting providers handle it on our behalf. See our privacy notice.
 
 ---
 

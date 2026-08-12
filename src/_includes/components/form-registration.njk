@@ -7,7 +7,10 @@
     <h2 id="form-heading">Registration of interest</h2>
   </div>
 
-  <p class="form__intro">Required fields are marked. Nothing here is published, sold, or shared outside the secretariat.</p>
+  {# Not "shared with nobody": Brevo sends the email and Cloudflare serves and
+     rate-limits the request. Both are processors. The privacy notice names
+     them, so this line must not contradict it. #}
+  <p class="form__intro">Required fields are marked. Your details are used to contact you about the summit, and are never sold. Our email and hosting providers handle them on our behalf — see the <a href="/privacy/">privacy notice</a>.</p>
 
   <div class="form__grid">
     <p class="form__row">
