@@ -2,53 +2,61 @@
 layout: layouts/page.njk
 basePath: /travel/
 title: Travel & stay
-heading: Getting to Nairobi
-standfirst: General guidance while the summit's own arrangements are confirmed. Check everything against the official source before you book.
-description: Travel guidance for the Kenya-China Tea Summit 2027 in Nairobi — arrival, entry requirements, and the delegation services the secretariat is coordinating.
+heading: Travel and stay
+standfirst: General guidance for getting to Nairobi. Check official sources before you book.
+description: Plan travel to Nairobi for the Kenya-China Tea Summit, including arrival information, Kenya entry requirements, accommodation updates and optional delegation experiences.
+ctaBody: Register your interest to receive venue, accommodation and delegate-travel updates.
 ---
 
-<h2>What the secretariat is arranging</h2>
+<p>The information on this page is general guidance. Entry rules, health requirements and travel procedures can change, so check official sources before making arrangements.</p>
 
-<p>The summit is coordinating delegation services rather than leaving every attendee to arrange their own:</p>
+<h2>Arriving by air</h2>
 
-<ul>
-{% for o in summit.travel.offers %}
-  <li>{{ o }}</li>
-{% endfor %}
-</ul>
+<p>Nairobi's main international airport is Jomo Kenyatta International Airport, commonly shown as <strong>NBO</strong> in booking systems.</p>
 
-<p>Rates, partners and how to book are issued to registered delegates once contracted. Nothing on this page is a booking, and no hotel or airline partnership is announced yet.</p>
+<p>Information on summit transfers will be announced after the venue and transport arrangements are confirmed.</p>
 
-<h2>Arriving in Kenya</h2>
+<h2>Entry requirements</h2>
+
+<p>Kenya uses an Electronic Travel Authorisation system for many international visitors. Check the <a href="https://www.etakenya.go.ke/" rel="noopener noreferrer" target="_blank">official Kenya eTA service</a> and your own government's travel guidance before booking.</p>
+
+<p>Processing times and requirements may vary by nationality and individual circumstances.</p>
+
+<h2>Accommodation</h2>
 
 <dl class="spec">
   <div class="field">
-    <dt class="label">Main airport</dt>
-    <dd class="value">Jomo Kenyatta International (NBO), Nairobi</dd>
+    <dt class="label">Summit hotel or room block</dt>
+    <dd class="value"><span class="value--pending">To be announced</span></dd>
   </div>
   <div class="field">
-    <dt class="label">Entry authorisation</dt>
-    <dd class="value">Kenya operates an electronic travel authorisation for most visitors</dd>
-  </div>
-  <div class="field">
-    <dt class="label">Official source</dt>
-    <dd class="value"><a href="https://www.etakenya.go.ke/" rel="noopener noreferrer" target="_blank">etakenya.go.ke</a></dd>
-  </div>
-  <div class="field">
-    <dt class="label">Summit hotel block</dt>
+    <dt class="label">Preferential delegate rates</dt>
     <dd class="value"><span class="value--pending">To be announced</span></dd>
   </div>
   <div class="field">
     <dt class="label">Airport transfers</dt>
     <dd class="value"><span class="value--pending">To be announced</span></dd>
   </div>
+  <div class="field">
+    <dt class="label">Venue shuttle</dt>
+    <dd class="value"><span class="value--pending">To be announced</span></dd>
+  </div>
 </dl>
 
 <div class="note">
-  <p class="note__label">Verify before you book</p>
-  <p>Entry requirements, health requirements and processing times change, and this page is not the authority on them. Check the official Kenyan government source above and your own country's travel advice close to the date. If your organisation needs an invitation letter for a visa application, register your interest and ask the secretariat.</p>
+  <p class="note__label">Before you book</p>
+  <p>Until the venue is confirmed, avoid non-refundable hotel bookings where possible.</p>
 </div>
 
-<h2>Beyond the summit</h2>
+<h2>Delegation support</h2>
 
-<p>Kenya's tea-growing highlands are a few hours from Nairobi, and the secretariat is arranging plantation tours as well as safari extensions for delegations that want to stay on. Details go out with the delegate pack.</p>
+<p>The organiser plans to coordinate a range of optional services for international delegations:</p>
+
+<ul>
+{% for o in summit.travel.offers %}
+  <li>{{ o }}</li>
+{% endfor %}
+  <li>Invitation letters</li>
+</ul>
+
+<p>Availability, suppliers, rates, booking terms and responsibility for these services will be published once confirmed.</p>

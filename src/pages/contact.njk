@@ -2,20 +2,28 @@
 layout: layouts/page.njk
 basePath: /contact/
 title: Contact
-heading: Contact the secretariat
-standfirst: Everything routes through the form below until the secretariat publishes direct channels.
-description: Contact the Kenya-China Tea Summit 2027 secretariat about attending, exhibiting, partnership, speaking or media.
+heading: Contact the summit team
+standfirst: Use the relevant route for faster support. General enquiries go through the form below.
+description: Contact the Kenya-China Tea Summit about attendance, exhibition, partnership, speaking, media, travel or general enquiries.
 hideCta: true
 ---
 
 <dl class="spec">
   <div class="field">
-    <dt class="label">Secretariat</dt>
+    <dt class="label">Summit</dt>
+    <dd class="value">{{ summit.name }}</dd>
+  </div>
+  <div class="field">
+    <dt class="label">Organising body</dt>
     <dd class="value">{{ summit.organiser.name }}</dd>
   </div>
   <div class="field">
     <dt class="label">Organised by</dt>
-    <dd class="value">{{ summit.organiser.legalEntity }}, {{ summit.organiser.city }}</dd>
+    <dd class="value">{{ summit.organiser.legalEntity }}</dd>
+  </div>
+  <div class="field">
+    <dt class="label">Location</dt>
+    <dd class="value">{{ summit.location.city }}, {{ summit.location.country }}</dd>
   </div>
   <div class="field">
     <dt class="label">Email</dt>
@@ -31,9 +39,20 @@ hideCta: true
   </div>
 </dl>
 
+<h2>Choose the right route</h2>
+
+<ul>
+  <li><strong>Attendance:</strong> <a href="/registration/">Register your interest</a></li>
+  <li><strong>Exhibition:</strong> <a href="/exhibition/">Exhibition enquiry</a></li>
+  <li><strong>Partnership:</strong> <a href="/sponsorship/">Partnership enquiry</a></li>
+  <li><strong>Speaking:</strong> <a href="/speakers/">Speaker proposal</a></li>
+  <li><strong>Media:</strong> <a href="/media/">Media accreditation and enquiries</a></li>
+  <li><strong>Travel:</strong> <a href="/travel/">Travel and accommodation enquiry</a></li>
+</ul>
+
 <div class="note">
-  <p class="note__label">Faster routes</p>
-  <p>If your message is about attending, exhibiting or partnering, <a href="/registration/">registering your interest</a> gets it to the right person with the details already attached. This form is for everything else.</p>
+  <p class="note__label">General enquiries</p>
+  <p>If none of these routes fit, send a message using the form below.</p>
 </div>
 
 {% include "components/form-contact.njk" %}
