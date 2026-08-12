@@ -1,6 +1,6 @@
 # Website copy for review — Kenya-China Tea Summit 2027
 
-**Generated:** 2026-08-12 · **Build:** `27718d3` · **Live:** https://kenya-china-tea-summit.pages.dev
+**Generated:** 2026-08-12 · **Build:** `9c54292` · **Live:** https://kenya-china-tea-summit.pages.dev
 
 This document contains **every word of visible text on the website**, extracted
 from the built pages, in the order a visitor reads them. It is generated
@@ -549,29 +549,33 @@ Register interest
 
 **URL:** `/venue/`  
 **Browser tab / search-result title:** Venue | Kenya-China Tea Summit  
-**Search-result description:** The Kenya-China Tea Summit 2027 takes place in Nairobi, Kenya, 21–23 April 2027. The specific venue is confirmed by the secretariat closer to the date.
+**Search-result description:** The Kenya-China Tea Summit will take place in Nairobi from 21 to 23 April 2027. Venue, access and transport information will be announced here.
 
-## Nairobi, venue to be confirmed
+## Coming to Nairobi
 
-The city is fixed. The building is not, and this page will not guess at it.
+The Kenya-China Tea Summit takes place in Nairobi, Kenya, from 21 to 23 April 2027.
+
+The specific venue is being finalised and will be announced through the official summit website and delegate communications.
+
+### Event details
 
 - **City:** Nairobi, Kenya
 - **Dates:** 21–23 April 2027
 - **Venue:** To be announced
 - **Address:** To be announced
-- **Accessibility provisions:** To be announced
-- **Parking and transport:** To be announced
-Why this page is mostly empty
+- **Accessibility information:** To be announced
+- **Parking and local transport:** To be announced
+Before booking accommodation
 
-Naming a venue before it is contracted is how events end up publishing a correction. Everyone who registers interest is told the venue directly as soon as it is signed, ahead of the public announcement. If you are booking flights, the dates and the city are safe to book against; the venue only affects which part of Nairobi you want to stay in.
+The venue will affect which part of Nairobi is most convenient for your stay. Choose flexible or refundable accommodation where possible. International visitors should also use flexible travel arrangements and review entry requirements before booking.
 
-### Planning around it
+### Venue announcements
 
-Nairobi is well served for international arrivals through Jomo Kenyatta International Airport, and the city's conference-grade hotels are concentrated in a few districts. Until the venue is fixed, the practical advice is to hold off on hotel bookings that carry a cancellation penalty. General arrival guidance is on Travel & stay.
+Register interest to be first to receive venue and delegate details as soon as they are available. General arrival guidance is on Travel & stay.
 
 ### Register your interest
 
-Six categories, from delegate to exhibitor. Fees and deadlines are published once the secretariat confirms them.
+Register your interest to receive venue and delegate information as it is confirmed.
 
 Register interest
 
@@ -581,41 +585,51 @@ Register interest
 
 **URL:** `/travel/`  
 **Browser tab / search-result title:** Travel & stay | Kenya-China Tea Summit  
-**Search-result description:** Travel guidance for the Kenya-China Tea Summit 2027 in Nairobi — arrival, entry requirements, and the delegation services the secretariat is coordinating.
+**Search-result description:** Plan travel to Nairobi for the Kenya-China Tea Summit, including arrival information, Kenya entry requirements, accommodation updates and optional delegation experiences.
 
-## Getting to Nairobi
+## Travel and stay
 
-General guidance while the summit's own arrangements are confirmed. Check everything against the official source before you book.
+General guidance for getting to Nairobi. Check official sources before you book.
 
-### What the secretariat is arranging
+The information on this page is general guidance. Entry rules, health requirements and travel procedures can change, so check official sources before making arrangements.
 
-The summit is coordinating delegation services rather than leaving every attendee to arrange their own:
+### Arriving by air
+
+Nairobi's main international airport is Jomo Kenyatta International Airport, commonly shown as NBO in booking systems.
+
+Details on airport transfers, accommodation rates and delegation support services will be published once venue and transport arrangements are confirmed.
+
+### Entry requirements
+
+Kenya uses an Electronic Travel Authorisation system for many international visitors. Check the official Kenya eTA service and your own government's travel guidance before booking.
+
+Processing times and requirements may vary by nationality and individual circumstances.
+
+### Accommodation
+
+- **Summit hotel or room block:** To be announced
+- **Preferential delegate rates:** To be announced
+- **Airport transfers:** To be announced
+- **Venue shuttle:** To be announced
+Before you book
+
+Choose refundable or flexible hotel bookings where possible.
+
+### Delegation support
+
+The organiser plans to coordinate a range of optional services for international delegations:
 
 - Flight booking
 - Hotel reservations
 - Tea plantation tours
 - Safaris
 - Tourism experiences
-Rates, partners and how to book are issued to registered delegates once contracted. Nothing on this page is a booking, and no hotel or airline partnership is announced yet.
-
-### Arriving in Kenya
-
-- **Main airport:** Jomo Kenyatta International (NBO), Nairobi
-- **Entry authorisation:** Kenya operates an electronic travel authorisation for most visitors
-- **Official source:** etakenya.go.ke
-- **Summit hotel block:** To be announced
-- **Airport transfers:** To be announced
-Verify before you book
-
-Entry requirements, health requirements and processing times change, and this page is not the authority on them. Check the official Kenyan government source above and your own country's travel advice close to the date. If your organisation needs an invitation letter for a visa application, register your interest and ask the secretariat.
-
-### Beyond the summit
-
-Kenya's tea-growing highlands are a few hours from Nairobi, and the secretariat is arranging plantation tours as well as safari extensions for delegations that want to stay on. Details go out with the delegate pack.
+- Invitation letters
+These are optional services intended to make group travel easier to plan.
 
 ### Register your interest
 
-Six categories, from delegate to exhibitor. Fees and deadlines are published once the secretariat confirms them.
+Register your interest to receive venue, accommodation and delegate-travel updates.
 
 Register interest
 
@@ -730,50 +744,28 @@ Register interest
 # News & Insight
 
 **URL:** `/news/`  
-**Browser tab / search-result title:** News & insight | Kenya-China Tea Summit  
-**Search-result description:** News and analysis on Kenya-China tea trade, value addition and market access, from the Kenya-China Tea Summit 2027 secretariat.
+**Browser tab / search-result title:** News & insights | Kenya-China Tea Summit  
+**Search-result description:** Read Kenya-China Tea Summit announcements and market insights on tea trade, value addition, investment and technology and access to the Chinese market.
 
-## The trade behind the summit
+## News and market insights
 
-Announcements as they are made, and the trade context that explains why this convening exists.
+This page brings together official summit announcements and useful context on Kenya-China tea trade, value addition, investment and technology.
 
-No bulletins yet
+### Summit updates
 
-Summit announcements are published here as the secretariat makes them — venue, fees, speaker releases and programme detail. Registering your interest means you receive them directly rather than checking this page.
+Venue, programme, speaker, registration, exhibition and partnership announcements will be published here as they are approved.
 
-### The context, in the meantime
+### Media enquiries
 
-The summit was not convened in a vacuum. Three published facts explain the timing better than any announcement will.
+Journalists seeking comment, accreditation or approved facts should use the Media and Press page.
 
-#### The China lane is shrinking, not growing
+Media and press
 
-Kenyan tea exports to China fell 51% in the first quarter of 2026, to 1.22 million kilogrammes. China sat tenth among Kenya's export destinations on the most recent full-year figures, at 12.42 million kilogrammes — against Pakistan's 206.27 million.
+### Register to receive updates
 
-The Kenyan Wall Street, Q1 2026 · African Business, 2024 figures
+Venue, programme, speaker, registration, exhibition and partnership announcements will be published here as they are approved.
 
-#### Volume is not the problem. Value capture is
-
-Kenya exports more tea than China and Sri Lanka and earns less revenue for it. The diagnosis given is consistent: heavy reliance on bulk sales, a narrow product range, limited market diversity.
-
-Ecofin Agency, 2026
-
-#### The policy and the tariff door both point the same way
-
-Kenya is targeting close to 200 million kilogrammes of green and orthodox tea by 2030, a deliberate shift away from bulk black, and China's zero-tariff arrangement is the stated lever. The Tea Board of Kenya has been working with Chinese partners on processing machinery and energy-efficient technology.
-
-China Daily, 21 July 2026
-
-A 51% fall in the exact corridor national policy is trying to grow, with the tariff barrier already removed, is a coordination problem rather than a market one. Coordination problems are what summits are for.
-
-Sourcing
-
-Every figure above is published trade reporting, dated, and attributed. None of it is a claim by the summit, a forecast, or a promise about what the summit will achieve.
-
-### Register your interest
-
-Six categories, from delegate to exhibitor. Fees and deadlines are published once the secretariat confirms them.
-
-Register interest
+Register to receive updates
 
 ---
 
@@ -781,20 +773,31 @@ Register interest
 
 **URL:** `/contact/`  
 **Browser tab / search-result title:** Contact | Kenya-China Tea Summit  
-**Search-result description:** Contact the Kenya-China Tea Summit 2027 secretariat about attending, exhibiting, partnership, speaking or media.
+**Search-result description:** Contact the Kenya-China Tea Summit about attendance, exhibition, partnership, speaking, media, travel or general enquiries.
 
-## Contact the secretariat
+## Contact the summit team
 
-Everything routes through the form below until the secretariat publishes direct channels.
+Use the relevant route for faster support. General enquiries go through the form below.
 
-- **Secretariat:** Kenya-China Tea Summit Secretariat
-- **Organised by:** Orbitline Events & Ushers Ltd, Nairobi
+- **Summit:** Kenya-China Tea Summit 2027
+- **Organising body:** Kenya-China Tea Summit Secretariat
+- **Organised by:** Orbitline Events & Ushers Ltd
+- **Location:** Nairobi, Kenya
 - **Email:** To be announced
 - **Telephone:** To be announced
 - **Postal address:** To be announced
-Faster routes
 
-If your message is about attending, exhibiting or partnering, registering your interest gets it to the right person with the details already attached. This form is for everything else.
+### Choose the right route
+
+- Attendance: Register your interest
+- Exhibition: Exhibition enquiry
+- Partnership: Partnership enquiry
+- Speaking: Speaker proposal
+- Media: Media accreditation and enquiries
+- Travel: Travel and accommodation enquiry
+General enquiries
+
+If none of these routes fit, send a message using the form below.
 
 ### General enquiry
 
@@ -820,43 +823,69 @@ Your message goes to the summit secretariat and nowhere else. See our privacy no
 
 **URL:** `/media/`  
 **Browser tab / search-result title:** Media & press | Kenya-China Tea Summit  
-**Search-result description:** Media accreditation and press resources for the Kenya-China Tea Summit 2027, Nairobi, 21–23 April 2027.
+**Search-result description:** Apply for media accreditation and access approved facts, announcements and press resources for the Kenya-China Tea Summit 2027 in Nairobi.
 
 ## Media and press
 
-Accreditation, assets and who to ask.
+This page provides approved summit information for journalists, editors, producers, photographers and industry media.
 
-### Accreditation
+### Media accreditation
 
-Media accreditation is one of the six registration categories. Register under Media and the secretariat contacts you with the process, deadlines and on-site arrangements once they are confirmed.
+Media accreditation will be available to recognised news, business, trade and industry publications.
 
-### The facts, for filing
+- **Application process:** To be announced
+- **Deadline:** To be announced
+- **On-site arrangements:** To be announced
 
-- **Event name:** Kenya-China Tea Summit 2027
+### Event facts
+
+- **Event:** Kenya-China Tea Summit 2027
 - **Dates:** 21–23 April 2027
-- **Location:** Nairobi, Kenya
+- **City:** Nairobi, Kenya
+- **Venue:** To be announced
 - **Theme:** Brewing Strategic Partnerships for Sustainable Tea Trade, Investment and Innovation
-- **Edition:** First
-- **Organiser:** Kenya-China Tea Summit Secretariat, Orbitline Events & Ushers Ltd
+- **Organising body:** Kenya-China Tea Summit Secretariat
+- **Organised by:** Orbitline Events & Ushers Ltd
 - **Media contact:** To be announced
+Reporting guidance
 
-### Assets and documents
+As with any pre-event coverage, confirm these details against an official summit announcement before publication:
 
-The press pack, logo files and every published document are on the downloads page, which always carries the current version of each.
+- Venue and address
+- Ticket prices and package benefits
+- Speaker names and session titles
+- Delegate, country or exhibitor numbers
+- Institutional or government endorsements
+- Partnership allocations
 
-### Using the summit's name and mark
+### Press resources
 
-The logo may be used in editorial coverage of the summit without prior permission. It may not be used in a way that implies partnership, endorsement or sponsorship.
+The following resources will be added as they are approved:
 
-Please do not report as fact
+- Media fact sheet
+- Official announcements
+- Approved summit logo files
+- Spokesperson biographies
+- Speaker and partner releases
+- Approved photography
+- Programme overview
+The press pack, logo files and every published document are on the downloads page.
 
-Delegate numbers, country counts, speaker names, the venue, ticket prices, or any government or institutional endorsement. None of those are confirmed, and figures circulating ahead of an official announcement did not come from the secretariat.
+### Using the summit name and logo
 
-### Apply for accreditation
+Media guidelines for using the summit name and logo are being finalised. For editorial use, contact the summit team through the contact page.
 
-Register under the Media category and the secretariat will come back to you with the accreditation process once it is set.
+### Media enquiries
 
-Register as media
+Include your publication, role, deadline and the information or interview you require.
+
+Contact the media team
+
+### Media accreditation
+
+Register media interest to receive the accreditation process when it opens.
+
+Register media interest
 
 ---
 
@@ -864,22 +893,32 @@ Register as media
 
 **URL:** `/downloads/`  
 **Browser tab / search-result title:** Downloads | Kenya-China Tea Summit  
-**Search-result description:** Download the Kenya-China Tea Summit 2027 fact sheet, brochure, agenda, sponsorship and exhibition documents.
+**Search-result description:** Download current Kenya-China Tea Summit fact sheets, programme information, exhibitor guides, partnership documents and media resources.
 
 ## Documents and downloads
 
-Everything published about the summit, in one place, in its current version.
+Approved summit documents will be published here in their current versions.
 
 ### Summit overview
 
 - Summit fact sheet PDF · 2 KB · 1 pp · updated 2 August 2026 Dates, location, theme, the six objectives and the six registration categories on one page. Generated from the site's own data, so it cannot fall out of step with these pages.
-Versions
 
-This page always carries the current version of each document. Superseded versions are removed rather than archived, so a link you saved will always give you the latest. Every entry shows the date it was last updated.
+### Coming soon
+
+- Detailed programme
+- Delegate information pack
+- Exhibitor prospectus
+- Partnership prospectus
+- Travel and accommodation guide
+- Media fact sheet and press kit
+- Code of conduct
+Version control
+
+Each document shown here displays its publication or revision date.
 
 ### Register your interest
 
-Six categories, from delegate to exhibitor. Fees and deadlines are published once the secretariat confirms them.
+Register your interest to receive new documents and major summit announcements.
 
 Register interest
 
@@ -899,7 +938,7 @@ Last updated 2026. This notice covers the summit website only.
 
 ### What is collected
 
-Only what you type into a form on this site. That is: your name, email address, and optionally your organisation, job title, country, registration category and message. Nothing else about you is gathered.
+Only what you type into a form on this site: your name, email address, and optionally your organisation, job title, country, registration category and message.
 
 Alongside each submission the system records a small amount of technical context used to detect automated spam: the country your request came from, your browser's user-agent string, and the page you submitted from. Your IP address is not stored — for rate limiting it is converted to a one-way hash that cannot be turned back into an address.
 
@@ -914,7 +953,8 @@ Alongside each submission the system records a small amount of technical context
 - **Stored in:** Cloudflare D1, a database controlled by the summit secretariat
 - **Email delivery:** Brevo, used to send your confirmation and notify the secretariat
 - **Spam protection:** Cloudflare Turnstile
-- **Who can read it:** The summit secretariat and its appointed organiser
+- **Who can read it:** The summit secretariat, its appointed organiser, and the processors named above
+Cloudflare and Brevo are processors, not independent controllers: they hold and route this information under contract, on the secretariat's instructions, and do not use it for their own purposes.
 
 ### How long it is kept
 
@@ -966,7 +1006,9 @@ Links to other sites are provided for convenience. The summit does not control t
 
 ### Intellectual property
 
-The summit name, logo and site content belong to Orbitline Events & Ushers Ltd. The logo may be used in editorial coverage of the summit, but not in any way implying partnership or endorsement. See Media & press.
+The summit's own text, branding and design belong to Orbitline Events & Ushers Ltd and are protected by applicable intellectual-property law. This site also uses licensed fonts, photographs and other third-party material, which remain subject to their own rights and licences and are not summit property.
+
+The summit logo may be used in editorial coverage of the summit, but not in any way implying partnership or endorsement. See Media & press.
 
 ### Acceptable use
 
@@ -974,11 +1016,11 @@ Do not use the forms to send unsolicited commercial messages, attempt to disrupt
 
 ### Liability
 
-The site is provided as it is. To the extent the law allows, the summit and its organiser are not liable for loss arising from reliance on information published here while details remain unconfirmed. Nothing here limits liability that cannot be limited by law.
+The site is provided as it is. To the extent the law allows, the summit and its organiser are not liable for loss arising from reliance on information published here while details remain unconfirmed.
 
 ### Governing law
 
-These terms are governed by the laws of Kenya.
+These terms are governed by the laws of Kenya. Questions about these terms, including liability, go through the contact form.
 
 ---
 
@@ -1015,7 +1057,7 @@ During the summit, tell any member of summit staff — they are briefed to act, 
 
 ### Consequences
 
-The secretariat may issue a warning, remove someone from a session, withdraw exhibition or accreditation privileges, or remove someone from the venue without refund. Serious matters are referred to the appropriate authorities.
+The secretariat may issue a warning, remove someone from a session, withdraw exhibition or accreditation privileges, or remove someone from the venue. Serious matters are referred to the appropriate authorities.
 
 Named contacts
 

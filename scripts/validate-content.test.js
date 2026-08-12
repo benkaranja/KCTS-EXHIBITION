@@ -99,6 +99,21 @@ test("rule 10: the retired 'to be entered' wording fails the build", () => {
   assert.match(out, /to be announced/i, "error should name the replacement wording");
 });
 
+test("rule 10 rejects the retired vocabulary", () => {
+  for (const bad of ["Class 1 Delegate", "premier forum", "landmark platform",
+                     "the first edition", "Unallocated", "No bulletins yet",
+                     "Why this page is mostly empty"]) {
+    writeFileSync(
+      "src/pages/__retired2.njk",
+      `---\nlayout: layouts/page.njk\nbasePath: /retired2/\ntitle: Retired2\ndescription: x\n---\n<p>${bad}</p>\n`,
+    );
+    const { code, out } = run();
+    rmSync("src/pages/__retired2.njk");
+    assert.equal(code, 1, `expected "${bad}" to fail the build`);
+    assert.match(out, /__retired2\.njk/, "error should name the file");
+  }
+});
+
 test("rule 10: an approved page with no markers passes", () => {
   writeFileSync(
     "src/pages/__ok.njk",

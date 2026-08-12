@@ -246,12 +246,13 @@ const FORBIDDEN = [
   [/\[Insert\b/i, 'an unresolved "[Insert ...]" placeholder'],
   [/\bTBD\b/, 'a "TBD" placeholder'],
   [/to be entered/i, 'the retired wording "to be entered" — use "To be announced"'],
-  // The retired *vocabulary* patterns (Class 1/2, premier, landmark, first
-  // edition, unallocated, and the two self-deprecating headings) are NOT added
-  // here. Those strings are still on eight pages until Tasks 5-10 rewrite the
-  // copy that carries them; gating them now would fail the build and keep it
-  // failing for eight tasks, which is how a build gate stops being read. They
-  // are added in Task 10, Step 4, once the copy is gone.
+  [/\bClass [12]\b/, 'the retired registration label "Class 1"/"Class 2" — use the plain category name'],
+  [/\bpremier\b/i, 'the superlative "premier", which FACTS.md no longer supports'],
+  [/\blandmark\b/i, 'the superlative "landmark", which FACTS.md no longer supports'],
+  [/\bfirst edition\b/i, 'the unconfirmed claim "first edition" — FACTS.md §2, BLOCKERS B-006'],
+  [/\bunallocated\b/i, 'the sponsorship status "unallocated" — state no availability claim'],
+  [/no bulletins yet/i, 'the placeholder "no bulletins yet"'],
+  [/why this page is mostly empty/i, 'the self-deprecating heading "why this page is mostly empty"'],
 ];
 
 function checkForbidden(dir) {
