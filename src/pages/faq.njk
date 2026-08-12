@@ -4,65 +4,53 @@ basePath: /faq/
 title: FAQ
 heading: Questions, answered honestly
 standfirst: Including the ones where the answer is "not decided yet".
-description: Frequently asked questions about the Kenya-China Tea Summit 2027 in Nairobi — dates, registration, fees, venue, speakers, exhibiting and travel.
+description: Frequently asked questions about the Kenya-China Tea Summit 2027 in Nairobi — dates, registration, fees, venue, speakers, exhibition and travel.
 ---
 
-<h2>Dates and place</h2>
+{% set faqs = [
+  { cat: "Dates and place", q: "When is the summit?", a: "The Kenya-China Tea Summit takes place from 21 to 23 April 2027." },
+  { cat: "Dates and place", q: "Where will it be held?", a: "The summit will be held in Nairobi, Kenya. The venue will be announced once arrangements are finalised." },
+  { cat: "Registering", q: "Is registration open?", a: "Expressions of interest are open. Formal ticket sales and confirmed participation packages are not yet available." },
+  { cat: "Registering", q: "Does registering interest reserve a place?", a: "No. It records your interest and allows the summit team to send you relevant updates. Formal registration will be required when booking opens." },
+  { cat: "Registering", q: "How much will it cost?", a: "Delegate fees, exhibitor rates and partnership packages will be announced after approval. Official participation rates are issued by the Secretariat and published here once confirmed." },
+  { cat: "The programme", q: "Who should attend?", a: "The summit is intended for tea producers, processors, exporters, buyers, investors, technology companies, logistics providers, public institutions, researchers, hospitality professionals and media." },
+  { cat: "The programme", q: "What happens on each day?", a: "Day one focuses on trade. Day two covers investment, innovation and B2B meetings. Day three includes the International Tea & Technology Expo, cultural exchange and the closing programme." },
+  { cat: "The programme", q: "Who is speaking?", a: "Confirmed speakers will be published after they accept their invitations and session details are approved." },
+  { cat: "The programme", q: "Can I propose a session?", a: "Yes. The Speakers page explains how to contact the summit team with a proposal. Submission does not guarantee inclusion in the programme." },
+  { cat: "The programme", q: "What language will the summit use?", a: "The working languages and interpretation arrangements are still being confirmed. They will be published with the detailed programme." },
+  { cat: "Exhibiting, partnership and B2B", q: "How do I exhibit?", a: "Register exhibitor interest through the Exhibition page. The summit team will send stand options, rates and application information when available." },
+  { cat: "Exhibiting, partnership and B2B", q: "How do I become a partner?", a: "Use the Partnership page to describe your preferred level, audience and objectives. The partnership team will respond with approved options when packages are ready." },
+  { cat: "Exhibiting, partnership and B2B", q: "How will B2B matchmaking work?", a: "Participants will create business profiles, state what they are looking for and receive relevant meeting recommendations. Eligibility, access and pricing are still to be confirmed." },
+  { cat: "Practicalities", q: "Do I need a visa?", a: "Requirements depend on nationality and individual circumstances. Check Kenya's official Electronic Travel Authorisation website and your government's travel advice." },
+  { cat: "Practicalities", q: "Will invitation letters be available?", a: "The summit team's invitation-letter policy is being confirmed. An invitation letter, where provided, does not guarantee immigration approval." },
+  { cat: "Practicalities", q: "Is there an official summit hotel?", a: "The accommodation plan will be announced after the venue and hotel arrangements are confirmed." },
+  { cat: "Practicalities", q: "Will the summit be streamed or recorded?", a: "Recording and streaming arrangements have not been confirmed." },
+  { cat: "Updates and contact", q: "How can I receive updates?", a: "Register your interest or follow the summit news page." },
+  { cat: "Updates and contact", q: "My question is not listed", a: "Contact the summit team and include enough detail for your enquiry to be routed correctly." }
+] %}
 
-<h3>When and where is it?</h3>
-<p>{{ summit.dates.display }}, in {{ summit.location.city }}, {{ summit.location.country }}. The specific venue is not confirmed — see <a href="/venue/">Venue</a>.</p>
+{% block head %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {% for item in faqs %}
+    {
+      "@type": "Question",
+      "name": {{ item.q | dump | safe }},
+      "acceptedAnswer": { "@type": "Answer", "text": {{ item.a | dump | safe }} }
+    }{% if not loop.last %},{% endif %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endblock %}
 
-<h3>Are the dates final?</h3>
-<p>Yes. The dates and the city are confirmed by the secretariat and are safe to book flights against.</p>
-
-<h2>Registering</h2>
-
-<h3>What does registering actually do right now?</h3>
-<p>It records your interest and the category you fall into, and it puts you on the list that receives fees, venue and programme details before they are published. It is not a ticket and it does not hold a place.</p>
-
-<h3>How much does it cost?</h3>
-<p>Fees have not been set. When anyone quotes you a price for this summit, check it came from the secretariat.</p>
-
-<h3>Which category do I choose?</h3>
-<p>Delegate to attend the forums and expo; Exhibitor to take a stand; Sponsor for partnership; Government if attending in an official capacity; Media for accreditation; Student at student rate. If two fit, pick the one closest to your reason for coming and say so in the message field.</p>
-
-<h3>Can I change category later?</h3>
-<p>Yes. Nothing is binding at this stage.</p>
-
-<h2>The programme</h2>
-
-<h3>Who is speaking?</h3>
-<p>No speakers are confirmed yet. The <a href="/speakers/">call for speakers</a> is open.</p>
-
-<h3>Is there a detailed agenda?</h3>
-<p>The three day-level themes are confirmed and on the <a href="/programme/">programme</a> page. Session times, rooms and tracks are still being assembled.</p>
-
-<h3>What language will sessions be in?</h3>
-<p>Not yet confirmed. Given the audience, interpretation arrangements are something the secretariat is working through.</p>
-
-<h2>Exhibiting and partnership</h2>
-
-<h3>What does a stand cost?</h3>
-<p>Not set. Stand sizes, rates and fit-out rules are issued to registered exhibitors first. See <a href="/exhibition/">Exhibition</a>.</p>
-
-<h3>Are any sponsorship tiers taken?</h3>
-<p>Tier pricing and benefits have not been published. See <a href="/sponsorship/">Partnership</a> for what is confirmed, or get in touch to discuss.</p>
-
-<h2>Practicalities</h2>
-
-<h3>Do I need a visa?</h3>
-<p>Kenya operates an electronic travel authorisation for most visitors. Check the official source at <a href="https://www.etakenya.go.ke/" rel="noopener noreferrer" target="_blank">etakenya.go.ke</a> and your own government's advice. If you need an invitation letter, register and ask.</p>
-
-<h3>Is there a summit hotel?</h3>
-<p>The secretariat is arranging accommodation for delegations, but no hotel block or partner is confirmed. Holding off on non-refundable bookings until the venue is announced is the safe move.</p>
-
-<h3>Will sessions be recorded or streamed?</h3>
-<p>Not decided.</p>
-
-<h2>About this site</h2>
-
-<h3>Why do so many pages say "To be announced"?</h3>
-<p>Because those things are genuinely not decided, and inventing them would mean retracting them later. Anything stated on this site is either confirmed by the secretariat or sourced and dated.</p>
-
-<h3>My question is not here.</h3>
-<p><a href="/contact/">Ask the secretariat</a>.</p>
+{% for item in faqs %}
+{% if loop.first or item.cat != faqs[loop.index0 - 1].cat %}
+<h2>{{ item.cat }}</h2>
+{% endif %}
+<h3>{{ item.q }}</h3>
+<p>{{ item.a }}</p>
+{% endfor %}

@@ -3,7 +3,7 @@ layout: layouts/page.njk
 basePath: /registration/
 title: Register your interest
 heading: Register your interest
-standfirst: Six categories. No payment, no commitment. Tell the secretariat which one fits and you go on the list.
+standfirst: Six categories. No payment at this stage, and submitting the form does not reserve a place.
 description: Register your interest in the Kenya-China Tea Summit 2027, Nairobi, 21–23 April 2027. Six categories from delegate to exhibitor. Fees announced once confirmed.
 sitemapPriority: 1.0
 hideCta: true
@@ -11,15 +11,14 @@ hideCta: true
 
 <div class="note">
   <p class="note__label">Read this first</p>
-  <p>Fees, payment deadlines and what each category includes have not been set. This form does not sell you anything and does not hold a place. It registers your interest so the secretariat can contact you directly the moment the details are confirmed — and so it knows how many of each category to plan for.</p>
+  <p>The formal ticketing process is not open yet. This form records your interest and allows the summit team to send you confirmed information as it becomes available. There is no payment at this stage, and submitting the form does not reserve a place.</p>
 </div>
 
-<h2>The six categories</h2>
+<h2>Choose the category that best fits your role</h2>
 
 <ul class="classes">
 {% for c in summit.registrationCategories %}
   <li class="class-row">
-    <span class="class-row__code">Class {{ loop.index }}</span>
     <span class="class-row__name">{{ c.name }}</span>
     <p>{{ c.blurb }}</p>
   </li>
@@ -60,9 +59,10 @@ hideCta: true
 <h2>What happens next</h2>
 
 <ol>
-  <li>You get an email confirming the secretariat has your details. It arrives immediately.</li>
-  <li>Your entry is recorded against the category you chose.</li>
-  <li>When fees, the venue and the programme are confirmed, the secretariat contacts you before the public announcement.</li>
+  <li>You receive confirmation that your expression of interest was submitted.</li>
+  <li>The summit team records your chosen category and areas of interest.</li>
+  <li>You receive relevant updates as the venue, fees, programme and participation packages are confirmed.</li>
+  <li>Formal registration instructions are sent when booking opens.</li>
 </ol>
 
 <p>If you would rather exhibit or partner than attend, those go through <a href="/exhibition/">Exhibition</a> and <a href="/sponsorship/">Partnership</a> instead — different forms, different information needed.</p>

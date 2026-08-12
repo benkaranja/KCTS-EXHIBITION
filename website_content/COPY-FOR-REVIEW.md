@@ -1,6 +1,6 @@
 # Website copy for review — Kenya-China Tea Summit 2027
 
-**Generated:** 2026-08-11 · **Build:** `cf38a50` · **Live:** https://kenya-china-tea-summit.pages.dev
+**Generated:** 2026-08-12 · **Build:** `966cd8b` · **Live:** https://kenya-china-tea-summit.pages.dev
 
 This document contains **every word of visible text on the website**, extracted
 from the built pages, in the order a visitor reads them. It is generated
@@ -52,7 +52,7 @@ Brewing Strategic Partnerships for Sustainable Tea Trade, Investment and Innovat
 
 - **Location:** Nairobi, Kenya
 - **Dates:** 21–23 April 2027
-- **Days to opening:** 253
+- **Days to opening:** 252
 - **Venue:** To be announced
 - **Organised by:** Orbitline Events & Ushers Ltd
 The Kenya-China Tea Summit brings producers, exporters, buyers, investors, policymakers, researchers and technology partners together in Nairobi for three days of focused trade conversations, business meetings and industry exchange.
@@ -453,13 +453,13 @@ Discuss partnership
 
 ## Register your interest
 
-Six categories. No payment, no commitment. Tell the secretariat which one fits and you go on the list.
+Six categories. No payment at this stage, and submitting the form does not reserve a place.
 
 Read this first
 
-Fees, payment deadlines and what each category includes have not been set. This form does not sell you anything and does not hold a place. It registers your interest so the secretariat can contact you directly the moment the details are confirmed — and so it knows how many of each category to plan for.
+The formal ticketing process is not open yet. This form records your interest and allows the summit team to send you confirmed information as it becomes available. There is no payment at this stage, and submitting the form does not reserve a place.
 
-### The six categories
+### Choose the category that best fits your role
 
 ### What is set, and what is not
 
@@ -496,9 +496,10 @@ By submitting you agree the secretariat may contact you about this summit. See o
 
 ### What happens next
 
-- You get an email confirming the secretariat has your details. It arrives immediately.
-- Your entry is recorded against the category you chose.
-- When fees, the venue and the programme are confirmed, the secretariat contacts you before the public announcement.
+- You receive confirmation that your expression of interest was submitted.
+- The summit team records your chosen category and areas of interest.
+- You receive relevant updates as the venue, fees, programme and participation packages are confirmed.
+- Formal registration instructions are sent when booking opens.
 If you would rather exhibit or partner than attend, those go through Exhibition and Partnership instead — different forms, different information needed.
 
 ---
@@ -506,31 +507,35 @@ If you would rather exhibit or partner than attend, those go through Exhibition 
 # Speakers
 
 **URL:** `/speakers/`  
-**Browser tab / search-result title:** Speakers | Kenya-China Tea Summit  
-**Search-result description:** Call for speakers for the Kenya-China Tea Summit 2027, Nairobi, 21–23 April 2027. Propose a session across trade, investment, innovation or tea culture.
+**Browser tab / search-result title:** Call for speakers | Kenya-China Tea Summit  
+**Search-result description:** Call for speakers for the Kenya-China Tea Summit 2027, Nairobi, 21–23 April 2027. Propose a session across trade, investment, innovation, products or tea culture.
 
 ## Call for speakers
 
-No speakers are confirmed yet. That is not an oversight — it is the stage the summit is at, and the list is still open.
+No speakers are confirmed yet. Propose a session grounded in practical knowledge, market evidence or real experience.
 
 Status
 
-The speaker programme is being assembled. This page will list confirmed speakers with their sessions once the secretariat has them. Until then, no names appear here — including names that have been approached.
+The Kenya-China Tea Summit is developing a programme led by practical knowledge, market evidence and real experience. Confirmed speakers will be published here once invitations are accepted and session details are approved.
 
-### What the programme is looking for
+### Areas of interest
 
-The summit runs three thematic days, and proposals are read against them.
+### What makes a strong proposal
 
-### What makes a proposal easy to accept
+We are looking for sessions with a clear purpose and a defined audience. A strong proposal should include:
 
-- A specific claim or finding, not a company overview.
-- Something you can evidence — data, a case, a transaction you were part of.
-- A clear answer to "who in the room needs this and what do they do differently afterwards".
-Sales presentations dressed as sessions are the one thing that reliably does not get accepted. If the goal is visibility, partnership and exhibiting are the honest routes to it.
+- A specific topic, question, case study or finding
+- Evidence or direct experience
+- A clear connection to the summit's Kenya-China focus
+- Practical value for people in the room
+- An honest description of any commercial interest
+Company presentations and product pitches are better suited to the exhibition and partnership programme.
 
 ### Propose a session
 
-Use the registration form and select Delegate, then describe your proposed session in the message field. A dedicated speaker form replaces this once the programme committee is in place.
+There is no dedicated speaker form yet. Use the contact form and state "Speaker proposal" in your message, together with your organisation, proposed topic and which area of interest above it fits.
+
+Submission does not guarantee a place on the programme. The summit team will confirm the review process, deadlines and speaker terms when the programme committee is in place.
 
 ### Register your interest
 
@@ -620,7 +625,7 @@ Register interest
 
 **URL:** `/faq/`  
 **Browser tab / search-result title:** FAQ | Kenya-China Tea Summit  
-**Search-result description:** Frequently asked questions about the Kenya-China Tea Summit 2027 in Nairobi — dates, registration, fees, venue, speakers, exhibiting and travel.
+**Search-result description:** Frequently asked questions about the Kenya-China Tea Summit 2027 in Nairobi — dates, registration, fees, venue, speakers, exhibition and travel.
 
 ## Questions, answered honestly
 
@@ -628,79 +633,91 @@ Including the ones where the answer is "not decided yet".
 
 ### Dates and place
 
-#### When and where is it?
+#### When is the summit?
 
-21–23 April 2027, in Nairobi, Kenya. The specific venue is not confirmed — see Venue.
+The Kenya-China Tea Summit takes place from 21 to 23 April 2027.
 
-#### Are the dates final?
+#### Where will it be held?
 
-Yes. The dates and the city are confirmed by the secretariat and are safe to book flights against.
+The summit will be held in Nairobi, Kenya. The venue will be announced once arrangements are finalised.
 
 ### Registering
 
-#### What does registering actually do right now?
+#### Is registration open?
 
-It records your interest and the category you fall into, and it puts you on the list that receives fees, venue and programme details before they are published. It is not a ticket and it does not hold a place.
+Expressions of interest are open. Formal ticket sales and confirmed participation packages are not yet available.
 
-#### How much does it cost?
+#### Does registering interest reserve a place?
 
-Fees have not been set. When anyone quotes you a price for this summit, check it came from the secretariat.
+No. It records your interest and allows the summit team to send you relevant updates. Formal registration will be required when booking opens.
 
-#### Which category do I choose?
+#### How much will it cost?
 
-Delegate to attend the forums and expo; Exhibitor to take a stand; Sponsor for partnership; Government if attending in an official capacity; Media for accreditation; Student at student rate. If two fit, pick the one closest to your reason for coming and say so in the message field.
-
-#### Can I change category later?
-
-Yes. Nothing is binding at this stage.
+Delegate fees, exhibitor rates and partnership packages will be announced after approval. Official participation rates are issued by the Secretariat and published here once confirmed.
 
 ### The programme
 
+#### Who should attend?
+
+The summit is intended for tea producers, processors, exporters, buyers, investors, technology companies, logistics providers, public institutions, researchers, hospitality professionals and media.
+
+#### What happens on each day?
+
+Day one focuses on trade. Day two covers investment, innovation and B2B meetings. Day three includes the International Tea & Technology Expo, cultural exchange and the closing programme.
+
 #### Who is speaking?
 
-No speakers are confirmed yet. The call for speakers is open.
+Confirmed speakers will be published after they accept their invitations and session details are approved.
 
-#### Is there a detailed agenda?
+#### Can I propose a session?
 
-The three day-level themes are confirmed and on the programme page. Session times, rooms and tracks are still being assembled.
+Yes. The Speakers page explains how to contact the summit team with a proposal. Submission does not guarantee inclusion in the programme.
 
-#### What language will sessions be in?
+#### What language will the summit use?
 
-Not yet confirmed. Given the audience, interpretation arrangements are something the secretariat is working through.
+The working languages and interpretation arrangements are still being confirmed. They will be published with the detailed programme.
 
-### Exhibiting and partnership
+### Exhibiting, partnership and B2B
 
-#### What does a stand cost?
+#### How do I exhibit?
 
-Not set. Stand sizes, rates and fit-out rules are issued to registered exhibitors first. See Exhibition.
+Register exhibitor interest through the Exhibition page. The summit team will send stand options, rates and application information when available.
 
-#### Are any sponsorship tiers taken?
+#### How do I become a partner?
 
-Tier pricing and benefits have not been published. See Partnership for what is confirmed, or get in touch to discuss.
+Use the Partnership page to describe your preferred level, audience and objectives. The partnership team will respond with approved options when packages are ready.
+
+#### How will B2B matchmaking work?
+
+Participants will create business profiles, state what they are looking for and receive relevant meeting recommendations. Eligibility, access and pricing are still to be confirmed.
 
 ### Practicalities
 
 #### Do I need a visa?
 
-Kenya operates an electronic travel authorisation for most visitors. Check the official source at etakenya.go.ke and your own government's advice. If you need an invitation letter, register and ask.
+Requirements depend on nationality and individual circumstances. Check Kenya's official Electronic Travel Authorisation website and your government's travel advice.
 
-#### Is there a summit hotel?
+#### Will invitation letters be available?
 
-The secretariat is arranging accommodation for delegations, but no hotel block or partner is confirmed. Holding off on non-refundable bookings until the venue is announced is the safe move.
+The summit team's invitation-letter policy is being confirmed. An invitation letter, where provided, does not guarantee immigration approval.
 
-#### Will sessions be recorded or streamed?
+#### Is there an official summit hotel?
 
-Not decided.
+The accommodation plan will be announced after the venue and hotel arrangements are confirmed.
 
-### About this site
+#### Will the summit be streamed or recorded?
 
-#### Why do so many pages say "To be announced"?
+Recording and streaming arrangements have not been confirmed.
 
-Because those things are genuinely not decided, and inventing them would mean retracting them later. Anything stated on this site is either confirmed by the secretariat or sourced and dated.
+### Updates and contact
 
-#### My question is not here.
+#### How can I receive updates?
 
-Ask the secretariat.
+Register your interest or follow the summit news page.
+
+#### My question is not listed
+
+Contact the summit team and include enough detail for your enquiry to be routed correctly.
 
 ### Register your interest
 

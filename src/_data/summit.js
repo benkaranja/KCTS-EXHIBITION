@@ -158,13 +158,16 @@ const summit = {
     { name: "Supporting Partner", slug: "supporting" },
   ],
 
+  // Verbatim from website_content/KCTS_Website_Copy_V2.md lines 563-585.
+  // Blurbs describe who each category is for, never a price, discount or
+  // inclusion — fees and package contents are not supplied. See FACTS.md §2.
   registrationCategories: [
-    { name: "Delegate", slug: "delegate", blurb: "Attend the forums, conference sessions and expo." },
-    { name: "Exhibitor", slug: "exhibitor", blurb: "Take a stand at the International Tea & Technology Expo." },
-    { name: "Sponsor", slug: "sponsor", blurb: "Partner with the summit across branding and networking." },
-    { name: "Government", slug: "government", blurb: "Attend in an official or trade-policy capacity." },
-    { name: "Media", slug: "media", blurb: "Cover the summit with accreditation." },
-    { name: "Student", slug: "student", blurb: "Attend at student rate as a researcher or trainee." },
+    { name: "Delegate", slug: "delegate", blurb: "For tea-industry professionals, buyers, investors, researchers, technology providers and other participants attending the summit programme." },
+    { name: "Exhibitor", slug: "exhibitor", blurb: "For organisations interested in presenting products, equipment or services at the International Tea & Technology Expo." },
+    { name: "Sponsor", slug: "sponsor", blurb: "For organisations interested in Title, Platinum, Gold, Silver or Supporting Partner opportunities." },
+    { name: "Government", slug: "government", blurb: "For public officials, regulators, trade agencies, diplomatic missions, industry bodies and development institutions attending in an official capacity." },
+    { name: "Media", slug: "media", blurb: "For journalists, editors, producers, photographers and recognised industry media seeking accreditation." },
+    { name: "Student", slug: "student", blurb: "For current students and trainees with a relevant academic or professional interest." },
   ],
 
   // Pricing is unset. Templates read this flag rather than testing for empty
