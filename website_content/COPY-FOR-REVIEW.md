@@ -1,6 +1,6 @@
 # Website copy for review — Kenya-China Tea Summit 2027
 
-**Generated:** 2026-08-12 · **Build:** `966cd8b` · **Live:** https://kenya-china-tea-summit.pages.dev
+**Generated:** 2026-08-12 · **Build:** `27718d3` · **Live:** https://kenya-china-tea-summit.pages.dev
 
 This document contains **every word of visible text on the website**, extracted
 from the built pages, in the order a visitor reads them. It is generated
@@ -639,7 +639,7 @@ The Kenya-China Tea Summit takes place from 21 to 23 April 2027.
 
 #### Where will it be held?
 
-The summit will be held in Nairobi, Kenya. The venue will be announced once arrangements are finalised.
+The summit will be held in Nairobi, Kenya. The venue will be announced once arrangements are finalised. See the Venue page.
 
 ### Registering
 
