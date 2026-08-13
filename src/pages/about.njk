@@ -15,6 +15,14 @@ ctaBody: Registration is currently an expression of interest. It is free to subm
 
 <p>The summit takes place in Nairobi from {{ summit.dates.display }}.</p>
 
+{% from "components/image-grid.njk" import grid %}
+{{ grid([
+  {src:"/img/plates/tea-estate-highway-aerial",         alt:"A tarmac road running between planted tea fields."},
+  {src:"/img/plates/tea-estate-road-ridge-aerial",      alt:"A ridge of tea cultivation with a track along its spine."},
+  {src:"/img/plates/tea-estate-terraced-rows-aerial",   alt:"Terraced rows of tea receding towards a distant treeline."},
+  {src:"/img/plates/tea-fields-patchwork-aerial-kenya", alt:"Cultivated fields in a patchwork of greens and worked earth."}
+], "The country the summit is convened in", "IV") }}
+
 <h2>Why now</h2>
 
 <p>The commercial opportunity is changing.</p>

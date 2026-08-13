@@ -10,17 +10,24 @@
    meet the 200KB cap at a quality worth shipping, and every browser that would
    choose the 1200px file supports AVIF.
 
+   The fourth argument overrides `sizes`. The default assumes the plate spans
+   the 74rem wrap, which is true on the inner pages but NOT on the homepage,
+   where plates sit in a half-width .figure-pair column, nor in the rail. A
+   `sizes` that is too wide is not cosmetic: a 183px cell declared as 422px
+   fetches the 1200px file at DPR 2, which is the waste this srcset exists to
+   remove. Call sites in a narrower container must pass their own.
+
    Usage:
      {% from "components/image-grid.njk" import grid %}
      {{ grid([{src:"/img/plates/tea-canopy-plucking-table", alt:"..."}],
              "Caption text", "I") }}
 #}
-{% macro grid(images, caption, plate) %}
+{% macro grid(images, caption, plate, sizes) %}
 {%- set n = images | length -%}
-{#- Column count at >=52rem. Below that the CSS is 1 or 2 columns and the
-    100vw fallback in `sizes` covers it. -#}
+{#- Column count at >=52rem. Below that the CSS is 1 or 2 columns. -#}
 {%- set cols = 1 if n == 1 else (2 if n in [2, 4] else 3) -%}
-{%- set sizes = "(min-width: 52rem) " + (100 // cols) + "vw, 100vw" -%}
+{#- 1184px is --wrap (74rem) at its cap, less the page padding. -#}
+{%- set sizes = sizes or ("(min-width: 52rem) " + (1184 // cols) + "px, " + ("100vw" if cols == 1 else "50vw")) -%}
 <figure class="plate plate--{{ n }}">
   <div class="plate__grid">
     {% for im in images %}
