@@ -43,3 +43,15 @@ hideCta: true
 <h2>Governing law</h2>
 
 <p>These terms are governed by the laws of Kenya. Questions about these terms, including liability, go through the <a href="/contact/">contact form</a>.</p>
+
+{% from "components/image-grid.njk" import grid %}
+<aside class="rail">
+  {{ grid([
+    {src:"/img/plates/tea-fields-hedgerow-boundaries-aerial", alt:"Tea fields divided by mature hedgerows, seen from the air."}
+  ], "", "", "(min-width: 64rem) 300px, 100vw") }}
+  <div class="rail__card">
+    <p class="label">Questions about these terms</p>
+    <p>Questions about these terms, including liability, go to the secretariat through the contact form.</p>
+    <p><a class="btn btn--ghost" href="/contact/">Contact the secretariat</a></p>
+  </div>
+</aside>

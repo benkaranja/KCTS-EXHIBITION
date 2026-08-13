@@ -59,3 +59,15 @@ description: Frequently asked questions about the Kenya-China Tea Summit 2027 in
 <h3>{{ item.q }}</h3>
 <p>{{ item.a | safe }}</p>
 {% endfor %}
+
+{% from "components/image-grid.njk" import grid %}
+<aside class="rail">
+  {{ grid([
+    {src:"/img/plates/tea-canopy-plucking-table", alt:"The even canopy of a tea plucking table, with planted slopes rising behind it."}
+  ], "", "", "(min-width: 64rem) 300px, 100vw") }}
+  <div class="rail__card">
+    <p class="label">Still have a question</p>
+    <p>Anything this page does not answer, ask the summit team directly.</p>
+    <p><a class="btn btn--ghost" href="/contact/">Contact the summit team</a></p>
+  </div>
+</aside>

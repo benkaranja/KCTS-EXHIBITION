@@ -32,3 +32,15 @@ ctaLabel: Register to receive updates
 <p>Journalists seeking comment, accreditation or approved facts should use the Media and Press page.</p>
 
 <p class="section-action"><a class="btn btn--ghost" href="/media/">Media and press</a></p>
+
+{% from "components/image-grid.njk" import grid %}
+<aside class="rail">
+  {{ grid([
+    {src:"/img/plates/tea-field-highland-landscape", alt:"A tea field in the foreground with highland country beyond."}
+  ], "", "", "(min-width: 64rem) 300px, 100vw") }}
+  <div class="rail__card">
+    <p class="label">Announcements as they are confirmed</p>
+    <p>Register your interest to receive programme, venue and speaker announcements.</p>
+    <p><a class="btn btn--ghost" href="/registration/">Register interest</a></p>
+  </div>
+</aside>

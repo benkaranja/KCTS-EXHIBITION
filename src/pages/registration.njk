@@ -25,34 +25,35 @@ hideCta: true
 {% endfor %}
 </ul>
 
-<h2>What is set, and what is not</h2>
-
-<dl class="spec">
-  <div class="field">
-    <dt class="label">Dates</dt>
-    <dd class="value">{{ summit.dates.display }}</dd>
-  </div>
-  <div class="field">
-    <dt class="label">City</dt>
-    <dd class="value">{{ summit.location.city }}, {{ summit.location.country }}</dd>
-  </div>
-  <div class="field">
-    <dt class="label">Venue</dt>
-    <dd class="value"><span class="value--pending">To be announced</span></dd>
-  </div>
-  <div class="field">
-    <dt class="label">Fees</dt>
-    <dd class="value"><span class="value--pending">To be announced</span></dd>
-  </div>
-  <div class="field">
-    <dt class="label">Registration deadline</dt>
-    <dd class="value"><span class="value--pending">To be announced</span></dd>
-  </div>
-  <div class="field">
-    <dt class="label">What each category includes</dt>
-    <dd class="value"><span class="value--pending">To be announced</span></dd>
-  </div>
-</dl>
+<aside class="rail">
+  <h2>What is set, and what is not</h2>
+  <dl class="spec">
+    <div class="field">
+      <dt class="label">Dates</dt>
+      <dd class="value">{{ summit.dates.display }}</dd>
+    </div>
+    <div class="field">
+      <dt class="label">City</dt>
+      <dd class="value">{{ summit.location.city }}, {{ summit.location.country }}</dd>
+    </div>
+    <div class="field">
+      <dt class="label">Venue</dt>
+      <dd class="value"><span class="value--pending">To be announced</span></dd>
+    </div>
+    <div class="field">
+      <dt class="label">Fees</dt>
+      <dd class="value"><span class="value--pending">To be announced</span></dd>
+    </div>
+    <div class="field">
+      <dt class="label">Registration deadline</dt>
+      <dd class="value"><span class="value--pending">To be announced</span></dd>
+    </div>
+    <div class="field">
+      <dt class="label">What each category includes</dt>
+      <dd class="value"><span class="value--pending">To be announced</span></dd>
+    </div>
+  </dl>
+</aside>
 
 {% include "components/form-registration.njk" %}
 

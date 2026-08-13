@@ -56,3 +56,15 @@ description: Call for speakers for the Kenya-China Tea Summit 2027, Nairobi, 21â
 <p>There is no dedicated speaker form yet. Use the <a href="/contact/">contact form</a> and state "Speaker proposal" in your message, together with your organisation, proposed topic and which area of interest above it fits.</p>
 
 <p>Submission does not guarantee a place on the programme. The summit team will confirm the review process, deadlines and speaker terms when the programme committee is in place.</p>
+
+{% from "components/image-grid.njk" import grid %}
+<aside class="rail">
+  {{ grid([
+    {src:"/img/plates/tea-leaves-plantation-backdrop", alt:"Tea leaves in the foreground with planted slopes out of focus behind."}
+  ], "", "", "(min-width: 64rem) 300px, 100vw") }}
+  <div class="rail__card">
+    <p class="label">Proposing a session</p>
+    <p>Send your organisation, your topic and the area of interest it fits to the summit team.</p>
+    <p><a class="btn btn--ghost" href="/contact/">Contact the summit team</a></p>
+  </div>
+</aside>

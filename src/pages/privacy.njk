@@ -53,3 +53,15 @@ hideCta: true
   <p class="note__label">Contact details pending</p>
   <p>A named data contact and postal address will be published here once the secretariat confirms them. Until then the <a href="/contact/">contact form</a> is the route for any privacy request, and those requests are handled the same way.</p>
 </div>
+
+{% from "components/image-grid.njk" import grid %}
+<aside class="rail">
+  {{ grid([
+    {src:"/img/plates/tea-estate-road-ridge-aerial", alt:"A ridge of tea cultivation with a track along its spine."}
+  ], "", "", "(min-width: 64rem) 300px, 100vw") }}
+  <div class="rail__card">
+    <p class="label">Privacy requests</p>
+    <p>Requests to see, correct or delete your data go to the secretariat through the contact form.</p>
+    <p><a class="btn btn--ghost" href="/contact/">Contact the secretariat</a></p>
+  </div>
+</aside>

@@ -686,6 +686,40 @@ select.input { cursor: pointer; }
   .plate--6 .plate__grid { grid-template-columns: repeat(3, 1fr); }
 }
 
+/* ==== the rail ========================================================== */
+
+/* The prose measure is 68ch inside a 74rem wrap, so roughly 40% of every inner
+   page was empty. The rail spends it on the page's own facts. A page opts in by
+   putting <aside class="rail"> anywhere in its body — grid places it, so source
+   order does not matter and the markup stays where it reads best. */
+.doc-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 20rem;
+  gap: var(--sp-xl);
+  align-items: start;
+}
+.doc-body > *     { grid-column: 1; }
+.doc-body > .rail { grid-column: 2; grid-row: 1 / span 99; position: sticky; top: var(--sp-l); }
+
+/* No rail, no second track. */
+.doc-body:not(:has(.rail)) { display: block; }
+
+.rail > :first-child { margin-top: 0; }
+.rail .spec { margin-top: 0; max-width: none; }
+.rail__card {
+  border: 1px solid var(--c-rule);
+  border-radius: var(--radius-s);
+  padding: var(--sp-s);
+  margin-top: var(--sp-m);
+}
+.rail__card p { font-size: var(--step--1); color: var(--c-text-muted); max-width: none; }
+.rail__card > :first-child { margin-top: 0; }
+
+@media (max-width: 63.999rem) {
+  .doc-body { display: block; }
+  .doc-body > .rail { position: static; }
+}
+
 /* ==== downloads ========================================================= */
 
 .dl-list { list-style: none; margin: 0 0 var(--sp-l); padding: 0; }

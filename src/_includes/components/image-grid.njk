@@ -11,8 +11,10 @@
    choose the 1200px file supports AVIF.
 
    The fourth argument overrides `sizes`. The default assumes the plate spans
-   the 74rem wrap, which is true on the inner pages but NOT on the homepage,
-   where plates sit in a half-width .figure-pair column, nor in the rail. A
+   the full 74rem wrap with nothing beside it — which, since the rail landed, is
+   true of no current call site: the homepage plates sit in a half-width
+   .figure-pair column, the inner-page plates share the row with a 20rem rail,
+   and a rail plate is the rail's own width. A
    `sizes` that is too wide is not cosmetic: a 183px cell declared as 422px
    fetches the 1200px file at DPR 2, which is the waste this srcset exists to
    remove. Call sites in a narrower container must pass their own.

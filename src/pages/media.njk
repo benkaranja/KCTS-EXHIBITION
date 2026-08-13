@@ -20,18 +20,20 @@ ctaLabel: Register media interest
   <div class="field"><dt class="label">On-site arrangements</dt><dd class="value"><span class="value--pending">To be announced</span></dd></div>
 </dl>
 
-<h2>Event facts</h2>
+<aside class="rail">
+  <h2>Event facts</h2>
 
-<dl class="spec">
-  <div class="field"><dt class="label">Event</dt><dd class="value">{{ summit.name }}</dd></div>
-  <div class="field"><dt class="label">Dates</dt><dd class="value">{{ summit.dates.display }}</dd></div>
-  <div class="field"><dt class="label">City</dt><dd class="value">{{ summit.location.city }}, {{ summit.location.country }}</dd></div>
-  <div class="field"><dt class="label">Venue</dt><dd class="value"><span class="value--pending">To be announced</span></dd></div>
-  <div class="field"><dt class="label">Theme</dt><dd class="value">{{ summit.theme }}</dd></div>
-  <div class="field"><dt class="label">Organising body</dt><dd class="value">{{ summit.organiser.name }}</dd></div>
-  <div class="field"><dt class="label">Organised by</dt><dd class="value">{{ summit.organiser.legalEntity }}</dd></div>
-  <div class="field"><dt class="label">Media contact</dt><dd class="value"><span class="value--pending">To be announced</span></dd></div>
-</dl>
+  <dl class="spec">
+    <div class="field"><dt class="label">Event</dt><dd class="value">{{ summit.name }}</dd></div>
+    <div class="field"><dt class="label">Dates</dt><dd class="value">{{ summit.dates.display }}</dd></div>
+    <div class="field"><dt class="label">City</dt><dd class="value">{{ summit.location.city }}, {{ summit.location.country }}</dd></div>
+    <div class="field"><dt class="label">Venue</dt><dd class="value"><span class="value--pending">To be announced</span></dd></div>
+    <div class="field"><dt class="label">Theme</dt><dd class="value">{{ summit.theme }}</dd></div>
+    <div class="field"><dt class="label">Organising body</dt><dd class="value">{{ summit.organiser.name }}</dd></div>
+    <div class="field"><dt class="label">Organised by</dt><dd class="value">{{ summit.organiser.legalEntity }}</dd></div>
+    <div class="field"><dt class="label">Media contact</dt><dd class="value"><span class="value--pending">To be announced</span></dd></div>
+  </dl>
+</aside>
 
 <div class="note">
   <p class="note__label">Reporting guidance</p>

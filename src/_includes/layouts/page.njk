@@ -15,7 +15,12 @@ layout: layouts/base.njk
       <p><strong>本页面为机器翻译，尚未经过人工审核。</strong>如有疑问，请以<a href="{{ basePath }}" lang="en" hreflang="en" data-nolocale>英文原版</a>为准。</p>
     </div>
     {% endif %}
-    {{ content | safe }}
+    {#- Two-column grid when the page supplies an <aside class="rail">, plain
+        block when it does not. See .doc-body in style.css. The machine
+        translation notice stays outside so it always spans full width. -#}
+    <div class="doc-body">
+      {{ content | safe }}
+    </div>
   </div>
 </section>
 

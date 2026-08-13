@@ -81,3 +81,15 @@ ctaLabel: Discuss partnership
 <h2>Media and press</h2>
 
 <p>Press accreditation and the media kit are handled separately. See <a href="/media/">Media &amp; press</a>.</p>
+
+{% from "components/image-grid.njk" import grid %}
+<aside class="rail">
+  {{ grid([
+    {src:"/img/plates/tea-plantation-contour-rows-hillside", alt:"Contour rows of tea following the shape of a hillside, seen from above."}
+  ], "", "", "(min-width: 64rem) 300px, 100vw") }}
+  <div class="rail__card">
+    <p class="label">Discuss a partnership</p>
+    <p>Tell the summit team what your organisation wants from the Kenya-China tea market.</p>
+    <p><a class="btn btn--ghost" href="/contact/">Contact the summit team</a></p>
+  </div>
+</aside>

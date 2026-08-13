@@ -1,6 +1,6 @@
 # Website copy for review — Kenya-China Tea Summit 2027
 
-**Generated:** 2026-08-13 · **Build:** `b0fc364` · **Live:** https://kenya-china-tea-summit.pages.dev
+**Generated:** 2026-08-13 · **Build:** `4180bb6` · **Live:** https://kenya-china-tea-summit.pages.dev
 
 This document contains **every word of visible text on the website**, extracted
 from the built pages, in the order a visitor reads them. It is generated
@@ -250,6 +250,12 @@ We welcome proposals from industry leaders, buyers, investors, policymakers, res
 
 Propose a session
 
+Programme announcements
+
+The agenda is released in phases. Register your interest to receive each one as it is confirmed.
+
+Register interest
+
 ### Register your interest
 
 Register your interest to receive programme announcements and formal registration information.
@@ -442,6 +448,12 @@ The summit team will use that information to prepare a more relevant proposal. Y
 
 Press accreditation and the media kit are handled separately. See Media & press.
 
+Discuss a partnership
+
+Tell the summit team what your organisation wants from the Kenya-China tea market.
+
+Contact the summit team
+
 ### Request the partnership prospectus
 
 Rates and confirmed benefits will be issued through the official summit channels once approved.
@@ -541,6 +553,12 @@ Company presentations and product pitches are better suited to the exhibition an
 There is no dedicated speaker form yet. Use the contact form and state "Speaker proposal" in your message, together with your organisation, proposed topic and which area of interest above it fits.
 
 Submission does not guarantee a place on the programme. The summit team will confirm the review process, deadlines and speaker terms when the programme committee is in place.
+
+Proposing a session
+
+Send your organisation, your topic and the area of interest it fits to the summit team.
+
+Contact the summit team
 
 ### Register your interest
 
@@ -740,6 +758,12 @@ Register your interest or follow the summit news page.
 
 Contact the summit team and include enough detail for your enquiry to be routed correctly.
 
+Still have a question
+
+Anything this page does not answer, ask the summit team directly.
+
+Contact the summit team
+
 ### Register your interest
 
 Six categories, from delegate to exhibitor. Fees and deadlines are published once the secretariat confirms them.
@@ -765,6 +789,12 @@ This page brings together official summit announcements and useful context on Ke
 Journalists seeking comment, accreditation or approved facts should use the Media and Press page.
 
 Media and press
+
+Announcements as they are confirmed
+
+Register your interest to receive programme, venue and speaker announcements.
+
+Register interest
 
 ### Register to receive updates
 
@@ -921,6 +951,12 @@ Version control
 
 Each document shown here displays its publication or revision date.
 
+For journalists
+
+Accreditation, approved event facts and press contacts are on the Media and press page.
+
+Media and press
+
 ### Register your interest
 
 Register your interest to receive new documents and major summit announcements.
@@ -979,6 +1015,12 @@ Contact details pending
 
 A named data contact and postal address will be published here once the secretariat confirms them. Until then the contact form is the route for any privacy request, and those requests are handled the same way.
 
+Privacy requests
+
+Requests to see, correct or delete your data go to the secretariat through the contact form.
+
+Contact the secretariat
+
 ---
 
 # Terms of Use
@@ -1027,6 +1069,12 @@ The site is provided as it is. To the extent the law allows, the summit and its 
 
 These terms are governed by the laws of Kenya. Questions about these terms, including liability, go through the contact form.
 
+Questions about these terms
+
+Questions about these terms, including liability, go to the secretariat through the contact form.
+
+Contact the secretariat
+
 ---
 
 # Code of Conduct
@@ -1067,6 +1115,12 @@ The secretariat may issue a warning, remove someone from a session, withdraw exh
 Named contacts
 
 A named conduct contact and an on-site reporting channel will be published here before the summit opens. Until then, concerns raised through the contact form reach the secretariat directly.
+
+Raising a concern
+
+A concern raised through the contact form reaches the secretariat directly.
+
+Contact the secretariat
 
 ---
 

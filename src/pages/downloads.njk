@@ -63,3 +63,15 @@ ctaBody: Register your interest to receive new documents and major summit announ
   <p class="note__label">Version control</p>
   <p>Each document shown here displays its publication or revision date.</p>
 </div>
+
+{% from "components/image-grid.njk" import grid %}
+<aside class="rail">
+  {{ grid([
+    {src:"/img/plates/dried-green-tea-leaf-grading", alt:"Dried, curled green tea leaf on a plain white dish."}
+  ], "", "", "(min-width: 64rem) 300px, 100vw") }}
+  <div class="rail__card">
+    <p class="label">For journalists</p>
+    <p>Accreditation, approved event facts and press contacts are on the Media and press page.</p>
+    <p><a class="btn btn--ghost" href="/media/">Media and press</a></p>
+  </div>
+</aside>

@@ -21,7 +21,7 @@ ctaBody: Registration is currently an expression of interest. It is free to subm
   {src:"/img/plates/tea-estate-road-ridge-aerial",      alt:"A ridge of tea cultivation with a track along its spine."},
   {src:"/img/plates/tea-estate-terraced-rows-aerial",   alt:"Terraced rows of tea receding towards a distant treeline."},
   {src:"/img/plates/tea-fields-patchwork-aerial-kenya", alt:"Cultivated fields in a patchwork of greens and worked earth."}
-], "The country the summit is convened in", "IV") }}
+], "The country the summit is convened in", "IV", "(min-width: 64rem) 400px, 50vw") }}
 
 <h2>Why now</h2>
 
@@ -64,23 +64,24 @@ ctaBody: Registration is currently an expression of interest. It is free to subm
   {% endfor %}
 </ul>
 
-<h2>Organiser</h2>
-
-<dl class="spec">
-  <div class="field">
-    <dt class="label">Summit</dt>
-    <dd class="value">{{ summit.name }}</dd>
-  </div>
-  <div class="field">
-    <dt class="label">Organising body</dt>
-    <dd class="value">{{ summit.organiser.name }}</dd>
-  </div>
-  <div class="field">
-    <dt class="label">Organised by</dt>
-    <dd class="value">{{ summit.organiser.legalEntity }}</dd>
-  </div>
-  <div class="field">
-    <dt class="label">Location</dt>
-    <dd class="value">{{ summit.organiser.city }}, {{ summit.organiser.country }}</dd>
-  </div>
-</dl>
+<aside class="rail">
+  <h2>Organiser</h2>
+  <dl class="spec">
+    <div class="field">
+      <dt class="label">Summit</dt>
+      <dd class="value">{{ summit.name }}</dd>
+    </div>
+    <div class="field">
+      <dt class="label">Organising body</dt>
+      <dd class="value">{{ summit.organiser.name }}</dd>
+    </div>
+    <div class="field">
+      <dt class="label">Organised by</dt>
+      <dd class="value">{{ summit.organiser.legalEntity }}</dd>
+    </div>
+    <div class="field">
+      <dt class="label">Location</dt>
+      <dd class="value">{{ summit.organiser.city }}, {{ summit.organiser.country }}</dd>
+    </div>
+  </dl>
+</aside>

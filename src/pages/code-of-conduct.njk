@@ -41,3 +41,15 @@ hideCta: true
   <p class="note__label">Named contacts</p>
   <p>A named conduct contact and an on-site reporting channel will be published here before the summit opens. Until then, concerns raised through the contact form reach the secretariat directly.</p>
 </div>
+
+{% from "components/image-grid.njk" import grid %}
+<aside class="rail">
+  {{ grid([
+    {src:"/img/plates/tea-fields-patchwork-aerial-kenya", alt:"Cultivated fields in a patchwork of greens and worked earth."}
+  ], "", "", "(min-width: 64rem) 300px, 100vw") }}
+  <div class="rail__card">
+    <p class="label">Raising a concern</p>
+    <p>A concern raised through the contact form reaches the secretariat directly.</p>
+    <p><a class="btn btn--ghost" href="/contact/">Contact the secretariat</a></p>
+  </div>
+</aside>
