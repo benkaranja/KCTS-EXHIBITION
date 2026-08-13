@@ -645,10 +645,18 @@ select.input { cursor: pointer; }
   gap: var(--sp-2xs);          /* transparent — the ground shows through */
   grid-template-columns: repeat(2, 1fr);
 }
+/* A single-image plate is the rail's format — one cell, full width of its
+   container. Without this it inherits the 2-column default and renders half
+   width against empty space. */
+.plate--1 .plate__grid { grid-template-columns: 1fr; }
 .plate--2 .plate__grid { grid-template-columns: repeat(2, 1fr); }
 .plate--3 .plate__grid { grid-template-columns: repeat(2, 1fr); }
 .plate--3 .plate__cell:first-child { grid-column: span 2; }
+/* --4 and --6 stay 2-up on narrow screens; --6 goes to 3 columns at 52rem,
+   --4 deliberately does not. A four-across row in a 74rem wrap gives ~280px
+   cells, which wastes the photograph. Two rows of two is the point. */
 .plate--4 .plate__grid { grid-template-columns: repeat(2, 1fr); }
+.plate--6 .plate__grid { grid-template-columns: repeat(2, 1fr); }
 
 .plate__cell { display: block; overflow: hidden; }
 .plate__cell img {
@@ -675,7 +683,7 @@ select.input { cursor: pointer; }
   .plate--3 .plate__grid { grid-template-columns: repeat(3, 1fr); }
   .plate--3 .plate__cell:first-child { grid-column: auto; }
   .plate--3 .plate__cell:first-child img { aspect-ratio: 4 / 3; }
-  .plate--4 .plate__grid { grid-template-columns: repeat(4, 1fr); }
+  .plate--6 .plate__grid { grid-template-columns: repeat(3, 1fr); }
 }
 
 /* ==== downloads ========================================================= */

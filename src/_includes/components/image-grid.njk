@@ -1,17 +1,34 @@
-{# Plate figure: 2-4 photographs in a grid, gaps transparent so the section
+{# Plate figure: 1-6 photographs in a grid, gaps transparent so the section
    ground shows through. The gap is the design, not padding.
+
+   Images are {src, alt} only. `src` is the slug path with no width and no
+   extension — the macro appends both, because the source set is a property of
+   the pipeline (scripts/make-plates.js), not of the page.
+
+   AVIF carries the srcset; the <img> is the WebP fallback and exists at 600
+   only. See the note in make-plates.js: a 1200px WebP of a dense aerial cannot
+   meet the 200KB cap at a quality worth shipping, and every browser that would
+   choose the 1200px file supports AVIF.
+
    Usage:
      {% from "components/image-grid.njk" import grid %}
-     {{ grid(images, "Caption text", "I") }}
+     {{ grid([{src:"/img/plates/tea-canopy-plucking-table", alt:"..."}],
+             "Caption text", "I") }}
 #}
 {% macro grid(images, caption, plate) %}
-<figure class="plate plate--{{ images | length }}">
+{%- set n = images | length -%}
+{#- Column count at >=52rem. Below that the CSS is 1 or 2 columns and the
+    100vw fallback in `sizes` covers it. -#}
+{%- set cols = 1 if n == 1 else (2 if n in [2, 4] else 3) -%}
+{%- set sizes = "(min-width: 52rem) " + (100 // cols) + "vw, 100vw" -%}
+<figure class="plate plate--{{ n }}">
   <div class="plate__grid">
     {% for im in images %}
     <picture class="plate__cell">
-      <source srcset="{{ im.src }}.avif" type="image/avif">
-      <img src="{{ im.src }}.webp" alt="{{ im.alt }}"
-           width="{{ im.w }}" height="{{ im.h }}" loading="lazy" decoding="async">
+      <source type="image/avif" sizes="{{ sizes }}"
+              srcset="{{ im.src }}-600.avif 600w, {{ im.src }}-1200.avif 1200w">
+      <img src="{{ im.src }}-600.webp" alt="{{ im.alt }}"
+           width="1200" height="900" loading="lazy" decoding="async">
     </picture>
     {% endfor %}
   </div>
