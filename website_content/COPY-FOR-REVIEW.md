@@ -1,6 +1,6 @@
 # Website copy for review — Kenya-China Tea Summit 2027
 
-**Generated:** 2026-08-12 · **Build:** `229ed6c` · **Live:** https://kenya-china-tea-summit.pages.dev
+**Generated:** 2026-08-13 · **Build:** `b0fc364` · **Live:** https://kenya-china-tea-summit.pages.dev
 
 This document contains **every word of visible text on the website**, extracted
 from the built pages, in the order a visitor reads them. It is generated
@@ -52,7 +52,7 @@ Brewing Strategic Partnerships for Sustainable Tea Trade, Investment and Innovat
 
 - **Location:** Nairobi, Kenya
 - **Dates:** 21–23 April 2027
-- **Days to opening:** 252
+- **Days to opening:** 251
 - **Venue:** To be announced
 - **Organised by:** Orbitline Events & Ushers Ltd
 The Kenya-China Tea Summit brings producers, exporters, buyers, investors, policymakers, researchers and technology partners together in Nairobi for three days of focused trade conversations, business meetings and industry exchange.
@@ -89,7 +89,7 @@ The expo brings tea products and industry solutions into one commercial space. E
 
 Explore exhibition opportunities
 
-Plate IIProcessing and the expo floor
+Plate IIFrom leaf to grade
 
 ### Who should attend
 
@@ -149,6 +149,8 @@ Kenya has generations of knowledge in tea cultivation, processing and internatio
 The Kenya-China Tea Summit has been created to bring these strengths into the same room. It is a platform for people who want to trade, invest, share expertise and build long-term relationships across the tea value chain.
 
 The summit takes place in Nairobi from 21–23 April 2027.
+
+Plate IVThe country the summit is convened in
 
 ### Why now
 
@@ -214,6 +216,7 @@ The detailed agenda, session times and speakers will be announced in phases.
 - 1 · 21 April 2027
 - 2 · 22 April 2027
 - 3 · 23 April 2027
+Plate VIIThree days, one subject
 
 ### Day one: Opening ceremony and Trade Forum
 
@@ -266,6 +269,8 @@ Register interest
 The International Tea & Technology Expo is the commercial exhibition within the Kenya-China Tea Summit.
 
 It is designed for companies that want to meet tea producers, processors, exporters, buyers, investors and policymakers with a clear interest in the Kenya-China market.
+
+Plate VWhat the expo is about
 
 ### What can be exhibited
 
@@ -592,6 +597,8 @@ Register interest
 General guidance for getting to Nairobi. Check official sources before you book.
 
 The information on this page is general guidance. Entry rules, health requirements and travel procedures can change, so check official sources before making arrangements.
+
+Plate VIBeyond the conference days
 
 ### Arriving by air
 
