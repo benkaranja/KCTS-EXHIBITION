@@ -1,6 +1,6 @@
 # Website copy for review — Kenya-China Tea Summit 2027
 
-**Generated:** 2026-08-13 · **Build:** `4180bb6` · **Live:** https://kenya-china-tea-summit.pages.dev
+**Generated:** 2026-08-13 · **Build:** `95c4687` · **Live:** https://kenya-china-tea-summit.pages.dev
 
 This document contains **every word of visible text on the website**, extracted
 from the built pages, in the order a visitor reads them. It is generated
@@ -20,7 +20,7 @@ Three things to look for in particular:
 2. **Anything that claims more than we can support.** The site deliberately avoids naming a venue, prices, speakers, delegate numbers, or any government endorsement, because none of those are confirmed. If any of them *are* now confirmed, tell us and we will publish them.
 3. **Tone.** The copy is written to sound like a trade secretariat rather than a marketing brochure. If that reads as too plain for the audience, say so.
 
-### Where you will see "to be entered"
+### Where you will see "To be announced"
 
 Those are deliberate. They mark information the secretariat has not yet supplied
 — venue, fees, deadlines, speakers, contact details. The site shows them as
@@ -1160,7 +1160,7 @@ These appear on every page.
 ## Footer small print
 
 - Kenya-China Tea Summit 2027 · 21–23 April 2027 · Nairobi, Kenya
-- Issued by Kenya-China Tea Summit Secretariat, Orbitline Events & Ushers Ltd.
+- Organised by Orbitline Events & Ushers Ltd on behalf of the Kenya-China Tea Summit Secretariat.
 - © 2026 Orbitline Events & Ushers Ltd. All rights reserved.
 
 ---

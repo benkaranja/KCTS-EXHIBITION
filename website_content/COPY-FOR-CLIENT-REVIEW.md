@@ -1,67 +1,46 @@
-# Website copy for review — Kenya-China Tea Summit 2027
+# Copy for client review — Kenya-China Tea Summit 2027
 
-**Generated:** 2026-08-13 · **Build:** `95c4687` · **Live:** https://kenya-china-tea-summit.pages.dev
+**Generated:** 2026-08-13 · **Build:** `95c4687`
 
-This document contains **every word of visible text on the website**, extracted
-from the built pages, in the order a visitor reads them. It is generated
-automatically from the site itself, so it cannot drift from what is actually
-published.
+Generated from the built site. This is what is live, not a draft of it.
 
----
+## Changes that apply to every page
 
-## How to review this
-
-Mark up anything you want changed and send it back — no need to preserve
-formatting.
-
-Three things to look for in particular:
-
-1. **Anything factually wrong.** Dates, the organiser's legal name, how the summit describes itself, the objectives.
-2. **Anything that claims more than we can support.** The site deliberately avoids naming a venue, prices, speakers, delegate numbers, or any government endorsement, because none of those are confirmed. If any of them *are* now confirmed, tell us and we will publish them.
-3. **Tone.** The copy is written to sound like a trade secretariat rather than a marketing brochure. If that reads as too plain for the audience, say so.
-
-### Where you will see "To be announced"
-
-Those are deliberate. They mark information the secretariat has not yet supplied
-— venue, fees, deadlines, speakers, contact details. The site shows them as
-blank fields on a form rather than hiding them, so a visitor can see the summit
-is in progress rather than wondering if the page is broken. **Every one of them
-becomes real content the moment you send us the detail.**
-
-### The trade figures on About and News
-
-Those numbers (Kenya's tea exports to China, the value-capture gap) come from
-published trade journalism and each one links to its source with a date. They are
-presented as *context the summit was called in response to* — never as claims by
-the summit or predictions about what it will achieve. If you would rather the
-site not reference them at all, that is a one-line change.
-
----
+- The security-print document vocabulary is gone: 'Schedule A', 'Form B', 'No. KCTS/2027/S', 'Particulars', 'Issued by', the dashed unstamped fields and the MMXXVII seal. The visual world is unchanged (ADR-015).
+- 'To be entered' is replaced everywhere by 'To be announced', and the build now fails if it returns.
+- Six idioms that translate poorly were replaced with literal commercial language (§4.7).
+- Navigation promotes B2B matchmaking into the primary bar (§13), labelled 'B2B'. The audit's longer labels wrapped the header onto three lines between 960 and 1280 pixels, so the labels are shortened; no route URL changed.
+- Photography is client-supplied imagery of Kenyan tea estates and leaf. It is not a record of this summit and no caption implies one. Frames showing people, premises, packaging or branding were excluded.
+- Every inner page gained a right-hand column. The page's key facts, or a next step, now sit beside the text instead of below it; roughly a third of each page was previously empty space.
 
 ---
 
 # Home
 
-**URL:** `/`  
-**Browser tab / search-result title:** 2027年肯尼亚-中国茶业峰会——连接茶叶、文化与商机  
-**Search-result description:** Join tea producers, exporters, buyers, investors, policymakers and technology partners in Nairobi from 21 to 23 April 2027. Register your interest in the Kenya-China Tea Summit.
+`/`
+
+**What changed here**
+
+- Hero rewritten for opportunity rather than administration (audit §4.4, §9 P3).
+- Document masthead, serial and seal removed (client audit; ADR-015).
+- 'Premier' and 'landmark' removed — neither is independently defensible (§4.6).
 
 ## Where Kenya's tea industry meets China's market, capital and technology
 
-酝酿战略伙伴关系,促进可持续茶叶贸易、投资与创新
+Brewing Strategic Partnerships for Sustainable Tea Trade, Investment and Innovation
 
-- **地点:** Nairobi, Kenya
-- **日期:** 2027年4月21日至23日
-- **距开幕还有:** 251
-- **场馆:** To be announced
-- **主办方:** Orbitline Events & Ushers Ltd
+- **Location:** Nairobi, Kenya
+- **Dates:** 21–23 April 2027
+- **Days to opening:** 251
+- **Venue:** To be announced
+- **Organised by:** Orbitline Events & Ushers Ltd
 The Kenya-China Tea Summit brings producers, exporters, buyers, investors, policymakers, researchers and technology partners together in Nairobi for three days of focused trade conversations, business meetings and industry exchange.
 
-### 登记您的意向
+### Register your interest
 
 Six categories, from delegate to exhibitor. Registration is open as an expression of interest — fees, deadlines and inclusions are set by the summit team and published here once confirmed.
 
-希望参展或合作?
+Exhibiting or partnering instead?
 
 ### A focused platform for a growing trade relationship
 
@@ -71,7 +50,7 @@ The summit creates a practical meeting point for the people shaping this relatio
 
 About the summit
 
-第I部分肯尼亚的种植高地
+Plate IKenya's growing highlands
 
 ### What the summit is designed to achieve
 
@@ -83,7 +62,7 @@ _Three days in Nairobi_
 - 3 · 23 April 2027
 View the programme
 
-### 国际茶叶与技术博览会
+### The International Tea & Technology Expo
 
 The expo brings tea products and industry solutions into one commercial space. Exhibitors can present finished and bulk teas, processing equipment, agricultural technologies, packaging, traceability tools and logistics services to a specialist audience.
 
@@ -103,7 +82,7 @@ Plate IIFrom leaf to grade
 - Hotels, restaurants, tourism operators and tea-culture organisations
 - Business and industry media
 
-### B2B配对洽谈
+### B2B matchmaking
 
 Good events create introductions. Useful events make those introductions relevant.
 
@@ -111,7 +90,7 @@ The summit's planned matchmaking programme will help delegates and exhibitors id
 
 How matchmaking will work
 
-### 与峰会合作
+### Partner with the summit
 
 Partnership is available at Title, Platinum, Gold, Silver and Supporting Partner levels. Packages will be built around approved benefits such as brand visibility, delegate engagement, exhibition presence and business introductions.
 
@@ -128,23 +107,25 @@ Discuss partnership
 
 The summit is being planned as more than a three-day conference. The summit team intends to coordinate travel and accommodation support, tea-region visits and optional tourism experiences for international delegations.
 
-旅行与住宿
+Travel and stay
 
-Plate III前往Nairobi
+Plate IIIComing to Nairobi
 
 ---
 
 # About
 
-**URL:** `/about/`  
-**Browser tab / search-result title:** 关于峰会 | 肯尼亚-中国茶叶峰会  
-**Search-result description:** Learn why the Kenya-China Tea Summit is bringing tea producers, buyers, investors, policymakers and technology partners together in Nairobi, 21–23 April 2027.
+`/about/`
+
+**What changed here**
+
+- Positioning narrowed from a continental claim to the Kenya-China relationship (§4.5).
+- Bilateral framing: Kenya brings origin and production expertise, China brings market, investment and technology (§4.10).
+- An uncited claim about Kenyan export diversification was cut rather than softened (FACTS §3).
 
 ## A commercial meeting point for Kenya and China
 
 Tea connects Kenya and China in different but complementary ways.
-
-本页面为机器翻译，尚未经过人工审核。如有疑问，请以英文原版为准。
 
 Kenya has generations of knowledge in tea cultivation, processing and international trade. China is a major tea market and a centre for tea production, technology, product development and tea culture.
 
@@ -186,32 +167,32 @@ The programme is intended for:
 - Hotels, restaurants, tourism operators and tea-culture organisations
 - Business and industry media
 
-### 主办方
+### Organiser
 
 - **Summit:** Kenya-China Tea Summit 2027
-- **Organising body:** Kenya-China Tea Summit秘书处
-- **主办方:** Orbitline Events & Ushers Ltd
-- **地点:** Nairobi, Kenya
+- **Organising body:** Kenya-China Tea Summit Secretariat
+- **Organised by:** Orbitline Events & Ushers Ltd
+- **Location:** Nairobi, Kenya
 
-### 登记您的意向
+### Register your interest
 
 Registration is currently an expression of interest. It is free to submit and does not create a booking or payment obligation.
 
-登记意向
+Register interest
 
 ---
 
 # Programme
 
-**URL:** `/programme/`  
-**Browser tab / search-result title:** 议程 | 肯尼亚-中国茶叶峰会  
-**Search-result description:** The Kenya-China Tea Summit 2027 programme across three days in Nairobi, 21–23 April 2027 — trade forum, investment forum, innovation conference, B2B meetings and the tea expo.
+`/programme/`
+
+**What changed here**
+
+- Day-level themes only. No session times are implied (FACTS §2).
 
 ## Three days focused on business
 
 The summit programme moves from market opportunity to investment and technology, then into exhibition, culture and next steps.
-
-本页面为机器翻译，尚未经过人工审核。如有疑问，请以英文原版为准。
 
 The detailed agenda, session times and speakers will be announced in phases.
 
@@ -243,7 +224,7 @@ The following details will be announced as they are confirmed:
 - Session titles and formats
 - Speakers and moderators
 - Start and finish times
-- 会议室及舞台
+- Rooms and stages
 - Interpretation arrangements
 - Expo operating days and opening hours
 - B2B eligibility, scheduling and whether it is included in registration
@@ -260,31 +241,31 @@ The agenda is released in phases. Register your interest to receive each one as 
 
 Register interest
 
-### 登记您的意向
+### Register your interest
 
 Register your interest to receive programme announcements and formal registration information.
 
-登记意向
+Register interest
 
 ---
 
 # Exhibition
 
-**URL:** `/exhibition/`  
-**Browser tab / search-result title:** 展览 | 肯尼亚-中国茶叶峰会  
-**Search-result description:** Showcase tea products, processing equipment, agricultural technology, packaging and logistics solutions at the International Tea & Technology Expo in Nairobi.
+`/exhibition/`
+
+**What changed here**
+
+- Expo duration is no longer asserted. Both this page and Programme state one 'to be announced' field (client audit).
 
 ## Put your products and solutions in front of a specialist audience
 
 The International Tea & Technology Expo is the commercial exhibition within the Kenya-China Tea Summit.
 
-本页面为机器翻译，尚未经过人工审核。如有疑问，请以英文原版为准。
-
 It is designed for companies that want to meet tea producers, processors, exporters, buyers, investors and policymakers with a clear interest in the Kenya-China market.
 
 Plate VWhat the expo is about
 
-### 可展出内容
+### What can be exhibited
 
 ### Why exhibit
 
@@ -308,7 +289,7 @@ The event gives exhibitors a place in discussions on value addition, market acce
 
 - **Expo operating days:** To be announced
 - **Stand sizes:** To be announced
-- **费率:** To be announced
+- **Rates:** To be announced
 - **Package inclusions:** To be announced
 - **Build and fit-out guidelines:** To be announced
 - **Application deadline:** To be announced
@@ -328,15 +309,15 @@ Register exhibitor interest
 
 # B2B Matchmaking
 
-**URL:** `/b2b-matchmaking/`  
-**Browser tab / search-result title:** B2B配对洽商 | 肯尼亚-中国茶业峰会  
-**Search-result description:** Connect with relevant tea buyers, suppliers, investors and technology partners through the Kenya-China Tea Summit's planned business matchmaking programme.
+`/b2b-matchmaking/`
+
+**What changed here**
+
+- 'AI-powered business matching' removed — it describes a platform that has not been selected (client audit).
 
 ## Make the right meetings part of the programme
 
 Trade events are most valuable when the people you need to meet are identified before the room becomes crowded.
-
-本页面为机器翻译，尚未经过人工审核。如有疑问，请以英文原版为准。
 
 The summit's planned B2B matchmaking programme will help delegates and exhibitors find relevant commercial counterparts, request meetings and manage a focused schedule.
 
@@ -379,7 +360,7 @@ A strong profile is specific. It should explain:
 
 Matchmaking may require information beyond the website registration form. The final platform, data controller, access rules and privacy terms will be published before profiles open.
 
-### 登记您的意向
+### Register your interest
 
 Choose the category that best describes your role and indicate that you are interested in B2B matchmaking.
 
@@ -389,15 +370,17 @@ Register your interest
 
 # Partnership
 
-**URL:** `/sponsorship/`  
-**Browser tab / search-result title:** 合作伙伴 | 肯尼亚-中国茶叶峰会  
-**Search-result description:** Explore Title, Platinum, Gold, Silver and Supporting Partner opportunities at the Kenya-China Tea Summit 2027 in Nairobi.
+`/sponsorship/`
+
+**What changed here**
+
+- Scarcity and discount framing removed; the page now leads on strategic relevance, audience access and category leadership (§4.9).
+- 'Unallocated' tier badges removed — they date instantly and require active management (§11).
+- The 'founding partner' framing is held back: FACTS.md does not confirm that 2027 is the first edition (BLOCKERS B-006).
 
 ## Put your organisation at the centre of the conversation
 
 Partnership opportunities for organisations that want to engage with decision-makers across tea, trade, investment, technology and policy.
-
-本页面为机器翻译，尚未经过人工审核。如有疑问，请以英文原版为准。
 
 The strongest partnerships begin with a clear objective. That may be brand visibility, access to a specialist audience, product demonstration, market entry, thought leadership or relationship building.
 
@@ -454,9 +437,9 @@ A useful partnership enquiry tells us:
 - Any markets, products or programme themes relevant to you
 The summit team will use that information to prepare a more relevant proposal. You can also register sponsor interest directly.
 
-### 媒体和新闻
+### Media and press
 
-新闻认证和媒体资料包单独处理。请参见媒体和新闻。
+Press accreditation and the media kit are handled separately. See Media & press.
 
 Discuss a partnership
 
@@ -474,78 +457,78 @@ Discuss partnership
 
 # Registration
 
-**URL:** `/registration/`  
-**Browser tab / search-result title:** 登记您的兴趣 | 肯尼亚-中国茶叶峰会  
-**Search-result description:** Register your interest in the Kenya-China Tea Summit 2027, Nairobi, 21–23 April 2027. Six categories from delegate to exhibitor. Fees announced once confirmed.
+`/registration/`
 
-## 登记您的意向
+**What changed here**
+
+- 'You go on the list' removed. No discounted rate is implied for any category (client audit).
+
+## Register your interest
 
 Six categories. No payment at this stage, and submitting the form does not reserve a place.
 
-本页面为机器翻译，尚未经过人工审核。如有疑问，请以英文原版为准。
-
-请先阅读本文
+Read this first
 
 The formal ticketing process is not open yet. This form records your interest and allows the summit team to send you confirmed information as it becomes available. There is no payment at this stage, and submitting the form does not reserve a place.
 
 ### Choose the category that best fits your role
 
-### 已确定的内容和未确定的内容
+### What is set, and what is not
 
-- **日期:** 2027年4月21日至23日
-- **城市:** Nairobi, Kenya
-- **场馆:** To be announced
-- **费用:** To be announced
-- **报名截止日期:** To be announced
-- **各类别包含内容:** To be announced
+- **Dates:** 21–23 April 2027
+- **City:** Nairobi, Kenya
+- **Venue:** To be announced
+- **Fees:** To be announced
+- **Registration deadline:** To be announced
+- **What each category includes:** To be announced
 
-### 意向登记
+### Registration of interest
 
 Required fields are marked. Your details are used to contact you about the summit, and are never sold. Our email and hosting providers handle them on our behalf — see the privacy notice.
 
-姓名 *
+Full name *
 
-电子邮箱 *
+Email *
 
-机构
+Organisation
 
-职位
+Job title
 
-国家
+Country
 
-类别 * 请选择 代表 参展商 赞助商 政府 媒体 学生
+Category * Select one Delegate Exhibitor Sponsor Government Media Student
 
-需要告知秘书处的事项
+Anything the secretariat should know
 
   - _field:_ Company website
 
-> **[Button]** 提交意向登记
+> **[Button]** Submit registration of interest
 
-提交即表示您同意秘书处可就本次峰会与您联系。请参阅我们的隐私声明。您可以随时要求移除您的信息。
+By submitting you agree the secretariat may contact you about this summit. See our privacy notice. You can ask to be removed at any time.
 
-### 后续流程
+### What happens next
 
 - You receive confirmation that your expression of interest was submitted.
 - The summit team records your chosen category and areas of interest.
 - You receive relevant updates as the venue, fees, programme and participation packages are confirmed.
 - Formal registration instructions are sent when booking opens.
-如果您更希望参展或成为合作伙伴而非参会,请通过参展和合作伙伴页面办理——不同的表格需要不同的信息。
+If you would rather exhibit or partner than attend, those go through Exhibition and Partnership instead — different forms, different information needed.
 
 ---
 
 # Speakers
 
-**URL:** `/speakers/`  
-**Browser tab / search-result title:** Call for speakers | Kenya-China Tea Summit  
-**Search-result description:** Call for speakers for the Kenya-China Tea Summit 2027, Nairobi, 21–23 April 2027. Propose a session across trade, investment, innovation, products or tea culture.
+`/speakers/`
 
-## 演讲嘉宾征集
+**What changed here**
+
+- Product-led proposals redirected to exhibition and partnership in positive language rather than dismissed (§4.8).
+
+## Call for speakers
 
 No speakers are confirmed yet. Propose a session grounded in practical knowledge, market evidence or real experience.
 
-本页面为机器翻译，尚未经过人工审核。如有疑问，请以英文原版为准。
-
-状态
+Status
 
 The Kenya-China Tea Summit is developing a programme led by practical knowledge, market evidence and real experience. Confirmed speakers will be published here once invitations are accepted and session details are approved.
 
@@ -562,7 +545,7 @@ We are looking for sessions with a clear purpose and a defined audience. A stron
 - An honest description of any commercial interest
 Company presentations and product pitches are better suited to the exhibition and partnership programme.
 
-### 提议一个议程
+### Propose a session
 
 There is no dedicated speaker form yet. Use the contact form and state "Speaker proposal" in your message, together with your organisation, proposed topic and which area of interest above it fits.
 
@@ -574,34 +557,34 @@ Send your organisation, your topic and the area of interest it fits to the summi
 
 Contact the summit team
 
-### 登记您的意向
+### Register your interest
 
-六个类别,从代表到参展商。费用和截止日期将在秘书处确认后公布。
+Six categories, from delegate to exhibitor. Fees and deadlines are published once the secretariat confirms them.
 
-登记意向
+Register interest
 
 ---
 
 # Venue
 
-**URL:** `/venue/`  
-**Browser tab / search-result title:** 场地 | 肯尼亚-中国茶叶峰会  
-**Search-result description:** The Kenya-China Tea Summit will take place in Nairobi from 21 to 23 April 2027. Venue, access and transport information will be announced here.
+`/venue/`
 
-## 前往Nairobi
+**What changed here**
+
+- 'Why this page is mostly empty' removed. One status message, not several (§11, §12.3).
+
+## Coming to Nairobi
 
 The Kenya-China Tea Summit takes place in Nairobi, Kenya, from 21 to 23 April 2027.
-
-本页面为机器翻译，尚未经过人工审核。如有疑问，请以英文原版为准。
 
 The specific venue is being finalised and will be announced through the official summit website and delegate communications.
 
 ### Event details
 
-- **城市:** Nairobi, Kenya
-- **日期:** 2027年4月21日至23日
-- **场馆:** To be announced
-- **地址:** To be announced
+- **City:** Nairobi, Kenya
+- **Dates:** 21–23 April 2027
+- **Venue:** To be announced
+- **Address:** To be announced
 - **Accessibility information:** To be announced
 - **Parking and local transport:** To be announced
 Before booking accommodation
@@ -612,25 +595,25 @@ The venue will affect which part of Nairobi is most convenient for your stay. Ch
 
 Register interest to be first to receive venue and delegate details as soon as they are available. General arrival guidance is on Travel & stay.
 
-### 登记您的意向
+### Register your interest
 
 Register your interest to receive venue and delegate information as it is confirmed.
 
-登记意向
+Register interest
 
 ---
 
 # Travel & Stay
 
-**URL:** `/travel/`  
-**Browser tab / search-result title:** 旅行与住宿 | 肯尼亚-中国茶业峰会  
-**Search-result description:** Plan travel to Nairobi for the Kenya-China Tea Summit, including arrival information, Kenya entry requirements, accommodation updates and optional delegation experiences.
+`/travel/`
+
+**What changed here**
+
+- 'Safe to book flights against' removed — the organiser cannot indemnify a date change (client audit).
 
 ## Travel and stay
 
 General guidance for getting to Nairobi. Check official sources before you book.
-
-本页面为机器翻译，尚未经过人工审核。如有疑问，请以英文原版为准。
 
 The information on this page is general guidance. Entry rules, health requirements and travel procedures can change, so check official sources before making arrangements.
 
@@ -652,7 +635,7 @@ Processing times and requirements may vary by nationality and individual circums
 
 - **Summit hotel or room block:** To be announced
 - **Preferential delegate rates:** To be announced
-- **机场接送:** To be announced
+- **Airport transfers:** To be announced
 - **Venue shuttle:** To be announced
 Before you book
 
@@ -662,35 +645,35 @@ Choose refundable or flexible hotel bookings where possible.
 
 The organiser plans to coordinate a range of optional services for international delegations:
 
-- 航班预订
-- 酒店预订
-- 茶园参观
-- 游猎活动
-- 旅游体验
+- Flight booking
+- Hotel reservations
+- Tea plantation tours
+- Safaris
+- Tourism experiences
 - Invitation letters
 These are optional services intended to make group travel easier to plan.
 
-### 登记您的意向
+### Register your interest
 
 Register your interest to receive venue, accommodation and delegate-travel updates.
 
-登记意向
+Register interest
 
 ---
 
 # FAQ
 
-**URL:** `/faq/`  
-**Browser tab / search-result title:** 常见问题 | 肯尼亚-中国茶叶峰会  
-**Search-result description:** Frequently asked questions about the Kenya-China Tea Summit 2027 in Nairobi — dates, registration, fees, venue, speakers, exhibition and travel.
+`/faq/`
 
-## 问题,诚实回答
+**What changed here**
 
-包括那些答案是"尚未确定"的问题。
+- Pricing warnings restated as positive policy: rates are issued by the Secretariat (§4.8).
 
-本页面为机器翻译，尚未经过人工审核。如有疑问，请以英文原版为准。
+## Questions, answered honestly
 
-### 日期和地点
+Including the ones where the answer is "not decided yet".
+
+### Dates and place
 
 #### When is the summit?
 
@@ -700,7 +683,7 @@ The Kenya-China Tea Summit takes place from 21 to 23 April 2027.
 
 The summit will be held in Nairobi, Kenya. The venue will be announced once arrangements are finalised. See the Venue page.
 
-### 注册
+### Registering
 
 #### Is registration open?
 
@@ -714,7 +697,7 @@ No. It records your interest and allows the summit team to send you relevant upd
 
 Delegate fees, exhibitor rates and partnership packages will be announced after approval. Official participation rates are issued by the Secretariat and published here once confirmed.
 
-### 会议议程
+### The programme
 
 #### Who should attend?
 
@@ -724,7 +707,7 @@ The summit is intended for tea producers, processors, exporters, buyers, investo
 
 Day one focuses on trade. Day two covers investment, innovation and B2B meetings. Day three includes the International Tea & Technology Expo, cultural exchange and the closing programme.
 
-#### 谁将发言?
+#### Who is speaking?
 
 Confirmed speakers will be published after they accept their invitations and session details are approved.
 
@@ -750,9 +733,9 @@ Use the Partnership page to describe your preferred level, audience and objectiv
 
 Participants will create business profiles, state what they are looking for and receive relevant meeting recommendations. Eligibility, access and pricing are still to be confirmed.
 
-### 实务信息
+### Practicalities
 
-#### 我需要签证吗?
+#### Do I need a visa?
 
 Requirements depend on nationality and individual circumstances. Check Kenya's official Electronic Travel Authorisation website and your government's travel advice.
 
@@ -784,25 +767,25 @@ Anything this page does not answer, ask the summit team directly.
 
 Contact the summit team
 
-### 登记您的意向
+### Register your interest
 
-六个类别,从代表到参展商。费用和截止日期将在秘书处确认后公布。
+Six categories, from delegate to exhibitor. Fees and deadlines are published once the secretariat confirms them.
 
-登记意向
+Register interest
 
 ---
 
 # News & Insight
 
-**URL:** `/news/`  
-**Browser tab / search-result title:** News & insights | Kenya-China Tea Summit  
-**Search-result description:** Read Kenya-China Tea Summit announcements and market insights on tea trade, value addition, investment and technology and access to the Chinese market.
+`/news/`
+
+**What changed here**
+
+- 'No bulletins yet' removed (§11). Figures carry a named source and a date (FACTS §3).
 
 ## News and market insights
 
 This page brings together official summit announcements and useful context on Kenya-China tea trade, value addition, investment and technology.
-
-本页面为机器翻译，尚未经过人工审核。如有疑问，请以英文原版为准。
 
 ### Summit updates
 
@@ -828,23 +811,19 @@ Register to receive updates
 
 # Contact
 
-**URL:** `/contact/`  
-**Browser tab / search-result title:** 联系我们 | 肯尼亚-中国茶叶峰会  
-**Search-result description:** Contact the Kenya-China Tea Summit about attendance, exhibition, partnership, speaking, media, travel or general enquiries.
+`/contact/`
 
 ## Contact the summit team
 
 Use the relevant route for faster support. General enquiries go through the form below.
 
-本页面为机器翻译，尚未经过人工审核。如有疑问，请以英文原版为准。
-
 - **Summit:** Kenya-China Tea Summit 2027
-- **Organising body:** Kenya-China Tea Summit秘书处
-- **主办方:** Orbitline Events & Ushers Ltd
-- **地点:** Nairobi, Kenya
-- **电子邮件:** To be announced
-- **电话:** To be announced
-- **邮政地址:** To be announced
+- **Organising body:** Kenya-China Tea Summit Secretariat
+- **Organised by:** Orbitline Events & Ushers Ltd
+- **Location:** Nairobi, Kenya
+- **Email:** To be announced
+- **Telephone:** To be announced
+- **Postal address:** To be announced
 
 ### Choose the right route
 
@@ -858,21 +837,21 @@ General enquiries
 
 If none of these routes fit, send a message using the form below.
 
-### 一般咨询
+### General enquiry
 
-全名 *
+Full name *
 
-电子邮箱 *
+Email *
 
-机构
+Organisation
 
-国家
+Country
 
-您的留言 *
+Your message *
 
   - _field:_ Company website
 
-> **[Button]** 发送留言
+> **[Button]** Send message
 
 Your message is used to answer your enquiry, and is never sold. Our email and hosting providers handle it on our behalf. See our privacy notice.
 
@@ -880,15 +859,11 @@ Your message is used to answer your enquiry, and is never sold. Our email and ho
 
 # Media & Press
 
-**URL:** `/media/`  
-**Browser tab / search-result title:** 媒体与新闻 | 肯尼亚-中国茶业峰会  
-**Search-result description:** Apply for media accreditation and access approved facts, announcements and press resources for the Kenya-China Tea Summit 2027 in Nairobi.
+`/media/`
 
-## 媒体和新闻
+## Media and press
 
 This page provides approved summit information for journalists, editors, producers, photographers and industry media.
-
-本页面为机器翻译，尚未经过人工审核。如有疑问，请以英文原版为准。
 
 ### Media accreditation
 
@@ -901,13 +876,13 @@ Media accreditation will be available to recognised news, business, trade and in
 ### Event facts
 
 - **Event:** Kenya-China Tea Summit 2027
-- **日期:** 2027年4月21日至23日
-- **城市:** Nairobi, Kenya
-- **场馆:** To be announced
-- **主题:** 酝酿战略伙伴关系,促进可持续茶叶贸易、投资与创新
-- **Organising body:** Kenya-China Tea Summit秘书处
-- **主办方:** Orbitline Events & Ushers Ltd
-- **媒体联系:** To be announced
+- **Dates:** 21–23 April 2027
+- **City:** Nairobi, Kenya
+- **Venue:** To be announced
+- **Theme:** Brewing Strategic Partnerships for Sustainable Tea Trade, Investment and Innovation
+- **Organising body:** Kenya-China Tea Summit Secretariat
+- **Organised by:** Orbitline Events & Ushers Ltd
+- **Media contact:** To be announced
 Reporting guidance
 
 As with any pre-event coverage, confirm these details against an official summit announcement before publication:
@@ -952,19 +927,15 @@ Register media interest
 
 # Downloads
 
-**URL:** `/downloads/`  
-**Browser tab / search-result title:** 下载 | Kenya-China Tea Summit  
-**Search-result description:** Download current Kenya-China Tea Summit fact sheets, programme information, exhibitor guides, partnership documents and media resources.
+`/downloads/`
 
-## 文件与下载
+## Documents and downloads
 
 Approved summit documents will be published here in their current versions.
 
-本页面为机器翻译，尚未经过人工审核。如有疑问，请以英文原版为准。
+### Summit overview
 
-### 峰会概览
-
-- 峰会概况说明 PDF · 2 KB · 1页 · 更新于2026年8月2日 日期、地点、主题、六项目标及六种注册类别,尽在一页之中。本说明由网站数据生成,确保与本站页面信息保持同步。
+- Summit fact sheet PDF · 2 KB · 1 pp · updated 2 August 2026 Dates, location, theme, the six objectives and the six registration categories on one page. Generated from the site's own data, so it cannot fall out of step with these pages.
 
 ### Coming soon
 
@@ -974,7 +945,7 @@ Approved summit documents will be published here in their current versions.
 - Partnership prospectus
 - Travel and accommodation guide
 - Media fact sheet and press kit
-- 行为准则
+- Code of conduct
 Version control
 
 Each document shown here displays its publication or revision date.
@@ -985,65 +956,66 @@ Accreditation, approved event facts and press contacts are on the Media and pres
 
 Media and press
 
-### 登记您的意向
+### Register your interest
 
 Register your interest to receive new documents and major summit announcements.
 
-登记意向
+Register interest
 
 ---
 
 # Privacy Notice
 
-**URL:** `/privacy/`  
-**Browser tab / search-result title:** 隐私声明 | Kenya-China Tea Summit  
-**Search-result description:** Privacy notice for the Kenya-China Tea Summit 2027 website — what data the forms collect, where it is stored, and how to request removal.
+`/privacy/`
 
-## 隐私声明
+**What changed here**
 
-本网站收集哪些信息、信息流向何处、保留多长时间以及如何删除。
+- Two contradictions fixed: the technical data actually processed, and the processors (Brevo, Cloudflare) it is shared with (client audit).
+- The registration and contact forms said your details go nowhere else while Brevo and Cloudflare process them. Both forms now name the processors and link here.
 
-本页面为机器翻译，尚未经过人工审核。如有疑问，请以英文原版为准。
+## Privacy notice
 
-最后更新于2026年。本声明仅涵盖峰会网站。
+What this site collects, where it goes, how long it stays and how to get it removed.
 
-### 收集的信息
+Last updated 2026. This notice covers the summit website only.
+
+### What is collected
 
 Only what you type into a form on this site: your name, email address, and optionally your organisation, job title, country, registration category and message.
 
-系统会在每次提交时记录少量用于检测自动化垃圾信息的技术上下文:您的请求来源国家、您的浏览器用户代理字符串以及您提交的页面。您的IP地址不会被存储——为实现速率限制,系统会将其转换为无法还原为地址的单向哈希值。
+Alongside each submission the system records a small amount of technical context used to detect automated spam: the country your request came from, your browser's user-agent string, and the page you submitted from. Your IP address is not stored — for rate limiting it is converted to a one-way hash that cannot be turned back into an address.
 
-### 不收集的信息
+### What is not collected
 
-- 无广告或跨站点跟踪Cookie。
-- 无对您进行画像的第三方分析工具。网站分析仅为汇总页面计数,不使用Cookie,不包含个人标识符。
-- 不涉及数据经纪商,不出租名单,不进行任何形式的出售。
+- No advertising or cross-site tracking cookies.
+- No third-party analytics that profile you. Site analytics are aggregate page counts only, with no cookie and no individual identifier.
+- No data brokers, no list rental, no sale of any kind.
 
-### 数据存储位置
+### Where it goes
 
-- **存储于:** Cloudflare D1,由峰会秘书处控制的数据库
-- **电子邮件发送:** Brevo,用于发送您的确认信息并通知秘书处
-- **垃圾信息防护:** Cloudflare Turnstile
-- **谁可以读取:** The summit secretariat, its appointed organiser, and the processors named above
+- **Stored in:** Cloudflare D1, a database controlled by the summit secretariat
+- **Email delivery:** Brevo, used to send your confirmation and notify the secretariat
+- **Spam protection:** Cloudflare Turnstile
+- **Who can read it:** The summit secretariat, its appointed organiser, and the processors named above
 Cloudflare and Brevo are processors, not independent controllers: they hold and route this information under contract, on the secretariat's instructions, and do not use it for their own purposes.
 
-### 保存期限
+### How long it is kept
 
-注册和查询记录将保存至峰会结束后十二个月,以便秘书处就下一届峰会与您联系。之后这些记录将被删除。垃圾信息检测频率限制记录将在一小时内删除。
+Registration and enquiry records are kept until the end of the summit and for twelve months afterwards, so the secretariat can contact you about the next edition. After that they are deleted. Spam-detection rate-limit records are discarded within the hour.
 
-### 您的选择
+### Your choices
 
-您可以要求查看关于您的信息,要求更正,或要求完全删除。请使用联系表单说明您的需求。请求将直接执行而非协商。
+You can ask to see what is held about you, ask for it to be corrected, or ask for it to be deleted entirely. Use the contact form and say which. Requests are actioned rather than negotiated.
 
-确认电子邮件为事务性邮件——是您所提交内容的收据。未来任何公告电子邮件均附有退订链接,退订不会删除您的注册信息。
+Confirmation emails are transactional — they are the receipt for something you submitted. Any future announcement emails carry an unsubscribe link, and unsubscribing does not remove your registration.
 
-### 安全性
+### Security
 
-本网站仅通过HTTPS提供服务,并采用阻止第三方脚本的内容安全策略。表单提交经过验证和频率限制。本网站不会在任何地方处理付款详情,因为本网站不接受付款。
+The site is served over HTTPS only, with a content security policy that blocks third-party scripts. Form submissions are validated and rate-limited. No payment details are handled anywhere on this site, because the site takes no payments.
 
-联系方式待定
+Contact details pending
 
-一旦秘书处确认,具名的数据联系人和邮寄地址将在此公布。在此之前,联系表单是提出任何隐私请求的途径,这些请求将以相同方式处理。
+A named data contact and postal address will be published here once the secretariat confirms them. Until then the contact form is the route for any privacy request, and those requests are handled the same way.
 
 Privacy requests
 
@@ -1055,49 +1027,49 @@ Contact the secretariat
 
 # Terms of Use
 
-**URL:** `/terms/`  
-**Browser tab / search-result title:** 使用条款 | Kenya-China Tea Summit  
-**Search-result description:** Terms of use for the Kenya-China Tea Summit 2027 website.
+`/terms/`
 
-## 使用条款
+**What changed here**
 
-简要说明——本网站提供信息,不构成合同。
+- Editorial draft. Kenyan counsel review is outstanding (BLOCKERS B-005).
 
-本页面为机器翻译，尚未经过人工审核。如有疑问，请以英文原版为准。
+## Terms of use
 
-最后更新于2026年。
+The short version — this site is information, not a contract.
 
-### 本网站简介
+Last updated 2026.
 
-本网站是2027年肯尼亚-中国茶叶峰会的信息及意向登记平台,由Orbitline Events & Ushers Ltd代表肯尼亚-中国茶叶峰会秘书处发布。
+### What this site is
 
-### 意向登记并非预订
+An information and expression-of-interest site for the Kenya-China Tea Summit 2027, published by Orbitline Events & Ushers Ltd on behalf of the Kenya-China Tea Summit Secretariat.
 
-提交登记表仅记录您的参会意向。这不构成合同、不保留席位、不保证入场资格,也不使您负有出席或付款义务。目前尚未确定任何费用,本网站不处理任何付款。具有约束力的正式报名流程将在确定后另行发布。
+### Registration of interest is not a booking
 
-### 准确性与变更
+Submitting the registration form records your interest. It does not create a contract, reserve a place, guarantee admission, or oblige you to attend or to pay anything. No fees have been set and this site processes no payments. A binding registration process will be published separately when it exists.
+
+### Accuracy and change
 
 Summit details are published as the secretariat confirms them and may change. Fields marked "To be announced" are genuinely undecided. Third-party trade figures quoted on this site are attributed and dated; they are the publisher's reporting, not the summit's claims, and are not warranted by the summit.
 
-### 第三方链接
+### Third-party links
 
-提供其他网站的链接仅为方便访问。峰会不控制这些网站,也不对其内容负责。
+Links to other sites are provided for convenience. The summit does not control them and is not responsible for their content.
 
-### 知识产权
+### Intellectual property
 
 The summit's own text, branding and design belong to Orbitline Events & Ushers Ltd and are protected by applicable intellectual-property law. This site also uses licensed fonts, photographs and other third-party material, which remain subject to their own rights and licences and are not summit property.
 
 The summit logo may be used in editorial coverage of the summit, but not in any way implying partnership or endorsement. See Media & press.
 
-### 可接受使用
+### Acceptable use
 
-请勿使用表单发送未经请求的商业信息、试图干扰服务或在未经他人知情的情况下提交其个人信息。
+Do not use the forms to send unsolicited commercial messages, attempt to disrupt the service, or submit anyone else's personal details without their knowledge.
 
-### 责任
+### Liability
 
 The site is provided as it is. To the extent the law allows, the summit and its organiser are not liable for loss arising from reliance on information published here while details remain unconfirmed.
 
-### 适用法律
+### Governing law
 
 These terms are governed by the laws of Kenya. Questions about these terms, including liability, go through the contact form.
 
@@ -1111,92 +1083,47 @@ Contact the secretariat
 
 # Code of Conduct
 
-**URL:** `/code-of-conduct/`  
-**Browser tab / search-result title:** 行为准则 | 肯尼亚-中国茶叶峰会  
-**Search-result description:** Code of conduct for the Kenya-China Tea Summit 2027. Expected behaviour, what is not tolerated, and how to report a concern.
+`/code-of-conduct/`
 
-## 行为准则
+**What changed here**
 
-适用于峰会所有参与者——代表、演讲者、展商、合作伙伴、媒体及工作人员。
+- Editorial draft. Kenyan counsel review is outstanding (BLOCKERS B-005).
 
-本页面为机器翻译，尚未经过人工审核。如有疑问，请以英文原版为准。
+## Code of conduct
 
-本峰会汇聚了来自不同国家、行业、语言和资历层级的人士。目的是让他们能够相互开展业务。这需要一个人人都可以信赖的行为底线。
+Applies to everyone at the summit — delegates, speakers, exhibitors, partners, media and staff.
 
-### 行为准则
+This summit brings together people from different countries, industries, languages and levels of seniority. The point is that they can do business with each other. That requires a floor of behaviour everyone can rely on.
 
-- 专业对待每一个人,无论其国籍、资历、性别、年龄、宗教、残疾状况或母语如何。
-- 假定语言障碍是一种障碍,而非缺陷。请说话清晰,并给予他人足够时间。
-- 尊重第一次的"不",无论是关于会面、拍照还是交谈。
-- 遵守场馆的安全指示和工作人员指引。
+### What is expected
 
-### 不可容忍的行为
+- Treat everyone professionally, whatever their nationality, seniority, gender, age, religion, disability or first language.
+- Assume a language barrier is a barrier, not a shortcoming. Speak plainly and give people time.
+- Respect a "no" the first time, whether it is about a meeting, a photograph or a conversation.
+- Follow the venue's safety instructions and staff directions.
 
-- 任何形式的骚扰,包括不受欢迎的身体接触、持续的不受欢迎关注,或针对某人身份而非其言论的评论。
-- 恐吓、威胁或辱骂行为。
-- 在他人要求不拍照或录音后仍对其拍照或录音。
-- 故意扰乱会议或展览。
-- 虚假陈述您的组织、您的交易权限或您与本峰会的关系。
+### What is not tolerated
 
-### 报告问题
+- Harassment of any kind, including unwanted physical contact, persistent unwanted attention, or comments targeting who someone is rather than what they said.
+- Intimidating, threatening or abusive behaviour.
+- Photographing or recording someone who has asked you not to.
+- Deliberately disrupting sessions or the exhibition.
+- Misrepresenting your organisation, your authority to transact, or your relationship to the summit.
 
-峰会期间,请告知任何峰会工作人员——他们接受了培训,会采取行动而非调解。峰会前后,请使用联系表单并标注为行为问题。报告将被保密处理,提出报告的人员绝不会因此受到不利影响。
+### Reporting a concern
 
-### 后果
+During the summit, tell any member of summit staff — they are briefed to act, not to mediate. Before or after, use the contact form and mark it as a conduct concern. Reports are treated confidentially, and being the person who raises one will never be held against you.
+
+### Consequences
 
 The secretariat may issue a warning, remove someone from a session, withdraw exhibition or accreditation privileges, or remove someone from the venue. Serious matters are referred to the appropriate authorities.
 
-指定联系人
+Named contacts
 
-峰会开幕前,将在此处公布指定行为联系人和现场报告渠道。在此之前,通过联系表单提出的问题将直接送达秘书处。
+A named conduct contact and an on-site reporting channel will be published here before the summit opens. Until then, concerns raised through the contact form reach the secretariat directly.
 
 Raising a concern
 
 A concern raised through the contact form reaches the secretariat directly.
 
 Contact the secretariat
-
----
-
-# Site-wide furniture
-
-These appear on every page.
-
-## Main menu
-
-- 关于 → `/zh/about/`
-- 议程 → `/zh/programme/`
-- Expo → `/zh/exhibition/`
-- B2B → `/zh/b2b-matchmaking/`
-- Partners → `/zh/sponsorship/`
-- 交通 → `/zh/travel/`
-- **[Button]** 注册意向 → `/zh/registration/`
-
-## Footer links
-
-- 关于 → `/zh/about/`
-- 议程 → `/zh/programme/`
-- 演讲嘉宾 → `/zh/speakers/`
-- News and insights → `/zh/news/`
-- 下载 → `/zh/downloads/`
-- Media accreditation → `/zh/media/`
-- 登记意向 → `/zh/registration/`
-- Exhibit → `/zh/exhibition/`
-- Partner → `/zh/sponsorship/`
-- 场馆 → `/zh/venue/`
-- 旅行与住宿 → `/zh/travel/`
-- 常见问题 → `/zh/faq/`
-- 联系我们 → `/zh/contact/`
-- Privacy notice → `/zh/privacy/`
-- Terms of use → `/zh/terms/`
-- 行为准则 → `/zh/code-of-conduct/`
-
-## Footer small print
-
-- Kenya-China Tea Summit 2027 · 2027年4月21–23日 · Nairobi, Kenya
-- Organised by Orbitline Events & Ushers Ltd on behalf of the Kenya-China Tea Summit Secretariat.
-- © 2026 Orbitline Events & Ushers Ltd. 版权所有。
-
----
-
-_End of copy. 18 pages._
