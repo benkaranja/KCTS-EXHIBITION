@@ -64,13 +64,24 @@ if (existsSync("public/video")) {
 }
 
 // public/img is optional — a missing directory is not a failure, unlike css/js.
+// The aggregate cap is a growth gate, not a performance gate: every plate image
+// is below the fold and lazy-loaded, so directory size does not affect LCP. It
+// exists so a later run cannot quietly add sixty photographs.
+const IMG_DIR_MAX = 6 * 1024 * 1024;
 if (existsSync("public/img")) {
+  let imgTotal = 0;
   for (const { path, size } of walkFiles("public/img")) {
+    imgTotal += size;
     // Match IMG_FILE_CAPS by basename (e.g., "hero-poster.avif" in any subdirectory)
     const basename = path.split("/").pop();
     const cap = IMG_FILE_CAPS[basename] ?? IMG_MAX;
     console.log(`img    ${path} ${size} / ${cap} bytes`);
     if (size > cap) failures.push(`${path} over img budget: ${size} > ${cap}`);
+  }
+  const pct = ((imgTotal / IMG_DIR_MAX) * 100).toFixed(0);
+  console.log(`img    TOTAL ${imgTotal} / ${IMG_DIR_MAX} bytes (${pct}%)`);
+  if (imgTotal > IMG_DIR_MAX) {
+    failures.push(`public/img over aggregate budget: ${imgTotal} > ${IMG_DIR_MAX}`);
   }
 }
 

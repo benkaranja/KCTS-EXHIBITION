@@ -7,10 +7,11 @@
   "scripts": {
     "validate": "node scripts/validate-content.js && node scripts/check-contrast.js",
     "test": "node --test scripts/*.test.js",
-    "build": "npm run clean && npm run validate && eleventy && node scripts/minify-css.js && node scripts/assert-budgets.js && node scripts/export-copy.js",
+    "build": "npm run clean && npm run validate && eleventy && node scripts/minify-css.js && node scripts/assert-budgets.js && node scripts/assert-no-exif.js && node scripts/export-copy.js",
     "dev": "eleventy --serve --port=8080",
     "clean": "rm -rf public .cache",
-    "assets": "node scripts/make-guilloche.js",
+    "assets": "node scripts/make-guilloche.js && node scripts/make-plates.js",
+    "plates": "node scripts/make-plates.js",
     "copy": "node scripts/export-copy.js",
     "video": "node scripts/make-hero-video.js",
     "factsheet": "node scripts/make-fact-sheet.js",
