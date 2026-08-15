@@ -411,3 +411,116 @@ Nine, all of which built successfully before being caught:
 ### Still not run
 
 Lighthouse, axe, html-validate. No score claimed.
+
+---
+
+## Iteration 7 — V2 copy, client photography, the rail, and the Chinese rebuild
+
+Two approved plans executed end to end: the V2 copy run
+(`docs/superpowers/plans/2026-08-03-copy-v2.md`, Tasks 1–12) and the
+photography/layout/language plan (`2026-08-10-photography-layout-language.md`,
+Tasks A–F). Deployed to the staging origin on 2026-08-15.
+
+### Captured output
+
+Build gates:
+
+```
+content validation passed — 0 speakers, 0 sessions, 0 sponsors, 1 downloads
+RESULT: PASS — 15 pairs measured, all at or above floor
+CSS    21271 / 30720 bytes (69%)
+JS     5484 / 15360 bytes (36%)
+img    TOTAL 5186556 / 6291456 bytes (82%)
+RESULT: PASS — all asset budgets within limit
+exif   72 image(s) checked
+RESULT: PASS — no EXIF metadata in any shipped image
+# pass 22
+# fail 0
+```
+
+Banned-string sweep across every built page:
+
+```
+clean across 38 pages
+```
+
+Covering the document vocabulary (`Schedule A`, `Form B`, `No. KCTS/`,
+`Issued by`), `to be entered`, `premier`, `landmark`, `First Edition`,
+`[Confirm`, `[Insert`, `TBD`, `AI-powered`, `Class 1/2`, `unallocated`,
+`no bulletins yet`, `why this page is mostly empty`, and the six banned idioms.
+
+Translation, after the discovery bug below was fixed:
+
+```
+19 page(s) — full coverage on every one, e.g. about 73/73, home 95/95,
+news-kenya-china-tea-why-now 47/47
+```
+
+Locale gate:
+
+```
+ok  zh noindex          ok  en indexable        ok  zh body is Chinese
+ok  en has no Chinese but the switcher          ok  no zh in sitemap
+ok  zh news article is now Chinese (922 CJK)    ok  zh news article noindex
+```
+
+Live verification against `https://kenya-china-tea-summit.pages.dev`:
+
+```
+19 sitemap URLs        — 0 non-200
+117 internal links     — 0 non-200
+/venue/  1280px of=0   768px of=0 (block)   360px of=0 (block)
+```
+
+### Defects found and fixed this iteration
+
+1. **`scripts/translate.js` read only the top level of `public/`.** So
+   `public/news/<post>/index.html` was never discovered, and the Chinese
+   edition of the site's only editorial article shipped as English prose inside
+   a Chinese shell. Nothing complained, because the page carries a noindex.
+   `listPages()` is now recursive, and the JSON slug is the full route rather
+   than the first path segment — the old derivation would have made a nested
+   post overwrite the `/news/` listing page's file.
+2. **`scripts/export-copy.js` had the same one-level blind spot**, so the
+   document that promises "every word of visible text on the website" was
+   missing the article's ~600 words. News posts are now discovered, not listed.
+3. **Two stale literals in the client export.** The footer small print emitted
+   `Issued by Kenya-China Tea Summit Secretariat…` — wording ADR-015 removed
+   from the site — and the reviewer guidance explained where they would see
+   `to be entered`, which rule 10 now fails the build over. Both are read from
+   the markup now.
+4. **`sizes` on the plate macro was wrong twice, in opposite directions.**
+   First on the homepage, where plates sit in a half-width `.figure-pair` and a
+   183px cell declared 422px, fetching the 1200px file at DPR 2. Then again
+   after the rail landed, which cut the inner-page content column so 2-up cells
+   are 400px, not 592px. Each layout change silently invalidates the `sizes` of
+   every plate it reflows, and no gate catches it.
+5. **Two client photographs failed FACTS §2 as shot**, despite the manifest's
+   own comment asserting they were clean: one showed a control panel, a lit
+   readout and a factory wall; the other a green-wrapped canister reading as
+   packaging. Both are cropped in the manifest. A third carried alt text
+   describing a photograph taken from directly above; it is shot horizontally.
+6. **`assert-no-exif.js` fired on its first run** — on four pre-existing source
+   assets, not the new plates. Small orientation blocks, no GPS. Fixed by
+   re-encoding the assets, not by loosening the gate.
+7. **The rail plan's own page split was wrong.** Programme has no spec block
+   and Media has two; every spec was introduced by an `<h2>` the plan left
+   behind, orphaned.
+
+### Known limitations, stated not hidden
+
+- **`alt` text on `/zh/` pages is English.** The translator extracts element
+  inner HTML, not attributes, so 37 plate and rail images carry English alt in
+  the Chinese edition. It is an accessibility gap for Chinese screen-reader
+  users. The zh edition is machine translation under noindex and unreviewed, so
+  this is queued behind the human translation review, not ahead of it.
+- **27 English blocks remain across the zh pages.** All are proper nouns the
+  translator correctly declined to translate: the event name, the organiser's
+  legal entity, `Cloudflare Turnstile`, and the footer identification line.
+- **Nobody has looked at the rendered site.** Every layout claim in this
+  iteration is measured from live DOM geometry — column counts, cell widths,
+  selected srcset candidate, `scrollWidth - clientWidth`. The preview pane's
+  screenshot capture returned blank or stale frames throughout and eventually
+  hung. Measurement is stricter than a screenshot for the things it covers, but
+  it cannot see that something looks wrong.
+- Lighthouse, axe and html-validate still not run. No score claimed.

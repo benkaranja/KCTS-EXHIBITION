@@ -40,11 +40,21 @@ if (IS_MAIN) mkdirSync(OUT, { recursive: true });
 
 // Deliberately not fs.globSync: that landed in Node 22 and package.json
 // declares engines >=20. readdirSync is available everywhere.
-const listPages = () =>
-  readdirSync("public", { withFileTypes: true })
-    .filter((e) => e.isDirectory() && e.name !== "zh" && existsSync(`public/${e.name}/index.html`))
-    .map((e) => `public/${e.name}/index.html`)
-    .concat("public/index.html");
+//
+// Recursive. The previous version read only the top level of public/, so
+// `public/news/<post>/index.html` was never seen and the Chinese edition of
+// every news article shipped as English prose inside a Chinese shell — with a
+// noindex, so nothing downstream complained. Any nested route added later
+// would have failed the same silent way.
+const ASSET_DIRS = new Set(["zh", "css", "js", "img", "video", "files", "fonts"]);
+const listPages = (dir = "public", depth = 0) =>
+  readdirSync(dir, { withFileTypes: true }).flatMap((e) => {
+    if (e.isDirectory()) {
+      if (depth === 0 && ASSET_DIRS.has(e.name)) return [];
+      return listPages(`${dir}/${e.name}`, depth + 1);
+    }
+    return e.name === "index.html" ? [`${dir}/index.html`] : [];
+  });
 
 // Blocks whose inner HTML is a translatable unit. Inline markup inside them
 // (links, <strong>, <time>) is kept, because dropping it would cost the
@@ -106,7 +116,14 @@ const SYSTEM =
 
 let wrote = 0;
 for (const file of IS_MAIN ? listPages() : []) {
-  const slug = file === "public/index.html" ? "home" : file.split("/")[1];
+  // Full route, not the first segment: `file.split("/")[1]` gave "news" for
+  // both /news/ and /news/<post>/, so a nested post would overwrite the
+  // listing page's file. The i18n transform merges every JSON into one map
+  // keyed by source fragment, so the filename only has to be unique.
+  const slug =
+    file === "public/index.html"
+      ? "home"
+      : file.slice("public/".length).replace(/\/index\.html$/, "").replace(/\//g, "-");
   const target = `${OUT}/${slug}.json`;
   if (existsSync(target) && !FORCE) {
     console.log(`${slug.padEnd(18)} skipped (already translated)`);

@@ -6,7 +6,7 @@
 //
 // Run: npm run build && node scripts/export-copy.js
 
-import { readFileSync, writeFileSync, existsSync } from "node:fs";
+import { readFileSync, writeFileSync, existsSync, readdirSync } from "node:fs";
 import { execSync } from "node:child_process";
 
 // `--locale zh` exports the Chinese edition instead, for the same client
@@ -47,6 +47,7 @@ const ORDER = [
   ["/code-of-conduct/", "Code of Conduct"],
 ];
 
+
 const decode = (s) =>
   s
     .replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">")
@@ -55,6 +56,22 @@ const decode = (s) =>
     .replace(/&hellip;/g, "…").replace(/&mdash;/g, "—").replace(/&ndash;/g, "–");
 
 const strip = (s) => decode(s.replace(/<[^>]+>/g, "")).replace(/\s+/g, " ").trim();
+
+// News posts are pages, and this document claims to hold every word of visible
+// text on the site. They are discovered, not listed: translate.js had the same
+// one-level blind spot and shipped the Chinese edition of this article as
+// English prose. A second post must not have to be remembered here.
+const NEWS_DIR = `public${PREFIX}/news`;
+const newsPosts = existsSync(NEWS_DIR)
+  ? readdirSync(NEWS_DIR, { withFileTypes: true })
+      .filter((e) => e.isDirectory() && existsSync(`${NEWS_DIR}/${e.name}/index.html`))
+      .map((e) => {
+        const html = readFileSync(`${NEWS_DIR}/${e.name}/index.html`, "utf8");
+        const h1 = (html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/) || [])[1];
+        return [`/news/${e.name}/`, `News — ${h1 ? strip(h1) : e.name}`];
+      })
+  : [];
+ORDER.splice(ORDER.findIndex(([u]) => u === "/news/") + 1, 0, ...newsPosts);
 
 /** Walk the <main> of a page and emit Markdown in document order. */
 function pageToMarkdown(html) {
@@ -333,6 +350,15 @@ if (LOCALE === "en") {
       "",
     ]),
   ].join("\n");
+
+  // News posts are discovered, so they cannot be listed above by hand. They
+  // share one note: each carries its own sourcing, which is the thing the
+  // client is being asked to check.
+  for (const [url] of newsPosts) {
+    AUDIT_NOTES[url] ??= [
+      "Every figure carries a named publication and a date at the point of use, and each source was opened and confirmed before publication (FACTS §3).",
+    ];
+  }
 
   // A page missing from AUDIT_NOTES is a page nobody decided about. Undefined is
   // not the same as an intentional empty list, so only the former fails.

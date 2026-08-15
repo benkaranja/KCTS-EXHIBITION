@@ -65,66 +65,43 @@ npm run video      # re-encode the hero video from the master
 
 ## State of play
 
+**Iteration 7 is deployed** (2026-08-15, staging origin). Two approved plans ran
+end to end: the V2 copy run and the photography/layout/language plan. Both are
+complete. `AUDIT.md` iteration 7 carries the captured output.
+
 **Done and verified:**
 - Intake, config, PRD, ADRs, FACTS.
-- **18 pages, rendered in two locales — 36 HTML files.** English at the root, Chinese under `/zh/`.
-- Content validator: nine rules, each proven to fail against a broken fixture before being trusted. Rules 8 and 9 have real tests (`npm test`, 17 assertions).
+- **19 pages, rendered in two locales — 38 HTML files.** English at the root, Chinese under `/zh/`. The 19th is the first news article, which has its own directory data file so its locale routing cannot regress.
+- **Copy is the V2 rewrite**, applied across every page. Two audits merged into one run: the client's own and `docs/kenya_china_tea_summit_website_language_audit.md`.
+- Content validator: ten rules. Rule 10 closes over 12 patterns — 4 placeholder markers plus the retired vocabulary — each proven to fail against a fixture. `npm test`, 22 assertions.
+- **Photography is the client's own.** 22 photographs of Kenyan tea estates and leaf, AVIF at 600 and 1200, WebP at 600. No frame contains a person, premises, packaging or branding (FACTS §2). `assert-no-exif.js` gates the build: the sources are drone captures carrying GPS coordinates of a private estate.
+- **Every inner page has a right-hand rail.** Ten carry the page's own facts, nine a plate and a next step. Roughly a third of each page was empty before.
 - JSON-LD `ConferenceEvent` parses (this was broken by Nunjucks auto-escaping and is fixed — if you add a `| dump`, it needs `| safe` after it).
-- **Design:** security-print world via `impeccable` (ADR-011), photographic plate grids (ADR-012), video hero with countdown (ADR-013).
 - **Contrast is measured, not asserted:** 15 pairs including three hero zones composited over the real poster pixels. The build fails below 4.5:1.
-- **Asset budgets are gated recursively:** 35 lines, CSS/JS/img/video/files. A missing `public/css` or `public/js` is a hard failure; missing `img`/`video`/`files` is tolerated.
+- **Asset budgets are gated recursively:** CSS/JS/img/video/files, plus a 6MB aggregate cap on `public/img`. CSS 69%, JS 36%, images 82%.
 - **S1 security headers live and verified**: 7/7 present, CSP with no `unsafe-inline`, 0 console errors under it.
-- `robots.txt` and `sitemap.xml` generated from the current origin, so neither can go stale. The sitemap carries the 18 English URLs only.
-- Downloads page live, backed by a validated collection — rule 8 fails the build if a download points at a missing file or states the wrong byte count.
-- Copy exports for client review in both locales: `website_content/COPY-FOR-REVIEW.md` (~6,500 words) and `COPY-FOR-REVIEW-zh.md`.
+- `robots.txt` and `sitemap.xml` generated from the current origin. The sitemap carries the 19 English URLs only; all 19 verified 200 live, as were all 117 internal links and assets.
+- Three copy exports, all generated from the built site: `COPY-FOR-REVIEW.md` (~7,100 words), `COPY-FOR-REVIEW-zh.md`, and `COPY-FOR-CLIENT-REVIEW.md` — the annotated one, which puts each audit finding above the copy that answers it.
 
-**Next up — the V2 copy run. This is the live piece of work.**
+**Next up.** No plan is mid-flight. The open work, in order:
 
-The client had the shipped copy independently audited
-(`website_content/KCTS_Copy_Audit.md`) and commissioned a rewrite
-(`website_content/KCTS_Website_Copy_V2.md`). Both are in the repo. A design spec
-and a 12-task implementation plan are written, reviewed and approved:
-
-- `docs/superpowers/specs/2026-08-03-copy-v2-design.md`
-- `docs/superpowers/plans/2026-08-03-copy-v2.md` — **not started, zero tasks executed**
-
-**What the audit changes, and why it matters before you touch anything:**
-
-1. **The security-print document vocabulary is being removed.** "Schedule A",
-   "Form B", "No. KCTS/2027/S", "Particulars", "Issued by", the unstamped
-   dashed fields and the MMXXVII seal all go. The audit found they made the
-   summit read as a notice of procurement and implied a regulatory standing the
-   organiser does not hold. **The visual world stays** — intaglio grounds,
-   guilloche, palette, the three faces, plate grids, video hero. ADR-015 (to be
-   written in Task 3) records this as an amendment to ADR-011.
-2. **FACTS.md §1 is being amended.** "Premier … forum connecting Africa and
-   China" and "landmark" come out; "first edition" moves to §2, do-not-imply.
-   This is the first time FACTS has been overridden — the audit supersedes the
-   earlier reading of the client's own document.
-3. **A build gate is being added** (validator rule 10) so no `[Confirm …]` /
-   `[Insert …]` marker from V2, and no revival of "to be entered", can ship.
-
-**Do not start executing the plan without reading the spec first.** The plan
-deliberately orders strip → gate → copy, because rule 10 gates a string that
-still exists on 8 pages until the strip lands.
-
-**After the V2 run:** the membership portal (spec written,
-`docs/superpowers/specs/`), which is blocked on client data — see below. Then
-the form backend once credentials land (B1–B7).
-
-**Note on this session's state:** the last completed work is iteration 6
-(`7218178` on `main`, deployed). Everything since is documentation only —
-three commits, `951ec01`..`f8a12e9`. The live site has not changed.
+1. **Look at the site.** Nobody has. Every layout claim in iteration 7 is measured from live DOM geometry, because the preview pane's screenshot capture returned blank frames throughout and eventually hung. Measurement is stricter than a screenshot for what it covers, but it cannot see that something *looks* wrong.
+2. **DNS cutover** (B-003) — a hard autonomy stop, see below. `domainAcquired` is still `false`, so canonical, OG, sitemap and robots all point at the pages.dev origin. Flipping that one boolean is the whole change.
+3. **Form backend** once credentials land (B1–B7, blocked on B-002).
+4. **The membership portal** — spec written in `docs/superpowers/specs/`, blocked on client data.
 
 **Known deferred, not forgotten:**
 - **The Chinese edition is machine translation and ships `noindex`, out of the sitemap, behind a notice saying so** (ADR-014). It needs a human reviewer on `COPY-FOR-REVIEW-zh.md`; setting `translationStatus: reviewed` on a page releases it. Do not remove the gate to improve the numbers.
-- **The hero video is a placeholder.** `src/assets/video/hero.{mp4,webm}` is an aerial plantation clip standing in until the client supplies real footage. Re-encode with `npm run video`; the 85MB master is gitignored and is not in `src/`.
-- **The fact sheet PDF is plain Helvetica**, generated from `summit.js` by `npm run factsheet` so it cannot drift from the site. It is a stopgap for a designed brochure, not the brochure.
+- **`alt` text on `/zh/` pages is English.** The translator extracts element inner HTML, not attributes, so 37 plate and rail images carry English alt in the Chinese edition. An accessibility gap for Chinese screen-reader users, queued behind the human translation review.
+- **27 English blocks remain across the zh pages**, all proper nouns the translator correctly declined to translate: the event name, the organiser's legal entity, `Cloudflare Turnstile`, the footer identification line.
+- **The hero video is a placeholder.** `src/assets/video/hero.{mp4,webm}` is an aerial plantation clip standing in until the client supplies real footage. Re-encode with `npm run video`; the 85MB master is gitignored and is not in `src/`. The client's photography folder contains no video.
+- **The fact sheet PDF is plain Helvetica**, generated from `summit.js` by `npm run factsheet` so it cannot drift from the site. A stopgap for a designed brochure, not the brochure.
+- **"First edition" and the founding-partner positioning are held back** (B-006). FACTS.md does not confirm that 2027 is the first summit. The commercial substance shipped without the framing; it is a one-paragraph change the day the client confirms in writing.
 - The portal is entirely deferred (sub-project C) — it needs registration categories, fee structure and exhibitor terms the client has not supplied.
 - No cron retry for failed emails. Pages Functions have no cron triggers; D1 durability covers the loss case instead (ADR-005).
 - An 85MB video blob is permanently in git history (B-004). Purging it needs a force-push, which is a hard autonomy stop.
-- **The legal pages have not been reviewed by a lawyer** (B-005, logged in the V2 plan's Task 3). They are live and readable. No visible "editorial draft" banner ships — a disclaimer is not a substitute for the review.
-- `docs/kenya_china_tea_summit_website_language_audit.md` is untracked and predates the client's own audit. It is superseded by `website_content/KCTS_Copy_Audit.md`; delete or commit it, but do not treat it as current.
+- **The legal pages have not been reviewed by a lawyer** (B-005). They are live and readable. No visible "editorial draft" banner ships — a disclaimer is not a substitute for the review.
+- `docs/kenya_china_tea_summit_website_language_audit.md` is untracked. Its findings are now applied, so it is spent; delete or commit it, but do not treat it as pending work.
 
 ## Things that will bite you
 
@@ -134,9 +111,10 @@ three commits, `951ec01`..`f8a12e9`. The live site has not changed.
 - **Nunjucks `selectattr` cannot walk a dotted path** — it looks the attribute up as `obj[attr]`. `selectattr("data.category", ...)` builds fine and matches nothing. Use the `byCategory` filter.
 - **A build that exits 0 proves nothing about a listing page.** Two silent failures shipped this way before assertions on the built HTML caught them.
 - **An unquoted `": "` in front matter aborts Eleventy mid-run** and the build still prints success. Validator rule 7 exists for exactly this.
-- **`src/news/` has no locale routing.** It sits outside `src/pages/`, so it never inherits `pages.11tydata.js`. The collection is empty today, which is the only reason this has not bitten — the first post would render with `basePath` undefined and emit `hreflang` links pointing at `/undefined`. Fixed in the V2 plan, Task 11 Step 1.
+- **`src/news/` needs its own directory data file.** It sits outside `src/pages/`, so it never inherits `pages.11tydata.js`; without `src/news/news.11tydata.js` a post renders with `basePath` undefined and emits `hreflang` links pointing at `/undefined`. That file exists now. Any new content directory outside `src/pages/` needs the same treatment.
 - **The zh translations are keyed by English source fragment.** Reword an English block and its Chinese counterpart silently falls back to English on `/zh/`, page by page. Any copy change must be followed by `npm run translate -- --force`.
-- **`docs/PAGE-MAP.md` claims the FAQ carries `FAQPage` JSON-LD. It does not** — it was never built. The V2 plan adds it.
+- **One-level directory walks are this repo's recurring silent failure.** `scripts/translate.js` and `scripts/export-copy.js` both read only the top level of `public/`, so `public/news/<post>/` was invisible to both: the Chinese edition of the article shipped as English prose under a noindex, and the "every word of visible text" export was missing it. Both walk recursively now. Any new script that enumerates pages must too.
+- **A layout change silently invalidates the `sizes` of every plate it reflows.** The macro's `sizes` is a promise about rendered width, and nothing in the build checks it against reality. It has been wrong twice: on the homepage, where plates sit in a half-width `.figure-pair`, and again after the rail cut the inner-page content column from 1184px to 816px. Symptom is a 1200px file fetched for a 400px cell. Measure the cell in the browser after any change to a container that holds a plate.
 
 ## Before touching DNS
 

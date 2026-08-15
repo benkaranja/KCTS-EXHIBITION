@@ -1,6 +1,6 @@
 # Website copy for review — Kenya-China Tea Summit 2027
 
-**Generated:** 2026-08-13 · **Build:** `95c4687` · **Live:** https://kenya-china-tea-summit.pages.dev
+**Generated:** 2026-08-14 · **Build:** `eb119d6` · **Live:** https://kenya-china-tea-summit.pages.dev
 
 This document contains **every word of visible text on the website**, extracted
 from the built pages, in the order a visitor reads them. It is generated
@@ -43,94 +43,94 @@ site not reference them at all, that is a one-line change.
 # Home
 
 **URL:** `/`  
-**Browser tab / search-result title:** 2027年肯尼亚-中国茶业峰会——连接茶叶、文化与商机  
+**Browser tab / search-result title:** 2027年肯尼亚-中国茶叶峰会——连接茶叶、文化与商机  
 **Search-result description:** Join tea producers, exporters, buyers, investors, policymakers and technology partners in Nairobi from 21 to 23 April 2027. Register your interest in the Kenya-China Tea Summit.
 
-## Where Kenya's tea industry meets China's market, capital and technology
+## 肯尼亚茶叶产业与中国市场、资本和技术的交汇之地
 
-酝酿战略伙伴关系,促进可持续茶叶贸易、投资与创新
+为可持续茶叶贸易、投资与创新建立战略合作伙伴关系
 
-- **地点:** Nairobi, Kenya
+- **地点:** 肯尼亚内罗毕
 - **日期:** 2027年4月21日至23日
-- **距开幕还有:** 251
-- **场馆:** To be announced
-- **主办方:** Orbitline Events & Ushers Ltd
-The Kenya-China Tea Summit brings producers, exporters, buyers, investors, policymakers, researchers and technology partners together in Nairobi for three days of focused trade conversations, business meetings and industry exchange.
+- **距开幕还有:** 250
+- **场馆:** 待公布
+- **主办单位:** Orbitline Events & Ushers Ltd
+Kenya-China Tea Summit汇聚生产商、出口商、采购商、投资者、政策制定者、研究人员和技术合作伙伴,在Nairobi举行为期三天的专业贸易洽谈、商务会晤和行业交流。
 
-### 登记您的意向
+### 登记您的兴趣
 
-Six categories, from delegate to exhibitor. Registration is open as an expression of interest — fees, deadlines and inclusions are set by the summit team and published here once confirmed.
+六种类别,从参会代表到参展商。登记为意向登记——费用、截止日期和包含内容由峰会团队确定,并在确认后于此公布。
 
-希望参展或合作?
+改为参展或合作?
 
-### A focused platform for a growing trade relationship
+### 一个专注于不断发展的贸易关系的平台
 
-Kenya and China bring different strengths to the tea industry. Kenya has deep experience in growing, processing and exporting tea. China is a major tea market and a centre for tea production, technology, product development and tea culture.
+Kenya和China在茶叶行业拥有不同的优势。Kenya在茶叶种植、加工和出口方面拥有深厚的经验。China是一个主要的茶叶市场,也是茶叶生产、技术、产品开发和茶文化的中心。
 
-The summit creates a practical meeting point for the people shaping this relationship. The focus is direct: build stronger commercial links, support value addition, improve market access and identify investment and technology partnerships that can move from conversation to action.
+峰会为塑造这一关系的人士创造了一个务实的交流平台。重点非常明确:建立更强大的商业联系,支持价值增值,改善市场准入,并确定能够从对话转化为行动的投资和技术合作伙伴关系。
 
-About the summit
+关于峰会
 
-第I部分肯尼亚的种植高地
+图版 IKenya的高地种植区
 
-### What the summit is designed to achieve
+### 峰会旨在实现的目标
 
-_Three days in Nairobi_
+_在内罗毕的三天_
 - Day
 - Proceedings
 - 1 · 21 April 2027
 - 2 · 22 April 2027
 - 3 · 23 April 2027
-View the programme
+查看议程
 
 ### 国际茶叶与技术博览会
 
-The expo brings tea products and industry solutions into one commercial space. Exhibitors can present finished and bulk teas, processing equipment, agricultural technologies, packaging, traceability tools and logistics services to a specialist audience.
+本博览会将茶叶产品和行业解决方案汇聚于同一商业空间。参展商可向专业观众展示成品茶和散装茶、加工设备、农业技术、包装、可追溯工具和物流服务。
 
-Explore exhibition opportunities
+探索参展机会
 
-Plate IIFrom leaf to grade
+图版II从茶叶到等级
 
-### Who should attend
+### 参会对象
 
-- Tea growers, factories, producer organisations and exporters
-- Importers, distributors, tea houses, retailers and consumer brands
-- Investors, banks, insurers and development finance institutions
-- Machinery, packaging and agricultural technology companies
-- Logistics, warehousing, customs and trade-service providers
-- Government ministries, regulators and trade-promotion agencies
-- Universities, researchers, trainers and standards specialists
-- Hotels, restaurants, tourism operators and tea-culture organisations
-- Business and industry media
+- 茶叶种植者、加工厂、生产者组织和出口商
+- 进口商、经销商、茶庄、零售商和消费品牌
+- 投资者、银行、保险公司和开发性金融机构
+- 机械、包装和农业技术企业
+- 物流、仓储、海关和贸易服务提供商
+- 政府部门、监管机构和贸易促进机构
+- 高等院校、研究人员、培训机构和标准专家
+- 酒店、餐厅、旅游运营商和茶文化组织
+- 商业和行业媒体
 
-### B2B配对洽谈
+### B2B商务配对
 
-Good events create introductions. Useful events make those introductions relevant.
+好的活动创造介绍机会。有用的活动让这些介绍更具针对性。
 
-The summit's planned matchmaking programme will help delegates and exhibitors identify potential buyers, suppliers, investors and technology partners before and during the event. Participants will provide a business profile, indicate what they are looking for and receive relevant meeting recommendations.
+峰会计划的配对项目将帮助代表和参展商在活动前及活动期间识别潜在买家、供应商、投资者和技术合作伙伴。参与者将提供商业简介,说明其寻求的内容,并获得相关会议建议。
 
-How matchmaking will work
+配对如何运作
 
 ### 与峰会合作
 
-Partnership is available at Title, Platinum, Gold, Silver and Supporting Partner levels. Packages will be built around approved benefits such as brand visibility, delegate engagement, exhibition presence and business introductions.
+合作伙伴级别包括冠名合作伙伴、白金合作伙伴、黄金合作伙伴、白银合作伙伴和支持合作伙伴。合作套餐将围绕经批准的权益构建,如品牌曝光、代表互动、展览展示和商务对接。
 
-- Title Partner
-- Platinum Partner
-- Gold Partner
-- Silver Partner
-- Supporting Partner
-Tell us what your organisation wants to achieve, and the summit team will recommend the most suitable route.
+- 冠名合作伙伴
+- 白金合作伙伴
+- 黄金合作伙伴
+- 白银合作伙伴
+- 支持合作伙伴
+请告知我们您的机构希望实现的目标,峰会团队将推荐最合适的途径。
 
-Discuss partnership
+洽谈合作
 
-### Plan your visit to Nairobi
+### 规划您的Nairobi之行
 
-The summit is being planned as more than a three-day conference. The summit team intends to coordinate travel and accommodation support, tea-region visits and optional tourism experiences for international delegations.
+本次峰会的规划不仅仅是一个为期三天的会议。峰会团队计划为国际代表团协调差旅和住宿支持、茶叶产区参观以及可选的旅游体验。
 
-旅行与住宿
+交通与住宿
 
-Plate III前往Nairobi
+第III部分前往Nairobi
 
 ---
 
@@ -140,131 +140,131 @@ Plate III前往Nairobi
 **Browser tab / search-result title:** 关于峰会 | 肯尼亚-中国茶叶峰会  
 **Search-result description:** Learn why the Kenya-China Tea Summit is bringing tea producers, buyers, investors, policymakers and technology partners together in Nairobi, 21–23 April 2027.
 
-## A commercial meeting point for Kenya and China
+## 肯尼亚与中国的商业交汇点
 
-Tea connects Kenya and China in different but complementary ways.
+茶叶以不同但互补的方式连接着肯尼亚和中国。
 
 本页面为机器翻译，尚未经过人工审核。如有疑问，请以英文原版为准。
 
-Kenya has generations of knowledge in tea cultivation, processing and international trade. China is a major tea market and a centre for tea production, technology, product development and tea culture.
+肯尼亚在茶叶种植、加工和国际贸易方面拥有世代相传的知识。中国是主要的茶叶市场,也是茶叶生产、技术、产品开发和茶文化的中心。
 
-The Kenya-China Tea Summit has been created to bring these strengths into the same room. It is a platform for people who want to trade, invest, share expertise and build long-term relationships across the tea value chain.
+肯尼亚-中国茶叶峰会旨在将这些优势汇聚一堂。它是一个为希望进行贸易、投资、分享专业知识并在茶产业价值链上建立长期关系的人士搭建的平台。
 
-The summit takes place in Nairobi from 21–23 April 2027.
+峰会将于2027年4月21日至23日在内罗毕举行。
 
-Plate IVThe country the summit is convened in
+图版IV峰会召开所在国
 
-### Why now
+### 为何是现在
 
-The commercial opportunity is changing.
+商业机会正在发生变化。
 
-China extended zero-tariff treatment to imports from all African countries with diplomatic relations with Beijing on 1 May 2026 (Xinhua, 1 May 2026).
+中国自2026年5月1日起对与北京建交的所有非洲国家的进口商品实施零关税待遇(新华社,2026年5月1日)。
 
-Tariffs are only one part of market access. Exporters still need to understand buyer preferences, product standards, food-safety requirements, packaging, documentation, logistics and distribution. Buyers need reliable suppliers who can deliver the right product, quality, volume and traceability.
+关税只是市场准入的一部分。出口商仍需了解买家偏好、产品标准、食品安全要求、包装、文件、物流和分销。买家需要能够提供正确产品、质量、数量和可追溯性的可靠供应商。
 
-The summit is designed to make those conversations easier and more direct.
+本次峰会旨在使这些对话更加便捷和直接。
 
-### What the summit aims to do
+### 峰会目标
 
-### An African-led summit with a defined market focus
+### 一场以非洲为主导、具有明确市场定位的峰会
 
-The summit is hosted in Kenya and centred on the Kenya-China tea relationship. Its relevance extends beyond one bilateral market. Many of the questions it addresses, including value addition, technology transfer, export diversification and direct buyer relationships, matter across Africa's tea-producing regions.
+本峰会在肯尼亚举办,以肯尼亚与中国的茶叶贸易关系为核心。其相关性超越单一双边市场。峰会所探讨的诸多问题,包括价值增值、技术转让、出口多元化和直接买家关系,对整个非洲茶叶产区都具有重要意义。
 
-The programme will welcome African institutions and businesses whose work can contribute to a stronger and more competitive tea industry, while keeping the summit's commercial focus clear.
+本项目将欢迎其工作能够为建设更强大、更具竞争力的茶叶产业做出贡献的非洲机构和企业参与,同时保持峰会明确的商业重点。
 
-### Who the summit is for
+### 峰会面向对象
 
-The programme is intended for:
+本项目面向以下群体:
 
-- Tea growers, factories, producer organisations and exporters
-- Importers, distributors, tea houses, retailers and consumer brands
-- Investors, banks, insurers and development finance institutions
-- Machinery, packaging and agricultural technology companies
-- Logistics, warehousing, customs and trade-service providers
-- Government ministries, regulators and trade-promotion agencies
-- Universities, researchers, trainers and standards specialists
-- Hotels, restaurants, tourism operators and tea-culture organisations
-- Business and industry media
+- 茶叶种植者、工厂、生产者组织和出口商
+- 进口商、经销商、茶馆、零售商和消费品牌
+- 投资者、银行、保险公司和开发性金融机构
+- 机械、包装和农业技术公司
+- 物流、仓储、海关和贸易服务提供商
+- 政府部门、监管机构和贸易促进机构
+- 大学、研究人员、培训机构和标准专家
+- 酒店、餐厅、旅游运营商和茶文化组织
+- 商业和行业媒体
 
 ### 主办方
 
-- **Summit:** Kenya-China Tea Summit 2027
-- **Organising body:** Kenya-China Tea Summit秘书处
-- **主办方:** Orbitline Events & Ushers Ltd
-- **地点:** Nairobi, Kenya
+- **峰会:** Kenya-China Tea Summit 2027
+- **组织机构:** Kenya-China Tea Summit秘书处
+- **主办单位:** Orbitline Events & Ushers Ltd
+- **地点:** 肯尼亚内罗毕
 
-### 登记您的意向
+### 登记您的兴趣
 
-Registration is currently an expression of interest. It is free to submit and does not create a booking or payment obligation.
+登记目前仅为意向表达。提交免费且不产生预订或付款义务。
 
-登记意向
+登记兴趣
 
 ---
 
 # Programme
 
 **URL:** `/programme/`  
-**Browser tab / search-result title:** 议程 | 肯尼亚-中国茶叶峰会  
+**Browser tab / search-result title:** 日程安排 | 肯尼亚-中国茶业峰会  
 **Search-result description:** The Kenya-China Tea Summit 2027 programme across three days in Nairobi, 21–23 April 2027 — trade forum, investment forum, innovation conference, B2B meetings and the tea expo.
 
-## Three days focused on business
+## 三天专注于商务
 
-The summit programme moves from market opportunity to investment and technology, then into exhibition, culture and next steps.
+峰会日程从市场机遇到投资与技术,再到展览、文化和后续步骤。
 
 本页面为机器翻译，尚未经过人工审核。如有疑问，请以英文原版为准。
 
-The detailed agenda, session times and speakers will be announced in phases.
+详细议程、会议时间和演讲嘉宾将分阶段公布。
 
 - Day
 - Proceedings
 - 1 · 21 April 2027
 - 2 · 22 April 2027
 - 3 · 23 April 2027
-Plate VIIThree days, one subject
+第VII章三天,一个主题
 
-### Day one: Opening ceremony and Trade Forum
+### 第一天:开幕式及贸易论坛
 
-Day one sets the commercial context for the summit and examines what it takes to grow tea trade between Kenya and China.
+第一天将为峰会设定商业背景,并探讨促进肯尼亚与中国之间茶叶贸易增长的关键要素。
 
-Proposed areas of discussion include:
+拟讨论的议题包括:
 
-- The current Kenya-China tea market
-- Chinese consumer and buyer preferences
-- Product positioning for black, green, orthodox, specialty and purple tea
-- Quality, food-safety, traceability and certification requirements
-- Export documentation, logistics and routes to market
-- Direct sales, distribution and commercial partnerships
-- The role of government and trade-promotion institutions
+- 肯尼亚-中国茶叶市场现状
+- 中国消费者及买家偏好
+- 红茶、绿茶、传统工艺茶、特种茶和紫茶的产品定位
+- 质量、食品安全、可追溯性和认证要求
+- 出口文件、物流和市场路径
+- 直接销售、分销和商业合作伙伴关系
+- 政府和贸易促进机构的作用
 
-### Programme status
+### 项目状态
 
-The following details will be announced as they are confirmed:
+以下详细信息将在确认后公布:
 
-- Session titles and formats
-- Speakers and moderators
-- Start and finish times
-- 会议室及舞台
-- Interpretation arrangements
-- Expo operating days and opening hours
-- B2B eligibility, scheduling and whether it is included in registration
+- 会议主题和形式
+- 演讲者和主持人
+- 开始和结束时间
+- 会议室和舞台
+- 口译安排
+- 展会运营日期和开放时间
+- B2B资格、日程安排以及是否包含在注册中
 
-### Interested in speaking?
+### 有兴趣发言?
 
-We welcome proposals from industry leaders, buyers, investors, policymakers, researchers and technology specialists with practical experience to share.
+我们欢迎来自行业领袖、买家、投资者、政策制定者、研究人员和技术专家的提案,他们拥有可分享的实践经验。
 
-Propose a session
+提交会议提案
 
-Programme announcements
+议程公告
 
-The agenda is released in phases. Register your interest to receive each one as it is confirmed.
+议程将分阶段发布。注册您的兴趣,以便在每个议程确认后收到通知。
 
-Register interest
+注册兴趣
 
-### 登记您的意向
+### 登记您的兴趣
 
-Register your interest to receive programme announcements and formal registration information.
+注册您的兴趣,以接收议程公告和正式注册信息。
 
-登记意向
+登记兴趣
 
 ---
 
@@ -274,116 +274,116 @@ Register your interest to receive programme announcements and formal registratio
 **Browser tab / search-result title:** 展览 | 肯尼亚-中国茶叶峰会  
 **Search-result description:** Showcase tea products, processing equipment, agricultural technology, packaging and logistics solutions at the International Tea & Technology Expo in Nairobi.
 
-## Put your products and solutions in front of a specialist audience
+## 向专业观众展示您的产品和解决方案
 
-The International Tea & Technology Expo is the commercial exhibition within the Kenya-China Tea Summit.
+国际茶叶与技术博览会是肯尼亚-中国茶叶峰会的商业展览。
 
 本页面为机器翻译，尚未经过人工审核。如有疑问，请以英文原版为准。
 
-It is designed for companies that want to meet tea producers, processors, exporters, buyers, investors and policymakers with a clear interest in the Kenya-China market.
+本展览专为希望会见茶叶生产商、加工商、出口商、采购商、投资者和对肯尼亚-中国市场有明确兴趣的政策制定者的企业而设计。
 
-Plate VWhat the expo is about
+第V板块展览内容
 
-### 可展出内容
+### 可展示的产品
 
-### Why exhibit
+### 参展理由
 
-#### Meet a defined audience
+#### 接触精准受众
 
-The summit brings together people working directly in tea trade, investment, production and technology.
+本次峰会汇集直接从事茶叶贸易、投资、生产和技术的专业人士。
 
-#### Demonstrate what you offer
+#### 展示您的产品和服务
 
-Show products, equipment and systems in a setting where visitors can ask technical and commercial questions.
+在访客可以提出技术和商业问题的环境中展示产品、设备和系统。
 
-#### Build relevant relationships
+#### 建立相关业务关系
 
-Use the summit programme and planned B2B service to identify buyers, suppliers and partners with aligned interests.
+利用峰会议程和计划的B2B服务,识别具有一致利益的买家、供应商和合作伙伴。
 
-#### Enter the conversation early
+#### 及早参与对话
 
-The event gives exhibitors a place in discussions on value addition, market access, technology and the future of Kenya-China tea trade.
+本次活动为参展商提供了一个参与讨论增值、市场准入、技术以及肯尼亚-中国茶叶贸易未来的平台。
 
-### Exhibitor information
+### 参展商信息
 
-- **Expo operating days:** To be announced
-- **Stand sizes:** To be announced
-- **费率:** To be announced
-- **Package inclusions:** To be announced
-- **Build and fit-out guidelines:** To be announced
-- **Application deadline:** To be announced
-Registering interest
+- **展会运营日期:** 待公布
+- **展位规格:** 待公布
+- **价格:** 待公布
+- **套餐包含内容:** 待公布
+- **搭建和装修指南:** 待公布
+- **申请截止日期:** 待公布
+登记意向
 
-Registering interest does not reserve a stand. It ensures you receive the exhibitor prospectus and application details when they are released.
+登记意向并不预留展位。这确保您在展商招募说明书和申请详情发布时收到相关信息。
 
-Prefer to talk first? Contact the exhibition team.
+希望先沟通?联系展览团队。
 
-### Enquire about exhibiting
+### 咨询参展事宜
 
-Tell us what your organisation offers, the space you may require and the audience you want to meet.
+告诉我们您的机构提供什么、您可能需要的空间以及您想要接触的受众。
 
-Register exhibitor interest
+登记展商意向
 
 ---
 
 # B2B Matchmaking
 
 **URL:** `/b2b-matchmaking/`  
-**Browser tab / search-result title:** B2B配对洽商 | 肯尼亚-中国茶业峰会  
+**Browser tab / search-result title:** B2B配对洽谈 | Kenya-China Tea Summit  
 **Search-result description:** Connect with relevant tea buyers, suppliers, investors and technology partners through the Kenya-China Tea Summit's planned business matchmaking programme.
 
-## Make the right meetings part of the programme
+## 让正确的会面成为议程的一部分
 
-Trade events are most valuable when the people you need to meet are identified before the room becomes crowded.
+当您需要会见的人在会场拥挤之前就已确定时,贸易活动才最具价值。
 
 本页面为机器翻译，尚未经过人工审核。如有疑问，请以英文原版为准。
 
-The summit's planned B2B matchmaking programme will help delegates and exhibitors find relevant commercial counterparts, request meetings and manage a focused schedule.
+峰会计划的B2B配对洽谈项目将帮助代表和参展商找到相关的商业对口方,申请会面并管理有针对性的日程安排。
 
-### How it is expected to work
+### 预期运作方式
 
-#### Create a business profile
+#### 创建商业档案
 
-Participants provide information about their organisation, products, capabilities, markets and objectives.
+参会者提供其组织、产品、能力、市场和目标的相关信息。
 
-#### State what you are looking for
+#### 说明您的需求
 
-You may be seeking buyers, suppliers, investment, equipment, distribution, technology or research collaboration.
+您可能正在寻找买家、供应商、投资、设备、分销渠道、技术或研究合作。
 
-#### Receive relevant recommendations
+#### 接收相关推荐
 
-The system uses the information provided to suggest potential counterparts. Participants decide which meetings to request or accept.
+系统根据所提供的信息推荐潜在合作方。参会者自行决定请求或接受哪些会面。
 
-#### Meet during the summit
+#### 峰会期间会面
 
-Confirmed meetings are placed into the summit schedule, subject to availability and mutual acceptance.
+已确认的会面将根据可用性和双方接受情况安排到峰会日程中。
 
-### Who can use the service
+### 谁可以使用该服务
 
-- **Eligibility:** To be announced
-- **Cost:** To be announced
-- **Main meeting day:** Thursday, 22 April 2027
-- **Profile opening date:** To be announced
-- **Platform access:** To be announced
+- **资格要求:** 待公布
+- **费用:** 待公布
+- **主会议日:** 2027年4月22日,星期四
+- **档案开放日期:** 待公布
+- **平台访问:** 待公布
 
-### What makes a useful profile
+### 什么是有用的档案
 
-A strong profile is specific. It should explain:
+一个有效的档案应该具体明确。它应说明:
 
-- What your organisation produces, buys, finances or provides
-- The grades, volumes, markets or technologies relevant to you
-- What kind of organisation you want to meet
-- What a successful meeting would lead to
+- 贵机构生产、采购、融资或提供的产品或服务
+- 与您相关的等级、数量、市场或技术
+- 您希望会见的机构类型
+- 成功的会议将带来什么成果
 
-### Data and privacy
+### 数据与隐私
 
-Matchmaking may require information beyond the website registration form. The final platform, data controller, access rules and privacy terms will be published before profiles open.
+配对服务可能需要网站注册表以外的信息。最终平台、数据控制者、访问规则和隐私条款将在档案开放前公布。
 
-### 登记您的意向
+### 登记您的兴趣
 
-Choose the category that best describes your role and indicate that you are interested in B2B matchmaking.
+请选择最符合您职位的类别,并表明您有意参与B2B商务配对。
 
-Register your interest
+登记您的意向
 
 ---
 
@@ -393,121 +393,121 @@ Register your interest
 **Browser tab / search-result title:** 合作伙伴 | 肯尼亚-中国茶叶峰会  
 **Search-result description:** Explore Title, Platinum, Gold, Silver and Supporting Partner opportunities at the Kenya-China Tea Summit 2027 in Nairobi.
 
-## Put your organisation at the centre of the conversation
+## 让您的机构成为对话的核心
 
-Partnership opportunities for organisations that want to engage with decision-makers across tea, trade, investment, technology and policy.
+为希望与茶叶、贸易、投资、技术和政策领域决策者互动的机构提供合作机会。
 
 本页面为机器翻译，尚未经过人工审核。如有疑问，请以英文原版为准。
 
-The strongest partnerships begin with a clear objective. That may be brand visibility, access to a specialist audience, product demonstration, market entry, thought leadership or relationship building.
+最强大的合作伙伴关系始于明确的目标。这可能是品牌知名度、专业受众接触、产品演示、市场进入、思想领导力或关系建立。
 
-### Partnership levels
+### 合作伙伴级别
 
-- Title Partner
-- Platinum Partner
-- Gold Partner
-- Silver Partner
-- Supporting Partner
+- 冠名合作伙伴
+- 白金合作伙伴
+- 黄金合作伙伴
+- 白银合作伙伴
+- 支持合作伙伴
 
-### What partnership gives you
+### 合作伙伴身份为您带来的收益
 
-- Strategic relevance. Partnership connects your organisation to the Kenya-China tea trade at the level where trade, investment and policy decisions are made.
-- Audience access. Meet tea industry leaders, government officials, investors, exporters, importers, researchers and technology providers in one place.
-- Category leadership. Be identified with a specific part of the industry: production, processing, technology, finance or logistics.
-- Visibility. Appear across summit communications, on-site branding and event materials.
-- Influence. Contribute to the discussions that shape Kenya-China tea trade, investment and technology.
-- Relationship-building. Build direct relationships through the programme and the planned B2B matchmaking service.
+- 战略相关性。合作伙伴身份将您的机构与Kenya-China茶叶贸易在贸易、投资和政策决策层面建立联系。
+- 受众接触。在同一场合会见茶叶行业领袖、政府官员、投资者、出口商、进口商、研究人员和技术提供商。
+- 类别领导地位。与行业的特定部分建立关联:生产、加工、技术、金融或物流。
+- 可见度。在峰会传播、现场品牌展示和活动材料中呈现。
+- 影响力。为塑造Kenya-China茶叶贸易、投资和技术的讨论做出贡献。
+- 关系建立。通过会议议程和规划的B2B对接服务建立直接关系。
 
-### Who partnership may suit
+### 适合哪些合作伙伴
 
-- Tea producers, exporters, importers, distributors and brands
-- Processing and packaging equipment manufacturers
-- Agricultural technology and traceability companies
-- Banks, insurers, investors and development finance institutions
-- Freight, warehousing and logistics providers
-- Certification, standards, testing and professional-service firms
-- Trade-promotion agencies and industry associations
-- Hospitality, travel and tourism partners
-- Media and knowledge partners
+- 茶叶生产商、出口商、进口商、经销商和品牌商
+- 加工和包装设备制造商
+- 农业技术和可追溯性公司
+- 银行、保险公司、投资者和开发性金融机构
+- 货运、仓储和物流服务商
+- 认证、标准、检测和专业服务机构
+- 贸易促进机构和行业协会
+- 酒店、旅游和旅游业合作伙伴
+- 媒体和知识合作伙伴
 
-### Potential partnership benefits
+### 潜在合作伙伴权益
 
-Final benefits will vary by level and require organiser approval. They may include:
+最终权益将根据级别而有所不同,并需获得主办方批准。可能包括:
 
-- Brand visibility across summit communications
-- Exhibition presence
-- Delegate passes
-- Hosted networking opportunities
-- Approved speaking or content opportunities
-- Business introductions
-- Media and digital visibility
-- Hospitality and experience branding
+- 峰会传播中的品牌曝光
+- 展位展示
+- 代表通行证
+- 主办社交机会
+- 获批的演讲或内容机会
+- 商务介绍
+- 媒体和数字曝光
+- 款待和体验品牌推广
 
-### Start with the outcome
+### 从结果开始
 
-A useful partnership enquiry tells us:
+有效的合作咨询需告知我们:
 
-- Which partnership level you are considering
-- Who you want to reach
-- What result matters most to your organisation
-- Whether you are also interested in exhibiting
-- Any markets, products or programme themes relevant to you
-The summit team will use that information to prepare a more relevant proposal. You can also register sponsor interest directly.
+- 您正在考虑的合作级别
+- 您希望触及的对象
+- 对贵机构而言最重要的成果是什么
+- 您是否也有兴趣参展
+- 与您相关的任何市场、产品或议程主题
+峰会团队将利用这些信息准备更具针对性的方案。您也可以直接登记赞助意向。
 
-### 媒体和新闻
+### 媒体与新闻
 
-新闻认证和媒体资料包单独处理。请参见媒体和新闻。
+新闻采访认证和媒体资料包单独处理。请参阅媒体与新闻。
 
-Discuss a partnership
+讨论合作伙伴关系
 
-Tell the summit team what your organisation wants from the Kenya-China tea market.
+告诉峰会团队贵机构对肯尼亚-中国茶叶市场的期望。
 
-Contact the summit team
+联系峰会团队
 
-### Request the partnership prospectus
+### 索取合作伙伴关系招募书
 
-Rates and confirmed benefits will be issued through the official summit channels once approved.
+费率和确认的权益将在获得批准后通过峰会官方渠道发布。
 
-Discuss partnership
+讨论合作伙伴关系
 
 ---
 
 # Registration
 
 **URL:** `/registration/`  
-**Browser tab / search-result title:** 登记您的兴趣 | 肯尼亚-中国茶叶峰会  
+**Browser tab / search-result title:** 登记您的兴趣 | Kenya-China Tea Summit  
 **Search-result description:** Register your interest in the Kenya-China Tea Summit 2027, Nairobi, 21–23 April 2027. Six categories from delegate to exhibitor. Fees announced once confirmed.
 
-## 登记您的意向
+## 登记您的兴趣
 
-Six categories. No payment at this stage, and submitting the form does not reserve a place.
+六个类别。现阶段无需付款,提交表格不代表预留名额。
 
 本页面为机器翻译，尚未经过人工审核。如有疑问，请以英文原版为准。
 
-请先阅读本文
+请先阅读
 
-The formal ticketing process is not open yet. This form records your interest and allows the summit team to send you confirmed information as it becomes available. There is no payment at this stage, and submitting the form does not reserve a place.
+正式购票流程尚未开放。本表格记录您的兴趣,并允许峰会团队在确认信息可用时向您发送。现阶段无需付款,提交表格不代表预留名额。
 
-### Choose the category that best fits your role
+### 选择最符合您角色的类别
 
-### 已确定的内容和未确定的内容
+### 已确定事项与待定事项
 
 - **日期:** 2027年4月21日至23日
-- **城市:** Nairobi, Kenya
-- **场馆:** To be announced
-- **费用:** To be announced
-- **报名截止日期:** To be announced
-- **各类别包含内容:** To be announced
+- **城市:** 肯尼亚内罗毕
+- **场馆:** 待公布
+- **费用:** 待公布
+- **报名截止日期:** 待公布
+- **各类别包含内容:** 待公布
 
 ### 意向登记
 
-Required fields are marked. Your details are used to contact you about the summit, and are never sold. Our email and hosting providers handle them on our behalf — see the privacy notice.
+必填项已标记。您的详细信息将用于与您联系峰会相关事宜,绝不会被出售。我们的电子邮件和托管服务提供商代表我们处理这些信息——请参阅隐私声明。
 
-姓名 *
+全名 *
 
 电子邮箱 *
 
-机构
+组织机构
 
 职位
 
@@ -515,166 +515,166 @@ Required fields are marked. Your details are used to contact you about the summi
 
 类别 * 请选择 代表 参展商 赞助商 政府 媒体 学生
 
-需要告知秘书处的事项
+秘书处需要了解的信息
 
   - _field:_ Company website
 
 > **[Button]** 提交意向登记
 
-提交即表示您同意秘书处可就本次峰会与您联系。请参阅我们的隐私声明。您可以随时要求移除您的信息。
+提交即表示您同意秘书处就本次峰会与您联系。请查看我们的隐私声明。您可以随时要求移除您的信息。
 
 ### 后续流程
 
-- You receive confirmation that your expression of interest was submitted.
-- The summit team records your chosen category and areas of interest.
-- You receive relevant updates as the venue, fees, programme and participation packages are confirmed.
-- Formal registration instructions are sent when booking opens.
-如果您更希望参展或成为合作伙伴而非参会,请通过参展和合作伙伴页面办理——不同的表格需要不同的信息。
+- 您将收到意向表达已提交的确认信息。
+- 峰会团队将记录您选择的类别和感兴趣的领域。
+- 在会场、费用、议程和参会方案确定后,您将收到相关更新信息。
+- 预订开放时,将发送正式注册说明。
+如果您希望参展或成为合作伙伴而非参会,请分别通过参展和合作页面进行——不同的表格,需要不同的信息。
 
 ---
 
 # Speakers
 
 **URL:** `/speakers/`  
-**Browser tab / search-result title:** Call for speakers | Kenya-China Tea Summit  
+**Browser tab / search-result title:** 征集演讲嘉宾 | 肯尼亚-中国茶叶峰会  
 **Search-result description:** Call for speakers for the Kenya-China Tea Summit 2027, Nairobi, 21–23 April 2027. Propose a session across trade, investment, innovation, products or tea culture.
 
-## 演讲嘉宾征集
+## 征集演讲嘉宾
 
-No speakers are confirmed yet. Propose a session grounded in practical knowledge, market evidence or real experience.
+目前尚未确认演讲嘉宾。欢迎提议基于实践知识、市场证据或真实经验的会议主题。
 
 本页面为机器翻译，尚未经过人工审核。如有疑问，请以英文原版为准。
 
 状态
 
-The Kenya-China Tea Summit is developing a programme led by practical knowledge, market evidence and real experience. Confirmed speakers will be published here once invitations are accepted and session details are approved.
+肯尼亚-中国茶叶峰会正在制定以实践知识、市场证据和真实经验为主导的议程。已确认的演讲嘉宾将在邀请被接受且会议详情获得批准后在此公布。
 
-### Areas of interest
+### 关注领域
 
-### What makes a strong proposal
+### 什么是优秀提案
 
-We are looking for sessions with a clear purpose and a defined audience. A strong proposal should include:
+我们期待目的明确、受众清晰的会议提案。优秀提案应包括:
 
-- A specific topic, question, case study or finding
-- Evidence or direct experience
-- A clear connection to the summit's Kenya-China focus
-- Practical value for people in the room
-- An honest description of any commercial interest
-Company presentations and product pitches are better suited to the exhibition and partnership programme.
+- 具体的主题、问题、案例研究或发现
+- 证据或直接经验
+- 与峰会肯尼亚-中国重点的明确关联
+- 对现场与会者的实际价值
+- 对任何商业利益的诚实描述
+公司介绍和产品推介更适合在展览和合作伙伴项目中进行。
 
-### 提议一个议程
+### 提议一个会议环节
 
-There is no dedicated speaker form yet. Use the contact form and state "Speaker proposal" in your message, together with your organisation, proposed topic and which area of interest above it fits.
+目前尚无专门的演讲者表单。请使用联系表单,并在您的留言中注明"演讲者提议",同时附上您的机构、拟议主题以及它所属的上述关注领域。
 
-Submission does not guarantee a place on the programme. The summit team will confirm the review process, deadlines and speaker terms when the programme committee is in place.
+提交并不保证在议程中占有一席之地。峰会团队将在项目委员会成立后确认审查流程、截止日期和演讲者条款。
 
-Proposing a session
+提议会议环节
 
-Send your organisation, your topic and the area of interest it fits to the summit team.
+将您的机构、您的主题以及它所属的关注领域发送给峰会团队。
 
-Contact the summit team
+联系峰会团队
 
-### 登记您的意向
+### 登记您的兴趣
 
 六个类别,从代表到参展商。费用和截止日期将在秘书处确认后公布。
 
-登记意向
+登记兴趣
 
 ---
 
 # Venue
 
 **URL:** `/venue/`  
-**Browser tab / search-result title:** 场地 | 肯尼亚-中国茶叶峰会  
+**Browser tab / search-result title:** 会场 | 肯尼亚-中国茶业峰会  
 **Search-result description:** The Kenya-China Tea Summit will take place in Nairobi from 21 to 23 April 2027. Venue, access and transport information will be announced here.
 
-## 前往Nairobi
+## 前往内罗毕
 
-The Kenya-China Tea Summit takes place in Nairobi, Kenya, from 21 to 23 April 2027.
+肯尼亚-中国茶业峰会将于2027年4月21日至23日在肯尼亚内罗毕举行。
 
 本页面为机器翻译，尚未经过人工审核。如有疑问，请以英文原版为准。
 
-The specific venue is being finalised and will be announced through the official summit website and delegate communications.
+具体会场正在最后确定中,将通过峰会官方网站和代表通讯发布。
 
-### Event details
+### 活动详情
 
-- **城市:** Nairobi, Kenya
+- **城市:** 肯尼亚内罗毕
 - **日期:** 2027年4月21日至23日
-- **场馆:** To be announced
-- **地址:** To be announced
-- **Accessibility information:** To be announced
-- **Parking and local transport:** To be announced
-Before booking accommodation
+- **场馆:** 待公布
+- **地址:** 待公布
+- **无障碍设施信息:** 待公布
+- **停车及当地交通:** 待公布
+预订住宿前须知
 
-The venue will affect which part of Nairobi is most convenient for your stay. Choose flexible or refundable accommodation where possible. International visitors should also use flexible travel arrangements and review entry requirements before booking.
+场馆位置将影响您在内罗毕的最佳住宿区域。请尽可能选择灵活或可退款的住宿。国际访客还应选择灵活的旅行安排,并在预订前查阅入境要求。
 
-### Venue announcements
+### 场馆公告
 
-Register interest to be first to receive venue and delegate details as soon as they are available. General arrival guidance is on Travel & stay.
+登记您的兴趣,以便在场地和代表详情公布后第一时间收到相关信息。一般到达指南请查看交通与住宿。
 
-### 登记您的意向
+### 登记您的兴趣
 
-Register your interest to receive venue and delegate information as it is confirmed.
+登记您的兴趣以在信息确认后收到场地和代表详情。
 
-登记意向
+登记兴趣
 
 ---
 
 # Travel & Stay
 
 **URL:** `/travel/`  
-**Browser tab / search-result title:** 旅行与住宿 | 肯尼亚-中国茶业峰会  
+**Browser tab / search-result title:** 交通与住宿 | 肯尼亚-中国茶叶峰会  
 **Search-result description:** Plan travel to Nairobi for the Kenya-China Tea Summit, including arrival information, Kenya entry requirements, accommodation updates and optional delegation experiences.
 
-## Travel and stay
+## 交通与住宿
 
-General guidance for getting to Nairobi. Check official sources before you book.
+前往Nairobi的一般指南。预订前请查阅官方信息来源。
 
 本页面为机器翻译，尚未经过人工审核。如有疑问，请以英文原版为准。
 
-The information on this page is general guidance. Entry rules, health requirements and travel procedures can change, so check official sources before making arrangements.
+本页面信息为一般指南。入境规定、健康要求和旅行程序可能发生变化,因此请在做出安排前查阅官方信息来源。
 
-Plate VIBeyond the conference days
+Plate VI会议日程之外
 
-### Arriving by air
+### 航空抵达
 
-Nairobi's main international airport is Jomo Kenyatta International Airport, commonly shown as NBO in booking systems.
+Nairobi的主要国际机场是Jomo Kenyatta International Airport,在预订系统中通常显示为NBO。
 
-Details on airport transfers, accommodation rates and delegation support services will be published once venue and transport arrangements are confirmed.
+机场接送、住宿费率和代表团支持服务的详细信息将在场地和交通安排确认后公布。
 
-### Entry requirements
+### 入境要求
 
-Kenya uses an Electronic Travel Authorisation system for many international visitors. Check the official Kenya eTA service and your own government's travel guidance before booking.
+Kenya对许多国际访客使用电子旅行授权系统。请在预订前查看Kenya eTA官方服务以及您本国政府的旅行指南。
 
-Processing times and requirements may vary by nationality and individual circumstances.
+处理时间和要求可能因国籍和个人情况而异。
 
-### Accommodation
+### 住宿
 
-- **Summit hotel or room block:** To be announced
-- **Preferential delegate rates:** To be announced
-- **机场接送:** To be announced
-- **Venue shuttle:** To be announced
-Before you book
+- **峰会酒店或预留客房:** 待公布
+- **代表优惠费率:** 待公布
+- **机场接送:** 待公布
+- **场地班车:** 待公布
+预订前须知
 
-Choose refundable or flexible hotel bookings where possible.
+请尽可能选择可退款或灵活的酒店预订。
 
-### Delegation support
+### 代表团支持服务
 
-The organiser plans to coordinate a range of optional services for international delegations:
+主办方计划为国际代表团协调一系列可选服务:
 
 - 航班预订
 - 酒店预订
 - 茶园参观
-- 游猎活动
+- 野生动物观光
 - 旅游体验
-- Invitation letters
-These are optional services intended to make group travel easier to plan.
+- 邀请函
+这些为可选服务,旨在使团体出行更便于规划。
 
-### 登记您的意向
+### 登记您的兴趣
 
-Register your interest to receive venue, accommodation and delegate-travel updates.
+登记您的意向,以接收场地、住宿和代表团差旅更新信息。
 
-登记意向
+登记兴趣
 
 ---
 
@@ -684,7 +684,7 @@ Register your interest to receive venue, accommodation and delegate-travel updat
 **Browser tab / search-result title:** 常见问题 | 肯尼亚-中国茶叶峰会  
 **Search-result description:** Frequently asked questions about the Kenya-China Tea Summit 2027 in Nairobi — dates, registration, fees, venue, speakers, exhibition and travel.
 
-## 问题,诚实回答
+## 问题,诚实解答
 
 包括那些答案是"尚未确定"的问题。
 
@@ -692,137 +692,183 @@ Register your interest to receive venue, accommodation and delegate-travel updat
 
 ### 日期和地点
 
-#### When is the summit?
+#### 峰会何时举行?
 
-The Kenya-China Tea Summit takes place from 21 to 23 April 2027.
+肯尼亚-中国茶叶峰会将于2027年4月21日至23日举行。
 
-#### Where will it be held?
+#### 峰会将在哪里举办?
 
-The summit will be held in Nairobi, Kenya. The venue will be announced once arrangements are finalised. See the Venue page.
+峰会将在肯尼亚内罗毕举行。场地将在安排确定后公布。请参阅场地页面。
 
 ### 注册
 
-#### Is registration open?
+#### 注册是否开放?
 
-Expressions of interest are open. Formal ticket sales and confirmed participation packages are not yet available.
+意向登记现已开放。正式门票销售和确认的参会套餐尚未开放。
 
-#### Does registering interest reserve a place?
+#### 登记意向是否会预留席位?
 
-No. It records your interest and allows the summit team to send you relevant updates. Formal registration will be required when booking opens.
+不会。登记意向仅记录您的兴趣,并允许峰会团队向您发送相关更新。预订开放时需要进行正式注册。
 
-#### How much will it cost?
+#### 费用是多少?
 
-Delegate fees, exhibitor rates and partnership packages will be announced after approval. Official participation rates are issued by the Secretariat and published here once confirmed.
+代表费用、展商费率和合作伙伴套餐将在获得批准后公布。正式参会费率由秘书处发布,并在确认后在此公布。
 
 ### 会议议程
 
-#### Who should attend?
+#### 哪些人应该参加?
 
-The summit is intended for tea producers, processors, exporters, buyers, investors, technology companies, logistics providers, public institutions, researchers, hospitality professionals and media.
+本峰会面向茶叶生产商、加工商、出口商、买家、投资者、技术公司、物流供应商、公共机构、研究人员、酒店业专业人士及媒体。
 
-#### What happens on each day?
+#### 每天的活动安排是什么?
 
-Day one focuses on trade. Day two covers investment, innovation and B2B meetings. Day three includes the International Tea & Technology Expo, cultural exchange and the closing programme.
+第一天聚焦贸易。第二天涵盖投资、创新和B2B会议。第三天包括国际茶叶与技术博览会、文化交流和闭幕活动。
 
 #### 谁将发言?
 
-Confirmed speakers will be published after they accept their invitations and session details are approved.
+已确认的发言人将在接受邀请并批准会议详情后公布。
 
-#### Can I propose a session?
+#### 我可以提议一个会议议题吗?
 
-Yes. The Speakers page explains how to contact the summit team with a proposal. Submission does not guarantee inclusion in the programme.
+可以。发言人页面说明了如何联系峰会团队提交提案。提交并不保证被纳入议程。
 
-#### What language will the summit use?
+#### 峰会将使用什么语言?
 
-The working languages and interpretation arrangements are still being confirmed. They will be published with the detailed programme.
+工作语言和口译安排仍在确认中。它们将随详细议程一起公布。
 
-### Exhibiting, partnership and B2B
+### 展览、合作伙伴关系和B2B
 
-#### How do I exhibit?
+#### 如何参展?
 
-Register exhibitor interest through the Exhibition page. The summit team will send stand options, rates and application information when available.
+通过展览页面登记参展意向。峰会团队将在展位选项、费率和申请信息可用时发送。
 
-#### How do I become a partner?
+#### 如何成为合作伙伴?
 
-Use the Partnership page to describe your preferred level, audience and objectives. The partnership team will respond with approved options when packages are ready.
+请使用合作伙伴页面描述您希望的合作级别、目标受众和目标。合作伙伴团队将在套餐准备就绪后回复已批准的选项。
 
-#### How will B2B matchmaking work?
+#### B2B配对洽谈如何运作?
 
-Participants will create business profiles, state what they are looking for and receive relevant meeting recommendations. Eligibility, access and pricing are still to be confirmed.
+参会者将创建商业简介,说明他们的需求,并收到相关的会面推荐。资格、访问权限和定价仍有待确认。
 
-### 实务信息
+### 实务事项
 
 #### 我需要签证吗?
 
-Requirements depend on nationality and individual circumstances. Check Kenya's official Electronic Travel Authorisation website and your government's travel advice.
+要求取决于国籍和个人情况。请查看肯尼亚官方电子旅行授权网站以及您所在国政府的旅行建议。
 
-#### Will invitation letters be available?
+#### 是否提供邀请函?
 
-The summit team's invitation-letter policy is being confirmed. An invitation letter, where provided, does not guarantee immigration approval.
+峰会团队的邀请函政策正在确认中。邀请函(如提供)不保证移民批准。
 
-#### Is there an official summit hotel?
+#### 是否有官方峰会酒店?
 
-The accommodation plan will be announced after the venue and hotel arrangements are confirmed.
+住宿计划将在场地和酒店安排确认后公布。
 
-#### Will the summit be streamed or recorded?
+#### 峰会是否提供直播或录制?
 
-Recording and streaming arrangements have not been confirmed.
+录制和流媒体安排尚未确认。
 
-### Updates and contact
+### 更新与联系
 
-#### How can I receive updates?
+#### 如何接收更新信息?
 
-Register your interest or follow the summit news page.
+登记您的兴趣或关注峰会新闻页面。
 
-#### My question is not listed
+#### 我的问题未列出
 
-Contact the summit team and include enough detail for your enquiry to be routed correctly.
+联系峰会团队,并提供足够的详细信息以便正确转接您的咨询。
 
-Still have a question
+仍有疑问
 
-Anything this page does not answer, ask the summit team directly.
+本页面未能解答的任何问题,请直接询问峰会团队。
 
-Contact the summit team
+联系峰会团队
 
-### 登记您的意向
+### 登记您的兴趣
 
 六个类别,从代表到参展商。费用和截止日期将在秘书处确认后公布。
 
-登记意向
+登记兴趣
 
 ---
 
 # News & Insight
 
 **URL:** `/news/`  
-**Browser tab / search-result title:** News & insights | Kenya-China Tea Summit  
+**Browser tab / search-result title:** 新闻与洞察 | 肯尼亚-中国茶叶峰会  
 **Search-result description:** Read Kenya-China Tea Summit announcements and market insights on tea trade, value addition, investment and technology and access to the Chinese market.
 
-## News and market insights
+## 新闻与市场洞察
 
-This page brings together official summit announcements and useful context on Kenya-China tea trade, value addition, investment and technology.
+本页汇集峰会官方公告以及有关肯尼亚-中国茶叶贸易、增值、投资和技术的实用背景信息。
 
 本页面为机器翻译，尚未经过人工审核。如有疑问，请以英文原版为准。
 
-### Summit updates
+### 峰会动态
 
-### Media enquiries
+### 媒体咨询
 
-Journalists seeking comment, accreditation or approved facts should use the Media and Press page.
+寻求评论、媒体认证或经核准事实信息的记者请使用"媒体与新闻"页面。
 
-Media and press
+媒体与新闻
 
-Announcements as they are confirmed
+公告将在确认后发布
 
-Register your interest to receive programme, venue and speaker announcements.
+注册您的关注意向,以接收有关议程、会场和演讲嘉宾的公告。
 
-Register interest
+注册兴趣
 
-### Register to receive updates
+### 注册接收更新信息
 
-Venue, programme, speaker, registration, exhibition and partnership announcements will be published here as they are approved.
+有关会场、议程、演讲嘉宾、注册、展览和合作伙伴关系的公告将在获得批准后在此发布。
 
-Register to receive updates
+注册接收更新信息
+
+---
+
+# News — 为何肯尼亚-中国茶叶对话在当下至关重要
+
+**URL:** `/news/kenya-china-tea-why-now/`  
+**Browser tab / search-result title:** 为何肯尼亚-中国茶叶对话在当下至关重要 | 肯尼亚-中国茶叶峰会  
+**Search-result description:** Zero tariffs cut one barrier to the Chinese market. Kenya's first-quarter shipments to China still fell. What sits between access and demand.
+
+## 为何肯尼亚-中国茶叶对话在当下至关重要
+
+零关税今年消除了一项成本壁垒。但并未消除其他壁垒。
+
+本页面为机器翻译，尚未经过人工审核。如有疑问，请以英文原版为准。
+
+肯尼亚与中国已经建立了茶叶贸易关系。其潜力远大于当前贸易量所显示的规模,而两者之间的差距正是本次峰会存在的原因。
+
+肯尼亚拥有数代人积累的茶叶种植、加工和国际贸易知识,并日益重视传统工艺茶、绿茶、特种茶和增值产品。中国是重要的茶叶市场,也是茶叶生产、技术、产品开发和茶文化的中心。
+
+### 今年准入条件有所改善
+
+2026年5月1日,中国对所有与北京建立外交关系的非洲国家的进口商品实施零关税待遇(新华社,2026年5月1日)。对肯尼亚出口商而言,这消除了边境的成本壁垒。
+
+但这并不创造需求。出口商仍需要符合市场的产品、可靠的买家关系、清晰的文件记录、强大的质量体系和有效的分销渠道。买家需要能够持续提供合适产品、质量、数量和可追溯性的供应商。
+
+### 第一季度显示出差异
+
+2026年第一季度,肯尼亚对中国的茶叶出口降至122万公斤,较2025年同期下降51%(Food Business Middle East & Africa,2026年6月6日)。
+
+有两点值得同时关注。第一,这只是单个季度的数据,且是在5月1日关税变化生效之前测算的——它描述的是该政策旨在解决的市场状况,而非政策的结果。第二,同期肯尼亚茶叶总出口量增长6%,达到1.4446亿公斤,主要得益于对巴基斯坦的创纪录出货量。中国市场的数据并非肯尼亚茶叶整体失利的故事,而是关于一个商业关系相对薄弱、但机遇尚存的市场的故事。
+
+这是一个协调问题,而这正是峰会可以解决的问题。
+
+### 机遇的实际内涵
+
+这项工作不仅仅是销售更多散装茶叶,还包括针对中国消费偏好的产品开发、加工技术、包装、品牌建设、直接采购关系、可追溯性、研究和投资。这也需要更清晰地了解中国买家和消费者看重什么,而这很难在远距离获得。
+
+Kenya-China Tea Summit旨在将市场的这些组成部分汇聚到同一会场。生产商直接听取买家意见。技术提供商与将使用其设备的工厂和种植者会面。投资者看到资本需求所在。公共机构可以处理影响商业决策的标准和贸易流程。
+
+目标是务实的:更好的信息、更强的关系,以及从机遇到业务的更可靠路径。
+
+### 登记您的兴趣
+
+六个类别,从代表到参展商。费用和截止日期将在秘书处确认后公布。
+
+登记兴趣
 
 ---
 
@@ -832,31 +878,31 @@ Register to receive updates
 **Browser tab / search-result title:** 联系我们 | 肯尼亚-中国茶叶峰会  
 **Search-result description:** Contact the Kenya-China Tea Summit about attendance, exhibition, partnership, speaking, media, travel or general enquiries.
 
-## Contact the summit team
+## 联系峰会团队
 
-Use the relevant route for faster support. General enquiries go through the form below.
+请选择相应渠道以获得更快速的支持。一般咨询请通过下方表单提交。
 
 本页面为机器翻译，尚未经过人工审核。如有疑问，请以英文原版为准。
 
-- **Summit:** Kenya-China Tea Summit 2027
-- **Organising body:** Kenya-China Tea Summit秘书处
-- **主办方:** Orbitline Events & Ushers Ltd
-- **地点:** Nairobi, Kenya
-- **电子邮件:** To be announced
-- **电话:** To be announced
-- **邮政地址:** To be announced
+- **峰会:** Kenya-China Tea Summit 2027
+- **组织机构:** Kenya-China Tea Summit秘书处
+- **主办单位:** Orbitline Events & Ushers Ltd
+- **地点:** 肯尼亚内罗毕
+- **电子邮箱:** 待公布
+- **电话:** 待公布
+- **邮政地址:** 待公布
 
-### Choose the right route
+### 选择合适的参会方式
 
-- Attendance: Register your interest
-- Exhibition: Exhibition enquiry
-- Partnership: Partnership enquiry
-- Speaking: Speaker proposal
-- Media: Media accreditation and enquiries
-- Travel: Travel and accommodation enquiry
-General enquiries
+- 参会: 登记您的意向
+- 展览: 展览咨询
+- 合作: 合作咨询
+- 演讲: 演讲提案
+- 媒体: 媒体认证与咨询
+- 差旅: 差旅与住宿咨询
+一般咨询
 
-If none of these routes fit, send a message using the form below.
+如果以上选项均不适用,请使用下方表格发送消息。
 
 ### 一般咨询
 
@@ -874,122 +920,122 @@ If none of these routes fit, send a message using the form below.
 
 > **[Button]** 发送留言
 
-Your message is used to answer your enquiry, and is never sold. Our email and hosting providers handle it on our behalf. See our privacy notice.
+您的留言仅用于回复您的咨询,绝不会出售。我们的电子邮件和托管服务提供商代表我们处理这些信息。请参阅我们的隐私声明。
 
 ---
 
 # Media & Press
 
 **URL:** `/media/`  
-**Browser tab / search-result title:** 媒体与新闻 | 肯尼亚-中国茶业峰会  
+**Browser tab / search-result title:** 媒体与新闻 | 肯尼亚-中国茶叶峰会  
 **Search-result description:** Apply for media accreditation and access approved facts, announcements and press resources for the Kenya-China Tea Summit 2027 in Nairobi.
 
-## 媒体和新闻
+## 媒体与新闻
 
-This page provides approved summit information for journalists, editors, producers, photographers and industry media.
+本页面为记者、编辑、制片人、摄影师和行业媒体提供经批准的峰会信息。
 
 本页面为机器翻译，尚未经过人工审核。如有疑问，请以英文原版为准。
 
-### Media accreditation
+### 媒体认证
 
-Media accreditation will be available to recognised news, business, trade and industry publications.
+媒体认证将面向获得认可的新闻、商业、贸易和行业出版物开放。
 
-- **Application process:** To be announced
-- **Deadline:** To be announced
-- **On-site arrangements:** To be announced
+- **申请流程:** 待公布
+- **截止日期:** 待公布
+- **现场安排:** 待公布
 
-### Event facts
+### 活动信息
 
-- **Event:** Kenya-China Tea Summit 2027
+- **活动:** Kenya-China Tea Summit 2027
 - **日期:** 2027年4月21日至23日
-- **城市:** Nairobi, Kenya
-- **场馆:** To be announced
-- **主题:** 酝酿战略伙伴关系,促进可持续茶叶贸易、投资与创新
-- **Organising body:** Kenya-China Tea Summit秘书处
-- **主办方:** Orbitline Events & Ushers Ltd
-- **媒体联系:** To be announced
-Reporting guidance
+- **城市:** 肯尼亚内罗毕
+- **场馆:** 待公布
+- **主题:** 为可持续茶叶贸易、投资与创新建立战略合作伙伴关系
+- **组织机构:** Kenya-China Tea Summit秘书处
+- **主办单位:** Orbitline Events & Ushers Ltd
+- **媒体联系:** 待公布
+报道指南
 
-As with any pre-event coverage, confirm these details against an official summit announcement before publication:
+与所有会前报道一样,请在发布前根据峰会官方公告确认以下信息:
 
-- Venue and address
-- Ticket prices and package benefits
-- Speaker names and session titles
-- Delegate, country or exhibitor numbers
-- Institutional or government endorsements
-- Partnership allocations
+- 场地及地址
+- 门票价格及套餐权益
+- 演讲嘉宾姓名及会议议题
+- 代表、国家或参展商数量
+- 机构或政府背书
+- 合作伙伴分配
 
-### Press resources
+### 新闻资源
 
-The following resources will be added as they are approved:
+以下资源将在获得批准后添加:
 
-- Media fact sheet
-- Official announcements
-- Approved summit logo files
-- Spokesperson biographies
-- Speaker and partner releases
-- Approved photography
-- Programme overview
-The press pack, logo files and every published document are on the downloads page.
+- 媒体资料说明书
+- 官方公告
+- 已批准的峰会标识文件
+- 发言人简历
+- 演讲嘉宾和合作伙伴新闻稿
+- 已批准的摄影作品
+- 会议议程概览
+新闻资料包、标志文件和所有已发布的文件均可在下载页面获取。
 
-### Using the summit name and logo
+### 使用峰会名称和标志
 
-Media guidelines for using the summit name and logo are being finalised. For editorial use, contact the summit team through the contact page.
+使用峰会名称和标志的媒体指南正在最终确定中。如需用于编辑用途,请通过联系页面联系峰会团队。
 
-### Media enquiries
+### 媒体咨询
 
-Include your publication, role, deadline and the information or interview you require.
+请提供您的出版物、职位、截止日期以及您所需的信息或采访。
 
-Contact the media team
+联系媒体团队
 
-### Media accreditation
+### 媒体认证
 
-Register media interest to receive the accreditation process when it opens.
+登记媒体意向,以便在认证流程开放时接收相关信息。
 
-Register media interest
+登记媒体意向
 
 ---
 
 # Downloads
 
 **URL:** `/downloads/`  
-**Browser tab / search-result title:** 下载 | Kenya-China Tea Summit  
+**Browser tab / search-result title:** 下载 | 肯尼亚-中国茶叶峰会  
 **Search-result description:** Download current Kenya-China Tea Summit fact sheets, programme information, exhibitor guides, partnership documents and media resources.
 
 ## 文件与下载
 
-Approved summit documents will be published here in their current versions.
+经批准的峰会文件将以其最新版本在此发布。
 
 本页面为机器翻译，尚未经过人工审核。如有疑问，请以英文原版为准。
 
 ### 峰会概览
 
-- 峰会概况说明 PDF · 2 KB · 1页 · 更新于2026年8月2日 日期、地点、主题、六项目标及六种注册类别,尽在一页之中。本说明由网站数据生成,确保与本站页面信息保持同步。
+- 峰会资料简表 PDF · 2 KB · 1 页 · 更新于2026年8月2日 日期、地点、主题、六大目标和六类注册类别一页呈现。由网站自有数据生成,因此不会与这些页面不同步。
 
-### Coming soon
+### 即将推出
 
-- Detailed programme
-- Delegate information pack
-- Exhibitor prospectus
-- Partnership prospectus
-- Travel and accommodation guide
-- Media fact sheet and press kit
+- 详细议程
+- 代表信息包
+- 展商招募书
+- 合作伙伴招募书
+- 旅行与住宿指南
+- 媒体资料说明书及新闻资料包
 - 行为准则
-Version control
+版本控制
 
-Each document shown here displays its publication or revision date.
+此处显示的每份文件均标注其发布或修订日期。
 
-For journalists
+媒体专区
 
-Accreditation, approved event facts and press contacts are on the Media and press page.
+媒体认证、官方活动信息及新闻联系方式请访问"媒体与新闻"页面。
 
-Media and press
+媒体与新闻
 
-### 登记您的意向
+### 登记您的兴趣
 
-Register your interest to receive new documents and major summit announcements.
+登记您的兴趣以接收新文件和重要峰会公告。
 
-登记意向
+登记兴趣
 
 ---
 
@@ -1001,7 +1047,7 @@ Register your interest to receive new documents and major summit announcements.
 
 ## 隐私声明
 
-本网站收集哪些信息、信息流向何处、保留多长时间以及如何删除。
+本网站收集哪些信息、信息流向何处、保留多长时间以及如何移除。
 
 本页面为机器翻译，尚未经过人工审核。如有疑问，请以英文原版为准。
 
@@ -1009,103 +1055,103 @@ Register your interest to receive new documents and major summit announcements.
 
 ### 收集的信息
 
-Only what you type into a form on this site: your name, email address, and optionally your organisation, job title, country, registration category and message.
+仅限您在本网站表单中输入的信息:您的姓名、电子邮件地址,以及可选的您的机构、职务、国家、注册类别和留言。
 
-系统会在每次提交时记录少量用于检测自动化垃圾信息的技术上下文:您的请求来源国家、您的浏览器用户代理字符串以及您提交的页面。您的IP地址不会被存储——为实现速率限制,系统会将其转换为无法还原为地址的单向哈希值。
+系统会在每次提交时记录少量用于检测自动垃圾信息的技术上下文:您的请求来源国家、浏览器的用户代理字符串以及您提交的页面。您的IP地址不会被存储——为了速率限制,它会被转换为无法还原为地址的单向哈希值。
 
 ### 不收集的信息
 
-- 无广告或跨站点跟踪Cookie。
-- 无对您进行画像的第三方分析工具。网站分析仅为汇总页面计数,不使用Cookie,不包含个人标识符。
-- 不涉及数据经纪商,不出租名单,不进行任何形式的出售。
+- 无广告或跨站跟踪Cookie。
+- 无对您进行画像的第三方分析工具。网站分析仅为汇总页面计数,不使用Cookie,不含个人标识符。
+- 不涉及数据经纪商,不出租名单,不进行任何形式的销售。
 
 ### 数据存储位置
 
 - **存储于:** Cloudflare D1,由峰会秘书处控制的数据库
-- **电子邮件发送:** Brevo,用于发送您的确认信息并通知秘书处
+- **电子邮件发送:** Brevo,用于发送您的确认邮件并通知秘书处
 - **垃圾信息防护:** Cloudflare Turnstile
-- **谁可以读取:** The summit secretariat, its appointed organiser, and the processors named above
-Cloudflare and Brevo are processors, not independent controllers: they hold and route this information under contract, on the secretariat's instructions, and do not use it for their own purposes.
+- **谁可以读取:** 峰会秘书处、其指定的组织者以及上述处理方
+Cloudflare和Brevo是处理方,而非独立控制者:它们根据合同持有和传输此信息,按照秘书处的指示行事,不会将其用于自身目的。
 
 ### 保存期限
 
-注册和查询记录将保存至峰会结束后十二个月,以便秘书处就下一届峰会与您联系。之后这些记录将被删除。垃圾信息检测频率限制记录将在一小时内删除。
+注册和咨询记录将保存至峰会结束后十二个月,以便秘书处就下一届峰会与您联系。此后将被删除。垃圾邮件检测频率限制记录将在一小时内丢弃。
 
 ### 您的选择
 
-您可以要求查看关于您的信息,要求更正,或要求完全删除。请使用联系表单说明您的需求。请求将直接执行而非协商。
+您可以要求查看关于您的持有信息,要求更正,或要求完全删除。请使用联系表单并说明您的要求。请求将被执行而非协商。
 
-确认电子邮件为事务性邮件——是您所提交内容的收据。未来任何公告电子邮件均附有退订链接,退订不会删除您的注册信息。
+确认邮件属于交易性质——它们是您提交内容的收据。任何未来的公告邮件都附有取消订阅链接,取消订阅不会删除您的注册信息。
 
 ### 安全性
 
-本网站仅通过HTTPS提供服务,并采用阻止第三方脚本的内容安全策略。表单提交经过验证和频率限制。本网站不会在任何地方处理付款详情,因为本网站不接受付款。
+本网站仅通过HTTPS提供服务,采用阻止第三方脚本的内容安全策略。表单提交经过验证并受频率限制。本网站不处理任何支付详情,因为本网站不接受任何付款。
 
 联系方式待定
 
-一旦秘书处确认,具名的数据联系人和邮寄地址将在此公布。在此之前,联系表单是提出任何隐私请求的途径,这些请求将以相同方式处理。
+一旦秘书处确认,将在此处公布指定的数据联系人和邮政地址。在此之前,任何隐私请求均可通过联系表单提交,这些请求将以相同方式处理。
 
-Privacy requests
+隐私请求
 
-Requests to see, correct or delete your data go to the secretariat through the contact form.
+查看、更正或删除您的数据的请求,请通过联系表单提交给秘书处。
 
-Contact the secretariat
+联系秘书处
 
 ---
 
 # Terms of Use
 
 **URL:** `/terms/`  
-**Browser tab / search-result title:** 使用条款 | Kenya-China Tea Summit  
+**Browser tab / search-result title:** 使用条款 | 肯尼亚-中国茶叶峰会  
 **Search-result description:** Terms of use for the Kenya-China Tea Summit 2027 website.
 
 ## 使用条款
 
-简要说明——本网站提供信息,不构成合同。
+简而言之——本网站提供的是信息,而非合同。
 
 本页面为机器翻译，尚未经过人工审核。如有疑问，请以英文原版为准。
 
 最后更新于2026年。
 
-### 本网站简介
+### 本网站性质
 
-本网站是2027年肯尼亚-中国茶叶峰会的信息及意向登记平台,由Orbitline Events & Ushers Ltd代表肯尼亚-中国茶叶峰会秘书处发布。
+本网站是2027年肯尼亚-中国茶叶峰会的信息和意向登记平台,由Orbitline Events & Ushers Ltd代表肯尼亚-中国茶叶峰会秘书处发布。
 
 ### 意向登记并非预订
 
-提交登记表仅记录您的参会意向。这不构成合同、不保留席位、不保证入场资格,也不使您负有出席或付款义务。目前尚未确定任何费用,本网站不处理任何付款。具有约束力的正式报名流程将在确定后另行发布。
+提交登记表仅记录您的意向。这不构成合同关系,不预留席位,不保证入场资格,也不要求您必须出席或支付任何费用。目前尚未确定任何费用,本网站不处理任何支付事宜。具有约束力的正式注册流程将在确定后另行发布。
 
 ### 准确性与变更
 
-Summit details are published as the secretariat confirms them and may change. Fields marked "To be announced" are genuinely undecided. Third-party trade figures quoted on this site are attributed and dated; they are the publisher's reporting, not the summit's claims, and are not warranted by the summit.
+峰会详情在秘书处确认后发布,可能会有变更。标注为"待公布"的栏目确实尚未确定。本网站引用的第三方贸易数据已注明来源和日期;这些数据为发布方报道内容,并非峰会声明,峰会不对其作出担保。
 
 ### 第三方链接
 
-提供其他网站的链接仅为方便访问。峰会不控制这些网站,也不对其内容负责。
+提供其他网站的链接仅为方便之用。峰会不控制这些网站,也不对其内容负责。
 
 ### 知识产权
 
-The summit's own text, branding and design belong to Orbitline Events & Ushers Ltd and are protected by applicable intellectual-property law. This site also uses licensed fonts, photographs and other third-party material, which remain subject to their own rights and licences and are not summit property.
+峰会自有的文字、品牌标识和设计归Orbitline Events & Ushers Ltd所有,受适用知识产权法保护。本网站还使用经授权的字体、照片及其他第三方素材,这些素材仍受其各自的权利和许可约束,并非峰会资产。
 
-The summit logo may be used in editorial coverage of the summit, but not in any way implying partnership or endorsement. See Media & press.
+峰会标识可用于峰会的新闻报道,但不得以任何方式暗示合作伙伴关系或背书。详见媒体与新闻。
 
-### 可接受使用
+### 可接受的使用方式
 
-请勿使用表单发送未经请求的商业信息、试图干扰服务或在未经他人知情的情况下提交其个人信息。
+请勿使用表单发送未经请求的商业信息,试图干扰服务,或在未经他人知情的情况下提交其个人信息。
 
 ### 责任
 
-The site is provided as it is. To the extent the law allows, the summit and its organiser are not liable for loss arising from reliance on information published here while details remain unconfirmed.
+本网站按现状提供。在法律允许的范围内,峰会及其组织方对因依赖本网站发布的未经确认信息而产生的损失不承担责任。
 
 ### 适用法律
 
-These terms are governed by the laws of Kenya. Questions about these terms, including liability, go through the contact form.
+本条款受Kenya法律管辖。有关本条款(包括责任)的问题,请通过联系表单提出。
 
-Questions about these terms
+有关本条款的问题
 
-Questions about these terms, including liability, go to the secretariat through the contact form.
+有关本条款(包括责任)的问题,请通过联系表单提交至秘书处。
 
-Contact the secretariat
+联系秘书处
 
 ---
 
@@ -1117,44 +1163,44 @@ Contact the secretariat
 
 ## 行为准则
 
-适用于峰会所有参与者——代表、演讲者、展商、合作伙伴、媒体及工作人员。
+适用于峰会的所有人员——代表、演讲者、参展商、合作伙伴、媒体和工作人员。
 
 本页面为机器翻译，尚未经过人工审核。如有疑问，请以英文原版为准。
 
-本峰会汇聚了来自不同国家、行业、语言和资历层级的人士。目的是让他们能够相互开展业务。这需要一个人人都可以信赖的行为底线。
+本次峰会汇聚了来自不同国家、行业、语言和资历级别的人士。其宗旨是让他们能够彼此开展业务。这需要一个人人都可以信赖的行为底线。
 
-### 行为准则
+### 行为期望
 
-- 专业对待每一个人,无论其国籍、资历、性别、年龄、宗教、残疾状况或母语如何。
-- 假定语言障碍是一种障碍,而非缺陷。请说话清晰,并给予他人足够时间。
-- 尊重第一次的"不",无论是关于会面、拍照还是交谈。
-- 遵守场馆的安全指示和工作人员指引。
+- 以专业态度对待每一个人,无论其国籍、资历、性别、年龄、宗教信仰、残疾状况或母语为何。
+- 将语言障碍视为一种障碍,而非缺陷。请使用简明语言,并给予他人充足时间。
+- 首次听到"不"时即予以尊重,无论涉及会面、拍照或交谈。
+- 遵守会场的安全指示和工作人员的指引。
 
-### 不可容忍的行为
+### 不容忍的行为
 
-- 任何形式的骚扰,包括不受欢迎的身体接触、持续的不受欢迎关注,或针对某人身份而非其言论的评论。
+- 任何形式的骚扰,包括不受欢迎的身体接触、持续的不受欢迎关注,或针对他人身份而非其言论的评论。
 - 恐吓、威胁或辱骂行为。
-- 在他人要求不拍照或录音后仍对其拍照或录音。
+- 在他人要求不要拍摄或录制的情况下仍进行拍摄或录制。
 - 故意扰乱会议或展览。
-- 虚假陈述您的组织、您的交易权限或您与本峰会的关系。
+- 虚假陈述您的机构、您的交易权限或您与峰会的关系。
 
-### 报告问题
+### 报告关切事项
 
-峰会期间,请告知任何峰会工作人员——他们接受了培训,会采取行动而非调解。峰会前后,请使用联系表单并标注为行为问题。报告将被保密处理,提出报告的人员绝不会因此受到不利影响。
+峰会期间,请告知任何一位峰会工作人员——他们接受过培训,会采取行动而非调解。峰会前后,请使用联系表单并标注为行为准则关切事项。报告将被严格保密,提出报告的行为绝不会对您造成不利影响。
 
 ### 后果
 
-The secretariat may issue a warning, remove someone from a session, withdraw exhibition or accreditation privileges, or remove someone from the venue. Serious matters are referred to the appropriate authorities.
+秘书处可发出警告、将某人逐出会场、撤销展览或认证特权,或将某人逐出场地。严重事项将移交相关主管部门处理。
 
 指定联系人
 
-峰会开幕前,将在此处公布指定行为联系人和现场报告渠道。在此之前,通过联系表单提出的问题将直接送达秘书处。
+峰会开幕前,将在此公布指定行为规范联系人和现场报告渠道。在此之前,通过联系表提出的关切事项将直接送达秘书处。
 
-Raising a concern
+提出关切事项
 
-A concern raised through the contact form reaches the secretariat directly.
+通过联系表提出的关切事项将直接送达秘书处。
 
-Contact the secretariat
+联系秘书处
 
 ---
 
@@ -1166,10 +1212,10 @@ These appear on every page.
 
 - 关于 → `/zh/about/`
 - 议程 → `/zh/programme/`
-- Expo → `/zh/exhibition/`
+- 展览 → `/zh/exhibition/`
 - B2B → `/zh/b2b-matchmaking/`
-- Partners → `/zh/sponsorship/`
-- 交通 → `/zh/travel/`
+- 合作伙伴 → `/zh/sponsorship/`
+- 出行 → `/zh/travel/`
 - **[Button]** 注册意向 → `/zh/registration/`
 
 ## Footer links
@@ -1177,26 +1223,26 @@ These appear on every page.
 - 关于 → `/zh/about/`
 - 议程 → `/zh/programme/`
 - 演讲嘉宾 → `/zh/speakers/`
-- News and insights → `/zh/news/`
-- 下载 → `/zh/downloads/`
-- Media accreditation → `/zh/media/`
-- 登记意向 → `/zh/registration/`
-- Exhibit → `/zh/exhibition/`
-- Partner → `/zh/sponsorship/`
-- 场馆 → `/zh/venue/`
-- 旅行与住宿 → `/zh/travel/`
+- 新闻与洞察 → `/zh/news/`
+- 下载资料 → `/zh/downloads/`
+- 媒体认证 → `/zh/media/`
+- 登记兴趣 → `/zh/registration/`
+- 参展 → `/zh/exhibition/`
+- 合作伙伴 → `/zh/sponsorship/`
+- 会场 → `/zh/venue/`
+- 交通与住宿 → `/zh/travel/`
 - 常见问题 → `/zh/faq/`
 - 联系我们 → `/zh/contact/`
-- Privacy notice → `/zh/privacy/`
-- Terms of use → `/zh/terms/`
+- 隐私声明 → `/zh/privacy/`
+- 使用条款 → `/zh/terms/`
 - 行为准则 → `/zh/code-of-conduct/`
 
 ## Footer small print
 
-- Kenya-China Tea Summit 2027 · 2027年4月21–23日 · Nairobi, Kenya
-- Organised by Orbitline Events & Ushers Ltd on behalf of the Kenya-China Tea Summit Secretariat.
+- Kenya-China Tea Summit 2027 · 21–23 April 2027 · Nairobi, Kenya
+- 由Orbitline Events & Ushers Ltd代表Kenya-China Tea Summit Secretariat主办。
 - © 2026 Orbitline Events & Ushers Ltd. 版权所有。
 
 ---
 
-_End of copy. 18 pages._
+_End of copy. 19 pages._

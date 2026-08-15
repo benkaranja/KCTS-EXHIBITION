@@ -1,6 +1,6 @@
 # Copy for client review — Kenya-China Tea Summit 2027
 
-**Generated:** 2026-08-13 · **Build:** `95c4687`
+**Generated:** 2026-08-15 · **Build:** `eb119d6`
 
 Generated from the built site. This is what is live, not a draft of it.
 
@@ -31,7 +31,7 @@ Brewing Strategic Partnerships for Sustainable Tea Trade, Investment and Innovat
 
 - **Location:** Nairobi, Kenya
 - **Dates:** 21–23 April 2027
-- **Days to opening:** 251
+- **Days to opening:** 249
 - **Venue:** To be announced
 - **Organised by:** Orbitline Events & Ushers Ltd
 The Kenya-China Tea Summit brings producers, exporters, buyers, investors, policymakers, researchers and technology partners together in Nairobi for three days of focused trade conversations, business meetings and industry exchange.
@@ -806,6 +806,48 @@ Register interest
 Venue, programme, speaker, registration, exhibition and partnership announcements will be published here as they are approved.
 
 Register to receive updates
+
+---
+
+# News — Why the Kenya-China tea conversation matters now
+
+`/news/kenya-china-tea-why-now/`
+
+## Why the Kenya-China tea conversation matters now
+
+Zero tariffs removed one cost barrier this year. They did not remove the others.
+
+Kenya and China already have a tea relationship. Its potential is larger than current trade volumes suggest, and the gap between the two is the reason this summit exists.
+
+Kenya has generations of knowledge in tea cultivation, processing and international trade, with a growing focus on orthodox, green, specialty and value-added products. China is a major tea market and a centre for tea production, technology, product development and tea culture.
+
+### Access improved this year
+
+On 1 May 2026, China extended zero-tariff treatment to imports from all African countries with diplomatic relations with Beijing (Xinhua, 1 May 2026). For Kenyan exporters, that removes a cost barrier at the border.
+
+It does not create demand. Exporters still need products that fit the market, reliable buyer relationships, clear documentation, strong quality systems and effective distribution. Buyers need suppliers who can deliver the right product, quality, volume and traceability, consistently.
+
+### The first quarter shows the difference
+
+Kenya's tea exports to China fell to 1.22 million kilograms in the first quarter of 2026, down 51% on the same period in 2025 (Food Business Middle East & Africa, 6 June 2026).
+
+Two things are worth holding together. The first is that this is a single quarter, measured before the tariff change took effect on 1 May — it describes the market the policy was designed to address, not the policy's result. The second is that Kenya's total tea exports rose 6% over the same period, to 144.46 million kilograms, led by record shipments to Pakistan. The China figure is not a story about Kenyan tea losing ground generally. It is a story about one market where the commercial relationships are thinner than the opportunity.
+
+That is a coordination problem, and it is the kind a summit can address.
+
+### What the opportunity actually involves
+
+The work is broader than selling more bulk tea. It includes product development for Chinese preferences, processing technology, packaging, branding, direct sourcing relationships, traceability, research and investment. It also requires a clearer understanding of what Chinese buyers and consumers value, which is difficult to acquire at a distance.
+
+The Kenya-China Tea Summit is intended to put those parts of the market in the same rooms. Producers hear directly from buyers. Technology providers meet the factories and growers who would use their equipment. Investors see where capital is needed. Public institutions can address the standards and trade processes that shape commercial decisions.
+
+The aim is practical: better information, stronger relationships, and more credible routes from opportunity to business.
+
+### Register your interest
+
+Six categories, from delegate to exhibitor. Fees and deadlines are published once the secretariat confirms them.
+
+Register interest
 
 ---
 
