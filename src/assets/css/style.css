@@ -692,10 +692,17 @@ select.input { cursor: pointer; }
    page was empty. The rail spends it on the page's own facts. A page opts in by
    putting <aside class="rail"> anywhere in its body — grid places it, so source
    order does not matter and the markup stays where it reads best. */
+/* row-gap MUST stay 0. The rail below spans `1 / span 99` so that its grid area
+   is the full height of the content column — that is what gives position:sticky
+   a scroll range. A row-gap applies between all 99 row lines, including the ~96
+   empty implicit rows a normal page never fills, so `gap: var(--sp-xl)` added
+   96 x 56px = 5376px of void to every railed page. Vertical rhythm here comes
+   from the elements' own margins, as it does on rail-less pages. */
 .doc-body {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 20rem;
-  gap: var(--sp-xl);
+  column-gap: var(--sp-xl);
+  row-gap: 0;
   align-items: start;
 }
 .doc-body > *     { grid-column: 1; }

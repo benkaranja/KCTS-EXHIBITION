@@ -1,6 +1,6 @@
 # Website copy for review — Kenya-China Tea Summit 2027
 
-**Generated:** 2026-08-15 · **Build:** `eb119d6` · **Live:** https://kenya-china-tea-summit.pages.dev
+**Generated:** 2026-08-16 · **Build:** `496e13a` · **Live:** https://kenya-china-tea-summit.pages.dev
 
 This document contains **every word of visible text on the website**, extracted
 from the built pages, in the order a visitor reads them. It is generated
@@ -52,7 +52,7 @@ Brewing Strategic Partnerships for Sustainable Tea Trade, Investment and Innovat
 
 - **Location:** Nairobi, Kenya
 - **Dates:** 21–23 April 2027
-- **Days to opening:** 249
+- **Days to opening:** 248
 - **Venue:** To be announced
 - **Organised by:** Orbitline Events & Ushers Ltd
 The Kenya-China Tea Summit brings producers, exporters, buyers, investors, policymakers, researchers and technology partners together in Nairobi for three days of focused trade conversations, business meetings and industry exchange.
