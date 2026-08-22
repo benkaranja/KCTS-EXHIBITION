@@ -2,16 +2,21 @@
 // Anything added here must appear in website_content/FACTS.md §1.
 // If it is not a confirmed client fact, it does not belong in this file.
 
-// kenyachinateasummit.com is mid-purchase (2026-08-01). Until it resolves, the
-// pages.dev origin IS the canonical home — a canonical pointing at a domain that
-// does not resolve is worse than no canonical at all.
+// Cutover done 2026-08-15. kenyachinateasummit.com is live on Cloudflare Pages
+// with a Google Trust Services certificate via Cloudflare Universal SSL.
+// www.kenyachinateasummit.com is ALSO attached and serves 200 directly — it does
+// not redirect. Until a redirect rule is added, three hostnames serve identical
+// content and only the canonical tag distinguishes them.
 //
-// CUTOVER: flip domainAcquired to true. That is the whole change. Canonical, OG,
-// sitemap and robots all derive from `url`. Then follow the checklist in
-// HANDOFF.md — DNS is a human step. See ADR-010.
+// pages.dev still resolves and still serves the same production build — Pages
+// serves the production branch on every attached hostname. It is not a separate
+// environment. The canonical tags below are what stops the two hostnames
+// competing in search; use a preview branch for actual staging.
+//
+// Canonical, OG, sitemap and robots all derive from `url`. See ADR-010.
 const PRODUCTION_ORIGIN = "https://kenyachinateasummit.com";
 const STAGING_ORIGIN = "https://kenya-china-tea-summit.pages.dev";
-const domainAcquired = false;
+const domainAcquired = true;
 
 const summit = {
   name: "Kenya-China Tea Summit 2027",

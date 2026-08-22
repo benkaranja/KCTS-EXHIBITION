@@ -1,10 +1,10 @@
 {
-  "$comment": "Single source of truth. Every phase READS this; no phase re-decides what it contains. Secret VALUES live in .env.local and Cloudflare Pages env vars \u2014 only names appear here.",
+  "$comment": "Single source of truth. Every phase READS this; no phase re-decides what it contains. Secret VALUES live in .env.local and Cloudflare Pages env vars — only names appear here.",
   "project": {
     "name": "kenya-china-tea-summit",
     "productionDomain": "kenyachinateasummit.com",
     "oneLiner": "The Kenya-China Tea Summit 2027 is a three-day trade, investment and innovation forum in Nairobi connecting Kenya's tea value chain with Chinese buyers, investors and technology providers.",
-    "audience": "Tea exporters, importers and buyers; agri-investors and financiers; processing and packaging manufacturers; agri-tech and logistics providers; government and trade-policy officials; researchers; hospitality and tea-culture professionals \u2014 across Kenya, East Africa and China.",
+    "audience": "Tea exporters, importers and buyers; agri-investors and financiers; processing and packaging manufacturers; agri-tech and logistics providers; government and trade-policy officials; researchers; hospitality and tea-culture professionals — across Kenya, East Africa and China.",
     "primaryGoal": "registration",
     "secondaryGoals": [
       "sponsorship enquiry",
@@ -35,7 +35,7 @@
     "clientJsFramework": "none",
     "cssStrategy": "custom-properties + design tokens, no utility framework",
     "cms": "none",
-    "$cmsNote": "Decap CMS deliberately deferred \u2014 it needs an OAuth proxy Worker and the client edits via the secretariat, not a browser. Revisit if the client asks for self-service editing. See ADR-006."
+    "$cmsNote": "Decap CMS deliberately deferred — it needs an OAuth proxy Worker and the client edits via the secretariat, not a browser. Revisit if the client asks for self-service editing. See ADR-006."
   },
   "repo": {
     "owner": "benkaranja",
@@ -77,11 +77,11 @@
     "fromEmailEnv": "FROM_EMAIL",
     "fromNameEnv": "FROM_NAME",
     "contactEmailEnv": "CONTACT_EMAIL",
-    "senderDomainVerified": false,
-    "$note": "senderDomainVerified must be true before B7 can pass. Brevo \u2192 Senders \u2192 Domains, DKIM + DMARC live on kenyachinateasummit.com. BLOCKED on the domain purchase \u2014 see B-003."
+    "senderDomainVerified": "pending",
+    "$note": "senderDomainVerified must be true before B7 can pass. Brevo → Senders → Domains, DKIM + DMARC live on kenyachinateasummit.com. BLOCKED on the domain purchase — see B-003."
   },
   "turnstile": {
-    "siteKey": "",
+    "siteKey": "0x4AAAAAADr2iyH6s6QEYMuu",
     "secretKeyEnv": "TURNSTILE_SECRET_KEY",
     "$note": "siteKey is public and belongs in markup. Never ship 1x00000000000000000000AA."
   },
@@ -95,7 +95,7 @@
       "avif",
       "webp"
     ],
-    "$note": "Never generate images depicting the client's real people, premises, products, or events. No fabricated speaker portraits \u2014 speaker cards use a typographic placeholder until the client supplies real photographs."
+    "$note": "Never generate images depicting the client's real people, premises, products, or events. No fabricated speaker portraits — speaker cards use a typographic placeholder until the client supplies real photographs."
   },
   "analytics": {
     "provider": "cloudflare-web-analytics",
@@ -114,7 +114,7 @@
       "derived"
     ],
     "logo": "brand_assets/logo-kenya-china-tea-summit-master.jpg",
-    "$logoNote": "Client supplied 2026-08-01, 5225x5225 JPEG on solid white. Emblem cropped to src/assets/img/emblem-{96,256}.png for header and favicon; full lockup at logo-600.jpg. A vector or transparent-background version is still wanted so the mark can sit on the dark footer \u2014 not blocking.",
+    "$logoNote": "Client supplied 2026-08-01, 5225x5225 JPEG on solid white. Emblem cropped to src/assets/img/emblem-{96,256}.png for header and favicon; full lockup at logo-600.jpg. A vector or transparent-background version is still wanted so the mark can sit on the dark footer — not blocking.",
     "tagline": "Connecting Tea, Cultures & Opportunities",
     "colors": {
       "brandGreenDeep": "#14401E",
@@ -138,7 +138,7 @@
         "wallTan",
         "mountainBlue"
       ],
-      "why": "brandGreenLeaf is ~2.3:1 on white and must never carry text. brandRedBright is ~5.3:1 \u2014 large text and graphics only. Body copy uses ink; links and accents use brandRed; headings use brandGreenDeep."
+      "why": "brandGreenLeaf is ~2.3:1 on white and must never carry text. brandRedBright is ~5.3:1 — large text and graphics only. Body copy uses ink; links and accents use brandRed; headings use brandGreenDeep."
     },
     "fonts": {},
     "$fontNote": "Logo wordmark is a high-contrast Didone-style serif (KENYA/CHINA) over a wide-tracked serif (TEA SUMMIT). Pair a self-hosted serif display face for headings with a neutral sans for UI/body. Locked in D1.",
