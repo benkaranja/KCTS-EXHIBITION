@@ -1,6 +1,6 @@
 /**
  * BoothPanel — slide-in sidebar showing comprehensive booth details:
- * Stand #, Pavilion, Zone, Size, Rate (USD), and Reserve/Unreserve action.
+ * Stand #, Pavilion, Zone, Size, Dual Rate (USD and KES), and Reserve/Unreserve action.
  */
 export class BoothPanel {
   constructor(onReserve) {
@@ -42,7 +42,9 @@ export class BoothPanel {
     this.zoneEl.textContent = `${booth.zone} · ${pavilionName}`;
     this.sizeEl.textContent = `${booth.w}m × ${booth.h}m (${(booth.w * booth.h).toFixed(1)} sqm)`;
 
-    // Display Rate
+    // Display Dual Currency Rate: USD and KES (1 USD = 130 KES)
+    const dualRateText = this._formatDualCurrency(booth.rate);
+
     let rateEl = document.getElementById('panel-rate');
     if (!rateEl) {
       const infoContainer = document.querySelector('.panel-info');
@@ -51,18 +53,31 @@ export class BoothPanel {
         rateRow.className = 'info-row';
         rateRow.innerHTML = `
           <span class="info-label">Investment</span>
-          <span class="info-value rate-highlight" id="panel-rate">${booth.rate || 'USD 3,200'}</span>
+          <span class="info-value rate-highlight" id="panel-rate">${dualRateText}</span>
         `;
         infoContainer.insertBefore(rateRow, infoContainer.lastElementChild);
       }
     } else {
-      rateEl.textContent = booth.rate || 'USD 3,200';
+      rateEl.textContent = dualRateText;
     }
 
     this._updateStatus(booth.status);
 
     this.panelEl.classList.remove('hidden');
     this.panelEl.classList.add('visible');
+  }
+
+  _formatDualCurrency(usdString) {
+    if (!usdString) return 'USD 3,200 · KES 416,000';
+
+    // Extract numeric amount from "USD 3,200" or similar
+    const match = usdString.replace(/,/g, '').match(/\d+/);
+    if (!match) return usdString;
+
+    const usdVal = parseInt(match[0], 10);
+    const kesVal = usdVal * 130; // Standard Kenya Shilling summit conversion rate
+
+    return `USD ${usdVal.toLocaleString()} · KES ${kesVal.toLocaleString()}`;
   }
 
   hide() {

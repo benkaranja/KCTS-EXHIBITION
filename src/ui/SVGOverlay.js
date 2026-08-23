@@ -1,7 +1,8 @@
 /**
  * SVGOverlay — generates an inline SVG floor plan for Kenya-China Tea Summit 2027.
  * Supports Pavilion A (Main Tent) and Pavilion B (Innovation Tent) with
- * filter tabs, real DOM nodes, accessible focus, and click-to-reserve.
+ * filter tabs, real DOM nodes, accessible focus, color-based selection,
+ * and high-contrast legend labels without circular selector rings.
  */
 
 const BRAND_COLORS = {
@@ -164,8 +165,8 @@ export class SVGOverlay {
       rect.setAttribute('width', booth.w);
       rect.setAttribute('height', booth.h);
       rect.setAttribute('fill', fill);
-      rect.setAttribute('stroke', isVip ? BRAND_COLORS.gold_border : '#FFFFFF');
-      rect.setAttribute('stroke-width', isVip ? '0.25' : '0.12');
+      rect.setAttribute('stroke', booth.status === 'selected' ? '#FFEAA7' : (isVip ? BRAND_COLORS.gold_border : '#FFFFFF'));
+      rect.setAttribute('stroke-width', booth.status === 'selected' ? '0.35' : (isVip ? '0.25' : '0.12'));
       rect.setAttribute('rx', '0.2');
       rect.classList.add('booth-rect');
       if (booth.status === 'selected') rect.classList.add('selected');
@@ -186,6 +187,7 @@ export class SVGOverlay {
       text.setAttribute('y', booth.y + booth.h / 2);
       text.classList.add('booth-label');
       text.setAttribute('font-size', booth.w < 2 ? '0.9' : '1.1');
+      text.setAttribute('fill', '#FFFFFF');
       text.textContent = booth.id;
       g.appendChild(text);
 
@@ -195,7 +197,7 @@ export class SVGOverlay {
 
     svg.appendChild(boothGroup);
 
-    // 6. Legend
+    // 6. Legend (Rendered with crisp, clear text colors for high readability)
     this._renderLegend(svg, svgNS, minX, maxY + 1.5);
 
     target.innerHTML = '';
@@ -238,38 +240,50 @@ export class SVGOverlay {
   }
 
   _renderLegend(svg, svgNS, x, y) {
+    // Legend bar background container for crisp contrast
+    const legendBg = document.createElementNS(svgNS, 'rect');
+    legendBg.setAttribute('x', x);
+    legendBg.setAttribute('y', y - 0.5);
+    legendBg.setAttribute('width', '98');
+    legendBg.setAttribute('height', '3.2');
+    legendBg.setAttribute('fill', '#102C1F');
+    legendBg.setAttribute('stroke', '#1E5E3A');
+    legendBg.setAttribute('stroke-width', '0.2');
+    legendBg.setAttribute('rx', '0.6');
+    svg.appendChild(legendBg);
+
     const items = [
-      { color: BRAND_COLORS.available, label: 'Available Stand' },
-      { color: BRAND_COLORS.selected, label: 'Selected Stand' },
-      { color: BRAND_COLORS.vip, border: BRAND_COLORS.gold_border, label: 'VIP / Premium Lounge' },
-      { color: BRAND_COLORS.reserved, label: 'Reserved' }
+      { color: BRAND_COLORS.available, label: 'Available Stand', textColor: '#FFFFFF' },
+      { color: BRAND_COLORS.selected, label: 'Selected Stand', textColor: '#FFFFFF' },
+      { color: BRAND_COLORS.vip, border: BRAND_COLORS.gold_border, label: 'VIP / Premium Lounge', textColor: '#FFFFFF' },
+      { color: BRAND_COLORS.reserved, label: 'Reserved', textColor: '#D1DDD5' }
     ];
 
-    let cx = x + 2;
+    let cx = x + 3;
     for (const item of items) {
       const r = document.createElementNS(svgNS, 'rect');
       r.setAttribute('x', cx);
-      r.setAttribute('y', y);
-      r.setAttribute('width', '1.6');
+      r.setAttribute('y', y + 0.3);
+      r.setAttribute('width', '1.8');
       r.setAttribute('height', '1.6');
       r.setAttribute('fill', item.color);
       if (item.border) {
         r.setAttribute('stroke', item.border);
         r.setAttribute('stroke-width', '0.25');
       }
-      r.setAttribute('rx', '0.2');
+      r.setAttribute('rx', '0.3');
       svg.appendChild(r);
 
       const t = document.createElementNS(svgNS, 'text');
-      t.setAttribute('x', cx + 2.4);
-      t.setAttribute('y', y + 1.2);
-      t.setAttribute('fill', '#0F3020');
-      t.setAttribute('font-size', '1.1');
-      t.setAttribute('font-weight', '600');
+      t.setAttribute('x', cx + 2.6);
+      t.setAttribute('y', y + 1.5);
+      t.setAttribute('fill', item.textColor);
+      t.setAttribute('font-size', '1.15');
+      t.setAttribute('font-weight', '700');
       t.textContent = item.label;
       svg.appendChild(t);
 
-      cx += 22;
+      cx += 23.5;
     }
   }
 
@@ -312,6 +326,9 @@ export class SVGOverlay {
       : (isVip ? BRAND_COLORS.vip : (BRAND_COLORS[status] || BRAND_COLORS.available));
 
     rect.setAttribute('fill', fill);
+    rect.setAttribute('stroke', status === 'selected' ? '#FFEAA7' : (isVip ? BRAND_COLORS.gold_border : '#FFFFFF'));
+    rect.setAttribute('stroke-width', status === 'selected' ? '0.35' : (isVip ? '0.25' : '0.12'));
+
     if (status === 'selected') {
       rect.classList.add('selected');
     } else {
