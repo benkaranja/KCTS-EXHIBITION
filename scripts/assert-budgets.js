@@ -2,7 +2,7 @@
 // Fails the build when a shipped-asset budget is breached.
 // Runs against public/ AFTER Eleventy, so it measures what actually deploys.
 
-import { readdirSync, statSync, existsSync } from "node:fs";
+import { readdirSync, statSync, existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 
 const BUDGETS = {
@@ -13,8 +13,17 @@ const BUDGETS = {
   // first (endorsements, the downloads list, wrap-narrow, cite: 1.6KB) before
   // this number moved. 34KB of CSS is still small in absolute terms; the
   // guardrail exists to catch drift, and this was growth, not drift.
-  css: { dir: "public/css", max: 34816, label: "CSS" },
-  js: { dir: "public/js", max: 15360, label: "JS" },
+  css: { dir: "public/css", max: 34816, label: "CSS", exclude: ["exhibition"] },
+  js: { dir: "public/js", max: 15360, label: "JS", exclude: ["exhibition/"] },
+
+  // The exhibition floor plan is budgeted SEPARATELY, and the site budgets
+  // above exclude it. That is not an exemption, it is the two budgets
+  // measuring different things: the site caps exist so the marketing pages
+  // stay light, and every one of those pages loads zero bytes of this. The
+  // 3D bundle is three.js, fetched only when a visitor asks for the 3D view.
+  exhibitionCss: { dir: "public/css", max: 12288, label: "CSS/ex", only: ["exhibition"], optional: true },
+  exhibition2d: { dir: "public/js/exhibition", max: 24576, label: "JS/2D", exclude: ["three"], optional: true },
+  exhibition3d: { dir: "public/js/exhibition", max: 737280, label: "JS/3D", only: ["three"], optional: true },
 };
 const VIDEO_MAX = 4194304; // 4 MB per file
 const IMG_MAX = 204800; // 200 KB per file
@@ -43,16 +52,24 @@ const walkFiles = (dir, baseDir = "") => {
 
 // For aggregate budgets (CSS, JS), sum all files at any depth.
 // null means "directory does not exist" — distinct from a real 0-byte total.
-const dirTotal = (dir) => {
+const dirTotal = (dir, { exclude = [], only = null } = {}) => {
   if (!existsSync(dir)) return null;
-  const files = walkFiles(dir);
+  const files = walkFiles(dir).filter((f) => {
+    const path = f.path.replace(/\\/g, "/");
+    if (only && !only.some((m) => path.includes(m))) return false;
+    return !exclude.some((m) => path.includes(m));
+  });
   return files.reduce((a, f) => a + f.size, 0);
 };
 
 const failures = [];
 
-for (const { dir, max, label } of Object.values(BUDGETS)) {
-  const total = dirTotal(dir);
+for (const { dir, max, label, exclude, only, optional } of Object.values(BUDGETS)) {
+  const total = dirTotal(dir, { exclude, only });
+  // `optional` covers a feature that is not merged yet. A missing public/css
+  // is a broken build; a missing public/js/exhibition just means the floor
+  // plan lives on another branch today.
+  if (total === null && optional) continue;
   if (total === null) {
     console.error(`${label.padEnd(6)} MISSING DIRECTORY: ${dir}`);
     failures.push(`${label} directory missing: ${dir}`);
@@ -61,6 +78,17 @@ for (const { dir, max, label } of Object.values(BUDGETS)) {
   const pct = ((total / max) * 100).toFixed(0);
   console.log(`${label.padEnd(6)} ${total} / ${max} bytes (${pct}%)`);
   if (total > max) failures.push(`${label} over budget: ${total} > ${max}`);
+}
+
+// A stylesheet that still carries a /* comment */ was never minified. This
+// caught a Windows build where the minifier's main-module guard was false and
+// the whole of public/css shipped raw — the budget failed, but for a reason
+// nobody could read from the number alone.
+for (const { path, size } of walkFiles("public/css")) {
+  if (!path.endsWith(".css") || size === 0) continue;
+  if (readFileSync(join("public/css", path), "utf8").includes("/*")) {
+    failures.push(`${path} still contains comments — scripts/minify-css.js did not run`);
+  }
 }
 
 if (existsSync("public/video")) {
