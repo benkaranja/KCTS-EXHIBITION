@@ -30,6 +30,18 @@ let manifestData = null;
 /** @type {string} */
 let activeHall = "all";
 
+/** @type {Record<string, string>} */
+let t = {};
+
+function initStrings() {
+  t = Object.fromEntries(
+    [...document.querySelectorAll("#plan-strings li")].map((el) => [
+      el.dataset.key,
+      el.textContent,
+    ])
+  );
+}
+
 // ── Public API ──────────────────────────────────────────────────────────
 
 /**
@@ -42,6 +54,7 @@ export function renderPlan(root, manifest, options = {}) {
   rootElement = root;
   manifestData = manifest;
   activeHall = options.hall || "all";
+  if (Object.keys(t).length === 0) initStrings();
   generateSVG();
 }
 
@@ -57,9 +70,11 @@ export function setStatus(boothId, status) {
   // Update aria-label to reflect the new status
   const booth = findBooth(boothId);
   if (booth) {
+    const standWord = t.stand || "Stand";
+    const statusLabel = t[status] || status;
     rect.setAttribute(
       "aria-label",
-      `Stand ${booth.id}, ${booth.zone}, ${status}`
+      `${standWord} ${booth.id}, ${booth.zone}, ${statusLabel}`
     );
   }
 }
@@ -114,7 +129,7 @@ function generateSVG() {
   );
   svg.setAttribute("class", "plan-svg");
   svg.setAttribute("role", "img");
-  svg.setAttribute("aria-label", "Exhibition floor plan");
+  svg.setAttribute("aria-label", t.planLabel || "Exhibition floor plan");
 
   // Hatch pattern for blocked booths (survives greyscale)
   const defs = document.createElementNS(SVG_NS, "defs");
@@ -202,6 +217,9 @@ function generateSVG() {
       const g = document.createElementNS(SVG_NS, "g");
       g.setAttribute("class", "booth");
 
+      const standWord = t.stand || "Stand";
+      const statusLabel = t[booth.status] || booth.status;
+
       // Base fill rect
       const rect = document.createElementNS(SVG_NS, "rect");
       rect.setAttribute("x", booth.x);
@@ -215,11 +233,11 @@ function generateSVG() {
       rect.setAttribute("role", "button");
       rect.setAttribute(
         "aria-label",
-        `Stand ${booth.id}, ${booth.zone}, ${booth.status}`
+        `${standWord} ${booth.id}, ${booth.zone}, ${statusLabel}`
       );
 
       const title = document.createElementNS(SVG_NS, "title");
-      title.textContent = `Stand ${booth.id} (${booth.zone}) — ${booth.status}`;
+      title.textContent = `${standWord} ${booth.id} (${booth.zone}), ${statusLabel}`;
       rect.appendChild(title);
 
       g.appendChild(rect);
@@ -293,6 +311,8 @@ function dispatchSelect(boothId) {
 // Runs when loaded as a <script type="module"> on the exhibition-plan page.
 
 function init() {
+  initStrings();
+
   const root = document.getElementById("exhibition-root");
   const container = document.getElementById("plan-container");
   if (!root || !container) return;
@@ -301,7 +321,7 @@ function init() {
   // application/json, which is inert (not executed) and CSP-safe.
   const manifestEl = document.getElementById("booth-manifest");
   if (!manifestEl) {
-    container.textContent = "Floor plan could not be loaded.";
+    container.textContent = t.loadError || "The floor plan could not be loaded.";
     return;
   }
 
@@ -310,7 +330,7 @@ function init() {
     manifest = JSON.parse(manifestEl.textContent);
   } catch (err) {
     console.error("Exhibition plan: invalid manifest", err);
-    container.textContent = "Floor plan could not be loaded.";
+    container.textContent = t.loadError || "The floor plan could not be loaded.";
     return;
   }
 
@@ -356,10 +376,13 @@ function showPanel(booth) {
   const size = document.getElementById("panel-size");
   const status = document.getElementById("panel-status");
 
-  if (title) title.textContent = `Stand ${booth.id}`;
+  const standWord = t.stand || "Stand";
+  const statusLabel = t[booth.status] || booth.status;
+
+  if (title) title.textContent = `${standWord} ${booth.id}`;
   if (zone) zone.textContent = booth.zone;
   if (size) size.textContent = `${booth.w}m × ${booth.h}m`;
-  if (status) status.textContent = booth.status;
+  if (status) status.textContent = statusLabel;
 }
 
 function hidePanel() {

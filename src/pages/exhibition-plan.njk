@@ -7,15 +7,29 @@ standfirst: Interactive floor plan for the International Tea & Technology Expo. 
 description: Interactive exhibition floor plan for the Kenya-China Tea Summit 2027. Browse available stands across two pavilions.
 sitemapPriority: 0.8
 hideCta: true
+pageStyles:
+  - /css/exhibition.css
+pageScripts:
+  - /js/exhibition/plan-2d.js
 ---
-
-<link rel="stylesheet" href="/css/exhibition.css">
 
 <div id="exhibition-root" class="exhibition-plan">
   {# The manifest is injected as a JSON text node inside a hidden element.
      The JS module reads it from the DOM. This avoids a network fetch, works
      offline, and does not violate script-src because it is not a script. #}
   <script id="booth-manifest" type="application/json">{{ booths | dump | safe }}</script>
+
+  {# User-facing strings declared in the DOM so the i18n transform can localize them.
+     The JS module reads them from this element instead of hardcoding English literals. #}
+  <ul id="plan-strings" hidden>
+    <li data-key="planLabel">Exhibition floor plan</li>
+    <li data-key="stand">Stand</li>
+    <li data-key="loadError">The floor plan could not be loaded.</li>
+    <li data-key="available">Available</li>
+    <li data-key="held">On hold</li>
+    <li data-key="booked">Booked</li>
+    <li data-key="blocked">Not available</li>
+  </ul>
 
   {# SVG plan container — the JS module renders into this #}
   <div id="plan-container" role="application" aria-label="Exhibition floor plan">
@@ -66,13 +80,11 @@ hideCta: true
   {# Legend #}
   <div class="plan-legend" id="plan-legend">
     <span class="plan-legend__item"><span class="plan-legend__swatch" data-status="available"></span> Available</span>
-    <span class="plan-legend__item"><span class="plan-legend__swatch" data-status="held"></span> Held</span>
+    <span class="plan-legend__item"><span class="plan-legend__swatch" data-status="held"></span> On hold</span>
     <span class="plan-legend__item"><span class="plan-legend__swatch" data-status="booked"></span> Booked</span>
-    <span class="plan-legend__item"><span class="plan-legend__swatch" data-status="blocked"></span> Blocked</span>
+    <span class="plan-legend__item"><span class="plan-legend__swatch" data-status="blocked"></span> Not available</span>
   </div>
 </div>
 
 {# 3D view container — three.js renders into this, loaded only on demand #}
 <div id="three-container" class="three-container" hidden></div>
-
-<script type="module" src="/js/exhibition/plan-2d.js"></script>
