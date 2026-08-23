@@ -257,6 +257,8 @@
 /* ── Legend ─────────────────────────────────────────────────────────────── */
 
 .plan-legend {
+  list-style: none;
+  margin: 0;
   display: flex;
   flex-wrap: wrap;
   gap: var(--sp-s);
