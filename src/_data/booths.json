@@ -4,7 +4,7 @@
   "halls": [
     {
       "id": "A",
-      "name": "Pavilion A — Main Exhibition Hall",
+      "name": "Hall A",
       "width": 85,
       "depth": 30,
       "booths": [
@@ -1472,7 +1472,7 @@
     },
     {
       "id": "B",
-      "name": "Pavilion B — Tea Innovation & Culture Pavilion",
+      "name": "Hall B",
       "width": 85,
       "depth": 20,
       "booths": [
