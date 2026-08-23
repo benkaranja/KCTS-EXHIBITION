@@ -107,7 +107,7 @@
   <button class="btn btn--primary btn--block" type="submit">Register your interest</button>
 
   {# Live region: announced to screen readers on both success and failure. #}
-  <p class="form__status" id="registration-form-status" role="status" aria-live="polite"></p>
+  <p class="form__status" id="registration-form-status" role="status" aria-live="polite" tabindex="-1"></p>
 
   <p class="form__legal">By submitting you agree the Secretariat may use your information to process your registration and contact you with updates about the {{ summit.name }}. Your information is shared with official event partners only as needed for registration and logistics, and is never sold. To review, correct or delete your information, email <a href="mailto:{{ summit.contact.email }}">{{ summit.contact.email }}</a>. See our <a href="/privacy/">privacy notice</a>.</p>
 </form>

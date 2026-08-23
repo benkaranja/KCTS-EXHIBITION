@@ -45,7 +45,7 @@
   {% endif %}
 
   <button class="btn btn--primary btn--block" type="submit">Send message</button>
-  <p class="form__status" id="contact-form-status" role="status" aria-live="polite"></p>
+  <p class="form__status" id="contact-form-status" role="status" aria-live="polite" tabindex="-1"></p>
   {# Same correction as form-registration: "nowhere else" was false while Brevo
      and Cloudflare process the message. #}
   <p class="form__legal">Your message is used to answer your enquiry, and is never sold. Our email and hosting providers handle it on our behalf. See our <a href="/privacy/">privacy notice</a>.</p>

@@ -1,6 +1,6 @@
 # Copy for client review — Kenya-China Tea Summit 2027
 
-**Generated:** 2026-08-23 · **Build:** `48de09d`
+**Generated:** 2026-08-23 · **Build:** `c4191b8`
 
 Generated from the built site. This is what is live, not a draft of it.
 

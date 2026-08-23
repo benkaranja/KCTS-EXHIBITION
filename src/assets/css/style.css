@@ -755,9 +755,44 @@ select.input { cursor: pointer; }
   overflow: hidden;
 }
 
-.form__status { min-height: 1.5em; margin: var(--sp-s) 0 0; font-size: var(--step--1); }
-.form__status[data-kind="error"] { color: var(--c-seal); font-weight: 600; }
-.form__status[data-kind="pending"] { color: var(--c-text-muted); }
+/* Submission result. The form is no longer replaced on success, so this is
+   the only thing that tells the delegate anything happened — it has to carry
+   real weight rather than sit as a line of small text under the button.
+   Empty until there is something to say: min-height would otherwise reserve a
+   gap on every page that has a form. */
+.form__status {
+  margin: var(--sp-m) 0 0;
+  font-size: var(--step--1);
+  max-width: none;
+}
+.form__status:empty { display: none; }
+.form__status[data-kind] {
+  display: block;
+  padding: var(--sp-s) var(--sp-m);
+  border-left: 3px solid transparent;
+}
+.form__status:focus-visible { outline: 3px solid var(--c-focus); outline-offset: 2px; }
+
+/* Success: the intaglio ground, so it reads as the site confirming something
+   rather than as a browser notice. Paper on --c-ink-2 measures 10.8:1 and is
+   already gated in check-contrast.js. */
+.form__status[data-kind="ok"] {
+  background: var(--c-ink-2);
+  color: var(--c-text-on-ink);
+  border-left-color: var(--c-ply-canary);
+  font-weight: 600;
+}
+.form__status[data-kind="error"] {
+  background: var(--c-tint);
+  color: var(--c-seal);
+  border-left-color: var(--c-seal);
+  font-weight: 600;
+}
+.form__status[data-kind="pending"] {
+  background: var(--c-tint);
+  color: var(--c-text-muted);
+  border-left-color: var(--c-rule);
+}
 
 .form__legal { font-size: var(--step--2); color: var(--c-text-muted); margin-top: var(--sp-s); }
 

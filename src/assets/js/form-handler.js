@@ -144,16 +144,20 @@
         });
 
         if (res.ok) {
-          form.hidden = true;
-          const done = document.createElement("div");
-          done.className = "form__done sheet";
-          done.setAttribute("role", "status");
-          done.setAttribute("tabindex", "-1");
-          done.innerHTML =
-            "<h2>Recorded</h2><p>The Secretariat has your details and a confirmation is on its way. " +
-            "If it does not arrive within a few minutes, check your spam folder before resubmitting.</p>";
-          form.parentNode.insertBefore(done, form);
-          done.focus();
+          // The form STAYS. It used to be hidden and replaced by a panel,
+          // which meant a delegate who wanted to register a colleague had to
+          // reload, and anyone who mistyped a field lost everything they had
+          // entered. Values are kept too, for the same reason.
+          say(
+            "Recorded. The Secretariat has your details and a confirmation is on its way. " +
+              "If it does not arrive within a few minutes, check your spam folder before resubmitting.",
+            "ok",
+          );
+          // Move focus to the message rather than scrolling silently: a screen
+          // reader gets it from the live region, everyone else needs to be
+          // taken to it, and the submit button is now above it.
+          status?.focus?.();
+          status?.scrollIntoView?.({ block: "center", behavior: "smooth" });
           return;
         }
 
