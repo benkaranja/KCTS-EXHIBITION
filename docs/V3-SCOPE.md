@@ -146,13 +146,22 @@ info@kenyachinateasummit.com        general
 support@kenyachinateasummit.com     delegate and portal support
 marketing@kenyachinateasummit.com   sponsorship, media, partnerships
 
-4th Floor, Woodvale Place, Westlands, Nairobi, Kenya
-+254 111 491 076
++254 111 491 076  (also WhatsApp)
 ```
 
 The Tally form's legal text points at `enquiries@orbitlineushers.com`; replaced
-with `info@`. Woodvale Place is the Secretariat address, **not** the venue —
-the venue is KICC.
+with `info@`.
+
+**The Orbitline office address is not published.** It was live briefly and
+removed on client instruction, 23 August 2026: two Nairobi addresses on one
+site invite a delegate to arrive at the wrong one on the morning of Day 1, and
+no amount of "office, not venue" copy fully prevents that. The only address the
+site states is KICC.
+
+Consequence to track: the privacy notice needs a postal address for
+data-protection requests before the portal holds accounts. It currently routes
+those through the contact form and says the address is to be confirmed, which
+holds now but not once accounts exist. See `CLIENT-DATA-REQUEST.md` §8.
 
 ---
 

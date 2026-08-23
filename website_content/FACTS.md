@@ -45,7 +45,7 @@ supplied by the client in chat on 2026-08-01; plus the client consultation of
 | Support email | support@kenyachinateasummit.com | Delegate and portal support |
 | Marketing email | marketing@kenyachinateasummit.com | Sponsorship, media, partnerships |
 | Telephone | +254 111 491 076 | **Also the WhatsApp number** — confirmed 23 Aug 2026 |
-| Secretariat address | 4th Floor, Woodvale Place, Westlands, Nairobi, Kenya | This is the **Secretariat office, not the venue** |
+| Secretariat address | 4th Floor, Woodvale Place, Westlands, Nairobi, Kenya | **NOT PUBLISHED.** Confirmed, and held here as a record only. Removed from the site on client instruction 2026-08-23: two Nairobi addresses invite a delegate to arrive at the wrong one. The only address the site states is the venue |
 | Domain | kenyachinateasummit.com | Live on Cloudflare Pages since 15 Aug 2026 |
 | Expo scale | 146 numbered stands across two tents, 30m × 80m | From the client's layout drawing. **Subject to change** — cite only as "layout subject to change" |
 | Registration categories | Replaced. See §1b | Supersedes the docx list |

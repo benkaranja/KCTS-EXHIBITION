@@ -185,7 +185,9 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
   <div class="site-footer__base">
     <p>{{ summit.name }} &middot; {{ summit.dates.display }} &middot; {{ summit.location.venueShort }}, {{ summit.location.city }}</p>
     <p>Organised by {{ summit.organiser.legalEntity }}{% if summit.partners.length %}, in partnership with {% for p in summit.partners %}{{ p.name }}{% if not loop.last %} and {% endif %}{% endfor %}{% endif %}.</p>
-    <p>{{ summit.contact.address.line1 }}, {{ summit.contact.address.line2 }}, {{ summit.contact.address.city }}, {{ summit.contact.address.country }} &middot; <a href="tel:{{ summit.contact.phone | replace(" ", "") }}">{{ summit.contact.phone }}</a></p>
+    {# No postal address here. The only address the site states is the venue —
+       see the note on summit.contact in src/_data/summit.js. #}
+    <p>{{ summit.location.venue }}, {{ summit.location.street }}, {{ summit.location.city }} &middot; <a href="tel:{{ summit.contact.phone | replace(" ", "") }}">{{ summit.contact.phone }}</a></p>
     <p><a href="mailto:{{ summit.contact.email }}">{{ summit.contact.email }}</a></p>
     <p class="site-footer__legal">{% for l in navigation.legal %}<a href="{{ l.url }}">{{ l.text }}</a>{% if not loop.last %} &middot; {% endif %}{% endfor %}</p>
     <p>&copy; {{ buildYear }} {{ summit.organiser.legalEntity }}. All rights reserved.</p>

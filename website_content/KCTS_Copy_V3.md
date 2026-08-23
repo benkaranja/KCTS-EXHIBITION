@@ -63,7 +63,7 @@ Visit   ▾   Why attend · Venue · Travel and visas · Tea attractions · Gall
 
 > Kenya-China Tea Summit 2027 · 21–23 April 2027 · KICC, Nairobi
 > Organised by Orbitline Events & Ushers Ltd, in partnership with the Tea Board of Kenya.
-> 4th Floor, Woodvale Place, Westlands, Nairobi, Kenya · +254 111 491 076
+> Kenyatta International Convention Centre, Harambee Avenue, Nairobi · +254 111 491 076
 > info@kenyachinateasummit.com
 > Privacy notice · Terms of use · Code of conduct
 
@@ -211,7 +211,6 @@ Aria-label: *Chat with the summit team on WhatsApp*
 > The Kenya-China Tea Summit Secretariat, operated by Orbitline Events & Ushers
 > Ltd, Nairobi, in partnership with the Tea Board of Kenya.
 >
-> 4th Floor, Woodvale Place, Westlands, Nairobi
 > +254 111 491 076 · info@kenyachinateasummit.com
 
 ---
@@ -726,16 +725,15 @@ fees, speakers and the full programme.
 > The same number takes calls and WhatsApp messages.
 > [Chat on WhatsApp](https://wa.me/254111491076)
 
-## Office
+## Where the summit takes place
 
-> Kenya-China Tea Summit Secretariat
-> Orbitline Events & Ushers Ltd
-> 4th Floor, Woodvale Place
-> Westlands, Nairobi, Kenya
->
-> This is the Secretariat office. The summit runs at [KICC](#venue).
+> Kenyatta International Convention Centre
+> Harambee Avenue, Nairobi, Kenya
 >
 > [Get directions in Google Maps]
+>
+> *No office address is published. Client decision, 23 August 2026: two Nairobi
+> addresses on one site invite a delegate to arrive at the wrong one.*
 
 ## Send a message
 

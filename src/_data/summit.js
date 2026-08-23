@@ -240,9 +240,17 @@ const summit = {
   venueAnnounced: false,
 
   // Supplied 2026-08-23. FACTS.md §1a.
-  // `address` is the SECRETARIAT OFFICE in Westlands, not the venue. Any
-  // template printing it has to say so, or delegates turn up in the wrong
-  // part of Nairobi on the morning of Day 1.
+  //
+  // NO POSTAL ADDRESS, deliberately. Orbitline's Westlands office was published
+  // here briefly and removed on client instruction: two Nairobi addresses on
+  // one site invites a delegate to arrive at the wrong one on the morning of
+  // Day 1, and no amount of "this is the office, not the venue" copy fully
+  // prevents that. The only address the site states is the venue.
+  //
+  // One consequence to keep in view: the privacy notice needs a postal address
+  // for data-protection requests before the portal holds any accounts. It
+  // currently routes those through the contact form and says the address is to
+  // be confirmed, which holds for now but not once accounts exist.
   contact: {
     formOnly: false,
     email: "info@kenyachinateasummit.com",
@@ -251,12 +259,6 @@ const summit = {
     phone: "+254 111 491 076",
     // E.164 without the +, which is what wa.me expects.
     whatsapp: "254111491076",
-    address: {
-      line1: "4th Floor, Woodvale Place",
-      line2: "Westlands",
-      city: "Nairobi",
-      country: "Kenya",
-    },
   },
 
   social: {},

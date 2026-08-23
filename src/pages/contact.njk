@@ -34,18 +34,14 @@ hideCta: true
       <dd class="value"><a href="tel:{{ summit.contact.phone | replace(" ", "") }}">{{ summit.contact.phone }}</a></dd>
     </div>
     <div class="field">
-      <dt class="label">Office</dt>
-      <dd class="value">{{ summit.contact.address.line1 }}, {{ summit.contact.address.line2 }}, {{ summit.contact.address.city }}, {{ summit.contact.address.country }}</dd>
-    </div>
-    <div class="field">
       <dt class="label">Summit venue</dt>
-      <dd class="value">{{ summit.location.venue }}, {{ summit.location.street }}</dd>
+      <dd class="value">{{ summit.location.venue }}, {{ summit.location.street }}, {{ summit.location.city }}</dd>
     </div>
   </dl>
   <div class="note">
-    <p class="note__label">Two addresses</p>
-    <p>Woodvale Place is the Secretariat office. The summit itself runs at
-      <a href="/venue/">KICC</a> on {{ summit.location.street }}.</p>
+    <p class="note__label">Enquiries</p>
+    <p>Email or WhatsApp reaches the Secretariat directly. The form below routes
+      to the same place.</p>
   </div>
 </aside>
 
@@ -73,16 +69,14 @@ hideCta: true
 
 <p><a class="btn btn--secondary" href="https://wa.me/{{ summit.contact.whatsapp }}" target="_blank" rel="noopener">Chat on WhatsApp</a></p>
 
-<h2>Office</h2>
+<h2>Where the summit takes place</h2>
 
-<p>{{ summit.organiser.name }}<br>
-{{ summit.organiser.legalEntity }}<br>
-{{ summit.contact.address.line1 }}<br>
-{{ summit.contact.address.line2 }}, {{ summit.contact.address.city }}<br>
-{{ summit.contact.address.country }}</p>
+<p>{{ summit.location.venue }}<br>
+{{ summit.location.street }}, {{ summit.location.city }}<br>
+{{ summit.location.country }}</p>
 
-<p>This is the Secretariat office. The summit runs at
-<a href="/venue/">{{ summit.location.venue }}</a>.</p>
+<p>Full access and floor plan detail is on the
+<a href="/venue/">venue page</a>.</p>
 
 {% set locatorNote = "The summit venue, KICC. Opens Google Maps directions in a new tab." %}
 {% include "components/locator.njk" %}
