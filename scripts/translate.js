@@ -65,7 +65,7 @@ const listPages = (dir = "public", depth = 0) =>
 // as a half-translated one. `li` covers the nav and footer links, `a.btn`
 // covers the calls to action.
 const BLOCKS =
-  /<(h1|h2|h3|p|li|dt|dd|figcaption|caption|title|button)\b[^>]*>([\s\S]*?)<\/\1>|<a\b[^>]*class="[^"]*\bbtn\b[^"]*"[^>]*>([\s\S]*?)<\/a>/gi;
+  /<(h1|h2|h3|p|li|dt|dd|figcaption|caption|title|button|legend)\b[^>]*>([\s\S]*?)<\/\1>|<a\b[^>]*class="[^"]*\bbtn\b[^"]*"[^>]*>([\s\S]*?)<\/a>/gi;
 
 /** Tag sequence of a fragment, used to check the model preserved the markup. */
 export const tagShape = (html) => (html.match(/<\/?[a-z][^>]*>/gi) ?? []).map((t) =>

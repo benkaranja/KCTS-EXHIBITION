@@ -147,8 +147,19 @@ export default function (eleventyConfig) {
   }
   // Must stay in step with BLOCKS in scripts/translate.js — extraction and
   // application have to see the same fragments or nothing matches.
+  //
+  // `legend` was added 2026-08-24. A <label> is translated today only because
+  // the field markup wraps it in a <p>, which IS matched; a <legend> is a
+  // direct child of <fieldset> and had nothing around it, so
+  // "Participation type" shipped in English on the Chinese registration form.
+  // Found while reviewing the exhibition branch, which hit the same wall with
+  // its hall filter.
+  //
+  // `span` is deliberately NOT here. The pattern is non-greedy, so on nested
+  // spans it would close at the inner </span> and translate a fragment of the
+  // markup. Anything needing translation must use a listed element.
   const BLOCKS =
-    /<(h1|h2|h3|p|li|dt|dd|figcaption|caption|title|button)\b[^>]*>([\s\S]*?)<\/\1>|<a\b[^>]*class="[^"]*\bbtn\b[^"]*"[^>]*>([\s\S]*?)<\/a>/gi;
+    /<(h1|h2|h3|p|li|dt|dd|figcaption|caption|title|button|legend)\b[^>]*>([\s\S]*?)<\/\1>|<a\b[^>]*class="[^"]*\bbtn\b[^"]*"[^>]*>([\s\S]*?)<\/a>/gi;
 
   eleventyConfig.addTransform("i18n", function (content) {
     if (typeof this.page.outputPath !== "string") return content;
