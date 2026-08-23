@@ -178,6 +178,31 @@ grep -nE '#[0-9a-fA-F]{3,8}|rgba?\(|[0-9.]+(px|rem)' src/assets/css/exhibition.c
 A clean run is the acceptance criterion. Exception: geometry computed from the
 booth manifest is set through the CSSOM or as SVG attributes, not in CSS.
 
+### Colour on SVG booths comes from CSS, never from setAttribute
+
+The current code does `rect.setAttribute("fill", "#2E8B57")`. That is a literal
+colour in JavaScript, which is exactly what the token rule exists to prevent,
+and it cannot follow a token change.
+
+Set a data attribute instead and let the stylesheet colour it:
+
+```js
+rect.dataset.status = "available";        // in the module
+```
+
+```css
+.booth[data-status="available"] { fill: var(--c-tint); }
+.booth[data-status="held"]      { fill: var(--c-ply-canary); }
+.booth[data-status="booked"]    { fill: var(--c-ink-2); }
+.booth[data-status="blocked"]   { fill: var(--c-tint-deep); }
+```
+
+This works because `fill` as a **presentation attribute** has lower priority
+than any CSS rule, so the stylesheet always wins. Geometry (`x`, `y`, `width`,
+`height`) stays as attributes, because it is data. Colour is design and belongs
+in the stylesheet.
+
+
 ### The tokens
 
 Colour:
@@ -252,24 +277,49 @@ other.
 
 ```json
 {
-  "hall": "A",
-  "tent": { "width": 80, "depth": 30, "unit": "m" },
-  "booths": [
-    { "id": "A-001", "x": 2.0, "y": 1.0, "w": 3.0, "h": 3.0,
-      "type": "single", "zone": "perimeter-north", "status": "available" }
+  "unit": "m",
+  "provisional": true,
+  "halls": [
+    {
+      "id": "A",
+      "name": "Hall A",
+      "width": 80,
+      "depth": 30,
+      "booths": [
+        { "id": "A-001", "x": 2.0, "y": 1.0, "w": 3.0, "h": 3.0,
+          "type": "single", "zone": "perimeter-north", "status": "available" }
+      ]
+    }
   ]
 }
 ```
 
-- Coordinates in **metres**, origin at the tent's north-west corner, x east,
-  y south. Not pixels. The renderer scales.
+- **Two halls, not one.** `summit.js` carries `halls: 2`. An earlier draft of
+  this brief showed a single `"hall": "A"` string, which could not represent the
+  actual venue. The array above is the correct shape.
+- Coordinates in **metres**, origin at each hall's north-west corner, x east,
+  y south. Not pixels.
 - `status` in the committed file is always `"available"`. Live status comes from
   the API at runtime and overlays the manifest. **Never commit a real booking
   state.**
-- Source drawing: `exhibition_layout/actual_layout/30 BY 80 EXHIBITION TENT LAYOUT V1.png`,
-  a 30m x 80m tent, ~146 numbered booths across two tents, perimeter singles on
-  the long walls, 2-wide blocks down the middle, 3.0m and 2.0m aisles, one
-  4-deep column at the east end.
+- **No commercial fields.** No `rate`, no price, no size class that implies a
+  price. Stand pricing is not confirmed by the client (FACTS.md §2) and invented
+  rates on a client site are a commercial risk, not a placeholder.
+
+### Do NOT re-derive the geometry yet
+
+Reshape the envelope and carry the existing coordinates across as they are.
+Convert the units if that is arithmetic, but **do not measure booth positions
+off the client drawing.**
+
+Stand inventory and pricing are the number one outstanding client item, and
+`summit.js` marks the layout `layoutProvisional: true`. The real inventory
+replaces whatever is in the manifest when it arrives, so hand-measuring a
+provisional PNG is work that gets deleted. Set `"provisional": true`, keep the
+booth count you already have, and move on.
+
+Reference only, not a task: `exhibition_layout/actual_layout/30 BY 80 EXHIBITION
+TENT LAYOUT V1.png`.
 
 The plan is **generated from the manifest**, never hand-drawn. A layout change
 must be a data edit. That is a requirement the client set directly.
