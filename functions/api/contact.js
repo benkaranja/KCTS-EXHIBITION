@@ -43,6 +43,7 @@ export async function onRequestPost({ request, env }) {
   const row = {
     name: clean(data.name, 120),
     email: clean(data.email, 180),
+    phone: clean(data.phone, 32),
     organisation: clean(data.organisation, 160),
     country: clean(data.country, 8),
     message: clean(data.message, 4000),
@@ -52,13 +53,13 @@ export async function onRequestPost({ request, env }) {
   try {
     const res = await env.DB.prepare(
       `INSERT INTO submissions
-        (form_type, name, email, organisation, country, message,
+        (form_type, name, email, phone, organisation, country, message,
          spam_score, is_spam, spam_reason, turnstile_ok, time_elapsed,
          ip_country, user_agent, referer)
-       VALUES ('contact',?1,?2,?3,?4,?5,?6,?7,?8,?9,?10,?11,?12,?13)`,
+       VALUES ('contact',?1,?2,?3,?4,?5,?6,?7,?8,?9,?10,?11,?12,?13,?14)`,
     )
       .bind(
-        row.name, row.email, row.organisation, row.country, row.message,
+        row.name, row.email, row.phone, row.organisation, row.country, row.message,
         spam.score, spam.isSpam ? 1 : 0, spam.reason, turnstile.ok ? 1 : 0,
         Number.isFinite(Number(data.timeElapsed)) ? Number(data.timeElapsed) : null,
         request.headers.get("cf-ipcountry"),
@@ -81,6 +82,7 @@ export async function onRequestPost({ request, env }) {
     <table cellpadding="6" style="border-collapse:collapse">
       <tr><td><strong>Name</strong></td><td>${esc(row.name)}</td></tr>
       <tr><td><strong>Email</strong></td><td>${esc(row.email)}</td></tr>
+      <tr><td><strong>Phone</strong></td><td>${esc(row.phone) || "not given"}</td></tr>
       <tr><td><strong>Organisation</strong></td><td>${esc(row.organisation) || "—"}</td></tr>
       <tr><td><strong>Country</strong></td><td>${esc(row.country) || "—"}</td></tr>
     </table>

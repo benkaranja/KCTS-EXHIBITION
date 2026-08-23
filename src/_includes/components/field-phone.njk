@@ -1,44 +1,30 @@
-{# Telephone with a dialling-code prefix.
+{# Telephone, matching the client's Tally form.
 
-   Two controls, one field. The select carries the country code and the input
-   carries the national number; form-handler.js joins them into a single E.164
-   `phone` value on submit, so the backend never sees the split.
+   ONE input, labelled "Mobile Number (with country code)", pre-filled with the
+   default dial code. Tally does exactly this: a single type="tel" field where
+   the respondent types the whole international number. Client decision,
+   2026-08-23, after comparing it against a two-control version.
 
-   WHY NOT one free-text box: asking for "mobile number with country code" and
-   trusting people to add it produces +254…, 254…, 0254…, 0722… in the same
-   column. The prefix is the one part a delegate cannot be expected to know for
-   their own country and always gets wrong for someone else's.
+   The earlier build split this into a country <select> plus a number input.
+   That produced cleaner E.164 but it is not what the client's own form does,
+   and a second control is a second thing to tab through. Pre-filling "+254 "
+   keeps the benefit that made the split worth trying: nobody has to guess
+   whether to write +254, 254, or 0.
 
-   WHY NOT libphonenumber: 145KB of dependency to validate a field the
-   Secretariat will read by eye. A pattern that rejects nothing legitimate is
-   worth more here than one that is strictly correct and rejects a real number.
+   Normalisation still happens in form-handler.js, which strips spaces and
+   guarantees a leading +, so the backend keeps receiving one E.164 string.
 
-   Options read "+254 Kenya", dial code FIRST. A native select shows only the
-   selected option's text in the closed state and clips it to the control
-   width, so "Kenya (+254)" rendered as "Kenya (+..." and hid the one value
-   this control exists to display. Country-name-last also keeps the codes in a
-   scannable column when the list is open. Ordering stays alphabetical by
-   country, which is how people look.
-
-   No flag emoji: they render inconsistently across platforms and several map
-   awkwardly to territories.
+   WHY NOT libphonenumber: 145KB to validate a field the Secretariat reads by
+   eye, and a validator that rejects a real number costs more than a loosely
+   formatted one.
 
    Caller sets: fieldId, fieldRequired. Reads `countries`. #}
-<div class="form__row form__row--full">
-  <label class="label" for="{{ fieldId }}">Mobile number{% if fieldRequired %} <span class="req" aria-hidden="true">*</span>{% endif %}</label>
-  <div class="phone">
-    {# aria-label, not a visible label: the pair reads as one field, and a
-       second visible label would announce as a separate question. #}
-    <select class="input phone__code" id="{{ fieldId }}-code" name="phoneCountry"
-            aria-label="Country dialling code" autocomplete="tel-country-code">
-      {% for c in countries.list %}
-      <option value="+{{ c.dial }}" data-code="{{ c.code }}"{% if c.code == countries.default %} selected{% endif %}>+{{ c.dial }} {{ c.name }}</option>
-      {% endfor %}
-    </select>
-    <input class="input phone__number" id="{{ fieldId }}" name="phone" type="tel"
-           inputmode="tel" autocomplete="tel-national" enterkeyhint="next"
-           maxlength="20" placeholder="712 345 678"
-           aria-describedby="{{ fieldId }}-hint"{% if fieldRequired %} required{% endif %}>
-  </div>
-  <span class="form__hint" id="{{ fieldId }}-hint">Without the leading zero.</span>
-</div>
+<p class="form__row">
+  <label class="label" for="{{ fieldId }}">Mobile number (with country code){% if fieldRequired %} <span class="req" aria-hidden="true">*</span>{% endif %}</label>
+  <input class="input" id="{{ fieldId }}" name="phone" type="tel"
+         inputmode="tel" autocomplete="tel" enterkeyhint="next"
+         maxlength="24" value="{{ countries.defaultDial }} "
+         placeholder="{{ countries.defaultDial }} 712 345 678"
+         aria-describedby="{{ fieldId }}-hint"{% if fieldRequired %} required{% endif %}>
+  <span class="form__hint" id="{{ fieldId }}-hint">Include the country code. Replace {{ countries.defaultDial }} if you are outside Kenya.</span>
+</p>

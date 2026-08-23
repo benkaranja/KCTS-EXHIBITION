@@ -96,6 +96,12 @@
   --shadow-lift: 0 4px 8px rgb(15 46 22 / 0.12), 0 24px 48px -12px rgb(15 46 22 / 0.24);
 
   /* --- layout ----------------------------------------------------------- */
+  /* Height of the sticky masthead. Anything else that sticks must clear it,
+     and in-page anchors must scroll past it. Measured at 84px on desktop;
+     kept as a token so the two consumers below cannot drift from it.
+     Guarded by scripts/style.test.js. */
+  --header-h: 5.25rem;
+
   --wrap: 74rem;
   --wrap-narrow: 46rem;
   --gutter: clamp(1.1rem, 4vw, 3rem);

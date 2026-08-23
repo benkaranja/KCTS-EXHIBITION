@@ -81,9 +81,10 @@
     "$note": "senderDomainVerified must be true before B7 can pass. Brevo → Senders → Domains, DKIM + DMARC live on kenyachinateasummit.com. BLOCKED on the domain purchase — see B-003."
   },
   "turnstile": {
-    "siteKey": "0x4AAAAAADr2iyH6s6QEYMuu",
+    "siteKey": "0x4AAAAAAEZEPmzoZI8P12p1",
     "secretKeyEnv": "TURNSTILE_SECRET_KEY",
-    "$note": "siteKey is public and belongs in markup. Never ship 1x00000000000000000000AA."
+    "$note": "siteKey is public and belongs in markup. Never ship 1x00000000000000000000AA.",
+    "widgetName": "kenya-china-tea-summit"
   },
   "imagery": {
     "provider": "openrouter",

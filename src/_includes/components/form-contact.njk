@@ -16,6 +16,9 @@
              autocomplete="email" inputmode="email" enterkeyhint="next"
              spellcheck="false" autocapitalize="off" maxlength="180">
     </p>
+    {% set fieldId = "c-phone" %}{% set fieldRequired = false %}
+    {% include "components/field-phone.njk" %}
+
     <p class="form__row">
       <label class="label" for="c-org">Organisation</label>
       <input class="input" id="c-org" name="organisation" type="text" autocomplete="organization" maxlength="160">

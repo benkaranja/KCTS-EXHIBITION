@@ -1,6 +1,6 @@
 # Copy for client review — Kenya-China Tea Summit 2027
 
-**Generated:** 2026-08-23 · **Build:** `6e8ae27`
+**Generated:** 2026-08-23 · **Build:** `535747e`
 
 Generated from the built site. This is what is live, not a draft of it.
 
@@ -500,7 +500,8 @@ Full name *
 
 Email *
 
-  - _field:_ Mobile number *
+Mobile number (with country code) * Include the country code. Replace +254 if you are outside Kenya.
+
 Organisation *
 
 Job title *
@@ -1043,6 +1044,8 @@ The summit venue, KICC. Opens Google Maps directions in a new tab. Map data © O
 Full name *
 
 Email *
+
+Mobile number (with country code) Include the country code. Replace +254 if you are outside Kenya.
 
 Organisation
 

@@ -6,7 +6,7 @@
 // no framework, no validation library.
 //
 // It does three things the browser does not do well on its own:
-//   1. joins the split phone field into one E.164 value,
+//   1. normalises the phone field to a single E.164 value,
 //   2. replaces native validation bubbles with persistent inline errors,
 //   3. reports failures by naming the problem AND the recovery.
 (() => {
@@ -122,15 +122,18 @@
       const participation = new FormData(form).getAll("participation");
       if (participation.length) data.participation = participation;
 
-      // Join the split phone field. The backend and the D1 ledger store one
-      // E.164 string; the two-control split is a UI concern and stops here.
-      // A leading zero is a national trunk prefix and is wrong after a country
-      // code — dropping it is the whole reason the hint says "without the
-      // leading zero".
-      if (data.phone && data.phoneCountry) {
-        const national = String(data.phone).replace(/[^\d]/g, "").replace(/^0+/, "");
-        data.phone = national ? `${data.phoneCountry}${national}` : "";
-        delete data.phoneCountry;
+      // Normalise the phone to E.164. The field is one input where the
+      // respondent types the whole international number, so this strips the
+      // spaces, brackets and dashes people naturally add and guarantees a
+      // single leading +. A trunk zero written after the country code
+      // ("+254 0712...") is dropped, because it is a domestic-dialling prefix
+      // and is wrong internationally.
+      if (data.phone) {
+        let p = String(data.phone).trim();
+        const hadPlus = p.startsWith("+");
+        p = p.replace(/[^\d]/g, "");
+        if (hadPlus) p = p.replace(/^(\d{1,4}?)0+(?=\d)/, "$1");
+        data.phone = p ? `+${p}` : "";
       }
 
       data.timeElapsed = Date.now() - Number(data.renderedAt || Date.now());

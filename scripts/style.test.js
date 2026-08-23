@@ -56,3 +56,47 @@ test("a page with no rail gets no second column", () => {
     "rail-less pages must fall back to block layout",
   );
 });
+
+// --- sticky offset -----------------------------------------------------------
+// The masthead is `position: sticky; top: 0` and 84px tall. Anything else that
+// sticks has to clear it. The rail used `top: var(--sp-l)` (36px) and spent
+// months sliding 48px underneath the header, hiding its own first heading.
+test("the sticky rail clears the sticky header", () => {
+  const css = readFileSync("src/assets/css/style.css", "utf8");
+  const rail = css.match(/\.doc-body > \.rail \{[\s\S]*?\}/);
+  assert.ok(rail, ".doc-body > .rail rule not found");
+  assert.match(
+    rail[0],
+    /top:\s*calc\(var\(--header-h\)/,
+    "the rail's sticky top must be derived from --header-h, not a bare spacing token",
+  );
+});
+
+test("in-page anchors scroll clear of the sticky header", () => {
+  const css = readFileSync("src/assets/css/style.css", "utf8");
+  assert.match(
+    css,
+    /scroll-padding-top:\s*calc\(var\(--header-h\)/,
+    "html needs scroll-padding-top or anchor targets land under the masthead",
+  );
+});
+
+test("--header-h is defined", () => {
+  const tokens = readFileSync("src/assets/css/tokens.css", "utf8");
+  assert.match(tokens, /--header-h:\s*[\d.]+rem/, "--header-h must be a real length");
+});
+
+// --- programme table ---------------------------------------------------------
+// The day cell and the session title sit in adjacent cells and must start on
+// the same line. The styling rule once targeted only h3 while the template
+// rendered h2, so the title silently took the global --step-4 size.
+test("the programme table styles the heading level it actually renders", () => {
+  const css = readFileSync("src/assets/css/style.css", "utf8");
+  const tpl = readFileSync("src/pages/programme.njk", "utf8");
+  const level = /<h2>\{\{ d\.title \}\}<\/h2>/.test(tpl) ? "h2" : "h3";
+  assert.match(
+    css,
+    new RegExp(`\\.manifest td [^{]*\\b${level}\\b`),
+    `.manifest td must style ${level} — that is what programme.njk renders, and the selector needs to outrank .section h2`,
+  );
+});

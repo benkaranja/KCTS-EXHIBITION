@@ -8,6 +8,9 @@
 
 export default {
   default: "KE",
+  // Pre-filled into the phone field. Derived here rather than in the template
+  // so the two can never disagree about which country is the default.
+  defaultDial: "+254",
   list: [
     {
       "code": "AF",

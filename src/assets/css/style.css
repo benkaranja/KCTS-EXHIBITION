@@ -2,7 +2,11 @@
  * No hex literals here; every colour comes from tokens.css. */
 
 *, *::before, *::after { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; }
+html {
+  -webkit-text-size-adjust: 100%;
+  /* Anchor targets otherwise land beneath the sticky masthead. */
+  scroll-padding-top: calc(var(--header-h) + var(--sp-s));
+}
 
 body {
   margin: 0;
@@ -416,12 +420,34 @@ a:hover { text-decoration-thickness: 2px; }
 /* nowrap keeps "Day One · 21 April 2027" on one line, which is right on a wide
    screen and 17px of horizontal page scroll at 360. The date is the part that
    may wrap; the day label is not. */
-.manifest td:first-child { font-family: var(--font-data); color: var(--c-seal); white-space: nowrap; }
+/* The day cell and the title next to it must start on the same line.
+   They did not: this rule targeted h3 while the template renders h2, so the
+   title fell back to the global h2 size (--step-4) beside a --step-0 date and
+   the two first lines were ~14px apart. Both now share --step-1 and
+   --lh-heading, so their first line boxes are identical and the tops align.
+   nowrap keeps "1 · 21 April 2027" on one line, which is right on a wide
+   screen and 17px of horizontal page scroll at 360. */
+.manifest td:first-child {
+  font-family: var(--font-data);
+  color: var(--c-seal);
+  white-space: nowrap;
+  font-size: var(--step-1);
+  line-height: var(--lh-heading);
+}
 @media (max-width: 30rem) {
-  .manifest td:first-child { white-space: normal; }
+  .manifest td:first-child { white-space: normal; font-size: var(--step-0); }
   .manifest th, .manifest td { padding-right: var(--sp-2xs); }
 }
-.manifest h3 { font-size: var(--step-1); margin-bottom: var(--sp-3xs); }
+/* `.manifest td h2` (0,1,2), not `.manifest h2` (0,1,1). `.section h2` further
+   down this file sets margin-top: var(--sp-xl) at the SAME specificity, and
+   being later it won — pushing the session title 56px below the date beside
+   it. Winning on specificity rather than source order means moving either
+   rule cannot silently reintroduce the gap. */
+.manifest td h2, .manifest td h3 {
+  font-size: var(--step-1);
+  line-height: var(--lh-heading);
+  margin: 0 0 var(--sp-3xs);
+}
 .manifest p { margin: 0; color: var(--c-text-muted); font-size: var(--step--1); max-width: 46ch; }
 
 .section-action { margin-top: var(--sp-l); }
@@ -780,7 +806,15 @@ select.input { cursor: pointer; }
   align-items: start;
 }
 .doc-body > *     { grid-column: 1; }
-.doc-body > .rail { grid-column: 2; grid-row: 1 / span 99; position: sticky; top: var(--sp-l); }
+/* top MUST clear the sticky masthead. It was var(--sp-l) (36px) against an
+   84px header, so a stuck rail slid 48px underneath it and its first heading
+   was unreadable on every railed page. */
+.doc-body > .rail {
+  grid-column: 2;
+  grid-row: 1 / span 99;
+  position: sticky;
+  top: calc(var(--header-h) + var(--sp-s));
+}
 
 /* No rail, no second track. */
 .doc-body:not(:has(.rail)) { display: block; }
@@ -983,31 +1017,6 @@ select.input { cursor: pointer; }
 .site-footer__base a { color: var(--c-ply-canary); }
 .site-footer__base a:hover { color: var(--c-paper); }
 
-/* ==== phone field: dial-code select + national number ====================
-   One field, two controls. The select is sized to its content up to 13rem so
-   long country names ("United States Minor Outlying Islands") do not push the
-   number input to nothing; below 30rem the pair stacks. */
-.phone { display: flex; gap: var(--sp-2xs); align-items: stretch; }
-.phone__code {
-  /* Explicit width, not auto. A select sized `auto` takes the width of its
-     WIDEST option — here "+500 South Georgia & South Sandwich Islands", which
-     grabbed 632px and left the number input 26px. 10rem fits "+254 Kenya"
-     with its arrow; longer names clip, and because the dial code is first in
-     the option text, the part that clips is the part that does not matter. */
-  flex: 0 0 10rem;
-  width: 10rem;
-  min-width: 0;
-  /* Options are "+254 Kenya", code first, so what survives the clip is the
-     part that matters. Native selects ignore text-overflow, so this is the
-     only way to control which end gets truncated. */
-}
-.phone__number { flex: 1 1 auto; min-width: 0; }
-@media (max-width: 30rem) {
-  /* Stacked. The explicit 10rem above has to be undone or the select sits as a
-     short stub above a full-width input. */
-  .phone { flex-direction: column; }
-  .phone__code { flex: none; width: 100%; }
-}
 
 /* ==== inline field errors ================================================
    Replaces the browser's validation bubble, which shows one error at a time

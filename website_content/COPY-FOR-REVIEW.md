@@ -1,6 +1,6 @@
 # Website copy for review — Kenya-China Tea Summit 2027
 
-**Generated:** 2026-08-23 · **Build:** `6e8ae27` · **Live:** https://kenya-china-tea-summit.pages.dev
+**Generated:** 2026-08-23 · **Build:** `535747e` · **Live:** https://kenya-china-tea-summit.pages.dev
 
 This document contains **every word of visible text on the website**, extracted
 from the built pages, in the order a visitor reads them. It is generated
@@ -505,7 +505,8 @@ Full name *
 
 Email *
 
-  - _field:_ Mobile number *
+Mobile number (with country code) * Include the country code. Replace +254 if you are outside Kenya.
+
 Organisation *
 
 Job title *
@@ -1056,6 +1057,8 @@ The summit venue, KICC. Opens Google Maps directions in a new tab. Map data © O
 Full name *
 
 Email *
+
+Mobile number (with country code) Include the country code. Replace +254 if you are outside Kenya.
 
 Organisation
 
