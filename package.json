@@ -9,7 +9,7 @@
     "test": "node --test scripts/*.test.js",
     "build": "npm run clean && npm run validate && eleventy && node scripts/minify-css.js && node scripts/assert-budgets.js && node scripts/assert-no-exif.js && node scripts/export-copy.js",
     "dev": "eleventy --serve --port=8080",
-    "clean": "rm -rf public .cache",
+    "clean": "node -e \"const fs=require('fs');for(const d of ['public','.cache'])fs.rmSync(d,{recursive:true,force:true})\"",
     "assets": "node scripts/make-guilloche.js && node scripts/make-plates.js",
     "plates": "node scripts/make-plates.js",
     "copy": "node scripts/export-copy.js",

@@ -45,3 +45,7 @@ npm-debug.log*
 
 # --- SDD scratch (ledger recovered from git log if lost) ---
 .superpowers/
+
+# --- Antigravity port staging: the old workspace copied in for reference.
+# Never committed. Delete once the port is verified.
+_port-source/
