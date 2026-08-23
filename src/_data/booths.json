@@ -1483,7 +1483,7 @@
           "w": 3,
           "h": 3,
           "type": "premium",
-          "zone": "Pavilion B — Innovation",
+          "zone": "South Perimeter",
           "status": "available"
         },
         {
@@ -1493,7 +1493,7 @@
           "w": 3,
           "h": 3,
           "type": "premium",
-          "zone": "Pavilion B — Innovation",
+          "zone": "North Perimeter",
           "status": "available"
         },
         {
@@ -1503,7 +1503,7 @@
           "w": 3,
           "h": 3,
           "type": "standard",
-          "zone": "Pavilion B — Innovation",
+          "zone": "South Perimeter",
           "status": "available"
         },
         {
@@ -1513,7 +1513,7 @@
           "w": 3,
           "h": 3,
           "type": "standard",
-          "zone": "Pavilion B — Tea Tech Block 1",
+          "zone": "Block 1 (West)",
           "status": "available"
         },
         {
@@ -1523,7 +1523,7 @@
           "w": 3,
           "h": 3,
           "type": "standard",
-          "zone": "Pavilion B — Tea Tech Block 1",
+          "zone": "Block 1 (West)",
           "status": "available"
         },
         {
@@ -1533,7 +1533,7 @@
           "w": 3,
           "h": 3,
           "type": "standard",
-          "zone": "Pavilion B — Tea Tech Block 1",
+          "zone": "Block 1 (West)",
           "status": "available"
         },
         {
@@ -1543,7 +1543,7 @@
           "w": 3,
           "h": 3,
           "type": "standard",
-          "zone": "Pavilion B — Tea Tech Block 1",
+          "zone": "Block 1 (West)",
           "status": "available"
         },
         {
@@ -1553,7 +1553,7 @@
           "w": 3,
           "h": 3,
           "type": "standard",
-          "zone": "Pavilion B — Tea Tech Block 1",
+          "zone": "Block 1 (West)",
           "status": "available"
         },
         {
@@ -1563,7 +1563,7 @@
           "w": 3,
           "h": 3,
           "type": "standard",
-          "zone": "Pavilion B — Tea Tech Block 1",
+          "zone": "Block 1 (West)",
           "status": "available"
         },
         {
@@ -1573,7 +1573,7 @@
           "w": 3,
           "h": 3,
           "type": "standard",
-          "zone": "Pavilion B — Tea Culture Block 2",
+          "zone": "Block 2",
           "status": "available"
         },
         {
@@ -1583,7 +1583,7 @@
           "w": 3,
           "h": 3,
           "type": "standard",
-          "zone": "Pavilion B — Tea Culture Block 2",
+          "zone": "Block 2",
           "status": "available"
         },
         {
@@ -1593,7 +1593,7 @@
           "w": 3,
           "h": 3,
           "type": "standard",
-          "zone": "Pavilion B — Tea Culture Block 2",
+          "zone": "Block 2",
           "status": "available"
         },
         {
@@ -1603,7 +1603,7 @@
           "w": 3,
           "h": 3,
           "type": "standard",
-          "zone": "Pavilion B — Tea Culture Block 2",
+          "zone": "Block 2",
           "status": "available"
         },
         {
@@ -1613,7 +1613,7 @@
           "w": 3,
           "h": 3,
           "type": "standard",
-          "zone": "Pavilion B — Tea Culture Block 2",
+          "zone": "Block 2",
           "status": "available"
         },
         {
@@ -1623,7 +1623,7 @@
           "w": 3,
           "h": 3,
           "type": "standard",
-          "zone": "Pavilion B — Tea Culture Block 2",
+          "zone": "Block 2",
           "status": "available"
         },
         {
@@ -1633,7 +1633,7 @@
           "w": 3,
           "h": 3,
           "type": "standard",
-          "zone": "Pavilion B — Agro Machinery Block 3",
+          "zone": "Block 3",
           "status": "available"
         },
         {
@@ -1643,7 +1643,7 @@
           "w": 3,
           "h": 3,
           "type": "standard",
-          "zone": "Pavilion B — Agro Machinery Block 3",
+          "zone": "Block 3",
           "status": "available"
         },
         {
@@ -1653,7 +1653,7 @@
           "w": 3,
           "h": 3,
           "type": "standard",
-          "zone": "Pavilion B — Agro Machinery Block 3",
+          "zone": "Block 3",
           "status": "available"
         },
         {
@@ -1663,7 +1663,7 @@
           "w": 3,
           "h": 3,
           "type": "standard",
-          "zone": "Pavilion B — Agro Machinery Block 3",
+          "zone": "Block 3",
           "status": "available"
         },
         {
@@ -1673,7 +1673,7 @@
           "w": 3,
           "h": 3,
           "type": "standard",
-          "zone": "Pavilion B — Agro Machinery Block 3",
+          "zone": "Block 3",
           "status": "available"
         },
         {
@@ -1683,7 +1683,7 @@
           "w": 3,
           "h": 3,
           "type": "standard",
-          "zone": "Pavilion B — Agro Machinery Block 3",
+          "zone": "Block 3",
           "status": "available"
         },
         {
@@ -1693,7 +1693,7 @@
           "w": 3,
           "h": 3,
           "type": "standard",
-          "zone": "Pavilion B — Packaging & Logistics",
+          "zone": "Block 4 (Mid)",
           "status": "available"
         },
         {
@@ -1703,7 +1703,7 @@
           "w": 3,
           "h": 3,
           "type": "standard",
-          "zone": "Pavilion B — Packaging & Logistics",
+          "zone": "Block 4 (Mid)",
           "status": "available"
         },
         {
@@ -1713,7 +1713,7 @@
           "w": 3,
           "h": 3,
           "type": "standard",
-          "zone": "Pavilion B — Packaging & Logistics",
+          "zone": "Block 4 (Mid)",
           "status": "available"
         },
         {
@@ -1723,7 +1723,7 @@
           "w": 3,
           "h": 3,
           "type": "standard",
-          "zone": "Pavilion B — Packaging & Logistics",
+          "zone": "Block 4 (Mid)",
           "status": "available"
         },
         {
@@ -1733,7 +1733,7 @@
           "w": 3,
           "h": 3,
           "type": "standard",
-          "zone": "Pavilion B — Packaging & Logistics",
+          "zone": "Block 4 (Mid)",
           "status": "available"
         },
         {
@@ -1743,7 +1743,7 @@
           "w": 3,
           "h": 3,
           "type": "standard",
-          "zone": "Pavilion B — Packaging & Logistics",
+          "zone": "Block 4 (Mid)",
           "status": "available"
         },
         {
@@ -1753,7 +1753,7 @@
           "w": 3,
           "h": 3,
           "type": "standard",
-          "zone": "Pavilion B — Artisanal & Specialty",
+          "zone": "Block 5",
           "status": "available"
         },
         {
@@ -1763,7 +1763,7 @@
           "w": 3,
           "h": 3,
           "type": "standard",
-          "zone": "Pavilion B — Artisanal & Specialty",
+          "zone": "Block 5",
           "status": "available"
         },
         {
@@ -1773,7 +1773,7 @@
           "w": 3,
           "h": 3,
           "type": "standard",
-          "zone": "Pavilion B — Artisanal & Specialty",
+          "zone": "Block 5",
           "status": "available"
         },
         {
@@ -1783,7 +1783,7 @@
           "w": 3,
           "h": 3,
           "type": "standard",
-          "zone": "Pavilion B — Artisanal & Specialty",
+          "zone": "Block 5",
           "status": "available"
         },
         {
@@ -1793,7 +1793,7 @@
           "w": 3,
           "h": 3,
           "type": "standard",
-          "zone": "Pavilion B — Artisanal & Specialty",
+          "zone": "Block 5",
           "status": "available"
         },
         {
@@ -1803,7 +1803,7 @@
           "w": 3,
           "h": 3,
           "type": "standard",
-          "zone": "Pavilion B — Artisanal & Specialty",
+          "zone": "Block 5",
           "status": "available"
         },
         {
@@ -1813,7 +1813,7 @@
           "w": 3,
           "h": 3,
           "type": "standard",
-          "zone": "Pavilion B — B2B Matchmaking",
+          "zone": "Block 6",
           "status": "available"
         },
         {
@@ -1823,7 +1823,7 @@
           "w": 3,
           "h": 3,
           "type": "standard",
-          "zone": "Pavilion B — B2B Matchmaking",
+          "zone": "Block 6",
           "status": "available"
         },
         {
@@ -1833,7 +1833,7 @@
           "w": 3,
           "h": 3,
           "type": "standard",
-          "zone": "Pavilion B — B2B Matchmaking",
+          "zone": "Block 6",
           "status": "available"
         },
         {
@@ -1843,7 +1843,7 @@
           "w": 3,
           "h": 3,
           "type": "standard",
-          "zone": "Pavilion B — B2B Matchmaking",
+          "zone": "Block 6",
           "status": "available"
         },
         {
@@ -1853,7 +1853,7 @@
           "w": 3,
           "h": 3,
           "type": "standard",
-          "zone": "Pavilion B — B2B Matchmaking",
+          "zone": "Block 6",
           "status": "available"
         },
         {
@@ -1863,7 +1863,7 @@
           "w": 3,
           "h": 3,
           "type": "standard",
-          "zone": "Pavilion B — B2B Matchmaking",
+          "zone": "Block 6",
           "status": "available"
         },
         {
@@ -1873,7 +1873,7 @@
           "w": 3,
           "h": 3,
           "type": "premium",
-          "zone": "Pavilion B — China Pavilion Hub",
+          "zone": "Block 7",
           "status": "available"
         },
         {
@@ -1883,7 +1883,7 @@
           "w": 3,
           "h": 3,
           "type": "premium",
-          "zone": "Pavilion B — China Pavilion Hub",
+          "zone": "Block 7",
           "status": "available"
         },
         {
@@ -1893,7 +1893,7 @@
           "w": 3,
           "h": 3,
           "type": "premium",
-          "zone": "Pavilion B — China Pavilion Hub",
+          "zone": "Block 7",
           "status": "available"
         },
         {
@@ -1903,7 +1903,7 @@
           "w": 3,
           "h": 3,
           "type": "premium",
-          "zone": "Pavilion B — China Pavilion Hub",
+          "zone": "Block 7",
           "status": "available"
         },
         {
@@ -1913,7 +1913,7 @@
           "w": 3,
           "h": 3,
           "type": "premium",
-          "zone": "Pavilion B — China Pavilion Hub",
+          "zone": "Block 7",
           "status": "available"
         },
         {
@@ -1923,7 +1923,7 @@
           "w": 3,
           "h": 3,
           "type": "premium",
-          "zone": "Pavilion B — China Pavilion Hub",
+          "zone": "Block 7",
           "status": "available"
         },
         {
@@ -1933,7 +1933,7 @@
           "w": 3,
           "h": 3,
           "type": "premium",
-          "zone": "Pavilion B — Tea Tasting Lounge",
+          "zone": "Block 8",
           "status": "available"
         },
         {
@@ -1943,7 +1943,7 @@
           "w": 3,
           "h": 3,
           "type": "premium",
-          "zone": "Pavilion B — Tea Tasting Lounge",
+          "zone": "Block 8",
           "status": "available"
         },
         {
@@ -1953,7 +1953,7 @@
           "w": 3,
           "h": 3,
           "type": "premium",
-          "zone": "Pavilion B — Tea Tasting Lounge",
+          "zone": "Block 8",
           "status": "available"
         },
         {
@@ -1963,7 +1963,7 @@
           "w": 5,
           "h": 5,
           "type": "vip",
-          "zone": "Pavilion B — VIP Presidential Tea Lounge",
+          "zone": "South Perimeter Corner",
           "status": "available"
         },
         {
@@ -1973,7 +1973,7 @@
           "w": 5,
           "h": 5,
           "type": "vip",
-          "zone": "Pavilion B — Kenya Tea Board Pavilion",
+          "zone": "North Perimeter Corner",
           "status": "available"
         }
       ]
