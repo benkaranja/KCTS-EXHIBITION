@@ -2,8 +2,8 @@
 layout: layouts/page.njk
 basePath: /faq/
 title: FAQ
-heading: Questions, answered honestly
-standfirst: Including the ones where the answer is "not decided yet".
+heading: Frequently asked questions
+standfirst: The questions no other page answers. Everything else is linked from here.
 description: Frequently asked questions about the Kenya-China Tea Summit 2027 in Nairobi — dates, registration, fees, venue, speakers, exhibition and travel.
 ---
 
@@ -13,25 +13,21 @@ description: Frequently asked questions about the Kenya-China Tea Summit 2027 in
    to it is the one page where that failure is most annoying. Rendered with
    `| safe` below; `| dump` escapes them correctly for the JSON-LD. #}
 {% set faqs = [
-  { cat: "Dates and place", q: "When is the summit?", a: "The Kenya-China Tea Summit takes place from 21 to 23 April 2027." },
-  { cat: "Dates and place", q: "Where will it be held?", a: "The summit will be held in Nairobi, Kenya. The venue will be announced once arrangements are finalised. See the <a href=\"/venue/\">Venue page</a>." },
-  { cat: "Registering", q: "Is registration open?", a: "Expressions of interest are open. Formal ticket sales and confirmed participation packages are not yet available." },
-  { cat: "Registering", q: "Does registering interest reserve a place?", a: "No. It records your interest and allows the summit team to send you relevant updates. Formal registration will be required when booking opens." },
-  { cat: "Registering", q: "How much will it cost?", a: "Delegate fees, exhibitor rates and partnership packages will be announced after approval. Official participation rates are issued by the Secretariat and published here once confirmed." },
-  { cat: "The programme", q: "Who should attend?", a: "The summit is intended for tea producers, processors, exporters, buyers, investors, technology companies, logistics providers, public institutions, researchers, hospitality professionals and media." },
-  { cat: "The programme", q: "What happens on each day?", a: "Day one focuses on trade. Day two covers investment, innovation and B2B meetings. Day three includes the International Tea & Technology Expo, cultural exchange and the closing programme." },
-  { cat: "The programme", q: "Who is speaking?", a: "Confirmed speakers will be published after they accept their invitations and session details are approved." },
-  { cat: "The programme", q: "Can I propose a session?", a: "Yes. The <a href=\"/speakers/\">Speakers page</a> explains how to contact the summit team with a proposal. Submission does not guarantee inclusion in the programme." },
-  { cat: "The programme", q: "What language will the summit use?", a: "The working languages and interpretation arrangements are still being confirmed. They will be published with the detailed programme." },
-  { cat: "Exhibiting, partnership and B2B", q: "How do I exhibit?", a: "Register exhibitor interest through the <a href=\"/exhibition/\">Exhibition page</a>. The summit team will send stand options, rates and application information when available." },
-  { cat: "Exhibiting, partnership and B2B", q: "How do I become a partner?", a: "Use the <a href=\"/sponsorship/\">Partnership page</a> to describe your preferred level, audience and objectives. The partnership team will respond with approved options when packages are ready." },
-  { cat: "Exhibiting, partnership and B2B", q: "How will B2B matchmaking work?", a: "Participants will create business profiles, state what they are looking for and receive relevant meeting recommendations. Eligibility, access and pricing are still to be confirmed." },
-  { cat: "Practicalities", q: "Do I need a visa?", a: "Requirements depend on nationality and individual circumstances. Check <a href=\"https://www.etakenya.go.ke/\" rel=\"noopener noreferrer\" target=\"_blank\">Kenya's official Electronic Travel Authorisation website</a> and your government's travel advice." },
-  { cat: "Practicalities", q: "Will invitation letters be available?", a: "The summit team's invitation-letter policy is being confirmed. An invitation letter, where provided, does not guarantee immigration approval." },
-  { cat: "Practicalities", q: "Is there an official summit hotel?", a: "The accommodation plan will be announced after the venue and hotel arrangements are confirmed." },
-  { cat: "Practicalities", q: "Will the summit be streamed or recorded?", a: "Recording and streaming arrangements have not been confirmed." },
-  { cat: "Updates and contact", q: "How can I receive updates?", a: "<a href=\"/registration/\">Register your interest</a> or follow the <a href=\"/news/\">summit news page</a>." },
-  { cat: "Updates and contact", q: "My question is not listed", a: "<a href=\"/contact/\">Contact the summit team</a> and include enough detail for your enquiry to be routed correctly." }
+  { cat: "The basics", q: "When and where is the summit?", a: "21 to 23 April 2027, at the Kenyatta International Convention Centre in Nairobi. See the <a href=\"/venue/\">venue page</a>." },
+  { cat: "The basics", q: "Who organises the summit?", a: "Orbitline Events &amp; Ushers Ltd, in partnership with the Tea Board of Kenya." },
+  { cat: "The basics", q: "What language is the summit in?", a: "This website is published in English and Chinese. Interpretation arrangements at the summit are to be announced." },
+  { cat: "Registering", q: "How much does it cost to attend?", a: "Fees are to be announced. Registering your interest now carries no charge." },
+  { cat: "Registering", q: "Can an organisation exhibit and attend as a delegate?", a: "Yes. Tick Exhibitor at registration, and select the category that describes the organisation. They are separate questions." },
+  { cat: "Registering", q: "What happens after I register?", a: "Registration confirms by email. When the delegate portal opens you sign in with that address to update details, book a stand, request B2B meetings and download documents." },
+  { cat: "The expo", q: "Is the expo on all three days?", a: "The International Tea &amp; Technology Expo runs on Day 3, Friday 23 April, in a tent on the KICC grounds." },
+  { cat: "The expo", q: "How many stands are there?", a: "146 across two halls. Sizes and rates are to be announced, and the layout is subject to change before stands go on sale. See <a href=\"/exhibition/stands/\">stands and rates</a>." },
+  { cat: "The expo", q: "When does stand booking open?", a: "Once rates are confirmed. Register as an exhibitor and the Secretariat makes contact. Booking happens in the exhibitor portal, where exhibitors select a stand from a plan and hold it while the Secretariat confirms." },
+  { cat: "Getting here", q: "Does Kenya require a visa?", a: "Most visitors need an Electronic Travel Authorisation before departure. Apply at <a href=\"https://www.etakenya.go.ke/\" rel=\"noopener noreferrer\" target=\"_blank\">etakenya.go.ke</a> and confirm with the Kenyan embassy covering the country of departure. See <a href=\"/travel/\">travel and visas</a>." },
+  { cat: "Getting here", q: "Are invitation letters available?", a: "Yes. Register, then email <a href=\"mailto:support@kenyachinateasummit.com\">support@kenyachinateasummit.com</a> with passport details and organisation." },
+  { cat: "Getting here", q: "Is there a summit hotel block?", a: "Hotel rates and booking codes are to be announced." },
+  { cat: "Programme", q: "Who is speaking?", a: "Speakers are announced in phases. See the <a href=\"/programme/\">programme</a>." },
+  { cat: "Practical", q: "How do I reach a person?", a: "Call or WhatsApp +254 111 491 076, or email <a href=\"mailto:info@kenyachinateasummit.com\">info@kenyachinateasummit.com</a>." },
+  { cat: "Practical", q: "How is my data handled?", a: "The site sets no cookies and runs no third-party trackers. See the <a href=\"/privacy/\">privacy notice</a>." }
 ] %}
 
 {% block head %}

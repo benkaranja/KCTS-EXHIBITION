@@ -1,0 +1,28 @@
+{# Static locator map.
+
+   An include, not a macro, because it reads `summit` from the page context —
+   Nunjucks macros imported with `from` do not receive it.
+
+   Deliberately NOT an embedded map. A Google Maps iframe sets third-party
+   cookies on load, before consent; the site currently sets none, which is the
+   only reason it carries no consent banner. This is a self-hosted raster from
+   scripts/make-map.js wrapped in an outbound directions link, which does the
+   same job for the visitor at no privacy cost. See docs/V3-SCOPE.md.
+
+   Optional `locatorNote` sets the left-hand caption. #}
+<figure class="locator">
+  <a class="locator__frame"
+     href="https://www.google.com/maps/dir/?api=1&amp;destination={{ summit.location.mapQuery | urlencode }}"
+     target="_blank" rel="noopener">
+    <picture>
+      <source srcset="/img/map-kicc.avif" type="image/avif">
+      <img src="/img/map-kicc.webp" width="768" height="512"
+           loading="lazy" decoding="async"
+           alt="Street map of central Nairobi. The Kenyatta International Convention Centre is marked on Harambee Avenue, between Parliament Road and Taifa Road, with Uhuru Park to the west.">
+    </picture>
+  </a>
+  <figcaption class="locator__meta">
+    <p>{{ locatorNote or "Opens Google Maps directions in a new tab." }}</p>
+    <p>Map data &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors</p>
+  </figcaption>
+</figure>

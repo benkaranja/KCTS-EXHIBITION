@@ -1,0 +1,17 @@
+# Cloudflare Pages redirects. Applied at the edge, before the static asset
+# lookup, so these run even though the old files no longer exist in public/.
+#
+# V3 (2026-08-23) folded two pages that had nothing to say yet:
+#   /speakers/  — 806 words announcing that no speakers were confirmed. The
+#                 content is now a section on /programme/. Restore it as its
+#                 own page at six-plus confirmed speakers.
+#   /downloads/ — 617 words listing files that did not exist. The fact sheet
+#                 now sits on /media/; the exhibitor pack will sit on
+#                 /exhibition/stands/. Restore at four-plus real files.
+#
+# 301, not 302: the fold is a decision, not an experiment, and inbound links
+# and any accumulated ranking should transfer.
+/speakers/     /programme/            301
+/downloads/    /media/                301
+/zh/speakers/  /zh/programme/         301
+/zh/downloads/ /zh/media/             301

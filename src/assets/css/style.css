@@ -123,6 +123,35 @@ a:hover { text-decoration-thickness: 2px; }
 
 /* ==== header ============================================================ */
 
+/* ==== top bar ============================================================
+   Sits above the sticky header and scrolls away with the page. Deliberately
+   NOT sticky: two stacked sticky bars eat 7rem of a phone viewport, and the
+   countdown is an orientation device rather than a control. */
+.topbar {
+  background: var(--c-ink);
+  color: var(--c-text-on-ink);
+  border-bottom: 1px solid var(--c-engrave);
+}
+.topbar__inner {
+  max-width: var(--wrap);
+  margin: 0 auto;
+  padding: var(--sp-3xs) var(--gutter);
+  display: flex; flex-wrap: wrap; align-items: baseline;
+  justify-content: center; gap: 0.4em;
+  font-family: var(--font-ui);
+  font-size: var(--step--2);
+  letter-spacing: 0.04em;
+  max-width: none;
+}
+.topbar__inner strong { font-weight: 600; color: var(--c-ply-canary); }
+.topbar__dot { color: var(--c-text-on-ink-muted); }
+.topbar__open { color: var(--c-text-on-ink-muted); }
+/* Below 26rem the four facts wrap to three lines and push the header off
+   screen. The venue and the status are the two a visitor can get elsewhere. */
+@media (max-width: 26rem) {
+  .topbar__open, .topbar__open + .topbar__dot { display: none; }
+}
+
 .site-header {
   position: sticky; top: 0; z-index: 50;
   display: flex; align-items: center; gap: var(--sp-m);
@@ -177,6 +206,38 @@ a:hover { text-decoration-thickness: 2px; }
 .site-nav__list a:hover, .site-nav__list a[aria-current="page"] {
   border-bottom-color: var(--c-ply-canary);
   color: var(--c-ply-canary);
+}
+
+/* Submenu. CSS-only: :focus-within is what makes it keyboard-operable, so
+   there is no JS and no aria-expanded to drift out of sync. The 0.6rem
+   padding-top on the panel bridges the gap under the parent link — without it
+   the pointer crosses dead space and the menu closes mid-travel. */
+.site-nav__list .has-sub { position: relative; }
+.site-nav__sub {
+  display: none;
+  position: absolute; top: 100%; left: 0; z-index: 60;
+  min-width: 14rem;
+  list-style: none; margin: 0;
+  padding: var(--sp-2xs) 0 0;
+  background: var(--c-ink-2);
+  border: 1px solid var(--c-engrave);
+  border-top: 2px solid var(--c-ply-canary);
+  box-shadow: var(--shadow-lift);
+}
+.has-sub:hover > .site-nav__sub,
+.has-sub:focus-within > .site-nav__sub { display: block; }
+.site-nav__sub li { border-top: 1px solid rgb(255 255 255 / 0.08); }
+.site-nav__sub li:first-child { border-top: 0; }
+.site-nav__sub a {
+  display: block;
+  padding: var(--sp-2xs) var(--sp-s);
+  text-transform: none;
+  letter-spacing: 0.02em;
+  border-bottom: 0;
+}
+.site-nav__sub a:hover, .site-nav__sub a[aria-current="page"] {
+  background: var(--c-ink);
+  border-bottom: 0;
 }
 
 .site-nav__toggle {
@@ -455,6 +516,19 @@ a:hover { text-decoration-thickness: 2px; }
   }
   .site-nav__list.is-open { display: flex; }
   .site-nav__list a { padding: var(--sp-xs) 0; min-height: 44px; }
+  /* In the drawer the submenu is always open and indented. A hover-triggered
+     flyout has no meaning on touch, and collapsing it would need JS for no
+     gain across five extra links. */
+  .site-nav__sub {
+    display: block;
+    position: static;
+    border: 0; box-shadow: none; background: none;
+    padding: 0 0 0 var(--sp-s);
+    border-left: 2px solid var(--c-engrave);
+    margin-bottom: var(--sp-2xs);
+  }
+  .site-nav__sub li { border-top: 0; }
+  .site-nav__sub a { padding: var(--sp-2xs) 0; min-height: 40px; }
   .hero::before { opacity: 0.28; right: -34%; }
 }
 
@@ -766,3 +840,138 @@ select.input { cursor: pointer; }
   max-width: var(--measure);
 }
 .mt-notice p { margin: 0; font-size: var(--step--1); }
+
+/* ==== WhatsApp float =====================================================
+   A link, not a widget. No script, no cookie, no consent banner. The label
+   collapses to an icon below 40rem so it never covers page content on a
+   phone. bottom offset clears iOS Safari's toolbar. */
+.wa-float {
+  position: fixed; z-index: 70;
+  right: var(--sp-s); bottom: calc(var(--sp-s) + env(safe-area-inset-bottom, 0px));
+  display: inline-flex; align-items: center; gap: var(--sp-2xs);
+  padding: var(--sp-2xs) var(--sp-s);
+  background: var(--c-ink-2);
+  color: var(--c-text-on-ink);
+  border: 1px solid var(--c-ply-canary);
+  border-radius: 999px;
+  box-shadow: var(--shadow-lift);
+  font-family: var(--font-ui);
+  font-size: var(--step--1); font-weight: 600;
+  text-decoration: none;
+  min-height: 44px;
+}
+.wa-float:hover { background: var(--c-ink); color: var(--c-ply-canary); }
+.wa-float__icon { width: 22px; height: 22px; flex: none; }
+@media (max-width: 40rem) {
+  .wa-float { padding: var(--sp-2xs); min-width: 48px; justify-content: center; }
+  .wa-float__label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+}
+@media print { .wa-float, .topbar { display: none; } }
+
+/* ==== static locator map =================================================
+   An <img> and an outbound link. An embedded Google or OSM iframe would set
+   third-party cookies before consent, which would oblige the whole site to
+   carry a banner it currently does not need. Tiles are fetched at build time
+   by scripts/make-map.js and self-hosted. */
+.locator { margin: var(--sp-m) 0; max-width: 46rem; }
+.locator__frame {
+  display: block;
+  border: 1px solid var(--c-rule);
+  background: var(--c-tint);
+  line-height: 0;
+}
+.locator__frame img { width: 100%; height: auto; display: block; }
+.locator__meta {
+  display: flex; flex-wrap: wrap; gap: var(--sp-2xs) var(--sp-s);
+  align-items: baseline; justify-content: space-between;
+  font-size: var(--step--2);
+  color: var(--c-text-muted);
+  margin-top: var(--sp-2xs);
+}
+.locator__meta p { margin: 0; max-width: none; }
+
+/* ==== partner logo strip =================================================
+   Renders a wordmark until a logo file is supplied, so the strip is never a
+   row of broken images. See summit.partners in src/_data/summit.js. */
+.partners { text-align: center; }
+.partners__list {
+  list-style: none; margin: var(--sp-m) 0 0; padding: 0;
+  display: flex; flex-wrap: wrap; justify-content: center;
+  gap: var(--sp-m) var(--sp-xl);
+}
+.partners__item {
+  display: flex; align-items: center; justify-content: center;
+  min-height: 4.5rem; padding: var(--sp-2xs) var(--sp-m);
+  background: var(--c-paper);
+  border: 1px solid var(--c-rule);
+}
+.partners__item img { max-height: 3.5rem; width: auto; }
+.partners__wordmark {
+  font-family: var(--font-display);
+  font-size: var(--step-1);
+  color: var(--c-ink);
+  line-height: 1.1;
+}
+.partners__role {
+  display: block;
+  font-family: var(--font-ui);
+  font-size: var(--step--2); font-weight: 600;
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--c-text-muted);
+  margin-top: 0.3em;
+}
+
+/* ==== news teasers ======================================================= */
+.news-list { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--sp-m); }
+@media (min-width: 44rem) { .news-list { grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); } }
+.news-card {
+  display: flex; flex-direction: column; gap: var(--sp-2xs);
+  padding: var(--sp-m);
+  background: var(--c-paper);
+  border: 1px solid var(--c-rule);
+  border-top: 3px solid var(--c-engrave);
+}
+.news-card__date {
+  font-family: var(--font-data);
+  font-size: var(--step--2);
+  color: var(--c-text-muted);
+  letter-spacing: 0.04em;
+}
+.news-card h3 { margin: 0; font-size: var(--step-1); }
+.news-card h3 a { text-decoration: none; color: var(--c-heading); }
+.news-card h3 a:hover { color: var(--c-link); text-decoration: underline; }
+.news-card p { margin: 0; font-size: var(--step--1); }
+
+/* ==== form: fieldset and checkbox group =================================
+   Added in V3 for Participation type. A <fieldset> gets a default min-width
+   of min-content that ignores flex/grid sizing — it overflows a narrow column
+   unless min-inline-size is reset. Long-standing UA behaviour, not a bug here. */
+.form__fieldset {
+  border: 1px solid var(--c-rule);
+  padding: var(--sp-s);
+  margin: 0 0 var(--sp-s);
+  min-inline-size: 0;
+}
+.form__fieldset legend { padding-inline: var(--sp-2xs); }
+.form__hint {
+  font-size: var(--step--2);
+  color: var(--c-text-muted);
+  margin: 0 0 var(--sp-2xs);
+}
+.form__check { display: flex; align-items: flex-start; gap: var(--sp-2xs); margin: 0 0 var(--sp-2xs); }
+.form__check label { font-size: var(--step--1); }
+/* 1.15rem, not the UA default: the native box is ~13px and reads as an
+   afterthought next to 44px inputs. margin-top aligns it to the cap height of
+   the first line rather than the line box. */
+.form__check .check { width: 1.15rem; height: 1.15rem; margin-top: 0.28em; flex: none; accent-color: var(--c-engrave); }
+.form__check-note { display: block; color: var(--c-text-muted); font-size: var(--step--2); }
+
+/* Citation line under a sourced statistic. Small and muted, but never below
+   the contrast floor — it is the thing that makes the number above it
+   credible, so it has to stay readable. */
+.source {
+  font-size: var(--step--2);
+  color: var(--c-text-muted);
+  margin-top: calc(var(--sp-s) * -0.5);
+}

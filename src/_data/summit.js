@@ -39,12 +39,23 @@ const summit = {
     timezone: "Africa/Nairobi",
   },
 
+  // Venue confirmed at the client consultation of 2026-08-23. FACTS.md §1a.
+  // The expo is in a TENT ON THE GROUNDS, not inside the building — that
+  // distinction is load-bearing for exhibitors and every template that
+  // mentions the expo has to keep it.
   location: {
     city: "Nairobi",
     country: "Kenya",
     countryCode: "KE",
-    // Venue deliberately absent — not supplied. See FACTS.md §2.
-    venueAnnounced: false,
+    venueAnnounced: true,
+    venue: "Kenyatta International Convention Centre",
+    venueShort: "KICC",
+    street: "Harambee Avenue",
+    // Used for the static map image and the Google Maps directions link.
+    // Nothing is embedded: an <img> plus an outbound link sets no cookies,
+    // which is what keeps the site free of a consent banner. See V3-SCOPE.md.
+    mapQuery: "Kenyatta International Convention Centre, Nairobi",
+    expoInTent: true,
   },
 
   organiser: {
@@ -54,6 +65,18 @@ const summit = {
     country: "Kenya",
     url: "https://orbitlineushers.com",
   },
+
+  // Confirmed 2026-08-23. The ONLY partner that may be named. Do not
+  // extrapolate from this to "government-backed" — see FACTS.md §2.
+  partners: [
+    {
+      name: "Tea Board of Kenya",
+      role: "Partner",
+      url: "https://www.teaboard.or.ke/",
+      // Logo file not yet supplied; the strip renders a wordmark until it is.
+      logo: null,
+    },
+  ],
 
   // Verbatim from website_content/KCTS_Website_Copy_V2.md lines 52-76.
   objectives: [
@@ -125,11 +148,32 @@ const summit = {
 
   exhibition: {
     name: "International Tea & Technology Expo",
+    // From the client's layout drawing, 2026-08-23. Positions and numbers only:
+    // sizes, rates and which stands are sellable are NOT supplied (FACTS.md §2).
+    // `layoutProvisional` gates the "subject to change" line, which is
+    // commercial protection and must not be dropped while it is true.
+    stands: 146,
+    halls: 2,
+    tentSize: "30m × 80m",
+    layoutProvisional: true,
+    day: 3,
     categories: [
-      "Tea products",
-      "Processing equipment",
-      "Agricultural technologies",
-      "Logistics services",
+      {
+        name: "Tea products",
+        detail: "black, green, orthodox, specialty, blended, packaged",
+      },
+      {
+        name: "Processing equipment",
+        detail: "withering, rolling, fermentation, drying, sorting, packing",
+      },
+      {
+        name: "Agricultural technology",
+        detail: "plucking, soil and crop management, traceability",
+      },
+      {
+        name: "Logistics services",
+        detail: "freight, warehousing, customs, cold chain, inspection",
+      },
     ],
   },
 
@@ -163,16 +207,30 @@ const summit = {
     { name: "Supporting Partner", slug: "supporting" },
   ],
 
-  // Verbatim from website_content/KCTS_Website_Copy_V2.md lines 563-585.
-  // Blurbs describe who each category is for, never a price, discount or
-  // inclusion — fees and package contents are not supplied. See FACTS.md §2.
+  // The V2 six (Delegate, Exhibitor, Sponsor, Government, Media, Student) are
+  // WITHDRAWN. These nine come from the client's Tally form and are the
+  // categories of record — see FACTS.md §1b.
+  //
+  // Sponsor and Exhibitor are deliberately absent: they are participation
+  // types, not categories, because a tea producer can also be an exhibitor.
+  // Collapsing the two axes into one list is what forced people to choose
+  // between describing themselves and describing what they want.
   registrationCategories: [
-    { name: "Delegate", slug: "delegate", blurb: "For tea-industry professionals, buyers, investors, researchers, technology providers and other participants attending the summit programme." },
-    { name: "Exhibitor", slug: "exhibitor", blurb: "For organisations interested in presenting products, equipment or services at the International Tea & Technology Expo." },
-    { name: "Sponsor", slug: "sponsor", blurb: "For organisations interested in Title, Platinum, Gold, Silver or Supporting Partner opportunities." },
-    { name: "Government", slug: "government", blurb: "For public officials, regulators, trade agencies, diplomatic missions, industry bodies and development institutions attending in an official capacity." },
-    { name: "Media", slug: "media", blurb: "For journalists, editors, producers, photographers and recognised industry media seeking accreditation." },
-    { name: "Student", slug: "student", blurb: "For current students and trainees with a relevant academic or professional interest." },
+    { name: "Government / institutional delegate", slug: "government", blurb: "Public officials, regulators, trade agencies, diplomatic missions, industry bodies and development institutions attending in an official capacity." },
+    { name: "Tea producer / processor", slug: "producer", blurb: "Growers, estates, smallholder organisations and factories producing or processing tea." },
+    { name: "End-user / tea beverage brand", slug: "brand", blurb: "Consumer brands, blenders, packers, tea houses and hospitality businesses buying tea to sell on." },
+    { name: "Trader / merchant", slug: "trader", blurb: "Exporters, importers, distributors and brokers moving tea between markets." },
+    { name: "Machinery and packaging equipment supplier", slug: "machinery", blurb: "Manufacturers and suppliers of processing equipment, packaging lines and agricultural technology." },
+    { name: "Investor / financial institution", slug: "investor", blurb: "Investors, banks, insurers and development finance institutions active across the tea value chain." },
+    { name: "Media", slug: "media", blurb: "Journalists, editors, producers, photographers and recognised industry media." },
+    { name: "Academic / research institution", slug: "academic", blurb: "Universities, research institutes, trainers and standards specialists." },
+    { name: "Other / observer", slug: "other", blurb: "Anyone with a professional interest in the Kenya-China tea trade who does not fit the categories above." },
+  ],
+
+  // Ticked in addition to a category, never instead of one.
+  participationTypes: [
+    { name: "Exhibitor", slug: "exhibitor", blurb: "Interested in a stand at the International Tea & Technology Expo." },
+    { name: "Sponsor", slug: "sponsor", blurb: "Interested in a Title, Platinum, Gold, Silver or Supporting Partner package." },
   ],
 
   // Pricing is unset. Templates read this flag rather than testing for empty
@@ -181,13 +239,24 @@ const summit = {
   speakersAnnounced: false,
   venueAnnounced: false,
 
-  // Contact channels are not yet supplied. The site routes everything through
-  // its own forms until they are. See FACTS.md §2.
+  // Supplied 2026-08-23. FACTS.md §1a.
+  // `address` is the SECRETARIAT OFFICE in Westlands, not the venue. Any
+  // template printing it has to say so, or delegates turn up in the wrong
+  // part of Nairobi on the morning of Day 1.
   contact: {
-    formOnly: true,
-    email: null,
-    phone: null,
-    address: null,
+    formOnly: false,
+    email: "info@kenyachinateasummit.com",
+    supportEmail: "support@kenyachinateasummit.com",
+    marketingEmail: "marketing@kenyachinateasummit.com",
+    phone: "+254 111 491 076",
+    // E.164 without the +, which is what wa.me expects.
+    whatsapp: "254111491076",
+    address: {
+      line1: "4th Floor, Woodvale Place",
+      line2: "Westlands",
+      city: "Nairobi",
+      country: "Kenya",
+    },
   },
 
   social: {},

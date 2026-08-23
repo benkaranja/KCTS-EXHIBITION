@@ -1,6 +1,6 @@
 # Copy for client review — Kenya-China Tea Summit 2027
 
-**Generated:** 2026-08-22 · **Build:** `e2d72a5`
+**Generated:** 2026-08-23 · **Build:** `54fae0b`
 
 Generated from the built site. This is what is live, not a draft of it.
 
@@ -29,30 +29,36 @@ Generated from the built site. This is what is live, not a draft of it.
 
 Brewing Strategic Partnerships for Sustainable Tea Trade, Investment and Innovation
 
-- **Location:** Nairobi, Kenya
+- **Venue:** Kenyatta International Convention Centre
 - **Dates:** 21–23 April 2027
-- **Days to opening:** 242
-- **Venue:** To be announced
+- **Days to opening:** 241
+- **City:** Nairobi, Kenya
 - **Organised by:** Orbitline Events & Ushers Ltd
-The Kenya-China Tea Summit brings producers, exporters, buyers, investors, policymakers, researchers and technology partners together in Nairobi for three days of focused trade conversations, business meetings and industry exchange.
+Three days in Nairobi for the people who grow, process, buy, ship and finance tea.
 
 ### Register your interest
 
-Six categories, from delegate to exhibitor. Registration is open as an expression of interest — fees, deadlines and inclusions are set by the summit team and published here once confirmed.
+Nine categories. Takes about two minutes.
 
-Exhibiting or partnering instead?
+Exhibiting or partnering?
 
-### A focused platform for a growing trade relationship
+### The number this summit is built on
 
-Kenya and China bring different strengths to the tea industry. Kenya has deep experience in growing, processing and exporting tea. China is a major tea market and a centre for tea production, technology, product development and tea culture.
+Kenya exported 652.8 million kilogrammes of tea in 2025, worth KES 186.91 billion. China bought 13,011 tonnes of it, around two per cent.
 
-The summit creates a practical meeting point for the people shaping this relationship. The focus is direct: build stronger commercial links, support value addition, improve market access and identify investment and technology partnerships that can move from conversation to action.
+China is the largest tea market in the world. Pakistan alone takes 36 per cent of Kenya's exports. The opportunity sits in the distance between those two figures.
+
+This summit puts both sides in the same room for three days.
+
+Source: Tea Board of Kenya, Tea Industry Performance Report 2025. China import figure for 2024, Ecofin Agency.
 
 About the summit
 
 Plate IKenya's growing highlands
 
-### What the summit is designed to achieve
+### What the summit works on
+
+Why the summit exists
 
 _Three days in Nairobi_
 - Day
@@ -64,13 +70,15 @@ View the programme
 
 ### The International Tea & Technology Expo
 
-The expo brings tea products and industry solutions into one commercial space. Exhibitors can present finished and bulk teas, processing equipment, agricultural technologies, packaging, traceability tools and logistics services to a specialist audience.
+146 stands across two halls, in a tent on the KICC grounds. Tea products, processing equipment, agricultural technology and logistics services. The expo runs on Day 3, with the full delegation on site.
 
-Explore exhibition opportunities
+Stand rates and sizes: to be announced.
+
+Why exhibit · Stands and rates
 
 Plate IIFrom leaf to grade
 
-### Who should attend
+### Who attends
 
 - Tea growers, factories, producer organisations and exporters
 - Importers, distributors, tea houses, retailers and consumer brands
@@ -82,34 +90,41 @@ Plate IIFrom leaf to grade
 - Hotels, restaurants, tourism operators and tea-culture organisations
 - Business and industry media
 
-### B2B matchmaking
+### B2B meetings
 
-Good events create introductions. Useful events make those introductions relevant.
+Delegates create a profile stating what they sell or want to buy, then request meetings with other delegates. The Secretariat schedules every accepted meeting into a Day 2 slot.
 
-The summit's planned matchmaking programme will help delegates and exhibitors identify potential buyers, suppliers, investors and technology partners before and during the event. Participants will provide a business profile, indicate what they are looking for and receive relevant meeting recommendations.
-
-How matchmaking will work
+How B2B meetings work
 
 ### Partner with the summit
 
-Partnership is available at Title, Platinum, Gold, Silver and Supporting Partner levels. Packages will be built around approved benefits such as brand visibility, delegate engagement, exhibition presence and business introductions.
+Five levels. Package contents: to be announced.
 
 - Title Partner
 - Platinum Partner
 - Gold Partner
 - Silver Partner
 - Supporting Partner
-Tell us what your organisation wants to achieve, and the summit team will recommend the most suitable route.
+Any organisation whose business grows as China's share of Kenyan tea grows has a reason to be visible here.
 
 Discuss partnership
 
-### Plan your visit to Nairobi
+### Coming to Nairobi
 
-The summit is being planned as more than a three-day conference. The summit team intends to coordinate travel and accommodation support, tea-region visits and optional tourism experiences for international delegations.
+The summit runs at the Kenyatta International Convention Centre in central Nairobi. Kenya's tea-growing highlands sit within a few hours of the city, and most visitors need an Electronic Travel Authorisation before departure.
 
-Travel and stay
+Travel and visas · Tea attractions
 
 Plate IIIComing to Nairobi
+
+### News and insights
+
+All news and insights
+
+### Organiser and partners
+
+- Orbitline Events & Ushers Ltd Organiser
+- Tea Board of Kenya Partner
 
 ---
 
@@ -127,9 +142,19 @@ Plate IIIComing to Nairobi
 
 Tea connects Kenya and China in different but complementary ways.
 
-Kenya has generations of knowledge in tea cultivation, processing and international trade. China is a major tea market and a centre for tea production, technology, product development and tea culture.
+The Kenya-China Tea Summit is an international meeting for the tea trade, hosted in Nairobi and centred on the commercial relationship between Kenya and China. It runs 21–23 April 2027 at the Kenyatta International Convention Centre (KICC).
 
-The Kenya-China Tea Summit has been created to bring these strengths into the same room. It is a platform for people who want to trade, invest, share expertise and build long-term relationships across the tea value chain.
+Orbitline Events & Ushers Ltd organises the summit, in partnership with the Tea Board of Kenya.
+
+### Why now
+
+Kenya is one of the world's largest tea exporters. In 2025 it shipped 652.8 million kilogrammes, up 9.81 per cent on the year before, earning KES 186.91 billion.
+
+Most of that volume reaches a small number of markets. Pakistan takes 36 per cent. China, the largest tea market on earth, took 13,011 tonnes in 2024, close to two per cent of Kenya's exports.
+
+The largest available market for Kenyan tea remains open. Reaching it takes buyers and sellers who have met.
+
+Sources: Tea Board of Kenya, Tea Industry Performance Report 2025; Ecofin Agency, 2026.
 
 The summit takes place in Nairobi from 21–23 April 2027.
 
@@ -176,7 +201,7 @@ The programme is intended for:
 
 ### Register your interest
 
-Registration is currently an expression of interest. It is free to submit and does not create a booking or payment obligation.
+Registration takes about two minutes and carries no charge.
 
 Register interest
 
@@ -194,7 +219,7 @@ Register interest
 
 The summit programme moves from market opportunity to investment and technology, then into exhibition, culture and next steps.
 
-The detailed agenda, session times and speakers will be announced in phases.
+Session titles, times and speakers are published in phases.
 
 - Day
 - Proceedings
@@ -229,11 +254,13 @@ The following details will be announced as they are confirmed:
 - Expo operating days and opening hours
 - B2B eligibility, scheduling and whether it is included in registration
 
-### Interested in speaking?
+### Speakers
 
-We welcome proposals from industry leaders, buyers, investors, policymakers, researchers and technology specialists with practical experience to share.
+Speakers are announced in phases from a date to be announced.
 
-Propose a session
+To propose a speaker or a session, email marketing@kenyachinateasummit.com with the topic, the speaker's role and one paragraph on the fit.
+
+The Secretariat is interested in proposals from buyers, investors, policymakers, researchers and technology specialists with practical trading experience.
 
 Programme announcements
 
@@ -257,53 +284,49 @@ Register interest
 
 - Expo duration is no longer asserted. Both this page and Programme state one 'to be announced' field (client audit).
 
-## Put your products and solutions in front of a specialist audience
+## Why exhibit
 
-The International Tea & Technology Expo is the commercial exhibition within the Kenya-China Tea Summit.
+The International Tea & Technology Expo runs in a tent on the KICC grounds. 146 stands across two halls.
 
-It is designed for companies that want to meet tea producers, processors, exporters, buyers, investors and policymakers with a clear interest in the Kenya-China market.
+The expo runs on Day 3, Friday 23 April 2027, with the full delegation on site.
+
+### Expo at a glance
+
+- **Date:** Friday 23 April 2027
+- **Location:** Tent on the KICC grounds
+- **Stands:** 146 across 2 halls
+- **Tent:** 30m × 80m
+- **Stand sizes and rates:** To be announced
+- **Opening hours:** To be announced
+Layout
+
+The floor plan is subject to change before stands go on sale. See stands and rates.
+
+### Who walks the floor
+
+Buyers, importers and distributors from China and across the region. Kenyan growers, factories and exporters. Investors, regulators, logistics operators and trade-service providers.
+
+The Secretariat publishes the registration breakdown as registrations build, so exhibitors can see the audience before committing.
+
+### Why take a stand
+
+A stand puts a product in front of buyers who had no meeting booked. The expo runs on the third day, with the full delegation on site, which concentrates footfall into a single trading day.
 
 Plate VWhat the expo is about
 
-### What can be exhibited
+### What gets exhibited
 
-### Why exhibit
+### Apply
 
-#### Meet a defined audience
+Register as an exhibitor and the Secretariat makes contact when stand booking opens. Rates, sizes and package inclusions are on stands and rates.
 
-The summit brings together people working directly in tea trade, investment, production and technology.
+For a conversation first, email marketing@kenyachinateasummit.com or call +254 111 491 076.
 
-#### Demonstrate what you offer
+### Register your interest
 
-Show products, equipment and systems in a setting where visitors can ask technical and commercial questions.
+Tick Exhibitor at registration and the Secretariat makes contact when stand booking opens.
 
-#### Build relevant relationships
-
-Use the summit programme and planned B2B service to identify buyers, suppliers and partners with aligned interests.
-
-#### Enter the conversation early
-
-The event gives exhibitors a place in discussions on value addition, market access, technology and the future of Kenya-China tea trade.
-
-### Exhibitor information
-
-- **Expo operating days:** To be announced
-- **Stand sizes:** To be announced
-- **Rates:** To be announced
-- **Package inclusions:** To be announced
-- **Build and fit-out guidelines:** To be announced
-- **Application deadline:** To be announced
-Registering interest
-
-Registering interest does not reserve a stand. It ensures you receive the exhibitor prospectus and application details when they are released.
-
-Prefer to talk first? Contact the exhibition team.
-
-### Enquire about exhibiting
-
-Tell us what your organisation offers, the space you may require and the audience you want to meet.
-
-Register exhibitor interest
+Register your interest
 
 ---
 
@@ -315,54 +338,39 @@ Register exhibitor interest
 
 - 'AI-powered business matching' removed — it describes a platform that has not been selected (client audit).
 
-## Make the right meetings part of the programme
+## B2B meetings
 
-Trade events are most valuable when the people you need to meet are identified before the room becomes crowded.
+Scheduled meetings on Day 2, alongside the Investment Forum and Innovation Conference.
 
-The summit's planned B2B matchmaking programme will help delegates and exhibitors find relevant commercial counterparts, request meetings and manage a focused schedule.
+B2B meetings run on Day 2, Thursday 22 April 2027.
 
-### How it is expected to work
+### At a glance
 
-#### Create a business profile
-
-Participants provide information about their organisation, products, capabilities, markets and objectives.
-
-#### State what you are looking for
-
-You may be seeking buyers, suppliers, investment, equipment, distribution, technology or research collaboration.
-
-#### Receive relevant recommendations
-
-The system uses the information provided to suggest potential counterparts. Participants decide which meetings to request or accept.
-
-#### Meet during the summit
-
-Confirmed meetings are placed into the summit schedule, subject to availability and mutual acceptance.
-
-### Who can use the service
-
+- **Day:** Day 2, Thursday 22 April 2027
+- **Booked through:** Delegate portal
 - **Eligibility:** To be announced
 - **Cost:** To be announced
-- **Main meeting day:** Thursday, 22 April 2027
-- **Profile opening date:** To be announced
-- **Platform access:** To be announced
+- **Profiles open:** To be announced
 
-### What makes a useful profile
+### How it works
 
-A strong profile is specific. It should explain:
+Delegates create a profile stating what they sell or want to buy, then request meetings with other delegates. The Secretariat schedules every accepted meeting into a Day 2 slot.
 
-- What your organisation produces, buys, finances or provides
-- The grades, volumes, markets or technologies relevant to you
-- What kind of organisation you want to meet
-- What a successful meeting would lead to
+### Writing a profile that works
 
-### Data and privacy
+The Secretariat reads every profile and books the meetings by hand. A profile that states what an organisation trades, in what volume and what it is looking for gets more meetings than one describing the organisation in general terms.
 
-Matchmaking may require information beyond the website registration form. The final platform, data controller, access rules and privacy terms will be published before profiles open.
+Useful detail: product and grade, annual volume, target markets, current certifications, and the specific counterpart being sought.
+
+### Who takes part
+
+### Get access
+
+B2B meetings run through the delegate portal. Register first, and the Secretariat opens profiles when they go live.
 
 ### Register your interest
 
-Choose the category that best describes your role and indicate that you are interested in B2B matchmaking.
+Register first, and the Secretariat opens profiles when they go live.
 
 Register your interest
 
@@ -378,11 +386,13 @@ Register your interest
 - 'Unallocated' tier badges removed — they date instantly and require active management (§11).
 - The 'founding partner' framing is held back: FACTS.md does not confirm that 2027 is the first edition (BLOCKERS B-006).
 
-## Put your organisation at the centre of the conversation
+## Partner with the summit
 
-Partnership opportunities for organisations that want to engage with decision-makers across tea, trade, investment, technology and policy.
+Five levels, and three days of access to the people who decide what their organisation buys.
 
-The strongest partnerships begin with a clear objective. That may be brand visibility, access to a specialist audience, product demonstration, market entry, thought leadership or relationship building.
+Three days of access to a defined trade audience, in front of the people who decide what their organisation buys.
+
+China takes around two per cent of Kenya's tea exports today (Tea Board of Kenya, 2025). Any organisation whose business grows as that figure grows has a reason to be visible here.
 
 ### Partnership levels
 
@@ -447,9 +457,9 @@ Tell the summit team what your organisation wants from the Kenya-China tea marke
 
 Contact the summit team
 
-### Request the partnership prospectus
+### Request the partnership pack
 
-Rates and confirmed benefits will be issued through the official summit channels once approved.
+Tell the Secretariat your organisation, the level of interest and the objective.
 
 Discuss partnership
 
@@ -465,19 +475,19 @@ Discuss partnership
 
 ## Register your interest
 
-Six categories. No payment at this stage, and submitting the form does not reserve a place.
+Nine categories. Takes about two minutes.
 
-Read this first
+Registration is open and takes about two minutes. The Secretariat makes contact as fees, categories and the full programme are confirmed. Registration carries no charge.
 
-The formal ticketing process is not open yet. This form records your interest and allows the summit team to send you confirmed information as it becomes available. There is no payment at this stage, and submitting the form does not reserve a place.
+### Categories
 
-### Choose the category that best fits your role
+Select the category that describes the organisation best. Exhibiting and partnering are separate tick-boxes on the form, so a producer can register as a producer and as an exhibitor.
 
 ### What is set, and what is not
 
 - **Dates:** 21–23 April 2027
 - **City:** Nairobi, Kenya
-- **Venue:** To be announced
+- **Venue:** Kenyatta International Convention Centre
 - **Fees:** To be announced
 - **Registration deadline:** To be announced
 - **What each category includes:** To be announced
@@ -490,78 +500,39 @@ Full name *
 
 Email *
 
-Organisation
+Mobile number, with country code *
 
-Job title
+Organisation *
 
-Country
+Job title *
 
-Category * Select one Delegate Exhibitor Sponsor Government Media Student
+Country or region *
 
-Anything the secretariat should know
+Category * Select one Government / institutional delegate Tea producer / processor End-user / tea beverage brand Trader / merchant Machinery and packaging equipment supplier Investor / financial institution Media Academic / research institution Other / observer
+
+Optional. Leave both unticked to attend only.
+
+Exhibitor Interested in a stand at the International Tea & Technology Expo.
+
+Sponsor Interested in a Title, Platinum, Gold, Silver or Supporting Partner package.
+
+Website
+
+Brief description of interest
 
   - _field:_ Company website
 
-> **[Button]** Submit registration of interest
+> **[Button]** Register your interest
 
-By submitting you agree the secretariat may contact you about this summit. See our privacy notice. You can ask to be removed at any time.
+By submitting you agree the Secretariat may use your information to process your registration and contact you with updates about the Kenya-China Tea Summit 2027. Your information is shared with official event partners only as needed for registration and logistics, and is never sold. To review, correct or delete your information, email info@kenyachinateasummit.com. See our privacy notice.
 
-### What happens next
+### After registration
 
-- You receive confirmation that your expression of interest was submitted.
-- The summit team records your chosen category and areas of interest.
-- You receive relevant updates as the venue, fees, programme and participation packages are confirmed.
-- Formal registration instructions are sent when booking opens.
+Registration confirms by email. When the delegate portal opens, delegates sign in with that email address to update details, book a stand, request B2B meetings and download documents.
+
+Journalists apply through media accreditation.
+
 If you would rather exhibit or partner than attend, those go through Exhibition and Partnership instead — different forms, different information needed.
-
----
-
-# Speakers
-
-`/speakers/`
-
-**What changed here**
-
-- Product-led proposals redirected to exhibition and partnership in positive language rather than dismissed (§4.8).
-
-## Call for speakers
-
-No speakers are confirmed yet. Propose a session grounded in practical knowledge, market evidence or real experience.
-
-Status
-
-The Kenya-China Tea Summit is developing a programme led by practical knowledge, market evidence and real experience. Confirmed speakers will be published here once invitations are accepted and session details are approved.
-
-### Areas of interest
-
-### What makes a strong proposal
-
-We are looking for sessions with a clear purpose and a defined audience. A strong proposal should include:
-
-- A specific topic, question, case study or finding
-- Evidence or direct experience
-- A clear connection to the summit's Kenya-China focus
-- Practical value for people in the room
-- An honest description of any commercial interest
-Company presentations and product pitches are better suited to the exhibition and partnership programme.
-
-### Propose a session
-
-There is no dedicated speaker form yet. Use the contact form and state "Speaker proposal" in your message, together with your organisation, proposed topic and which area of interest above it fits.
-
-Submission does not guarantee a place on the programme. The summit team will confirm the review process, deadlines and speaker terms when the programme committee is in place.
-
-Proposing a session
-
-Send your organisation, your topic and the area of interest it fits to the summit team.
-
-Contact the summit team
-
-### Register your interest
-
-Six categories, from delegate to exhibitor. Fees and deadlines are published once the secretariat confirms them.
-
-Register interest
 
 ---
 
@@ -573,31 +544,45 @@ Register interest
 
 - 'Why this page is mostly empty' removed. One status message, not several (§11, §12.3).
 
-## Coming to Nairobi
+## Kenyatta International Convention Centre
 
-The Kenya-China Tea Summit takes place in Nairobi, Kenya, from 21 to 23 April 2027.
+The summit runs at KICC in central Nairobi, 21–23 April 2027. The International Tea & Technology Expo runs in a tent on the grounds.
 
-The specific venue is being finalised and will be announced through the official summit website and delegate communications.
+The summit runs at the Kenyatta International Convention Centre (KICC) in central Nairobi, 21–23 April 2027.
+
+The International Tea & Technology Expo runs in a tent on the KICC grounds rather than inside the building. 146 stands across 2 halls.
 
 ### Event details
 
-- **City:** Nairobi, Kenya
+- **Venue:** Kenyatta International Convention Centre
+- **Address:** Harambee Avenue, Nairobi, Kenya
 - **Dates:** 21–23 April 2027
-- **Venue:** To be announced
-- **Address:** To be announced
+- **Expo:** Day 3, in a tent on the grounds
+- **Parking:** To be announced
 - **Accessibility information:** To be announced
-- **Parking and local transport:** To be announced
-Before booking accommodation
+Access requirements
 
-The venue will affect which part of Nairobi is most convenient for your stay. Choose flexible or refundable accommodation where possible. International visitors should also use flexible travel arrangements and review entry requirements before booking.
+For a specific access requirement, email support@kenyachinateasummit.com and the Secretariat confirms arrangements directly.
 
-### Venue announcements
+### Getting there
 
-Register interest to be first to receive venue and delegate details as soon as they are available. General arrival guidance is on Travel & stay.
+KICC stands on Harambee Avenue, in Nairobi's central business district.
+
+Opens Google Maps directions to KICC in a new tab. Map data © OpenStreetMap contributors
+
+### Expo floor plan
+
+146 stands across 2 halls, in a 30m × 80m tent, with 3.0m and 2.0m aisles. The layout is subject to change before stands go on sale.
+
+The interactive plan opens in the exhibitor portal when booking starts. See stands and rates.
+
+### Where to stay
+
+Hotels sit within walking distance of KICC and across Westlands and Upper Hill. Summit rates and booking codes are on travel and visas.
 
 ### Register your interest
 
-Register your interest to receive venue and delegate information as it is confirmed.
+Registration takes about two minutes and puts you on the list for venue and delegate information.
 
 Register interest
 
@@ -611,51 +596,51 @@ Register interest
 
 - 'Safe to book flights against' removed — the organiser cannot indemnify a date change (client audit).
 
-## Travel and stay
+## Travel and visas
 
-General guidance for getting to Nairobi. Check official sources before you book.
+Getting to Nairobi, entry requirements and where to stay. Check official sources before booking.
 
-The information on this page is general guidance. Entry rules, health requirements and travel procedures can change, so check official sources before making arrangements.
+Nairobi is served by Jomo Kenyatta International Airport, shown as NBO in booking systems, about 20km from KICC.
 
-Plate VIBeyond the conference days
+### Practical detail
 
-### Arriving by air
+- **Airport:** Jomo Kenyatta International (NBO)
+- **Entry:** Electronic Travel Authorisation
+- **Currency:** Kenyan shilling (KES)
+- **Summit hotel rates:** To be announced
+- **Airport transfers:** To be announced
+- **Invitation letter lead time:** To be announced
+Apply early
 
-Nairobi's main international airport is Jomo Kenyatta International Airport, commonly shown as NBO in booking systems.
-
-Details on airport transfers, accommodation rates and delegation support services will be published once venue and transport arrangements are confirmed.
+Processing times vary. An eTA refused close to departure cannot be resolved at the airport.
 
 ### Entry requirements
 
-Kenya uses an Electronic Travel Authorisation system for many international visitors. Check the official Kenya eTA service and your own government's travel guidance before booking.
+Kenya requires most visitors to hold an Electronic Travel Authorisation (eTA) before departure. Apply through the Government of Kenya's official portal at etakenya.go.ke.
 
-Processing times and requirements may vary by nationality and individual circumstances.
+Requirements change. Check the official portal, and confirm with the Kenyan embassy or high commission covering the country of departure.
+
+### Invitation letters
+
+Where an application requires a letter of invitation, register first, then email support@kenyachinateasummit.com with the full name as it appears in the passport, passport number, nationality and organisation.
 
 ### Accommodation
 
-- **Summit hotel or room block:** To be announced
-- **Preferential delegate rates:** To be announced
-- **Airport transfers:** To be announced
-- **Venue shuttle:** To be announced
-Before you book
+Hotels sit within walking distance of KICC and across Westlands and Upper Hill. The Secretariat publishes summit rates and booking codes as agreements are signed.
 
-Choose refundable or flexible hotel bookings where possible.
+### Health and money
 
-### Delegation support
+Check vaccination requirements with a doctor well before travelling. The currency is the Kenyan shilling (KES). Card payment is widely accepted in Nairobi hotels and restaurants, and mobile money is standard.
 
-The organiser plans to coordinate a range of optional services for international delegations:
+### Tea attractions
 
-- Flight booking
-- Hotel reservations
-- Tea plantation tours
-- Safaris
-- Tourism experiences
-- Invitation letters
-These are optional services intended to make group travel easier to plan.
+Kenya's tea-growing highlands sit within a few hours of Nairobi. See tea attractions in Kenya.
+
+Plate VIBeyond the conference days
 
 ### Register your interest
 
-Register your interest to receive venue, accommodation and delegate-travel updates.
+Register your interest to receive accommodation rates and delegate travel information.
 
 Register interest
 
@@ -669,97 +654,81 @@ Register interest
 
 - Pricing warnings restated as positive policy: rates are issued by the Secretariat (§4.8).
 
-## Questions, answered honestly
+## Frequently asked questions
 
-Including the ones where the answer is "not decided yet".
+The questions no other page answers. Everything else is linked from here.
 
-### Dates and place
+### The basics
 
-#### When is the summit?
+#### When and where is the summit?
 
-The Kenya-China Tea Summit takes place from 21 to 23 April 2027.
+21 to 23 April 2027, at the Kenyatta International Convention Centre in Nairobi. See the venue page.
 
-#### Where will it be held?
+#### Who organises the summit?
 
-The summit will be held in Nairobi, Kenya. The venue will be announced once arrangements are finalised. See the Venue page.
+Orbitline Events & Ushers Ltd, in partnership with the Tea Board of Kenya.
+
+#### What language is the summit in?
+
+This website is published in English and Chinese. Interpretation arrangements at the summit are to be announced.
 
 ### Registering
 
-#### Is registration open?
+#### How much does it cost to attend?
 
-Expressions of interest are open. Formal ticket sales and confirmed participation packages are not yet available.
+Fees are to be announced. Registering your interest now carries no charge.
 
-#### Does registering interest reserve a place?
+#### Can an organisation exhibit and attend as a delegate?
 
-No. It records your interest and allows the summit team to send you relevant updates. Formal registration will be required when booking opens.
+Yes. Tick Exhibitor at registration, and select the category that describes the organisation. They are separate questions.
 
-#### How much will it cost?
+#### What happens after I register?
 
-Delegate fees, exhibitor rates and partnership packages will be announced after approval. Official participation rates are issued by the Secretariat and published here once confirmed.
+Registration confirms by email. When the delegate portal opens you sign in with that address to update details, book a stand, request B2B meetings and download documents.
 
-### The programme
+### The expo
 
-#### Who should attend?
+#### Is the expo on all three days?
 
-The summit is intended for tea producers, processors, exporters, buyers, investors, technology companies, logistics providers, public institutions, researchers, hospitality professionals and media.
+The International Tea & Technology Expo runs on Day 3, Friday 23 April, in a tent on the KICC grounds.
 
-#### What happens on each day?
+#### How many stands are there?
 
-Day one focuses on trade. Day two covers investment, innovation and B2B meetings. Day three includes the International Tea & Technology Expo, cultural exchange and the closing programme.
+146 across two halls. Sizes and rates are to be announced, and the layout is subject to change before stands go on sale. See stands and rates.
+
+#### When does stand booking open?
+
+Once rates are confirmed. Register as an exhibitor and the Secretariat makes contact. Booking happens in the exhibitor portal, where exhibitors select a stand from a plan and hold it while the Secretariat confirms.
+
+### Getting here
+
+#### Does Kenya require a visa?
+
+Most visitors need an Electronic Travel Authorisation before departure. Apply at etakenya.go.ke and confirm with the Kenyan embassy covering the country of departure. See travel and visas.
+
+#### Are invitation letters available?
+
+Yes. Register, then email support@kenyachinateasummit.com with passport details and organisation.
+
+#### Is there a summit hotel block?
+
+Hotel rates and booking codes are to be announced.
+
+### Programme
 
 #### Who is speaking?
 
-Confirmed speakers will be published after they accept their invitations and session details are approved.
+Speakers are announced in phases. See the programme.
 
-#### Can I propose a session?
+### Practical
 
-Yes. The Speakers page explains how to contact the summit team with a proposal. Submission does not guarantee inclusion in the programme.
+#### How do I reach a person?
 
-#### What language will the summit use?
+Call or WhatsApp +254 111 491 076, or email info@kenyachinateasummit.com.
 
-The working languages and interpretation arrangements are still being confirmed. They will be published with the detailed programme.
+#### How is my data handled?
 
-### Exhibiting, partnership and B2B
-
-#### How do I exhibit?
-
-Register exhibitor interest through the Exhibition page. The summit team will send stand options, rates and application information when available.
-
-#### How do I become a partner?
-
-Use the Partnership page to describe your preferred level, audience and objectives. The partnership team will respond with approved options when packages are ready.
-
-#### How will B2B matchmaking work?
-
-Participants will create business profiles, state what they are looking for and receive relevant meeting recommendations. Eligibility, access and pricing are still to be confirmed.
-
-### Practicalities
-
-#### Do I need a visa?
-
-Requirements depend on nationality and individual circumstances. Check Kenya's official Electronic Travel Authorisation website and your government's travel advice.
-
-#### Will invitation letters be available?
-
-The summit team's invitation-letter policy is being confirmed. An invitation letter, where provided, does not guarantee immigration approval.
-
-#### Is there an official summit hotel?
-
-The accommodation plan will be announced after the venue and hotel arrangements are confirmed.
-
-#### Will the summit be streamed or recorded?
-
-Recording and streaming arrangements have not been confirmed.
-
-### Updates and contact
-
-#### How can I receive updates?
-
-Register your interest or follow the summit news page.
-
-#### My question is not listed
-
-Contact the summit team and include enough detail for your enquiry to be routed correctly.
+The site sets no cookies and runs no third-party trackers. See the privacy notice.
 
 Still have a question
 
@@ -851,33 +820,225 @@ Register interest
 
 ---
 
+# News — Kenya's tea exports grew 10 per cent in 2025. China took two per cent of them.
+
+`/news/kenya-tea-exports-2025/`
+
+## Kenya's tea exports grew 10 per cent in 2025. China took two per cent of them.
+
+The Tea Board of Kenya's own figures show where the volume goes, and where it does not.
+
+The Tea Board of Kenya published its Tea Industry Performance Report for 2025. Three numbers in it explain why this summit exists.
+
+### The headline
+
+Kenya exported 652.8 million kilogrammes of tea in 2025, up 9.81 per cent on the 594.5 million kilogrammes shipped in 2024. Export earnings reached KES 186.91 billion, a rise of 2.87 per cent. Total marketed value came to KES 218.79 billion.
+
+Volume grew faster than value, which is its own story about price. But the number that matters most for anyone planning a market strategy is the one underneath.
+
+### Where it goes
+
+Pakistan takes 36 per cent of Kenya's tea exports: 235.13 million kilogrammes, worth KES 73.41 billion.
+
+China, the largest tea market in the world, imported 13,011 tonnes of Kenyan tea in 2024. Against Kenya's export volume that is close to two per cent.
+
+### Why concentration is a risk rather than a strength
+
+A buyer taking more than a third of national output is a good customer and a single point of failure at the same time. Currency moves, import policy changes, a shift in domestic demand: any of these arrives as a shock to the whole industry rather than to one exporter.
+
+The usual answer is diversification, and diversification usually means finding buyers who are already large. On that measure China is the obvious candidate and the one Kenya has reached least.
+
+### What sits between access and volume
+
+Market access is necessary and not sufficient. A Chinese importer buying at scale needs consistent grade, packaging suited to the destination channel, traceability documentation, and a relationship with a supplier who answers the phone. Those are commercial and operational problems rather than policy ones, and they get solved between people rather than between governments.
+
+That is the work of the summit. Three days in Nairobi, 21–23 April 2027, for producers, exporters, importers, buyers and the investors and technology suppliers around them.
+
+### Sources
+
+- Tea Board of Kenya, Tea Industry Performance Report 2025
+- Ecofin Agency, Kenya tea exports rise in 2025
+
+### Register your interest
+
+Six categories, from delegate to exhibitor. Fees and deadlines are published once the secretariat confirms them.
+
+Register interest
+
+---
+
+# News — Registration is open. Here is what follows.
+
+`/news/registration-open/`
+
+## Registration is open. Here is what follows.
+
+Two minutes now, and the Secretariat comes back to you as each piece is confirmed.
+
+Registration of interest is open for the Kenya-China Tea Summit, 21–23 April 2027 at KICC in Nairobi.
+
+### What the form asks
+
+Name, email, mobile number with country code, organisation, job title, country and category. Everything else is optional.
+
+There are nine categories, and they describe what an organisation is rather than what it wants: government and institutional delegates, tea producers and processors, end-user brands, traders and merchants, machinery and packaging suppliers, investors and financial institutions, media, academic and research institutions, and a general observer category.
+
+Exhibiting and partnering are separate tick-boxes. That separation is deliberate. A tea producer can also want a stand, and the previous single list forced people to choose between describing themselves and describing what they were after.
+
+### What happens to it
+
+The Secretariat holds your details to contact you about the summit. They are shared with official event partners only where registration and logistics require it, and never sold. To review, correct or delete your information, email info@kenyachinateasummit.com.
+
+### The delegate portal
+
+The portal opens later this year. Registered delegates sign in with the email address they registered with, and from there update their details, book a stand if exhibiting, request B2B meetings and download documents.
+
+### The timetable
+
+Registration fees, what each category includes and the registration deadline are still being set. So are stand sizes and rates, hotel rates, and the speaker programme. Each is published here and emailed to registered delegates as it is confirmed.
+
+Stand booking is the one with a hard deadline attached: exhibitors commit early, so the interactive floor plan is the priority for the portal.
+
+Register your interest.
+
+### Register your interest
+
+Six categories, from delegate to exhibitor. Fees and deadlines are published once the secretariat confirms them.
+
+Register interest
+
+---
+
+# News — Why the summit is at KICC, and why the expo is in a tent
+
+`/news/summit-venue-kicc/`
+
+## Why the summit is at KICC, and why the expo is in a tent
+
+The venue is confirmed. Here is how the three days use it.
+
+The Kenya-China Tea Summit runs at the Kenyatta International Convention Centre on Harambee Avenue, in the middle of Nairobi's central business district.
+
+### The building
+
+KICC sits within walking distance of the government quarter, the main hotel cluster and Uhuru Park. For a delegation arriving from outside Kenya that matters more than it sounds: a venue at the edge of a city turns every between-session conversation into a taxi journey, and the conversations between sessions are most of what a trade summit is for.
+
+The conference programme on Days 1 and 2 runs inside the building.
+
+### The tent
+
+The International Tea & Technology Expo on Day 3 runs in a tent on the KICC grounds rather than inside. 146 numbered stands across two halls, in a 30m × 80m tent, with aisles of 3.0m and 2.0m.
+
+This is worth stating plainly because an exhibitor who arrives expecting an indoor hall has a real problem on build day.
+
+### What a tented hall means if you are exhibiting
+
+A tent gives a single uninterrupted floor with no columns, which produces better sightlines than most permanent halls. Sizes, rates and package inclusions are still being set, and the layout may change before stands go on sale.
+
+Practical points to plan around once the exhibitor pack is published: power distribution and lighting are specified per stand rather than assumed; flooring is laid rather than existing; and build and breakdown windows are tighter than in a permanent venue because the structure itself has a schedule.
+
+### Booking
+
+Register as an exhibitor and the Secretariat makes contact when rates are set and booking opens. Stands are then selected from an interactive plan in the exhibitor portal and held while the Secretariat confirms.
+
+See stands and rates and the venue.
+
+### Register your interest
+
+Six categories, from delegate to exhibitor. Fees and deadlines are published once the secretariat confirms them.
+
+Register interest
+
+---
+
+# News — What Chinese buyers look for in African tea
+
+`/news/what-chinese-buyers-look-for/`
+
+## What Chinese buyers look for in African tea
+
+For exporters weighing whether the Chinese market is worth the effort.
+
+Kenya sells around two per cent of its tea exports to China, against 36 per cent to Pakistan (Tea Board of Kenya, 2025). Part of that gap is access. Part of it is that the two markets want different products.
+
+### Orthodox and CTC are not interchangeable
+
+Most Kenyan black tea is CTC: cut, tear, curl. It brews fast, takes milk well and suits the strong-cup habit of Kenya's largest export markets.
+
+Chinese consumption is built around leaf tea brewed without milk, where the appearance of the dry leaf and the character of the liquor both matter to the buyer. An exporter approaching China with a CTC portfolio alone is offering a product shaped for a different drinking culture.
+
+This is not a barrier so much as a specification. Kenya produces orthodox and specialty tea, and purple tea is a genuinely distinctive product with no direct equivalent elsewhere.
+
+### Grade consistency over grade height
+
+A recurring theme in buyer conversations is that consistency beats peak quality. An importer building a branded product needs the same cup across repeat shipments more than an exceptional single lot.
+
+That favours suppliers who can document their process rather than those who can show their best sample.
+
+### Packaging and channel
+
+Packaging that suits a bulk auction buyer does not suit an importer supplying retail or e-commerce. Where the tea ends up determines the format, and the format is usually decided before the price.
+
+### Traceability
+
+Origin documentation, certification and the ability to trace a lot back to a factory and a picking period are increasingly a condition of the conversation rather than a premium feature.
+
+### The practical answer
+
+Every point above is settled between a specific buyer and a specific supplier, not in general. That is what the Investment Forum and the B2B meetings on Day 2 are for, and what the expo on Day 3 puts on a table.
+
+Detail on the sessions is published in phases. This piece is background written from public industry sources and should not be read as a summit position on any grade or market.
+
+### Register your interest
+
+Six categories, from delegate to exhibitor. Fees and deadlines are published once the secretariat confirms them.
+
+Register interest
+
+---
+
 # Contact
 
 `/contact/`
 
 ## Contact the summit team
 
-Use the relevant route for faster support. General enquiries go through the form below.
+Three email routes, one phone number that also takes WhatsApp, and a form for everything else.
+
+### Summit office
 
 - **Summit:** Kenya-China Tea Summit 2027
 - **Organising body:** Kenya-China Tea Summit Secretariat
 - **Organised by:** Orbitline Events & Ushers Ltd
-- **Location:** Nairobi, Kenya
-- **Email:** To be announced
-- **Telephone:** To be announced
-- **Postal address:** To be announced
+- **In partnership with:** Tea Board of Kenya
+- **Telephone and WhatsApp:** +254 111 491 076
+- **Office:** 4th Floor, Woodvale Place, Westlands, Nairobi, Kenya
+- **Summit venue:** Kenyatta International Convention Centre, Harambee Avenue
+Two addresses
 
-### Choose the right route
+Woodvale Place is the Secretariat office. The summit itself runs at KICC on Harambee Avenue.
 
-- Attendance: Register your interest
-- Exhibition: Exhibition enquiry
-- Partnership: Partnership enquiry
-- Speaking: Speaker proposal
-- Media: Media accreditation and enquiries
-- Travel: Travel and accommodation enquiry
-General enquiries
+### Email
 
-If none of these routes fit, send a message using the form below.
+- **General enquiries:** info@kenyachinateasummit.com
+- **Registration, portal and delegate support:** support@kenyachinateasummit.com
+- **Sponsorship, exhibiting, media and partnerships:** marketing@kenyachinateasummit.com
+
+### Phone and WhatsApp
+
+The same number takes calls and WhatsApp messages: +254 111 491 076.
+
+Chat on WhatsApp
+
+### Office
+
+Kenya-China Tea Summit Secretariat Orbitline Events & Ushers Ltd 4th Floor, Woodvale Place Westlands, Nairobi Kenya
+
+This is the Secretariat office. The summit runs at Kenyatta International Convention Centre.
+
+The summit venue, KICC. Opens Google Maps directions in a new tab. Map data © OpenStreetMap contributors
+
+### Send a message
 
 ### General enquiry
 
@@ -924,7 +1085,8 @@ Media accreditation will be available to recognised news, business, trade and in
 - **Theme:** Brewing Strategic Partnerships for Sustainable Tea Trade, Investment and Innovation
 - **Organising body:** Kenya-China Tea Summit Secretariat
 - **Organised by:** Orbitline Events & Ushers Ltd
-- **Media contact:** To be announced
+- **Media enquiries:** marketing@kenyachinateasummit.com
+- **Named media contact:** To be announced
 Reporting guidance
 
 As with any pre-event coverage, confirm these details against an official summit announcement before publication:
@@ -947,7 +1109,10 @@ The following resources will be added as they are approved:
 - Speaker and partner releases
 - Approved photography
 - Programme overview
-The press pack, logo files and every published document are on the downloads page.
+
+### Downloads
+
+Logo files and high-resolution photography are available on request from marketing@kenyachinateasummit.com. Photographs are on the gallery.
 
 ### Using the summit name and logo
 
@@ -964,45 +1129,6 @@ Contact the media team
 Register media interest to receive the accreditation process when it opens.
 
 Register media interest
-
----
-
-# Downloads
-
-`/downloads/`
-
-## Documents and downloads
-
-Approved summit documents will be published here in their current versions.
-
-### Summit overview
-
-- Summit fact sheet PDF · 2 KB · 1 pp · updated 2 August 2026 Dates, location, theme, the six objectives and the six registration categories on one page. Generated from the site's own data, so it cannot fall out of step with these pages.
-
-### Coming soon
-
-- Detailed programme
-- Delegate information pack
-- Exhibitor prospectus
-- Partnership prospectus
-- Travel and accommodation guide
-- Media fact sheet and press kit
-- Code of conduct
-Version control
-
-Each document shown here displays its publication or revision date.
-
-For journalists
-
-Accreditation, approved event facts and press contacts are on the Media and press page.
-
-Media and press
-
-### Register your interest
-
-Register your interest to receive new documents and major summit announcements.
-
-Register interest
 
 ---
 

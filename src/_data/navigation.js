@@ -4,29 +4,52 @@
 // edition is a prefix, not a rewrite (ADR-009). The localeLinks transform in
 // eleventy.config.js prefixes these at build time for /zh/ pages.
 //
-// Link TEXT follows the copy audit: plain verbs a delegate would use, not the
-// site's internal page names. The URLs are unchanged — renaming a route would
-// break every inbound link for no reader benefit.
+// V3 (2026-08-23): restructured from TOPIC-FIRST to AUDIENCE-FIRST.
 //
-// The audit (§13) asked for "B2B Meetings" and "Plan Your Visit". Measured, both
-// wrap the header between 960px and 1280px — "Plan Your Visit" collapses into a
-// 42px column across three lines — so the bar is broken across most laptop
-// widths. Shortened to "B2B" and "Travel", which fit at every desktop width with
-// no CSS change and keep the audit's intent: B2B promoted into the primary bar,
-// named the way a trade buyer scans for it.
-
+// The old bar read About · Programme · Expo · B2B · Partners · Travel — six
+// topics, and a visitor had to know which topic held their answer. Both
+// benchmark sites the client cited organise by who you are instead:
+// HKTDC runs Fair · Exhibit · Visit · Press · Travel Info, and World Tea &
+// Coffee Expo runs Exhibitors ▾ · Visitors ▾ · Media. See
+// docs/BENCHMARK-EVALUATION.md §7.1.
+//
+// Everyone arriving at an event site is answering one of two questions:
+// am I selling, or am I attending? `Exhibit` and `Visit` are those two
+// questions. B2B and Partner keep top-level slots because both are
+// conversion drivers that a submenu would bury.
+//
+// Widths were the constraint that shortened the old bar; six top-level items
+// with two dropdowns fits every desktop width, and the dropdown contents are
+// free because they never render inline.
 export default {
   primary: [
     { text: "About", url: "/about/" },
     { text: "Programme", url: "/programme/" },
-    { text: "Expo", url: "/exhibition/" },
-    { text: "B2B", url: "/b2b-matchmaking/" },
-    { text: "Partners", url: "/sponsorship/" },
-    { text: "Travel", url: "/travel/" },
+    {
+      text: "Exhibit",
+      url: "/exhibition/",
+      children: [
+        { text: "Why exhibit", url: "/exhibition/" },
+        { text: "Stands and rates", url: "/exhibition/stands/" },
+        { text: "B2B meetings", url: "/b2b-matchmaking/" },
+      ],
+    },
+    {
+      text: "Visit",
+      url: "/venue/",
+      children: [
+        { text: "Venue", url: "/venue/" },
+        { text: "Travel and visas", url: "/travel/" },
+        { text: "Tea attractions", url: "/tea-attractions/" },
+        { text: "Gallery", url: "/gallery/" },
+      ],
+    },
+    { text: "Partner", url: "/sponsorship/" },
+    { text: "News", url: "/news/" },
   ],
 
   // The one conversion that matters, always one click away (PRD §2).
-  cta: { text: "Register interest", url: "/registration/" },
+  cta: { text: "Register your interest", url: "/registration/" },
 
   footer: [
     {
@@ -34,36 +57,37 @@ export default {
       links: [
         { text: "About", url: "/about/" },
         { text: "Programme", url: "/programme/" },
-        { text: "Speakers", url: "/speakers/" },
-        { text: "News and insights", url: "/news/" },
-        { text: "Downloads", url: "/downloads/" },
+        { text: "News", url: "/news/" },
+        { text: "Gallery", url: "/gallery/" },
         { text: "Media accreditation", url: "/media/" },
       ],
     },
     {
       heading: "Take part",
       links: [
-        { text: "Register interest", url: "/registration/" },
-        { text: "Exhibit", url: "/exhibition/" },
-        { text: "Partner", url: "/sponsorship/" },
+        { text: "Register your interest", url: "/registration/" },
+        { text: "Why exhibit", url: "/exhibition/" },
+        { text: "Stands and rates", url: "/exhibition/stands/" },
+        { text: "Partner with the summit", url: "/sponsorship/" },
+        { text: "B2B meetings", url: "/b2b-matchmaking/" },
       ],
     },
     {
-      heading: "Plan your visit",
+      heading: "Practical",
       links: [
         { text: "Venue", url: "/venue/" },
-        { text: "Travel and stay", url: "/travel/" },
+        { text: "Travel and visas", url: "/travel/" },
+        { text: "Tea attractions", url: "/tea-attractions/" },
         { text: "FAQ", url: "/faq/" },
         { text: "Contact", url: "/contact/" },
       ],
     },
-    {
-      heading: "Legal",
-      links: [
-        { text: "Privacy notice", url: "/privacy/" },
-        { text: "Terms of use", url: "/terms/" },
-        { text: "Code of conduct", url: "/code-of-conduct/" },
-      ],
-    },
+  ],
+
+  // Footer base line, not a column.
+  legal: [
+    { text: "Privacy notice", url: "/privacy/" },
+    { text: "Terms of use", url: "/terms/" },
+    { text: "Code of conduct", url: "/code-of-conduct/" },
   ],
 };

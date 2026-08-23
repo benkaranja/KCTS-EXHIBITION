@@ -1,18 +1,70 @@
 ---
 layout: layouts/page.njk
 basePath: /exhibition/
-title: Exhibition
-heading: Put your products and solutions in front of a specialist audience
-standfirst: The International Tea & Technology Expo is the commercial exhibition within the Kenya-China Tea Summit.
-description: Showcase tea products, processing equipment, agricultural technology, packaging and logistics solutions at the International Tea & Technology Expo in Nairobi.
+title: Why exhibit
+heading: Why exhibit
+standfirst: The International Tea & Technology Expo runs in a tent on the KICC grounds. 146 stands across two halls.
+description: Exhibit tea products, processing equipment, agricultural technology and logistics services at the International Tea & Technology Expo, Nairobi, 23 April 2027.
 sitemapPriority: 0.9
-ctaHeading: Enquire about exhibiting
-ctaBody: Tell us what your organisation offers, the space you may require and the audience you want to meet.
+ctaHeading: Register your interest
+ctaBody: Tick Exhibitor at registration and the Secretariat makes contact when stand booking opens.
 ctaUrl: /registration/
-ctaLabel: Register exhibitor interest
+ctaLabel: Register your interest
 ---
 
-<p>It is designed for companies that want to meet tea producers, processors, exporters, buyers, investors and policymakers with a clear interest in the Kenya-China market.</p>
+<p>The expo runs on Day {{ summit.exhibition.day }}, Friday 23 April 2027, with
+the full delegation on site.</p>
+
+<aside class="rail">
+  <h2>Expo at a glance</h2>
+  <dl class="spec">
+    <div class="field">
+      <dt class="label">Date</dt>
+      <dd class="value">Friday 23 April 2027</dd>
+    </div>
+    <div class="field">
+      <dt class="label">Location</dt>
+      <dd class="value">Tent on the KICC grounds</dd>
+    </div>
+    <div class="field">
+      <dt class="label">Stands</dt>
+      <dd class="value">{{ summit.exhibition.stands }} across {{ summit.exhibition.halls }} halls</dd>
+    </div>
+    <div class="field">
+      <dt class="label">Tent</dt>
+      <dd class="value">{{ summit.exhibition.tentSize }}</dd>
+    </div>
+    <div class="field">
+      <dt class="label">Stand sizes and rates</dt>
+      <dd class="value"><span class="value--pending">To be announced</span></dd>
+    </div>
+    <div class="field">
+      <dt class="label">Opening hours</dt>
+      <dd class="value"><span class="value--pending">To be announced</span></dd>
+    </div>
+  </dl>
+  <div class="note">
+    <p class="note__label">Layout</p>
+    <p>{% if summit.exhibition.layoutProvisional %}The floor plan is subject to
+      change before stands go on sale.{% endif %} See
+      <a href="/exhibition/stands/">stands and rates</a>.</p>
+  </div>
+</aside>
+
+<h2>Who walks the floor</h2>
+
+<p>Buyers, importers and distributors from China and across the region. Kenyan
+growers, factories and exporters. Investors, regulators, logistics operators
+and trade-service providers.</p>
+
+<p>The Secretariat publishes the registration breakdown as registrations build,
+so exhibitors can see the audience before committing.</p>
+
+<h2>Why take a stand</h2>
+
+<p>A stand puts a product in front of buyers who had no meeting booked. The
+expo runs on the third day, with the full delegation on site, which
+concentrates footfall into a single trading day.</p>
 
 {% from "components/image-grid.njk" import grid %}
 {{ grid([
@@ -22,59 +74,23 @@ ctaLabel: Register exhibitor interest
   {src:"/img/plates/tea-leaves-two-leaves-and-a-bud", alt:"Close view of a tea shoot showing two leaves and an unopened bud."}
 ], "What the expo is about", "V", "(min-width: 64rem) 400px, 50vw") }}
 
-<h2>What can be exhibited</h2>
+<h2>What gets exhibited</h2>
 
 <ul class="classes">
+  {% for c in summit.exhibition.categories %}
   <li class="class-row">
-    <span class="class-row__name">Tea products</span>
-    <p>Black, green, orthodox, specialty, purple, blended and branded teas. Finished consumer products and bulk tea may be included, subject to the final exhibitor guidelines.</p>
+    <span class="class-row__name">{{ c.name }}</span>
+    <p>{{ c.detail | capitalize }}.</p>
   </li>
-  <li class="class-row">
-    <span class="class-row__name">Processing and packaging equipment</span>
-    <p>Withering, rolling, oxidation, drying, sorting, grading, blending, packing and quality-control equipment.</p>
-  </li>
-  <li class="class-row">
-    <span class="class-row__name">Agricultural technology</span>
-    <p>Inputs, irrigation, field equipment, mechanised harvesting, soil and yield analysis, climate tools and farm-management systems.</p>
-  </li>
-  <li class="class-row">
-    <span class="class-row__name">Traceability, standards and quality services</span>
-    <p>Testing, certification, digital traceability, food-safety systems and export-compliance support.</p>
-  </li>
-  <li class="class-row">
-    <span class="class-row__name">Logistics and trade services</span>
-    <p>Freight, warehousing, customs, export documentation, insurance and distribution support.</p>
-  </li>
+  {% endfor %}
 </ul>
 
-<h2>Why exhibit</h2>
+<h2>Apply</h2>
 
-<h3>Meet a defined audience</h3>
-<p>The summit brings together people working directly in tea trade, investment, production and technology.</p>
+<p>Register as an exhibitor and the Secretariat makes contact when stand
+booking opens. Rates, sizes and package inclusions are on
+<a href="/exhibition/stands/">stands and rates</a>.</p>
 
-<h3>Demonstrate what you offer</h3>
-<p>Show products, equipment and systems in a setting where visitors can ask technical and commercial questions.</p>
-
-<h3>Build relevant relationships</h3>
-<p>Use the summit programme and planned B2B service to identify buyers, suppliers and partners with aligned interests.</p>
-
-<h3>Enter the conversation early</h3>
-<p>The event gives exhibitors a place in discussions on value addition, market access, technology and the future of Kenya-China tea trade.</p>
-
-<aside class="rail">
-  <h2>Exhibitor information</h2>
-  <dl class="spec">
-    <div class="field"><dt class="label">Expo operating days</dt><dd class="value"><span class="value--pending">To be announced</span></dd></div>
-    <div class="field"><dt class="label">Stand sizes</dt><dd class="value"><span class="value--pending">To be announced</span></dd></div>
-    <div class="field"><dt class="label">Rates</dt><dd class="value"><span class="value--pending">To be announced</span></dd></div>
-    <div class="field"><dt class="label">Package inclusions</dt><dd class="value"><span class="value--pending">To be announced</span></dd></div>
-    <div class="field"><dt class="label">Build and fit-out guidelines</dt><dd class="value"><span class="value--pending">To be announced</span></dd></div>
-    <div class="field"><dt class="label">Application deadline</dt><dd class="value"><span class="value--pending">To be announced</span></dd></div>
-  </dl>
-  <div class="note">
-    <p class="note__label">Registering interest</p>
-    <p>Registering interest does not reserve a stand. It ensures you receive the exhibitor prospectus and application details when they are released.</p>
-  </div>
-</aside>
-
-<p>Prefer to talk first? <a href="/contact/">Contact the exhibition team</a>.</p>
+<p>For a conversation first, email
+<a href="mailto:{{ summit.contact.marketingEmail }}">{{ summit.contact.marketingEmail }}</a>
+or call <a href="tel:{{ summit.contact.phone | replace(" ", "") }}">{{ summit.contact.phone }}</a>.</p>

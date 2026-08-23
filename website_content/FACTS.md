@@ -7,7 +7,8 @@ it is never presented as a summit fact.
 
 Source of §1: `Kenya_China_Tea_Summit_2027_Website_Content (1).docx`, supplied by
 the client 2026-08-01, converted to `client-brief.md`; plus the summit logo
-supplied by the client in chat on 2026-08-01.
+supplied by the client in chat on 2026-08-01; plus the client consultation of
+2026-08-23, which resolved six items previously listed in §2.
 
 ---
 
@@ -34,22 +35,55 @@ supplied by the client in chat on 2026-08-01.
 | Registration categories | Delegate, Exhibitor, Sponsor, Government, Media, Student | docx |
 | Organiser | Kenya-China Tea Summit Secretariat, Orbitline Events & Ushers Ltd, Nairobi, Kenya | docx |
 
+### 1a. Confirmed at the client consultation, 23 August 2026
+
+| Fact | Value | Notes |
+|---|---|---|
+| Venue | Kenyatta International Convention Centre (KICC), Nairobi | Expo is in a **tent on the KICC grounds**, not inside the building |
+| Partner | **Tea Board of Kenya** | Named partner. Logo may be used once supplied. No other partner may be named |
+| Public email | info@kenyachinateasummit.com | General enquiries |
+| Support email | support@kenyachinateasummit.com | Delegate and portal support |
+| Marketing email | marketing@kenyachinateasummit.com | Sponsorship, media, partnerships |
+| Telephone | +254 111 491 076 | **Also the WhatsApp number** — confirmed 23 Aug 2026 |
+| Secretariat address | 4th Floor, Woodvale Place, Westlands, Nairobi, Kenya | This is the **Secretariat office, not the venue** |
+| Domain | kenyachinateasummit.com | Live on Cloudflare Pages since 15 Aug 2026 |
+| Expo scale | 146 numbered stands across two tents, 30m × 80m | From the client's layout drawing. **Subject to change** — cite only as "layout subject to change" |
+| Registration categories | Replaced. See §1b | Supersedes the docx list |
+
+### 1b. Registration categories — superseded
+
+The docx list (Delegate, Exhibitor, Sponsor, Government, Media, Student) is
+**withdrawn**. The client's Tally form defines the categories now:
+
+Government / Institutional Delegate · Tea Producer / Processor ·
+End-User / Tea Beverage Brands · Trader / Merchant ·
+Machinery & Packaging Equipment Supplier · Investor / Financial Institution ·
+Media · Academic / Research Institution · Other / Observer
+
+Sponsor and Exhibitor are **not** categories. They are a separate optional
+*Participation Type* checkbox, because a producer can also be an exhibitor.
+
 ## 2. NOT supplied — do not invent, do not imply
 
 Each of these has a visible consequence on the site. Where a page needs one, the
 page ships with an honest "to be announced" state and a capture form — never a
 plausible-looking placeholder.
 
-- **Exact venue.** "Nairobi" only. No hotel, no conference centre, no address, no map pin.
+- ~~**Exact venue.**~~ **RESOLVED 23 Aug 2026** — KICC. See §1a.
 - **Ticket prices, currencies, early-bird deadlines, what each category includes.** Registration is expression-of-interest until the client sets these.
 - **Speakers.** No names, no titles, no organisations, no photographs. The speakers page ships as a call-for-speakers.
 - **Session times, rooms, stages, tracks.** Only the three day-level themes above are confirmed.
 - **Sponsorship pricing and the specific benefits per tier.** Tier *names* are confirmed; their contents are not.
 - **Delegate/exhibitor numbers, country counts, trade-value figures, "X,000 attendees expected".** No credibility statistics of any kind.
-- **Government, embassy, ministry or association endorsement.** No logos, no named backing, no "in partnership with".
+- **Government, embassy, ministry or association endorsement** — **beyond the Tea
+  Board of Kenya**, which is confirmed (§1a). No other logo, no other named
+  backing. Do not extrapolate from TBK to "government-backed".
 - **Hotel partners, room rates, airline partners, visa arrangements.** Travel page gives general Kenya-entry guidance sourced publicly and dated, plus an enquiry route.
-- **Contact phone, email address, physical secretariat address.** Only the organisation name is confirmed.
-- **Website domain ownership.** `kenyachinateasummit.com` is the chosen target; registration status unverified.
+- ~~**Contact phone, email address, physical secretariat address.**~~ **RESOLVED 23 Aug 2026.** See §1a.
+- ~~**Website domain ownership.**~~ **RESOLVED 15 Aug 2026** — live.
+- **Stand sizes, stand rates, package inclusions, and which of the 146 stands
+  are sellable.** The layout drawing gives positions and numbers only. No price,
+  no size in metres per stand type, no sponsor set-asides.
 - **Whether this is the first edition.** The site said "First Edition" throughout on the strength of an inference, not a client statement. Until the organiser confirms it in writing, the site does not say it, does not imply it, and does not use scarcity framing that depends on it.
 - **The B2B matching method.** The client's brief says "AI-powered". No platform
   has been chosen, so the site describes a planned meetings programme and never

@@ -1,0 +1,65 @@
+---
+layout: layouts/page.njk
+basePath: /gallery/
+title: Gallery
+heading: Gallery
+standfirst: Photographs from Kenya's tea regions, and from the summit as it takes shape.
+description: Photographs of Kenya's tea estates, factories and growing highlands, supplied for the Kenya-China Tea Summit 2027.
+ctaHeading: Register your interest
+ctaBody: Registration takes about two minutes and puts you on the list for summit updates.
+hideCta: false
+---
+
+{#- EDITORIAL CONSTRAINT, load-bearing:
+
+    No caption, alt text or surrounding sentence on this page may imply that
+    any photograph was taken at a previous staging of this summit, or that a
+    previous staging took place. See FACTS.md §2, Photography.
+
+    Captions describe what is in the frame: a region, a factory, a stage of
+    processing. Nothing about delegates, dates or attendance.
+
+    The build validator greps these files for the unconfirmed-claim phrases in
+    FACTS.md §2, and it reads Nunjucks comments too. That is correct behaviour
+    and this comment is worded to stay clear of it. -#}
+
+<p>These photographs were supplied by the Secretariat and show tea growing and
+processing across Kenya.</p>
+
+<h2>Kenya's tea regions</h2>
+
+{% from "components/image-grid.njk" import grid %}
+{{ grid([
+  {src:"/img/plates/tea-estate-hillside-kenyan-highlands", alt:"A rounded hill planted with tea, framed by scattered trees."},
+  {src:"/img/plates/tea-fields-patchwork-aerial-kenya",    alt:"A patchwork of tea plots in different shades of green, seen from the air."},
+  {src:"/img/plates/tea-estate-terraced-rows-aerial",      alt:"Terraced rows of tea stepping down a slope."},
+  {src:"/img/plates/tea-estate-road-ridge-aerial",         alt:"A ridge road dividing two blocks of mature tea."},
+  {src:"/img/plates/tea-fields-hedgerow-boundaries-aerial", alt:"Tea fields separated by dark hedgerow boundaries."},
+  {src:"/img/plates/tea-estate-forest-boundary-mist",      alt:"Tea fields meeting a belt of forest, with morning mist along the treeline."}
+], "Growing country", "VIII", "(min-width: 64rem) 380px, 50vw") }}
+
+<h2>The crop</h2>
+
+{{ grid([
+  {src:"/img/plates/tea-leaves-two-leaves-and-a-bud", alt:"Two leaves and a bud, the standard plucking unit, held between finger and thumb."},
+  {src:"/img/plates/tea-bud-new-growth-macro",        alt:"A single new bud in close-up, silver hairs visible along its edge."},
+  {src:"/img/plates/tea-shoots-ready-for-plucking",   alt:"Fresh shoots standing above the plucking table, ready for harvest."},
+  {src:"/img/plates/tea-canopy-plucking-table",       alt:"The flat plucking table of a mature tea bush seen from directly above."}
+], "Leaf", "IX", "(min-width: 64rem) 380px, 50vw") }}
+
+<h2>Processing</h2>
+
+{{ grid([
+  {src:"/img/plates/withered-tea-leaf-processing-bed", alt:"Withered leaf spread across a processing bed inside a factory."},
+  {src:"/img/plates/dried-green-tea-leaf-grading",     alt:"Dried green leaf being graded, sorted into separate lots."}
+], "In the factory", "X", "(min-width: 64rem) 580px, 100vw") }}
+
+<h2>The summit</h2>
+
+<p>Photographs from April 2027 appear here during and after the event.</p>
+
+<h2>Using these images</h2>
+
+<p>Media and partners can request high-resolution files from
+<a href="mailto:{{ summit.contact.marketingEmail }}">{{ summit.contact.marketingEmail }}</a>.
+See <a href="/media/">media accreditation</a> for press arrangements.</p>

@@ -1,14 +1,83 @@
 ---
 layout: layouts/page.njk
 basePath: /travel/
-title: Travel & stay
-heading: Travel and stay
-standfirst: General guidance for getting to Nairobi. Check official sources before you book.
-description: Plan travel to Nairobi for the Kenya-China Tea Summit, including arrival information, Kenya entry requirements, accommodation updates and optional delegation experiences.
-ctaBody: Register your interest to receive venue, accommodation and delegate-travel updates.
+title: Travel and visas
+heading: Travel and visas
+standfirst: Getting to Nairobi, entry requirements and where to stay. Check official sources before booking.
+description: Travel guidance for the Kenya-China Tea Summit in Nairobi, 21–23 April 2027. Kenya eTA entry requirements, invitation letters, accommodation and airport transfers.
+ctaBody: Register your interest to receive accommodation rates and delegate travel information.
 ---
 
-<p>The information on this page is general guidance. Entry rules, health requirements and travel procedures can change, so check official sources before making arrangements.</p>
+<p>Nairobi is served by Jomo Kenyatta International Airport, shown as
+<strong>NBO</strong> in booking systems, about 20km from KICC.</p>
+
+<aside class="rail">
+  <h2>Practical detail</h2>
+  <dl class="spec">
+    <div class="field">
+      <dt class="label">Airport</dt>
+      <dd class="value">Jomo Kenyatta International (NBO)</dd>
+    </div>
+    <div class="field">
+      <dt class="label">Entry</dt>
+      <dd class="value">Electronic Travel Authorisation</dd>
+    </div>
+    <div class="field">
+      <dt class="label">Currency</dt>
+      <dd class="value">Kenyan shilling (KES)</dd>
+    </div>
+    <div class="field">
+      <dt class="label">Summit hotel rates</dt>
+      <dd class="value"><span class="value--pending">To be announced</span></dd>
+    </div>
+    <div class="field">
+      <dt class="label">Airport transfers</dt>
+      <dd class="value"><span class="value--pending">To be announced</span></dd>
+    </div>
+    <div class="field">
+      <dt class="label">Invitation letter lead time</dt>
+      <dd class="value"><span class="value--pending">To be announced</span></dd>
+    </div>
+  </dl>
+  <div class="note">
+    <p class="note__label">Apply early</p>
+    <p>Processing times vary. An eTA refused close to departure cannot be
+      resolved at the airport.</p>
+  </div>
+</aside>
+
+<h2>Entry requirements</h2>
+
+<p>Kenya requires most visitors to hold an Electronic Travel Authorisation
+(eTA) before departure. Apply through the Government of Kenya's official
+portal at <a href="https://www.etakenya.go.ke/" rel="noopener noreferrer" target="_blank">etakenya.go.ke</a>.</p>
+
+<p>Requirements change. Check the official portal, and confirm with the Kenyan
+embassy or high commission covering the country of departure.</p>
+
+<h2>Invitation letters</h2>
+
+<p>Where an application requires a letter of invitation, register first, then
+email <a href="mailto:{{ summit.contact.supportEmail }}">{{ summit.contact.supportEmail }}</a>
+with the full name as it appears in the passport, passport number, nationality
+and organisation.</p>
+
+<h2>Accommodation</h2>
+
+<p>Hotels sit within walking distance of KICC and across Westlands and Upper
+Hill. The Secretariat publishes summit rates and booking codes as agreements
+are signed.</p>
+
+<h2>Health and money</h2>
+
+<p>Check vaccination requirements with a doctor well before travelling. The
+currency is the Kenyan shilling (KES). Card payment is widely accepted in
+Nairobi hotels and restaurants, and mobile money is standard.</p>
+
+<h2>Tea attractions</h2>
+
+<p>Kenya's tea-growing highlands sit within a few hours of Nairobi. See
+<a href="/tea-attractions/">tea attractions in Kenya</a>.</p>
 
 {% from "components/image-grid.njk" import grid %}
 {{ grid([
@@ -17,54 +86,3 @@ ctaBody: Register your interest to receive venue, accommodation and delegate-tra
   {src:"/img/plates/tea-estate-forest-boundary-mist",      alt:"Tea fields meeting a belt of forest, with morning mist along the treeline."},
   {src:"/img/plates/tea-estate-hillside-kenyan-highlands", alt:"A rounded hill planted with tea, framed by scattered trees."}
 ], "Beyond the conference days", "VI", "(min-width: 64rem) 400px, 50vw") }}
-
-<h2>Arriving by air</h2>
-
-<p>Nairobi's main international airport is Jomo Kenyatta International Airport, commonly shown as <strong>NBO</strong> in booking systems.</p>
-
-<p>Details on airport transfers, accommodation rates and delegation support services will be published once venue and transport arrangements are confirmed.</p>
-
-<h2>Entry requirements</h2>
-
-<p>Kenya uses an Electronic Travel Authorisation system for many international visitors. Check the <a href="https://www.etakenya.go.ke/" rel="noopener noreferrer" target="_blank">official Kenya eTA service</a> and your own government's travel guidance before booking.</p>
-
-<p>Processing times and requirements may vary by nationality and individual circumstances.</p>
-
-<aside class="rail">
-  <h2>Accommodation</h2>
-  <dl class="spec">
-    <div class="field">
-      <dt class="label">Summit hotel or room block</dt>
-      <dd class="value"><span class="value--pending">To be announced</span></dd>
-    </div>
-    <div class="field">
-      <dt class="label">Preferential delegate rates</dt>
-      <dd class="value"><span class="value--pending">To be announced</span></dd>
-    </div>
-    <div class="field">
-      <dt class="label">Airport transfers</dt>
-      <dd class="value"><span class="value--pending">To be announced</span></dd>
-    </div>
-    <div class="field">
-      <dt class="label">Venue shuttle</dt>
-      <dd class="value"><span class="value--pending">To be announced</span></dd>
-    </div>
-  </dl>
-  <div class="note">
-    <p class="note__label">Before you book</p>
-    <p>Choose refundable or flexible hotel bookings where possible.</p>
-  </div>
-</aside>
-
-<h2>Delegation support</h2>
-
-<p>The organiser plans to coordinate a range of optional services for international delegations:</p>
-
-<ul>
-{% for o in summit.travel.offers %}
-  <li>{{ o }}</li>
-{% endfor %}
-  <li>Invitation letters</li>
-</ul>
-
-<p>These are optional services intended to make group travel easier to plan.</p>

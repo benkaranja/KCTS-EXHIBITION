@@ -12,13 +12,23 @@ ctaLabel: Register to receive updates
 
 <h2>Summit updates</h2>
 
-{% set posts = collections.news %}
+{# byLocale: the collection holds both the en and zh build of every post. #}
+{% set posts = collections.news | byLocale(locale) %}
 {% if posts.length %}
+{#- href is post.data.basePath, NOT post.url.
+
+    basePath is locale-free ("/news/slug/"); post.url on a zh-locale post is
+    already "/zh/news/slug/". The i18n transform keys translations on the exact
+    source fragment extracted from the ENGLISH build, so a zh page emitting a
+    different href produces a fragment that never matches and silently falls
+    back to English. Emitting the locale-free path keeps both builds identical
+    at translation time, and the localeLinks transform (which runs AFTER i18n)
+    adds the /zh prefix. -#}
 <ul class="classes">
 {% for post in posts %}
   <li class="class-row">
     <span class="class-row__code"><time datetime="{{ post.date | isoDate }}">{{ post.date | readableDate }}</time></span>
-    <span class="class-row__name"><a href="{{ post.url }}">{{ post.data.title }}</a></span>
+    <span class="class-row__name"><a href="{{ post.data.basePath }}">{{ post.data.title }}</a></span>
     <p>{{ post.data.description }}</p>
   </li>
 {% endfor %}

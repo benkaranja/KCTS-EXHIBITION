@@ -31,7 +31,8 @@ ctaLabel: Register media interest
     <div class="field"><dt class="label">Theme</dt><dd class="value">{{ summit.theme }}</dd></div>
     <div class="field"><dt class="label">Organising body</dt><dd class="value">{{ summit.organiser.name }}</dd></div>
     <div class="field"><dt class="label">Organised by</dt><dd class="value">{{ summit.organiser.legalEntity }}</dd></div>
-    <div class="field"><dt class="label">Media contact</dt><dd class="value"><span class="value--pending">To be announced</span></dd></div>
+    <div class="field"><dt class="label">Media enquiries</dt><dd class="value"><a href="mailto:{{ summit.contact.marketingEmail }}">{{ summit.contact.marketingEmail }}</a></dd></div>
+    <div class="field"><dt class="label">Named media contact</dt><dd class="value"><span class="value--pending">To be announced</span></dd></div>
   </dl>
 </aside>
 
@@ -62,7 +63,25 @@ ctaLabel: Register media interest
   <li>Programme overview</li>
 </ul>
 
-<p>The press pack, logo files and every published document are on the <a href="/downloads/">downloads page</a>.</p>
+{#- /downloads/ was folded in V3 (it listed files that did not exist) and now
+    301s here. The one real file lives inline below; the exhibitor pack will
+    live on /exhibition/stands/. Restore a downloads index at four-plus files.
+    See src/_redirects. -#}
+<h2>Downloads</h2>
+
+<ul class="classes">
+  {% for d in collections.downloads %}
+  <li class="class-row">
+    <span class="class-row__name"><a href="{{ d.data.file }}">{{ d.data.title }}</a></span>
+    <span class="class-row__code">{{ d.data.format }} &middot; {{ (d.data.bytes / 1024) | round(1) }} kB</span>
+    <p>{{ d.data.description }}</p>
+  </li>
+  {% endfor %}
+</ul>
+
+<p>Logo files and high-resolution photography are available on request from
+<a href="mailto:{{ summit.contact.marketingEmail }}">{{ summit.contact.marketingEmail }}</a>.
+Photographs are on the <a href="/gallery/">gallery</a>.</p>
 
 <h2>Using the summit name and logo</h2>
 

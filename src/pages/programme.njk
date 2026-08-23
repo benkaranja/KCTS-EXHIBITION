@@ -9,7 +9,7 @@ sitemapPriority: 0.9
 ctaBody: Register your interest to receive programme announcements and formal registration information.
 ---
 
-<p>The detailed agenda, session times and speakers will be announced in phases.</p>
+<p>Session titles, times and speakers are published in phases.</p>
 
 <table class="manifest">
   <caption class="visually-hidden">Summit proceedings by day</caption>
@@ -65,11 +65,21 @@ ctaBody: Register your interest to receive programme announcements and formal re
   <li>B2B eligibility, scheduling and whether it is included in registration</li>
 </ul>
 
-<h2>Interested in speaking?</h2>
+<h2>Speakers</h2>
 
-<p>We welcome proposals from industry leaders, buyers, investors, policymakers, researchers and technology specialists with practical experience to share.</p>
+{#- Absorbed from /speakers/ in V3. That page was 806 words announcing that no
+    speakers were confirmed; /speakers/ now 301s here. Restore it as its own
+    page once six or more are confirmed. See src/_redirects. -#}
+<p>Speakers are announced in phases from
+<span class="value--pending">a date to be announced</span>.</p>
 
-<p class="section-action"><a class="btn btn--ghost" href="/speakers/">Propose a session</a></p>
+<p>To propose a speaker or a session, email
+<a href="mailto:{{ summit.contact.marketingEmail }}">{{ summit.contact.marketingEmail }}</a>
+with the topic, the speaker's role and one paragraph on the fit.</p>
+
+<p>The Secretariat is interested in proposals from buyers, investors,
+policymakers, researchers and technology specialists with practical trading
+experience.</p>
 
 <aside class="rail">
   {{ grid([

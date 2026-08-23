@@ -1,5 +1,15 @@
-{# Registration expression-of-interest form.
-   Swap point for a ticketing embed once pricing exists (ADR-004).
+{# Registration of interest.
+
+   Schema of record is the client's Tally form (FACTS.md §1b), with one
+   deliberate omission: the logo/deck FILE UPLOAD is not here. Uploads need
+   object storage, type and size validation, and a virus policy, and none of
+   that belongs on a public unauthenticated endpoint. It moves to the delegate
+   portal, where the person is already known. Client decision, 2026-08-23.
+
+   Category and Participation type are two separate axes on purpose. A tea
+   producer can also be an exhibitor; the V2 single list forced people to
+   choose between describing themselves and describing what they want.
+
    Turnstile renders only when a real site key is configured — the test key
    1x00000000000000000000AA must never ship (criterion B6). #}
 <form class="form sheet" id="registration-form" method="post" action="/api/register" novalidate>
@@ -23,22 +33,30 @@
       <input class="input" id="reg-email" name="email" type="email" required autocomplete="email" maxlength="180">
     </p>
 
+    {# type="tel" not "text": it brings up the phone keypad on mobile and is
+       the only input type that does. No pattern attribute — international
+       numbering is too varied for a regex that does not reject someone. #}
     <p class="form__row">
-      <label class="label" for="reg-org">Organisation</label>
-      <input class="input" id="reg-org" name="organisation" type="text" autocomplete="organization" maxlength="160">
+      <label class="label" for="reg-phone">Mobile number, with country code <span class="req" aria-hidden="true">*</span></label>
+      <input class="input" id="reg-phone" name="phone" type="tel" required autocomplete="tel" maxlength="32" placeholder="+254 111 491 076">
     </p>
 
     <p class="form__row">
-      <label class="label" for="reg-title">Job title</label>
-      <input class="input" id="reg-title" name="jobTitle" type="text" autocomplete="organization-title" maxlength="120">
+      <label class="label" for="reg-org">Organisation <span class="req" aria-hidden="true">*</span></label>
+      <input class="input" id="reg-org" name="organisation" type="text" required autocomplete="organization" maxlength="160">
     </p>
 
     <p class="form__row">
-      <label class="label" for="reg-country">Country</label>
-      <input class="input" id="reg-country" name="country" type="text" autocomplete="country-name" maxlength="80">
+      <label class="label" for="reg-title">Job title <span class="req" aria-hidden="true">*</span></label>
+      <input class="input" id="reg-title" name="jobTitle" type="text" required autocomplete="organization-title" maxlength="120">
     </p>
 
     <p class="form__row">
+      <label class="label" for="reg-country">Country or region <span class="req" aria-hidden="true">*</span></label>
+      <input class="input" id="reg-country" name="country" type="text" required autocomplete="country-name" maxlength="80">
+    </p>
+
+    <p class="form__row form__row--full">
       <label class="label" for="reg-category">Category <span class="req" aria-hidden="true">*</span></label>
       <select class="input" id="reg-category" name="category" required>
         <option value="">Select one</option>
@@ -49,8 +67,27 @@
     </p>
   </div>
 
+  {# Checkboxes, not a second select: these are additive to the category and a
+     delegate can tick both. A fieldset because a group of related checkboxes
+     needs one accessible name, which the legend supplies. #}
+  <fieldset class="form__fieldset">
+    <legend class="label">Participation type</legend>
+    <p class="form__hint">Optional. Leave both unticked to attend only.</p>
+    {% for t in summit.participationTypes %}
+    <p class="form__check">
+      <input class="check" id="reg-part-{{ t.slug }}" name="participation" type="checkbox" value="{{ t.slug }}">
+      <label for="reg-part-{{ t.slug }}">{{ t.name }} <span class="form__check-note">{{ t.blurb }}</span></label>
+    </p>
+    {% endfor %}
+  </fieldset>
+
   <p class="form__row form__row--full">
-    <label class="label" for="reg-message">Anything the secretariat should know</label>
+    <label class="label" for="reg-website">Website</label>
+    <input class="input" id="reg-website" name="website" type="url" autocomplete="url" maxlength="200" placeholder="https://">
+  </p>
+
+  <p class="form__row form__row--full">
+    <label class="label" for="reg-message">Brief description of interest</label>
     <textarea class="input" id="reg-message" name="message" rows="4" maxlength="2000"></textarea>
   </p>
 
@@ -66,10 +103,10 @@
   <div class="cf-turnstile" data-sitekey="{{ turnstileSiteKey }}" data-theme="light"></div>
   {% endif %}
 
-  <button class="btn btn--primary btn--block" type="submit">Submit registration of interest</button>
+  <button class="btn btn--primary btn--block" type="submit">Register your interest</button>
 
   {# Live region: announced to screen readers on both success and failure. #}
   <p class="form__status" id="registration-form-status" role="status" aria-live="polite"></p>
 
-  <p class="form__legal">By submitting you agree the secretariat may contact you about this summit. See our <a href="/privacy/">privacy notice</a>. You can ask to be removed at any time.</p>
+  <p class="form__legal">By submitting you agree the Secretariat may use your information to process your registration and contact you with updates about the {{ summit.name }}. Your information is shared with official event partners only as needed for registration and logistics, and is never sold. To review, correct or delete your information, email <a href="mailto:{{ summit.contact.email }}">{{ summit.contact.email }}</a>. See our <a href="/privacy/">privacy notice</a>.</p>
 </form>

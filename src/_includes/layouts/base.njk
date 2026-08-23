@@ -48,9 +48,10 @@
   "url": {{ summit.url | dump | safe }},
   "location": {
     "@type": "Place",
-    "name": {{ (summit.location.city + ", " + summit.location.country) | dump | safe }},
+    "name": {{ summit.location.venue | dump | safe }},
     "address": {
       "@type": "PostalAddress",
+      "streetAddress": {{ summit.location.street | dump | safe }},
       "addressLocality": {{ summit.location.city | dump | safe }},
       "addressCountry": {{ summit.location.countryCode | dump | safe }}
     }
@@ -58,7 +59,9 @@
   "organizer": {
     "@type": "Organization",
     "name": {{ summit.organiser.name | dump | safe }},
-    "url": {{ summit.organiser.url | dump | safe }}
+    "url": {{ summit.organiser.url | dump | safe }},
+    "email": {{ summit.contact.email | dump | safe }},
+    "telephone": {{ summit.contact.phone | dump | safe }}
   }
 }
 </script>
@@ -99,6 +102,22 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 -->
 <a class="skip-link" href="#main">Skip to main content</a>
 
+{# Top bar. The four facts a visitor arrives wanting, above everything else.
+   The day count renders server-side via the daysUntil filter so it is present
+   with JS off; hero.js re-reads [data-countdown] and corrects it against the
+   visitor's clock rather than the build clock. #}
+<div class="topbar">
+  <p class="topbar__inner">
+    <span class="topbar__when"><strong>{{ summit.dates.display }}</strong></span>
+    <span class="topbar__dot" aria-hidden="true">&middot;</span>
+    <span>{{ summit.location.venueShort }}, {{ summit.location.city }}</span>
+    <span class="topbar__dot" aria-hidden="true">&middot;</span>
+    <span class="topbar__open">Registration open</span>
+    <span class="topbar__dot" aria-hidden="true">&middot;</span>
+    <span class="topbar__count"><strong data-countdown="{{ summit.dates.start }}">{{ summit.dates.start | daysUntil }}</strong> days to go</span>
+  </p>
+</div>
+
 <header class="site-header">
   <a class="site-header__brand" href="/" aria-label="{{ summit.name }} — home">
     <img class="brand-emblem" src="/img/emblem-96.png" srcset="/img/emblem-96.png 96w, /img/emblem-256.png 256w"
@@ -117,7 +136,19 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
     <ul class="site-nav__list" id="primary-nav">
       {% for item in navigation.primary %}
       {# Compare basePath, not page.url — under /zh/ the two never match. #}
-      <li><a href="{{ item.url }}"{% if basePath == item.url %} aria-current="page"{% endif %}>{{ item.text }}</a></li>
+      <li{% if item.children %} class="has-sub"{% endif %}>
+        <a href="{{ item.url }}"{% if item | inSection(basePath) %} aria-current="page"{% endif %}>{{ item.text }}</a>
+        {%- if item.children %}
+        {# CSS-only submenu: opened by :hover and :focus-within, so it works for
+           keyboard users with no JS. On narrow screens it renders inline and
+           always open, which is why there is no aria-expanded to keep in sync. #}
+        <ul class="site-nav__sub">
+          {% for child in item.children %}
+          <li><a href="{{ child.url }}"{% if basePath == child.url %} aria-current="page"{% endif %}>{{ child.text }}</a></li>
+          {% endfor %}
+        </ul>
+        {%- endif %}
+      </li>
       {% endfor %}
     </ul>
     {# data-nolocale: the one link that must NOT be rewritten to the current
@@ -152,11 +183,27 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
   </div>
 
   <div class="site-footer__base">
-    <p>{{ summit.name }} &middot; {{ summit.dates.display }} &middot; {{ summit.location.city }}, {{ summit.location.country }}</p>
-    <p>Organised by {{ summit.organiser.legalEntity }} on behalf of the {{ summit.organiser.name }}.</p>
+    <p>{{ summit.name }} &middot; {{ summit.dates.display }} &middot; {{ summit.location.venueShort }}, {{ summit.location.city }}</p>
+    <p>Organised by {{ summit.organiser.legalEntity }}{% if summit.partners.length %}, in partnership with {% for p in summit.partners %}{{ p.name }}{% if not loop.last %} and {% endif %}{% endfor %}{% endif %}.</p>
+    <p>{{ summit.contact.address.line1 }}, {{ summit.contact.address.line2 }}, {{ summit.contact.address.city }}, {{ summit.contact.address.country }} &middot; <a href="tel:{{ summit.contact.phone | replace(" ", "") }}">{{ summit.contact.phone }}</a></p>
+    <p><a href="mailto:{{ summit.contact.email }}">{{ summit.contact.email }}</a></p>
+    <p class="site-footer__legal">{% for l in navigation.legal %}<a href="{{ l.url }}">{{ l.text }}</a>{% if not loop.last %} &middot; {% endif %}{% endfor %}</p>
     <p>&copy; {{ buildYear }} {{ summit.organiser.legalEntity }}. All rights reserved.</p>
   </div>
 </footer>
+
+{# WhatsApp, not a chat widget. The number takes calls and messages, so this is
+   a real channel rather than a bot. Crucially it is a plain link: no
+   third-party script, no cookie, which is what keeps the site free of a
+   consent banner. See docs/V3-SCOPE.md. #}
+<a class="wa-float" href="https://wa.me/{{ summit.contact.whatsapp }}"
+   target="_blank" rel="noopener"
+   aria-label="Chat with the summit team on WhatsApp">
+  <svg class="wa-float__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+    <path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24a8.2 8.2 0 0 1 8.24 8.25c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.15.16-.29.18-.54.06-.25-.13-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.44.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.47c-.16 0-.43.06-.65.31-.22.25-.85.83-.85 2.03s.87 2.35.99 2.51c.12.16 1.71 2.61 4.14 3.66.58.25 1.03.4 1.38.51.58.19 1.11.16 1.53.1.47-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.11-.22-.17-.47-.29Z"/>
+  </svg>
+  <span class="wa-float__label">Chat on WhatsApp</span>
+</a>
 
 <script src="/js/nav.js" defer></script>
 <script src="/js/form-handler.js" defer></script>

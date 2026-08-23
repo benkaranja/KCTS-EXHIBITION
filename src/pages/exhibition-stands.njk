@@ -1,0 +1,88 @@
+---
+layout: layouts/page.njk
+basePath: /exhibition/stands/
+title: Stands and rates
+heading: Stands and rates
+standfirst: 146 numbered stands across two halls, in a 30m × 80m tent on the KICC grounds.
+description: Stand layout for the International Tea & Technology Expo at the Kenya-China Tea Summit. 146 stands across two halls, sizes and rates to be announced.
+ctaHeading: Register your interest
+ctaBody: Tick Exhibitor at registration and the Secretariat emails you when rates are set.
+ctaUrl: /registration/
+ctaLabel: Register your interest
+---
+
+<p>Stand sizes, rates and package inclusions are
+<span class="value--pending">to be announced</span>.</p>
+
+<aside class="rail">
+  <h2>Confirmed</h2>
+  <dl class="spec">
+    <div class="field">
+      <dt class="label">Expo day</dt>
+      <dd class="value">Friday 23 April 2027</dd>
+    </div>
+    <div class="field">
+      <dt class="label">Stands</dt>
+      <dd class="value">{{ summit.exhibition.stands }}</dd>
+    </div>
+    <div class="field">
+      <dt class="label">Halls</dt>
+      <dd class="value">{{ summit.exhibition.halls }}</dd>
+    </div>
+    <div class="field">
+      <dt class="label">Tent</dt>
+      <dd class="value">{{ summit.exhibition.tentSize }}</dd>
+    </div>
+    <div class="field">
+      <dt class="label">Aisles</dt>
+      <dd class="value">3.0m and 2.0m</dd>
+    </div>
+    <div class="field">
+      <dt class="label">Sizes and rates</dt>
+      <dd class="value"><span class="value--pending">To be announced</span></dd>
+    </div>
+    <div class="field">
+      <dt class="label">Application deadline</dt>
+      <dd class="value"><span class="value--pending">To be announced</span></dd>
+    </div>
+  </dl>
+  {% if summit.exhibition.layoutProvisional %}
+  <div class="note">
+    <p class="note__label">Layout</p>
+    <p>The floor plan is subject to change before stands go on sale.</p>
+  </div>
+  {% endif %}
+</aside>
+
+<h2>The floor</h2>
+
+<ul>
+  <li>{{ summit.exhibition.stands }} numbered stands across {{ summit.exhibition.halls }} halls, in a {{ summit.exhibition.tentSize }} tent</li>
+  <li>Aisles of 3.0m and 2.0m between blocks</li>
+  <li>Perimeter stands run along the long walls. The centre holds blocks of two</li>
+  <li>The expo is on the KICC grounds rather than inside the building</li>
+</ul>
+
+<h2>How booking works</h2>
+
+<ol>
+  <li>Register and tick <strong>Exhibitor</strong>.</li>
+  <li>The Secretariat emails exhibitors when rates are set and booking opens.</li>
+  <li>Exhibitors select a stand from the plan in the portal and hold it.</li>
+  <li>The Secretariat confirms the hold, or releases it where a stand is reserved.</li>
+</ol>
+
+<p>Registration carries no charge.</p>
+
+<h2>Build and fit-out</h2>
+
+<p>Shell scheme, power, furniture and build guidelines are
+<span class="value--pending">to be announced</span>. The exhibitor pack is
+published here once rates are set.</p>
+
+<h2>Ask the Secretariat</h2>
+
+<p>Email <a href="mailto:{{ summit.contact.marketingEmail }}">{{ summit.contact.marketingEmail }}</a>
+or call <a href="tel:{{ summit.contact.phone | replace(" ", "") }}">{{ summit.contact.phone }}</a>.
+See also <a href="/exhibition/">why exhibit</a> and the
+<a href="/venue/">venue</a>.</p>

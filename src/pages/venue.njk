@@ -2,48 +2,76 @@
 layout: layouts/page.njk
 basePath: /venue/
 title: Venue
-heading: Coming to Nairobi
-standfirst: The Kenya-China Tea Summit takes place in Nairobi, Kenya, from 21 to 23 April 2027.
-description: The Kenya-China Tea Summit will take place in Nairobi from 21 to 23 April 2027. Venue, access and transport information will be announced here.
-ctaBody: Register your interest to receive venue and delegate information as it is confirmed.
+heading: Kenyatta International Convention Centre
+standfirst: The summit runs at KICC in central Nairobi, 21–23 April 2027. The International Tea & Technology Expo runs in a tent on the grounds.
+description: The Kenya-China Tea Summit runs at the Kenyatta International Convention Centre, Harambee Avenue, Nairobi, 21–23 April 2027. Access, parking and expo floor plan.
+ctaHeading: Register your interest
+ctaBody: Registration takes about two minutes and puts you on the list for venue and delegate information.
 ---
 
-<p>The specific venue is being finalised and will be announced through the official summit website and delegate communications.</p>
+<p>The summit runs at the Kenyatta International Convention Centre (KICC) in
+central Nairobi, {{ summit.dates.display }}.</p>
+
+<p>The {{ summit.exhibition.name }} runs in a tent on the KICC grounds rather
+than inside the building. {{ summit.exhibition.stands }} stands across
+{{ summit.exhibition.halls }} halls.</p>
 
 <aside class="rail">
   <h2>Event details</h2>
   <dl class="spec">
     <div class="field">
-      <dt class="label">City</dt>
-      <dd class="value">{{ summit.location.city }}, {{ summit.location.country }}</dd>
+      <dt class="label">Venue</dt>
+      <dd class="value">{{ summit.location.venue }}</dd>
+    </div>
+    <div class="field">
+      <dt class="label">Address</dt>
+      <dd class="value">{{ summit.location.street }}, {{ summit.location.city }}, {{ summit.location.country }}</dd>
     </div>
     <div class="field">
       <dt class="label">Dates</dt>
       <dd class="value">{{ summit.dates.display }}</dd>
     </div>
     <div class="field">
-      <dt class="label">Venue</dt>
-      <dd class="value"><span class="value--pending">To be announced</span></dd>
+      <dt class="label">Expo</dt>
+      <dd class="value">Day {{ summit.exhibition.day }}, in a tent on the grounds</dd>
     </div>
     <div class="field">
-      <dt class="label">Address</dt>
+      <dt class="label">Parking</dt>
       <dd class="value"><span class="value--pending">To be announced</span></dd>
     </div>
     <div class="field">
       <dt class="label">Accessibility information</dt>
       <dd class="value"><span class="value--pending">To be announced</span></dd>
     </div>
-    <div class="field">
-      <dt class="label">Parking and local transport</dt>
-      <dd class="value"><span class="value--pending">To be announced</span></dd>
-    </div>
   </dl>
   <div class="note">
-    <p class="note__label">Before booking accommodation</p>
-    <p>The venue will affect which part of Nairobi is most convenient for your stay. Choose flexible or refundable accommodation where possible. International visitors should also use flexible travel arrangements and review entry requirements before booking.</p>
+    <p class="note__label">Access requirements</p>
+    <p>For a specific access requirement, email
+      <a href="mailto:{{ summit.contact.supportEmail }}">{{ summit.contact.supportEmail }}</a>
+      and the Secretariat confirms arrangements directly.</p>
   </div>
 </aside>
 
-<h2>Venue announcements</h2>
+<h2>Getting there</h2>
 
-<p>Register interest to be first to receive venue and delegate details as soon as they are available. General arrival guidance is on <a href="/travel/">Travel &amp; stay</a>.</p>
+<p>KICC stands on {{ summit.location.street }}, in Nairobi's central business
+district.</p>
+
+{% set locatorNote = "Opens Google Maps directions to KICC in a new tab." %}
+{% include "components/locator.njk" %}
+
+<h2>Expo floor plan</h2>
+
+<p>{{ summit.exhibition.stands }} stands across {{ summit.exhibition.halls }}
+halls, in a {{ summit.exhibition.tentSize }} tent, with 3.0m and 2.0m aisles.
+{% if summit.exhibition.layoutProvisional %}The layout is subject to change
+before stands go on sale.{% endif %}</p>
+
+<p>The interactive plan opens in the exhibitor portal when booking starts.
+See <a href="/exhibition/stands/">stands and rates</a>.</p>
+
+<h2>Where to stay</h2>
+
+<p>Hotels sit within walking distance of KICC and across Westlands and Upper
+Hill. Summit rates and booking codes are on
+<a href="/travel/">travel and visas</a>.</p>

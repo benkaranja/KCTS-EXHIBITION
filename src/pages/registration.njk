@@ -3,18 +3,21 @@ layout: layouts/page.njk
 basePath: /registration/
 title: Register your interest
 heading: Register your interest
-standfirst: Six categories. No payment at this stage, and submitting the form does not reserve a place.
-description: Register your interest in the Kenya-China Tea Summit 2027, Nairobi, 21–23 April 2027. Six categories from delegate to exhibitor. Fees announced once confirmed.
+standfirst: Nine categories. Takes about two minutes.
+description: Register your interest in the Kenya-China Tea Summit 2027 at KICC Nairobi, 21–23 April 2027. Nine categories, plus exhibitor and sponsor options.
 sitemapPriority: 1.0
 hideCta: true
 ---
 
-<div class="note">
-  <p class="note__label">Read this first</p>
-  <p>The formal ticketing process is not open yet. This form records your interest and allows the summit team to send you confirmed information as it becomes available. There is no payment at this stage, and submitting the form does not reserve a place.</p>
-</div>
+<p>Registration is open and takes about two minutes. The Secretariat makes
+contact as fees, categories and the full programme are confirmed. Registration
+carries no charge.</p>
 
-<h2>Choose the category that best fits your role</h2>
+<h2>Categories</h2>
+
+<p>Select the category that describes the organisation best. Exhibiting and
+partnering are separate tick-boxes on the form, so a producer can register as a
+producer and as an exhibitor.</p>
 
 <ul class="classes">
 {% for c in summit.registrationCategories %}
@@ -38,7 +41,7 @@ hideCta: true
     </div>
     <div class="field">
       <dt class="label">Venue</dt>
-      <dd class="value"><span class="value--pending">To be announced</span></dd>
+      <dd class="value">{{ summit.location.venue }}</dd>
     </div>
     <div class="field">
       <dt class="label">Fees</dt>
@@ -57,13 +60,12 @@ hideCta: true
 
 {% include "components/form-registration.njk" %}
 
-<h2>What happens next</h2>
+<h2>After registration</h2>
 
-<ol>
-  <li>You receive confirmation that your expression of interest was submitted.</li>
-  <li>The summit team records your chosen category and areas of interest.</li>
-  <li>You receive relevant updates as the venue, fees, programme and participation packages are confirmed.</li>
-  <li>Formal registration instructions are sent when booking opens.</li>
-</ol>
+<p>Registration confirms by email. When the delegate portal opens, delegates
+sign in with that email address to update details, book a stand, request B2B
+meetings and download documents.</p>
+
+<p>Journalists apply through <a href="/media/">media accreditation</a>.</p>
 
 <p>If you would rather exhibit or partner than attend, those go through <a href="/exhibition/">Exhibition</a> and <a href="/sponsorship/">Partnership</a> instead — different forms, different information needed.</p>

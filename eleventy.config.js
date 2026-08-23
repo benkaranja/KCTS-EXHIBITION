@@ -18,6 +18,9 @@ export default function (eleventyConfig) {
   // robots.txt and sitemap.xml are generated (src/robots.njk, src/sitemap.njk)
   // so they always carry the current origin — see ADR-010.
   eleventyConfig.addPassthroughCopy({ "src/_headers": "_headers" });
+  // Edge redirects for the pages folded in V3. Must be copied verbatim to the
+  // output root or Cloudflare Pages never sees it.
+  eleventyConfig.addPassthroughCopy({ "src/_redirects": "_redirects" });
 
   eleventyConfig.addWatchTarget("src/assets/");
 
@@ -89,6 +92,30 @@ export default function (eleventyConfig) {
   // downloads page rendered empty. This does the walk.
   eleventyConfig.addFilter("byCategory", (items, category) =>
     (items ?? []).filter((i) => i.data.category === category),
+  );
+
+  // News posts paginate over locales with addAllPagesToCollections: true, so
+  // collections.news holds BOTH the English and the Chinese build of every
+  // post. Rendering it unfiltered listed each post twice on every index — the
+  // /zh/ copy sitting under the English one. Nunjucks' own selectattr looks
+  // the attribute up with obj[attr] and cannot walk "data.locale", which is
+  // the same reason byCategory above exists.
+  eleventyConfig.addFilter("byLocale", (items, locale) =>
+    (items ?? []).filter((i) => i.data.locale === locale),
+  );
+
+  // Is this nav item the current page, or the parent of it?
+  //
+  // Written as a filter because the obvious Nunjucks one-liner is wrong:
+  // Nunjucks has no `equalto` test (that is Jinja), so
+  // `children | selectattr("url", "equalto", basePath)` silently degrades to a
+  // truthiness check on `url` and matches EVERY child. The result was
+  // aria-current="page" sitting on Exhibit on every page of the site.
+  eleventyConfig.addFilter(
+    "inSection",
+    (item, basePath) =>
+      item.url === basePath ||
+      (item.children ?? []).some((c) => c.url === basePath),
   );
 
   eleventyConfig.addFilter("speakersFor", (speakers, sessionSlug) =>

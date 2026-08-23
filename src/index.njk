@@ -25,8 +25,8 @@ eleventyComputed:
 
         <dl class="particulars">
           <div class="field">
-            <dt class="label">Location</dt>
-            <dd class="value">{{ summit.location.city }}, {{ summit.location.country }}</dd>
+            <dt class="label">Venue</dt>
+            <dd class="value">{{ summit.location.venue }}</dd>
           </div>
           <div class="field">
             <dt class="label">Dates</dt>
@@ -37,8 +37,8 @@ eleventyComputed:
             <dd class="value"><span data-countdown="{{ summit.dates.start }}">{{ summit.dates.start | daysUntil }}</span></dd>
           </div>
           <div class="field">
-            <dt class="label">Venue</dt>
-            <dd class="value"><span class="value--pending">To be announced</span></dd>
+            <dt class="label">City</dt>
+            <dd class="value">{{ summit.location.city }}, {{ summit.location.country }}</dd>
           </div>
           <div class="field">
             <dt class="label">Organised by</dt>
@@ -46,18 +46,18 @@ eleventyComputed:
           </div>
         </dl>
 
-        <p class="hero__body">The Kenya-China Tea Summit brings producers, exporters, buyers, investors, policymakers, researchers and technology partners together in Nairobi for three days of focused trade conversations, business meetings and industry exchange.</p>
+        <p class="hero__body">Three days in Nairobi for the people who grow, process, buy, ship and finance tea.</p>
       </div>
 
       <div class="issue">
         <div class="issue__head">
           <h2>Register your interest</h2>
         </div>
-        <p class="issue__note">Six categories, from delegate to exhibitor. Registration is open as an expression of interest — fees, deadlines and inclusions are set by the summit team and published here once confirmed.</p>
-        <a class="btn btn--primary btn--block" href="/registration/">Register interest</a>
+        <p class="issue__note">Nine categories. Takes about two minutes.</p>
+        <a class="btn btn--primary btn--block" href="/registration/">Register your interest</a>
         <hr class="rule">
-        <p class="issue__note">Exhibiting or partnering instead?</p>
-        <a class="btn btn--ghost btn--block" href="/sponsorship/">Partnership enquiry</a>
+        <p class="issue__note">Exhibiting or partnering?</p>
+        <a class="btn btn--ghost btn--block" href="/exhibition/">Why exhibit</a>
       </div>
     </div>
   </div>
@@ -68,10 +68,19 @@ eleventyComputed:
     <div class="figure-pair">
       <div>
         <div class="section-head">
-          <h2>A focused platform for a growing trade relationship</h2>
+          <h2>The number this summit is built on</h2>
         </div>
-        <p>Kenya and China bring different strengths to the tea industry. Kenya has deep experience in growing, processing and exporting tea. China is a major tea market and a centre for tea production, technology, product development and tea culture.</p>
-        <p>The summit creates a practical meeting point for the people shaping this relationship. The focus is direct: build stronger commercial links, support value addition, improve market access and identify investment and technology partnerships that can move from conversation to action.</p>
+        {#- Every figure here is sourced and dated. FACTS.md §3 permits industry
+            statistics only with a named source at the point of use, which is
+            what the <cite> line below is. Do not add a figure without one. -#}
+        <p>Kenya exported 652.8 million kilogrammes of tea in 2025, worth
+          KES 186.91 billion. China bought 13,011 tonnes of it, around two per
+          cent.</p>
+        <p>China is the largest tea market in the world. Pakistan alone takes 36
+          per cent of Kenya's exports. The opportunity sits in the distance
+          between those two figures.</p>
+        <p>This summit puts both sides in the same room for three days.</p>
+        <p class="source">Source: <a href="https://www.teaboard.or.ke/images/downloads/performance-highlights/TEA-INDUSTRY-PERFORMANCE-REPORT-2025.pdf" rel="noopener" target="_blank">Tea Board of Kenya, Tea Industry Performance Report 2025</a>. China import figure for 2024, <a href="https://www.ecofinagency.com/news-agriculture/1302-52890-kenya-tea-exports-rise-in-2025-revenue-slips-on-lower-prices" rel="noopener" target="_blank">Ecofin Agency</a>.</p>
         <p><a href="/about/">About the summit</a></p>
       </div>
       {{ grid([
@@ -89,18 +98,18 @@ eleventyComputed:
 <section class="section section--tint">
   <div class="wrap">
     <div class="section-head">
-      <h2>What the summit is designed to achieve</h2>
+      <h2>What the summit works on</h2>
     </div>
+    {#- Titles only. The six explanatory paragraphs run on /about/; repeating
+        them here was ~180 words of the homepage's overrun. -#}
     <ol class="clauses">
       {% for o in summit.objectives %}
       <li class="clause">
-        <div>
-          <h3>{{ o.title }}</h3>
-          <p>{{ o.body }}</p>
-        </div>
+        <div><h3>{{ o.title }}</h3></div>
       </li>
       {% endfor %}
     </ol>
+    <p class="section-action"><a href="/about/">Why the summit exists</a></p>
   </div>
 </section>
 
@@ -139,8 +148,9 @@ eleventyComputed:
         <div class="section-head">
           <h2>The International Tea &amp; Technology Expo</h2>
         </div>
-        <p>The expo brings tea products and industry solutions into one commercial space. Exhibitors can present finished and bulk teas, processing equipment, agricultural technologies, packaging, traceability tools and logistics services to a specialist audience.</p>
-        <p><a href="/exhibition/">Explore exhibition opportunities</a></p>
+        <p>146 stands across two halls, in a tent on the KICC grounds. Tea products, processing equipment, agricultural technology and logistics services. The expo runs on Day 3, with the full delegation on site.</p>
+        <p>Stand rates and sizes: <span class="value--pending">to be announced</span>.</p>
+        <p><a href="/exhibition/">Why exhibit</a> &middot; <a href="/exhibition/stands/">Stands and rates</a></p>
       </div>
       {{ grid([
         {src:"/img/plates/withered-tea-leaf-processing-bed", alt:"A bed of withering tea leaf spread evenly across a processing trough."},
@@ -157,7 +167,7 @@ eleventyComputed:
 <section class="section">
   <div class="wrap">
     <div class="section-head">
-      <h2>Who should attend</h2>
+      <h2>Who attends</h2>
     </div>
     <ul class="classes">
       {% for a in summit.audiences %}
@@ -172,11 +182,10 @@ eleventyComputed:
 <section class="section">
   <div class="wrap">
     <div class="section-head">
-      <h2>B2B matchmaking</h2>
+      <h2>B2B meetings</h2>
     </div>
-    <p>Good events create introductions. Useful events make those introductions relevant.</p>
-    <p>The summit's planned matchmaking programme will help delegates and exhibitors identify potential buyers, suppliers, investors and technology partners before and during the event. Participants will provide a business profile, indicate what they are looking for and receive relevant meeting recommendations.</p>
-    <p><a href="/b2b-matchmaking/">How matchmaking will work</a></p>
+    <p>Delegates create a profile stating what they sell or want to buy, then request meetings with other delegates. The Secretariat schedules every accepted meeting into a Day 2 slot.</p>
+    <p><a href="/b2b-matchmaking/">How B2B meetings work</a></p>
   </div>
 </section>
 
@@ -184,7 +193,7 @@ eleventyComputed:
   <div class="wrap">
     <div class="section-head">
       <h2>Partner with the summit</h2>
-      <p>Partnership is available at Title, Platinum, Gold, Silver and Supporting Partner levels. Packages will be built around approved benefits such as brand visibility, delegate engagement, exhibition presence and business introductions.</p>
+      <p>Five levels. Package contents: <span class="value--pending">to be announced</span>.</p>
     </div>
     <ul class="endorsements">
       {% for t in summit.sponsorshipTiers %}
@@ -193,7 +202,7 @@ eleventyComputed:
       </li>
       {% endfor %}
     </ul>
-    <p>Tell us what your organisation wants to achieve, and the summit team will recommend the most suitable route.</p>
+    <p>Any organisation whose business grows as China's share of Kenyan tea grows has a reason to be visible here.</p>
     <p class="section-action"><a class="btn btn--primary" href="/sponsorship/">Discuss partnership</a></p>
   </div>
 </section>
@@ -203,15 +212,65 @@ eleventyComputed:
     <div class="figure-pair">
       <div>
         <div class="section-head">
-          <h2>Plan your visit to Nairobi</h2>
+          <h2>Coming to Nairobi</h2>
         </div>
-        <p>The summit is being planned as more than a three-day conference. The summit team intends to coordinate travel and accommodation support, tea-region visits and optional tourism experiences for international delegations.</p>
-        <p><a href="/travel/">Travel and stay</a></p>
+        <p>The summit runs at the Kenyatta International Convention Centre in central Nairobi. Kenya's tea-growing highlands sit within a few hours of the city, and most visitors need an Electronic Travel Authorisation before departure.</p>
+        <p><a href="/travel/">Travel and visas</a> &middot; <a href="/tea-attractions/">Tea attractions</a></p>
       </div>
       {{ grid([
         {src:"/img/plates/tea-estate-hillside-kenyan-highlands", alt:"A rounded hill planted with tea, framed by scattered trees."},
         {src:"/img/plates/tea-smallholder-fields-aerial-kenya",  alt:"A patchwork of smallholder tea plots seen from above."}
       ], "Coming to Nairobi", "III", "(min-width: 52rem) 285px, 50vw") }}
     </div>
+  </div>
+</section>
+
+{#- News. Latest three posts, newest first. The collection is sorted in
+    eleventy.config.js, so the slice here is presentation only. -#}
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>News and insights</h2>
+    </div>
+    <ul class="news-list">
+      {#- Nunjucks `slice` splits into N chunks rather than taking the first N,
+          and the collection is already sorted newest-first in
+          eleventy.config.js. So: no reverse, and cap with loop.index. -#}
+      {% for post in collections.news | byLocale(locale) %}{% if loop.index <= 3 %}
+      <li class="news-card">
+        <p class="news-card__date"><time datetime="{{ post.date | isoDate }}">{{ post.date | readableDate }}</time></p>
+        <h3><a href="{{ post.data.basePath }}">{{ post.data.title }}</a></h3>
+        <p>{{ post.data.standfirst or post.data.description }}</p>
+      </li>
+      {% endif %}{% endfor %}
+    </ul>
+    <p class="section-action"><a class="btn btn--ghost" href="/news/">All news and insights</a></p>
+  </div>
+</section>
+
+{#- Organiser and partners. Renders a wordmark where no logo file has been
+    supplied, so the strip is never a row of broken images. Only partners in
+    summit.partners may appear — see FACTS.md §2 on endorsement. -#}
+<section class="section section--tint partners">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Organiser and partners</h2>
+    </div>
+    <ul class="partners__list">
+      <li class="partners__item">
+        <span class="partners__wordmark">{{ summit.organiser.legalEntity }}
+          <span class="partners__role">Organiser</span></span>
+      </li>
+      {% for p in summit.partners %}
+      <li class="partners__item">
+        {% if p.logo %}
+        <img src="{{ p.logo }}" alt="{{ p.name }}" loading="lazy" decoding="async">
+        {% else %}
+        <span class="partners__wordmark">{{ p.name }}
+          <span class="partners__role">{{ p.role }}</span></span>
+        {% endif %}
+      </li>
+      {% endfor %}
+    </ul>
   </div>
 </section>
