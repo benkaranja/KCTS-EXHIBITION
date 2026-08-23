@@ -271,15 +271,19 @@ const summit = {
     whatsapp: "254111491076",
   },
 
-  // Social profiles. URLs are placeholders until the Secretariat supplies the
-  // real handles — an icon linking to a 404 is worse than no icon, so
-  // `published: false` keeps the whole row out of the markup until then.
+  // Social profiles. Client decision 2026-08-23: show the marks now with "#"
+  // placeholders and fill the real handles in later.
+  //
+  // A "#" href is a dead link, so the template deliberately omits
+  // target="_blank" for it — opening a blank tab on a placeholder is worse
+  // than doing nothing. Replace the hashes with real URLs and nothing else
+  // needs to change.
   social: {
-    published: false,
+    published: true,
     accounts: [
-      { name: "LinkedIn", mark: "brand_linkedin", url: "https://www.linkedin.com/company/kenya-china-tea-summit" },
-      { name: "Facebook", mark: "brand_facebook", url: "https://www.facebook.com/kenyachinateasummit" },
-      { name: "X", mark: "brand_x", url: "https://x.com/kctsummit" },
+      { name: "LinkedIn", mark: "brand_linkedin", url: "#" },
+      { name: "Facebook", mark: "brand_facebook", url: "#" },
+      { name: "X", mark: "brand_x", url: "#" },
     ],
   },
 };

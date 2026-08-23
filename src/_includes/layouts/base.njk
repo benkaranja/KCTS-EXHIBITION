@@ -125,7 +125,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
     {%- if summit.social.published %}
     <ul class="topbar__social">
       {% for a in summit.social.accounts %}
-      <li><a href="{{ a.url }}" target="_blank" rel="noopener" data-nolocale>
+      <li><a href="{{ a.url }}"{% if a.url != "#" %} target="_blank" rel="noopener"{% endif %} data-nolocale>
         {% set markName = a.mark %}{% set markLabel = summit.shortName + " on " + a.name %}
         {% include "components/mark.njk" %}
       </a></li>
@@ -230,7 +230,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
         {%- if summit.social.published %}
         <ul class="site-footer__social">
           {% for a in summit.social.accounts %}
-          <li><a href="{{ a.url }}" target="_blank" rel="noopener" data-nolocale>
+          <li><a href="{{ a.url }}"{% if a.url != "#" %} target="_blank" rel="noopener"{% endif %} data-nolocale>
             {% set markName = a.mark %}{% set markLabel = summit.shortName + " on " + a.name %}
             {% include "components/mark.njk" %}
           </a></li>
