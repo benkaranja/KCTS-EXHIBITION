@@ -1,6 +1,7 @@
 ---
 layout: layouts/page.njk
 basePath: /registration/
+hero: registration
 title: Register your interest
 heading: Register your interest
 standfirst: Nine categories. Takes about two minutes.
@@ -22,6 +23,7 @@ producer and as an exhibitor.</p>
 <ul class="classes">
 {% for c in summit.registrationCategories %}
   <li class="class-row">
+    {% set iconName = c.icon %}{% include "components/icon.njk" %}
     <span class="class-row__name">{{ c.name }}</span>
     <p>{{ c.blurb }}</p>
   </li>

@@ -1,6 +1,7 @@
 ---
 layout: layouts/page.njk
 basePath: /sponsorship/
+hero: partner
 title: Partnership
 heading: Partner with the summit
 standfirst: Five levels, and three days of access to the people who decide what their organisation buys.
@@ -22,13 +23,7 @@ visible here.</p>
 
 <h2>Partnership levels</h2>
 
-<ul class="endorsements">
-{% for t in summit.sponsorshipTiers %}
-  <li class="endorsement">
-    <span class="endorsement__tier">{{ t.name }}</span>
-  </li>
-{% endfor %}
-</ul>
+{% include "components/tiers.njk" %}
 
 <h2>What partnership gives you</h2>
 

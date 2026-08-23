@@ -82,26 +82,32 @@ const summit = {
   objectives: [
     {
       title: "Grow direct trade",
+      icon: "handshake",
       body: "Connect Kenyan producers and exporters with Chinese importers, distributors, brands and buyers.",
     },
     {
       title: "Support value addition",
+      icon: "factory",
       body: "Explore opportunities in specialty tea, green tea, orthodox tea, packaging, branding and product development.",
     },
     {
       title: "Bring investment closer to the industry",
+      icon: "savings",
       body: "Create space for investors, banks and development finance institutions to engage with commercially viable opportunities across the tea value chain.",
     },
     {
       title: "Put technology in front of the people who use it",
+      icon: "agriculture",
       body: "Introduce processing equipment, agricultural technology, traceability systems and logistics solutions to producers and processors.",
     },
     {
       title: "Make market access easier to understand",
+      icon: "language",
       body: "Bring buyers, exporters, regulators and standards specialists into the same conversation.",
     },
     {
       title: "Celebrate tea as business and culture",
+      icon: "groups",
       body: "Create room for Kenyan and Chinese tea traditions, consumer preferences and product stories to be shared with a wider international audience.",
     },
   ],
@@ -160,18 +166,22 @@ const summit = {
     categories: [
       {
         name: "Tea products",
+        icon: "inventory",
         detail: "black, green, orthodox, specialty, blended, packaged",
       },
       {
         name: "Processing equipment",
+        icon: "factory",
         detail: "withering, rolling, fermentation, drying, sorting, packing",
       },
       {
         name: "Agricultural technology",
+        icon: "agriculture",
         detail: "plucking, soil and crop management, traceability",
       },
       {
         name: "Logistics services",
+        icon: "local_shipping",
         detail: "freight, warehousing, customs, cold chain, inspection",
       },
     ],
@@ -200,11 +210,11 @@ const summit = {
 
   // Tier NAMES are confirmed. Their contents and prices are not — see FACTS.md §2.
   sponsorshipTiers: [
-    { name: "Title Partner", slug: "title" },
-    { name: "Platinum Partner", slug: "platinum" },
-    { name: "Gold Partner", slug: "gold" },
-    { name: "Silver Partner", slug: "silver" },
-    { name: "Supporting Partner", slug: "supporting" },
+    { name: "Title Partner", slug: "title", rank: 1 },
+    { name: "Platinum Partner", slug: "platinum", rank: 2 },
+    { name: "Gold Partner", slug: "gold", rank: 3 },
+    { name: "Silver Partner", slug: "silver", rank: 4 },
+    { name: "Supporting Partner", slug: "supporting", rank: 5 },
   ],
 
   // The V2 six (Delegate, Exhibitor, Sponsor, Government, Media, Student) are
@@ -216,15 +226,15 @@ const summit = {
   // Collapsing the two axes into one list is what forced people to choose
   // between describing themselves and describing what they want.
   registrationCategories: [
-    { name: "Government / institutional delegate", slug: "government", blurb: "Public officials, regulators, trade agencies, diplomatic missions, industry bodies and development institutions attending in an official capacity." },
-    { name: "Tea producer / processor", slug: "producer", blurb: "Growers, estates, smallholder organisations and factories producing or processing tea." },
-    { name: "End-user / tea beverage brand", slug: "brand", blurb: "Consumer brands, blenders, packers, tea houses and hospitality businesses buying tea to sell on." },
-    { name: "Trader / merchant", slug: "trader", blurb: "Exporters, importers, distributors and brokers moving tea between markets." },
-    { name: "Machinery and packaging equipment supplier", slug: "machinery", blurb: "Manufacturers and suppliers of processing equipment, packaging lines and agricultural technology." },
-    { name: "Investor / financial institution", slug: "investor", blurb: "Investors, banks, insurers and development finance institutions active across the tea value chain." },
-    { name: "Media", slug: "media", blurb: "Journalists, editors, producers, photographers and recognised industry media." },
-    { name: "Academic / research institution", slug: "academic", blurb: "Universities, research institutes, trainers and standards specialists." },
-    { name: "Other / observer", slug: "other", blurb: "Anyone with a professional interest in the Kenya-China tea trade who does not fit the categories above." },
+    { name: "Government / institutional delegate", slug: "government", icon: "gavel", blurb: "Public officials, regulators, trade agencies, diplomatic missions, industry bodies and development institutions attending in an official capacity." },
+    { name: "Tea producer / processor", slug: "producer", icon: "agriculture", blurb: "Growers, estates, smallholder organisations and factories producing or processing tea." },
+    { name: "End-user / tea beverage brand", slug: "brand", icon: "storefront", blurb: "Consumer brands, blenders, packers, tea houses and hospitality businesses buying tea to sell on." },
+    { name: "Trader / merchant", slug: "trader", icon: "local_shipping", blurb: "Exporters, importers, distributors and brokers moving tea between markets." },
+    { name: "Machinery and packaging equipment supplier", slug: "machinery", icon: "factory", blurb: "Manufacturers and suppliers of processing equipment, packaging lines and agricultural technology." },
+    { name: "Investor / financial institution", slug: "investor", icon: "savings", blurb: "Investors, banks, insurers and development finance institutions active across the tea value chain." },
+    { name: "Media", slug: "media", icon: "campaign", blurb: "Journalists, editors, producers, photographers and recognised industry media." },
+    { name: "Academic / research institution", slug: "academic", icon: "science", blurb: "Universities, research institutes, trainers and standards specialists." },
+    { name: "Other / observer", slug: "other", icon: "groups", blurb: "Anyone with a professional interest in the Kenya-China tea trade who does not fit the categories above." },
   ],
 
   // Ticked in addition to a category, never instead of one.

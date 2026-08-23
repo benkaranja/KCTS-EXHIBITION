@@ -1,0 +1,23 @@
+{# Partnership levels as struck seals.
+
+   Not a pricing table: there are no prices, and a five-column pricing grid
+   with "To be announced" in every cell would advertise the gap rather than
+   hold the position. A rank of seals says "five levels exist, in this order"
+   without implying a price list is imminent.
+
+   Rank is encoded three ways — disc size, number of struck rules, and the
+   written name — so it survives greyscale and colour-blindness. See the
+   .tiers block in style.css. #}
+<ul class="tiers">
+  {% for t in summit.sponsorshipTiers %}
+  <li class="tier tier--{{ t.slug }}">
+    <span class="tier__seal">
+      <span class="tier__rules" aria-hidden="true">
+        {% for n in range(0, 6 - t.rank) %}<span></span>{% endfor %}
+      </span>
+    </span>
+    <span class="tier__name">{{ t.name }}</span>
+    <span class="tier__status">Open</span>
+  </li>
+  {% endfor %}
+</ul>

@@ -33,6 +33,17 @@
   --c-ply-canary: #e0b13a;
   --c-ply-salmon: #cf8b83;
 
+  /* Partnership tiers. Ring and mark colours only — the tier NAME always
+     renders in --c-ink, because canary and slate both fail 4.5:1 as text on
+     safety-tint stock. Colour here encodes rank, not decoration, so the ramp
+     runs warm-authoritative (oxblood) to cool-supporting (engrave green) and
+     each step is distinguishable in greyscale as well as in hue. */
+  --c-tier-title: var(--c-seal);      /* oxblood: the mark of highest authority */
+  --c-tier-platinum: #6d7f88;         /* cool slate, darker than silver */
+  --c-tier-gold: #b8891f;             /* canary darkened to clear 4.5:1 as a rule */
+  --c-tier-silver: #8b9a92;           /* green-grey, from the --c-rule family */
+  --c-tier-supporting: var(--c-engrave);
+
   /* --- semantic roles --------------------------------------------------- */
   --c-text: var(--c-ink);
   --c-text-muted: #3c5742;   /* tinted from the ground hue, never grey       */

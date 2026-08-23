@@ -560,15 +560,53 @@ a:hover { text-decoration-thickness: 2px; }
 
 /* ==== interior page head ================================================= */
 
+/* Interior page hero.
+   Three layers, bottom to top: the photograph, an intaglio wash, the rosette.
+   The wash is CSS rather than baked into the image so check-contrast.js can
+   still reason about the ground and one file can serve at any opacity.
+
+   --hero-wash is the opacity floor that keeps --c-text-on-ink above 4.5:1 over
+   the LIGHTEST hero. Measured, not guessed: below about 0.76 the canary
+   standfirst drops under the floor on the brighter aerial frames. */
 .doc-head {
-  background: var(--c-ink-2);
+  background-color: var(--c-ink-2);
   color: var(--c-text-on-ink);
   padding-block: var(--sp-xl) var(--sp-2xl);
   position: relative;
   overflow: hidden;
 }
+.doc-head__bg { position: absolute; inset: 0; pointer-events: none; }
+.doc-head__bg img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* The scrim, matching the homepage hero rather than inventing a second
+   treatment. Directional, not a uniform veil: the h1 and standfirst live in
+   the left ~58% of the band, so only that zone carries a guaranteed contrast
+   floor. The right side is text-free (it holds the rosette) and is left weak,
+   which is the whole reason the photograph reads as a photograph instead of
+   as a green rectangle. A flat 0.82 veil was the first attempt and made every
+   hero invisible. */
+.doc-head__bg::after {
+  content: ""; position: absolute; inset: 0;
+  background:
+    linear-gradient(
+      100deg,
+      rgb(15 46 22 / 0.88) 0%,
+      rgb(15 46 22 / 0.86) 58%,
+      rgb(15 46 22 / 0.34) 82%,
+      rgb(15 46 22 / 0.28) 100%
+    );
+}
+/* Single column below the two-column breakpoint: text runs the full width, so
+   the weak right zone would sit under it. One flat layer at the alpha the
+   canary standfirst needs. */
+@media (max-width: 59.999rem) {
+  .doc-head__bg::after { background: rgb(15 46 22 / 0.86); }
+}
+/* No image supplied: the band stays exactly as it was, a flat intaglio ground.
+   Nothing on the page depends on the photograph existing. */
+.doc-head:not(:has(.doc-head__bg)) { background: var(--c-ink-2); }
 .doc-head::before {
-  content: ""; position: absolute;
+  content: ""; position: absolute; z-index: 1;
   top: 50%; right: -20%; translate: 0 -50%;
   width: min(34rem, 62vw); aspect-ratio: 1;
   background: var(--c-engrave);
@@ -576,7 +614,7 @@ a:hover { text-decoration-thickness: 2px; }
   mask: url("/img/guilloche-rosette.svg") center / contain no-repeat;
   opacity: 0.4; pointer-events: none;
 }
-.doc-head > * { position: relative; }
+.doc-head > .wrap { position: relative; z-index: 2; }
 .doc-head h1 { color: var(--c-text-on-ink); font-size: var(--step-5); max-width: 18ch; }
 .doc-head__standfirst {
   font-family: var(--font-display);
@@ -1034,4 +1072,105 @@ select.input { cursor: pointer; }
 .input[aria-invalid="true"] {
   border-color: var(--c-seal);
   box-shadow: inset 0 0 0 1px var(--c-seal);
+}
+
+/* ==== engraved marks =====================================================
+   Icons are stroked line work, never filled. Weight matches the guilloche
+   they sit beside, which is the only reason this world tolerates them at all.
+   currentColor throughout, so a mark inherits whatever context it lands in. */
+.icon {
+  width: 1.5rem; height: 1.5rem;
+  flex: none;
+  color: var(--c-engrave);
+  display: block;
+}
+
+/* A mark on a rule above its heading. Deliberately NOT an icon in a tinted
+   circle beside a card title — that is the SaaS pattern DESIGN.md refuses.
+   Here the mark sits on the section's own hairline, the way a printer's
+   device sits on a document rule. */
+.clause .icon,
+.class-row .icon {
+  color: var(--c-seal);
+  margin-bottom: var(--sp-2xs);
+}
+
+/* Marks in the intaglio bands invert to the canary ply. */
+.section--ink .icon { color: var(--c-ply-canary); }
+
+/* Inline mark preceding a label in a spec list. */
+.field .icon { width: 1.15rem; height: 1.15rem; display: inline-block; vertical-align: -0.18em; margin-right: 0.35em; }
+
+/* ==== partnership tiers ==================================================
+   A struck seal per level, not a pricing card. The rosette is the same
+   generated guilloche used in the page heads, masked into a disc, so a tier
+   mark is literally cut from the site's own engraving.
+
+   Rank is carried three ways so it survives greyscale, colour-blindness and a
+   screen reader: disc size, the number of struck rules, and the written name.
+   Colour alone never encodes it. */
+/* auto-fit against the CONTAINER, not viewport breakpoints. Five fixed columns
+   at >=64rem gave 138px each inside the rail-constrained main column on
+   /sponsorship/, which clipped "Supporting Partner". auto-fit lets the same
+   markup sit five-across on the full-width homepage and three-across beside a
+   rail without either knowing about the other. */
+.tiers {
+  list-style: none; margin: var(--sp-l) 0 0; padding: 0;
+  display: grid; gap: var(--sp-m);
+  grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr));
+}
+
+.tier {
+  display: flex; flex-direction: column; align-items: center; gap: var(--sp-2xs);
+  text-align: center;
+  padding: var(--sp-m) var(--sp-2xs);
+  border-top: 2px solid var(--tier-colour);
+  background: var(--c-paper);
+}
+.tier--title       { --tier-colour: var(--c-tier-title); }
+.tier--platinum    { --tier-colour: var(--c-tier-platinum); }
+.tier--gold        { --tier-colour: var(--c-tier-gold); }
+.tier--silver      { --tier-colour: var(--c-tier-silver); }
+.tier--supporting  { --tier-colour: var(--c-tier-supporting); }
+
+.tier__seal {
+  position: relative;
+  width: var(--seal-size, 4.5rem); aspect-ratio: 1;
+  display: grid; place-items: center;
+  border: 2px solid var(--tier-colour);
+  border-radius: 50%;
+  color: var(--tier-colour);
+}
+/* The guilloche, masked into the disc. Low opacity: it is the security-print
+   texture under the mark, not the mark itself. */
+.tier__seal::before {
+  content: ""; position: absolute; inset: 8%;
+  background: currentColor;
+  -webkit-mask: url("/img/guilloche-rosette.svg") center / contain no-repeat;
+  mask: url("/img/guilloche-rosette.svg") center / contain no-repeat;
+  opacity: 0.28;
+}
+.tier--title    .tier__seal { --seal-size: 5.5rem; border-width: 3px; }
+.tier--platinum .tier__seal { --seal-size: 5.1rem; }
+.tier--gold     .tier__seal { --seal-size: 4.7rem; }
+.tier--silver   .tier__seal { --seal-size: 4.3rem; }
+.tier--supporting .tier__seal { --seal-size: 3.9rem; }
+
+/* Struck rules: one per rank step, highest tier gets the most. The redundant
+   encoding that makes the ramp readable without colour. */
+.tier__rules { display: flex; gap: 3px; position: relative; }
+.tier__rules span { display: block; width: 3px; height: 0.85rem; background: currentColor; }
+
+.tier__name {
+  text-wrap: balance;
+  font-family: var(--font-ui);
+  font-size: var(--step--1); font-weight: 700;
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--c-ink);
+}
+.tier__status {
+  font-family: var(--font-data);
+  font-size: var(--step--2);
+  color: var(--c-text-muted);
 }

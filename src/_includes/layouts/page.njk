@@ -2,6 +2,22 @@
 layout: layouts/base.njk
 ---
 <section class="doc-head">
+  {#- Page hero.
+
+      An <img>, not a CSS background. The CSP is `style-src 'self'` with no
+      unsafe-inline, so a style="background-image:..." attribute is silently
+      dropped — which is exactly what happened on the first attempt and is why
+      the band rendered flat green. A real element also gets object-fit,
+      decoding and fetchpriority, none of which a background offers.
+
+      alt="" plus aria-hidden on the wrapper: it repeats nothing the heading
+      does not already say, so assistive tech should skip it entirely. -#}
+  {%- if hero %}
+  <div class="doc-head__bg" aria-hidden="true">
+    <img src="/img/heroes/{{ hero }}.avif" alt=""
+         width="1400" height="525" decoding="async" fetchpriority="high">
+  </div>
+  {%- endif %}
   <div class="wrap">
     <h1>{{ heading or title }}</h1>
     {% if standfirst %}<p class="doc-head__standfirst">{{ standfirst }}</p>{% endif %}

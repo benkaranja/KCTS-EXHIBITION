@@ -105,7 +105,10 @@ eleventyComputed:
     <ol class="clauses">
       {% for o in summit.objectives %}
       <li class="clause">
-        <div><h3>{{ o.title }}</h3></div>
+        <div>
+          {% set iconName = o.icon %}{% include "components/icon.njk" %}
+          <h3>{{ o.title }}</h3>
+        </div>
       </li>
       {% endfor %}
     </ol>
@@ -195,13 +198,7 @@ eleventyComputed:
       <h2>Partner with the summit</h2>
       <p>Five levels. Package contents: <span class="value--pending">to be announced</span>.</p>
     </div>
-    <ul class="endorsements">
-      {% for t in summit.sponsorshipTiers %}
-      <li class="endorsement">
-        <span class="endorsement__tier">{{ t.name }}</span>
-      </li>
-      {% endfor %}
-    </ul>
+    {% include "components/tiers.njk" %}
     <p>Any organisation whose business grows as China's share of Kenyan tea grows has a reason to be visible here.</p>
     <p class="section-action"><a class="btn btn--primary" href="/sponsorship/">Discuss partnership</a></p>
   </div>

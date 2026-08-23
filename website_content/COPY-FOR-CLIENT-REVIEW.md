@@ -1,6 +1,6 @@
 # Copy for client review — Kenya-China Tea Summit 2027
 
-**Generated:** 2026-08-23 · **Build:** `535747e`
+**Generated:** 2026-08-23 · **Build:** `7abe0e7`
 
 Generated from the built site. This is what is live, not a draft of it.
 
@@ -100,11 +100,11 @@ How B2B meetings work
 
 Five levels. Package contents: to be announced.
 
-- Title Partner
-- Platinum Partner
-- Gold Partner
-- Silver Partner
-- Supporting Partner
+- Title Partner Open
+- Platinum Partner Open
+- Gold Partner Open
+- Silver Partner Open
+- Supporting Partner Open
 Any organisation whose business grows as China's share of Kenyan tea grows has a reason to be visible here.
 
 Discuss partnership
@@ -396,11 +396,11 @@ China takes around two per cent of Kenya's tea exports today (Tea Board of Kenya
 
 ### Partnership levels
 
-- Title Partner
-- Platinum Partner
-- Gold Partner
-- Silver Partner
-- Supporting Partner
+- Title Partner Open
+- Platinum Partner Open
+- Gold Partner Open
+- Silver Partner Open
+- Supporting Partner Open
 
 ### What partnership gives you
 

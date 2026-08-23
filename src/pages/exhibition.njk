@@ -1,6 +1,7 @@
 ---
 layout: layouts/page.njk
 basePath: /exhibition/
+hero: exhibition
 title: Why exhibit
 heading: Why exhibit
 standfirst: The International Tea & Technology Expo runs in a tent on the KICC grounds. 146 stands across two halls.
@@ -79,6 +80,7 @@ concentrates footfall into a single trading day.</p>
 <ul class="classes">
   {% for c in summit.exhibition.categories %}
   <li class="class-row">
+    {% set iconName = c.icon %}{% include "components/icon.njk" %}
     <span class="class-row__name">{{ c.name }}</span>
     <p>{{ c.detail | capitalize }}.</p>
   </li>

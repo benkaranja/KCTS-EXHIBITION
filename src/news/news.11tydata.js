@@ -4,6 +4,10 @@
 // /undefined — see ADR-014 for the locale contract this mirrors.
 export default {
   layout: "layouts/page.njk",
+  // Every post shares one hero. A per-post image would need art direction for
+  // each and would be the first thing to go stale; the band's job here is to
+  // say "news", not to illustrate the article.
+  hero: "news",
   pagination: {
     data: "locales",
     size: 1,

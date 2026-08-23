@@ -1,0 +1,27 @@
+{# Engraved mark.
+
+   Stroke, never fill. A solid glyph reads as a UI affordance; a stroked one at
+   1.5px reads as line work cut at the same weight as the guilloche, which is
+   the only reason this world tolerates icons at all.
+
+   Decorative by default: aria-hidden with no label, because it always sits
+   beside a heading that already says the same thing. Pass `iconLabel` only
+   where the icon is the sole carrier of meaning, which on this site is nowhere
+   yet.
+
+   Usage:
+     {% set iconName = "handshake" %}
+     {% include "components/icon.njk" %}
+
+   vector-effect keeps the stroke at 1.5px when the SVG is scaled, so a 40px
+   mark and a 20px mark are cut with the same tool. #}
+{%- set i = icons[iconName] -%}
+{%- if i %}
+<svg class="icon" viewBox="0 0 24 24" width="24" height="24"
+     fill="none" stroke="currentColor" stroke-width="1.5"
+     stroke-linecap="round" stroke-linejoin="round"
+     vector-effect="non-scaling-stroke"
+     {% if iconLabel %}role="img" aria-label="{{ iconLabel }}"{% else %}aria-hidden="true" focusable="false"{% endif %}>
+  <path d="{{ i.path }}"></path>
+</svg>
+{%- endif -%}
