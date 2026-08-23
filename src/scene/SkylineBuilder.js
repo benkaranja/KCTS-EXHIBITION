@@ -2,7 +2,7 @@ import * as THREE from 'three';
 
 /**
  * SkylineBuilder — renders the panoramic Nairobi skyline and atmospheric sky dome
- * using Nairobi_skybox.png for a 360° horizon with crisp vertical proportions.
+ * using the new high-resolution Nairobi_skybox.png.
  */
 export class SkylineBuilder {
   build(scene, venueWidth, venueLength) {
@@ -14,25 +14,25 @@ export class SkylineBuilder {
 
     const textureLoader = new THREE.TextureLoader();
 
-    // 1. Sky Dome Zenith Cap (Azure blue sky background)
-    const skyCapGeo = new THREE.SphereGeometry(260, 32, 16, 0, Math.PI * 2, 0, Math.PI / 2);
+    // 1. Sky Dome Zenith Cap (Smooth azure blue sky blending into top of panorama)
+    const skyCapGeo = new THREE.SphereGeometry(265, 32, 16, 0, Math.PI * 2, 0, Math.PI / 2);
     const skyCapMat = new THREE.MeshBasicMaterial({
-      color: 0x2A82D2,
+      color: 0x0C78DE,
       side: THREE.BackSide,
       depthWrite: false
     });
     const skyCap = new THREE.Mesh(skyCapGeo, skyCapMat);
-    skyCap.position.set(centerX, 0, centerZ);
+    skyCap.position.set(centerX, -2, centerZ);
     skylineGroup.add(skyCap);
 
-    // 2. 360° Panoramic Horizon Cylinder with Nairobi_skybox.png
+    // 2. 360° Panoramic Horizon Cylinder mapping the new Nairobi_skybox.png
     const skyboxTexture = textureLoader.load('/src/textures/Nairobi_skybox.png');
     skyboxTexture.colorSpace = THREE.SRGBColorSpace;
     skyboxTexture.wrapS = THREE.RepeatWrapping;
     skyboxTexture.wrapT = THREE.ClampToEdgeWrapping;
 
-    const cylRadius = 240;
-    const cylHeight = 120;
+    const cylRadius = 250;
+    const cylHeight = 135;
     const cylGeo = new THREE.CylinderGeometry(cylRadius, cylRadius, cylHeight, 64, 1, true);
 
     const cylMat = new THREE.MeshBasicMaterial({
@@ -42,9 +42,9 @@ export class SkylineBuilder {
     });
 
     const cylMesh = new THREE.Mesh(cylGeo, cylMat);
-    // Position so that the skyline horizon in the texture aligns perfectly with the ground level (y ≈ 0)
+    // Align city skyline base directly with the 3D ground level (y = 0)
     cylMesh.position.set(centerX, 42, centerZ);
-    cylMesh.rotation.y = -Math.PI / 2; // Orient iconic KICC and towers towards default camera
+    cylMesh.rotation.y = -Math.PI / 2; // Face iconic landmarks towards default camera
     skylineGroup.add(cylMesh);
 
     scene.add(skylineGroup);
