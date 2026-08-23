@@ -1,0 +1,39 @@
+# Line-ending policy. Added after a Windows checkout corrupted a PDF.
+#
+# Git guesses text-vs-binary by looking for NUL bytes in the first few KB.
+# scripts/make-fact-sheet.js writes an UNCOMPRESSED PDF, so the fact sheet
+# contains no NUL byte at all and git classified it as text. On a Windows
+# clone with core.autocrlf=true, checkout then rewrote its 62 LF bytes as
+# CRLF, the file grew 2245 -> 2307, and validate-content.js correctly failed
+# the build on a byte-count mismatch it had every right to trust.
+#
+# The heuristic is not a guarantee, so binary is declared, not detected.
+
+* text=auto
+
+# Documents and archives
+*.pdf  -text
+*.docx -text
+*.pptx -text
+*.xlsx -text
+*.zip  -text
+
+# Raster and vector-adjacent assets (SVG stays text: it is markup we diff)
+*.avif -text
+*.webp -text
+*.png  -text
+*.jpg  -text
+*.jpeg -text
+*.ico  -text
+
+# Fonts
+*.woff  -text
+*.woff2 -text
+*.ttf   -text
+*.otf   -text
+
+# Video and audio
+*.mp4  -text
+*.webm -text
+*.mov  -text
+*.mp3  -text
