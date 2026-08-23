@@ -1117,7 +1117,10 @@ select.input { cursor: pointer; }
 .tiers {
   list-style: none; margin: var(--sp-l) 0 0; padding: 0;
   display: grid; gap: var(--sp-m);
-  grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr));
+    /* 8rem, not 9.5rem: at 9.5rem two columns needed 328px against a 321px
+     container on a 375px phone, so five tiers stacked one-up into a very long
+     scroll. 8rem fits two. */
+  grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
 }
 
 .tier {
