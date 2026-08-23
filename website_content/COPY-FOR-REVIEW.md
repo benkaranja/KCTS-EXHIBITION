@@ -1,6 +1,6 @@
 # Website copy for review — Kenya-China Tea Summit 2027
 
-**Generated:** 2026-08-23 · **Build:** `dece287` · **Live:** https://kenya-china-tea-summit.pages.dev
+**Generated:** 2026-08-23 · **Build:** `88c4f5c` · **Live:** https://kenya-china-tea-summit.pages.dev
 
 This document contains **every word of visible text on the website**, extracted
 from the built pages, in the order a visitor reads them. It is generated
@@ -1018,7 +1018,7 @@ Register interest
 
 Three email routes, one phone number that also takes WhatsApp, and a form for everything else.
 
-### Summit office
+### Summit details
 
 - **Summit:** Kenya-China Tea Summit 2027
 - **Organising body:** Kenya-China Tea Summit Secretariat
