@@ -12,3 +12,12 @@ database_id = "bfeb8ee1-55b6-4045-a449-458be5e6a783"
 # Secrets (BREVO_API_KEY, TURNSTILE_SECRET_KEY, CONTACT_EMAIL, FROM_EMAIL,
 # FROM_NAME) are set via `wrangler pages secret put`, never in this file.
 # No [triggers] block: Pages Functions do not support cron. See ADR-005.
+
+# Plain (non-secret) runtime values. These are addresses and a display name that
+# already appear on the public site, so putting them in a secret store would be
+# security theatre and would make them invisible to anyone reading this repo.
+[vars]
+CONTACT_EMAIL = "info@kenyachinateasummit.com"
+FROM_EMAIL = "no-reply@kenyachinateasummit.com"
+FROM_NAME = "Kenya-China Tea Summit"
+SITE_ORIGIN = "https://kenyachinateasummit.com"

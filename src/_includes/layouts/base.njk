@@ -210,6 +210,12 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 <script src="/js/nav.js" defer></script>
 <script src="/js/form-handler.js" defer></script>
 <script src="/js/hero.js" defer></script>
+{# Turnstile. Without this the .cf-turnstile div in the forms renders nothing,
+   no cf-turnstile-response token is produced, and every genuine submission
+   scores a turnstile failure. Loaded only when a real site key exists, so a
+   misconfigured build ships no widget rather than a broken one.
+   challenges.cloudflare.com is already allowed in script-src and frame-src. #}
+{% if turnstileSiteKey %}<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" defer></script>{% endif %}
 {% block scripts %}{% endblock %}
 </body>
 </html>
