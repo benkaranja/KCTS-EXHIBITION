@@ -982,3 +982,47 @@ select.input { cursor: pointer; }
    on-ink accent and clears 4.5:1. Guarded by check-contrast.js. */
 .site-footer__base a { color: var(--c-ply-canary); }
 .site-footer__base a:hover { color: var(--c-paper); }
+
+/* ==== phone field: dial-code select + national number ====================
+   One field, two controls. The select is sized to its content up to 13rem so
+   long country names ("United States Minor Outlying Islands") do not push the
+   number input to nothing; below 30rem the pair stacks. */
+.phone { display: flex; gap: var(--sp-2xs); align-items: stretch; }
+.phone__code {
+  /* Explicit width, not auto. A select sized `auto` takes the width of its
+     WIDEST option — here "+500 South Georgia & South Sandwich Islands", which
+     grabbed 632px and left the number input 26px. 10rem fits "+254 Kenya"
+     with its arrow; longer names clip, and because the dial code is first in
+     the option text, the part that clips is the part that does not matter. */
+  flex: 0 0 10rem;
+  width: 10rem;
+  min-width: 0;
+  /* Options are "+254 Kenya", code first, so what survives the clip is the
+     part that matters. Native selects ignore text-overflow, so this is the
+     only way to control which end gets truncated. */
+}
+.phone__number { flex: 1 1 auto; min-width: 0; }
+@media (max-width: 30rem) {
+  /* Stacked. The explicit 10rem above has to be undone or the select sits as a
+     short stub above a full-width input. */
+  .phone { flex-direction: column; }
+  .phone__code { flex: none; width: 100%; }
+}
+
+/* ==== inline field errors ================================================
+   Replaces the browser's validation bubble, which shows one error at a time
+   and disappears on blur. Wired with aria-invalid + aria-describedby in
+   form-handler.js, so this is announced rather than merely coloured. */
+.form__error {
+  display: block;
+  margin-top: var(--sp-3xs);
+  font-size: var(--step--2);
+  font-weight: 600;
+  color: var(--c-seal);
+}
+/* The border carries the same signal as the message for anyone who cannot
+   parse colour alone — the message is the primary channel, this is support. */
+.input[aria-invalid="true"] {
+  border-color: var(--c-seal);
+  box-shadow: inset 0 0 0 1px var(--c-seal);
+}

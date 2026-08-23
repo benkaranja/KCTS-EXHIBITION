@@ -20,41 +20,40 @@
   {# Not "shared with nobody": Brevo sends the email and Cloudflare serves and
      rate-limits the request. Both are processors. The privacy notice names
      them, so this line must not contradict it. #}
-  <p class="form__intro">Required fields are marked. Your details are used to contact you about the summit, and are never sold. Our email and hosting providers handle them on our behalf — see the <a href="/privacy/">privacy notice</a>.</p>
+  <p class="form__intro">Required fields are marked. Your details are used to contact you about the summit, and are never sold. Our email and hosting providers handle them on our behalf. See the <a href="/privacy/">privacy notice</a>.</p>
 
   <div class="form__grid">
     <p class="form__row">
       <label class="label" for="reg-name">Full name <span class="req" aria-hidden="true">*</span></label>
-      <input class="input" id="reg-name" name="name" type="text" required autocomplete="name" maxlength="120">
+      <input class="input" id="reg-name" name="name" type="text" required
+             autocomplete="name" enterkeyhint="next" maxlength="120">
     </p>
 
     <p class="form__row">
       <label class="label" for="reg-email">Email <span class="req" aria-hidden="true">*</span></label>
-      <input class="input" id="reg-email" name="email" type="email" required autocomplete="email" maxlength="180">
+      <input class="input" id="reg-email" name="email" type="email" required
+             autocomplete="email" inputmode="email" enterkeyhint="next"
+             spellcheck="false" autocapitalize="off" maxlength="180">
     </p>
 
-    {# type="tel" not "text": it brings up the phone keypad on mobile and is
-       the only input type that does. No pattern attribute — international
-       numbering is too varied for a regex that does not reject someone. #}
-    <p class="form__row">
-      <label class="label" for="reg-phone">Mobile number, with country code <span class="req" aria-hidden="true">*</span></label>
-      <input class="input" id="reg-phone" name="phone" type="tel" required autocomplete="tel" maxlength="32" placeholder="+254 111 491 076">
-    </p>
+    {% set fieldId = "reg-phone" %}{% set fieldRequired = true %}
+    {% include "components/field-phone.njk" %}
 
     <p class="form__row">
       <label class="label" for="reg-org">Organisation <span class="req" aria-hidden="true">*</span></label>
-      <input class="input" id="reg-org" name="organisation" type="text" required autocomplete="organization" maxlength="160">
+      <input class="input" id="reg-org" name="organisation" type="text" required
+             autocomplete="organization" enterkeyhint="next" maxlength="160">
     </p>
 
     <p class="form__row">
       <label class="label" for="reg-title">Job title <span class="req" aria-hidden="true">*</span></label>
-      <input class="input" id="reg-title" name="jobTitle" type="text" required autocomplete="organization-title" maxlength="120">
+      <input class="input" id="reg-title" name="jobTitle" type="text" required
+             autocomplete="organization-title" enterkeyhint="next" maxlength="120">
     </p>
 
-    <p class="form__row">
-      <label class="label" for="reg-country">Country or region <span class="req" aria-hidden="true">*</span></label>
-      <input class="input" id="reg-country" name="country" type="text" required autocomplete="country-name" maxlength="80">
-    </p>
+    {% set fieldId = "reg-country" %}{% set fieldName = "country" %}
+    {% set fieldLabel = "Country or region" %}{% set fieldRequired = true %}
+    {% include "components/field-country.njk" %}
 
     <p class="form__row form__row--full">
       <label class="label" for="reg-category">Category <span class="req" aria-hidden="true">*</span></label>
@@ -83,7 +82,9 @@
 
   <p class="form__row form__row--full">
     <label class="label" for="reg-website">Website</label>
-    <input class="input" id="reg-website" name="website" type="url" autocomplete="url" maxlength="200" placeholder="https://">
+    <input class="input" id="reg-website" name="website" type="url" autocomplete="url"
+           inputmode="url" spellcheck="false" autocapitalize="off"
+           maxlength="200" placeholder="https://">
   </p>
 
   <p class="form__row form__row--full">

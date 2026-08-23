@@ -7,20 +7,22 @@
   <div class="form__grid">
     <p class="form__row">
       <label class="label" for="c-name">Full name <span class="req" aria-hidden="true">*</span></label>
-      <input class="input" id="c-name" name="name" type="text" required autocomplete="name" maxlength="120">
+      <input class="input" id="c-name" name="name" type="text" required
+             autocomplete="name" enterkeyhint="next" maxlength="120">
     </p>
     <p class="form__row">
       <label class="label" for="c-email">Email <span class="req" aria-hidden="true">*</span></label>
-      <input class="input" id="c-email" name="email" type="email" required autocomplete="email" maxlength="180">
+      <input class="input" id="c-email" name="email" type="email" required
+             autocomplete="email" inputmode="email" enterkeyhint="next"
+             spellcheck="false" autocapitalize="off" maxlength="180">
     </p>
     <p class="form__row">
       <label class="label" for="c-org">Organisation</label>
       <input class="input" id="c-org" name="organisation" type="text" autocomplete="organization" maxlength="160">
     </p>
-    <p class="form__row">
-      <label class="label" for="c-country">Country</label>
-      <input class="input" id="c-country" name="country" type="text" autocomplete="country-name" maxlength="80">
-    </p>
+    {% set fieldId = "c-country" %}{% set fieldName = "country" %}
+    {% set fieldLabel = "Country or region" %}{% set fieldRequired = false %}
+    {% include "components/field-country.njk" %}
   </div>
 
   <p class="form__row form__row--full">

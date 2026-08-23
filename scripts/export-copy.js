@@ -75,7 +75,7 @@ ORDER.splice(ORDER.findIndex(([u]) => u === "/news/") + 1, 0, ...newsPosts);
 
 /** Walk the <main> of a page and emit Markdown in document order. */
 function pageToMarkdown(html) {
-  const main = html.slice(html.indexOf("<main"), html.indexOf("</main>"));
+  let main = html.slice(html.indexOf("<main"), html.indexOf("</main>"));
   const out = [];
   let last = "";
 
@@ -83,6 +83,17 @@ function pageToMarkdown(html) {
     if (line && line !== last) out.push(line);
     last = line;
   };
+
+  // Collapse <select> bodies before scanning. A country dropdown is 246
+  // <option>s; stripping tags from the <p> that wraps it dumps every country
+  // name into the client review document as one 700-word paragraph. The
+  // reviewer needs to know the field is a dropdown and how long it is, not to
+  // read the list.
+  main = main.replace(
+    /<select\b([^>]*)>([\s\S]*?)<\/select>/gi,
+    (_whole, attrs, body) =>
+      `<select${attrs}>(dropdown, ${(body.match(/<option\b/gi) || []).length} options)</select>`,
+  );
 
   // Token-scan the elements that carry copy, in source order.
   const re =

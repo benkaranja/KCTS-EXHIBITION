@@ -3,10 +3,73 @@
 // accessible live-region status so the page never reloads under the user.
 //
 // ponytail: one handler bound to every .form on the page. No per-form config,
-// no framework, no validation library — the browser already validates.
+// no framework, no validation library.
+//
+// It does three things the browser does not do well on its own:
+//   1. joins the split phone field into one E.164 value,
+//   2. replaces native validation bubbles with persistent inline errors,
+//   3. reports failures by naming the problem AND the recovery.
 (() => {
   const forms = document.querySelectorAll("form.form");
   if (!forms.length) return;
+
+  // --- inline validation ---------------------------------------------------
+  // The browser's own bubbles show one error at a time, vanish on blur, and are
+  // announced inconsistently across screen readers. These are real DOM nodes,
+  // wired with aria-describedby and aria-invalid, so they persist and are read.
+  const messageFor = (field) => {
+    const v = field.validity;
+    const label =
+      field.closest(".form__row")?.querySelector(".label")?.textContent.replace("*", "").trim() ||
+      "This field";
+    if (v.valueMissing) return `${label} is required.`;
+    if (v.typeMismatch && field.type === "email") return "Enter an email address, including the @.";
+    if (v.typeMismatch && field.type === "url") return "Enter a full web address, starting with https://";
+    if (v.tooShort) return `${label} is too short.`;
+    if (v.tooLong) return `${label} is too long.`;
+    if (v.patternMismatch) return `${label} is not in the expected format.`;
+    return field.validationMessage;
+  };
+
+  const clearError = (field) => {
+    field.removeAttribute("aria-invalid");
+    const row = field.closest(".form__row");
+    row?.querySelector(".form__error")?.remove();
+    // aria-describedby may also point at a hint, so remove only our id.
+    const described = (field.getAttribute("aria-describedby") || "")
+      .split(/\s+/)
+      .filter((id) => id && id !== `${field.id}-error`)
+      .join(" ");
+    if (described) field.setAttribute("aria-describedby", described);
+    else field.removeAttribute("aria-describedby");
+  };
+
+  const showError = (field, msg) => {
+    const row = field.closest(".form__row");
+    if (!row) return;
+    clearError(field);
+    const el = document.createElement("span");
+    el.className = "form__error";
+    el.id = `${field.id}-error`;
+    el.textContent = msg;
+    row.appendChild(el);
+    field.setAttribute("aria-invalid", "true");
+    const existing = field.getAttribute("aria-describedby");
+    field.setAttribute("aria-describedby", existing ? `${existing} ${el.id}` : el.id);
+  };
+
+  const validate = (form) => {
+    const bad = [];
+    for (const field of form.querySelectorAll("input, select, textarea")) {
+      if (field.type === "hidden" || field.closest(".hp")) continue;
+      if (field.checkValidity()) clearError(field);
+      else {
+        showError(field, messageFor(field));
+        bad.push(field);
+      }
+    }
+    return bad;
+  };
 
   for (const form of forms) {
     // Stamp render time so the Function can reject submissions that arrive
@@ -18,9 +81,28 @@
     const status = form.querySelector(".form__status");
     const button = form.querySelector('button[type="submit"]');
 
+    // Clear a field's error as soon as it becomes valid. Waiting for the next
+    // submit leaves a corrected field still showing red.
+    form.addEventListener("input", (e) => {
+      const f = e.target;
+      if (f.getAttribute("aria-invalid") === "true" && f.checkValidity()) clearError(f);
+    });
+
     form.addEventListener("submit", async (e) => {
-      if (!form.reportValidity()) return; // let the browser show its own errors
       e.preventDefault();
+
+      const bad = validate(form);
+      if (bad.length) {
+        bad[0].focus();
+        if (status) {
+          status.textContent =
+            bad.length === 1
+              ? "One field needs attention."
+              : `${bad.length} fields need attention.`;
+          status.dataset.kind = "error";
+        }
+        return;
+      }
 
       const say = (msg, kind) => {
         if (!status) return;
@@ -34,6 +116,23 @@
       say("Sending your details.", "pending");
 
       const data = Object.fromEntries(new FormData(form).entries());
+
+      // Checkboxes sharing a name collapse to the last value under
+      // Object.fromEntries. Participation type allows both, so read it properly.
+      const participation = new FormData(form).getAll("participation");
+      if (participation.length) data.participation = participation;
+
+      // Join the split phone field. The backend and the D1 ledger store one
+      // E.164 string; the two-control split is a UI concern and stops here.
+      // A leading zero is a national trunk prefix and is wrong after a country
+      // code — dropping it is the whole reason the hint says "without the
+      // leading zero".
+      if (data.phone && data.phoneCountry) {
+        const national = String(data.phone).replace(/[^\d]/g, "").replace(/^0+/, "");
+        data.phone = national ? `${data.phoneCountry}${national}` : "";
+        delete data.phoneCountry;
+      }
+
       data.timeElapsed = Date.now() - Number(data.renderedAt || Date.now());
 
       try {
@@ -48,11 +147,12 @@
           const done = document.createElement("div");
           done.className = "form__done sheet";
           done.setAttribute("role", "status");
+          done.setAttribute("tabindex", "-1");
           done.innerHTML =
-            "<h2>Recorded</h2><p>The secretariat has your details and a confirmation is on its way. " +
+            "<h2>Recorded</h2><p>The Secretariat has your details and a confirmation is on its way. " +
             "If it does not arrive within a few minutes, check your spam folder before resubmitting.</p>";
           form.parentNode.insertBefore(done, form);
-          done.focus?.();
+          done.focus();
           return;
         }
 
@@ -62,7 +162,7 @@
         } else if (res.status === 400) {
           say("Something in the form was rejected. Check your email address and try again.", "error");
         } else {
-          say("The server could not record that. Try again in a moment, or email the secretariat.", "error");
+          say("The server could not record that. Try again in a moment, or email the Secretariat.", "error");
         }
       } catch {
         say("No connection. Check your network and try again — nothing was sent.", "error");

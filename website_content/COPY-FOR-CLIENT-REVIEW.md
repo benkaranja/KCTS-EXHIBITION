@@ -1,6 +1,6 @@
 # Copy for client review — Kenya-China Tea Summit 2027
 
-**Generated:** 2026-08-23 · **Build:** `88c4f5c`
+**Generated:** 2026-08-23 · **Build:** `6ebb2bc`
 
 Generated from the built site. This is what is live, not a draft of it.
 
@@ -494,21 +494,20 @@ Select the category that describes the organisation best. Exhibiting and partner
 
 ### Registration of interest
 
-Required fields are marked. Your details are used to contact you about the summit, and are never sold. Our email and hosting providers handle them on our behalf — see the privacy notice.
+Required fields are marked. Your details are used to contact you about the summit, and are never sold. Our email and hosting providers handle them on our behalf. See the privacy notice.
 
 Full name *
 
 Email *
 
-Mobile number, with country code *
-
+  - _field:_ Mobile number *
 Organisation *
 
 Job title *
 
-Country or region *
+Country or region * (dropdown, 247 options)
 
-Category * Select one Government / institutional delegate Tea producer / processor End-user / tea beverage brand Trader / merchant Machinery and packaging equipment supplier Investor / financial institution Media Academic / research institution Other / observer
+Category * (dropdown, 10 options)
 
 Optional. Leave both unticked to attend only.
 
@@ -532,7 +531,7 @@ Registration confirms by email. When the delegate portal opens, delegates sign i
 
 Journalists apply through media accreditation.
 
-If you would rather exhibit or partner than attend, those go through Exhibition and Partnership instead — different forms, different information needed.
+Exhibiting or partnering is a tick-box on this form. Background on each is on why exhibit and partner with the summit.
 
 ---
 
@@ -800,7 +799,7 @@ It does not create demand. Exporters still need products that fit the market, re
 
 Kenya's tea exports to China fell to 1.22 million kilograms in the first quarter of 2026, down 51% on the same period in 2025 (Food Business Middle East & Africa, 6 June 2026).
 
-Two things are worth holding together. The first is that this is a single quarter, measured before the tariff change took effect on 1 May — it describes the market the policy was designed to address, not the policy's result. The second is that Kenya's total tea exports rose 6% over the same period, to 144.46 million kilograms, led by record shipments to Pakistan. The China figure is not a story about Kenyan tea losing ground generally. It is a story about one market where the commercial relationships are thinner than the opportunity.
+Two things are worth holding together. The first is that this is a single quarter, measured before the tariff change took effect on 1 May. It describes the market the policy was designed to address, not the policy's result. The second is that Kenya's total tea exports rose 6% over the same period, to 144.46 million kilograms, led by record shipments to Pakistan. The China figure is not a story about Kenyan tea losing ground generally. It is a story about one market where the commercial relationships are thinner than the opportunity.
 
 That is a coordination problem, and it is the kind a summit can address.
 
@@ -1047,7 +1046,7 @@ Email *
 
 Organisation
 
-Country
+Country or region (dropdown, 247 options)
 
 Your message *
 
@@ -1150,7 +1149,7 @@ Last updated 2026. This notice covers the summit website only.
 
 Only what you type into a form on this site: your name, email address, and optionally your organisation, job title, country, registration category and message.
 
-Alongside each submission the system records a small amount of technical context used to detect automated spam: the country your request came from, your browser's user-agent string, and the page you submitted from. Your IP address is not stored — for rate limiting it is converted to a one-way hash that cannot be turned back into an address.
+Alongside each submission the system records a small amount of technical context used to detect automated spam: the country your request came from, your browser's user-agent string, and the page you submitted from. Your IP address is not stored. For rate limiting it is converted to a one-way hash that cannot be turned back into an address.
 
 ### What is not collected
 
@@ -1174,7 +1173,7 @@ Registration and enquiry records are kept until the end of the summit and for tw
 
 You can ask to see what is held about you, ask for it to be corrected, or ask for it to be deleted entirely. Use the contact form and say which. Requests are actioned rather than negotiated.
 
-Confirmation emails are transactional — they are the receipt for something you submitted. Any future announcement emails carry an unsubscribe link, and unsubscribing does not remove your registration.
+Confirmation emails are transactional. They are the receipt for something you submitted. Any future announcement emails carry an unsubscribe link, and unsubscribing does not remove your registration.
 
 ### Security
 
@@ -1202,7 +1201,7 @@ Contact the secretariat
 
 ## Terms of use
 
-The short version — this site is information, not a contract.
+The short version: this site is information, not a contract.
 
 Last updated 2026.
 
@@ -1258,7 +1257,7 @@ Contact the secretariat
 
 ## Code of conduct
 
-Applies to everyone at the summit — delegates, speakers, exhibitors, partners, media and staff.
+Applies to everyone at the summit: delegates, speakers, exhibitors, partners, media and staff.
 
 This summit brings together people from different countries, industries, languages and levels of seniority. The point is that they can do business with each other. That requires a floor of behaviour everyone can rely on.
 
@@ -1279,7 +1278,7 @@ This summit brings together people from different countries, industries, languag
 
 ### Reporting a concern
 
-During the summit, tell any member of summit staff — they are briefed to act, not to mediate. Before or after, use the contact form and mark it as a conduct concern. Reports are treated confidentially, and being the person who raises one will never be held against you.
+During the summit, tell any member of summit staff. They are briefed to act, not to mediate. Before or after, use the contact form and mark it as a conduct concern. Reports are treated confidentially, and being the person who raises one will never be held against you.
 
 ### Consequences
 

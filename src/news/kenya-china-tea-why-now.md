@@ -22,7 +22,7 @@ It does not create demand. Exporters still need products that fit the market, re
 
 Kenya's tea exports to China fell to 1.22 million kilograms in the first quarter of 2026, down 51% on the same period in 2025 (<a href="https://www.foodbusinessmea.com/kenya-tea-exports-rise-6-in-q1-2026-as-pakistan-strengthens-lead/" rel="noopener noreferrer" target="_blank">Food Business Middle East &amp; Africa, 6 June 2026</a>).
 
-Two things are worth holding together. The first is that this is a single quarter, measured before the tariff change took effect on 1 May — it describes the market the policy was designed to address, not the policy's result. The second is that Kenya's total tea exports rose 6% over the same period, to 144.46 million kilograms, led by record shipments to Pakistan. The China figure is not a story about Kenyan tea losing ground generally. It is a story about one market where the commercial relationships are thinner than the opportunity.
+Two things are worth holding together. The first is that this is a single quarter, measured before the tariff change took effect on 1 May. It describes the market the policy was designed to address, not the policy's result. The second is that Kenya's total tea exports rose 6% over the same period, to 144.46 million kilograms, led by record shipments to Pakistan. The China figure is not a story about Kenyan tea losing ground generally. It is a story about one market where the commercial relationships are thinner than the opportunity.
 
 That is a coordination problem, and it is the kind a summit can address.
 

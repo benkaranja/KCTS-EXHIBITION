@@ -1,0 +1,44 @@
+{# Telephone with a dialling-code prefix.
+
+   Two controls, one field. The select carries the country code and the input
+   carries the national number; form-handler.js joins them into a single E.164
+   `phone` value on submit, so the backend never sees the split.
+
+   WHY NOT one free-text box: asking for "mobile number with country code" and
+   trusting people to add it produces +254…, 254…, 0254…, 0722… in the same
+   column. The prefix is the one part a delegate cannot be expected to know for
+   their own country and always gets wrong for someone else's.
+
+   WHY NOT libphonenumber: 145KB of dependency to validate a field the
+   Secretariat will read by eye. A pattern that rejects nothing legitimate is
+   worth more here than one that is strictly correct and rejects a real number.
+
+   Options read "+254 Kenya", dial code FIRST. A native select shows only the
+   selected option's text in the closed state and clips it to the control
+   width, so "Kenya (+254)" rendered as "Kenya (+..." and hid the one value
+   this control exists to display. Country-name-last also keeps the codes in a
+   scannable column when the list is open. Ordering stays alphabetical by
+   country, which is how people look.
+
+   No flag emoji: they render inconsistently across platforms and several map
+   awkwardly to territories.
+
+   Caller sets: fieldId, fieldRequired. Reads `countries`. #}
+<div class="form__row form__row--full">
+  <label class="label" for="{{ fieldId }}">Mobile number{% if fieldRequired %} <span class="req" aria-hidden="true">*</span>{% endif %}</label>
+  <div class="phone">
+    {# aria-label, not a visible label: the pair reads as one field, and a
+       second visible label would announce as a separate question. #}
+    <select class="input phone__code" id="{{ fieldId }}-code" name="phoneCountry"
+            aria-label="Country dialling code" autocomplete="tel-country-code">
+      {% for c in countries.list %}
+      <option value="+{{ c.dial }}" data-code="{{ c.code }}"{% if c.code == countries.default %} selected{% endif %}>+{{ c.dial }} {{ c.name }}</option>
+      {% endfor %}
+    </select>
+    <input class="input phone__number" id="{{ fieldId }}" name="phone" type="tel"
+           inputmode="tel" autocomplete="tel-national" enterkeyhint="next"
+           maxlength="20" placeholder="712 345 678"
+           aria-describedby="{{ fieldId }}-hint"{% if fieldRequired %} required{% endif %}>
+  </div>
+  <span class="form__hint" id="{{ fieldId }}-hint">Without the leading zero.</span>
+</div>

@@ -1,0 +1,19 @@
+{# Country select. Shared by both forms so they can never drift apart.
+
+   Values are ISO 3166-1 alpha-2 codes, not display names. That is what
+   autocomplete="country" expects the browser to fill, and it means a rename in
+   a future ICU version cannot orphan stored records — "Türkiye" changed
+   display name in 2022; "TR" did not.
+
+   Caller sets: fieldId, fieldName, fieldLabel, fieldRequired.
+   Reads `countries` from src/_data/countries.js. #}
+<p class="form__row">
+  <label class="label" for="{{ fieldId }}">{{ fieldLabel or "Country or region" }}{% if fieldRequired %} <span class="req" aria-hidden="true">*</span>{% endif %}</label>
+  <select class="input" id="{{ fieldId }}" name="{{ fieldName or 'country' }}"
+          autocomplete="country"{% if fieldRequired %} required{% endif %}>
+    <option value="">Select a country</option>
+    {% for c in countries.list %}
+    <option value="{{ c.code }}"{% if c.code == countries.default %} selected{% endif %}>{{ c.name }}</option>
+    {% endfor %}
+  </select>
+</p>
