@@ -1,0 +1,1982 @@
+{
+  "unit": "m",
+  "provisional": true,
+  "halls": [
+    {
+      "id": "A",
+      "name": "Pavilion A — Main Exhibition Hall",
+      "width": 85,
+      "depth": 30,
+      "booths": [
+        {
+          "id": "A-001",
+          "x": 5,
+          "y": 10,
+          "w": 1.5,
+          "h": 3,
+          "type": "single",
+          "zone": "South Perimeter",
+          "status": "available"
+        },
+        {
+          "id": "A-002",
+          "x": 5,
+          "y": 37,
+          "w": 1.5,
+          "h": 3,
+          "type": "single",
+          "zone": "North Perimeter",
+          "status": "available"
+        },
+        {
+          "id": "A-003",
+          "x": 6.5,
+          "y": 10,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "South Perimeter",
+          "status": "available"
+        },
+        {
+          "id": "A-004",
+          "x": 9.5,
+          "y": 16,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 1 (West)",
+          "status": "available"
+        },
+        {
+          "id": "A-005",
+          "x": 9.5,
+          "y": 19,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 1 (West)",
+          "status": "available"
+        },
+        {
+          "id": "A-006",
+          "x": 9.5,
+          "y": 22,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 1 (West)",
+          "status": "available"
+        },
+        {
+          "id": "A-007",
+          "x": 9.5,
+          "y": 28,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 1 (West)",
+          "status": "available"
+        },
+        {
+          "id": "A-008",
+          "x": 9.5,
+          "y": 31,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 1 (West)",
+          "status": "available"
+        },
+        {
+          "id": "A-009",
+          "x": 6.5,
+          "y": 37,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "North Perimeter",
+          "status": "available"
+        },
+        {
+          "id": "A-010",
+          "x": 9.5,
+          "y": 10,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "South Perimeter",
+          "status": "available"
+        },
+        {
+          "id": "A-011",
+          "x": 12.5,
+          "y": 16,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 1 (West)",
+          "status": "available"
+        },
+        {
+          "id": "A-012",
+          "x": 12.5,
+          "y": 19,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 1 (West)",
+          "status": "available"
+        },
+        {
+          "id": "A-013",
+          "x": 12.5,
+          "y": 22,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 1 (West)",
+          "status": "available"
+        },
+        {
+          "id": "A-014",
+          "x": 12.5,
+          "y": 28,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 1 (West)",
+          "status": "available"
+        },
+        {
+          "id": "A-015",
+          "x": 12.5,
+          "y": 31,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 1 (West)",
+          "status": "available"
+        },
+        {
+          "id": "A-016",
+          "x": 12.5,
+          "y": 37,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "North Perimeter",
+          "status": "available"
+        },
+        {
+          "id": "A-017",
+          "x": 15.5,
+          "y": 10,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "South Perimeter",
+          "status": "available"
+        },
+        {
+          "id": "A-018",
+          "x": 18.5,
+          "y": 16,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 2",
+          "status": "available"
+        },
+        {
+          "id": "A-019",
+          "x": 18.5,
+          "y": 19,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 2",
+          "status": "available"
+        },
+        {
+          "id": "A-020",
+          "x": 18.5,
+          "y": 22,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 2",
+          "status": "available"
+        },
+        {
+          "id": "A-021",
+          "x": 18.5,
+          "y": 28,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 2",
+          "status": "available"
+        },
+        {
+          "id": "A-022",
+          "x": 18.5,
+          "y": 31,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 2",
+          "status": "available"
+        },
+        {
+          "id": "A-023",
+          "x": 18.5,
+          "y": 37,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "North Perimeter",
+          "status": "available"
+        },
+        {
+          "id": "A-024",
+          "x": 21.5,
+          "y": 10,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "South Perimeter",
+          "status": "available"
+        },
+        {
+          "id": "A-025",
+          "x": 21.5,
+          "y": 16,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 2",
+          "status": "available"
+        },
+        {
+          "id": "A-026",
+          "x": 21.5,
+          "y": 19,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 2",
+          "status": "available"
+        },
+        {
+          "id": "A-027",
+          "x": 21.5,
+          "y": 22,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 2",
+          "status": "available"
+        },
+        {
+          "id": "A-028",
+          "x": 21.5,
+          "y": 28,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 2",
+          "status": "available"
+        },
+        {
+          "id": "A-029",
+          "x": 21.5,
+          "y": 31,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 2",
+          "status": "available"
+        },
+        {
+          "id": "A-030",
+          "x": 21.5,
+          "y": 37,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "North Perimeter",
+          "status": "available"
+        },
+        {
+          "id": "A-031",
+          "x": 24.5,
+          "y": 10,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "South Perimeter",
+          "status": "available"
+        },
+        {
+          "id": "A-032",
+          "x": 24.5,
+          "y": 37,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "North Perimeter",
+          "status": "available"
+        },
+        {
+          "id": "A-033",
+          "x": 27.5,
+          "y": 10,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "South Perimeter",
+          "status": "available"
+        },
+        {
+          "id": "A-034",
+          "x": 27.5,
+          "y": 16,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 3",
+          "status": "available"
+        },
+        {
+          "id": "A-035",
+          "x": 27.5,
+          "y": 19,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 3",
+          "status": "available"
+        },
+        {
+          "id": "A-036",
+          "x": 27.5,
+          "y": 22,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 3",
+          "status": "available"
+        },
+        {
+          "id": "A-037",
+          "x": 27.5,
+          "y": 28,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 3",
+          "status": "available"
+        },
+        {
+          "id": "A-038",
+          "x": 27.5,
+          "y": 31,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 3",
+          "status": "available"
+        },
+        {
+          "id": "A-039",
+          "x": 27.5,
+          "y": 37,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "North Perimeter",
+          "status": "available"
+        },
+        {
+          "id": "A-040",
+          "x": 30.5,
+          "y": 10,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "South Perimeter",
+          "status": "available"
+        },
+        {
+          "id": "A-041",
+          "x": 30.5,
+          "y": 16,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 3",
+          "status": "available"
+        },
+        {
+          "id": "A-042",
+          "x": 30.5,
+          "y": 19,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 3",
+          "status": "available"
+        },
+        {
+          "id": "A-043",
+          "x": 30.5,
+          "y": 22,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 3",
+          "status": "available"
+        },
+        {
+          "id": "A-044",
+          "x": 30.5,
+          "y": 28,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 3",
+          "status": "available"
+        },
+        {
+          "id": "A-045",
+          "x": 30.5,
+          "y": 31,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 3",
+          "status": "available"
+        },
+        {
+          "id": "A-046",
+          "x": 30.5,
+          "y": 37,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "North Perimeter",
+          "status": "available"
+        },
+        {
+          "id": "A-047",
+          "x": 33.5,
+          "y": 10,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "South Perimeter",
+          "status": "available"
+        },
+        {
+          "id": "A-048",
+          "x": 33.5,
+          "y": 37,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "North Perimeter",
+          "status": "available"
+        },
+        {
+          "id": "A-049",
+          "x": 36.5,
+          "y": 10,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "South Perimeter",
+          "status": "available"
+        },
+        {
+          "id": "A-050",
+          "x": 36.5,
+          "y": 16,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 4 (Mid)",
+          "status": "available"
+        },
+        {
+          "id": "A-051",
+          "x": 36.5,
+          "y": 19,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 4 (Mid)",
+          "status": "available"
+        },
+        {
+          "id": "A-052",
+          "x": 36.5,
+          "y": 22,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 4 (Mid)",
+          "status": "available"
+        },
+        {
+          "id": "A-053",
+          "x": 36.5,
+          "y": 28,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 4 (Mid)",
+          "status": "available"
+        },
+        {
+          "id": "A-054",
+          "x": 36.5,
+          "y": 31,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 4 (Mid)",
+          "status": "available"
+        },
+        {
+          "id": "A-055",
+          "x": 36.5,
+          "y": 37,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "North Perimeter",
+          "status": "available"
+        },
+        {
+          "id": "A-056",
+          "x": 39.5,
+          "y": 16,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 4 (Mid)",
+          "status": "available"
+        },
+        {
+          "id": "A-057",
+          "x": 39.5,
+          "y": 19,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 4 (Mid)",
+          "status": "available"
+        },
+        {
+          "id": "A-058",
+          "x": 39.5,
+          "y": 22,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 4 (Mid)",
+          "status": "available"
+        },
+        {
+          "id": "A-059",
+          "x": 39.5,
+          "y": 28,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 4 (Mid)",
+          "status": "available"
+        },
+        {
+          "id": "A-060",
+          "x": 39.5,
+          "y": 31,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 4 (Mid)",
+          "status": "available"
+        },
+        {
+          "id": "A-061",
+          "x": 42.5,
+          "y": 10,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "South Perimeter",
+          "status": "available"
+        },
+        {
+          "id": "A-062",
+          "x": 42.5,
+          "y": 37,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "North Perimeter",
+          "status": "available"
+        },
+        {
+          "id": "A-063",
+          "x": 45.5,
+          "y": 10,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "South Perimeter",
+          "status": "available"
+        },
+        {
+          "id": "A-064",
+          "x": 45.5,
+          "y": 16,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 5",
+          "status": "available"
+        },
+        {
+          "id": "A-065",
+          "x": 45.5,
+          "y": 19,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 5",
+          "status": "available"
+        },
+        {
+          "id": "A-066",
+          "x": 45.5,
+          "y": 22,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 5",
+          "status": "available"
+        },
+        {
+          "id": "A-067",
+          "x": 45.5,
+          "y": 28,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 5",
+          "status": "available"
+        },
+        {
+          "id": "A-068",
+          "x": 45.5,
+          "y": 31,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 5",
+          "status": "available"
+        },
+        {
+          "id": "A-069",
+          "x": 45.5,
+          "y": 37,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "North Perimeter",
+          "status": "available"
+        },
+        {
+          "id": "A-070",
+          "x": 48.5,
+          "y": 10,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "South Perimeter",
+          "status": "available"
+        },
+        {
+          "id": "A-071",
+          "x": 48.5,
+          "y": 16,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 5",
+          "status": "available"
+        },
+        {
+          "id": "A-072",
+          "x": 48.5,
+          "y": 19,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 5",
+          "status": "available"
+        },
+        {
+          "id": "A-073",
+          "x": 48.5,
+          "y": 22,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 5",
+          "status": "available"
+        },
+        {
+          "id": "A-074",
+          "x": 48.5,
+          "y": 28,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 5",
+          "status": "available"
+        },
+        {
+          "id": "A-075",
+          "x": 48.5,
+          "y": 31,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 5",
+          "status": "available"
+        },
+        {
+          "id": "A-076",
+          "x": 48.5,
+          "y": 37,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "North Perimeter",
+          "status": "available"
+        },
+        {
+          "id": "A-077",
+          "x": 51.5,
+          "y": 10,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "South Perimeter",
+          "status": "available"
+        },
+        {
+          "id": "A-078",
+          "x": 54.5,
+          "y": 16,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 6",
+          "status": "available"
+        },
+        {
+          "id": "A-079",
+          "x": 54.5,
+          "y": 19,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 6",
+          "status": "available"
+        },
+        {
+          "id": "A-080",
+          "x": 54.5,
+          "y": 22,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 6",
+          "status": "available"
+        },
+        {
+          "id": "A-081",
+          "x": 54.5,
+          "y": 28,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 6",
+          "status": "available"
+        },
+        {
+          "id": "A-082",
+          "x": 54.5,
+          "y": 31,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 6",
+          "status": "available"
+        },
+        {
+          "id": "A-083",
+          "x": 54.5,
+          "y": 37,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "North Perimeter",
+          "status": "available"
+        },
+        {
+          "id": "A-084",
+          "x": 57.5,
+          "y": 10,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "South Perimeter",
+          "status": "available"
+        },
+        {
+          "id": "A-085",
+          "x": 57.5,
+          "y": 16,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 6",
+          "status": "available"
+        },
+        {
+          "id": "A-086",
+          "x": 57.5,
+          "y": 19,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 6",
+          "status": "available"
+        },
+        {
+          "id": "A-087",
+          "x": 57.5,
+          "y": 22,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 6",
+          "status": "available"
+        },
+        {
+          "id": "A-088",
+          "x": 57.5,
+          "y": 28,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 6",
+          "status": "available"
+        },
+        {
+          "id": "A-089",
+          "x": 57.5,
+          "y": 31,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 6",
+          "status": "available"
+        },
+        {
+          "id": "A-090",
+          "x": 57.5,
+          "y": 37,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "North Perimeter",
+          "status": "available"
+        },
+        {
+          "id": "A-091",
+          "x": 60.5,
+          "y": 10,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "South Perimeter",
+          "status": "available"
+        },
+        {
+          "id": "A-092",
+          "x": 60.5,
+          "y": 37,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "North Perimeter",
+          "status": "available"
+        },
+        {
+          "id": "A-093",
+          "x": 63.5,
+          "y": 10,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "South Perimeter",
+          "status": "available"
+        },
+        {
+          "id": "A-094",
+          "x": 63.5,
+          "y": 16,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 7",
+          "status": "available"
+        },
+        {
+          "id": "A-095",
+          "x": 63.5,
+          "y": 19,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 7",
+          "status": "available"
+        },
+        {
+          "id": "A-096",
+          "x": 63.5,
+          "y": 22,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 7",
+          "status": "available"
+        },
+        {
+          "id": "A-097",
+          "x": 63.5,
+          "y": 28,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 7",
+          "status": "available"
+        },
+        {
+          "id": "A-098",
+          "x": 63.5,
+          "y": 31,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 7",
+          "status": "available"
+        },
+        {
+          "id": "A-099",
+          "x": 63.5,
+          "y": 37,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "North Perimeter",
+          "status": "available"
+        },
+        {
+          "id": "A-100",
+          "x": 66.5,
+          "y": 10,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "South Perimeter",
+          "status": "available"
+        },
+        {
+          "id": "A-101",
+          "x": 66.5,
+          "y": 16,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 7",
+          "status": "available"
+        },
+        {
+          "id": "A-102",
+          "x": 66.5,
+          "y": 19,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 7",
+          "status": "available"
+        },
+        {
+          "id": "A-103",
+          "x": 66.5,
+          "y": 22,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 7",
+          "status": "available"
+        },
+        {
+          "id": "A-104",
+          "x": 66.5,
+          "y": 28,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 7",
+          "status": "available"
+        },
+        {
+          "id": "A-105",
+          "x": 66.5,
+          "y": 31,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 7",
+          "status": "available"
+        },
+        {
+          "id": "A-106",
+          "x": 66.5,
+          "y": 37,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "North Perimeter",
+          "status": "available"
+        },
+        {
+          "id": "A-107",
+          "x": 69.5,
+          "y": 10,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "South Perimeter",
+          "status": "available"
+        },
+        {
+          "id": "A-108",
+          "x": 69.5,
+          "y": 37,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "North Perimeter",
+          "status": "available"
+        },
+        {
+          "id": "A-109",
+          "x": 72.5,
+          "y": 10,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "South Perimeter",
+          "status": "available"
+        },
+        {
+          "id": "A-110",
+          "x": 72.5,
+          "y": 16,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 8",
+          "status": "available"
+        },
+        {
+          "id": "A-111",
+          "x": 72.5,
+          "y": 19,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 8",
+          "status": "available"
+        },
+        {
+          "id": "A-112",
+          "x": 72.5,
+          "y": 22,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 8",
+          "status": "available"
+        },
+        {
+          "id": "A-113",
+          "x": 72.5,
+          "y": 28,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 8",
+          "status": "available"
+        },
+        {
+          "id": "A-114",
+          "x": 72.5,
+          "y": 31,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 8",
+          "status": "available"
+        },
+        {
+          "id": "A-115",
+          "x": 72.5,
+          "y": 37,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "North Perimeter",
+          "status": "available"
+        },
+        {
+          "id": "A-116",
+          "x": 75.5,
+          "y": 16,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 8",
+          "status": "available"
+        },
+        {
+          "id": "A-117",
+          "x": 75.5,
+          "y": 19,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 8",
+          "status": "available"
+        },
+        {
+          "id": "A-118",
+          "x": 75.5,
+          "y": 22,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 8",
+          "status": "available"
+        },
+        {
+          "id": "A-119",
+          "x": 75.5,
+          "y": 28,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 8",
+          "status": "available"
+        },
+        {
+          "id": "A-120",
+          "x": 75.5,
+          "y": 31,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 8",
+          "status": "available"
+        },
+        {
+          "id": "A-121",
+          "x": 75.5,
+          "y": 10,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "South Perimeter",
+          "status": "available"
+        },
+        {
+          "id": "A-122",
+          "x": 75.5,
+          "y": 37,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "North Perimeter",
+          "status": "available"
+        },
+        {
+          "id": "A-123",
+          "x": 78.5,
+          "y": 10,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "South Perimeter",
+          "status": "available"
+        },
+        {
+          "id": "A-124",
+          "x": 78.5,
+          "y": 16,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 9",
+          "status": "available"
+        },
+        {
+          "id": "A-125",
+          "x": 78.5,
+          "y": 19,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 9",
+          "status": "available"
+        },
+        {
+          "id": "A-126",
+          "x": 78.5,
+          "y": 22,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 9",
+          "status": "available"
+        },
+        {
+          "id": "A-127",
+          "x": 78.5,
+          "y": 28,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 9",
+          "status": "available"
+        },
+        {
+          "id": "A-128",
+          "x": 78.5,
+          "y": 31,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 9",
+          "status": "available"
+        },
+        {
+          "id": "A-129",
+          "x": 78.5,
+          "y": 37,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "North Perimeter",
+          "status": "available"
+        },
+        {
+          "id": "A-130",
+          "x": 81.5,
+          "y": 10,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "South Perimeter",
+          "status": "available"
+        },
+        {
+          "id": "A-131",
+          "x": 81.5,
+          "y": 16,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 9",
+          "status": "available"
+        },
+        {
+          "id": "A-132",
+          "x": 81.5,
+          "y": 19,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 9",
+          "status": "available"
+        },
+        {
+          "id": "A-133",
+          "x": 81.5,
+          "y": 22,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 9",
+          "status": "available"
+        },
+        {
+          "id": "A-134",
+          "x": 81.5,
+          "y": 28,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 9",
+          "status": "available"
+        },
+        {
+          "id": "A-135",
+          "x": 81.5,
+          "y": 31,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Block 9",
+          "status": "available"
+        },
+        {
+          "id": "A-136",
+          "x": 81.5,
+          "y": 37,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "North Perimeter",
+          "status": "available"
+        },
+        {
+          "id": "A-137",
+          "x": 84.5,
+          "y": 10,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "South Perimeter",
+          "status": "available"
+        },
+        {
+          "id": "A-138",
+          "x": 84.5,
+          "y": 37,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "North Perimeter",
+          "status": "available"
+        },
+        {
+          "id": "A-139",
+          "x": 87.5,
+          "y": 10,
+          "w": 2,
+          "h": 3,
+          "type": "single",
+          "zone": "South Perimeter Corner",
+          "status": "available"
+        },
+        {
+          "id": "A-140",
+          "x": 87.5,
+          "y": 16,
+          "w": 2,
+          "h": 3,
+          "type": "standard",
+          "zone": "East Column",
+          "status": "available"
+        },
+        {
+          "id": "A-141",
+          "x": 87.5,
+          "y": 19,
+          "w": 2,
+          "h": 3,
+          "type": "standard",
+          "zone": "East Column",
+          "status": "available"
+        },
+        {
+          "id": "A-142",
+          "x": 87.5,
+          "y": 22,
+          "w": 2,
+          "h": 3,
+          "type": "standard",
+          "zone": "East Column",
+          "status": "available"
+        },
+        {
+          "id": "A-143",
+          "x": 87.5,
+          "y": 28,
+          "w": 2,
+          "h": 3,
+          "type": "standard",
+          "zone": "East Column",
+          "status": "available"
+        },
+        {
+          "id": "A-144",
+          "x": 87.5,
+          "y": 31,
+          "w": 2,
+          "h": 3,
+          "type": "standard",
+          "zone": "East Column",
+          "status": "available"
+        },
+        {
+          "id": "A-145",
+          "x": 87.5,
+          "y": 34,
+          "w": 2,
+          "h": 3,
+          "type": "standard",
+          "zone": "East Column",
+          "status": "available"
+        },
+        {
+          "id": "A-146",
+          "x": 87.5,
+          "y": 37,
+          "w": 2,
+          "h": 3,
+          "type": "single",
+          "zone": "North Perimeter Corner",
+          "status": "available"
+        }
+      ]
+    },
+    {
+      "id": "B",
+      "name": "Pavilion B — Tea Innovation & Culture Pavilion",
+      "width": 85,
+      "depth": 20,
+      "booths": [
+        {
+          "id": "B-001",
+          "x": 5,
+          "y": 50,
+          "w": 3,
+          "h": 3,
+          "type": "premium",
+          "zone": "Pavilion B — Innovation",
+          "status": "available"
+        },
+        {
+          "id": "B-002",
+          "x": 5,
+          "y": 67,
+          "w": 3,
+          "h": 3,
+          "type": "premium",
+          "zone": "Pavilion B — Innovation",
+          "status": "available"
+        },
+        {
+          "id": "B-003",
+          "x": 8,
+          "y": 50,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Pavilion B — Innovation",
+          "status": "available"
+        },
+        {
+          "id": "B-004",
+          "x": 11,
+          "y": 53,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Pavilion B — Tea Tech Block 1",
+          "status": "available"
+        },
+        {
+          "id": "B-005",
+          "x": 11,
+          "y": 56,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Pavilion B — Tea Tech Block 1",
+          "status": "available"
+        },
+        {
+          "id": "B-006",
+          "x": 11,
+          "y": 61,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Pavilion B — Tea Tech Block 1",
+          "status": "available"
+        },
+        {
+          "id": "B-007",
+          "x": 14,
+          "y": 53,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Pavilion B — Tea Tech Block 1",
+          "status": "available"
+        },
+        {
+          "id": "B-008",
+          "x": 14,
+          "y": 56,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Pavilion B — Tea Tech Block 1",
+          "status": "available"
+        },
+        {
+          "id": "B-009",
+          "x": 14,
+          "y": 61,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Pavilion B — Tea Tech Block 1",
+          "status": "available"
+        },
+        {
+          "id": "B-010",
+          "x": 20,
+          "y": 53,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Pavilion B — Tea Culture Block 2",
+          "status": "available"
+        },
+        {
+          "id": "B-011",
+          "x": 20,
+          "y": 56,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Pavilion B — Tea Culture Block 2",
+          "status": "available"
+        },
+        {
+          "id": "B-012",
+          "x": 20,
+          "y": 61,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Pavilion B — Tea Culture Block 2",
+          "status": "available"
+        },
+        {
+          "id": "B-013",
+          "x": 23,
+          "y": 53,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Pavilion B — Tea Culture Block 2",
+          "status": "available"
+        },
+        {
+          "id": "B-014",
+          "x": 23,
+          "y": 56,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Pavilion B — Tea Culture Block 2",
+          "status": "available"
+        },
+        {
+          "id": "B-015",
+          "x": 23,
+          "y": 61,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Pavilion B — Tea Culture Block 2",
+          "status": "available"
+        },
+        {
+          "id": "B-016",
+          "x": 29,
+          "y": 53,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Pavilion B — Agro Machinery Block 3",
+          "status": "available"
+        },
+        {
+          "id": "B-017",
+          "x": 29,
+          "y": 56,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Pavilion B — Agro Machinery Block 3",
+          "status": "available"
+        },
+        {
+          "id": "B-018",
+          "x": 29,
+          "y": 61,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Pavilion B — Agro Machinery Block 3",
+          "status": "available"
+        },
+        {
+          "id": "B-019",
+          "x": 32,
+          "y": 53,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Pavilion B — Agro Machinery Block 3",
+          "status": "available"
+        },
+        {
+          "id": "B-020",
+          "x": 32,
+          "y": 56,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Pavilion B — Agro Machinery Block 3",
+          "status": "available"
+        },
+        {
+          "id": "B-021",
+          "x": 32,
+          "y": 61,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Pavilion B — Agro Machinery Block 3",
+          "status": "available"
+        },
+        {
+          "id": "B-022",
+          "x": 38,
+          "y": 53,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Pavilion B — Packaging & Logistics",
+          "status": "available"
+        },
+        {
+          "id": "B-023",
+          "x": 38,
+          "y": 56,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Pavilion B — Packaging & Logistics",
+          "status": "available"
+        },
+        {
+          "id": "B-024",
+          "x": 38,
+          "y": 61,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Pavilion B — Packaging & Logistics",
+          "status": "available"
+        },
+        {
+          "id": "B-025",
+          "x": 41,
+          "y": 53,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Pavilion B — Packaging & Logistics",
+          "status": "available"
+        },
+        {
+          "id": "B-026",
+          "x": 41,
+          "y": 56,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Pavilion B — Packaging & Logistics",
+          "status": "available"
+        },
+        {
+          "id": "B-027",
+          "x": 41,
+          "y": 61,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Pavilion B — Packaging & Logistics",
+          "status": "available"
+        },
+        {
+          "id": "B-028",
+          "x": 47,
+          "y": 53,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Pavilion B — Artisanal & Specialty",
+          "status": "available"
+        },
+        {
+          "id": "B-029",
+          "x": 47,
+          "y": 56,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Pavilion B — Artisanal & Specialty",
+          "status": "available"
+        },
+        {
+          "id": "B-030",
+          "x": 47,
+          "y": 61,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Pavilion B — Artisanal & Specialty",
+          "status": "available"
+        },
+        {
+          "id": "B-031",
+          "x": 50,
+          "y": 53,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Pavilion B — Artisanal & Specialty",
+          "status": "available"
+        },
+        {
+          "id": "B-032",
+          "x": 50,
+          "y": 56,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Pavilion B — Artisanal & Specialty",
+          "status": "available"
+        },
+        {
+          "id": "B-033",
+          "x": 50,
+          "y": 61,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Pavilion B — Artisanal & Specialty",
+          "status": "available"
+        },
+        {
+          "id": "B-034",
+          "x": 56,
+          "y": 53,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Pavilion B — B2B Matchmaking",
+          "status": "available"
+        },
+        {
+          "id": "B-035",
+          "x": 56,
+          "y": 56,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Pavilion B — B2B Matchmaking",
+          "status": "available"
+        },
+        {
+          "id": "B-036",
+          "x": 56,
+          "y": 61,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Pavilion B — B2B Matchmaking",
+          "status": "available"
+        },
+        {
+          "id": "B-037",
+          "x": 59,
+          "y": 53,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Pavilion B — B2B Matchmaking",
+          "status": "available"
+        },
+        {
+          "id": "B-038",
+          "x": 59,
+          "y": 56,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Pavilion B — B2B Matchmaking",
+          "status": "available"
+        },
+        {
+          "id": "B-039",
+          "x": 59,
+          "y": 61,
+          "w": 3,
+          "h": 3,
+          "type": "standard",
+          "zone": "Pavilion B — B2B Matchmaking",
+          "status": "available"
+        },
+        {
+          "id": "B-040",
+          "x": 65,
+          "y": 53,
+          "w": 3,
+          "h": 3,
+          "type": "premium",
+          "zone": "Pavilion B — China Pavilion Hub",
+          "status": "available"
+        },
+        {
+          "id": "B-041",
+          "x": 65,
+          "y": 56,
+          "w": 3,
+          "h": 3,
+          "type": "premium",
+          "zone": "Pavilion B — China Pavilion Hub",
+          "status": "available"
+        },
+        {
+          "id": "B-042",
+          "x": 65,
+          "y": 61,
+          "w": 3,
+          "h": 3,
+          "type": "premium",
+          "zone": "Pavilion B — China Pavilion Hub",
+          "status": "available"
+        },
+        {
+          "id": "B-043",
+          "x": 68,
+          "y": 53,
+          "w": 3,
+          "h": 3,
+          "type": "premium",
+          "zone": "Pavilion B — China Pavilion Hub",
+          "status": "available"
+        },
+        {
+          "id": "B-044",
+          "x": 68,
+          "y": 56,
+          "w": 3,
+          "h": 3,
+          "type": "premium",
+          "zone": "Pavilion B — China Pavilion Hub",
+          "status": "available"
+        },
+        {
+          "id": "B-045",
+          "x": 68,
+          "y": 61,
+          "w": 3,
+          "h": 3,
+          "type": "premium",
+          "zone": "Pavilion B — China Pavilion Hub",
+          "status": "available"
+        },
+        {
+          "id": "B-046",
+          "x": 74,
+          "y": 53,
+          "w": 3,
+          "h": 3,
+          "type": "premium",
+          "zone": "Pavilion B — Tea Tasting Lounge",
+          "status": "available"
+        },
+        {
+          "id": "B-047",
+          "x": 74,
+          "y": 56,
+          "w": 3,
+          "h": 3,
+          "type": "premium",
+          "zone": "Pavilion B — Tea Tasting Lounge",
+          "status": "available"
+        },
+        {
+          "id": "B-048",
+          "x": 74,
+          "y": 61,
+          "w": 3,
+          "h": 3,
+          "type": "premium",
+          "zone": "Pavilion B — Tea Tasting Lounge",
+          "status": "available"
+        },
+        {
+          "id": "B-049",
+          "x": 80,
+          "y": 50,
+          "w": 5,
+          "h": 5,
+          "type": "vip",
+          "zone": "Pavilion B — VIP Presidential Tea Lounge",
+          "status": "available"
+        },
+        {
+          "id": "B-050",
+          "x": 80,
+          "y": 62,
+          "w": 5,
+          "h": 5,
+          "type": "vip",
+          "zone": "Pavilion B — Kenya Tea Board Pavilion",
+          "status": "available"
+        }
+      ]
+    }
+  ]
+}

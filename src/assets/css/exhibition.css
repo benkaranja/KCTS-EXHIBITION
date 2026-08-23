@@ -1,0 +1,306 @@
+/* exhibition.css — route-scoped styles for the exhibition floor plan.
+ *
+ * RULE: no literal colour, no literal size, no literal spacing.
+ * Every value is var(--…) from tokens.css.
+ * Check:  grep -nE '#[0-9a-fA-F]{3,8}|rgba?\(|[0-9.]+(px|rem)' src/assets/css/exhibition.css
+ *
+ * Geometry that is data (booth x/y/w/h) is set as SVG attributes, not here.
+ * Colour on booths is driven by data-status attributes. */
+
+/* ── Plan container ────────────────────────────────────────────────────── */
+
+.exhibition-plan {
+  position: relative;
+}
+
+#plan-container {
+  overflow: auto;
+  background: var(--c-paper);
+  border: var(--radius-s) solid var(--c-rule);
+  border-radius: var(--radius-m);
+}
+
+.plan-svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* ── Hall outlines ─────────────────────────────────────────────────────── */
+
+.plan-hall__bg {
+  fill: var(--c-paper);
+  stroke: var(--c-engrave);
+}
+
+.plan-hall__label {
+  font-family: var(--font-display);
+  font-weight: 700;
+  fill: var(--c-ink);
+  text-anchor: middle;
+  dominant-baseline: central;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ── Booth fills — driven by data-status ───────────────────────────────── */
+
+.booth__fill {
+  stroke: var(--c-rule);
+  cursor: pointer;
+  transition: filter var(--dur-fast) var(--ease-out);
+}
+
+.booth__fill[data-status="available"] {
+  fill: var(--c-tint);
+}
+
+.booth__fill[data-status="held"] {
+  fill: var(--c-ply-canary);
+}
+
+.booth__fill[data-status="booked"] {
+  fill: var(--c-ink-2);
+}
+
+.booth__fill[data-status="blocked"] {
+  fill: var(--c-tint-deep);
+}
+
+.booth__fill:hover,
+.booth__fill:focus-visible {
+  filter: brightness(1.12);
+  outline: none;
+}
+
+.booth__fill:focus-visible {
+  outline: var(--radius-s) solid var(--c-focus);
+  outline-offset: var(--radius-s);
+}
+
+/* ── Pattern overlays (WCAG 1.4.1 — not colour alone) ─────────────────── */
+
+.booth__pattern {
+  pointer-events: none;
+}
+
+.booth__pattern[data-status="blocked"] {
+  fill: url(#hatch-blocked);
+}
+
+.booth__pattern[data-status="held"] {
+  fill: url(#hatch-held);
+}
+
+.booth__pattern[data-status="booked"] {
+  fill: url(#hatch-booked);
+}
+
+.hatch-line {
+  stroke: var(--c-ink);
+}
+
+.held-dot {
+  fill: var(--c-ink);
+}
+
+.booked-line {
+  stroke: var(--c-text-on-ink);
+}
+
+/* ── Booth labels ──────────────────────────────────────────────────────── */
+
+.booth__label {
+  font-family: var(--font-data);
+  font-weight: 500;
+  fill: var(--c-ink);
+  text-anchor: middle;
+  dominant-baseline: central;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* On dark fills (booked = --c-ink-2), labels switch to light */
+.booth__fill[data-status="booked"] ~ .booth__label {
+  fill: var(--c-text-on-ink);
+}
+
+/* ── Controls bar ──────────────────────────────────────────────────────── */
+
+.plan-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-xs);
+  padding: var(--sp-s) 0;
+}
+
+.plan-controls__group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2xs);
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.plan-controls__btn {
+  font-family: var(--font-ui);
+  font-size: var(--step--1);
+  font-weight: 500;
+  line-height: var(--lh-tight);
+  color: var(--c-ink);
+  background: var(--c-tint);
+  border: var(--radius-s) solid var(--c-rule);
+  border-radius: var(--radius-m);
+  padding: var(--sp-2xs) var(--sp-s);
+  cursor: pointer;
+  transition: background var(--dur-fast) var(--ease-out),
+              color var(--dur-fast) var(--ease-out);
+}
+
+.plan-controls__btn:hover {
+  background: var(--c-tint-deep);
+}
+
+.plan-controls__btn--active {
+  background: var(--c-ink-2);
+  color: var(--c-text-on-ink);
+  border-color: var(--c-engrave);
+}
+
+.plan-controls__btn--3d {
+  margin-inline-start: auto;
+  background: var(--c-ply-canary);
+  color: var(--c-ink);
+  border-color: var(--c-ply-canary);
+  font-weight: 700;
+}
+
+.plan-controls__btn--3d:hover {
+  background: var(--c-ply-orange);
+}
+
+/* ── Booth detail panel ────────────────────────────────────────────────── */
+
+.booth-panel {
+  background: var(--c-paper);
+  border: var(--radius-s) solid var(--c-rule);
+  border-radius: var(--radius-m);
+  margin-top: var(--sp-s);
+  max-width: var(--wrap-narrow);
+}
+
+.booth-panel__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--sp-s) var(--sp-m);
+  border-bottom: var(--radius-s) solid var(--c-rule);
+  background: var(--c-tint);
+}
+
+.booth-panel__title {
+  font-family: var(--font-display);
+  font-size: var(--step-1);
+  font-weight: 700;
+  color: var(--c-ink);
+  line-height: var(--lh-heading);
+}
+
+.booth-panel__close {
+  background: transparent;
+  border: none;
+  color: var(--c-text-muted);
+  cursor: pointer;
+  border-radius: var(--radius-s);
+  padding: var(--sp-3xs);
+  transition: color var(--dur-fast) var(--ease-out);
+}
+
+.booth-panel__close:hover {
+  color: var(--c-ink);
+}
+
+.booth-panel__info {
+  padding: var(--sp-s) var(--sp-m);
+}
+
+.booth-panel__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: var(--sp-2xs) 0;
+  border-bottom: var(--radius-s) solid var(--c-rule);
+}
+
+.booth-panel__row:last-child {
+  border-bottom: none;
+}
+
+.booth-panel__row dt {
+  font-family: var(--font-ui);
+  font-size: var(--step--2);
+  font-weight: 500;
+  color: var(--c-text-muted);
+  text-transform: uppercase;
+  letter-spacing: var(--track-label);
+}
+
+.booth-panel__row dd {
+  font-family: var(--font-data);
+  font-size: var(--step--1);
+  font-weight: 500;
+  color: var(--c-ink);
+}
+
+/* ── Legend ─────────────────────────────────────────────────────────────── */
+
+.plan-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-s);
+  padding: var(--sp-s) 0;
+}
+
+.plan-legend__item {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2xs);
+  font-family: var(--font-ui);
+  font-size: var(--step--2);
+  color: var(--c-ink);
+}
+
+.plan-legend__swatch {
+  display: inline-block;
+  width: var(--sp-m);
+  height: var(--sp-s);
+  border: var(--radius-s) solid var(--c-rule);
+  border-radius: var(--radius-s);
+}
+
+.plan-legend__swatch[data-status="available"] {
+  background: var(--c-tint);
+}
+
+.plan-legend__swatch[data-status="held"] {
+  background: var(--c-ply-canary);
+}
+
+.plan-legend__swatch[data-status="booked"] {
+  background: var(--c-ink-2);
+}
+
+.plan-legend__swatch[data-status="blocked"] {
+  background: var(--c-tint-deep);
+}
+
+/* ── 3D container (hidden until activated) ─────────────────────────────── */
+
+.three-container {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: var(--c-ink);
+}
