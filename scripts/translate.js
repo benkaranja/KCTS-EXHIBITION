@@ -13,6 +13,7 @@
 // Requires a built public/. Run `npm run build` first.
 
 import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync } from "node:fs";
+import { extractStrings } from "./i18n.js";
 
 // .env.local is the project's convention for local secrets. Read it here
 // rather than requiring the caller to export the key by hand.
@@ -64,9 +65,6 @@ const listPages = (dir = "public", depth = 0) =>
 // header nav, footer, buttons and <title> in English, so a Chinese page read
 // as a half-translated one. `li` covers the nav and footer links, `a.btn`
 // covers the calls to action.
-const BLOCKS =
-  /<(h1|h2|h3|p|li|dt|dd|figcaption|caption|title|button|legend)\b[^>]*>([\s\S]*?)<\/\1>|<a\b[^>]*class="[^"]*\bbtn\b[^"]*"[^>]*>([\s\S]*?)<\/a>/gi;
-
 /** Tag sequence of a fragment, used to check the model preserved the markup. */
 export const tagShape = (html) => (html.match(/<\/?[a-z][^>]*>/gi) ?? []).map((t) =>
   t.replace(/\s[^>]*/, "").toLowerCase().replace(">", "").replace("/", "/"),
@@ -125,10 +123,10 @@ for (const file of IS_MAIN ? listPages() : []) {
       ? "home"
       : file.slice("public/".length).replace(/\/index\.html$/, "").replace(/\//g, "-");
   const target = `${OUT}/${slug}.json`;
-  if (existsSync(target) && !FORCE) {
-    console.log(`${slug.padEnd(18)} skipped (already translated)`);
-    continue;
-  }
+  const existing =
+    existsSync(target) && !FORCE
+      ? (JSON.parse(readFileSync(target, "utf8")).strings ?? {})
+      : {};
 
   const html = readFileSync(file, "utf8");
 
@@ -136,14 +134,17 @@ for (const file of IS_MAIN ? listPages() : []) {
   // up directly without depending on element order staying stable between the
   // build that produced the extraction and the build that applies it.
   const strings = {};
-  for (const m of html.matchAll(BLOCKS)) {
-    const inner = (m[2] ?? m[3] ?? "").trim();
-    if (!inner || inner.length < 2) continue;
-    if (!/[A-Za-z]{2}/.test(inner.replace(/<[^>]+>/g, ""))) continue; // markup only
-    strings[inner] = inner;
+  for (const v of extractStrings(html)) strings[v] = v;
+
+  // Only translate what is NOT already on disk. Before this, a page with one
+  // new string had to be re-translated whole via --force, which re-churned
+  // Chinese that had already been produced and reviewed. Adding the attribute
+  // pass would have meant re-translating all 25 pages to pick up 44 strings.
+  const keys = Object.keys(strings).filter((k) => FORCE || !(k in existing));
+  if (!keys.length) {
+    console.log(`${slug.padEnd(18)} up to date`);
+    continue;
   }
-  const keys = Object.keys(strings);
-  if (!keys.length) continue;
 
   // Numbered keys keep the payload small and stop the model from having to
   // echo long HTML back as an object key.
@@ -159,7 +160,9 @@ for (const file of IS_MAIN ? listPages() : []) {
     const batch = Object.fromEntries(entries.slice(i, i + BATCH));
     const want = Object.keys(batch);
     const ask = async (extra) => {
-      const res = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+      let res;
+      try {
+        res = await fetch("https://openrouter.ai/api/v1/chat/completions", {
         method: "POST",
         headers: { Authorization: `Bearer ${KEY}`, "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -176,7 +179,13 @@ for (const file of IS_MAIN ? listPages() : []) {
             },
           ],
         }),
-      });
+        });
+      } catch (e) {
+        // DNS failure, timeout, offline. Without this the whole run dies on
+        // one blip and every page after it stays untranslated.
+        console.error(`  network: ${String(e.message ?? e).slice(0, 80)}`);
+        return null;
+      }
       if (!res.ok) return null;
       const raw = (await res.json())?.choices?.[0]?.message?.content ?? "";
       const obj = parseLoose(raw);
@@ -201,13 +210,16 @@ for (const file of IS_MAIN ? listPages() : []) {
 
   // Any fragment whose markup the model altered is dropped rather than
   // shipped — a mangled tag is a broken page, and English is a safe fallback.
-  const map = {};
+  const map = { ...existing };
   let missing = 0;
   let mangled = 0;
   for (const [k, source] of Object.entries(numbered)) {
     const out = parsed[k];
     if (typeof out !== "string" || !out.trim()) { missing++; continue; }
     if (tagShape(out) !== tagShape(source)) { mangled++; continue; }
+    // A double quote in the translation would terminate the attribute it is
+    // about to be written into and produce broken markup.
+    if (out.includes('"')) { mangled++; continue; }
     map[source] = out;
   }
 
