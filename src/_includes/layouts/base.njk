@@ -33,6 +33,18 @@
 <link rel="stylesheet" href="/css/tokens.css">
 <link rel="stylesheet" href="/css/style.css">
 
+{# Per-page stylesheets, declared as a front-matter list:
+
+     pageStyles: ["/css/exhibition.css"]
+
+   Deliberately NOT a Nunjucks {% block %}. Eleventy renders each layout in the
+   chain separately and hands the result down as an opaque string, so a block
+   declared in a page that chains through page.njk never reaches this file — it
+   gets flattened into the body instead, which is where the exhibition
+   stylesheet first landed. The data cascade does reach here. #}
+{% if pageStyles %}{% for href in pageStyles %}<link rel="stylesheet" href="{{ href }}">
+{% endfor %}{% endif %}
+
 {% block head %}{% endblock %}
 
 <script type="application/ld+json">
@@ -270,6 +282,11 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
    misconfigured build ships no widget rather than a broken one.
    challenges.cloudflare.com is already allowed in script-src and frame-src. #}
 {% if turnstileSiteKey %}<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" defer></script>{% endif %}
+{# Per-page modules: pageScripts: ["/js/exhibition/plan-2d.js"]. Same reason as
+   pageStyles above. type="module" is deferred by definition, so position here
+   is correct and no `defer` is needed. #}
+{% if pageScripts %}{% for src in pageScripts %}<script type="module" src="{{ src }}"></script>
+{% endfor %}{% endif %}
 {% block scripts %}{% endblock %}
 </body>
 </html>

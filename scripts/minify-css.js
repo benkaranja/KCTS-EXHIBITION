@@ -7,6 +7,7 @@
 
 import { readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
+import { pathToFileURL } from "node:url";
 
 const DIR = "public/css";
 
@@ -58,7 +59,14 @@ export function minifyCss(css) {
   return out.trim();
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) {
+// `file://${process.argv[1]}` looks equivalent and is not. On Windows argv[1]
+// is `D:\path\to\script.js`, so that template produces
+// `file://D:\path\to\script.js` while import.meta.url is
+// `file:///D:/path/to/script.js`. The comparison was silently false, this
+// block never ran, and a Windows build shipped every stylesheet unminified —
+// which read as "the new CSS blew the budget by 200%" rather than as a broken
+// minifier. pathToFileURL is the platform-correct conversion.
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
   for (const file of readdirSync(DIR)) {
     if (!file.endsWith(".css")) continue;
     const path = join(DIR, file);
