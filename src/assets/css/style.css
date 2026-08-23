@@ -975,3 +975,10 @@ select.input { cursor: pointer; }
   color: var(--c-text-muted);
   margin-top: calc(var(--sp-s) * -0.5);
 }
+
+/* Footer base line: contact and legal links.
+   These inherit the global `a { color: var(--c-seal) }`, which is oxblood and
+   measures ~1.5:1 against the intaglio ground. Canary is the established
+   on-ink accent and clears 4.5:1. Guarded by check-contrast.js. */
+.site-footer__base a { color: var(--c-ply-canary); }
+.site-footer__base a:hover { color: var(--c-paper); }

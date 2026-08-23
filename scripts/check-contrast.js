@@ -43,6 +43,14 @@ const PAIRS = [
   ["--c-ply-salmon", "--c-ink-2", 3.0, "salmon ply on intaglio (large only)"],
   ["--c-ink", "--c-tint-deep", 4.5, "text on heavy tint"],
   ["--c-engrave", "--c-paper", 3.0, "guilloche line work (non-text)"],
+
+  // V3. The footer base line gained mailto/tel/legal links, which inherited
+  // the global `a { color: var(--c-seal) }` and rendered oxblood on the dark
+  // green ground at about 1.5:1. Shipped and caught by eye, not by this file,
+  // because no pair covered reversed LINK text. It does now.
+  ["--c-ply-canary", "--c-ink", 4.5, "link text in the footer base line"],
+  ["--c-paper", "--c-ink", 4.5, "reversed text on the deepest ground"],
+  ["--c-text-on-ink-muted", "--c-ink", 4.5, "reversed secondary on deepest ground"],
 ];
 
 let failed = 0;
