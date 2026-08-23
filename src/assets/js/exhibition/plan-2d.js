@@ -356,12 +356,31 @@ function init() {
     showPanel(booth);
   });
 
-  // 3D view button — wired in step 3
+  // 3D view button — dynamically imports three.js bundle on demand
   const btn3d = document.getElementById("btn-3d-view");
+  let threeApp = null;
   if (btn3d) {
     btn3d.addEventListener("click", async () => {
-      // Dynamic import — wired in step 3 of the port
-      // await import("/js/exhibition/three-view.js");
+      const threeContainer = document.getElementById("three-container");
+      if (!threeContainer) return;
+      if (!threeApp) {
+        btn3d.setAttribute("disabled", "true");
+        btn3d.textContent = "...";
+        try {
+          const { init3D } = await import("/js/exhibition/three-view.js");
+          threeApp = init3D(threeContainer, manifest, (boothId) => {
+            const booth = findBooth(boothId);
+            if (booth) showPanel(booth);
+          });
+        } catch (err) {
+          console.error("3D view load failed:", err);
+        } finally {
+          btn3d.removeAttribute("disabled");
+          btn3d.textContent = "3D view";
+        }
+      } else {
+        threeContainer.hidden = false;
+      }
     });
   }
 }
