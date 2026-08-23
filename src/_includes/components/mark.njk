@@ -1,0 +1,19 @@
+{# Filled mark: a trophy or a brand logo.
+
+   Separate from components/icon.njk, which draws stroked engraved symbols.
+   These are solid because a trophy and a brand logo are objects rather than
+   symbols — a stroked X logo is not the X logo.
+
+   Each mark carries its own viewBox: Material Symbols are authored on
+   0 -960 960 960 and rescaling them by hand would be a transcription risk for
+   no gain. See scripts/make-marks.js.
+
+   Usage: {% set markName = "trophy_cup" %}{% include "components/mark.njk" %}
+   Pass markLabel only when the mark is the sole carrier of meaning. #}
+{%- set m = marks[markName] -%}
+{%- if m %}
+<svg class="mark" viewBox="{{ m.viewBox }}" width="24" height="24" fill="currentColor"
+     {% if markLabel %}role="img" aria-label="{{ markLabel }}"{% else %}aria-hidden="true" focusable="false"{% endif %}>
+  <path d="{{ m.d }}"></path>
+</svg>
+{%- endif -%}

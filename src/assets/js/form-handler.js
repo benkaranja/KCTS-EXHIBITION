@@ -122,18 +122,16 @@
       const participation = new FormData(form).getAll("participation");
       if (participation.length) data.participation = participation;
 
-      // Normalise the phone to E.164. The field is one input where the
-      // respondent types the whole international number, so this strips the
-      // spaces, brackets and dashes people naturally add and guarantees a
-      // single leading +. A trunk zero written after the country code
-      // ("+254 0712...") is dropped, because it is a domestic-dialling prefix
-      // and is wrong internationally.
-      if (data.phone) {
-        let p = String(data.phone).trim();
-        const hadPlus = p.startsWith("+");
-        p = p.replace(/[^\d]/g, "");
-        if (hadPlus) p = p.replace(/^(\d{1,4}?)0+(?=\d)/, "$1");
-        data.phone = p ? `+${p}` : "";
+      // Join the split phone field into one E.164 value. The two controls
+      // are a UI concern; the backend and the D1 ledger store one string.
+      // A leading zero is a national trunk prefix and is wrong after a country
+      // code, which is exactly what the hint warns about and exactly what
+      // people type anyway.
+      if (data.phone !== undefined) {
+        const national = String(data.phone).replace(/[^\d]/g, "").replace(/^0+/, "");
+        const cc = String(data.phoneCountry || "").replace(/[^\d+]/g, "");
+        data.phone = national ? `${cc}${national}` : "";
+        delete data.phoneCountry;
       }
 
       data.timeElapsed = Date.now() - Number(data.renderedAt || Date.now());

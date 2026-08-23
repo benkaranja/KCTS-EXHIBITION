@@ -210,11 +210,11 @@ const summit = {
 
   // Tier NAMES are confirmed. Their contents and prices are not — see FACTS.md §2.
   sponsorshipTiers: [
-    { name: "Title Partner", slug: "title", rank: 1 },
-    { name: "Platinum Partner", slug: "platinum", rank: 2 },
-    { name: "Gold Partner", slug: "gold", rank: 3 },
-    { name: "Silver Partner", slug: "silver", rank: 4 },
-    { name: "Supporting Partner", slug: "supporting", rank: 5 },
+    { name: "Title Partner", slug: "title", rank: 1, mark: "trophy_cup" },
+    { name: "Platinum Partner", slug: "platinum", rank: 2, mark: "trophy_laurel" },
+    { name: "Gold Partner", slug: "gold", rank: 3, mark: "trophy_medal" },
+    { name: "Silver Partner", slug: "silver", rank: 4, mark: "trophy_star" },
+    { name: "Supporting Partner", slug: "supporting", rank: 5, mark: "trophy_plain" },
   ],
 
   // The V2 six (Delegate, Exhibitor, Sponsor, Government, Media, Student) are
@@ -271,7 +271,17 @@ const summit = {
     whatsapp: "254111491076",
   },
 
-  social: {},
+  // Social profiles. URLs are placeholders until the Secretariat supplies the
+  // real handles — an icon linking to a 404 is worse than no icon, so
+  // `published: false` keeps the whole row out of the markup until then.
+  social: {
+    published: false,
+    accounts: [
+      { name: "LinkedIn", mark: "brand_linkedin", url: "https://www.linkedin.com/company/kenya-china-tea-summit" },
+      { name: "Facebook", mark: "brand_facebook", url: "https://www.facebook.com/kenyachinateasummit" },
+      { name: "X", mark: "brand_x", url: "https://x.com/kctsummit" },
+    ],
+  },
 };
 
 export default summit;

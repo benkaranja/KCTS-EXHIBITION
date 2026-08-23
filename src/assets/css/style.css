@@ -65,7 +65,6 @@ a:hover { text-decoration-thickness: 2px; }
 .skip-link:focus { top: 0; }
 
 .wrap { width: min(var(--wrap), 100% - var(--gutter) * 2); margin-inline: auto; }
-.wrap-narrow { width: min(var(--wrap-narrow), 100% - var(--gutter) * 2); margin-inline: auto; }
 
 /* ==== the document's own vocabulary ===================================== */
 
@@ -128,32 +127,66 @@ a:hover { text-decoration-thickness: 2px; }
 /* ==== header ============================================================ */
 
 /* ==== top bar ============================================================
-   Sits above the sticky header and scrolls away with the page. Deliberately
-   NOT sticky: two stacked sticky bars eat 7rem of a phone viewport, and the
-   countdown is an orientation device rather than a control. */
+   Three zones: countdown left, facts centre, social right. Not sticky —
+   two stacked sticky bars eat a phone viewport, and the countdown is an
+   orientation device rather than a control. */
 .topbar {
   background: var(--c-ink);
   color: var(--c-text-on-ink);
   border-bottom: 1px solid var(--c-engrave);
+  font-family: var(--font-ui);
+  font-size: var(--step--2);
+  letter-spacing: 0.04em;
 }
 .topbar__inner {
   max-width: var(--wrap);
   margin: 0 auto;
   padding: var(--sp-3xs) var(--gutter);
-  display: flex; flex-wrap: wrap; align-items: baseline;
-  justify-content: center; gap: 0.4em;
-  font-family: var(--font-ui);
-  font-size: var(--step--2);
-  letter-spacing: 0.04em;
-  max-width: none;
+  display: flex; align-items: center; gap: var(--sp-s);
 }
-.topbar__inner strong { font-weight: 600; color: var(--c-ply-canary); }
+.topbar p { margin: 0; max-width: none; }
+
+/* The countdown owns the left edge and is the only element on the bar with a
+   colour and a weight of its own, because it is the only one that changes. */
+.topbar__count {
+  display: flex; align-items: baseline; gap: 0.4em;
+  flex: none;
+  padding-inline-end: var(--sp-s);
+  border-inline-end: 1px solid var(--c-engrave);
+}
+.topbar__count strong {
+  font-family: var(--font-data);
+  font-size: var(--step-0);
+  font-weight: 700;
+  color: var(--c-ply-canary);
+  line-height: 1;
+}
+.topbar__count span { color: var(--c-text-on-ink-muted); }
+
+.topbar__facts {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.4em;
+  flex: 1 1 auto;
+}
+.topbar__facts strong { font-weight: 600; color: var(--c-ply-canary); }
 .topbar__dot { color: var(--c-text-on-ink-muted); }
 .topbar__open { color: var(--c-text-on-ink-muted); }
-/* Below 26rem the four facts wrap to three lines and push the header off
-   screen. The venue and the status are the two a visitor can get elsewhere. */
-@media (max-width: 26rem) {
-  .topbar__open, .topbar__open + .topbar__dot { display: none; }
+
+.topbar__social { display: flex; gap: var(--sp-2xs); list-style: none; margin: 0; padding: 0; flex: none; }
+.topbar__social a {
+  display: grid; place-items: center;
+  width: 28px; height: 28px;
+  color: var(--c-text-on-ink-muted);
+}
+.topbar__social a:hover { color: var(--c-ply-canary); }
+.topbar__social .mark { width: 16px; height: 16px; }
+
+/* Below 52rem the three zones cannot share a line. The countdown and the
+   social row stay; the facts drop, because the dates and venue are also in the
+   footer, on the hero of every page, and in the page title. */
+@media (max-width: 52rem) {
+  .topbar__facts { display: none; }
+  .topbar__inner { justify-content: space-between; }
+  .topbar__count { border-inline-end: 0; padding-inline-end: 0; }
 }
 
 .site-header {
@@ -262,7 +295,7 @@ a:hover { text-decoration-thickness: 2px; }
   color: var(--c-text-on-ink);
   position: relative;
   overflow: hidden;
-  padding-block: var(--sp-2xl);
+  padding-block: var(--sp-xl) var(--sp-l);
 }
 /* Rosette bleeding off the right edge, the way a certificate's engine-turning
    runs past the trim. Masked so it inherits the ink colour exactly. */
@@ -278,10 +311,29 @@ a:hover { text-decoration-thickness: 2px; }
 }
 .hero > * { position: relative; }
 
-.hero__grid { display: grid; gap: var(--sp-xl); align-items: start; }
-@media (min-width: 60rem) {
-  .hero__grid { grid-template-columns: minmax(0, 1.35fr) minmax(18rem, 0.65fr); }
+.hero__grid { display: block; }
+
+/* The lede keeps a measure even though the column is now full width — an h1
+   running the whole 74rem wrap would be unreadable. */
+.hero__lede { max-width: 46rem; }
+
+/* Particulars go horizontal now there is width for them, and they sit OUTSIDE
+   .hero__lede: the lede holds a 46rem prose measure, which is right for an h1
+   and wrong for a row of four data fields — inside it they wrapped 3+1 and
+   left an orphan. As a row they read the way the particulars block of a
+   shipping document actually reads. */
+.particulars {
+  display: grid; gap: 0 var(--sp-l);
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  max-width: none;
+  margin-block: var(--sp-m);
 }
+.particulars .field + .field { border-top: 0; }
+@media (max-width: 40rem) {
+  .particulars { grid-template-columns: 1fr; }
+  .particulars .field + .field { border-top: 1px solid rgb(255 255 255 / 0.14); }
+}
+
 
 .hero h1 { color: var(--c-text-on-ink); max-width: 15ch; margin-bottom: var(--sp-m); }
 .hero__theme {
@@ -302,6 +354,29 @@ a:hover { text-decoration-thickness: 2px; }
 .particulars .value--pending { color: var(--c-text-on-ink-muted); border-color: rgb(185 203 180 / 0.5); }
 
 /* The issuing panel: the action, framed as issuing a document. */
+/* Bar variant: the issuing panel across the foot of the hero. */
+.issue--bar {
+  display: flex; flex-wrap: wrap; align-items: center;
+  justify-content: space-between; gap: var(--sp-m);
+  margin-top: var(--sp-l);
+}
+.issue--bar .issue__lede { flex: 1 1 22rem; }
+.issue--bar h2 { margin: 0 0 var(--sp-3xs); }
+.issue--bar .issue__note { margin: 0; max-width: 46ch; }
+/* Both routes on one baseline. align-items: stretch would make the ghost
+   button match the primary's height even when its label wraps, which is what
+   "same level" has to mean when one label is longer than the other. */
+.issue__actions {
+  display: flex; flex-wrap: wrap; align-items: stretch;
+  gap: var(--sp-2xs);
+  flex: 0 1 auto;
+}
+.issue__actions .btn { flex: 1 1 auto; }
+@media (max-width: 40rem) {
+  .issue--bar { flex-direction: column; align-items: stretch; }
+  .issue__actions .btn { width: 100%; }
+}
+
 .issue {
   background: var(--c-paper);
   color: var(--c-text);
@@ -476,25 +551,7 @@ a:hover { text-decoration-thickness: 2px; }
 
 /* ==== endorsements: sponsor tiers as countersignature blocks ============ */
 
-.endorsements { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--sp-m); }
 @media (min-width: 44rem) { .endorsements { grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr)); } }
-.endorsement {
-  border: 1px solid var(--c-rule);
-  padding: var(--sp-s);
-  min-height: 8.5rem;
-  display: grid; align-content: space-between;
-  background: var(--c-paper);
-}
-.endorsement__tier {
-  font-family: var(--font-display); font-size: var(--step-1); color: var(--c-heading);
-}
-.endorsement__line {
-  border-top: 1px solid var(--c-ink-2);
-  padding-top: var(--sp-3xs);
-  font-family: var(--font-ui); font-size: var(--step--2);
-  letter-spacing: var(--track-label); text-transform: uppercase;
-  color: var(--c-text-muted);
-}
 
 /* ==== footer ============================================================ */
 
@@ -655,15 +712,6 @@ a:hover { text-decoration-thickness: 2px; }
 .spec .field:first-child { border-top: 1px solid var(--c-rule); }
 .spec .field:last-child { border-bottom: 1px solid var(--c-rule); }
 
-/* Source-cited figure, for News and About. */
-.cite {
-  font-family: var(--font-data);
-  font-size: var(--step--2);
-  color: var(--c-text-muted);
-  display: block;
-  margin-top: var(--sp-3xs);
-}
-
 /* ==== forms: the fillable half of the document ========================== */
 
 .form { margin: var(--sp-l) 0; max-width: 46rem; }
@@ -716,9 +764,6 @@ select.input { cursor: pointer; }
 .form__done { margin: var(--sp-l) 0; max-width: 46rem; }
 .form__done h2 { margin-top: 0; }
 
-/* Tag chips on light stock (the ink-ground variant lives in .band--invert). */
-.tag--ink { border-color: var(--c-rule); color: var(--c-text); }
-
 /* ==== hero media ======================================================== */
 
 .hero { isolation: isolate; }
@@ -740,9 +785,12 @@ select.input { cursor: pointer; }
 }
 .hero__media.is-playing .hero__video { opacity: 1; }
 
-/* The scrim. Two layers, not a uniform veil: text lives in the left ~55% of
+/* The scrim. Two layers, not a uniform veil: text lives in the left ~66% of
    the frame (h1, particulars, body) and across the top strip (masthead), so
-   only those zones carry a guaranteed floor. The right side and lower-right
+   only those zones carry a guaranteed floor. The strong zone was 55% while the
+   hero was two columns and the right third held the opaque .issue card; the
+   card is now a bar across the foot, the lede runs to 46rem, and the boundary
+   moved with it. The right side and lower-right
    are text-free (the .issue card is opaque) and are left weak so the footage
    actually reads as footage. Both floors are measured in check-contrast.js,
    composited over the real poster, sampling the weakest alpha per zone. */
@@ -758,10 +806,10 @@ select.input { cursor: pointer; }
     ),
     linear-gradient(
       100deg,
-      rgb(15 46 22 / 0.82) 0%,
-      rgb(15 46 22 / 0.82) 55%,
-      rgb(15 46 22 / 0.15) 78%,
-      rgb(15 46 22 / 0.15) 100%
+      rgb(15 46 22 / 0.84) 0%,
+      rgb(15 46 22 / 0.84) 66%,
+      rgb(15 46 22 / 0.22) 88%,
+      rgb(15 46 22 / 0.18) 100%
     );
 }
 
@@ -874,21 +922,6 @@ select.input { cursor: pointer; }
 }
 
 /* ==== downloads ========================================================= */
-
-.dl-list { list-style: none; margin: 0 0 var(--sp-l); padding: 0; }
-.dl-item {
-  display: grid; gap: var(--sp-3xs);
-  padding-block: var(--sp-s);
-  border-top: 1px solid var(--c-rule);
-  max-width: var(--measure);
-}
-.dl-list .dl-item:last-child { border-bottom: 1px solid var(--c-rule); }
-.dl-item__name { font-family: var(--font-display); font-size: var(--step-1); font-weight: 600; }
-.dl-item__meta {
-  font-family: var(--font-data); font-size: var(--step--2);
-  color: var(--c-text-muted); letter-spacing: 0.02em;
-}
-.dl-item__desc { font-size: var(--step--1); color: var(--c-text-muted); }
 
 /* ==== locale ============================================================ */
 
@@ -1055,7 +1088,6 @@ select.input { cursor: pointer; }
 .site-footer__base a { color: var(--c-ply-canary); }
 .site-footer__base a:hover { color: var(--c-paper); }
 
-
 /* ==== inline field errors ================================================
    Replaces the browser's validation bubble, which shows one error at a time
    and disappears on blur. Wired with aria-invalid + aria-describedby in
@@ -1079,7 +1111,11 @@ select.input { cursor: pointer; }
    they sit beside, which is the only reason this world tolerates them at all.
    currentColor throughout, so a mark inherits whatever context it lands in. */
 .icon {
-  width: 1.5rem; height: 1.5rem;
+  /* 2.25rem, not 1.5rem. At 24px beside a --step-2 heading and a paragraph the
+     mark read as a stray tick rather than as a device — the client's word was
+     "very small" and they were right. 36px is the size at which stroked line
+     work reads as engraving. */
+  width: 2.25rem; height: 2.25rem;
   flex: none;
   color: var(--c-engrave);
   display: block;
@@ -1091,12 +1127,22 @@ select.input { cursor: pointer; }
    device sits on a document rule. */
 .clause .icon,
 .class-row .icon {
+  /* 3rem, not 2.25rem. Measured against the tier trophies, which read at the
+     right weight at ~40px inside their disc; at 36px beside a --step-2 heading
+     these still read as a tick rather than a device. */
+  width: 3rem; height: 3rem;
   color: var(--c-seal);
   margin-bottom: var(--sp-2xs);
 }
 
-/* Marks in the intaglio bands invert to the canary ply. */
-.section--ink .icon { color: var(--c-ply-canary); }
+/* NEVER oxblood on a green ground. --c-seal is the mark of authority on light
+   stock; on --c-ink-2 it measures about 1.6:1 and goes muddy. Orange clears
+   5.09:1 and is reserved for exactly this. */
+.section--ink .icon,
+.section--ink .clause .icon,
+.section--ink .class-row .icon,
+.doc-head .icon,
+.hero .icon { color: var(--c-ply-orange); }
 
 /* Inline mark preceding a label in a spec list. */
 .field .icon { width: 1.15rem; height: 1.15rem; display: inline-block; vertical-align: -0.18em; margin-right: 0.35em; }
@@ -1144,6 +1190,12 @@ select.input { cursor: pointer; }
   border-radius: 50%;
   color: var(--tier-colour);
 }
+/* The trophy sits above the guilloche texture, at 46% of the disc so the ring
+   still reads as a struck edge rather than as a frame around a picture. */
+.tier__seal .mark {
+  position: relative; z-index: 1;
+  width: 46%; height: 46%;
+}
 /* The guilloche, masked into the disc. Low opacity: it is the security-print
    texture under the mark, not the mark itself. */
 .tier__seal::before {
@@ -1161,8 +1213,11 @@ select.input { cursor: pointer; }
 
 /* Struck rules: one per rank step, highest tier gets the most. The redundant
    encoding that makes the ramp readable without colour. */
-.tier__rules { display: flex; gap: 3px; position: relative; }
-.tier__rules span { display: block; width: 3px; height: 0.85rem; background: currentColor; }
+/* Struck rules: one per rank step. The redundant encoding that makes the ramp
+   readable in greyscale and to a colour-blind reader, since colour alone must
+   never carry rank. */
+.tier__rules { display: flex; gap: 3px; color: var(--tier-colour); }
+.tier__rules span { display: block; width: 3px; height: 0.7rem; background: currentColor; }
 
 .tier__name {
   text-wrap: balance;
@@ -1177,3 +1232,108 @@ select.input { cursor: pointer; }
   font-size: var(--step--2);
   color: var(--c-text-muted);
 }
+
+/* ==== country flags ======================================================
+   One raster sprite, 246 flags stacked vertically, positioned by row. The SVG
+   set is 2.58 MB because Mexico's coat of arms alone is 140 KB; at 20x15 none
+   of that is visible. See scripts/make-flags.js. */
+.flag {
+  display: inline-block;
+  width: 20px; height: 15px;
+  flex: none;
+  background-image: url("/img/flags.webp");
+  background-repeat: no-repeat;
+  background-size: 20px auto;
+  /* 1px inset keyline: a white flag on light stock would otherwise have no
+     edge at all. */
+  box-shadow: inset 0 0 0 1px rgb(15 46 22 / 0.22);
+}
+
+/* ==== phone field ========================================================
+   A display (flag + dial + chevron) with a transparent native <select> laid
+   over it. The select does the work; the display is what you see. */
+.phone { display: flex; align-items: stretch; gap: var(--sp-2xs); }
+.phone__country {
+  position: relative;
+  display: inline-flex; align-items: center; gap: var(--sp-3xs);
+  flex: 0 0 auto;
+  padding-inline: var(--sp-2xs);
+  border: 1px solid var(--c-rule);
+  background: var(--c-paper);
+  font-family: var(--font-data);
+  font-size: var(--step-0);
+  color: var(--c-text);
+}
+.phone__country:focus-within { outline: 3px solid var(--c-focus); outline-offset: 2px; }
+.phone__dial { white-space: nowrap; }
+.phone__chev { color: var(--c-text-muted); }
+/* The real control. Transparent and covering the whole display, so a click
+   anywhere on the flag or the code opens the platform picker. */
+.phone__select {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  opacity: 0;
+  border: 0; padding: 0; margin: 0;
+  cursor: pointer;
+  /* Safari ignores width on an opacity:0 select without this. */
+  -webkit-appearance: none; appearance: none;
+}
+.phone__number { flex: 1 1 auto; min-width: 0; }
+@media (max-width: 26rem) {
+  /* Below this the pair leaves the number under ~9ch, which is too short for
+     an international number. Stack instead. */
+  .phone { flex-direction: column; }
+  .phone__country { justify-content: flex-start; padding-block: var(--sp-2xs); }
+}
+
+/* ==== filled marks ======================================================= */
+.mark { display: block; flex: none; }
+
+/* ==== footer base ========================================================
+   Was five stacked paragraphs of grey text with no entry point. Three labelled
+   blocks on the footer's own rule, then one quiet fine-print line. */
+.site-footer__base {
+  border-top: 1px solid var(--c-engrave);
+  margin-top: var(--sp-l);
+  padding-top: var(--sp-l);
+}
+.site-footer__blocks {
+  display: grid; gap: var(--sp-l);
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+}
+.site-footer__block p { margin: 0 0 var(--sp-2xs); max-width: 32ch; font-size: var(--step--1); }
+.site-footer__block p:last-child { margin-bottom: 0; }
+.site-footer__blabel {
+  font-size: var(--step--2) !important;
+  font-weight: 700;
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--c-ply-canary);
+}
+.site-footer__base a { color: var(--c-text-on-ink); }
+.site-footer__base a:hover { color: var(--c-ply-canary); }
+.site-footer__strong { font-weight: 600; }
+
+.site-footer__social { display: flex; gap: var(--sp-2xs); list-style: none; margin: var(--sp-2xs) 0 0; padding: 0; }
+.site-footer__social a {
+  display: grid; place-items: center;
+  width: 36px; height: 36px;
+  border: 1px solid var(--c-engrave);
+  color: var(--c-text-on-ink-muted);
+}
+.site-footer__social a:hover { color: var(--c-ink-2); background: var(--c-ply-canary); border-color: var(--c-ply-canary); }
+.site-footer__social .mark { width: 18px; height: 18px; }
+
+/* Fine print. Deliberately the quietest thing in the footer: a copyright line
+   competing with contact details is a copyright line in the wrong place. */
+.site-footer__fine {
+  display: flex; flex-wrap: wrap; gap: var(--sp-2xs) var(--sp-m);
+  justify-content: space-between; align-items: baseline;
+  margin: var(--sp-l) 0 0;
+  padding-top: var(--sp-s);
+  border-top: 1px solid rgb(255 255 255 / 0.08);
+  font-size: var(--step--2);
+  color: var(--c-text-on-ink-muted);
+  max-width: none;
+}
+.site-footer__legal { display: flex; flex-wrap: wrap; gap: 0.5em; align-items: baseline; }

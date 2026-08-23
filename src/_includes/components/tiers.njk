@@ -12,9 +12,10 @@
   {% for t in summit.sponsorshipTiers %}
   <li class="tier tier--{{ t.slug }}">
     <span class="tier__seal">
-      <span class="tier__rules" aria-hidden="true">
-        {% for n in range(0, 6 - t.rank) %}<span></span>{% endfor %}
-      </span>
+      {% set markName = t.mark %}{% include "components/mark.njk" %}
+    </span>
+    <span class="tier__rules" aria-hidden="true">
+      {% for n in range(0, 6 - t.rank) %}<span></span>{% endfor %}
     </span>
     <span class="tier__name">{{ t.name }}</span>
     <span class="tier__status">Open</span>

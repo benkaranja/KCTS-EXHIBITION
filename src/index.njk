@@ -19,14 +19,16 @@ eleventyComputed:
   {% include "components/hero-media.njk" %}
   <div class="wrap">
     <div class="hero__grid">
-      <div>
+      <div class="hero__lede">
         <h1>Where Kenya's tea industry meets China's market, capital and technology</h1>
         <p class="hero__theme">{{ summit.theme }}</p>
 
-        <dl class="particulars">
+      </div>
+
+      <dl class="particulars">
           <div class="field">
             <dt class="label">Venue</dt>
-            <dd class="value">{{ summit.location.venue }}</dd>
+            <dd class="value">{{ summit.location.venue }}, {{ summit.location.city }}</dd>
           </div>
           <div class="field">
             <dt class="label">Dates</dt>
@@ -37,27 +39,26 @@ eleventyComputed:
             <dd class="value"><span data-countdown="{{ summit.dates.start }}">{{ summit.dates.start | daysUntil }}</span></dd>
           </div>
           <div class="field">
-            <dt class="label">City</dt>
-            <dd class="value">{{ summit.location.city }}, {{ summit.location.country }}</dd>
-          </div>
-          <div class="field">
             <dt class="label">Organised by</dt>
             <dd class="value">{{ summit.organiser.legalEntity }}</dd>
           </div>
-        </dl>
+      </dl>
+    </div>
 
-        <p class="hero__body">Three days in Nairobi for the people who grow, process, buy, ship and finance tea.</p>
+    {#- The issuing panel, now a bar across the foot of the hero rather than a
+        column beside it. As a right-hand card it competed with the h1 for the
+        first viewport and pushed the particulars into a 40%-width column where
+        the five field pairs stacked into a tall ladder. As a bar it reads as
+        one action at the end of the statement, the two routes sit on the same
+        baseline, and the text above gets the full measure. -#}
+    <div class="issue issue--bar">
+      <div class="issue__lede">
+        <h2>Register your interest</h2>
+        <p class="issue__note">Nine categories. Takes about two minutes, and there is nothing to pay.</p>
       </div>
-
-      <div class="issue">
-        <div class="issue__head">
-          <h2>Register your interest</h2>
-        </div>
-        <p class="issue__note">Nine categories. Takes about two minutes.</p>
-        <a class="btn btn--primary btn--block" href="/registration/">Register your interest</a>
-        <hr class="rule">
-        <p class="issue__note">Exhibiting or partnering?</p>
-        <a class="btn btn--ghost btn--block" href="/exhibition/">Why exhibit</a>
+      <div class="issue__actions">
+        <a class="btn btn--primary" href="/registration/">Register your interest</a>
+        <a class="btn btn--ghost" href="/exhibition/">Why exhibit</a>
       </div>
     </div>
   </div>

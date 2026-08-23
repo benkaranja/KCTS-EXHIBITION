@@ -107,15 +107,32 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
    with JS off; hero.js re-reads [data-countdown] and corrects it against the
    visitor's clock rather than the build clock. #}
 <div class="topbar">
-  <p class="topbar__inner">
-    <span class="topbar__when"><strong>{{ summit.dates.display }}</strong></span>
-    <span class="topbar__dot" aria-hidden="true">&middot;</span>
-    <span>{{ summit.location.venueShort }}, {{ summit.location.city }}</span>
-    <span class="topbar__dot" aria-hidden="true">&middot;</span>
-    <span class="topbar__open">Registration open</span>
-    <span class="topbar__dot" aria-hidden="true">&middot;</span>
-    <span class="topbar__count"><strong data-countdown="{{ summit.dates.start }}">{{ summit.dates.start | daysUntil }}</strong> days to go</span>
-  </p>
+  <div class="topbar__inner">
+    {# Countdown first, on the left. It is the one item that changes daily and
+       the one a returning visitor scans for; burying it at the end of a
+       centred run of four facts made it the hardest thing on the bar to find. #}
+    <p class="topbar__count">
+      <strong data-countdown="{{ summit.dates.start }}">{{ summit.dates.start | daysUntil }}</strong>
+      <span>days to go</span>
+    </p>
+    <p class="topbar__facts">
+      <span><strong>{{ summit.dates.display }}</strong></span>
+      <span class="topbar__dot" aria-hidden="true">&middot;</span>
+      <span>{{ summit.location.venueShort }}, {{ summit.location.city }}</span>
+      <span class="topbar__dot topbar__dot--open" aria-hidden="true">&middot;</span>
+      <span class="topbar__open">Registration open</span>
+    </p>
+    {%- if summit.social.published %}
+    <ul class="topbar__social">
+      {% for a in summit.social.accounts %}
+      <li><a href="{{ a.url }}" target="_blank" rel="noopener" data-nolocale>
+        {% set markName = a.mark %}{% set markLabel = summit.shortName + " on " + a.name %}
+        {% include "components/mark.njk" %}
+      </a></li>
+      {% endfor %}
+    </ul>
+    {%- endif %}
+  </div>
 </div>
 
 <header class="site-header">
@@ -182,15 +199,51 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
     {% endfor %}
   </div>
 
+  {# Footer base. Was five stacked centre-less paragraphs — venue, phone, email,
+     legal links, copyright — reading as an undifferentiated run of grey text
+     with no way in. Now three labelled blocks on a rule, then one quiet line.
+     Same information, given structure. #}
   <div class="site-footer__base">
-    <p>{{ summit.name }} &middot; {{ summit.dates.display }} &middot; {{ summit.location.venueShort }}, {{ summit.location.city }}</p>
-    <p>Organised by {{ summit.organiser.legalEntity }}{% if summit.partners.length %}, in partnership with {% for p in summit.partners %}{{ p.name }}{% if not loop.last %} and {% endif %}{% endfor %}{% endif %}.</p>
-    {# No postal address here. The only address the site states is the venue —
-       see the note on summit.contact in src/_data/summit.js. #}
-    <p>{{ summit.location.venue }}, {{ summit.location.street }}, {{ summit.location.city }} &middot; <a href="tel:{{ summit.contact.phone | replace(" ", "") }}">{{ summit.contact.phone }}</a></p>
-    <p><a href="mailto:{{ summit.contact.email }}">{{ summit.contact.email }}</a></p>
-    <p class="site-footer__legal">{% for l in navigation.legal %}<a href="{{ l.url }}">{{ l.text }}</a>{% if not loop.last %} &middot; {% endif %}{% endfor %}</p>
-    <p>&copy; {{ buildYear }} {{ summit.organiser.legalEntity }}. All rights reserved.</p>
+    <div class="site-footer__blocks">
+      <div class="site-footer__block">
+        <p class="site-footer__blabel">The summit</p>
+        <p><strong>{{ summit.dates.display }}</strong><br>
+          {{ summit.location.venue }}<br>
+          {{ summit.location.street }}, {{ summit.location.city }}</p>
+        <p><a class="site-footer__strong" href="/venue/">Venue and directions</a></p>
+      </div>
+
+      <div class="site-footer__block">
+        <p class="site-footer__blabel">Contact</p>
+        <p>
+          <a href="mailto:{{ summit.contact.email }}">{{ summit.contact.email }}</a><br>
+          <a href="tel:{{ summit.contact.phone | replace(" ", "") }}">{{ summit.contact.phone }}</a>
+        </p>
+        <p><a class="site-footer__strong" href="https://wa.me/{{ summit.contact.whatsapp }}" target="_blank" rel="noopener" data-nolocale>Chat on WhatsApp</a></p>
+      </div>
+
+      <div class="site-footer__block">
+        <p class="site-footer__blabel">Organised by</p>
+        <p>{{ summit.organiser.legalEntity }}{% if summit.partners.length %}<br>
+          in partnership with<br>
+          {% for p in summit.partners %}{{ p.name }}{% if not loop.last %}, {% endif %}{% endfor %}{% endif %}</p>
+        {%- if summit.social.published %}
+        <ul class="site-footer__social">
+          {% for a in summit.social.accounts %}
+          <li><a href="{{ a.url }}" target="_blank" rel="noopener" data-nolocale>
+            {% set markName = a.mark %}{% set markLabel = summit.shortName + " on " + a.name %}
+            {% include "components/mark.njk" %}
+          </a></li>
+          {% endfor %}
+        </ul>
+        {%- endif %}
+      </div>
+    </div>
+
+    <p class="site-footer__fine">
+      <span>&copy; {{ buildYear }} {{ summit.organiser.legalEntity }}. All rights reserved.</span>
+      <span class="site-footer__legal">{% for l in navigation.legal %}<a href="{{ l.url }}">{{ l.text }}</a>{% if not loop.last %}<span class="topbar__dot" aria-hidden="true">&middot;</span>{% endif %}{% endfor %}</span>
+    </p>
   </div>
 </footer>
 
@@ -209,6 +262,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 
 <script src="/js/nav.js" defer></script>
 <script src="/js/form-handler.js" defer></script>
+<script src="/js/phone.js" defer></script>
 <script src="/js/hero.js" defer></script>
 {# Turnstile. Without this the .cf-turnstile div in the forms renders nothing,
    no cf-turnstile-response token is produced, and every genuine submission

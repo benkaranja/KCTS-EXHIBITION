@@ -1,6 +1,6 @@
 # Copy for client review — Kenya-China Tea Summit 2027
 
-**Generated:** 2026-08-23 · **Build:** `c6812da`
+**Generated:** 2026-08-23 · **Build:** `9ebc85a`
 
 Generated from the built site. This is what is live, not a draft of it.
 
@@ -29,18 +29,14 @@ Generated from the built site. This is what is live, not a draft of it.
 
 Brewing Strategic Partnerships for Sustainable Tea Trade, Investment and Innovation
 
-- **Venue:** Kenyatta International Convention Centre
+- **Venue:** Kenyatta International Convention Centre, Nairobi
 - **Dates:** 21–23 April 2027
 - **Days to opening:** 241
-- **City:** Nairobi, Kenya
 - **Organised by:** Orbitline Events & Ushers Ltd
-Three days in Nairobi for the people who grow, process, buy, ship and finance tea.
 
 ### Register your interest
 
-Nine categories. Takes about two minutes.
-
-Exhibiting or partnering?
+Nine categories. Takes about two minutes, and there is nothing to pay.
 
 ### The number this summit is built on
 
@@ -500,8 +496,7 @@ Full name *
 
 Email *
 
-Mobile number (with country code) * Include the country code. Replace +254 if you are outside Kenya.
-
+  - _field:_ Mobile number (with country code) *
 Organisation *
 
 Job title *
@@ -1045,8 +1040,7 @@ Full name *
 
 Email *
 
-Mobile number (with country code) Include the country code. Replace +254 if you are outside Kenya.
-
+  - _field:_ Mobile number (with country code)
 Organisation
 
 Country or region (dropdown, 247 options)

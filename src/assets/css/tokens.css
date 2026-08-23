@@ -32,6 +32,11 @@
   /* --- carbon plies: the duplicate and triplicate copies ---------------- */
   --c-ply-canary: #e0b13a;
   --c-ply-salmon: #cf8b83;
+  /* Warm orange for engraved marks on the intaglio ground. Oxblood is the mark
+     of authority on LIGHT stock; on a green ground it goes muddy and drops to
+     about 1.6:1. This clears 5.09:1 on --c-ink-2 and is reserved for that use.
+     It is deliberately not used on paper, where it measures 2.06:1. */
+  --c-ply-orange: #ec9740;
 
   /* Partnership tiers. Ring and mark colours only — the tier NAME always
      renders in --c-ink, because canary and slate both fail 4.5:1 as text on

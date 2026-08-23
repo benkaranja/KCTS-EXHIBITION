@@ -49,6 +49,10 @@ const PAIRS = [
   // green ground at about 1.5:1. Shipped and caught by eye, not by this file,
   // because no pair covered reversed LINK text. It does now.
   ["--c-ply-canary", "--c-ink", 4.5, "link text in the footer base line"],
+  // Engraved marks on the intaglio ground. Oxblood measures ~1.6:1 there and
+  // was briefly shipped that way; 3.0 is the WCAG floor for a graphical object.
+  ["--c-ply-orange", "--c-ink-2", 3.0, "engraved mark on intaglio ground"],
+  ["--c-ply-orange", "--c-ink", 3.0, "engraved mark on the deepest ground"],
   ["--c-paper", "--c-ink", 4.5, "reversed text on the deepest ground"],
   ["--c-text-on-ink-muted", "--c-ink", 4.5, "reversed secondary on deepest ground"],
 ];

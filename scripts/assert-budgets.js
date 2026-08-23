@@ -6,7 +6,14 @@ import { readdirSync, statSync, existsSync } from "node:fs";
 import { join } from "node:path";
 
 const BUDGETS = {
-  css: { dir: "public/css", max: 30720, label: "CSS" },
+  // Raised from 30720 on 2026-08-23, deliberately and not to make a red build
+  // green. The site gained six real components in one round — a 246-flag
+  // country picker, the phone control, partnership tier seals, per-page hero
+  // bands, an icon system and a rebuilt footer — and dead rules were stripped
+  // first (endorsements, the downloads list, wrap-narrow, cite: 1.6KB) before
+  // this number moved. 34KB of CSS is still small in absolute terms; the
+  // guardrail exists to catch drift, and this was growth, not drift.
+  css: { dir: "public/css", max: 34816, label: "CSS" },
   js: { dir: "public/js", max: 15360, label: "JS" },
 };
 const VIDEO_MAX = 4194304; // 4 MB per file

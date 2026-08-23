@@ -1,30 +1,48 @@
-{# Telephone, matching the client's Tally form.
+{# Telephone: flag + dial prefix, then the national number. Matches the
+   client's Tally form.
 
-   ONE input, labelled "Mobile Number (with country code)", pre-filled with the
-   default dial code. Tally does exactly this: a single type="tel" field where
-   the respondent types the whole international number. Client decision,
-   2026-08-23, after comparing it against a two-control version.
+   THE SELECT IS A REAL <select>, VISUALLY HIDDEN OVER THE DISPLAY.
 
-   The earlier build split this into a country <select> plus a number input.
-   That produced cleaner E.164 but it is not what the client's own form does,
-   and a second control is a second thing to tab through. Pre-filling "+254 "
-   keeps the benefit that made the split worth trying: nobody has to guess
-   whether to write +254, 254, or 0.
+   A custom listbox would need 246 <li role="option"> per form — about 22KB of
+   markup on each of two pages — plus arrow-key handling, typeahead, focus
+   trapping and a scroll-into-view, all of which a native select already does
+   correctly and which mobile renders as its own wheel picker.
 
-   Normalisation still happens in form-handler.js, which strips spaces and
-   guarantees a leading +, so the backend keeps receiving one E.164 string.
+   So: the flag and dial code are a presentational display, and a transparent
+   native select sits over the whole control. Clicking anywhere opens the
+   platform picker; typing jumps by country name because the option text leads
+   with the name. phone.js swaps the flag and dial text on change.
 
-   WHY NOT libphonenumber: 145KB to validate a field the Secretariat reads by
-   eye, and a validator that rejects a real number costs more than a loosely
-   formatted one.
+   Without JS the select still submits `phoneCountry` and the number still
+   submits `phone`; only the flag stops updating, which loses nothing.
 
-   Caller sets: fieldId, fieldRequired. Reads `countries`. #}
-<p class="form__row">
+   Caller sets: fieldId, fieldRequired. Reads `countries` and `flags`.
+
+   The sprite row index is emitted as data-row by the TEMPLATE, which already
+   has the data at build time. The alternative was 246 CSS rules (~11KB against
+   a 30KB budget) or a runtime lookup table; this costs ~10 bytes per option
+   and needs neither. phone.js turns the row into a background-position via
+   CSSOM, which CSP permits — it only blocks inline style attributes. #}
+<div class="form__row form__row--full">
   <label class="label" for="{{ fieldId }}">Mobile number (with country code){% if fieldRequired %} <span class="req" aria-hidden="true">*</span>{% endif %}</label>
-  <input class="input" id="{{ fieldId }}" name="phone" type="tel"
-         inputmode="tel" autocomplete="tel" enterkeyhint="next"
-         maxlength="24" value="{{ countries.defaultDial }} "
-         placeholder="{{ countries.defaultDial }} 712 345 678"
-         aria-describedby="{{ fieldId }}-hint"{% if fieldRequired %} required{% endif %}>
-  <span class="form__hint" id="{{ fieldId }}-hint">Include the country code. Replace {{ countries.defaultDial }} if you are outside Kenya.</span>
-</p>
+  <div class="phone">
+    <span class="phone__country" data-phone-country>
+      <span class="flag" data-flag-row="{{ flags.index[countries.default] }}" aria-hidden="true"></span>
+      <span class="phone__dial" data-phone-dial>{{ countries.defaultDial }}</span>
+      <svg class="phone__chev" viewBox="0 0 24 24" width="14" height="14" fill="none"
+           stroke="currentColor" stroke-width="2" stroke-linecap="round"
+           stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+      <select class="phone__select" id="{{ fieldId }}-code" name="phoneCountry"
+              aria-label="Country dialling code" autocomplete="tel-country-code">
+        {% for c in countries.list %}
+        <option value="+{{ c.dial }}" data-code="{{ c.code }}" data-row="{{ flags.index[c.code] }}"{% if c.code == countries.default %} selected{% endif %}>{{ c.name }} +{{ c.dial }}</option>
+        {% endfor %}
+      </select>
+    </span>
+    <input class="input phone__number" id="{{ fieldId }}" name="phone" type="tel"
+           inputmode="tel" autocomplete="tel-national" enterkeyhint="next"
+           maxlength="20" placeholder="712 345 678"
+           aria-describedby="{{ fieldId }}-hint"{% if fieldRequired %} required{% endif %}>
+  </div>
+  <span class="form__hint" id="{{ fieldId }}-hint">Without the leading zero.</span>
+</div>
