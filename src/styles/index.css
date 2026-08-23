@@ -620,6 +620,36 @@ html, body {
   text-align: right;
 }
 
+.rate-row-stacked {
+  align-items: flex-start;
+}
+
+.rate-dual-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.rate-usd-val {
+  font-family: var(--font-mono);
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--tea-gold-light);
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+}
+
+.rate-kes-val {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--tea-mint);
+  opacity: 0.9;
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+}
+
 .rate-highlight {
   color: var(--tea-gold-light) !important;
   font-family: var(--font-mono);

@@ -1,6 +1,7 @@
 /**
  * BoothPanel — slide-in sidebar showing comprehensive booth details:
- * Stand #, Pavilion, Zone, Size, Dual Rate (USD and KES), and Reserve/Unreserve action.
+ * Stand #, Pavilion, Zone, Size, Dual Rate (USD & KES in two distinct styled lines),
+ * and Reserve/Unreserve action.
  */
 export class BoothPanel {
   constructor(onReserve) {
@@ -42,23 +43,14 @@ export class BoothPanel {
     this.zoneEl.textContent = `${booth.zone} · ${pavilionName}`;
     this.sizeEl.textContent = `${booth.w}m × ${booth.h}m (${(booth.w * booth.h).toFixed(1)} sqm)`;
 
-    // Display Dual Currency Rate: USD and KES (1 USD = 130 KES)
-    const dualRateText = this._formatDualCurrency(booth.rate);
-
-    let rateEl = document.getElementById('panel-rate');
-    if (!rateEl) {
-      const infoContainer = document.querySelector('.panel-info');
-      if (infoContainer) {
-        const rateRow = document.createElement('div');
-        rateRow.className = 'info-row';
-        rateRow.innerHTML = `
-          <span class="info-label">Investment</span>
-          <span class="info-value rate-highlight" id="panel-rate">${dualRateText}</span>
-        `;
-        infoContainer.insertBefore(rateRow, infoContainer.lastElementChild);
-      }
-    } else {
-      rateEl.textContent = dualRateText;
+    // Display Dual Currency Rate: USD and KES in TWO DISTINCT LINES
+    const { usdText, kesText } = this._calculateDualCurrency(booth.rate);
+    const rateEl = document.getElementById('panel-rate');
+    if (rateEl) {
+      rateEl.innerHTML = `
+        <span class="rate-usd-val">${usdText}</span>
+        <span class="rate-kes-val">${kesText}</span>
+      `;
     }
 
     this._updateStatus(booth.status);
@@ -67,17 +59,19 @@ export class BoothPanel {
     this.panelEl.classList.add('visible');
   }
 
-  _formatDualCurrency(usdString) {
-    if (!usdString) return 'USD 3,200 · KES 416,000';
+  _calculateDualCurrency(usdString) {
+    if (!usdString) return { usdText: 'USD 3,200', kesText: 'KES 416,000' };
 
-    // Extract numeric amount from "USD 3,200" or similar
     const match = usdString.replace(/,/g, '').match(/\d+/);
-    if (!match) return usdString;
+    if (!match) return { usdText: usdString, kesText: '' };
 
     const usdVal = parseInt(match[0], 10);
-    const kesVal = usdVal * 130; // Standard Kenya Shilling summit conversion rate
+    const kesVal = usdVal * 130; // 1 USD = 130 KES
 
-    return `USD ${usdVal.toLocaleString()} · KES ${kesVal.toLocaleString()}`;
+    return {
+      usdText: `USD ${usdVal.toLocaleString()}`,
+      kesText: `KES ${kesVal.toLocaleString()}`
+    };
   }
 
   hide() {

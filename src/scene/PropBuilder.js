@@ -3,7 +3,8 @@ import * as THREE from 'three';
 /**
  * PropBuilder — creates outdoor landscape and summit props:
  * - Crisp White Teardrop / Feather Flag Banners with green tea leaf emblems (TEXT-FREE)
- * - Stylized Low-Poly African Savanna Acacia Trees
+ * - Sprite Trees using realistic illustrated textures (Tree_Large, Tree_Medium, Tree_Small)
+ * - Sprite Bushes in all grass areas (Bush_1, Bush_2)
  * - Solar LED pathway lighting poles along outdoor boulevards
  * - Directional wayfinding boards (renderOrder: 2000, depthTest: false)
  */
@@ -15,13 +16,16 @@ export class PropBuilder {
     // 1. Text-Free White Teardrop Banners along Plazas & Entrances
     this._buildWhiteTeardropBanners(propsGroup, venueWidth, venueLength);
 
-    // 2. Acacia Trees across the landscape
-    this._buildAcaciaTrees(propsGroup, venueWidth, venueLength);
+    // 2. Sprite Trees (Tree_Large, Tree_Medium, Tree_Small)
+    this._buildSpriteTrees(propsGroup, venueWidth, venueLength);
 
-    // 3. Modern Pathway Lighting Poles
+    // 3. Sprite Bushes in Grass Areas (Bush_1, Bush_2)
+    this._buildSpriteBushes(propsGroup, venueWidth, venueLength);
+
+    // 4. Modern Pathway Lighting Poles
     this._buildPathLighting(propsGroup, venueWidth, venueLength);
 
-    // 4. Summit Wayfinding Information Boards
+    // 5. Summit Wayfinding Information Boards
     this._buildWayfindingSigns(propsGroup);
 
     scene.add(propsGroup);
@@ -154,52 +158,78 @@ export class PropBuilder {
     return texture;
   }
 
-  _buildAcaciaTrees(group, venueWidth, venueLength) {
-    const treeTrunkMat = new THREE.MeshBasicMaterial({ color: 0x543D2B });
-    const leafMats = [
-      new THREE.MeshBasicMaterial({ color: 0x2A6F45 }),
-      new THREE.MeshBasicMaterial({ color: 0x388E5C }),
-      new THREE.MeshBasicMaterial({ color: 0x1E5233 })
+  _buildSpriteTrees(group, venueWidth, venueLength) {
+    const loader = new THREE.TextureLoader();
+    const treeLargeTex = loader.load('/src/textures/Tree_Large.png');
+    const treeMedTex = loader.load('/src/textures/Tree_Medium.png');
+    const treeSmallTex = loader.load('/src/textures/Tree_Small.png');
+
+    const treeMats = [
+      new THREE.SpriteMaterial({ map: treeLargeTex, transparent: true, depthTest: true, depthWrite: false }),
+      new THREE.SpriteMaterial({ map: treeMedTex, transparent: true, depthTest: true, depthWrite: false }),
+      new THREE.SpriteMaterial({ map: treeSmallTex, transparent: true, depthTest: true, depthWrite: false })
     ];
 
     const treeLocations = [
-      [0, -12], [25, -14], [50, -13], [75, -15], [100, -12],
-      [-5, 92], [22, 95], [48, 93], [72, 96], [98, 94],
-      [110, 15], [112, 38], [110, 62], [112, 85],
-      [-15, 12], [-18, 38], [-15, 65], [-16, 85]
+      // South Lawn
+      [-8, -16], [12, -18], [28, -15], [45, -20], [62, -17], [80, -19], [98, -16], [115, -18],
+      // North Lawn
+      [-10, 95], [10, 98], [32, 94], [52, 99], [70, 95], [88, 97], [108, 96], [120, 94],
+      // West Approach
+      [-22, 5], [-26, 25], [-24, 45], [-25, 65], [-22, 85],
+      // East Approach
+      [118, 5], [122, 28], [119, 50], [123, 72], [117, 88]
     ];
 
     for (let i = 0; i < treeLocations.length; i++) {
       const [tx, tz] = treeLocations[i];
-      const scale = 0.85 + Math.random() * 0.4;
-      const acacia = this._createLowPolyAcacia(treeTrunkMat, leafMats, scale);
-      acacia.position.set(tx, 0, tz);
-      group.add(acacia);
+      const matIndex = i % 3; // Random distribution across tree textures
+      const sprite = new THREE.Sprite(treeMats[matIndex]);
+
+      const baseScale = 7.0 + (i % 4) * 1.5;
+      const height = baseScale * 1.5;
+      const width = baseScale * 0.9;
+
+      sprite.position.set(tx, height / 2, tz);
+      sprite.scale.set(width, height, 1);
+      group.add(sprite);
     }
   }
 
-  _createLowPolyAcacia(trunkMat, leafMats, scale) {
-    const tree = new THREE.Group();
+  _buildSpriteBushes(group, venueWidth, venueLength) {
+    const loader = new THREE.TextureLoader();
+    const bush1Tex = loader.load('/src/textures/Bush_1.png');
+    const bush2Tex = loader.load('/src/textures/Bush_2.png');
 
-    const trunkH = 5 * scale;
-    const trunk = new THREE.Mesh(new THREE.CylinderGeometry(0.18 * scale, 0.32 * scale, trunkH, 6), trunkMat);
-    trunk.position.set(0, trunkH / 2, 0);
-    trunk.rotation.z = (Math.random() - 0.5) * 0.15;
-    tree.add(trunk);
-
-    const canopyTiers = [
-      { y: trunkH - 0.2, r: 3.8 * scale, h: 0.6 * scale, mat: leafMats[0] },
-      { y: trunkH + 0.3, r: 2.8 * scale, h: 0.5 * scale, mat: leafMats[1] },
-      { y: trunkH + 0.7, r: 1.6 * scale, h: 0.4 * scale, mat: leafMats[2] }
+    const bushMats = [
+      new THREE.SpriteMaterial({ map: bush1Tex, transparent: true, depthTest: true, depthWrite: false }),
+      new THREE.SpriteMaterial({ map: bush2Tex, transparent: true, depthTest: true, depthWrite: false })
     ];
 
-    for (const tier of canopyTiers) {
-      const disc = new THREE.Mesh(new THREE.CylinderGeometry(tier.r, tier.r * 0.9, tier.h, 8), tier.mat);
-      disc.position.set((Math.random() - 0.5) * 0.4 * scale, tier.y, (Math.random() - 0.5) * 0.4 * scale);
-      tree.add(disc);
-    }
+    const bushLocations = [
+      // Surrounding South Plaza Perimeter
+      [-3, -3], [5, -4], [15, -3], [25, -5], [35, -4], [48, -5], [58, -3], [68, -4], [78, -5], [88, -3], [98, -4], [105, -3],
+      // Surrounding North Plaza Perimeter
+      [-3, 85], [8, 86], [20, 84], [35, 87], [48, 85], [60, 86], [75, 84], [88, 86], [98, 85], [105, 86],
+      // Surrounding West Plaza Edge
+      [-12, 10], [-10, 22], [-14, 34], [-11, 46], [-13, 58], [-10, 70], [-12, 80],
+      // Surrounding East Plaza Edge
+      [104, 10], [107, 22], [105, 36], [108, 48], [104, 60], [107, 72], [105, 82],
+      // Near Tree Bases
+      [-6, -14], [14, -16], [30, -13], [64, -15], [82, -17], [100, -14],
+      [-8, 93], [34, 92], [72, 93], [90, 95]
+    ];
 
-    return tree;
+    for (let i = 0; i < bushLocations.length; i++) {
+      const [bx, bz] = bushLocations[i];
+      const matIndex = i % 2;
+      const sprite = new THREE.Sprite(bushMats[matIndex]);
+
+      const scale = 1.6 + (i % 3) * 0.4;
+      sprite.position.set(bx, scale * 0.45, bz);
+      sprite.scale.set(scale, scale * 0.9, 1);
+      group.add(sprite);
+    }
   }
 
   _buildPathLighting(group, venueWidth, venueLength) {

@@ -22,10 +22,16 @@ export class FloorBuilder {
     const centerX = venueWidth / 2;   // 47.5m
     const centerZ = venueLength / 2;  // 40.0m
 
-    // 1. Vast outer green tea estate landscape
+    // 1. Vast outer green tea estate landscape with seamless grass texture
+    const textureLoader = new THREE.TextureLoader();
+    const grassTexture = textureLoader.load('/src/textures/Grass_Texture.jpg');
+    grassTexture.wrapS = THREE.RepeatWrapping;
+    grassTexture.wrapT = THREE.RepeatWrapping;
+    grassTexture.repeat.set(36, 36);
+
     const grassGeo = new THREE.PlaneGeometry(360, 360);
     const grassMat = new THREE.MeshBasicMaterial({
-      color: 0x1A472A, // Deep lush tea estate green
+      map: grassTexture,
       side: THREE.FrontSide
     });
     const grass = new THREE.Mesh(grassGeo, grassMat);

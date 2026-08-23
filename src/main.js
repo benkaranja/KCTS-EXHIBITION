@@ -23,8 +23,17 @@ const VENUE_WIDTH = 95;
 const VENUE_LENGTH = 80;
 
 // ── App State ──
+function loadSavedSelections() {
+  try {
+    const saved = localStorage.getItem('tea_summit_selected_booths');
+    return saved ? new Set(JSON.parse(saved)) : new Set();
+  } catch (e) {
+    return new Set();
+  }
+}
+
 const state = {
-  selectedBooths: new Set(),
+  selectedBooths: loadSavedSelections(),
   hoveredBoothId: null,
   activeTent: 'all',
   isPanelOpen: false
@@ -218,7 +227,16 @@ async function init() {
 
   sceneManager.startLoop(() => cameraManager.getActiveCamera());
 
-  // 14. Initial Counter Update
+  // 14. Restore Saved Selections
+  state.selectedBooths.forEach(id => {
+    const data = boothBuilder.getBoothData(id);
+    if (data) {
+      data.status = 'selected';
+      boothBuilder.updateBoothStatus(id, 'selected');
+      svgOverlay.updateBoothStatus(id, 'selected');
+    }
+  });
+
   updateCounters(boothBuilder);
 
   // 15. Dismiss Loading Screen
@@ -244,6 +262,10 @@ function toggleBoothSelection(boothId, boothBuilder, svgOverlay, boothPanel) {
   } else {
     return;
   }
+
+  try {
+    localStorage.setItem('tea_summit_selected_booths', JSON.stringify(Array.from(state.selectedBooths)));
+  } catch (e) {}
 
   boothBuilder.updateBoothStatus(boothId, data.status);
   svgOverlay.updateBoothStatus(boothId, data.status);

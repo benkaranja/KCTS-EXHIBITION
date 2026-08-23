@@ -22,14 +22,14 @@ export class SceneManager {
     });
     this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     this.renderer.setSize(window.innerWidth, window.innerHeight);
-    this.renderer.setClearColor(0x0E4E8A, 1); // Blue sky background
+    this.renderer.setClearColor(0x2E86DE, 1); // Lighter azure sky background
     this.renderer.sortObjects = true;
     this.renderer.outputColorSpace = THREE.SRGBColorSpace;
     this.renderer.toneMapping = THREE.ACESFilmicToneMapping;
-    this.renderer.toneMappingExposure = 1.05;
+    this.renderer.toneMappingExposure = 1.08;
 
     // Atmospheric Kenyan sunlight
-    const ambient = new THREE.AmbientLight(0xFFFFFF, 0.85);
+    const ambient = new THREE.AmbientLight(0xFFFFFF, 0.92);
     this.scene.add(ambient);
 
     // Warm sun directional light
