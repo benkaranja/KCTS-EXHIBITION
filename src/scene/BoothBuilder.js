@@ -126,25 +126,25 @@ export class BoothBuilder {
 
     const statusColor = isVip
       ? (booth.status === 'selected' ? COLORS.selected : COLORS.vip)
-      : (COLORS[booth.status] || COLORS.available);
+      : (booth.status === 'selected' ? COLORS.selected : (booth.color || COLORS.available));
 
     const floorColor = isVip
       ? (booth.status === 'selected' ? COLORS.floor_selected : COLORS.floor_vip)
-      : (COLORS[`floor_${booth.status}`] || COLORS.floor_available);
+      : (booth.status === 'selected' ? COLORS.floor_selected : (booth.color || COLORS.floor_available));
 
     const fasciaColor = isVip
       ? COLORS.vip_fascia
-      : (COLORS[`fascia_${booth.status}`] || COLORS.fascia_available);
+      : (booth.status === 'selected' ? COLORS.fascia_selected : (booth.fascia_bg || COLORS.fascia_available));
 
     // Materials
     const wallOuterMat = new THREE.MeshBasicMaterial({
-      color: statusColor,
+      color: new THREE.Color(statusColor),
       side: THREE.DoubleSide
     });
 
     const frameMat = new THREE.MeshBasicMaterial({ color: COLORS.frame });
-    const floorMat = new THREE.MeshBasicMaterial({ color: floorColor, side: THREE.FrontSide });
-    const fasciaMat = new THREE.MeshBasicMaterial({ color: fasciaColor });
+    const floorMat = new THREE.MeshBasicMaterial({ color: new THREE.Color(floorColor), side: THREE.FrontSide });
+    const fasciaMat = new THREE.MeshBasicMaterial({ color: new THREE.Color(fasciaColor) });
     const deskMat = new THREE.MeshBasicMaterial({ color: COLORS.desk });
 
     // 1. Floor Pad
