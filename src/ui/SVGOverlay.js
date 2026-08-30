@@ -34,8 +34,11 @@ export class SVGOverlay {
       <div class="svg-modal-wrapper">
         <div class="svg-header-bar">
           <div class="svg-title-area">
-            <span class="summit-pill">Kenya-China Tea Summit 2027</span>
-            <h2>2D MASTER FLOOR PLAN & BOOTH RESERVATION</h2>
+            <img src="/src/textures/KCT-Summit Logo.png" alt="Tea Summit Logo" class="svg-header-logo" />
+            <div>
+              <span class="summit-pill">2D MASTER FLOOR PLAN & BOOTH RESERVATION</span>
+              <h2>CLICK TO MAKE BOOTH RESERVATION</h2>
+            </div>
           </div>
           <div class="svg-tabs">
             <button class="svg-tab active" data-filter="all">All Pavilions (254)</button>
