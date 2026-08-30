@@ -61,9 +61,9 @@ async function init() {
     cameraManager.resize();
   });
 
-  // 3. Nairobi Skyline (Inspiration Vector Style) & Blue Gradient Skydome
-  const skylineBuilder = new SkylineBuilder();
-  skylineBuilder.build(sceneManager.getScene(), VENUE_WIDTH, VENUE_LENGTH);
+  // 3. Nairobi Skyline Panorama (Temporarily disabled for clean blue sky gradient)
+  // const skylineBuilder = new SkylineBuilder();
+  // skylineBuilder.build(sceneManager.getScene(), VENUE_WIDTH, VENUE_LENGTH);
 
   // 4. Ground Environment, Plazas & Outdoor Tea Lounge
   const floorBuilder = new FloorBuilder();

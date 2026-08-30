@@ -59,9 +59,9 @@ export class BoothBuilder {
       this.boothData.set(booth.id, { ...booth });
     }
 
-    // Add Rollup Pull-Up Banner Stands outside booths
-    this.rollupGroup = this._buildRollupBanners(booths);
-    boothContainer.add(this.rollupGroup);
+    // Rollup banners temporarily disabled
+    // this.rollupGroup = this._buildRollupBanners(booths);
+    // boothContainer.add(this.rollupGroup);
 
     scene.add(boothContainer);
     return boothContainer;

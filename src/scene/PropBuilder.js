@@ -12,22 +12,7 @@ export class PropBuilder {
   build(scene, venueWidth, venueLength) {
     const propsGroup = new THREE.Group();
     propsGroup.name = 'landscape-props';
-
-    // 1. Text-Free White Teardrop Banners along Plazas & Entrances
-    this._buildWhiteTeardropBanners(propsGroup, venueWidth, venueLength);
-
-    // 2. Sprite Trees (Tree_Large, Tree_Medium, Tree_Small)
-    this._buildSpriteTrees(propsGroup, venueWidth, venueLength);
-
-    // 3. Sprite Bushes in Grass Areas (Bush_1, Bush_2)
-    this._buildSpriteBushes(propsGroup, venueWidth, venueLength);
-
-    // 4. Modern Pathway Lighting Poles
-    this._buildPathLighting(propsGroup, venueWidth, venueLength);
-
-    // 5. Summit Wayfinding Information Boards
-    this._buildWayfindingSigns(propsGroup);
-
+    // Temporarily disabled trees, bushes, banners as requested
     scene.add(propsGroup);
     return propsGroup;
   }
