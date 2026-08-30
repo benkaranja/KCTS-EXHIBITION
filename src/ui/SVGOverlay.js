@@ -92,6 +92,19 @@ export class SVGOverlay {
     svg.setAttribute('role', 'img');
     svg.setAttribute('aria-label', 'Interactive Exhibition Floor Plan');
 
+    // Add Defs for selection drop shadow glow
+    const defs = document.createElementNS(svgNS, 'defs');
+    defs.innerHTML = `
+      <filter id="gold-glow" x="-50%" y="-50%" width="200%" height="200%">
+        <feGaussianBlur stdDeviation="0.6" result="coloredBlur"/>
+        <feMerge>
+          <feMergeNode in="coloredBlur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+    `;
+    svg.appendChild(defs);
+
     // 1. Background Ground
     const bg = document.createElementNS(svgNS, 'rect');
     bg.setAttribute('x', minX - padding);
@@ -125,18 +138,18 @@ export class SVGOverlay {
     if (this.activeFilter === 'all') {
       const lounge = document.createElementNS(svgNS, 'rect');
       lounge.setAttribute('x', '35');
-      lounge.setAttribute('y', '41');
+      lounge.setAttribute('y', '42.5');
       lounge.setAttribute('width', '25');
-      lounge.setAttribute('height', '8');
+      lounge.setAttribute('height', '5.0');
       lounge.setAttribute('fill', '#8B5A2B');
       lounge.setAttribute('rx', '0.6');
       svg.appendChild(lounge);
 
       const loungeText = document.createElementNS(svgNS, 'text');
       loungeText.setAttribute('x', '47.5');
-      loungeText.setAttribute('y', '45.5');
+      loungeText.setAttribute('y', '45.6');
       loungeText.setAttribute('fill', '#FFFFFF');
-      loungeText.setAttribute('font-size', '1.3');
+      loungeText.setAttribute('font-size', '1.2');
       loungeText.setAttribute('font-weight', '700');
       loungeText.setAttribute('text-anchor', 'middle');
       loungeText.textContent = '☕ OUTDOOR TEA TASTING LOUNGE';
@@ -145,6 +158,11 @@ export class SVGOverlay {
 
     // 5. Booth Elements
     const boothGroup = document.createElementNS(svgNS, 'g');
+    boothGroup.setAttribute('id', 'svg-booth-group');
+
+    // 6. Top-Layer Selection Overlay Group (Rendered above ALL booths to prevent clipping)
+    const selectionGroup = document.createElementNS(svgNS, 'g');
+    selectionGroup.setAttribute('id', 'svg-selection-overlay');
 
     const filteredBooths = this.booths.filter(b => {
       if (this.activeFilter === 'tent-a') return b.tent === 'tent-a';
@@ -157,9 +175,8 @@ export class SVGOverlay {
       g.setAttribute('class', 'booth-node');
 
       const isVip = booth.type === 'vip' || booth.type === 'premium';
-      const fill = booth.status === 'selected'
-        ? BRAND_COLORS.selected
-        : (booth.color || (isVip ? BRAND_COLORS.vip : BRAND_COLORS.available));
+      const isSelected = booth.status === 'selected';
+      const fill = isSelected ? BRAND_COLORS.selected : (booth.color || (isVip ? BRAND_COLORS.vip : BRAND_COLORS.available));
 
       // Rect
       const rect = document.createElementNS(svgNS, 'rect');
@@ -168,11 +185,11 @@ export class SVGOverlay {
       rect.setAttribute('width', booth.w);
       rect.setAttribute('height', booth.h);
       rect.setAttribute('fill', fill);
-      rect.setAttribute('stroke', booth.status === 'selected' ? '#FFEAA7' : (booth.fascia_bg || '#FFFFFF'));
-      rect.setAttribute('stroke-width', booth.status === 'selected' ? '0.35' : '0.15');
+      rect.setAttribute('stroke', isSelected ? '#FFEAA7' : (booth.fascia_bg || '#FFFFFF'));
+      rect.setAttribute('stroke-width', isSelected ? '0.25' : '0.15');
       rect.setAttribute('rx', '0.2');
       rect.classList.add('booth-rect');
-      if (booth.status === 'selected') rect.classList.add('selected');
+      if (isSelected) rect.classList.add('selected');
       rect.setAttribute('tabindex', '0');
       rect.setAttribute('role', 'button');
       rect.setAttribute('aria-label', `Booth ${booth.id} — ${booth.tier || 'Standard'}`);
@@ -196,11 +213,17 @@ export class SVGOverlay {
 
       boothGroup.appendChild(g);
       this._boothElements.set(booth.id, rect);
+
+      // Render top-layer selection highlight if selected
+      if (isSelected) {
+        this._renderSelectionOverlayItem(selectionGroup, svgNS, booth);
+      }
     }
 
     svg.appendChild(boothGroup);
+    svg.appendChild(selectionGroup);
 
-    // 6. Legend (8-Tier Matrix)
+    // 7. Legend (8-Tier Matrix)
     this._renderLegend(svg, svgNS, minX, maxY + 1.5);
 
     target.innerHTML = '';
@@ -320,6 +343,74 @@ export class SVGOverlay {
     });
   }
 
+  _renderSelectionOverlayItem(parentGroup, svgNS, booth) {
+    const margin = 0.25;
+    const gx = booth.x - margin;
+    const gy = booth.y - margin;
+    const gw = booth.w + margin * 2;
+    const gh = booth.h + margin * 2;
+
+    const group = document.createElementNS(svgNS, 'g');
+    group.setAttribute('class', 'selection-item-overlay');
+    group.setAttribute('data-selection-id', booth.id);
+
+    // Glowing outer gold ring (rendered above all booths)
+    const ring = document.createElementNS(svgNS, 'rect');
+    ring.setAttribute('x', gx);
+    ring.setAttribute('y', gy);
+    ring.setAttribute('width', gw);
+    ring.setAttribute('height', gh);
+    ring.setAttribute('fill', 'none');
+    ring.setAttribute('stroke', '#FFD700');
+    ring.setAttribute('stroke-width', '0.35');
+    ring.setAttribute('rx', '0.4');
+    ring.setAttribute('filter', 'url(#gold-glow)');
+    group.appendChild(ring);
+
+    // Crisp white inner border
+    const innerBorder = document.createElementNS(svgNS, 'rect');
+    innerBorder.setAttribute('x', booth.x);
+    innerBorder.setAttribute('y', booth.y);
+    innerBorder.setAttribute('width', booth.w);
+    innerBorder.setAttribute('height', booth.h);
+    innerBorder.setAttribute('fill', 'none');
+    innerBorder.setAttribute('stroke', '#FFFFFF');
+    innerBorder.setAttribute('stroke-width', '0.2');
+    innerBorder.setAttribute('rx', '0.2');
+    group.appendChild(innerBorder);
+
+    // Floating selection badge pin
+    const badgeW = 6.4;
+    const badgeH = 1.6;
+    const bx = booth.x + booth.w / 2 - badgeW / 2;
+    const by = booth.y - badgeH - 0.4;
+
+    if (by > 2) {
+      const badgeBg = document.createElementNS(svgNS, 'rect');
+      badgeBg.setAttribute('x', bx);
+      badgeBg.setAttribute('y', by);
+      badgeBg.setAttribute('width', badgeW);
+      badgeBg.setAttribute('height', badgeH);
+      badgeBg.setAttribute('fill', '#D4AF37');
+      badgeBg.setAttribute('stroke', '#FFFFFF');
+      badgeBg.setAttribute('stroke-width', '0.15');
+      badgeBg.setAttribute('rx', '0.4');
+      group.appendChild(badgeBg);
+
+      const badgeTxt = document.createElementNS(svgNS, 'text');
+      badgeTxt.setAttribute('x', bx + badgeW / 2);
+      badgeTxt.setAttribute('y', by + 1.1);
+      badgeTxt.setAttribute('fill', '#0A2318');
+      badgeTxt.setAttribute('font-size', '0.9');
+      badgeTxt.setAttribute('font-weight', '800');
+      badgeTxt.setAttribute('text-anchor', 'middle');
+      badgeTxt.textContent = `★ SELECTED #${booth.id}`;
+      group.appendChild(badgeTxt);
+    }
+
+    parentGroup.appendChild(group);
+  }
+
   onBoothClick(callback) {
     this._clickCallback = callback;
   }
@@ -328,21 +419,43 @@ export class SVGOverlay {
     const rect = this._boothElements.get(id);
     if (!rect) return;
 
-    const data = this.booths.find(b => b.id === id);
-    const isVip = data && (data.type === 'vip' || data.type === 'premium');
+    const booth = this.booths.find(b => b.id === id);
+    if (booth) booth.status = status;
+
+    const isVip = booth && (booth.type === 'vip' || booth.type === 'premium');
 
     const fill = status === 'selected'
       ? BRAND_COLORS.selected
-      : (isVip ? BRAND_COLORS.vip : (BRAND_COLORS[status] || BRAND_COLORS.available));
+      : (booth && booth.color ? booth.color : (isVip ? BRAND_COLORS.vip : BRAND_COLORS.available));
 
     rect.setAttribute('fill', fill);
-    rect.setAttribute('stroke', status === 'selected' ? '#FFEAA7' : (isVip ? BRAND_COLORS.gold_border : '#FFFFFF'));
-    rect.setAttribute('stroke-width', status === 'selected' ? '0.35' : (isVip ? '0.25' : '0.12'));
+    rect.setAttribute('stroke', status === 'selected' ? '#FFEAA7' : (booth && booth.fascia_bg ? booth.fascia_bg : '#FFFFFF'));
+    rect.setAttribute('stroke-width', status === 'selected' ? '0.35' : '0.15');
 
     if (status === 'selected') {
       rect.classList.add('selected');
     } else {
       rect.classList.remove('selected');
+    }
+
+    // Update top-layer selection overlay group
+    const targetSvg = this.container.querySelector('svg');
+    if (targetSvg) {
+      let selectionGroup = targetSvg.querySelector('#svg-selection-overlay');
+      if (!selectionGroup) {
+        selectionGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+        selectionGroup.setAttribute('id', 'svg-selection-overlay');
+        targetSvg.appendChild(selectionGroup);
+      }
+
+      // Remove existing overlay item for this booth
+      const existing = selectionGroup.querySelector(`[data-selection-id="${id}"]`);
+      if (existing) existing.remove();
+
+      // If now selected, render top-layer overlay item
+      if (status === 'selected' && booth) {
+        this._renderSelectionOverlayItem(selectionGroup, 'http://www.w3.org/2000/svg', booth);
+      }
     }
   }
 
