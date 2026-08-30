@@ -38,9 +38,9 @@ export class SVGOverlay {
             <h2>2D MASTER FLOOR PLAN & BOOTH RESERVATION</h2>
           </div>
           <div class="svg-tabs">
-            <button class="svg-tab active" data-filter="all">All Pavilions (196)</button>
+            <button class="svg-tab active" data-filter="all">All Pavilions (254)</button>
             <button class="svg-tab" data-filter="tent-a">Pavilion A · Main Hall (146)</button>
-            <button class="svg-tab" data-filter="tent-b">Pavilion B · Innovation (50)</button>
+            <button class="svg-tab" data-filter="tent-b">Pavilion B · Innovation (108)</button>
           </div>
         </div>
         <div class="svg-viewport" id="svg-viewport-target"></div>
@@ -68,14 +68,14 @@ export class SVGOverlay {
     this._boothElements.clear();
 
     const padding = 6;
-    let minX = 0, maxX = 98, minY = 2, maxY = 82;
+    let minX = 0, maxX = 98, minY = 2, maxY = 88;
 
     if (this.activeFilter === 'tent-a') {
       minY = 5;
       maxY = 44;
     } else if (this.activeFilter === 'tent-b') {
       minY = 46;
-      maxY = 78;
+      maxY = 86;
     }
 
     const viewBoxW = (maxX - minX) + padding * 2;
@@ -110,12 +110,12 @@ export class SVGOverlay {
 
     // 3. Render Pavilion A (Main Hall)
     if (this.activeFilter === 'all' || this.activeFilter === 'tent-a') {
-      this._renderTentOutline(svg, svgNS, 5, 10, 85, 30, 'PAVILION A — MAIN EXHIBITION HALL (30M × 80M)');
+      this._renderTentOutline(svg, svgNS, 5, 10, 85, 30, 'PAVILION A — MAIN EXHIBITION HALL (30M × 85M)');
     }
 
     // 4. Render Pavilion B (Innovation Hall)
     if (this.activeFilter === 'all' || this.activeFilter === 'tent-b') {
-      this._renderTentOutline(svg, svgNS, 5, 50, 85, 20, 'PAVILION B — TEA INNOVATION & B2B MATCHMAKING (20M × 80M)');
+      this._renderTentOutline(svg, svgNS, 5, 50, 85, 30, 'PAVILION B — TEA INNOVATION & B2B MATCHMAKING (30M × 85M)');
     }
 
     // Central Walkway & Outdoor Lounge in 'all' view
@@ -156,7 +156,7 @@ export class SVGOverlay {
       const isVip = booth.type === 'vip' || booth.type === 'premium';
       const fill = booth.status === 'selected'
         ? BRAND_COLORS.selected
-        : (isVip ? BRAND_COLORS.vip : (BRAND_COLORS[booth.status] || BRAND_COLORS.available));
+        : (booth.color || (isVip ? BRAND_COLORS.vip : BRAND_COLORS.available));
 
       // Rect
       const rect = document.createElementNS(svgNS, 'rect');
@@ -165,18 +165,18 @@ export class SVGOverlay {
       rect.setAttribute('width', booth.w);
       rect.setAttribute('height', booth.h);
       rect.setAttribute('fill', fill);
-      rect.setAttribute('stroke', booth.status === 'selected' ? '#FFEAA7' : (isVip ? BRAND_COLORS.gold_border : '#FFFFFF'));
-      rect.setAttribute('stroke-width', booth.status === 'selected' ? '0.35' : (isVip ? '0.25' : '0.12'));
+      rect.setAttribute('stroke', booth.status === 'selected' ? '#FFEAA7' : (booth.fascia_bg || '#FFFFFF'));
+      rect.setAttribute('stroke-width', booth.status === 'selected' ? '0.35' : '0.15');
       rect.setAttribute('rx', '0.2');
       rect.classList.add('booth-rect');
       if (booth.status === 'selected') rect.classList.add('selected');
       rect.setAttribute('tabindex', '0');
       rect.setAttribute('role', 'button');
-      rect.setAttribute('aria-label', `Booth ${booth.id} — ${booth.zone}`);
+      rect.setAttribute('aria-label', `Booth ${booth.id} — ${booth.tier || 'Standard'}`);
       rect.setAttribute('data-booth-id', booth.id);
 
       const title = document.createElementNS(svgNS, 'title');
-      title.textContent = `Booth #${booth.id} (${booth.zone}) — ${booth.rate || 'Available'}`;
+      title.textContent = `Booth #${booth.id} (${booth.tier || 'Base'}) — ${booth.rate || 'USD 3,000'}`;
       rect.appendChild(title);
 
       g.appendChild(rect);
@@ -197,7 +197,7 @@ export class SVGOverlay {
 
     svg.appendChild(boothGroup);
 
-    // 6. Legend (Rendered with crisp, clear text colors for high readability)
+    // 6. Legend (8-Tier Matrix)
     this._renderLegend(svg, svgNS, minX, maxY + 1.5);
 
     target.innerHTML = '';
@@ -240,12 +240,11 @@ export class SVGOverlay {
   }
 
   _renderLegend(svg, svgNS, x, y) {
-    // Legend bar background container for crisp contrast
     const legendBg = document.createElementNS(svgNS, 'rect');
     legendBg.setAttribute('x', x);
     legendBg.setAttribute('y', y - 0.5);
     legendBg.setAttribute('width', '98');
-    legendBg.setAttribute('height', '3.2');
+    legendBg.setAttribute('height', '5.5');
     legendBg.setAttribute('fill', '#102C1F');
     legendBg.setAttribute('stroke', '#1E5E3A');
     legendBg.setAttribute('stroke-width', '0.2');
@@ -253,37 +252,45 @@ export class SVGOverlay {
     svg.appendChild(legendBg);
 
     const items = [
-      { color: BRAND_COLORS.available, label: 'Available Stand', textColor: '#FFFFFF' },
-      { color: BRAND_COLORS.selected, label: 'Selected Stand', textColor: '#FFFFFF' },
-      { color: BRAND_COLORS.vip, border: BRAND_COLORS.gold_border, label: 'VIP / Premium Lounge', textColor: '#FFFFFF' },
-      { color: BRAND_COLORS.reserved, label: 'Reserved', textColor: '#D1DDD5' }
+      { color: '#8A6A12', label: 'S1 Platinum ($6,000)', textColor: '#FFD700' },
+      { color: '#C29B3A', label: 'S2 Gold ($5,250)', textColor: '#FFF0A5' },
+      { color: '#E3CE8E', label: 'S3 Silver ($4,500)', textColor: '#FFFFFF' },
+      { color: '#F5EDD5', label: 'S4 Bronze ($3,750)', textColor: '#FFFFFF' },
+      { color: '#2E7A52', label: 'E1 Prime ($4,500)', textColor: '#A3FFC2' },
+      { color: '#74B18E', label: 'E2 Better ($3,600)', textColor: '#FFFFFF' },
+      { color: '#BEDECB', label: 'E3 Base ($3,000)', textColor: '#FFFFFF' },
+      { color: '#E9F4EE', label: 'E4 Value ($2,400)', textColor: '#FFFFFF' }
     ];
 
-    let cx = x + 3;
+    let row = 0;
+    let col = 0;
     for (const item of items) {
+      const lx = x + 2 + col * 24;
+      const ly = y + 0.3 + row * 2.4;
+
       const r = document.createElementNS(svgNS, 'rect');
-      r.setAttribute('x', cx);
-      r.setAttribute('y', y + 0.3);
+      r.setAttribute('x', lx);
+      r.setAttribute('y', ly);
       r.setAttribute('width', '1.8');
       r.setAttribute('height', '1.6');
       r.setAttribute('fill', item.color);
-      if (item.border) {
-        r.setAttribute('stroke', item.border);
-        r.setAttribute('stroke-width', '0.25');
-      }
       r.setAttribute('rx', '0.3');
       svg.appendChild(r);
 
       const t = document.createElementNS(svgNS, 'text');
-      t.setAttribute('x', cx + 2.6);
-      t.setAttribute('y', y + 1.5);
+      t.setAttribute('x', lx + 2.4);
+      t.setAttribute('y', ly + 1.2);
       t.setAttribute('fill', item.textColor);
-      t.setAttribute('font-size', '1.15');
+      t.setAttribute('font-size', '1.05');
       t.setAttribute('font-weight', '700');
       t.textContent = item.label;
       svg.appendChild(t);
 
-      cx += 23.5;
+      col++;
+      if (col >= 4) {
+        col = 0;
+        row++;
+      }
     }
   }
 
