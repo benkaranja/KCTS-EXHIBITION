@@ -44,9 +44,9 @@ export class TentBuilder {
       x: 5,
       z: 50,
       width: 85,
-      length: 20,
+      length: 30,
       height: 4.8,
-      ridgeHeight: 6.4,
+      ridgeHeight: 7.2,
       postSpacing: 8.5,
       colorTheme: 0x143D2B,
       badgeText: 'PAVILION B · INNOVATION & B2B'

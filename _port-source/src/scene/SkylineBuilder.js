@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import skyboxUrl from '../textures/Nairobi_skybox.png';
 
 /**
  * SkylineBuilder — renders the panoramic Nairobi skyline and atmospheric sky dome
@@ -26,7 +27,7 @@ export class SkylineBuilder {
     skylineGroup.add(skyCap);
 
     // 2. 360° Panoramic Horizon Cylinder mapping the new Nairobi_skybox.png
-    const skyboxTexture = textureLoader.load('/src/textures/Nairobi_skybox.png');
+    const skyboxTexture = textureLoader.load(skyboxUrl);
     skyboxTexture.colorSpace = THREE.SRGBColorSpace;
     skyboxTexture.wrapS = THREE.RepeatWrapping;
     skyboxTexture.wrapT = THREE.ClampToEdgeWrapping;

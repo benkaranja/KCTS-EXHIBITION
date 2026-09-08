@@ -19,6 +19,10 @@ const COLORS = {
   vip:                0x1B4D3E,
   vip_fascia:         0xC99738,
 
+  hover_wall:         0xFF9F43,
+  hover_floor:        0xF5891D,
+  hover_fascia:       0xFFB366,
+
   floor_available:    0x236B43,
   floor_selected:     0xD35400,
   floor_reserved:     0x485658,
@@ -59,9 +63,9 @@ export class BoothBuilder {
       this.boothData.set(booth.id, { ...booth });
     }
 
-    // Add Rollup Pull-Up Banner Stands outside booths
-    this.rollupGroup = this._buildRollupBanners(booths);
-    boothContainer.add(this.rollupGroup);
+    // Rollup banners temporarily disabled
+    // this.rollupGroup = this._buildRollupBanners(booths);
+    // boothContainer.add(this.rollupGroup);
 
     scene.add(boothContainer);
     return boothContainer;
@@ -126,25 +130,25 @@ export class BoothBuilder {
 
     const statusColor = isVip
       ? (booth.status === 'selected' ? COLORS.selected : COLORS.vip)
-      : (COLORS[booth.status] || COLORS.available);
+      : (booth.status === 'selected' ? COLORS.selected : (booth.color || COLORS.available));
 
     const floorColor = isVip
       ? (booth.status === 'selected' ? COLORS.floor_selected : COLORS.floor_vip)
-      : (COLORS[`floor_${booth.status}`] || COLORS.floor_available);
+      : (booth.status === 'selected' ? COLORS.floor_selected : (booth.color || COLORS.floor_available));
 
     const fasciaColor = isVip
       ? COLORS.vip_fascia
-      : (COLORS[`fascia_${booth.status}`] || COLORS.fascia_available);
+      : (booth.status === 'selected' ? COLORS.fascia_selected : (booth.fascia_bg || COLORS.fascia_available));
 
     // Materials
     const wallOuterMat = new THREE.MeshBasicMaterial({
-      color: statusColor,
+      color: new THREE.Color(statusColor),
       side: THREE.DoubleSide
     });
 
     const frameMat = new THREE.MeshBasicMaterial({ color: COLORS.frame });
-    const floorMat = new THREE.MeshBasicMaterial({ color: floorColor, side: THREE.FrontSide });
-    const fasciaMat = new THREE.MeshBasicMaterial({ color: fasciaColor });
+    const floorMat = new THREE.MeshBasicMaterial({ color: new THREE.Color(floorColor), side: THREE.FrontSide });
+    const fasciaMat = new THREE.MeshBasicMaterial({ color: new THREE.Color(fasciaColor) });
     const deskMat = new THREE.MeshBasicMaterial({ color: COLORS.desk });
 
     // 1. Floor Pad
@@ -464,12 +468,38 @@ export class BoothBuilder {
   highlightBooth(id) {
     const group = this.boothGroups.get(id);
     if (!group || !group.visible) return;
+
+    // Store original colors before hover and apply orange hue
+    group.children.forEach(child => {
+      if (!child.material) return;
+      if (child.userData?.type === 'booth-wall') {
+        child.userData._origColor = child.material.color.getHex();
+        child.material.color.setHex(COLORS.hover_wall);
+      }
+      if (child.userData?.type === 'booth-floor') {
+        child.userData._origColor = child.material.color.getHex();
+        child.material.color.setHex(COLORS.hover_floor);
+      }
+      if (child.userData?.type === 'booth-fascia') {
+        child.userData._origColor = child.material.color.getHex();
+        child.material.color.setHex(COLORS.hover_fascia);
+      }
+    });
     group.scale.set(1.03, 1.06, 1.03);
   }
 
   unhighlightBooth(id) {
     const group = this.boothGroups.get(id);
     if (!group) return;
+
+    // Restore original colors
+    group.children.forEach(child => {
+      if (!child.material) return;
+      if (child.userData?._origColor !== undefined) {
+        child.material.color.setHex(child.userData._origColor);
+        delete child.userData._origColor;
+      }
+    });
     group.scale.set(1, 1, 1);
   }
 

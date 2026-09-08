@@ -38,13 +38,21 @@ export class BoothPanel {
 
     this.titleEl.textContent = `Stand #${booth.id}`;
     
-    // Detailed zone & pavilion
-    const pavilionName = booth.tent === 'tent-b' ? 'Pavilion B (Innovation)' : 'Pavilion A (Main Hall)';
-    this.zoneEl.textContent = `${booth.zone} · ${pavilionName}`;
+    // Detailed zone, pavilion & tier badge
+    const pavilionName = booth.tent === 'tent-b' ? 'Tent B (Innovation)' : 'Tent A (Main Hall)';
+    const tierName = booth.tier || 'E3 Base';
+    const fasciaColor = booth.fascia_bg || '#143D2B';
+
+    this.zoneEl.innerHTML = `
+      <div style="margin-bottom: 6px;">${booth.zone || 'Exhibition Area'} · ${pavilionName}</div>
+      <div style="display: inline-block; padding: 3px 9px; border-radius: 4px; background: ${fasciaColor}; color: #FFFFFF; font-weight: 700; font-size: 0.85rem; border: 1px solid rgba(255,255,255,0.3);">
+        ${tierName}
+      </div>
+    `;
     this.sizeEl.textContent = `${booth.w}m × ${booth.h}m (${(booth.w * booth.h).toFixed(1)} sqm)`;
 
     // Display Dual Currency Rate: USD and KES in TWO DISTINCT LINES
-    const { usdText, kesText } = this._calculateDualCurrency(booth.rate);
+    const { usdText, kesText } = this._calculateDualCurrency(booth.rate || (booth.price_usd ? `USD ${booth.price_usd}` : 'USD 3,000'));
     const rateEl = document.getElementById('panel-rate');
     if (rateEl) {
       rateEl.innerHTML = `

@@ -165,10 +165,11 @@ export class CameraManager {
       case 'isometric':
         targetCamera = this.orthoCamera;
         const isoDist = this.currentTentFilter === 'all' ? 110 : 75;
+        // Looking from South perspective (-Math.PI * 0.75) so Booth 1 and entrance stay at the bottom
         targetPos = new THREE.Vector3(
-          this.centerX + isoDist * Math.cos(Math.PI / 4),
+          this.centerX + isoDist * Math.cos(-Math.PI * 0.75),
           isoDist * 0.82,
-          this.centerZ + isoDist * Math.sin(Math.PI / 4)
+          this.centerZ + isoDist * Math.sin(-Math.PI * 0.75)
         );
         targetLookAt = new THREE.Vector3(this.centerX, 0, this.centerZ);
         targetZoom = this.currentTentFilter === 'all' ? 1.0 : 1.35;

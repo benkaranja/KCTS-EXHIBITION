@@ -61,9 +61,9 @@ async function init() {
     cameraManager.resize();
   });
 
-  // 3. Nairobi Skyline (Inspiration Vector Style) & Blue Gradient Skydome
-  const skylineBuilder = new SkylineBuilder();
-  skylineBuilder.build(sceneManager.getScene(), VENUE_WIDTH, VENUE_LENGTH);
+  // 3. Nairobi Skyline Panorama (Temporarily disabled for clean blue sky gradient)
+  // const skylineBuilder = new SkylineBuilder();
+  // skylineBuilder.build(sceneManager.getScene(), VENUE_WIDTH, VENUE_LENGTH);
 
   // 4. Ground Environment, Plazas & Outdoor Tea Lounge
   const floorBuilder = new FloorBuilder();
@@ -253,12 +253,31 @@ function toggleBoothSelection(boothId, boothBuilder, svgOverlay, boothPanel) {
   const data = boothBuilder.getBoothData(boothId);
   if (!data) return;
 
-  if (data.status === 'available') {
-    data.status = 'selected';
-    state.selectedBooths.add(boothId);
-  } else if (data.status === 'selected') {
+  if (data.status === 'selected') {
+    // Clicking the already-selected booth deselects it
     data.status = 'available';
     state.selectedBooths.delete(boothId);
+    boothBuilder.updateBoothStatus(boothId, 'available');
+    svgOverlay.updateBoothStatus(boothId, 'available');
+    boothPanel.updateStatus('available');
+  } else if (data.status === 'available') {
+    // Deselect any previously selected booth first (single-select mode)
+    for (const prevId of state.selectedBooths) {
+      const prevData = boothBuilder.getBoothData(prevId);
+      if (prevData) {
+        prevData.status = 'available';
+        boothBuilder.updateBoothStatus(prevId, 'available');
+        svgOverlay.updateBoothStatus(prevId, 'available');
+      }
+    }
+    state.selectedBooths.clear();
+
+    // Select the new booth
+    data.status = 'selected';
+    state.selectedBooths.add(boothId);
+    boothBuilder.updateBoothStatus(boothId, 'selected');
+    svgOverlay.updateBoothStatus(boothId, 'selected');
+    boothPanel.updateStatus('selected');
   } else {
     return;
   }
@@ -266,10 +285,6 @@ function toggleBoothSelection(boothId, boothBuilder, svgOverlay, boothPanel) {
   try {
     localStorage.setItem('tea_summit_selected_booths', JSON.stringify(Array.from(state.selectedBooths)));
   } catch (e) {}
-
-  boothBuilder.updateBoothStatus(boothId, data.status);
-  svgOverlay.updateBoothStatus(boothId, data.status);
-  boothPanel.updateStatus(data.status);
 
   updateCounters(boothBuilder);
 }

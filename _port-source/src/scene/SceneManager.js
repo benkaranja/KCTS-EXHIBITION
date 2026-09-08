@@ -22,7 +22,7 @@ export class SceneManager {
     });
     this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     this.renderer.setSize(window.innerWidth, window.innerHeight);
-    this.renderer.setClearColor(0x2E86DE, 1); // Lighter azure sky background
+    this.renderer.setClearColor(0x6BA4D8, 1); // Soft blue sky background
     this.renderer.sortObjects = true;
     this.renderer.outputColorSpace = THREE.SRGBColorSpace;
     this.renderer.toneMapping = THREE.ACESFilmicToneMapping;

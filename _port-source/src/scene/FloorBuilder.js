@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import grassTextureUrl from '../textures/Grass_Texture.jpg';
 
 /**
  * FloorBuilder — builds perfectly aligned floors, plazas, and outdoor grounds:
@@ -24,7 +25,7 @@ export class FloorBuilder {
 
     // 1. Vast outer green tea estate landscape with seamless grass texture
     const textureLoader = new THREE.TextureLoader();
-    const grassTexture = textureLoader.load('/src/textures/Grass_Texture.jpg');
+    const grassTexture = textureLoader.load(grassTextureUrl);
     grassTexture.wrapS = THREE.RepeatWrapping;
     grassTexture.wrapT = THREE.RepeatWrapping;
     grassTexture.repeat.set(36, 36);
@@ -68,16 +69,16 @@ export class FloorBuilder {
     this.tentAFloor.name = 'tent-a-floor';
     groundsGroup.add(this.tentAFloor);
 
-    // 4. Pavilion B Dedicated Floor Pad (Exact bounds: x: 5 to 90, z: 50 to 70 => 85m × 20m)
-    const tentBGeo = new THREE.PlaneGeometry(85, 20);
-    const tentBTexture = this._createTentGridTexture(85, 20, '#F0F6F2', '#143D2B', '#CFDFD5');
+    // 4. Pavilion B Dedicated Floor Pad (Exact bounds: x: 5 to 90, z: 50 to 80 => 85m × 30m)
+    const tentBGeo = new THREE.PlaneGeometry(85, 30);
+    const tentBTexture = this._createTentGridTexture(85, 30, '#F0F6F2', '#143D2B', '#CFDFD5');
     const tentBMat = new THREE.MeshBasicMaterial({
       map: tentBTexture,
       side: THREE.FrontSide
     });
     this.tentBFloor = new THREE.Mesh(tentBGeo, tentBMat);
     this.tentBFloor.rotation.x = -Math.PI / 2;
-    this.tentBFloor.position.set(5 + 85 / 2, 0.01, 50 + 20 / 2); // (47.5, 0.01, 60.0)
+    this.tentBFloor.position.set(5 + 85 / 2, 0.01, 50 + 30 / 2); // (47.5, 0.01, 65.0)
     this.tentBFloor.name = 'tent-b-floor';
     groundsGroup.add(this.tentBFloor);
 

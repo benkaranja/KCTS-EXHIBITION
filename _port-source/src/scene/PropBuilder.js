@@ -1,4 +1,9 @@
 import * as THREE from 'three';
+import treeLargeUrl from '../textures/Tree_Large.png';
+import treeMedUrl from '../textures/Tree_Medium.png';
+import treeSmallUrl from '../textures/Tree_Small.png';
+import bush1Url from '../textures/Bush_1.png';
+import bush2Url from '../textures/Bush_2.png';
 
 /**
  * PropBuilder — creates outdoor landscape and summit props:
@@ -12,22 +17,7 @@ export class PropBuilder {
   build(scene, venueWidth, venueLength) {
     const propsGroup = new THREE.Group();
     propsGroup.name = 'landscape-props';
-
-    // 1. Text-Free White Teardrop Banners along Plazas & Entrances
-    this._buildWhiteTeardropBanners(propsGroup, venueWidth, venueLength);
-
-    // 2. Sprite Trees (Tree_Large, Tree_Medium, Tree_Small)
-    this._buildSpriteTrees(propsGroup, venueWidth, venueLength);
-
-    // 3. Sprite Bushes in Grass Areas (Bush_1, Bush_2)
-    this._buildSpriteBushes(propsGroup, venueWidth, venueLength);
-
-    // 4. Modern Pathway Lighting Poles
-    this._buildPathLighting(propsGroup, venueWidth, venueLength);
-
-    // 5. Summit Wayfinding Information Boards
-    this._buildWayfindingSigns(propsGroup);
-
+    // Temporarily disabled trees, bushes, banners as requested
     scene.add(propsGroup);
     return propsGroup;
   }
@@ -160,9 +150,9 @@ export class PropBuilder {
 
   _buildSpriteTrees(group, venueWidth, venueLength) {
     const loader = new THREE.TextureLoader();
-    const treeLargeTex = loader.load('/src/textures/Tree_Large.png');
-    const treeMedTex = loader.load('/src/textures/Tree_Medium.png');
-    const treeSmallTex = loader.load('/src/textures/Tree_Small.png');
+    const treeLargeTex = loader.load(treeLargeUrl);
+    const treeMedTex = loader.load(treeMedUrl);
+    const treeSmallTex = loader.load(treeSmallUrl);
 
     const treeMats = [
       new THREE.SpriteMaterial({ map: treeLargeTex, transparent: true, depthTest: true, depthWrite: false }),
@@ -198,8 +188,8 @@ export class PropBuilder {
 
   _buildSpriteBushes(group, venueWidth, venueLength) {
     const loader = new THREE.TextureLoader();
-    const bush1Tex = loader.load('/src/textures/Bush_1.png');
-    const bush2Tex = loader.load('/src/textures/Bush_2.png');
+    const bush1Tex = loader.load(bush1Url);
+    const bush2Tex = loader.load(bush2Url);
 
     const bushMats = [
       new THREE.SpriteMaterial({ map: bush1Tex, transparent: true, depthTest: true, depthWrite: false }),
