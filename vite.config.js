@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
+  base: '/KCTS-EXHIBITION/',
   root: '.',
   publicDir: 'public',
   server: {

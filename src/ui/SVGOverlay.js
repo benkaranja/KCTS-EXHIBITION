@@ -34,16 +34,15 @@ export class SVGOverlay {
       <div class="svg-modal-wrapper">
         <div class="svg-header-bar">
           <div class="svg-title-area">
-            <img src="/src/textures/KCT-Summit Logo.png" alt="Tea Summit Logo" class="svg-header-logo" />
             <div>
               <span class="summit-pill">2D MASTER FLOOR PLAN & BOOTH RESERVATION</span>
               <h2>CLICK TO MAKE BOOTH RESERVATION</h2>
             </div>
           </div>
           <div class="svg-tabs">
-            <button class="svg-tab active" data-filter="all">All Pavilions (254)</button>
-            <button class="svg-tab" data-filter="tent-a">Pavilion A · Main Hall (146)</button>
-            <button class="svg-tab" data-filter="tent-b">Pavilion B · Innovation (108)</button>
+            <button class="svg-tab active" data-filter="all">All Tents (254)</button>
+            <button class="svg-tab" data-filter="tent-a">Tent A · Main Hall (146)</button>
+            <button class="svg-tab" data-filter="tent-b">Tent B · Innovation (108)</button>
           </div>
         </div>
         <div class="svg-viewport" id="svg-viewport-target"></div>
@@ -124,30 +123,30 @@ export class SVGOverlay {
     plaza.setAttribute('rx', '1.5');
     svg.appendChild(plaza);
 
-    // 3. Render Pavilion A (Main Hall)
+    // 3. Render Tent A (Main Hall)
     if (this.activeFilter === 'all' || this.activeFilter === 'tent-a') {
-      this._renderTentOutline(svg, svgNS, 5, 10, 85, 30, 'PAVILION A — MAIN EXHIBITION HALL (30M × 85M)');
+      this._renderTentOutline(svg, svgNS, 5, 10, 85, 30, 'TENT A — MAIN EXHIBITION HALL (30M × 85M)');
     }
 
-    // 4. Render Pavilion B (Innovation Hall)
+    // 4. Render Tent B (Innovation Hall)
     if (this.activeFilter === 'all' || this.activeFilter === 'tent-b') {
-      this._renderTentOutline(svg, svgNS, 5, 50, 85, 30, 'PAVILION B — TEA INNOVATION & B2B MATCHMAKING (30M × 85M)');
+      this._renderTentOutline(svg, svgNS, 5, 50, 85, 30, 'TENT B — TEA INNOVATION & B2B MATCHMAKING (30M × 85M)');
     }
 
     // Central Walkway & Outdoor Lounge in 'all' view
     if (this.activeFilter === 'all') {
       const lounge = document.createElementNS(svgNS, 'rect');
       lounge.setAttribute('x', '35');
-      lounge.setAttribute('y', '42.5');
+      lounge.setAttribute('y', '41');
       lounge.setAttribute('width', '25');
-      lounge.setAttribute('height', '5.0');
+      lounge.setAttribute('height', '4.5');
       lounge.setAttribute('fill', '#8B5A2B');
       lounge.setAttribute('rx', '0.6');
       svg.appendChild(lounge);
 
       const loungeText = document.createElementNS(svgNS, 'text');
       loungeText.setAttribute('x', '47.5');
-      loungeText.setAttribute('y', '45.6');
+      loungeText.setAttribute('y', '43.8');
       loungeText.setAttribute('fill', '#FFFFFF');
       loungeText.setAttribute('font-size', '1.2');
       loungeText.setAttribute('font-weight', '700');

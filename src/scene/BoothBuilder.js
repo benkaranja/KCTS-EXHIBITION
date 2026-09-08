@@ -19,6 +19,10 @@ const COLORS = {
   vip:                0x1B4D3E,
   vip_fascia:         0xC99738,
 
+  hover_wall:         0xFF9F43,
+  hover_floor:        0xF5891D,
+  hover_fascia:       0xFFB366,
+
   floor_available:    0x236B43,
   floor_selected:     0xD35400,
   floor_reserved:     0x485658,
@@ -464,12 +468,38 @@ export class BoothBuilder {
   highlightBooth(id) {
     const group = this.boothGroups.get(id);
     if (!group || !group.visible) return;
+
+    // Store original colors before hover and apply orange hue
+    group.children.forEach(child => {
+      if (!child.material) return;
+      if (child.userData?.type === 'booth-wall') {
+        child.userData._origColor = child.material.color.getHex();
+        child.material.color.setHex(COLORS.hover_wall);
+      }
+      if (child.userData?.type === 'booth-floor') {
+        child.userData._origColor = child.material.color.getHex();
+        child.material.color.setHex(COLORS.hover_floor);
+      }
+      if (child.userData?.type === 'booth-fascia') {
+        child.userData._origColor = child.material.color.getHex();
+        child.material.color.setHex(COLORS.hover_fascia);
+      }
+    });
     group.scale.set(1.03, 1.06, 1.03);
   }
 
   unhighlightBooth(id) {
     const group = this.boothGroups.get(id);
     if (!group) return;
+
+    // Restore original colors
+    group.children.forEach(child => {
+      if (!child.material) return;
+      if (child.userData?._origColor !== undefined) {
+        child.material.color.setHex(child.userData._origColor);
+        delete child.userData._origColor;
+      }
+    });
     group.scale.set(1, 1, 1);
   }
 

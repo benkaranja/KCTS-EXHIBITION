@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import grassTextureUrl from '../textures/Grass_Texture.jpg';
 
 /**
  * FloorBuilder — builds perfectly aligned floors, plazas, and outdoor grounds:
@@ -24,7 +25,7 @@ export class FloorBuilder {
 
     // 1. Vast outer green tea estate landscape with seamless grass texture
     const textureLoader = new THREE.TextureLoader();
-    const grassTexture = textureLoader.load('/src/textures/Grass_Texture.jpg');
+    const grassTexture = textureLoader.load(grassTextureUrl);
     grassTexture.wrapS = THREE.RepeatWrapping;
     grassTexture.wrapT = THREE.RepeatWrapping;
     grassTexture.repeat.set(36, 36);

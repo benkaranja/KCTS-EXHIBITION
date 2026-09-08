@@ -39,7 +39,7 @@ export class BoothPanel {
     this.titleEl.textContent = `Stand #${booth.id}`;
     
     // Detailed zone, pavilion & tier badge
-    const pavilionName = booth.tent === 'tent-b' ? 'Pavilion B (Innovation)' : 'Pavilion A (Main Hall)';
+    const pavilionName = booth.tent === 'tent-b' ? 'Tent B (Innovation)' : 'Tent A (Main Hall)';
     const tierName = booth.tier || 'E3 Base';
     const fasciaColor = booth.fascia_bg || '#143D2B';
 
