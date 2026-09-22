@@ -15,7 +15,7 @@ export class CameraManager {
     // Default focus is 'all'
     this.currentTentFilter = 'all';
     this.centerX = 47.5;
-    this.centerZ = 45.0;
+    this.centerZ = 40.0;
 
     // View Mode
     this.mode = 'perspective';
@@ -121,18 +121,18 @@ export class CameraManager {
 
     if (tentFilter === 'tent-a') {
       this.centerX = 47.5;
-      this.centerZ = 65.0; // Pavilion A center (South)
+      this.centerZ = 55.0; // Pavilion A center (South tent: 40 to 70)
       this._orbitRadius = 70;
       this._orbitElevation = 38;
     } else if (tentFilter === 'tent-b') {
       this.centerX = 47.5;
-      this.centerZ = 25.0; // Pavilion B center (North)
+      this.centerZ = 25.0; // Pavilion B center (North tent: 10 to 40)
       this._orbitRadius = 65;
       this._orbitElevation = 35;
     } else {
       this.centerX = 47.5;
-      this.centerZ = 45.0; // All venue center
-      this._orbitRadius = 95;
+      this.centerZ = 40.0; // All venue center (10 to 70)
+      this._orbitRadius = 90;
       this._orbitElevation = 45;
     }
 

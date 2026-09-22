@@ -79,11 +79,11 @@ export class BoothBuilder {
     const bx = b.x, by = b.y, bw = b.w, bh = b.h;
     const eps = 0.2;
 
-    // Tent perimeter wall boundaries
+    // Tent perimeter and shared wall boundaries
     const isTentBSouthWall = (tent === 'tent-b' && Math.abs(by - 10) < eps);
     const isTentBNorthWall = (tent === 'tent-b' && Math.abs((by + bh) - 40) < eps);
-    const isTentASouthWall = (tent === 'tent-a' && Math.abs(by - 50) < eps);
-    const isTentANorthWall = (tent === 'tent-a' && Math.abs((by + bh) - 80) < eps);
+    const isTentASouthWall = (tent === 'tent-a' && Math.abs(by - 40) < eps);
+    const isTentANorthWall = (tent === 'tent-a' && Math.abs((by + bh) - 70) < eps);
 
     let hasSouthWall = isTentASouthWall || isTentBSouthWall;
     let hasNorthWall = isTentANorthWall || isTentBNorthWall;
