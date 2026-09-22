@@ -2,13 +2,12 @@ import * as THREE from 'three';
 import grassTextureUrl from '../textures/Grass_Texture.jpg';
 
 /**
- * FloorBuilder — builds perfectly aligned floors, plazas, and outdoor grounds:
- * 1. Surrounding vast green savanna lawn (Plane 350m × 350m)
- * 2. Main paved plaza grounds (Plane 110m × 95m)
- * 3. Pavilion A Dedicated Floor Pad (85m × 30m at x:47.5, z:25) with exact 3m grid
- * 4. Pavilion B Dedicated Floor Pad (85m × 20m at x:47.5, z:60) with exact 3m grid
- * 5. Central Outdoor Promenade connecting Pavilion A & B (x:47.5, z:45)
- * 6. Raised Teak Wooden Tea Tasting Deck with shade umbrellas
+ * FloorBuilder — builds aligned floors, plazas, and outdoor grounds:
+ * 1. Surrounding green lawn landscape
+ * 2. Main paved exhibition plaza (110m × 76m centered at z:40)
+ * 3. Pavilion B Dedicated Floor Pad (85m × 30m at x:47.5, z:25)
+ * 4. Pavilion A Dedicated Floor Pad (85m × 30m at x:47.5, z:55)
+ * Touching boundary at z:40 with zero gap (no outdoor tea tasting area)
  */
 export class FloorBuilder {
   constructor() {
@@ -165,74 +164,6 @@ export class FloorBuilder {
     texture.minFilter = THREE.LinearFilter;
     texture.magFilter = THREE.LinearFilter;
     return texture;
-  }
-
-  _buildOutdoorTeaLounge(group, centerX, centerZ) {
-    const tableMat = new THREE.MeshBasicMaterial({ color: 0x4A3728 });
-    const umbrellaMatWhite = new THREE.MeshBasicMaterial({ color: 0xFFFFFF, side: THREE.DoubleSide });
-    const umbrellaMatGreen = new THREE.MeshBasicMaterial({ color: 0x1E5E3A, side: THREE.DoubleSide });
-    const poleMat = new THREE.MeshBasicMaterial({ color: 0xD0D0D0 });
-
-    const tableOffsets = [
-      [-8, -2], [-2.5, -2], [3.5, -2], [9, -2],
-      [-8, 2],  [-2.5, 2],  [3.5, 2],  [9, 2]
-    ];
-
-    const chairMat = new THREE.MeshBasicMaterial({ color: 0x2C3E50 });
-    const chairGeo = new THREE.CylinderGeometry(0.35, 0.35, 0.45, 8);
-
-    for (let i = 0; i < tableOffsets.length; i++) {
-      const [ox, oz] = tableOffsets[i];
-      const tx = centerX + ox;
-      const tz = centerZ + oz;
-
-      // Table cylinder
-      const table = new THREE.Mesh(new THREE.CylinderGeometry(0.8, 0.8, 0.75, 12), tableMat);
-      table.position.set(tx, 0.45, tz);
-      group.add(table);
-
-      // 3 Chairs around table
-      for (let c = 0; c < 3; c++) {
-        const angle = (c * Math.PI * 2) / 3;
-        const chair = new THREE.Mesh(chairGeo, chairMat);
-        chair.position.set(tx + Math.cos(angle) * 1.3, 0.28, tz + Math.sin(angle) * 1.3);
-        group.add(chair);
-      }
-
-      // Umbrella pole
-      const pole = new THREE.Mesh(new THREE.CylinderGeometry(0.04, 0.04, 2.8, 8), poleMat);
-      pole.position.set(tx, 1.45, tz);
-      group.add(pole);
-
-      // Umbrella canopy
-      const umbMat = i % 2 === 0 ? umbrellaMatWhite : umbrellaMatGreen;
-      const umbrella = new THREE.Mesh(new THREE.ConeGeometry(1.6, 0.6, 12), umbMat);
-      umbrella.position.set(tx, 2.7, tz);
-      group.add(umbrella);
-    }
-
-    // Green Planter Boxes along deck perimeter
-    const planterMat = new THREE.MeshBasicMaterial({ color: 0x143D2B });
-    const bushMat = new THREE.MeshBasicMaterial({ color: 0x2E8B57 });
-    const planterGeo = new THREE.BoxGeometry(2.5, 0.5, 0.6);
-    const bushGeo = new THREE.SphereGeometry(0.45, 8, 6);
-
-    const planterPositions = [
-      [centerX - 11, centerZ - 3.8], [centerX - 6, centerZ - 3.8], [centerX + 6, centerZ - 3.8], [centerX + 11, centerZ - 3.8],
-      [centerX - 11, centerZ + 3.8], [centerX - 6, centerZ + 3.8], [centerX + 6, centerZ + 3.8], [centerX + 11, centerZ + 3.8]
-    ];
-
-    for (const [px, pz] of planterPositions) {
-      const box = new THREE.Mesh(planterGeo, planterMat);
-      box.position.set(px, 0.35, pz);
-      group.add(box);
-
-      for (let bx = -0.8; bx <= 0.8; bx += 0.8) {
-        const bush = new THREE.Mesh(bushGeo, bushMat);
-        bush.position.set(px + bx, 0.75, pz);
-        group.add(bush);
-      }
-    }
   }
 
   setTentVisibility(filter) {

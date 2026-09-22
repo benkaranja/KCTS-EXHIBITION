@@ -101,6 +101,9 @@ export class SVGOverlay {
           <feMergeNode in="SourceGraphic"/>
         </feMerge>
       </filter>
+      <marker id="flow-arrow" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.5" markerHeight="4.5" orient="auto">
+        <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#00C853"/>
+      </marker>
     `;
     svg.appendChild(defs);
 
@@ -133,25 +136,53 @@ export class SVGOverlay {
       this._renderTentOutline(svg, svgNS, 5, 40, 85, 30, 'TENT A — MAIN EXHIBITION HALL (30M × 85M)', 'bottom');
     }
 
-    // Shared Wall Inter-Pavilion Passages (tents touch at Y = 40)
+    // Shared Touching Wall & Inter-Pavilion Passages (tents touch at Y = 40)
     if (this.activeFilter === 'all') {
+      const wallGroup = document.createElementNS(svgNS, 'g');
+      wallGroup.setAttribute('id', 'svg-tent-walls');
+
+      const createWallLine = (x1, y1, x2, y2) => {
+        const line = document.createElementNS(svgNS, 'line');
+        line.setAttribute('x1', x1);
+        line.setAttribute('y1', y1);
+        line.setAttribute('x2', x2);
+        line.setAttribute('y2', y2);
+        line.setAttribute('stroke', '#143D2B');
+        line.setAttribute('stroke-width', '0.85');
+        line.setAttribute('stroke-linecap', 'round');
+        wallGroup.appendChild(line);
+      };
+
+      // 1. Shared Touching Dividing Wall along Y = 40 (closed EXCEPT for Passage 1 & 2)
+      createWallLine(5, 40, 40, 40);   // Wall segment 1: X 5 to 40
+      createWallLine(45, 40, 71, 40);  // Wall segment 2: X 45 to 71
+      createWallLine(76, 40, 90, 40);  // Wall segment 3: X 76 to 90
+
+      // 2. Exterior Perimeter Walls
+      createWallLine(5, 10, 90, 10);   // Pavilion B North Wall
+      createWallLine(5, 70, 90, 70);   // Pavilion A South Wall
+      createWallLine(90, 10, 90, 70);  // East Wall
+      createWallLine(5, 16, 5, 64);    // West Wall (closed between Exit at Y:10-16 and Entry at Y:64-70)
+
+      svg.appendChild(wallGroup);
+
       // Inter-Pavilion Passage 1 (cross-aisle between booths 48/55 & 62/69 at X = 40 to 45)
       const p1 = document.createElementNS(svgNS, 'rect');
       p1.setAttribute('x', '40');
-      p1.setAttribute('y', '38.8');
+      p1.setAttribute('y', '38.6');
       p1.setAttribute('width', '5');
-      p1.setAttribute('height', '2.4');
+      p1.setAttribute('height', '2.8');
       p1.setAttribute('fill', '#DCE8E0');
       p1.setAttribute('stroke', '#1E5E3A');
-      p1.setAttribute('stroke-width', '0.25');
-      p1.setAttribute('rx', '0.3');
+      p1.setAttribute('stroke-width', '0.35');
+      p1.setAttribute('rx', '0.4');
       svg.appendChild(p1);
 
       const p1Text = document.createElementNS(svgNS, 'text');
       p1Text.setAttribute('x', '42.5');
-      p1Text.setAttribute('y', '40.4');
+      p1Text.setAttribute('y', '40.3');
       p1Text.setAttribute('fill', '#0F3020');
-      p1Text.setAttribute('font-size', '0.85');
+      p1Text.setAttribute('font-size', '0.8');
       p1Text.setAttribute('font-weight', '700');
       p1Text.setAttribute('text-anchor', 'middle');
       p1Text.textContent = '⬆ PASSAGE 1 ⬆';
@@ -160,20 +191,20 @@ export class SVGOverlay {
       // Inter-Pavilion Passage 2 (cross-aisle at booths 115/122 at X = 71 to 76)
       const p2 = document.createElementNS(svgNS, 'rect');
       p2.setAttribute('x', '71');
-      p2.setAttribute('y', '38.8');
+      p2.setAttribute('y', '38.6');
       p2.setAttribute('width', '5');
-      p2.setAttribute('height', '2.4');
+      p2.setAttribute('height', '2.8');
       p2.setAttribute('fill', '#DCE8E0');
       p2.setAttribute('stroke', '#1E5E3A');
-      p2.setAttribute('stroke-width', '0.25');
-      p2.setAttribute('rx', '0.3');
+      p2.setAttribute('stroke-width', '0.35');
+      p2.setAttribute('rx', '0.4');
       svg.appendChild(p2);
 
       const p2Text = document.createElementNS(svgNS, 'text');
       p2Text.setAttribute('x', '73.5');
-      p2Text.setAttribute('y', '40.4');
+      p2Text.setAttribute('y', '40.3');
       p2Text.setAttribute('fill', '#0F3020');
-      p2Text.setAttribute('font-size', '0.85');
+      p2Text.setAttribute('font-size', '0.8');
       p2Text.setAttribute('font-weight', '700');
       p2Text.setAttribute('text-anchor', 'middle');
       p2Text.textContent = '⬆ PASSAGE 2 ⬆';
@@ -222,6 +253,41 @@ export class SVGOverlay {
       exitText.setAttribute('text-anchor', 'middle');
       exitText.textContent = '◀ SUMMIT EXIT (NORTH-WEST)';
       svg.appendChild(exitText);
+
+      // Movement Flow Directional Indicators (as depicted by Movement Plan)
+      const flowGroup = document.createElementNS(svgNS, 'g');
+      flowGroup.setAttribute('id', 'svg-movement-flow');
+      flowGroup.setAttribute('opacity', '0.9');
+
+      const createFlowArrow = (x1, y1, x2, y2) => {
+        const line = document.createElementNS(svgNS, 'line');
+        line.setAttribute('x1', x1);
+        line.setAttribute('y1', y1);
+        line.setAttribute('x2', x2);
+        line.setAttribute('y2', y2);
+        line.setAttribute('stroke', '#00C853');
+        line.setAttribute('stroke-width', '0.55');
+        line.setAttribute('stroke-dasharray', '1.8, 1.2');
+        line.setAttribute('marker-end', 'url(#flow-arrow)');
+        flowGroup.appendChild(line);
+      };
+
+      // Entrance flow
+      createFlowArrow(2, 67, 6.5, 67);
+      // West cross aisle flow in Pavilion A
+      createFlowArrow(6.5, 65, 6.5, 52);
+      createFlowArrow(6.5, 48, 6.5, 42);
+      // Flow up Passage 1 into Pavilion B
+      createFlowArrow(42.5, 43.5, 42.5, 36.5);
+      // Flow up Passage 2 into Pavilion B
+      createFlowArrow(73.5, 43.5, 73.5, 36.5);
+      // Pavilion B movement flow toward exit
+      createFlowArrow(40, 38.5, 20, 38.5);
+      createFlowArrow(6.5, 25, 6.5, 14);
+      // Summit Exit departure flow
+      createFlowArrow(6.5, 13, 2, 13);
+
+      svg.appendChild(flowGroup);
     }
 
     // 5. Booth Elements

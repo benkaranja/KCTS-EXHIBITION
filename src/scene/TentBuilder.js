@@ -13,8 +13,11 @@ export class TentBuilder {
     this.tentBGroup = null;
     this.walkwayGroup = null;
     this.roofMaterials = [];
+    this.wallMaterials = [];
     this.currentRoofOpacity = 0.18;
     this.targetRoofOpacity = 0.18;
+    this.currentWallOpacity = 0.30;
+    this.targetWallOpacity = 0.30;
   }
 
   build(scene, venueWidth, venueLength) {
@@ -66,6 +69,9 @@ export class TentBuilder {
     this._buildExitGate(this.walkwayGroup, 5, 14);
 
     tentsGroup.add(this.walkwayGroup);
+
+    // 6. Perimeter & Shared Touching Walls with Entry/Exit & Passage Openings
+    this._buildWalls(tentsGroup);
 
     scene.add(tentsGroup);
     return tentsGroup;
@@ -175,11 +181,6 @@ export class TentBuilder {
     eastGableGeo.computeVertexNormals();
     const eastGable = new THREE.Mesh(eastGableGeo, roofMat);
     tentGroup.add(eastGable);
-
-    // Entrance Portals (with top-priority camera facing sign sprite)
-    this._addEntranceArch(tentGroup, x + width / 2, z, 'MAIN ENTRANCE · SOUTH', colorTheme);
-    this._addEntranceArch(tentGroup, x + width / 2, z + length, 'NORTH PLAZA ACCESS', colorTheme);
-    this._addEntranceArch(tentGroup, x, z + length / 2, 'WEST VIP ACCESS', colorTheme);
 
     // Pavilion Ridge Sign Banner (renderOrder: 2000 — on top of all booth numbers)
     this._addPavilionSign(tentGroup, x + width / 2, ridgeHeight + 1.8, ridgeZ, badgeText);
@@ -401,22 +402,107 @@ export class TentBuilder {
     group.add(sprite);
   }
 
+  _buildWalls(group) {
+    const wallGroup = new THREE.Group();
+    wallGroup.name = 'tent-enclosure-walls';
+
+    const wallMat = new THREE.MeshBasicMaterial({
+      color: 0xEEF5F1,
+      transparent: true,
+      opacity: 0.30,
+      side: THREE.DoubleSide,
+      depthWrite: false
+    });
+    this.wallMaterials.push(wallMat);
+
+    const frameMat = new THREE.MeshBasicMaterial({ color: 0x143D2B });
+
+    const createWallSegment = (x1, z1, x2, z2, height = 4.5) => {
+      const dx = x2 - x1;
+      const dz = z2 - z1;
+      const length = Math.sqrt(dx * dx + dz * dz);
+      const angle = Math.atan2(dz, dx);
+      const mx = (x1 + x2) / 2;
+      const mz = (z1 + z2) / 2;
+
+      // Translucent marquee wall curtain
+      const panel = new THREE.Mesh(new THREE.PlaneGeometry(length, height), wallMat);
+      panel.position.set(mx, height / 2, mz);
+      panel.rotation.y = -angle;
+      wallGroup.add(panel);
+
+      // Baseboard / ground sill beam
+      const sill = new THREE.Mesh(new THREE.BoxGeometry(length, 0.25, 0.16), frameMat);
+      sill.position.set(mx, 0.125, mz);
+      sill.rotation.y = -angle;
+      wallGroup.add(sill);
+
+      // Top eave rail
+      const rail = new THREE.Mesh(new THREE.BoxGeometry(length, 0.18, 0.16), frameMat);
+      rail.position.set(mx, height, mz);
+      rail.rotation.y = -angle;
+      wallGroup.add(rail);
+    };
+
+    // 1. Shared touching wall at z = 40 between Pavilion B and Pavilion A
+    // (with openings for Passage 1 at x:40..45 and Passage 2 at x:71..76)
+    createWallSegment(5, 40, 40, 40);   // West shared wall segment
+    createWallSegment(45, 40, 71, 40);  // Center shared wall segment
+    createWallSegment(76, 40, 90, 40);  // East shared wall segment
+
+    // 2. Pavilion B North Perimeter Wall (z = 10, x: 5 to 90)
+    createWallSegment(5, 10, 90, 10);
+
+    // 3. Pavilion A South Perimeter Wall (z = 70, x: 5 to 90)
+    createWallSegment(5, 70, 90, 70);
+
+    // 4. East Perimeter Wall (x = 90, z: 10 to 70)
+    createWallSegment(90, 10, 90, 70);
+
+    // 5. West Perimeter Wall with Entry & Exit Openings (x = 5)
+    // [Summit Exit Opening: z = 10 to 16, outside Booth 148]
+    createWallSegment(5, 16, 5, 40); // Pavilion B West wall segment
+    createWallSegment(5, 40, 5, 64); // Pavilion A West wall segment
+    // [Main Entrance Opening: z = 64 to 70, outside Booth 1]
+
+    // 6. Floor passage threshold carpets at Passage 1 & Passage 2
+    const thresholdMat = new THREE.MeshBasicMaterial({ color: 0x1E5E3A, side: THREE.FrontSide });
+    const p1Floor = new THREE.Mesh(new THREE.PlaneGeometry(5.0, 1.2), thresholdMat);
+    p1Floor.rotation.x = -Math.PI / 2;
+    p1Floor.position.set(42.5, 0.015, 40.0);
+    wallGroup.add(p1Floor);
+
+    const p2Floor = new THREE.Mesh(new THREE.PlaneGeometry(5.0, 1.2), thresholdMat);
+    p2Floor.rotation.x = -Math.PI / 2;
+    p2Floor.position.set(73.5, 0.015, 40.0);
+    wallGroup.add(p2Floor);
+
+    group.add(wallGroup);
+  }
+
   updateRoofOpacity(cameraDistance, hasSelectedBooth, dt = 0.016) {
     if (hasSelectedBooth) {
       this.targetRoofOpacity = 0.0;
+      this.targetWallOpacity = 0.04;
     } else {
       const minDistance = 45;
       const maxDistance = 140;
       const clampedDist = Math.max(minDistance, Math.min(maxDistance, cameraDistance));
       const factor = (clampedDist - minDistance) / (maxDistance - minDistance);
       this.targetRoofOpacity = Math.pow(factor, 1.4) * 0.55;
+      this.targetWallOpacity = Math.pow(factor, 1.2) * 0.40;
     }
 
     this.currentRoofOpacity += (this.targetRoofOpacity - this.currentRoofOpacity) * Math.min(1, dt * 6.0);
+    this.currentWallOpacity += (this.targetWallOpacity - this.currentWallOpacity) * Math.min(1, dt * 6.0);
 
     for (const mat of this.roofMaterials) {
       mat.opacity = this.currentRoofOpacity;
       mat.visible = this.currentRoofOpacity > 0.005;
+    }
+    for (const mat of this.wallMaterials) {
+      mat.opacity = this.currentWallOpacity;
+      mat.visible = this.currentWallOpacity > 0.005;
     }
   }
 

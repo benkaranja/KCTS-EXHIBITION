@@ -249,9 +249,8 @@ export class PropBuilder {
     const wayfindingMat = new THREE.MeshBasicMaterial({ color: 0x143D2B });
 
     const signPosts = [
-      { x: 3, z: 25, title: 'PAVILION A · MAIN HALL ➔' },
-      { x: 3, z: 55, title: 'PAVILION B · TEA INNOVATION ➔' },
-      { x: 48, z: 41, title: '☕ OUTDOOR TEA TASTING LOUNGE' }
+      { x: 3, z: 25, title: 'PAVILION B · TEA INNOVATION ➔' },
+      { x: 3, z: 55, title: 'PAVILION A · MAIN HALL ➔' }
     ];
 
     for (const sign of signPosts) {
