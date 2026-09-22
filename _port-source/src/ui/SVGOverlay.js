@@ -73,11 +73,11 @@ export class SVGOverlay {
     let minX = 0, maxX = 98, minY = 2, maxY = 88;
 
     if (this.activeFilter === 'tent-a') {
-      minY = 5;
-      maxY = 44;
-    } else if (this.activeFilter === 'tent-b') {
       minY = 46;
       maxY = 86;
+    } else if (this.activeFilter === 'tent-b') {
+      minY = 5;
+      maxY = 45;
     }
 
     const viewBoxW = (maxX - minX) + padding * 2;
@@ -123,36 +123,105 @@ export class SVGOverlay {
     plaza.setAttribute('rx', '1.5');
     svg.appendChild(plaza);
 
-    // 3. Render Tent A (Main Hall)
-    if (this.activeFilter === 'all' || this.activeFilter === 'tent-a') {
-      this._renderTentOutline(svg, svgNS, 5, 10, 85, 30, 'TENT A — MAIN EXHIBITION HALL (30M × 85M)');
-    }
-
-    // 4. Render Tent B (Innovation Hall)
+    // 3. Render Tent B (Innovation Hall - North Tent: Y 10 to 40)
     if (this.activeFilter === 'all' || this.activeFilter === 'tent-b') {
-      this._renderTentOutline(svg, svgNS, 5, 50, 85, 30, 'TENT B — TEA INNOVATION & B2B MATCHMAKING (30M × 85M)');
+      this._renderTentOutline(svg, svgNS, 5, 10, 85, 30, 'TENT B — TEA INNOVATION & B2B MATCHMAKING (30M × 85M)');
     }
 
-    // Central Walkway & Outdoor Lounge in 'all' view
+    // 4. Render Tent A (Main Exhibition Hall - South Tent: Y 50 to 80)
+    if (this.activeFilter === 'all' || this.activeFilter === 'tent-a') {
+      this._renderTentOutline(svg, svgNS, 5, 50, 85, 30, 'TENT A — MAIN EXHIBITION HALL (30M × 85M)');
+    }
+
+    // Central Walkways & Outdoor Lounge in 'all' view
     if (this.activeFilter === 'all') {
+      // Connecting Walkway 1 (X = 40 to 45)
+      const w1 = document.createElementNS(svgNS, 'rect');
+      w1.setAttribute('x', '40');
+      w1.setAttribute('y', '40');
+      w1.setAttribute('width', '5');
+      w1.setAttribute('height', '10');
+      w1.setAttribute('fill', '#DCE8E0');
+      w1.setAttribute('stroke', '#1E5E3A');
+      w1.setAttribute('stroke-width', '0.2');
+      w1.setAttribute('stroke-dasharray', '0.8,0.5');
+      svg.appendChild(w1);
+
+      // Connecting Walkway 2 (X = 71 to 76)
+      const w2 = document.createElementNS(svgNS, 'rect');
+      w2.setAttribute('x', '71');
+      w2.setAttribute('y', '40');
+      w2.setAttribute('width', '5');
+      w2.setAttribute('height', '10');
+      w2.setAttribute('fill', '#DCE8E0');
+      w2.setAttribute('stroke', '#1E5E3A');
+      w2.setAttribute('stroke-width', '0.2');
+      w2.setAttribute('stroke-dasharray', '0.8,0.5');
+      svg.appendChild(w2);
+
+      // Outdoor Lounge Deck
       const lounge = document.createElementNS(svgNS, 'rect');
-      lounge.setAttribute('x', '35');
-      lounge.setAttribute('y', '41');
-      lounge.setAttribute('width', '25');
-      lounge.setAttribute('height', '4.5');
+      lounge.setAttribute('x', '48');
+      lounge.setAttribute('y', '42.5');
+      lounge.setAttribute('width', '20');
+      lounge.setAttribute('height', '5');
       lounge.setAttribute('fill', '#8B5A2B');
       lounge.setAttribute('rx', '0.6');
       svg.appendChild(lounge);
 
       const loungeText = document.createElementNS(svgNS, 'text');
-      loungeText.setAttribute('x', '47.5');
-      loungeText.setAttribute('y', '43.8');
+      loungeText.setAttribute('x', '58');
+      loungeText.setAttribute('y', '45.5');
       loungeText.setAttribute('fill', '#FFFFFF');
       loungeText.setAttribute('font-size', '1.2');
       loungeText.setAttribute('font-weight', '700');
       loungeText.setAttribute('text-anchor', 'middle');
       loungeText.textContent = '☕ OUTDOOR TEA TASTING LOUNGE';
       svg.appendChild(loungeText);
+
+      // Entrance Badge (South-West)
+      const entryBadge = document.createElementNS(svgNS, 'rect');
+      entryBadge.setAttribute('x', '4');
+      entryBadge.setAttribute('y', '81.5');
+      entryBadge.setAttribute('width', '36');
+      entryBadge.setAttribute('height', '2.5');
+      entryBadge.setAttribute('fill', '#0F3020');
+      entryBadge.setAttribute('stroke', '#D4AF37');
+      entryBadge.setAttribute('stroke-width', '0.25');
+      entryBadge.setAttribute('rx', '0.4');
+      svg.appendChild(entryBadge);
+
+      const entryText = document.createElementNS(svgNS, 'text');
+      entryText.setAttribute('x', '22');
+      entryText.setAttribute('y', '83.2');
+      entryText.setAttribute('fill', '#FFD700');
+      entryText.setAttribute('font-size', '1.1');
+      entryText.setAttribute('font-weight', '700');
+      entryText.setAttribute('text-anchor', 'middle');
+      entryText.textContent = '▶ MAIN SUMMIT ENTRANCE (SOUTH-WEST)';
+      svg.appendChild(entryText);
+
+      // Exit Badge (North-West)
+      const exitBadge = document.createElementNS(svgNS, 'rect');
+      exitBadge.setAttribute('x', '4');
+      exitBadge.setAttribute('y', '5.2');
+      exitBadge.setAttribute('width', '30');
+      exitBadge.setAttribute('height', '2.4');
+      exitBadge.setAttribute('fill', '#143D2B');
+      exitBadge.setAttribute('stroke', '#A3FFC2');
+      exitBadge.setAttribute('stroke-width', '0.25');
+      exitBadge.setAttribute('rx', '0.4');
+      svg.appendChild(exitBadge);
+
+      const exitText = document.createElementNS(svgNS, 'text');
+      exitText.setAttribute('x', '19');
+      exitText.setAttribute('y', '6.8');
+      exitText.setAttribute('fill', '#FFFFFF');
+      exitText.setAttribute('font-size', '1.1');
+      exitText.setAttribute('font-weight', '700');
+      exitText.setAttribute('text-anchor', 'middle');
+      exitText.textContent = '◀ SUMMIT EXIT (NORTH-WEST)';
+      svg.appendChild(exitText);
     }
 
     // 5. Booth Elements

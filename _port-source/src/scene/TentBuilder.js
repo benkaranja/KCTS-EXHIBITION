@@ -21,28 +21,12 @@ export class TentBuilder {
     const tentsGroup = new THREE.Group();
     tentsGroup.name = 'all-tents-structure';
 
-    // 1. Build Pavilion A (Main Tent: x:5 to 90, z:10 to 40)
-    this.tentAGroup = this._buildTent({
-      id: 'tent-a',
-      name: 'PAVILION A — MAIN EXHIBITION HALL',
-      x: 5,
-      z: 10,
-      width: 85,
-      length: 30,
-      height: 5.5,
-      ridgeHeight: 7.2,
-      postSpacing: 8.5,
-      colorTheme: 0x1E5E3A,
-      badgeText: 'PAVILION A · MAIN HALL'
-    });
-    tentsGroup.add(this.tentAGroup);
-
-    // 2. Build Pavilion B (Secondary Tent: x:5 to 90, z:50 to 70)
+    // 1. Build Pavilion B (Secondary Tent / Innovation: x:5 to 90, z:10 to 40)
     this.tentBGroup = this._buildTent({
       id: 'tent-b',
       name: 'PAVILION B — TEA INNOVATION & B2B MATCHMAKING',
       x: 5,
-      z: 50,
+      z: 10,
       width: 85,
       length: 30,
       height: 4.8,
@@ -53,11 +37,34 @@ export class TentBuilder {
     });
     tentsGroup.add(this.tentBGroup);
 
-    // 3. Covered Connecting Canopy Walkway
+    // 2. Build Pavilion A (Main Tent / Main Hall: x:5 to 90, z:50 to 80)
+    this.tentAGroup = this._buildTent({
+      id: 'tent-a',
+      name: 'PAVILION A — MAIN EXHIBITION HALL',
+      x: 5,
+      z: 50,
+      width: 85,
+      length: 30,
+      height: 5.5,
+      ridgeHeight: 7.2,
+      postSpacing: 8.5,
+      colorTheme: 0x1E5E3A,
+      badgeText: 'PAVILION A · MAIN HALL'
+    });
+    tentsGroup.add(this.tentAGroup);
+
+    // 3. Covered Connecting Canopy Walkways (Dual walkways at cross-aisles)
     this.walkwayGroup = new THREE.Group();
-    this.walkwayGroup.name = 'connecting-walkway';
-    this._buildConnectingWalkway(this.walkwayGroup, 5 + 42.5, 40, 10);
-    this._buildWelcomeGate(this.walkwayGroup, 5, 25);
+    this.walkwayGroup.name = 'connecting-walkways';
+    this._buildConnectingWalkway(this.walkwayGroup, 42.5, 40, 10);
+    this._buildConnectingWalkway(this.walkwayGroup, 73.5, 40, 10);
+
+    // 4. Welcome Gate at South-West Arrival (outside Pavilion A)
+    this._buildWelcomeGate(this.walkwayGroup, 5, 74);
+
+    // 5. Exit Gate at North-West Departure (outside Pavilion B)
+    this._buildExitGate(this.walkwayGroup, 5, 16);
+
     tentsGroup.add(this.walkwayGroup);
 
     scene.add(tentsGroup);
@@ -338,6 +345,58 @@ export class TentBuilder {
     const sprite = new THREE.Sprite(spriteMat);
     sprite.position.set(x - 6.2, 7.2, z);
     sprite.scale.set(12, 2.4, 1);
+    sprite.renderOrder = 2000;
+    group.add(sprite);
+  }
+
+  _buildExitGate(group, x, z) {
+    const gateMat = new THREE.MeshBasicMaterial({ color: 0x143D2B });
+
+    const pylonGeo = new THREE.BoxGeometry(0.8, 5.0, 0.8);
+    const p1 = new THREE.Mesh(pylonGeo, gateMat);
+    p1.position.set(x - 6, 2.5, z - 6);
+    group.add(p1);
+
+    const p2 = new THREE.Mesh(pylonGeo, gateMat);
+    p2.position.set(x - 6, 2.5, z + 6);
+    group.add(p2);
+
+    const truss = new THREE.Mesh(new THREE.BoxGeometry(0.8, 0.8, 12.8), gateMat);
+    truss.position.set(x - 6, 5.0, z);
+    group.add(truss);
+
+    const canvas = document.createElement('canvas');
+    canvas.width = 640;
+    canvas.height = 140;
+    const ctx = canvas.getContext('2d');
+
+    ctx.fillStyle = '#0F3020';
+    ctx.fillRect(0, 0, 640, 140);
+    ctx.strokeStyle = '#D4AF37';
+    ctx.lineWidth = 5;
+    ctx.strokeRect(5, 5, 630, 130);
+
+    ctx.fillStyle = '#E8F5E9';
+    ctx.font = 'bold 32px Inter, sans-serif';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText('KENYA-CHINA TEA SUMMIT 2027', 320, 48);
+
+    ctx.fillStyle = '#C99738';
+    ctx.font = '600 22px Inter, sans-serif';
+    ctx.fillText('SUMMIT EXIT · NORTH DEPARTURE', 320, 95);
+
+    const texture = new THREE.CanvasTexture(canvas);
+    texture.minFilter = THREE.LinearFilter;
+    const spriteMat = new THREE.SpriteMaterial({
+      map: texture,
+      transparent: true,
+      depthTest: false,
+      depthWrite: false
+    });
+    const sprite = new THREE.Sprite(spriteMat);
+    sprite.position.set(x - 6.2, 6.2, z);
+    sprite.scale.set(9.5, 2.1, 1);
     sprite.renderOrder = 2000;
     group.add(sprite);
   }
