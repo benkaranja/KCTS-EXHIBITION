@@ -15,7 +15,7 @@ export class CameraManager {
     // Default focus is 'all'
     this.currentTentFilter = 'all';
     this.centerX = 47.5;
-    this.centerZ = 40.0;
+    this.centerZ = 45.0;
 
     // View Mode
     this.mode = 'perspective';
@@ -121,17 +121,17 @@ export class CameraManager {
 
     if (tentFilter === 'tent-a') {
       this.centerX = 47.5;
-      this.centerZ = 25.0; // Pavilion A center
+      this.centerZ = 65.0; // Pavilion A center (South)
       this._orbitRadius = 70;
       this._orbitElevation = 38;
     } else if (tentFilter === 'tent-b') {
       this.centerX = 47.5;
-      this.centerZ = 60.0; // Pavilion B center
+      this.centerZ = 25.0; // Pavilion B center (North)
       this._orbitRadius = 65;
       this._orbitElevation = 35;
     } else {
       this.centerX = 47.5;
-      this.centerZ = 40.0; // All venue center
+      this.centerZ = 45.0; // All venue center
       this._orbitRadius = 95;
       this._orbitElevation = 45;
     }
@@ -165,11 +165,11 @@ export class CameraManager {
       case 'isometric':
         targetCamera = this.orthoCamera;
         const isoDist = this.currentTentFilter === 'all' ? 110 : 75;
-        // Looking from South perspective (-Math.PI * 0.75) so Booth 1 and entrance stay at the bottom
+        // Looking from South-West perspective (Math.PI * 0.75) so Pavilion A and Booth 1 entrance stay at the bottom-left
         targetPos = new THREE.Vector3(
-          this.centerX + isoDist * Math.cos(-Math.PI * 0.75),
+          this.centerX + isoDist * Math.cos(Math.PI * 0.75),
           isoDist * 0.82,
-          this.centerZ + isoDist * Math.sin(-Math.PI * 0.75)
+          this.centerZ + isoDist * Math.sin(Math.PI * 0.75)
         );
         targetLookAt = new THREE.Vector3(this.centerX, 0, this.centerZ);
         targetZoom = this.currentTentFilter === 'all' ? 1.0 : 1.35;
