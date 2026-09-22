@@ -11,17 +11,17 @@ tent_b = [b for b in booths if b['tent'] == 'tent-b']
 assert len(tent_a) == 146, f"Expected 146 in Tent A, got {len(tent_a)}"
 assert len(tent_b) == 108, f"Expected 108 in Tent B, got {len(tent_b)}"
 
-# Verify Tent A is in South (y >= 50 and y <= 80)
+# Verify Tent A is in South, touching Tent B (y >= 40 and y <= 70)
 for b in tent_a:
-    assert 50 <= b['y'] <= 80, f"Tent A booth {b['id']} y={b['y']} outside [50, 80]"
+    assert 40 <= b['y'] <= 70, f"Tent A booth {b['id']} y={b['y']} outside [40, 70]"
 
 # Verify Tent B is in North (y >= 10 and y <= 40)
 for b in tent_b:
     assert 10 <= b['y'] <= 40, f"Tent B booth {b['id']} y={b['y']} outside [10, 40]"
 
-# Verify tent metadata
+# Verify tent metadata: tents touch at z=40
 tent_meta = {t['id']: t for t in data['tents']}
-assert tent_meta['tent-a']['z'] == 50, f"Tent A metadata z should be 50, got {tent_meta['tent-a']['z']}"
-assert tent_meta['tent-b']['z'] == 10, f"Tent B metadata z should be 10, got {tent_meta['tent-b']['z']}"
+assert tent_meta['tent-b']['z'] == 10 and tent_meta['tent-b']['length'] == 30, "Tent B must be z=10, len=30"
+assert tent_meta['tent-a']['z'] == 40 and tent_meta['tent-a']['length'] == 30, "Tent A must be z=40, len=30"
 
-print("PASS: Booth manifest verified successfully with correct swapped coordinates!")
+print("PASS: Verified tents are adjacent with shared boundary at z=40 and no gap!")

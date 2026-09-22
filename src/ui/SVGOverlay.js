@@ -70,14 +70,14 @@ export class SVGOverlay {
     this._boothElements.clear();
 
     const padding = 6;
-    let minX = 0, maxX = 98, minY = 2, maxY = 88;
+    let minX = 0, maxX = 98, minY = 2, maxY = 76;
 
     if (this.activeFilter === 'tent-a') {
-      minY = 46;
-      maxY = 86;
+      minY = 36;
+      maxY = 76;
     } else if (this.activeFilter === 'tent-b') {
-      minY = 5;
-      maxY = 45;
+      minY = 4;
+      maxY = 44;
     }
 
     const viewBoxW = (maxX - minX) + padding * 2;
@@ -125,64 +125,64 @@ export class SVGOverlay {
 
     // 3. Render Tent B (Innovation Hall - North Tent: Y 10 to 40)
     if (this.activeFilter === 'all' || this.activeFilter === 'tent-b') {
-      this._renderTentOutline(svg, svgNS, 5, 10, 85, 30, 'TENT B — TEA INNOVATION & B2B MATCHMAKING (30M × 85M)');
+      this._renderTentOutline(svg, svgNS, 5, 10, 85, 30, 'TENT B — TEA INNOVATION & B2B MATCHMAKING (30M × 85M)', 'top');
     }
 
-    // 4. Render Tent A (Main Exhibition Hall - South Tent: Y 50 to 80)
+    // 4. Render Tent A (Main Exhibition Hall - South Tent: Y 40 to 70, touching Tent B)
     if (this.activeFilter === 'all' || this.activeFilter === 'tent-a') {
-      this._renderTentOutline(svg, svgNS, 5, 50, 85, 30, 'TENT A — MAIN EXHIBITION HALL (30M × 85M)');
+      this._renderTentOutline(svg, svgNS, 5, 40, 85, 30, 'TENT A — MAIN EXHIBITION HALL (30M × 85M)', 'bottom');
     }
 
-    // Central Walkways & Outdoor Lounge in 'all' view
+    // Shared Wall Inter-Pavilion Passages (tents touch at Y = 40)
     if (this.activeFilter === 'all') {
-      // Connecting Walkway 1 (X = 40 to 45)
-      const w1 = document.createElementNS(svgNS, 'rect');
-      w1.setAttribute('x', '40');
-      w1.setAttribute('y', '40');
-      w1.setAttribute('width', '5');
-      w1.setAttribute('height', '10');
-      w1.setAttribute('fill', '#DCE8E0');
-      w1.setAttribute('stroke', '#1E5E3A');
-      w1.setAttribute('stroke-width', '0.2');
-      w1.setAttribute('stroke-dasharray', '0.8,0.5');
-      svg.appendChild(w1);
+      // Inter-Pavilion Passage 1 (cross-aisle between booths 48/55 & 62/69 at X = 40 to 45)
+      const p1 = document.createElementNS(svgNS, 'rect');
+      p1.setAttribute('x', '40');
+      p1.setAttribute('y', '38.8');
+      p1.setAttribute('width', '5');
+      p1.setAttribute('height', '2.4');
+      p1.setAttribute('fill', '#DCE8E0');
+      p1.setAttribute('stroke', '#1E5E3A');
+      p1.setAttribute('stroke-width', '0.25');
+      p1.setAttribute('rx', '0.3');
+      svg.appendChild(p1);
 
-      // Connecting Walkway 2 (X = 71 to 76)
-      const w2 = document.createElementNS(svgNS, 'rect');
-      w2.setAttribute('x', '71');
-      w2.setAttribute('y', '40');
-      w2.setAttribute('width', '5');
-      w2.setAttribute('height', '10');
-      w2.setAttribute('fill', '#DCE8E0');
-      w2.setAttribute('stroke', '#1E5E3A');
-      w2.setAttribute('stroke-width', '0.2');
-      w2.setAttribute('stroke-dasharray', '0.8,0.5');
-      svg.appendChild(w2);
+      const p1Text = document.createElementNS(svgNS, 'text');
+      p1Text.setAttribute('x', '42.5');
+      p1Text.setAttribute('y', '40.4');
+      p1Text.setAttribute('fill', '#0F3020');
+      p1Text.setAttribute('font-size', '0.85');
+      p1Text.setAttribute('font-weight', '700');
+      p1Text.setAttribute('text-anchor', 'middle');
+      p1Text.textContent = '⬆ PASSAGE 1 ⬆';
+      svg.appendChild(p1Text);
 
-      // Outdoor Lounge Deck
-      const lounge = document.createElementNS(svgNS, 'rect');
-      lounge.setAttribute('x', '48');
-      lounge.setAttribute('y', '42.5');
-      lounge.setAttribute('width', '20');
-      lounge.setAttribute('height', '5');
-      lounge.setAttribute('fill', '#8B5A2B');
-      lounge.setAttribute('rx', '0.6');
-      svg.appendChild(lounge);
+      // Inter-Pavilion Passage 2 (cross-aisle at booths 115/122 at X = 71 to 76)
+      const p2 = document.createElementNS(svgNS, 'rect');
+      p2.setAttribute('x', '71');
+      p2.setAttribute('y', '38.8');
+      p2.setAttribute('width', '5');
+      p2.setAttribute('height', '2.4');
+      p2.setAttribute('fill', '#DCE8E0');
+      p2.setAttribute('stroke', '#1E5E3A');
+      p2.setAttribute('stroke-width', '0.25');
+      p2.setAttribute('rx', '0.3');
+      svg.appendChild(p2);
 
-      const loungeText = document.createElementNS(svgNS, 'text');
-      loungeText.setAttribute('x', '58');
-      loungeText.setAttribute('y', '45.5');
-      loungeText.setAttribute('fill', '#FFFFFF');
-      loungeText.setAttribute('font-size', '1.2');
-      loungeText.setAttribute('font-weight', '700');
-      loungeText.setAttribute('text-anchor', 'middle');
-      loungeText.textContent = '☕ OUTDOOR TEA TASTING LOUNGE';
-      svg.appendChild(loungeText);
+      const p2Text = document.createElementNS(svgNS, 'text');
+      p2Text.setAttribute('x', '73.5');
+      p2Text.setAttribute('y', '40.4');
+      p2Text.setAttribute('fill', '#0F3020');
+      p2Text.setAttribute('font-size', '0.85');
+      p2Text.setAttribute('font-weight', '700');
+      p2Text.setAttribute('text-anchor', 'middle');
+      p2Text.textContent = '⬆ PASSAGE 2 ⬆';
+      svg.appendChild(p2Text);
 
-      // Entrance Badge (South-West)
+      // Entrance Badge (South-West outside Pavilion A Booth 1)
       const entryBadge = document.createElementNS(svgNS, 'rect');
       entryBadge.setAttribute('x', '4');
-      entryBadge.setAttribute('y', '81.5');
+      entryBadge.setAttribute('y', '73.5');
       entryBadge.setAttribute('width', '36');
       entryBadge.setAttribute('height', '2.5');
       entryBadge.setAttribute('fill', '#0F3020');
@@ -193,7 +193,7 @@ export class SVGOverlay {
 
       const entryText = document.createElementNS(svgNS, 'text');
       entryText.setAttribute('x', '22');
-      entryText.setAttribute('y', '83.2');
+      entryText.setAttribute('y', '75.2');
       entryText.setAttribute('fill', '#FFD700');
       entryText.setAttribute('font-size', '1.1');
       entryText.setAttribute('font-weight', '700');
@@ -201,10 +201,10 @@ export class SVGOverlay {
       entryText.textContent = '▶ MAIN SUMMIT ENTRANCE (SOUTH-WEST)';
       svg.appendChild(entryText);
 
-      // Exit Badge (North-West)
+      // Exit Badge (North-West outside Pavilion B Booth 148)
       const exitBadge = document.createElementNS(svgNS, 'rect');
       exitBadge.setAttribute('x', '4');
-      exitBadge.setAttribute('y', '5.2');
+      exitBadge.setAttribute('y', '4.2');
       exitBadge.setAttribute('width', '30');
       exitBadge.setAttribute('height', '2.4');
       exitBadge.setAttribute('fill', '#143D2B');
@@ -215,7 +215,7 @@ export class SVGOverlay {
 
       const exitText = document.createElementNS(svgNS, 'text');
       exitText.setAttribute('x', '19');
-      exitText.setAttribute('y', '6.8');
+      exitText.setAttribute('y', '5.8');
       exitText.setAttribute('fill', '#FFFFFF');
       exitText.setAttribute('font-size', '1.1');
       exitText.setAttribute('font-weight', '700');
@@ -299,7 +299,7 @@ export class SVGOverlay {
     this._attachEvents(svg);
   }
 
-  _renderTentOutline(svg, svgNS, x, y, w, h, title) {
+  _renderTentOutline(svg, svgNS, x, y, w, h, title, bannerPos = 'top') {
     // Floor
     const floor = document.createElementNS(svgNS, 'rect');
     floor.setAttribute('x', x);
@@ -312,10 +312,11 @@ export class SVGOverlay {
     floor.setAttribute('rx', '0.6');
     svg.appendChild(floor);
 
-    // Header Label
+    // Header Label Banner (positioned at top or bottom)
     const banner = document.createElementNS(svgNS, 'rect');
     banner.setAttribute('x', x);
-    banner.setAttribute('y', y - 2.8);
+    const by = bannerPos === 'bottom' ? y + h + 0.4 : y - 2.8;
+    banner.setAttribute('y', by);
     banner.setAttribute('width', w);
     banner.setAttribute('height', '2.4');
     banner.setAttribute('fill', '#143D2B');
@@ -324,7 +325,7 @@ export class SVGOverlay {
 
     const txt = document.createElementNS(svgNS, 'text');
     txt.setAttribute('x', x + w / 2);
-    txt.setAttribute('y', y - 1.2);
+    txt.setAttribute('y', by + 1.5);
     txt.setAttribute('fill', '#FFDF80');
     txt.setAttribute('font-size', '1.3');
     txt.setAttribute('font-weight', '700');

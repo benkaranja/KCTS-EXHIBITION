@@ -40,9 +40,9 @@ export class FloorBuilder {
     grass.position.set(centerX, -0.05, centerZ);
     groundsGroup.add(grass);
 
-    // 2. Main Paved Exhibition Plaza (stone pavement beneath both tents + outdoor areas)
+    // 2. Main Paved Exhibition Plaza (stone pavement beneath both tents + outdoor perimeter)
     const plazaW = 110;
-    const plazaL = 95;
+    const plazaL = 76;
     const plazaGeo = new THREE.PlaneGeometry(plazaW, plazaL);
     
     const plazaTexture = this._createPavedPlazaTexture();
@@ -69,7 +69,7 @@ export class FloorBuilder {
     this.tentBFloor.name = 'tent-b-floor';
     groundsGroup.add(this.tentBFloor);
 
-    // 4. Pavilion A Dedicated Floor Pad (Exact bounds: x: 5 to 90, z: 50 to 80 => 85m × 30m)
+    // 4. Pavilion A Dedicated Floor Pad (Exact bounds: x: 5 to 90, z: 40 to 70 => 85m × 30m)
     const tentAGeo = new THREE.PlaneGeometry(85, 30);
     const tentATexture = this._createTentGridTexture(85, 30, '#F5FAF7', '#1E5E3A', '#D4E2D9');
     const tentAMat = new THREE.MeshBasicMaterial({
@@ -78,19 +78,9 @@ export class FloorBuilder {
     });
     this.tentAFloor = new THREE.Mesh(tentAGeo, tentAMat);
     this.tentAFloor.rotation.x = -Math.PI / 2;
-    this.tentAFloor.position.set(5 + 85 / 2, 0.01, 50 + 30 / 2); // (47.5, 0.01, 65.0)
+    this.tentAFloor.position.set(5 + 85 / 2, 0.01, 40 + 30 / 2); // (47.5, 0.01, 55.0)
     this.tentAFloor.name = 'tent-a-floor';
     groundsGroup.add(this.tentAFloor);
-
-    // 5. Central Outdoor Wooden Deck (x: 35 to 60, z: 41 to 49 => 25m × 8m)
-    const deckGeo = new THREE.BoxGeometry(25, 0.12, 8);
-    const deckMat = new THREE.MeshBasicMaterial({ color: 0x8B5A2B });
-    const deck = new THREE.Mesh(deckGeo, deckMat);
-    deck.position.set(47.5, 0.06, 45);
-    groundsGroup.add(deck);
-
-    // Outdoor Lounge Umbrellas & Tables on Wooden Deck
-    this._buildOutdoorTeaLounge(groundsGroup, 47.5, 45);
 
     scene.add(groundsGroup);
     return groundsGroup;

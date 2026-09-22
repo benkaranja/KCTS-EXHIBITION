@@ -21,7 +21,7 @@ export class TentBuilder {
     const tentsGroup = new THREE.Group();
     tentsGroup.name = 'all-tents-structure';
 
-    // 1. Build Pavilion B (Secondary Tent / Innovation: x:5 to 90, z:10 to 40)
+    // 1. Build Pavilion B (Innovation & Culture - North Tent: x:5 to 90, z:10 to 40)
     this.tentBGroup = this._buildTent({
       id: 'tent-b',
       name: 'PAVILION B — TEA INNOVATION & B2B MATCHMAKING',
@@ -37,12 +37,12 @@ export class TentBuilder {
     });
     tentsGroup.add(this.tentBGroup);
 
-    // 2. Build Pavilion A (Main Tent / Main Hall: x:5 to 90, z:50 to 80)
+    // 2. Build Pavilion A (Main Exhibition Hall - South Tent: x:5 to 90, z:40 to 70)
     this.tentAGroup = this._buildTent({
       id: 'tent-a',
       name: 'PAVILION A — MAIN EXHIBITION HALL',
       x: 5,
-      z: 50,
+      z: 40,
       width: 85,
       length: 30,
       height: 5.5,
@@ -53,17 +53,17 @@ export class TentBuilder {
     });
     tentsGroup.add(this.tentAGroup);
 
-    // 3. Covered Connecting Canopy Walkways (Dual walkways at cross-aisles)
+    // 3. Inter-Pavilion Portals & Boundary Arches (tents touch at z = 40)
     this.walkwayGroup = new THREE.Group();
-    this.walkwayGroup.name = 'connecting-walkways';
-    this._buildConnectingWalkway(this.walkwayGroup, 42.5, 40, 10);
-    this._buildConnectingWalkway(this.walkwayGroup, 73.5, 40, 10);
+    this.walkwayGroup.name = 'inter-tent-connections';
+    this._addEntranceArch(this.walkwayGroup, 42.5, 40, 'INTER-PAVILION PASSAGE 1', 0x1E5E3A);
+    this._addEntranceArch(this.walkwayGroup, 73.5, 40, 'INTER-PAVILION PASSAGE 2', 0x1E5E3A);
 
-    // 4. Welcome Gate at South-West Arrival (outside Pavilion A)
-    this._buildWelcomeGate(this.walkwayGroup, 5, 74);
+    // 4. Welcome Gate at South-West Arrival (outside Pavilion A Booth 1)
+    this._buildWelcomeGate(this.walkwayGroup, 5, 67);
 
-    // 5. Exit Gate at North-West Departure (outside Pavilion B)
-    this._buildExitGate(this.walkwayGroup, 5, 16);
+    // 5. Exit Gate at North-West Departure (outside Pavilion B Booth 148)
+    this._buildExitGate(this.walkwayGroup, 5, 14);
 
     tentsGroup.add(this.walkwayGroup);
 
